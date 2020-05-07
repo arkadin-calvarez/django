@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NIO Statool</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    &nbsp;
+    &nbsp;
+    <div class="container">
+        <h1>Python Scripts Home</h1> 
+        &nbsp;
+        &nbsp; 
+        <h2>From local Def script, output in same page</h2> 
+        <button onclick="location.href='{% url 'scriptdone' %}'"> From View Def Script</button> 
+        {% if data %}
+        {{ data }}
+        {% endif %}
+        &nbsp;
+        &nbsp; 
+        <h2>From local Def script, output a new page</h2>
+        <button onclick="location.href='{% url 'scriptfinal' %}'"> From PY file Script</button> 
+        &nbsp;
+        &nbsp; 
+        <h2>From File script, New Page</h2>
+        <button onclick="location.href='{% url 'external' %}'"> From PY file Script</button> 
+    </div>
+</body>
+</html>

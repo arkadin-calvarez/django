@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NIO Statool</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ title }}</h1> 
+        <p>Site Manager by --> {{ owner }}</p>
+        &nbsp;
+        &nbsp; 
+        <h2>Devices</h2>
+        <table style="width:100%">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Host</th>
+                <th>Platform</th>
+            </tr>
+            {% for device in devices %}
+            <tr>
+                <td>{{ device.id }}</td>
+                <td><a href="{% url 'device' device.id %}">{{ device.name }}</a></td>
+                <td>{{ device.username }}</td>
+                <td>{{ device.host }}</td>
+                <td>{{ device.platform  }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        &nbsp;
+        &nbsp;
+        <h2>Services</h2>
+        <table style="width:100%">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Link</th>
+            </tr>
+            {% for service in services %}
+            <tr>
+                <td>{{ service.id }}</td>
+                <td><a href="{% url 'service' service.id %}"></a>{{ service.name }}</a></td>
+                <td><a href="{% url 'statool-home' %}">Statool Home</a></td>
+            </tr>
+            {% endfor %}
+        </table>       
+    </div>
+</body>
+</html>
