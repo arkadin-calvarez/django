@@ -12,7 +12,7 @@ from subprocess import run, PIPE
 
 # Page, with login to allow access the main/home page.
 # when browsing to http://rasp:7777 URL
-@login_required(login_url='/accounts/login/')
+#@login_required(login_url='/accounts/login/')
 def home(request: HttpRequest) -> HttpResponse:
     return render(request, 'home.html')
 
@@ -21,7 +21,7 @@ def home(request: HttpRequest) -> HttpResponse:
 # in below example, some "context" can be given to be used with the template,
 # allowing easy customization of messages in one page
 # (remember the static blog posts from the video)
-@login_required(login_url='/accounts/login/')
+#@login_required(login_url='/accounts/login/')
 def statool(request: HttpRequest) -> HttpResponse:
     devices = Device.objects.all()
     services = Service.objects.all()
@@ -71,7 +71,7 @@ def another(request):
 #    return render(request, 'output.html' , {'data':info})
 
 def external(request):
-    out= run([sys.executable,'//home//outright//NET_TOOLx//NIO//statool//datetime.py'],shell=False,stdout=PIPE)
+    out= run([sys.executable,'//home//outright//Django//CABE//statool//scripts//datetime.py'],shell=False,stdout=PIPE)
     print(out)
     return render(request, 'external.html', {'data1':out.stdout})
 

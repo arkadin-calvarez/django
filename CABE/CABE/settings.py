@@ -25,12 +25,14 @@ SECRET_KEY = '(_1^9br@e-xv8@km5lng0qlmk&j!(*539_jnhm7#39!nd+x#*^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'statool',
+#    'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +56,8 @@ ROOT_URLCONF = 'CABE.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+#        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
