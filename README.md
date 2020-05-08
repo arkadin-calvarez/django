@@ -12,10 +12,12 @@ Goals Achieved
 Django Project Name:  NIO
 ====================
 - App1:     statool
-- App2:     accounts
-- App3:     xxxxxxx
+- App2:     accounts (disabled)
 
 
 File/Site Structure
 ===================
-rasp:7777 --> home (authentication) --> statool--> devices output
+centos:7878 --> home (authentication) --> statool--> devices output (AUTH not operational)
+            --> home (no authentication) --> statool--> devices output
+            --> home (no authentication) --> statool--> scripts --> output
+            
