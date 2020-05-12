@@ -7,25 +7,32 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    &nbsp;
-    &nbsp;
+    <br>
+    <br>
     <div class="container">
         <h1>Python Scripts Home</h1> 
-        &nbsp;
-        &nbsp; 
-        <h2>From local Def script, output in same page</h2> 
+        <br>
+        <br>
+        <h3>Targetting network devices present in DJango DB and executing local Python Scripts</h3> 
+        <br>
+        <h4>Displaying results in SAME page</h4> 
         <button onclick="location.href='{% url 'scriptdone' %}'"> From View Def Script</button> 
         {% if data %}
         {{ data }}
         {% endif %}
-        &nbsp;
-        &nbsp; 
-        <h2>From local Def script, output a new page</h2>
+        <br>
+        <br>
+        <h4>Displaying results in NEW page</h4>
         <button onclick="location.href='{% url 'scriptfinal' %}'"> From PY file Script</button> 
-        &nbsp;
-        &nbsp; 
-        <h2>From File script, New Page</h2>
-        <button onclick="location.href='{% url 'external' %}'"> From PY file Script</button> 
+        <br>
+        <br>
+        <h4>Displaying results in NEW page</h4>
+        <button onclick="location.href='{% url 'external' %}'"> From PY file Script</button>
+        <br>
+        <br>
+        <h3>Targetting Network device on DB and executing local Python Scripts</h3>
+        <h4>From SALT script, in NEW page</h4>
+        <button onclick="location.href='{% url 'salt' %}'"> From SALT Script</button>
     </div>
 </body>
 </html>

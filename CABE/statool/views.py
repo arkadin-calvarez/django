@@ -6,9 +6,8 @@ from .models import Device, Service
 from napalm import get_network_driver
 from django.contrib.auth.decorators import login_required
 import requests
-from . import datetime
-import sys 
 from subprocess import run, PIPE
+#from django.core.urlresolvers import reverse
 
 # Page, with login to allow access the main/home page.
 # when browsing to http://rasp:7777 URL
@@ -44,8 +43,8 @@ def scripts(request: HttpRequest) -> HttpResponse:
 
 # Give action to button, displaying info at the same page
 # This button can redirect to another page.
-def button(request):
-    return render(request, 'scripts.html')
+#def button(request):
+#    return render(request, 'scripts.html')
 
 
 # Runs the script itself, getting the information from the website
@@ -56,6 +55,7 @@ def output(request):
     data=data.text
     return render(request, 'scripts.html' , {'data':data})
 
+
 # Runs the script itself, getting the information from the website
 # and display content in another HTML (output.html)
 def another(request):
@@ -64,16 +64,29 @@ def another(request):
     info=info.text
     return render(request, 'output.html' , {'data':info})
 
-#def fromfile(request):
-#    info=requests.get("https://xkcd.com/1906/")
-#    print(info.text)
-#    info=info.text
-#    return render(request, 'output.html' , {'data':info})
 
+# Execute local script from full directory. Display simple message (hello, hello, hello)
 def external(request):
     out= run([sys.executable,'//home//outright//Django//CABE//statool//scripts//datetime.py'],shell=False,stdout=PIPE)
     print(out)
     return render(request, 'external.html', {'data1':out.stdout})
+
+
+# Dropdown menu. List devices from DB Devices.name
+def run_script_ondevice(request):
+    results=Device.objects.all()
+    return render(request, 'device.html',{'Device':results})
+
+
+# Execute script, using Saltstack framework, which contain already connected minions
+def salt(request):
+    out= run([sys.executable,'//home//outright//Django//CABE//statool//scripts//red.py'],shell=False,stdout=PIPE)
+    print(out)
+    return render(request, 'salt.html', {'data1':out.stdout})
+
+
+
+
 
 
 

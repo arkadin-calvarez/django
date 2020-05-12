@@ -19,7 +19,10 @@ urlpatterns = [
     path('output/', views.output, name='scriptdone'),
     path('another/', views.another, name='scriptfinal'),
     path('external/', views.external, name='external'),
+#    path('devices/<int:device_id>', views.devices_cat),
+    path('salt/', views.salt, name='salt'),
     path('devices/<int:device_id>', views.get_device_stats, name="device"),
     path('services/<int:service_id>', views.get_device_stats, name="service"),
 #    path('services/', views.ccasp, name="ccasp"),
+    path('/devices/2', views.get_device_stats, name="device")
 ]

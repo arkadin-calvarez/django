@@ -10,8 +10,24 @@
     <div class="container">
         <h1>{{ title }}</h1> 
         <p>Site Manager by --> {{ owner }}</p>
-        &nbsp;
-        &nbsp; 
+
+        <h2>Devices from Dropdown</h2>
+        <form method="POST" action="/devices/2">{% csrf_token %}
+            <p>Select device:</p>
+        
+        <select name="device_id">
+            <option disabled="true" selected>-- Select --</option>
+            {% for dev in devices %}
+            <option>{{ dev.name }}</option>
+            {% endfor %}
+        <input type="submit" value="Execute"/>
+        </select>
+
+        </form>
+        <br>
+        <br>
+
+
         <h2>Devices</h2>
         <table style="width:100%">
             <tr>
