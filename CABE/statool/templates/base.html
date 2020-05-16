@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NIO Statool</title>
+    <title>Panaceia Statool</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -10,9 +10,10 @@
     <div class="container">
         <h1>{{ title }}</h1> 
         <p>Site Manager by --> {{ owner }}</p>
-
-        <h2>Devices from Dropdown (Using Absulute URL)</h2>
-        <p>Select device:</p>
+        &nbsp;
+        &nbsp;
+        <h2>Interface Status</h2>
+        <p>Select device: (Using Absolute URL)</p>
         <form>
             <select name="device_id" id="device_id">
                 <option disabled="true" selected>-- Select --</option>
@@ -22,9 +23,9 @@
             </select>
             <input type="button" value="Execute" onClick="window.open(device_id.value,'newtab'+device_id.value)">
         </form>
-        <br>
-        <br>
-        <h2>Devices using ABSOLUTE URL format</h2>
+        &nbsp;
+        &nbsp;
+        <p>Select device: (Using Absolute URL)</p>
         <table style="width:100%">
             <tr>
                 <th>Id</th>
@@ -45,7 +46,7 @@
         </table>
         &nbsp;
         &nbsp;
-        <h2>Devices using static URL format</h2>
+        <p>Select device: (Static URL format)</p>
         <table style="width:100%">
             <tr>
                 <th>Id</th>
