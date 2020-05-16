@@ -23,6 +23,7 @@ class Device(models.Model):
         choices=(('cisco', 'ios'), ('juniper', 'junos'))
     )
 
+    # Still unknown purpose
     def __str__(self) -> str:
         return self.name
     

@@ -25,12 +25,31 @@ def statool(request: HttpRequest) -> HttpResponse:
     devices = Device.objects.all()
     services = Service.objects.all()
     context = {
-        'title' : 'Panaceia Statool',
+        'title' : 'Statool (Panaceia)',
         'owner' : 'NIO Team',
         'devices' : devices,    #This is directly used in base.html (in FOR loops) to call/print devices
         'services' : services
     }
     return render(request, 'base.html', context)
+
+# Function to use NAPALM "Get facts" from devices.
+# In this case, "get_interfaces" and "get_interfaces_ip" facts
+def get_device_stats(request: HttpRequest, device_id) -> HttpResponse:
+    device = Device.objects.get(pk=device_id)
+    driver = get_network_driver(device.napalm_driver)
+    with driver(device.host, device.username, device.password) as device_conn:
+        interfaces = device_conn.get_interfaces()
+        ipaddress = device_conn.get_interfaces_ip()
+    context = {
+        'device':device,
+        'interfaces':interfaces,
+        'ipaddress':ipaddress,
+    }
+    print(interfaces)
+    print(ipaddress)
+#    You can enable this when you want to see the debug on the terminal and read fields
+    return render(request, 'device.html', context)
+
 
 
 # Below scripts redirect us to the "scripts.html" webpage
@@ -40,11 +59,6 @@ def statool(request: HttpRequest) -> HttpResponse:
 def scripts(request: HttpRequest) -> HttpResponse:
     return render(request, 'scripts.html')
 
-
-# Give action to button, displaying info at the same page
-# This button can redirect to another page.
-#def button(request):
-#    return render(request, 'scripts.html')
 
 
 # Runs the script itself, getting the information from the website
@@ -72,7 +86,7 @@ def external(request):
     return render(request, 'external.html', {'data1':out.stdout})
 
 
-# Dropdown menu. List devices from DB Devices.name
+# Dropdown menu. After select the device, will redirect to the device.htm
 def run_script_ondevice(self):
 #    results=Device.objects.all()
     return render(request, 'device.html',{'Device':results})
@@ -83,31 +97,3 @@ def salt(request):
     out= run([sys.executable,'//home//outright//Django//CABE//statool//scripts//red.py'],shell=False,stdout=PIPE)
     print(out)
     return render(request, 'salt.html', {'data1':out.stdout})
-
-
-
-
-
-
-# ============
-
-def get_device_stats(request: HttpRequest, device_id) -> HttpResponse:
-    device = Device.objects.get(pk=device_id)
-    driver = get_network_driver(device.napalm_driver)
-    with driver(device.host, device.username, device.password) as device_conn:
-        interfaces = device_conn.get_interfaces()
-        ipaddress = device_conn.get_interfaces_ip()
-    context = {
-        'device':device,
-        'interfaces':interfaces,
-        'ipaddress':ipaddress,
-    }
-    print(interfaces)
-    print(ipaddress)
-#    You can enable this when you want to see the debug on the terminal and read fields
-    return render(request, 'device.html', context)
-
-#Default view, before starting to configuring
-#def get_devices(request: HttpRequest) -> HttpResponse:
-#   pass
-# comment
