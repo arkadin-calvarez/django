@@ -7,7 +7,7 @@ from napalm import get_network_driver
 from django.contrib.auth.decorators import login_required
 import requests
 from subprocess import run, PIPE
-#from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 # Page, with login to allow access the main/home page.
 # when browsing to http://rasp:7777 URL
@@ -27,7 +27,7 @@ def statool(request: HttpRequest) -> HttpResponse:
     context = {
         'title' : 'NIO Statool',
         'owner' : 'NIO Team',
-        'devices' : devices,
+        'devices' : devices,    #This is directly used in base.html (in FOR loops) to call/print devices
         'services' : services
     }
     return render(request, 'base.html', context)
@@ -73,8 +73,8 @@ def external(request):
 
 
 # Dropdown menu. List devices from DB Devices.name
-def run_script_ondevice(request):
-    results=Device.objects.all()
+def run_script_ondevice(self):
+#    results=Device.objects.all()
     return render(request, 'device.html',{'Device':results})
 
 
@@ -83,12 +83,6 @@ def salt(request):
     out= run([sys.executable,'//home//outright//Django//CABE//statool//scripts//red.py'],shell=False,stdout=PIPE)
     print(out)
     return render(request, 'salt.html', {'data1':out.stdout})
-
-
-
-
-
-
 
 
 

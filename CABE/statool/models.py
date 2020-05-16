@@ -30,6 +30,11 @@ class Device(models.Model):
     def napalm_driver(self) -> str:
         return NAPALM_MAPPING[self.platform]
 
+    # Instance method used by Dynamic URLs to avoid static data
+    def get_absolute_url(self):
+        return f"devices/{self.id}"
+
+
 # Services DC
 class Service(models.Model):
     name = models.CharField(max_length=100)

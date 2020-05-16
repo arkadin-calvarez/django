@@ -11,24 +11,41 @@
         <h1>{{ title }}</h1> 
         <p>Site Manager by --> {{ owner }}</p>
 
-        <h2>Devices from Dropdown</h2>
-        <form method="POST" action="/devices/2">{% csrf_token %}
-            <p>Select device:</p>
-        
-        <select name="device_id">
-            <option disabled="true" selected>-- Select --</option>
-            {% for dev in devices %}
-            <option>{{ dev.name }}</option>
-            {% endfor %}
-        <input type="submit" value="Execute"/>
-        </select>
-
+        <h2>Devices from Dropdown (Using Absulute URL)</h2>
+        <p>Select device:</p>
+        <form>
+            <select name="device_id" id="device_id">
+                <option disabled="true" selected>-- Select --</option>
+                {% for dev in devices %}
+                <option value="{{ dev.get_absolute_url }}">{{ dev.name }}</option>
+                {% endfor %}
+            </select>
+            <input type="button" value="Execute" onClick="window.open(device_id.value,'newtab'+device_id.value)">
         </form>
         <br>
         <br>
-
-
-        <h2>Devices</h2>
+        <h2>Devices using ABSOLUTE URL format</h2>
+        <table style="width:100%">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Host</th>
+                <th>Platform</th>
+            </tr>
+            {% for devi in devices %}
+            <tr>
+                <td>{{ devi.id }}</td>
+                <td><a href="{{ devi.get_absolute_url }}">{{ devi.name }}</a></td>
+                <td>{{ devi.username }}</td>
+                <td>{{ devi.host }}</td>
+                <td>{{ devi.platform  }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        &nbsp;
+        &nbsp;
+        <h2>Devices using static URL format</h2>
         <table style="width:100%">
             <tr>
                 <th>Id</th>
