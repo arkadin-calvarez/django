@@ -1,7 +1,7 @@
 from django.conf.urls import url
 #from django.contrib import admin
 from django.urls import path, include
-from . import views
+from . import views, minion_form
 from django.contrib.auth.views import LoginView
 
 from . import views
@@ -20,6 +20,7 @@ urlpatterns = [
     path('another/', views.another, name='scriptfinal'),
     path('external/', views.external, name='external'),
     path('salt/', views.salt, name='salt'),
+    path('bgp/', views.show_bgp_summ, name='show_bgp_summ'),
     path('statool/devices/<int:device_id>', views.get_device_stats, name="device"), # With ABSOLUTE URL
-    path('services/<int:service_id>', views.get_device_stats, name="service")
+    path('services/<int:service_id>', views.get_device_stats, name="service"),
 ]

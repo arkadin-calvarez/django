@@ -8,6 +8,10 @@ from django.contrib.auth.decorators import login_required
 import requests
 from subprocess import run, PIPE
 from django.urls import reverse
+import salt.client as client
+import subprocess
+import os
+import yaml 
 
 # Page, with login to allow access the main/home page.
 # when browsing to http://rasp:7777 URL
@@ -86,14 +90,45 @@ def external(request):
     return render(request, 'external.html', {'data1':out.stdout})
 
 
-# Dropdown menu. After select the device, will redirect to the device.htm
+# Dropdown menu. After select the device, will redirect to the device.html
 def run_script_ondevice(self):
 #    results=Device.objects.all()
     return render(request, 'device.html',{'Device':results})
 
 
-# Execute script, using Saltstack framework, which contain already connected minions
+# Redirect to "Python Scripts Home" 
+#def salt(request):
+#    data = subprocess.run(['ls','//home'], stdout=PIPE)
+#    return render(request, 'salt.html' , {'data':data.stdout})
+ 
+# SALT output page, when user click on "SALT Script" button, defined in scripts.html page.
+# Remember that stdout and stderr w/ PIPE (imported) in Python3 the ways to allout the output 
+# of the terminal output we want to see. "capture_output=True" was an old argument to allow 
+# that in previous Python versions
 def salt(request):
-    out= run([sys.executable,'//home//outright//Django//CABE//statool//scripts//red.py'],shell=False,stdout=PIPE)
-    print(out)
-    return render(request, 'salt.html', {'data1':out.stdout})
+    data = subprocess.run("sudo salt 'vsrx1' net.cli 'show bgp summary'", stdout=PIPE, stderr=PIPE, shell=True)
+    return render(request, 'salt.html' , {'data':data.stdout})
+#    with open('saltout.txt', 'w') as saltout:
+#        data = subprocess.run("sudo salt 'vsrx1' net.cli 'show bgp summary'", stdout=saltout, stderr=PIPE, shell=True)
+#    with open("/home/outright/Django/CABE/saltout.txt") as out:
+#        list = yaml.load(out, Loader=yaml.FullLoader)
+#        return render(request, 'salt.html' , {'list':list})
+#
+#    data = (subprocess.Popen("sudo salt 'vsrx1' net.cli 'show bgp summary'", stdout=subprocess.PIPE, shell=True, universal_newlines=True).communicate()[0])
+#    return render(request, 'salt.html' , {'data':data})
+
+# Above, stdout is displays in bites (that's the reason of the unsorted format). We need to transform this to
+# string. One method is decode() (Ex: return render(request, 'salt.html' , {'data':data.stdout.decode()})) 
+# Decode method worked partially, because it removed the /n and /b letters from my text, but all output text remains
+# in one long line
+
+# Using the below
+def show_bgp_summ(request):
+    minion = request.GET.get('searchbox')
+#    arguments = 'sudo salt' + minion + 'net.cli show bgp summary'
+    data = subprocess.run(['sudo', 'salt', minion, 'net.cli', "'show bgp summary'"], stdout=PIPE, stderr=PIPE)
+    context = {
+    'data':data,
+    }
+    return render(request, 'bgp.html', context)
+#    return render(request, 'bgp.html' , {'data':data.args})

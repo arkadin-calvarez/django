@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PANACEIA Statool</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h2> BGP peering - Status </h2>
+        &nbsp;
+        &nbsp;
+        <table style="width:100%">
+            <tr>
+                <th>Peer</th>
+                <th>AS</th>
+            </tr>
+            {% for ip, as in data.items %}
+            <tr>
+                <td>{{ ip }}</td>
+                <td>{{ as.description }}</td>
+            </tr>
+            {% endfor %}
+        </table>      
+    </div>
+{% if data %}
+{{ data }}
+{% endif %}
+</body>
+</html>
