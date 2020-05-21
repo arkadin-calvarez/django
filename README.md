@@ -9,7 +9,7 @@ Goals Achieved
 - Provide basic local authentication method before access the web page
 
 
-Django Project Name:  NIO
+Django Project Name:  CABE (Django/CABE/statool)
 ====================
 - App1:     statool
 - App2:     accounts (disabled)
