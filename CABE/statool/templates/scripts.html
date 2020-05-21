@@ -17,18 +17,6 @@
         <br>
         <br>
         <br>
-        <br>
-        <h4>Using an specific MINION, get the results of 'show bgp summary' (definition: show_bgp_sum --> bgp.html)</h4>
-        <form name='search' action="{% url 'show_bgp_summ' %}" method="get"> {% csrf_token %}
-            Enter Minion Name: <input type="text" id="searchbox" name='searchbox' pattern="*" required oninvalid="this.setCustomValidity('Field cannot be empty')">
-            <input id="myinput" type="submit" name="search_query">
-        </form>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <h4>From SALT script, in NEW page (definition: salt --> salt.html)</h4>
         <button onClick="location.href='{% url 'salt' %}'"> From SALT Script</button>
         <br>

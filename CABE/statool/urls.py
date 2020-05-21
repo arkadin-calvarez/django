@@ -16,6 +16,7 @@ urlpatterns = [
     path('', views.home, name='network-tools-home'),
     path('statool/', views.statool, name='statool-home'),
     path('scripts/', views.scripts, name='scripts'),
+    path('saltindex/', views.saltindex, name='saltindex'),
     path('output/', views.output, name='scriptdone'),
     path('another/', views.another, name='scriptfinal'),
     path('external/', views.external, name='external'),

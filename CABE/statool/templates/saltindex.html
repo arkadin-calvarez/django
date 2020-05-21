@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PANACEIA Statool</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <br>
+    <br>
+    <div class="container">
+        <h1>SALT Scripts Queries Home</h1> 
+        <br>
+        <br>
+        <h3>Targetting network devices present in DJango DB and executing local Python Scripts</h3> 
+        <br>
+        <br>
+        <br>
+        <br>
+        <h4>Using an specific MINION, get the results of 'show bgp summary' (definition: show_bgp_sum --> bgp.html)</h4>
+        <form name='search' action="{% url 'show_bgp_summ' %}" method="get"> {% csrf_token %}
+            Enter Minion Name: <input type="text" id="searchbox" name='searchbox' pattern="*" required oninvalid="this.setCustomValidity('Field cannot be empty')">
+            <input id="myinput" type="submit" name="search_query">
+        </form>
+        <br>
+    </div>
+</body>
+</html>
