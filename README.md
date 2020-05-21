@@ -17,7 +17,7 @@ Django Project Name:  NIO
 
 File/Site Structure
 ===================
-centos:7878 --> home (authentication) --> statool--> devices output (AUTH not operational)
-            --> home (no authentication) --> statool--> devices output
-            --> home (no authentication) --> statool--> scripts --> output
-            
+centos:7878 
+            --> home (no authentication) --> Panaceia Statool--> local devices, dropdown and query using Django Views defs
+            --> home (no authentication) --> Python Scripts --> using python to query devices
+            --> home (no authentication) --> SALT Queries --> using SALTSTACK to query devices
