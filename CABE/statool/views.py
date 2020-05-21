@@ -23,8 +23,8 @@ def statool(request: HttpRequest) -> HttpResponse:
     devices = Device.objects.all()
     services = Service.objects.all()
     context = {
-        'title' : 'Statool (Panaceia)',
-        'owner' : 'NIO Team',
+        'title' : 'Panaceia Statool',
+        'owner' : 'Cabe',
         'devices' : devices,    #This is directly used in base.html (in FOR loops) to call/print devices
         'services' : services
     }

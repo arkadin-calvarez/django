@@ -21,7 +21,7 @@
         <h4>Using an specific MINION, get the results of 'show bgp summary' (definition: show_bgp_sum --> bgp.html)</h4>
         <form name='search' action="{% url 'show_bgp_summ' %}" method="get"> {% csrf_token %}
             Enter Minion Name: <input type="text" id="searchbox" name='searchbox' pattern="*" required oninvalid="this.setCustomValidity('Field cannot be empty')">
-            <input id="myinput" type="submit" name="search_query">
+            <input id="myinput" type="submit">
         </form>
         <br>
     </div>
