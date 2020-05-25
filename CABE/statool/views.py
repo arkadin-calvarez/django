@@ -45,8 +45,8 @@ def home(request: HttpRequest) -> HttpResponse:
 def scripts(request: HttpRequest) -> HttpResponse:
     return render(request, 'scripts.html')
 
-def saltindex(request: HttpRequest) -> HttpResponse:
-    return render(request, 'saltindex.html')
+def salt(request: HttpRequest) -> HttpResponse:
+    return render(request, 'salt.html')
 
 
 
@@ -103,9 +103,9 @@ def get_device_stats(request: HttpRequest, device_id) -> HttpResponse:
 # Remember that stdout and stderr w/ PIPE (imported) in Python3 the ways to allout the output 
 # of the terminal output we want to see. "capture_output=True" was an old argument to allow 
 # that in previous Python versions
-def salt(request):
+def saltout(request):
     data = subprocess.run("sudo salt 'vsrx1' net.cli 'show bgp summary'", stdout=PIPE, stderr=PIPE, shell=True)
-    return render(request, 'salt.html' , {'data':data.stdout})
+    return render(request, 'saltout.html' , {'data':data.stdout})
 #    with open('saltout.txt', 'w') as saltout:
 #        data = subprocess.run("sudo salt 'vsrx1' net.cli 'show bgp summary'", stdout=saltout, stderr=PIPE, shell=True)
 #    with open("/home/outright/Django/CABE/saltout.txt") as out:
