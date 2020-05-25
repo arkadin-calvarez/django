@@ -7,10 +7,12 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <br>
-    <br>
+    {% extends 'topbarmenu.html' %}
+    {% block content %}
     <div class="container">
-        <h1>Python Scripts Home</h1> 
+        <br>
+        <br>
+        <h1>Python Scripts</h1> 
         <br>
         <br>
         <h3>Targetting network devices present in DJango DB and executing local Python Scripts</h3> 
@@ -37,5 +39,6 @@
         <br>
         <br>
     </div>
+    {% endblock %}
 </body>
 </html>

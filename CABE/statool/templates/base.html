@@ -7,11 +7,14 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+    {% extends 'topbarmenu.html' %}
+    {% block content %}
     <div class="container">
+        <br>
+        <br>
         <h1>{{ title }}</h1> 
-        <p>Site Manager by --> {{ owner }}</p>
-        &nbsp;
-        &nbsp;
+        <br>
+        <br>
         <h2>Interface Status</h2>
         <p>Select device: (Using Absolute URL)</p>
         <form>
@@ -83,5 +86,6 @@
             {% endfor %}
         </table>       
     </div>
+    {% endblock %}
 </body>
 </html>

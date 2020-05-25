@@ -7,10 +7,12 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <br>
-    <br>
+    {% extends 'topbarmenu.html' %}
+    {% block content %}
     <div class="container">
-        <h1>SALT Scripts Queries Home</h1> 
+        <br>
+        <br>
+        <h1>SALT Scripts Queries</h1> 
         <br>
         <br>
         <h3>Targetting network devices using SALTSTACK minion format</h3> 
@@ -24,5 +26,6 @@
         </form>
         <br>
     </div>
+    {% endblock %}
 </body>
 </html>
