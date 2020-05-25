@@ -5,7 +5,7 @@ from . import views, minion_form
 from django.contrib.auth.views import LoginView
 
 from . import views
-#from accounts.views import login_view, register_view, logout_view
+from accounts.views import login_view, register_view, logout_view
 
 urlpatterns = [
 # Below line ('') will show default page for http://localhost:7777 requests

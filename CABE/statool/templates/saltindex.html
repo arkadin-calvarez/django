@@ -13,15 +13,14 @@
         <h1>SALT Scripts Queries Home</h1> 
         <br>
         <br>
-        <h3>Targetting network devices present in DJango DB and executing local Python Scripts</h3> 
+        <h3>Targetting network devices using SALTSTACK minion format</h3> 
         <br>
-        <br>
-        <br>
-        <br>
-        <h4>Using an specific MINION, get the results of 'show bgp summary' (definition: show_bgp_sum --> bgp.html)</h4>
+        <h5>Using an specific MINION, get the results of 'show bgp summary'</h5>
+        <h5>(definition: show_bgp_sum --> bgp.html)</h5>
+        <br>        
         <form name='search' action="{% url 'show_bgp_summ' %}" method="get"> {% csrf_token %}
-            Enter Minion Name: <input type="text" id="searchbox" name='searchbox' pattern="*" required oninvalid="this.setCustomValidity('Field cannot be empty')">
-            <input id="myinput" type="submit">
+            Enter Minion Name: <input type="text" placeholder="ex: tbrixag01" id="searchbox" name='searchbox' pattern="*" required oninvalid="this.setCustomValidity('Field cannot be empty')">
+            <input id="myinput" type="submit" value="EXECUTE">
         </form>
         <br>
     </div>

@@ -33,7 +33,7 @@ def statool(request: HttpRequest) -> HttpResponse:
 
 # Page, with login to allow access the main/home page.
 # when browsing to http://rasp:7777 URL
-#@login_required(login_url='/accounts/login/')
+@login_required(login_url='/accounts/login/')
 def home(request: HttpRequest) -> HttpResponse:
     return render(request, 'home.html')
 
