@@ -12,6 +12,13 @@ import salt.client as client
 import subprocess
 import os
 import yaml 
+import io
+
+# Page, with login to allow access the main/home page.
+# when browsing to http://rasp:7777 URL
+@login_required(login_url='/accounts/login/')
+def home(request: HttpRequest) -> HttpResponse:
+    return render(request, 'home.html')
 
 
 # Below is a redirectly to Statool APP http://cabe:7878/base
@@ -28,15 +35,7 @@ def statool(request: HttpRequest) -> HttpResponse:
         'devices' : devices,    #This is directly used in base.html (in FOR loops) to call/print devices
         'services' : services
     }
-    return render(request, 'base.html', context)
-
-
-# Page, with login to allow access the main/home page.
-# when browsing to http://rasp:7777 URL
-@login_required(login_url='/accounts/login/')
-def home(request: HttpRequest) -> HttpResponse:
-    return render(request, 'home.html')
-
+    return render(request, 'statool.html', context)
 
 # Below scripts redirect us to the "scripts.html" and "saltindex" webpage
 # when browsing to http://cabe:7878/scripts or http://cabe:7878/saltindex URL
@@ -128,10 +127,25 @@ def saltout(request):
 # variable to be used later as part of the SALTSTACK CLI command.
 def show_bgp_summ(request):
     minion = request.GET.get('searchbox')
-#    arguments = 'sudo salt' + minion + 'net.cli show bgp summary'
-    data = subprocess.run(['sudo', 'salt', minion, 'net.cli', "'show bgp summary'"], stdout=PIPE, stderr=PIPE)
+    arguments = ['sudo', 'salt', minion, 'net.cli', "'show bgp summary'"]
+#    with open('saltout.txt', 'w') as saltout:
+    data = subprocess.run(arguments, stdout=PIPE, stderr=PIPE, timeout=15)
     context = {
     'data':data,
     }
     return render(request, 'bgp.html', context)
 #    return render(request, 'bgp.html' , {'data':data.args})
+
+
+
+def show_bgp_fromfile(request):
+    minion = request.GET.get('searchboxfile')
+    arguments = ['sudo', 'salt', minion, 'net.cli', "'show bgp summary'"]
+    commands = "show bgp summary"
+    with open('saltout.txt', 'w') as saltout:
+        data = subprocess.run(arguments, stdout=saltout, stderr=saltout, timeout=15)
+    f = open('//home//outright//Django//CABE//saltout.txt', 'r')
+    file_content = f.read()
+    f.close()
+    return HttpResponse(file_content, content_type="text/plain")
+#    return render(request, 'bgp1.html', {'data':data.args})
