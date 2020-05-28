@@ -26,18 +26,13 @@
                 <option value="{{ dev.get_absolute_url2 }}">{{ dev.name }}</option>
                 {% endfor %}
             </select>
+            <select name="command_id" id="command_id">
+                <option disabled="true" selected>-- Select --</option>
+                {% for cmd in commands %}
+                <option value="{{ cmd.get_absolute_command }}">{{ cmd.name }}</option>
+                {% endfor %}
+            </select>
             <input type="submit" value="Execute">
-        </form>
-        <br>
-        <br>
-        <br>
-        <h5>Using an specific MINION, get the results of 'show bgp summary'</h5>
-        <h5>(definition: show_bgp_fromfile --> bgp1.html)</h5>
-        <h6>from STORED file</h6>
-        <br>        
-        <form name='search' action="{% url 'show_bgp_fromfile' %}" method="get"> {% csrf_token %}
-            Enter Minion Name: <input type="text" placeholder="ex: tbrixag01" id="searchboxfile" name='searchboxfile' pattern="*" required oninvalid="this.setCustomValidity('Field cannot be empty')">
-            <input id="myinput" type="submit" value="EXECUTE">
         </form>
         <br>
         <br>

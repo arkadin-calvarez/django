@@ -63,4 +63,4 @@ class Command(models.Model):
 
     # Instance method used by Dynamic URLs to avoid static data
     def get_absolute_command(self):
-        return f"commands/{self.id}"
+        return f"{self.command}"

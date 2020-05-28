@@ -142,23 +142,24 @@ def show_bgp_summ(request):
 
 
 # Entering minion name and executing static command
-def show_bgp_fromfile(request):
-    minion = request.GET.get('searchboxfile')
-    commands = ['sudo', 'salt', minion, 'net.cli', "'show bgp summary'"]
-    with open('saltout.txt', 'w') as saltout:
-        data = subprocess.run(commands, stdout=saltout, stderr=saltout, timeout=15)
-    f = open('//home//outright//Django//CABE//saltout.txt', 'r')
-    file_content = f.read()
-    f.close()
-    return HttpResponse(file_content, content_type="text/plain")
+#def show_bgp_fromfile(request):
+#    minion = request.GET.get('searchboxfile')
+#    commands = ['sudo', 'salt', minion, 'net.cli', "'show bgp summary'"]
+#    with open('saltout.txt', 'w') as saltout:
+#        data = subprocess.run(commands, stdout=saltout, stderr=saltout, timeout=15)
+#    f = open('//home//outright//Django//CABE//saltout.txt', 'r')
+#    file_content = f.read()
+#    f.close()
+#    return HttpResponse(file_content, content_type="text/plain")
 #    return render(request, 'bgp1.html', {'data':data.args})
 
 
 # Entering minion name and selecting command from dropdown
 def show(request):
     minion = request.GET.get('device_id')
+    command = request.GET.get('command_id')
 #    show = request.GET.get('command_id')
-    commands = ['sudo', 'salt', minion, 'net.cli', "'show bgp summary'"]
+    commands = ['sudo', 'salt', minion, 'net.cli', command]
     with open('saltout.txt', 'w') as saltout:
         data = subprocess.run(commands, stdout=saltout, stderr=saltout, timeout=15)
     f = open('//home//outright//Django//CABE//saltout.txt', 'r')
