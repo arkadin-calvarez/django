@@ -23,7 +23,7 @@ class Device(models.Model):
         choices=(('cisco', 'ios'), ('juniper', 'junos'))
     )
 
-    # Still unknown purpose
+    # To show the DC device name instead "Object ID" in the /admin page
     def __str__(self) -> str:
         return self.name
     
@@ -33,7 +33,10 @@ class Device(models.Model):
 
     # Instance method used by Dynamic URLs to avoid static data
     def get_absolute_url(self):
-        return f"devices/{self.id}"
+        return f"devices/{self.name}"
+    
+    def get_absolute_url2(self):
+        return f"{self.name}"
 
 
 # Services DC
@@ -41,5 +44,23 @@ class Service(models.Model):
     name = models.CharField(max_length=100)
     devices = models.ForeignKey(Device, null=True, blank=True, on_delete= models.SET_NULL)
 
+    # To show the DC device name instead "Object ID" in the /admin page
     def __str__(self) -> str:
         return self.name
+
+
+# Show command
+class Command(models.Model):
+    name = models.CharField(max_length=100)
+    command = models.CharField(max_length=100)
+    platform = models.CharField(
+        max_length=30, default='Firewall',
+        choices=(('cisco', 'ios'), ('juniper', 'junos'))
+    )
+    # To show the DC device name instead "Object ID" in the /admin page
+    def __str__(self) -> str:
+        return self.name
+
+    # Instance method used by Dynamic URLs to avoid static data
+    def get_absolute_command(self):
+        return f"commands/{self.id}"

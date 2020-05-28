@@ -2,7 +2,7 @@
 #from __future__ import unicode_literals
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpRequest
-from .models import Device, Service
+from .models import Device, Service, Command
 from napalm import get_network_driver
 from django.contrib.auth.decorators import login_required
 import requests
@@ -45,9 +45,13 @@ def scripts(request: HttpRequest) -> HttpResponse:
     return render(request, 'scripts.html')
 
 def salt(request: HttpRequest) -> HttpResponse:
-    return render(request, 'salt.html')
-
-
+    commands = Command.objects.all()
+    devices = Device.objects.all()
+    context = {
+        'commands' : commands,
+        'devices' : devices
+    }
+    return render(request, 'salt.html', context)
 
 
 # Runs the script itself, getting the information from the website
@@ -137,15 +141,27 @@ def show_bgp_summ(request):
 #    return render(request, 'bgp.html' , {'data':data.args})
 
 
-
+# Entering minion name and executing static command
 def show_bgp_fromfile(request):
     minion = request.GET.get('searchboxfile')
-    arguments = ['sudo', 'salt', minion, 'net.cli', "'show bgp summary'"]
-    commands = "show bgp summary"
+    commands = ['sudo', 'salt', minion, 'net.cli', "'show bgp summary'"]
     with open('saltout.txt', 'w') as saltout:
-        data = subprocess.run(arguments, stdout=saltout, stderr=saltout, timeout=15)
+        data = subprocess.run(commands, stdout=saltout, stderr=saltout, timeout=15)
     f = open('//home//outright//Django//CABE//saltout.txt', 'r')
     file_content = f.read()
     f.close()
     return HttpResponse(file_content, content_type="text/plain")
 #    return render(request, 'bgp1.html', {'data':data.args})
+
+
+# Entering minion name and selecting command from dropdown
+def show(request):
+    minion = request.GET.get('device_id')
+#    show = request.GET.get('command_id')
+    commands = ['sudo', 'salt', minion, 'net.cli', "'show bgp summary'"]
+    with open('saltout.txt', 'w') as saltout:
+        data = subprocess.run(commands, stdout=saltout, stderr=saltout, timeout=15)
+    f = open('//home//outright//Django//CABE//saltout.txt', 'r')
+    file_content = f.read()
+    f.close()
+    return HttpResponse(file_content, content_type="text/plain")
