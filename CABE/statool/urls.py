@@ -23,7 +23,7 @@ urlpatterns = [
     path('saltout/', views.saltout, name='saltout'),
     path('bgp/', views.show_bgp_summ, name='show_bgp_summ'),
 #    path('bgp1/', views.show_bgp_fromfile, name='show_bgp_fromfile'),
-    path('salt/devices/vsrx1', views.show, name='show'),
+    path('salt/devices/*', views.show, name='show'),
     path('statool/devices/<int:device_id>', views.get_device_stats, name="device"), # With ABSOLUTE URL (see models.py)
     path('services/<int:service_id>', views.get_device_stats, name="service"),
 ]
