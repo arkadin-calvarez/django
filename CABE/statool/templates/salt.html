@@ -20,10 +20,10 @@
         <br>
         <br>
         <h5>Select minion and command from dropdown</h5>
-        <h5>(definition: show --> xxx.html)</h5>
+        <h5>(definition: showfromdrop --> showfromdrop.html)</h5>
         <h6>from SALT output</h6>
         <br>
-        <form name='search' action="{% url 'show' %}" method="get"> {% csrf_token %}
+        <form name='search' action="{% url 'showfromdrop' %}" method="get"> {% csrf_token %}
             <select name="device_id" id="device_id">
                 <option disabled="true" selected>-- Select --</option>
                 {% for dev in devices %}
@@ -42,10 +42,10 @@
         <br>
         <br>
         <h5>Using an specific MINION, get the results of 'show bgp summary'</h5>
-        <h5>(definition: show_bgp_sum --> bgp.html)</h5>
+        <h5>(definition: showfrombox --> showfrombox.html)</h5>
         <h6>from SALT output</h6>
         <br>        
-        <form name='search' action="{% url 'show_bgp_summ' %}" method="get"> {% csrf_token %}
+        <form name='search' action="{% url 'showfrombox' %}" method="get"> {% csrf_token %}
             Enter Minion Name: <input type="text" placeholder="ex: tbrixag01" id="searchbox" name='searchbox' pattern="*" required oninvalid="this.setCustomValidity('Field cannot be empty')">
             <input id="myinput" type="submit" value="EXECUTE">
         </form>

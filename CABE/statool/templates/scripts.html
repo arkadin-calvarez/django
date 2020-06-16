@@ -19,23 +19,14 @@
         <br>
         <br>
         <br>
+        <h4> SALT API , in NEW page (definition: salt --> saltapipage.html)</h4>
+        <button onClick="location.href='{% url 'saltapi' %}'"> From SALT API</button>
+        <br>
+        <br>
+        <br>
+        <br>
         <h4>From SALT script, in NEW page (definition: salt --> saltout.html)</h4>
         <button onClick="location.href='{% url 'saltout' %}'"> From SALT Script</button>
-        <br>
-        <br>
-        <h4>Displaying results in SAME page (definition: output --> output.html)</h4> 
-        <button onclick="location.href='{% url 'scriptdone' %}'"> From View Def Script</button> 
-        {% if data %}
-        {{ data }}
-        {% endif %}
-        <br>
-        <br>
-        <h4>Displaying results in CLEAN page (definition: another --> output.html)</h4>
-        <button onclick="location.href='{% url 'scriptfinal' %}'"> From PY file Script</button> 
-        <br>
-        <br>
-        <h4>Displaying results in NEW page (definition: external --> external.html)</h4>
-        <button onclick="location.href='{% url 'external' %}'"> From PY file Script</button>
         <br>
         <br>
     </div>

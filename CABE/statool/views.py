@@ -8,7 +8,8 @@ from django.contrib.auth.decorators import login_required
 import requests
 from subprocess import run, PIPE
 from django.urls import reverse
-import salt.client as client
+from salt import client
+import salt.client
 import subprocess
 import os
 import yaml 
@@ -53,30 +54,25 @@ def salt(request: HttpRequest) -> HttpResponse:
     }
     return render(request, 'salt.html', context)
 
+def saltapipage(request: HttpRequest) -> HttpResponse:
+    return render(request, 'saltapipage.html')
 
 # Runs the script itself, getting the information from the website
 # and display it locally (scripts.html)
-def output(request):
-    data=requests.get("https://xkcd.com/1906/")
-    print(data.text)
-    data=data.text
-    return render(request, 'scripts.html' , {'data':data})
+#def output(request):
+#    data=requests.get("https://xkcd.com/1906/")
+#    print(data.text)
+#    data=data.text
+#    return render(request, 'scripts.html' , {'data':data})
 
 
 # Runs the script itself, getting the information from the website
 # and display content in another HTML (output.html)
-def another(request):
-    info=requests.get("https://xkcd.com/1906/")
-    print(info.text)
-    info=info.text
-    return render(request, 'output.html' , {'data':info})
-
-
-# Execute local script from full directory. Display simple message (hello, hello, hello)
-def external(request):
-    out= run([sys.executable,'//home//outright//Django//CABE//statool//scripts//datetime.py'],shell=False,stdout=PIPE)
-    print(out)
-    return render(request, 'external.html', {'data1':out.stdout})
+#def another(request):
+#    info=requests.get("https://xkcd.com/1906/")
+#    print(info.text)
+#    info=info.text
+#    return render(request, 'output.html' , {'data':info})
 
 
 # Dropdown menu. After select the device, will redirect to the device.html
@@ -129,7 +125,7 @@ def saltout(request):
 # using subprocess module query the BGP summary of a JUNOS device using that value.
 # "searchbox" is the name of the HTML form name, which is then stored in the "minion"
 # variable to be used later as part of the SALTSTACK CLI command.
-def show_bgp_summ(request):
+def showfrombox(request):
     minion = request.GET.get('searchbox')
     arguments = ['sudo', 'salt', minion, 'net.cli', "'show bgp summary'"]
 #    with open('saltout.txt', 'w') as saltout:
@@ -137,7 +133,7 @@ def show_bgp_summ(request):
     context = {
     'data':data,
     }
-    return render(request, 'bgp.html', context)
+    return render(request, 'showfrombox.html', context)
 #    return render(request, 'bgp.html' , {'data':data.args})
 
 
@@ -155,7 +151,7 @@ def show_bgp_summ(request):
 
 
 # Entering minion name and selecting command from dropdown
-def show(request):
+def showfromdrop(request):
     minion = request.GET.get('device_id')
     command = request.GET.get('command_id')
 #    show = request.GET.get('command_id')
@@ -166,3 +162,13 @@ def show(request):
     file_content = f.read()
     f.close()
     return HttpResponse(file_content, content_type="text/plain")
+
+
+# Using SALT API (Local.Client()), to get dictionary of information.
+def saltapi(request):
+    local = client.LocalClient()
+    salida = local.cmd('vsrx1', 'net.cli', ['show version'], username='saltapi', password='saltapi', eauth='pam')
+    context = {
+    'salida':salida,
+    }   
+    return render(request, 'saltapipage.html', context)

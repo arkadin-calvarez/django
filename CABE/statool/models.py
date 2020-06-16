@@ -33,7 +33,7 @@ class Device(models.Model):
 
     # Instance method used by Dynamic URLs to avoid static data
     def get_absolute_url(self):
-        return f"devices/{self.name}"
+        return f"devices/{self.id}"
     
     def get_absolute_url2(self):
         return f"{self.name}"
