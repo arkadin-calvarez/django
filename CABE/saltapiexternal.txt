@@ -1,0 +1,1 @@
+{'vsrx1': {'out': {'show system uptime': '\nCurrent time: 2020-06-22 02:51:30 UTC\nSystem booted: 2020-06-21 02:52:52 UTC (23:58:38 ago)\nProtocols started: 2020-06-21 02:53:19 UTC (23:58:11 ago)\nLast configured: 2020-05-04 04:02:28 UTC (6w6d 22:49 ago) by outright\n 2:51AM  up 23:59, 0 users, load averages: 0.00, 0.00, 0.00\n'}, 'result': True, 'comment': ''}}

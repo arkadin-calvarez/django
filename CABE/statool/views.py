@@ -6,21 +6,24 @@ from .models import Device, Service, Command
 from napalm import get_network_driver
 from django.contrib.auth.decorators import login_required
 import requests
+
 from subprocess import run, PIPE
 from django.urls import reverse
-from salt import client
-import salt.client
+
+import logging
 import subprocess
 import os
 import yaml 
+import sys
 import io
+
+############################ WEBPAGES START ############################
 
 # Page, with login to allow access the main/home page.
 # when browsing to http://rasp:7777 URL
 @login_required(login_url='/accounts/login/')
 def home(request: HttpRequest) -> HttpResponse:
     return render(request, 'home.html')
-
 
 # Below is a redirectly to Statool APP http://cabe:7878/base
 # in below example, some "context" can be given to be used with the template,
@@ -45,6 +48,7 @@ def statool(request: HttpRequest) -> HttpResponse:
 def scripts(request: HttpRequest) -> HttpResponse:
     return render(request, 'scripts.html')
 
+# Salt webpage
 def salt(request: HttpRequest) -> HttpResponse:
     commands = Command.objects.all()
     devices = Device.objects.all()
@@ -54,26 +58,27 @@ def salt(request: HttpRequest) -> HttpResponse:
     }
     return render(request, 'salt.html', context)
 
-def saltapipage(request: HttpRequest) -> HttpResponse:
+############################ WEBPAGES END ############################
+
+
+
+
+############################ SCRIPT SECTION START ############################
+
+def saltapiexternal(request):
+#    out = run([sys.executable,'//home//outright//Django//CABE//minion_showversion.py'],shell=False, stdout=PIPE)
+#    return render(request, 'saltapiexternal.html', {'out':out.stdout})
+
+    with open('saltapiexternal.txt', 'w') as saltapiexternal:
+        out = run([sys.executable,'//home//outright//Django//CABE//minion_showversion.py'],shell=False, stdout=saltapiexternal)
+    f = open('//home//outright//Django//CABE//saltapiexternal.txt', 'r')
+    file_content = f.read()
+    f.close()
+    return HttpResponse(file_content, content_type="text/plain")
+
+
+def saltapi(request: HttpRequest) -> HttpResponse:
     return render(request, 'saltapipage.html')
-
-# Runs the script itself, getting the information from the website
-# and display it locally (scripts.html)
-#def output(request):
-#    data=requests.get("https://xkcd.com/1906/")
-#    print(data.text)
-#    data=data.text
-#    return render(request, 'scripts.html' , {'data':data})
-
-
-# Runs the script itself, getting the information from the website
-# and display content in another HTML (output.html)
-#def another(request):
-#    info=requests.get("https://xkcd.com/1906/")
-#    print(info.text)
-#    info=info.text
-#    return render(request, 'output.html' , {'data':info})
-
 
 # Dropdown menu. After select the device, will redirect to the device.html
 def run_script_ondevice(self):
@@ -119,7 +124,12 @@ def saltout(request):
 # 'salt.html' , {'data':data.stdout.decode()}))  Decode method worked partially, because 
 # it removed the /n and /b letters from my text, but all output text remains in one long line
 
+############################ SCRIPT SECTION END ############################
 
+
+
+
+############################ SALT SECTION START ############################
 
 # Using the below def, it allows to get a minion host name entered by a user and 
 # using subprocess module query the BGP summary of a JUNOS device using that value.
@@ -165,10 +175,20 @@ def showfromdrop(request):
 
 
 # Using SALT API (Local.Client()), to get dictionary of information.
-def saltapi(request):
-    local = client.LocalClient()
-    salida = local.cmd('vsrx1', 'net.cli', ['show version'], username='saltapi', password='saltapi', eauth='pam')
-    context = {
-    'salida':salida,
-    }   
-    return render(request, 'saltapipage.html', context)
+
+
+def showfromapi(request):
+    import salt.client
+
+    minion = request.GET.get('device_id')
+    command = request.GET.get('command_id')
+    local = salt.client.LocalClient()
+    outapi = local.cmd('vsrx1', 'net.cli', ['show version'], username='saltapi', password='saltapi', eauth='pam')
+#    with open('saltout.txt', 'w') as saltout:
+#        data = subprocess.run(commands, stdout=saltout, stderr=saltout, timeout=15)
+#    f = open('//home//outright//Django//CABE//saltout.txt', 'r')
+#    file_content = f.read()
+ #   f.close()
+    return render(request, 'showapipage.html', {'outapi':outapi})
+
+    ############################ SALT SECTION END ############################

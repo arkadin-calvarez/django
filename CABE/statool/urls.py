@@ -25,15 +25,14 @@ urlpatterns = [
     path('statool/devices/<int:device_id>', views.get_device_stats, name="device"), # With ABSOLUTE URL (see models.py)
 
 # "Scripts" website results
+    path('saltapiexternal/', views.saltapiexternal, name='saltapiexternal'),
     path('saltout/', views.saltout, name='saltout'),
     path('saltapipage/', views.saltapi, name='saltapi'),
 
-
 # "SALT Scripts" website results
+    path('showfromapi/', views.showfromapi, name='showfromapi'),
     path('salt/devices/*', views.showfromdrop, name='showfromdrop'),
-    path('bgp/', views.showfrombox, name='showfrombox'),
-
-
+    path('showfrombox/', views.showfrombox, name='showfrombox'),
 
 # Scripts website - Disabled
 #    path('output/', views.output, name='scriptdone'),

@@ -20,6 +20,28 @@
         <br>
         <br>
         <h5>Select minion and command from dropdown</h5>
+        <h5>(definition: showfromdrop --> showfromapi.html)</h5>
+        <h6>from SALT API output</h6>
+        <br>
+        <form name='search' action="{% url 'showfromapi' %}" method="get"> {% csrf_token %}
+            <select name="device_id" id="device_id">
+                <option disabled="true" selected>-- Select --</option>
+                {% for dev in devices %}
+                <option value="{{ dev.get_absolute_url2 }}">{{ dev.name }}</option>
+                {% endfor %}
+            </select>
+            <select name="command_id" id="command_id">
+                <option disabled="true" selected>-- Select --</option>
+                {% for cmd in commands %}
+                <option value="{{ cmd.get_absolute_command }}">{{ cmd.name }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Execute">
+        </form>
+        <br>
+        <br>
+        <br>
+        <h5>Select minion and command from dropdown</h5>
         <h5>(definition: showfromdrop --> showfromdrop.html)</h5>
         <h6>from SALT output</h6>
         <br>
