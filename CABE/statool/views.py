@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #from __future__ import unicode_literals
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpRequest
+from django.http import HttpResponse, HttpRequest, JsonResponse
 from .models import Device, Service, Command
 from napalm import get_network_driver
 from django.contrib.auth.decorators import login_required
@@ -16,6 +16,8 @@ import os
 import yaml 
 import sys
 import io
+import json
+import base64
 
 ############################ WEBPAGES START ############################
 
@@ -68,7 +70,6 @@ def salt(request: HttpRequest) -> HttpResponse:
 def saltapiexternal(request):
 #    out = run([sys.executable,'//home//outright//Django//CABE//minion_showversion.py'],shell=False, stdout=PIPE)
 #    return render(request, 'saltapiexternal.html', {'out':out.stdout})
-
     with open('saltapiexternal.txt', 'w') as saltapiexternal:
         out = run([sys.executable,'//home//outright//Django//CABE//minion_showversion.py'],shell=False, stdout=saltapiexternal)
     f = open('//home//outright//Django//CABE//saltapiexternal.txt', 'r')
@@ -138,14 +139,17 @@ def saltout(request):
 def showfrombox(request):
     minion = request.GET.get('searchbox')
     arguments = ['sudo', 'salt', minion, 'net.cli', "'show bgp summary'"]
-#    with open('saltout.txt', 'w') as saltout:
     data = subprocess.run(arguments, stdout=PIPE, stderr=PIPE, timeout=15)
+#    encoded = base64.b64encode(data)
+#    context = {
+#    'encoded':encoded,
+#    }
     context = {
     'data':data,
     }
     return render(request, 'showfrombox.html', context)
-#    return render(request, 'bgp.html' , {'data':data.args})
-
+#    return render(request, 'showfrombox.html' , {'data':data.stdout})
+#    return render(request, 'showfrombox.html' , {'encoded':encoded})
 
 # Entering minion name and executing static command
 #def show_bgp_fromfile(request):
@@ -175,20 +179,27 @@ def showfromdrop(request):
 
 
 # Using SALT API (Local.Client()), to get dictionary of information.
-
-
 def showfromapi(request):
     import salt.client
 
     minion = request.GET.get('device_id')
     command = request.GET.get('command_id')
     local = salt.client.LocalClient()
-    outapi = local.cmd('vsrx1', 'net.cli', ['show version'], username='saltapi', password='saltapi', eauth='pam')
-#    with open('saltout.txt', 'w') as saltout:
-#        data = subprocess.run(commands, stdout=saltout, stderr=saltout, timeout=15)
-#    f = open('//home//outright//Django//CABE//saltout.txt', 'r')
-#    file_content = f.read()
- #   f.close()
-    return render(request, 'showapipage.html', {'outapi':outapi})
+
+    dict = local.cmd('vsrx1', 'net.cli', ['show bgp summary'], username='saltapi', password='saltapi', eauth='pam')
+    json1 = json.dumps(dict)
+    f = open("dict.json","w")
+    f.write(json1)
+    f.close()
+
+#    with open('saltapisaved.txt', 'w') as saltapisaved:
+#        data = local.cmd('vsrx1', 'test.ping', username='saltapi', password='saltapi', eauth='pam')
+    f = open('//home//outright//Django//CABE//dict.json', 'r')
+    file_content = f.read()
+    f.close()
+    return HttpResponse(file_content, content_type="text/plain")
+#    return render(request, 'showfromapi.html', {'outapi': sorted(outapi.items())})
+#    return render(request, 'showapipage.html', {'encoded':encoded})
+#    return JsonResponse({'encoded':encoded})
 
     ############################ SALT SECTION END ############################
