@@ -1,1 +1,13 @@
-{"vsrx1": {"out": {"show bgp summary": "\nGroups: 1 Peers: 1 Down peers: 1\nTable          Tot Paths  Act Paths Suppressed    History Damp State    Pending\ninet.0                 0          0          0          0          0          0\nPeer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...\n74.120.93.182         65001          0          0       0       0     8:37:35 Idle  \n"}, "result": true, "comment": ""}}
+{"vsrx1": 
+    {"out": 
+        {"show bgp neighbor 74.120.93.182": 
+            "\nPeer: 74.120.93.182 AS 65001   Local: unspecified AS 65000
+            \n  Type: External    State: Idle           Flags: <PeerInterfaceError ImportEval>
+            \n  Last State: NoState       Last Event: NoEvent\n  Last Error: None
+            \n  Options: <Preference AuthKey PeerAS LocalAS Refresh>
+            \n  Authentication key is configured
+            \n  Holdtime: 90 Preference: 170 Local AS: 65000 Local System AS: 0
+            \n  Number of flaps: 0
+        \n"}, 
+    "result": true, "comment": ""}
+}

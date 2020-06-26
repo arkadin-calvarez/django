@@ -18,6 +18,7 @@ import sys
 import io
 import json
 import base64
+import pprint
 
 ############################ WEBPAGES START ############################
 
@@ -186,19 +187,20 @@ def showfromapi(request):
     command = request.GET.get('command_id')
     local = salt.client.LocalClient()
 
-    dict = local.cmd('vsrx1', 'net.cli', ['show bgp summary'], username='saltapi', password='saltapi', eauth='pam')
-    json1 = json.dumps(dict)
+    str = local.cmd('vsrx1', 'net.cli', ['show bgp neighbor 74.120.93.182'], username='saltapi', password='saltapi', eauth='pam')
+    # Json.dumps converting all to str, even a dictionary.
+    str1 = json.dumps(str)
+    #Example to extract values from dict
+#    str = {'vsrx1': 'Finalmente', 'names': {'cristian': 'alvarez', 'andreia': 'gonzaga'}}
+
     f = open("dict.json","w")
-    f.write(json1)
+    f.write(str1)
     f.close()
 
-#    with open('saltapisaved.txt', 'w') as saltapisaved:
-#        data = local.cmd('vsrx1', 'test.ping', username='saltapi', password='saltapi', eauth='pam')
-    f = open('//home//outright//Django//CABE//dict.json', 'r')
-    file_content = f.read()
-    f.close()
-    return HttpResponse(file_content, content_type="text/plain")
-#    return render(request, 'showfromapi.html', {'outapi': sorted(outapi.items())})
+#    f = open('//home//outright//Django//CABE//dict1.json', 'r')
+#    file_content = f.read()
+#    return HttpResponse(file_content, content_type="text/plain")
+    return render(request, 'showfromapi.html', {'str': str})
 #    return render(request, 'showapipage.html', {'encoded':encoded})
 #    return JsonResponse({'encoded':encoded})
 
