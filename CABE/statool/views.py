@@ -17,8 +17,7 @@ import yaml
 import sys
 import io
 import json
-import base64
-import pprint
+import re
 
 ############################ WEBPAGES START ############################
 
@@ -179,29 +178,80 @@ def showfromdrop(request):
     return HttpResponse(file_content, content_type="text/plain")
 
 
-# Using SALT API (Local.Client()), to get dictionary of information.
+# Using SALT API (Local.Client()), to get dictionary of information. (DROPDOWN only)
 def showfromapi(request):
     import salt.client
+
+    output_table1 = []
+    output = {}
 
     minion = request.GET.get('device_id')
     command = request.GET.get('command_id')
     local = salt.client.LocalClient()
 
-    str = local.cmd('vsrx1', 'net.cli', ['show bgp neighbor 74.120.93.182'], username='saltapi', password='saltapi', eauth='pam')
-    # Json.dumps converting all to str, even a dictionary.
-    str1 = json.dumps(str)
-    #Example to extract values from dict
-#    str = {'vsrx1': 'Finalmente', 'names': {'cristian': 'alvarez', 'andreia': 'gonzaga'}}
+    # Salt-API dict output
+    output = local.cmd(minion, 'net.cli', [command], username='saltapi', password='saltapi', eauth='pam')
 
-    f = open("dict.json","w")
+    # Before saving the dictionary, Json.dumps must convert all to str (even a dictionary)
+    str1 = json.dumps(output)
+
+    # Saving variable 'str' content into a file
+    f = open("saltapi.json","w")
     f.write(str1)
     f.close()
 
-#    f = open('//home//outright//Django//CABE//dict1.json', 'r')
-#    file_content = f.read()
-#    return HttpResponse(file_content, content_type="text/plain")
-    return render(request, 'showfromapi.html', {'str': str})
-#    return render(request, 'showapipage.html', {'encoded':encoded})
-#    return JsonResponse({'encoded':encoded})
+    # Reading file and using REGEX to ID values
+    f = open('//home//outright//Django//CABE//saltapi.json', 'r')
+    read_file = f.read()
+    regex1 = re.compile(r'\s\sState: Idle|\s\sState: Active|\s\sState: Connect')
+    match_reg1 = regex1.finditer(read_file)
+
+    if match_reg1:
+        for match1 in match_reg1:
+            output_table1.append(match1.group(0))
+
+    # For logging in console
+#    return str1
+
+    return render(request, 'showfromapi.html', {'output': output, 'output_table1': output_table1})
+
+
+# Using SALT API (Local.Client()), to get dictionary of information. (TEXTBOX and DROPDOWN)
+def showfromapi2(request):
+    import salt.client
+
+    output_table1 = []
+    outputx = {}
+
+ #   neighbor_ip = request.GET.get('searchbox1')
+    minione = request.GET.get('device_id')
+ #   command = request.GET.get('command_id')
+    localz = salt.client.LocalClient()
+
+    # Salt-API dict output
+    outputx = localz.cmd(minione, 'net.cli', ['show bgp neighbor 192.168.15.66'], username='saltapi', password='saltapi', eauth='pam')
+
+    # Before saving the dictionary, Json.dumps must convert all to str (even a dictionary)
+    str1 = json.dumps(outputx)
+
+    # Saving variable 'str' content into a file
+    f = open("saltapi2.json","w")
+    f.write(str1)
+    f.close()
+
+    # Reading file and using REGEX to ID values
+    f = open('//home//outright//Django//CABE//saltapi2.json', 'r')
+    read_file = f.read()
+    regex1 = re.compile(r'\s\sState: Idle|\s\sState: Active|\s\sState: Connect')
+    match_reg1 = regex1.finditer(read_file)
+
+    if match_reg1:
+        for match1 in match_reg1:
+            output_table1.append(match1.group(0))
+
+    # For logging in console
+#    return str1
+
+    return render(request, 'showfromapi2.html', {'outputx': outputx, 'output_table1': output_table1})
 
     ############################ SALT SECTION END ############################
