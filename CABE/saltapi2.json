@@ -1,6 +1,1 @@
-{"vsrx1": {"out": {}, "result": false, "comment": "Cannot execute \"cli\" on 192.168.15.66 as outright. Reason: 'NoneType' object has no attribute 'split'!", "traceback": "Traceback (most recent call last):
-\n  File \"/usr/lib/python3.6/site-packages/salt/utils/napalm.py\", line 178, in call
-\n    out = getattr(napalm_device.get('DRIVER'), method)(*args, **kwargs)
-\n  File \"/usr/local/lib/python3.6/site-packages/napalm/junos/junos.py\", line 960, in cli
-\n    exploded_cmd = command.split(\"|\")
-\nAttributeError: 'NoneType' object has no attribute 'split'\n"}}
+{"vsrx1": {"out": {"show bgp neighbor 192.168.15.67": "\nPeer: 192.168.15.67 AS 65002   Local: 192.168.15.66 AS 65001\n  Type: External    State: Active         Flags: <ImportEval>\n  Last State: Idle          Last Event: Start\n  Last Error: None\n  Options: <Preference PeerAS LocalAS Refresh>\n  Holdtime: 90 Preference: 170 Local AS: 65001 Local System AS: 0\n  Number of flaps: 0\n"}, "result": true, "comment": ""}}

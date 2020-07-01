@@ -221,15 +221,15 @@ def showfromapi2(request):
     import salt.client
 
     output_table1 = []
-    outputx = {}
+    output_table2 = []
 
- #   neighbor_ip = request.GET.get('searchbox1')
-    minione = request.GET.get('device_id')
- #   command = request.GET.get('command_id')
-    localz = salt.client.LocalClient()
+    neighbor_ip = request.GET.get('searchbox1')
+    minion1 = request.GET.get('device_id')
+    command = 'show bgp neighbor ' + neighbor_ip
+    local1 = salt.client.LocalClient()
 
     # Salt-API dict output
-    outputx = localz.cmd(minione, 'net.cli', ['show bgp neighbor 192.168.15.66'], username='saltapi', password='saltapi', eauth='pam')
+    outputx = local1.cmd(minion1, 'net.cli', [command], username='saltapi', password='saltapi', eauth='pam')
 
     # Before saving the dictionary, Json.dumps must convert all to str (even a dictionary)
     str1 = json.dumps(outputx)
@@ -245,13 +245,20 @@ def showfromapi2(request):
     regex1 = re.compile(r'\s\sState: Idle|\s\sState: Active|\s\sState: Connect')
     match_reg1 = regex1.finditer(read_file)
 
+    regex2 = re.compile(r'Peer:\s\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')
+    match_reg2 = regex2.finditer(read_file)
+
     if match_reg1:
         for match1 in match_reg1:
             output_table1.append(match1.group(0))
+    
+    if match_reg2:
+        for match2 in match_reg2:
+            output_table2.append(match2.group(0))
 
     # For logging in console
 #    return str1
 
-    return render(request, 'showfromapi2.html', {'outputx': outputx, 'output_table1': output_table1})
+    return render(request, 'showfromapi2.html', {'outputx': outputx, 'output_table1': output_table1, 'output_table2': output_table2})
 
     ############################ SALT SECTION END ############################
