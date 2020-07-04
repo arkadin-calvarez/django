@@ -12,24 +12,45 @@
         <h5> BGP Status - Getting dict nested info </h5>
         <br>
         <table style="width:70%">
-            {% for key, val in output.items %}
+            <th>Command_Issued</th>
+            {% for result3 in output_table3 %}
             <tr>
-                <th>Command_Issued</th>
-                <td>{{ key }}</td>
-            </tr>
-            <tr>
-                <th>Output</th>
-                <td>{{ val }}</td>
+                <td>{{ result3 }}</td>
             </tr>
             {% endfor %}
-
+        </table>
+        <br>
+        <br>
+        <table style="width:70%">
+            <th>BGP peers</th>
+            {% for result4 in output_table2 %}
             <tr>
-            <th>REGEX Result</th>
+                <td>{{ result4 }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <br>
+        <table style="width:70%">
+            <tr>
+            <th>REGEX</th>
             {% for result in output_table1 %}
                 <td>{{ result }}</td>
             {% endfor %}
             </tr>
-        </table>      
+        </table> 
+        <br>
+        <br>
+        <table style="width:70%">
+            <th>RAW Output</th>
+            {% for key, val in output.items %}
+            <tr>
+                <td>{{ val }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <br>     
     </div>
 </body>
 </html>

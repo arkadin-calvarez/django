@@ -20,7 +20,7 @@
         <br>
         <br>
         <h5>Select minion and command from dropdown</h5>
-        <h5>(definition: showfromdrop --> showfromapi.html)</h5>
+        <h5>(showfromapi.html)</h5>
         <br>
         <form name='search' action="{% url 'showfromapi' %}" method="get"> {% csrf_token %}
             <select name="device_id" id="device_id">
@@ -46,6 +46,7 @@
         </form>
         <form name='search1' action="{% url 'showfromapi2' %}" method="get"> {% csrf_token %}
             <h6>Check BGP by entering manual IP</h6>
+            <h6>(showfromapi2.html)</h6>
 
             <select name="device_id" id="device_id">
                 <option disabled="true" selected>-- Select --</option>

@@ -32,7 +32,8 @@ urlpatterns = [
 # "SALT Scripts" website results
     path('showfromapi/', views.showfromapi, name='showfromapi'),
     path('showfromapi2/', views.showfromapi2, name='showfromapi2'),
-    path('salt/devices/*', views.showfromdrop, name='showfromdrop'),
+    path('showfromdrop/', views.showfromdrop, name='showfromdrop'),
+#    path('salt/devices/*', views.showfromdrop, name='showfromdrop'),
     path('showfrombox/', views.showfrombox, name='showfrombox'),
 
 # Scripts website - Disabled

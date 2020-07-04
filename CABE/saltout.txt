@@ -1,0 +1,9 @@
+{
+    "vsrx1": {
+        "out": {
+            "show version": "\nHostname: vsrx1\nModel: firefly-perimeter\nJUNOS Software Release [12.1X47-D20.7]\n"
+        },
+        "result": true,
+        "comment": ""
+    }
+}

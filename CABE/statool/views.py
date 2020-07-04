@@ -169,20 +169,24 @@ def showfromdrop(request):
     minion = request.GET.get('device_id')
     command = request.GET.get('command_id')
 #    show = request.GET.get('command_id')
-    commands = ['sudo', 'salt', minion, 'net.cli', command]
+    commands = ['sudo', 'salt', minion, 'net.cli', command, '--output=json']
+    
     with open('saltout.txt', 'w') as saltout:
         data = subprocess.run(commands, stdout=saltout, stderr=saltout, timeout=15)
     f = open('//home//outright//Django//CABE//saltout.txt', 'r')
     file_content = f.read()
     f.close()
-    return HttpResponse(file_content, content_type="text/plain")
+#    return HttpResponse(file_content, content_type="text/plain")
+    return render(request, 'showfromdrop.html', {'data': data})
 
 
 # Using SALT API (Local.Client()), to get dictionary of information. (DROPDOWN only)
 def showfromapi(request):
     import salt.client
 
-    output_table1 = []
+    output_table1 = [] # BGP Status
+    output_table2 = [] # BGP IP
+    output_table3 = [] # Display Command
     output = {}
 
     minion = request.GET.get('device_id')
@@ -203,17 +207,36 @@ def showfromapi(request):
     # Reading file and using REGEX to ID values
     f = open('//home//outright//Django//CABE//saltapi.json', 'r')
     read_file = f.read()
+
     regex1 = re.compile(r'\s\sState: Idle|\s\sState: Active|\s\sState: Connect')
     match_reg1 = regex1.finditer(read_file)
+
+    regex2 = re.compile(r'Peer:\s\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')
+#    Peer:\s\d+\.\d+\.\d+\.\d+
+    match_reg2 = regex2.finditer(read_file)
+
+    regex3 = re.compile(r'show\s\w+\s\w+')
+    match_reg3 = regex3.finditer(read_file)
+    
 
     if match_reg1:
         for match1 in match_reg1:
             output_table1.append(match1.group(0))
+    
+    if match_reg2:
+        for match2 in match_reg2:
+            output_table2.append(match2.group(0))
+
+    if match_reg3:
+        for match3 in match_reg3:
+            output_table3.append(match3.group(0))
 
     # For logging in console
 #    return str1
-
-    return render(request, 'showfromapi.html', {'output': output, 'output_table1': output_table1})
+    return render(request, 'showfromapi.html', {'output': output, 
+                                                'output_table1': output_table1, 
+                                                'output_table2': output_table2,
+                                                'output_table3': output_table3})
 
 
 # Using SALT API (Local.Client()), to get dictionary of information. (TEXTBOX and DROPDOWN)
@@ -222,6 +245,7 @@ def showfromapi2(request):
 
     output_table1 = []
     output_table2 = []
+    output_table3 = []
 
     neighbor_ip = request.GET.get('searchbox1')
     minion1 = request.GET.get('device_id')
@@ -242,11 +266,16 @@ def showfromapi2(request):
     # Reading file and using REGEX to ID values
     f = open('//home//outright//Django//CABE//saltapi2.json', 'r')
     read_file = f.read()
+
     regex1 = re.compile(r'\s\sState: Idle|\s\sState: Active|\s\sState: Connect')
     match_reg1 = regex1.finditer(read_file)
 
     regex2 = re.compile(r'Peer:\s\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')
     match_reg2 = regex2.finditer(read_file)
+
+    regex3 = re.compile(r'show\s\w+|show\s\w+')
+    match_reg3 = regex3.finditer(read_file)
+    
 
     if match_reg1:
         for match1 in match_reg1:
@@ -256,9 +285,16 @@ def showfromapi2(request):
         for match2 in match_reg2:
             output_table2.append(match2.group(0))
 
+    if match_reg3:
+        for match3 in match_reg3:
+            output_table3.append(match3.group(0))
+
     # For logging in console
 #    return str1
 
-    return render(request, 'showfromapi2.html', {'outputx': outputx, 'output_table1': output_table1, 'output_table2': output_table2})
+    return render(request, 'showfromapi2.html', {'outputx': outputx, 
+                                                'output_table1': output_table1, 
+                                                'output_table2': output_table2,
+                                                'output_table3': output_table3})
 
     ############################ SALT SECTION END ############################

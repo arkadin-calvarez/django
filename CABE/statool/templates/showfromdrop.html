@@ -1,3 +1,38 @@
-{% if data %}
-{{ data }}
-{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NIO Statool</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <br>
+        <h5> TEST - TEST </h5>
+        <br>
+        <table style="width:70%">
+        <h6> FOR Statament to show key and value pairs </h6>
+            {% for key, val in vsrx1.out.items %}
+            <tr>
+                <th>Key and Value</th>
+                <td>{{ key }} {{ val }}</td>
+            </tr>
+            {% endfor %}
+        </table>  
+        <br>
+        <br>
+        <br>
+        <h6> Pure and RAW value with no LOOP (file_content)</h6>
+        {% if file_content %}
+        {{ file_content }}
+        {% endif %}
+        <br>
+        <br>
+        <h6> Pure and RAW value with no LOOP (data)</h6>
+        {% if data %}
+        {{ data }}
+        {% endif %}
+    </div>
+</body>
+</html>
