@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PANACEIA Statool</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    {% extends 'topbarmenu.html' %}
+    {% block content %}
+    <div class="container">
+        <br>
+        <br>
+        <h1>SALT Scripts Queries</h1> 
+        <br>
+        <br>
+        <h3>Targetting network devices using SALTSTACK minion format</h3> 
+        <br>
+        <br>
+        <br>
+        <h5>Select minion and command from dropdown</h5>
+        <h5>(showfromapi.html)</h5>
+        <br>
+        <form name='search' action="{% url 'showfromapi' %}" method="get"> {% csrf_token %}
+            <select name="device_id" id="device_id">
+            <br>
+            <br>
+            <br>
+            <h6>from SALT API output</h6>
+                <option disabled="true" selected>-- Select --</option>
+                {% for dev in devices %}
+                <option value="{{ dev.get_absolute_url2 }}">{{ dev.name }}</option>
+                {% endfor %}
+            </select>
+            <select name="command_id" id="command_id">
+                <option disabled="true" selected>-- Select --</option>
+                {% for cmd in commands %}
+                <option value="{{ cmd.get_absolute_command }}">{{ cmd.name }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Execute"> 
+            <br>
+            <br>
+            <br>
+        </form>
+        <form name='search1' action="{% url 'showfromapi2' %}" method="get"> {% csrf_token %}
+            <h6>Check BGP by entering manual IP</h6>
+            <h6>(showfromapi2.html)</h6>
+
+            <select name="device_id" id="device_id">
+                <option disabled="true" selected>-- Select --</option>
+                {% for dev in devices %}
+                <option value="{{ dev.get_absolute_url2 }}">{{ dev.name }}</option>
+                {% endfor %}
+                <input type="text" placeholder="ex: 1.2.3.4" id="searchbox1" name='searchbox1' pattern="*" required oninvalid="this.setCustomValidity('Field cannot be empty')">
+            </select>
+            <input type="submit" value="Execute">
+        </form>
+        <br>
+        <br>
+        <br>
+        <h5>Select minion and command from dropdown</h5>
+        <h5>(definition: showfromdrop --> showfromdrop.html)</h5>
+        <h6>from SALT output</h6>
+        <br>
+        <form name='search' action="{% url 'showfromdrop' %}" method="get"> {% csrf_token %}
+            <select name="device_id" id="device_id">
+                <option disabled="true" selected>-- Select --</option>
+                {% for dev in devices %}
+                <option value="{{ dev.get_absolute_url2 }}">{{ dev.name }}</option>
+                {% endfor %}
+            </select>
+            <select name="command_id" id="command_id">
+                <option disabled="true" selected>-- Select --</option>
+                {% for cmd in commands %}
+                <option value="{{ cmd.get_absolute_command }}">{{ cmd.name }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Execute">
+        </form>
+        <br>
+        <br>
+        <br>
+        <h5>Using an specific MINION, get the results of 'show bgp summary'</h5>
+        <h5>(definition: showfrombox --> showfrombox.html)</h5>
+        <h6>from SALT output</h6>
+        <br>        
+        <form name='search' action="{% url 'showfrombox' %}" method="get"> {% csrf_token %}
+            Enter Minion Name: <input type="text" placeholder="ex: tbrixag01" id="searchbox" name='searchbox' pattern="*" required oninvalid="this.setCustomValidity('Field cannot be empty')">
+            <input id="myinput" type="submit" value="EXECUTE">
+        </form>
+        <br>
+        <br>
+        <br>
+    </div>
+    {% endblock %}
+</body>
+</html>

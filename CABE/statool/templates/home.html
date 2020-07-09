@@ -1,49 +1,136 @@
-<!DOCTYPE html>
+{% load static %}
+<!doctype html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-
-    <title>CABE's Home</title>
+  <title>Home Statool</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- Material Kit CSS --> 
+  <link href="{% static 'statool/assets/css/material-dashboard.css' %}" rel="stylesheet" />
 </head>
 
-
 <body>
-  {% extends 'topbarmenu.html' %}
-  {% block content %}
-    <div class="container">
-        <br>
-        <br>
-        <h1>Home</h1> 
-        <br>
-        <br>
-        <h3>Select your program/application</h3>
-        <br>
-        <br>
-        <h4>Goto Panaceia Statool --></h4>
-        <a href="{% url 'statool-home' %}">Panaceia Statool Home</a>
-        <br>
-        <br>
-        <h4>Goto Python Scripts --></h4>
-        <a href="{% url 'scripts' %}">Python Scripts Home</a>
-        <br>
-        <br>
-        <h4>Goto SALT Queries --></h4>
-        <a href="{% url 'salt' %}">SALT Queries Home</a>
+  <div class="wrapper ">
+    <div class="sidebar" data-color="green" data-background-color="green">
+      <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+      Tip 2: you can also add an image using data-image tag
+      -->
+      <div class="logo">
+        <a href="http://www.arkadin.com" class="simple-text logo-mini">
+          NIO Team
+        </a>
+        <a href="http://www.arkadin.com" class="simple-text logo-normal">
+          Tools Main
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item active  ">
+            <a class="nav-link" href="{% url 'statool-home' %}" data-color="orange">
+              <i class="material-icons">dashboard</i>
+              <p>Local Status Tool</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'statool-home' %}">
+              <i class="material-icons">dashboard</i>
+              <p>Item 1</p>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav">
+          <li class="nav-item active  ">
+            <a class="nav-link" href="{% url 'scripts' %}">
+              <i class="material-icons">content_paste</i>
+              <p>Scripts</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'statool-home' %}">
+              <i class="material-icons">dashboard</i>
+              <p>Item 1</p>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav">
+          <li class="nav-item active  ">
+            <a class="nav-link" href="{% url 'salt' %}">
+              <i class="material-icons">bubble_chart</i>
+              <p>SALT API Queries</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'statool-home' %}">
+              <i class="material-icons">dashboard</i>
+              <p>Item 1</p>
+            </a>
+          </li>
+        </ul>
+          <!-- your sidebar here -->
+        </ul>
+      </div>
     </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="javascript:;">Dashboard</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:;">
+                  <i class="material-icons">notifications</i> Notifications
+                </a>
+              </li>
+              <!-- your navbar here -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="container-fluid">
+          <!-- your content here -->
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container-fluid">
+          <nav class="float-left">
+            <ul>
+              <li>
+                <a href="https://www.creative-tim.com">
+                  Creative Tim
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright float-right">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear())
+            </script>, made with <i class="material-icons">favorite</i> by
+            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+          </div>
+          <!-- your footer here -->
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  {% endblock %}
-  </body>
 </html>
