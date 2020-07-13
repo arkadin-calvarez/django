@@ -9,7 +9,6 @@ Coded by Creative Tim
 
 =========================================================
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +16,7 @@ The above copyright notice and this permission notice shall be included in all c
   <title>Salt API Queries</title>
   <!-- Required meta tags -->
   <meta charset="utf-8" />
+  {% load static %}
   <link rel="apple-touch-icon" sizes="76x76" href="{% static 'statool/assets/img/apple-icon.png' %}">
   <link rel="icon" type="image/png" href="{% static 'statool/assets/img/favicon.png' %}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -27,6 +27,7 @@ The above copyright notice and this permission notice shall be included in all c
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  {% load static %}
   <!-- CSS Files -->
   <link href="{% static 'statool/assets/css/material-dashboard.css' %}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
@@ -35,7 +36,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="orange" data-background-color="green">
+    <div class="sidebar" data-color="green" data-background-color="green">
       <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
       Tip 2: you can also add an image using data-image tag
@@ -81,7 +82,7 @@ The above copyright notice and this permission notice shall be included in all c
           <li class="nav-item active  ">
             <a class="nav-link" href="{% url 'salt' %}">
               <i class="material-icons">bubble_chart</i>
-              <p>Salt API Queries</p>
+              <p>SALT API Queries</p>
             </a>
           </li>
           <li class="nav-item ">
@@ -91,7 +92,6 @@ The above copyright notice and this permission notice shall be included in all c
             </a>
           </li>
         </ul>
-          <!-- your sidebar here -->
         </ul>
       </div>
     </div>
@@ -149,14 +149,14 @@ The above copyright notice and this permission notice shall be included in all c
             <div class="card-body">
               <div class="row">
                 <div class="col-md-6">
-                  <h4 class="card-title">Select from Dropdown</h4>
+                  <h4 class="card-title">Global commands</h4>
 
                   <form name='search' action="{% url 'showfromapi' %}" method="get"> {% csrf_token %}
                     <h6 class="card-title">Device</h6>
                     <select name="device_id" id="device_id">
                         <option disabled="true" selected>-- Select --</option>
                         {% for dev in devices %}
-                        <h5>from SALT API output</h5>
+                        <h5>XXXXXXXXXXXXX</h5>
                         <option value="{{ dev.get_absolute_url2 }}">{{ dev.name }}</option>
                         {% endfor %}
                     </select>
@@ -175,7 +175,7 @@ The above copyright notice and this permission notice shall be included in all c
                     <br>
                     <br>
                     <br>
-                </form>
+                  </form>
 
                   <div class="alert alert-info alert-with-icon" data-notify="container">
                     <i class="material-icons" data-notify="icon">add_alert</i>
@@ -186,34 +186,34 @@ The above copyright notice and this permission notice shall be included in all c
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <h4 class="card-title">Color Legends</h4>
-                  <div class="alert alert-success">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <i class="material-icons">close</i>
-                    </button>
-                    <span>
-                      <b> Success - </b> This is a regular notification made with ".alert-success"</span>
-                  </div>
-                  <div class="alert alert-warning">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <i class="material-icons">close</i>
-                    </button>
-                    <span>
-                      <b> Warning - </b> This is a regular notification made with ".alert-warning"</span>
-                  </div>
-                  <div class="alert alert-danger">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <i class="material-icons">close</i>
-                    </button>
-                    <span>
-                      <b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
-                  </div>
+                  <h4 class="card-title">BGP peer status</h4>
+                  <form name='search' action="{% url 'showfromapi2' %}" method="get"> {% csrf_token %}
+                    <h6 class="card-title">Device</h6>
+                    <select name="device_id" id="device_id">
+                        <option disabled="true" selected>-- Select --</option>
+                        {% for dev in devices %}
+                        <h5>XXXXXXXXXXXXX</h5>
+                        <option value="{{ dev.get_absolute_url2 }}">{{ dev.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <br>
+                    <h6 class="card-title">Peer IP Address</h6>
+                        <input type="text" placeholder="ex: 1.2.3.4" id="searchbox1" name='searchbox1' pattern="*" required oninvalid="this.setCustomValidity('Field cannot be empty')">
+                    <div class="col-md-4">
+                      <button class="btn btn-primary btn-block" onclick="md.showNotification('top','left')">Click here</button>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      
       <footer class="footer">
         <div class="container-fluid">
           <nav class="float-left">
