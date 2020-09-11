@@ -24,18 +24,18 @@ The above copyright notice and this permission notice shall be included in all c
     NIO Team
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
+  <!-- Fonts and icons -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+ 
   {% load static %}
   <!-- CSS Files -->
-  <link href="{% static 'statool/assets/css/material-dashboard.css' %}" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{% static 'statool/assets/css/material-dashboard.css' %}" rel="stylesheet" />
 </head>
 
 <body class="">
   <div class="wrapper ">
+    
+    <!-- StartSideNavbar -->
     <div class="sidebar" data-color="green" data-background-color="green">
       <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
@@ -51,7 +51,7 @@ The above copyright notice and this permission notice shall be included in all c
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
+          <li class="nav-item active ">
             <a class="nav-link" href="{% url 'statool-home' %}" data-color="orange">
               <i class="material-icons">dashboard</i>
               <p>Local Status Tool</p>
@@ -95,8 +95,10 @@ The above copyright notice and this permission notice shall be included in all c
         </ul>
       </div>
     </div>
+    <!-- EndSideNavbar -->
+
+    <!-- StartTopNavbar -->
     <div class="main-panel">
-      <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
@@ -137,12 +139,14 @@ The above copyright notice and this permission notice shall be included in all c
           </div>
         </div>
       </nav>
-      <!-- End Navbar -->
+      <!-- EndTopNavbar -->
+
+      <!-- StartCentralContent -->
       <div class="content">
         <div class="container-fluid">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h3 class="card-title">Click and Discover Status - Per Device</h3>
+              <h3 class="card-title">Click and Discover</h3>
               <p class="card-category">Select desired network device and command and show me the output!  
               </p>
             </div>
@@ -150,11 +154,10 @@ The above copyright notice and this permission notice shall be included in all c
               <div class="row">
                 <div class="col-md-6">
                   <h4 class="card-title">Global commands</h4>
-
                   <form name='search' action="{% url 'showfromapi' %}" method="get"> {% csrf_token %}
                     <h6 class="card-title">Device</h6>
                     <select name="device_id" id="device_id">
-                        <option disabled="true" selected>-- Select --</option>
+                        <option disabled="true" selected> -- Click here to select -- </option>
                         {% for dev in devices %}
                         <h5>XXXXXXXXXXXXX</h5>
                         <option value="{{ dev.get_absolute_url2 }}">{{ dev.name }}</option>
@@ -164,7 +167,7 @@ The above copyright notice and this permission notice shall be included in all c
                     <br>
                     <h6 class="card-title">Command</h6>
                     <select name="command_id" id="command_id">
-                        <option disabled="true" selected>-- Select --</option>
+                        <option disabled="true" selected> -- Click here to select -- </option>
                         {% for cmd in commands %}
                         <option value="{{ cmd.get_absolute_command }}">{{ cmd.name }}</option>
                         {% endfor %}
@@ -176,7 +179,6 @@ The above copyright notice and this permission notice shall be included in all c
                     <br>
                     <br>
                   </form>
-
                   <div class="alert alert-info alert-with-icon" data-notify="container">
                     <i class="material-icons" data-notify="icon">add_alert</i>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -185,12 +187,13 @@ The above copyright notice and this permission notice shall be included in all c
                     <span data-notify="message">This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.</span>
                   </div>
                 </div>
+
                 <div class="col-md-6">
                   <h4 class="card-title">BGP peer status</h4>
                   <form name='search' action="{% url 'showfromapi2' %}" method="get"> {% csrf_token %}
                     <h6 class="card-title">Device</h6>
                     <select name="device_id" id="device_id">
-                        <option disabled="true" selected>-- Select --</option>
+                        <option disabled="true" selected> -- Click here to select -- </option>
                         {% for dev in devices %}
                         <h5>XXXXXXXXXXXXX</h5>
                         <option value="{{ dev.get_absolute_url2 }}">{{ dev.name }}</option>
@@ -213,7 +216,8 @@ The above copyright notice and this permission notice shall be included in all c
           </div>
         </div>
       </div>
-      
+      <!-- EndCentralContent -->
+
       <footer class="footer">
         <div class="container-fluid">
           <nav class="float-left">
