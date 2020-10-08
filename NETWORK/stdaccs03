@@ -1,0 +1,248 @@
+!RANCID-CONTENT-TYPE: foundry
+!
+Current configuration:
+!
+ver 07.1.00T7f3
+!
+stack unit 1
+  module 1 fcx-48-4x-port-management-module
+!
+global-stp
+!
+!
+!
+spanning-tree single
+!
+vlan 1 name DEFAULT-VLAN by port
+ no spanning-tree
+!
+vlan 3 name LAN_STD by port
+ tagged ethe 1/1/47 to 1/1/48 
+ untagged ethe 1/1/25 to 1/1/29 ethe 1/1/31 to 1/1/36 
+ spanning-tree
+!
+vlan 4 name DMZ by port
+ tagged ethe 1/1/47 to 1/1/48 
+                                                                   spanning-tree
+!
+vlan 9 name Management by port
+ tagged ethe 1/1/47 to 1/1/48 
+ router-interface ve 9
+ spanning-tree
+!
+vlan 13 name LAN_13 by port
+ tagged ethe 1/1/47 to 1/1/48 
+ spanning-tree
+!
+vlan 14 by port
+ tagged ethe 1/1/47 to 1/1/48 
+ untagged ethe 1/1/1 to 1/1/24 ethe 1/1/30 
+ spanning-tree
+!
+vlan 17 name LAN_17 by port
+ tagged ethe 1/1/47 to 1/1/48 
+ spanning-tree
+!
+!
+spanning-tree single 802-1w
+!
+                                                                  !
+!
+!
+!
+!
+!
+aaa authentication web-server default radius local
+aaa authentication enable default none
+aaa authentication login default radius local
+enable password-display
+enable super-user-password 8 $1$Bj3..U7/$8McbeK5hkgkk4PC614twu1
+hostname stdaccs03
+ip route 0.0.0.0 0.0.0.0 10.102.9.254
+!
+logging host 10.124.23.24
+logging host 10.115.137.89
+logging facility local5
+logging buffered 100
+no telnet server
+username noc password 8 $1$RA2..5B.$4S1NR6uEDrmGSuV8Utis91
+username netops password 8 $1$4F/../E2$tBPeqXdRF6TQGFBwZEota.
+password-change any
+radius-server host 10.115.38.11 auth-port 1812 acct-port 1646 authentication-only key 1 $5q|}t5%}'wB}5%h}qPhq:'t}ql#
+                                                                  radius-server host 10.100.92.1 auth-port 1812 acct-port 1646 authentication-only key 1 $5q|}t5%}'wB}5%h}qPhq:'t}ql#
+radius-server key 1 $5q|}t5%}'wB}5%h}qPhq:'t}ql#
+cdp run
+fdp run
+snmp-server community 1 $Si2^=d ro
+snmp-server community 1 $gno+sUD}-nUr=dn- ro
+snmp-server community 0 noc_services ro
+snmp-server contact network_operations@arkadin.com
+snmp-server enable vlan 9
+snmp-server location FRSTD
+sntp server 10.115.131.1
+sntp server 10.125.19.1
+web-management https
+interface ethernet 1/1/1
+ sflow forwarding
+!
+interface ethernet 1/1/2
+ sflow forwarding
+!
+interface ethernet 1/1/3
+ sflow forwarding
+!
+interface ethernet 1/1/4
+                                                                   sflow forwarding
+!
+interface ethernet 1/1/5
+ sflow forwarding
+!
+interface ethernet 1/1/6
+ sflow forwarding
+!
+interface ethernet 1/1/7
+ sflow forwarding
+!
+interface ethernet 1/1/8
+ sflow forwarding
+!
+interface ethernet 1/1/9
+ sflow forwarding
+!
+interface ethernet 1/1/10
+ sflow forwarding
+!
+interface ethernet 1/1/11
+ sflow forwarding
+!
+                                                                  interface ethernet 1/1/12
+ sflow forwarding
+!
+interface ethernet 1/1/13
+ sflow forwarding
+!
+interface ethernet 1/1/14
+ sflow forwarding
+!
+interface ethernet 1/1/15
+ sflow forwarding
+!
+interface ethernet 1/1/16
+ sflow forwarding
+!
+interface ethernet 1/1/17
+ sflow forwarding
+!
+interface ethernet 1/1/18
+ sflow forwarding
+!
+interface ethernet 1/1/19
+ sflow forwarding
+                                                                  !
+interface ethernet 1/1/20
+ sflow forwarding
+!
+interface ethernet 1/1/21
+ sflow forwarding
+!
+interface ethernet 1/1/22
+ sflow forwarding
+!
+interface ethernet 1/1/23
+ sflow forwarding
+!
+interface ethernet 1/1/24
+ sflow forwarding
+!
+interface ethernet 1/1/25
+ sflow forwarding
+!
+interface ethernet 1/1/26
+ sflow forwarding
+!
+interface ethernet 1/1/27
+                                                                   sflow forwarding
+!
+interface ethernet 1/1/28
+ sflow forwarding
+!
+interface ethernet 1/1/29
+ sflow forwarding
+!
+interface ethernet 1/1/30
+ sflow forwarding
+!
+interface ethernet 1/1/31
+ sflow forwarding
+!
+interface ethernet 1/1/32
+ sflow forwarding
+!
+interface ethernet 1/1/33
+ sflow forwarding
+!
+interface ethernet 1/1/34
+ sflow forwarding
+!
+                                                                  interface ethernet 1/1/35
+ sflow forwarding
+!
+interface ethernet 1/1/36
+ sflow forwarding
+!
+interface ethernet 1/1/37
+ sflow forwarding
+!
+interface ethernet 1/1/38
+ sflow forwarding
+!
+interface ethernet 1/1/39
+ sflow forwarding
+!
+interface ethernet 1/1/40
+ sflow forwarding
+!
+interface ethernet 1/1/41
+ sflow forwarding
+!
+interface ethernet 1/1/42
+ sflow forwarding
+                                                                  !
+interface ethernet 1/1/43
+ sflow forwarding
+!
+interface ethernet 1/1/44
+ sflow forwarding
+!
+interface ethernet 1/1/45
+ sflow forwarding
+!
+interface ethernet 1/1/46
+ sflow forwarding
+!
+interface ethernet 1/1/47
+ sflow forwarding
+!
+interface ethernet 1/1/48
+ sflow forwarding
+!
+interface ve 9
+ ip address 10.102.9.247 255.255.255.0
+!
+ip radius source-interface ve 9
+                                                                  !
+!
+!
+sflow sample 1024
+sflow polling-interval 30
+sflow destination 10.102.2.34 6345
+sflow enable
+!
+lldp run
+!
+!
+!
+!
+crypto-ssl certificate generate secret_data MIICyzCCAjSgAwIBAgIEfFWFJDANBgkqhkiG9w0BAQUFADBwMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEYMBYGA1UEChMPVGhlIERlbW8gVmVuZG9yMRwwGgYDVQQLExNTZWN1cmUgRGV2aWNlcyBEZXB0MRQwEgYDVQQDEwtEZW1vIFZlbmRvcjAeFw0wNzA5MDcwMDAwMDBaFw0xOTAxMDEwMDAwMDBaMIGwMRgwFgYDVQQDEw93d3cuYnJvY2FkZS5jb20xLTArBgNVBAoTJEJyb2NhZGUgQ29tbXVuaWNhdGlvbnMgU3lzdGVtcywgSW5jLjEtMCsGA1UECxMkQnJvY2FkZSBDb21tdW5pY2F0aW9ucyBTeXN0ZW1zLCBJbmMuMRQwEgYDVQQHEwtTYW50YSBDbGFyYTETMBEGA1UECBMKQ2FsaWZvcm5pYTELMAkGA1UEBhMCVVMwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAKwAN0NvbrkBEGQ0GxA74HVo7wKv71rStoMssD9cgAnAcLBrrJwxlQgB/gXKGtPyijE0Y6tvJNI3boCehL88ApIzJl/VNJYYVmoLQMo9CSQ7x1NNUA9GBTGW++ja1dtP6U79PmVnGgBPyTPfN8PNQwIQ4T+rX4l9Lnq3O5dSdzqbAgMBAAGjMTAvMB8GA1UdIwQYMBaAFEIo/VN7ViV8xc56L0txqqpk8NAeMAwGA1UdDwQFAwMHoAAwDQYJKoZIhvcNAQEFBQADgYEAtforfyD4xPnXv/fFyaRGqvWEGaWr7yaCLJApIqwluqnNY1uZGDZ+NqtMZsKPLNH/8BS3oYf2NzFFKOqsq0MwAlKh+QB/6VkLHHnVEiTKdf3CWTC9hlyyk9CIMJQlQMFNeaohlzvujFKoEO7mSJQVW5H+WCUiQlooY26EhL6CK2YwggJcAgEAAoGBAKwAN0NvbrkBEGQ0GxA74HVo7wKv71rStoMssD9cgAnAcLBrrJwxlQgB/gXKGtPyijE0Y6tvJNI3boCehL88ApIzJl/VNJYYVmoLQMo9CSQ7x1NNUA9GBTGW++ja1dtP6U79PmVnGgBPyTPfN8PNQwIQ4T+rX4l9Lnq3O5dSdzqbAgMBAAECgYEAo2vhFhV+IhE8vbg0Lox1i5iT3v3CcYzbFG8VVl5Q2PMbHsRvUEhbzSv3axDHxLEhU/bu7CfB2GoKd/IlNn2SAj/oVFmUU/PcFtstcbrub7g1kM4d6lDd9ZBg5Yx69m2PgQCQRDMyMeYBZuWl4MDh3lZQ4688gFqP4bUi9BOQyEECQQDXtw7KDxrTNvtfDzyN0KO/87Y1yw3+x5gbJ5szzj1vc7S+gZxEb3+luCqMyq2NJX01mbQr8lFq6lblWj4XImlzAkEAzB9C08G4Nu43syo/hQWklg0Z8abhR/73gcF/rDD/Nn3t+6LuUeLnk5sBsgSaB5lvgpgzGunsaVuwKFyucItAOQJAZNyIArxLS6TypgDmzFxYpGDcuoxF7/H9Uf0T2YY+PYV5ZnYNzgXgRmk1I/2EZnG3+L70enPj07zcgoLOc1y4twJAN7IH7/OZqhNRy2cpscgaYn7sp00bhyOAsTz08yzjViECQHjyghFhkprm2YX76TrqfD2/JAbT5OOJq1mulzLHsQJASttIj0mxgsowKK3kY4cQCVXcW7pEYYtTRrCBNwTT/ablpRZk3zXTV7W06+EYls8c+cfjAVucFp5zFouJil+DJA==
+!
+end

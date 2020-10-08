@@ -1,0 +1,1643 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C6504-E
+!CPU: R7000, SR71000 CPU at 600Mhz, impl 0x504, Rev 1.2, 512KB L2 Cache
+!
+!Memory: main 983008K/65536K
+!Memory: nvram 1917K
+!Memory: bootflash 65536K
+!
+!Processor ID: FOX1227GJHL
+!
+!Image: Software: s72033_rp-ADVENTERPRISEK9_WAN-M, 12.2(33)SXI12, RELEASE SOFTWARE (fc2)
+!Image: Compiled: Fri 30-Aug-13 16:07 by prod_rel_team
+!Image: sup-bootflash:s72033-adventerprisek9_wan-mz.122-33.SXI12.bin
+!
+!ROM Bootstrap: Version 12.2(17r)SX5, RELEASE SOFTWARE (fc1)
+!
+!% No entity named "raw"
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Gi4/3, Gi4/4
+!VLAN: 4    NATIVE:inter-ixag:Po1            active    
+!VLAN: 6    VLAN_TEST                        active    
+!VLAN: 10   NTT_MPLS                         active    
+!VLAN: 11   VLAN0011                         active    
+!VLAN: 19   VLAN0019                         active    
+!VLAN: 21   Z:10.100.21.0/24:ANW-DMZ         active    
+!VLAN: 22   Media                            active    
+!VLAN: 23   VLAN_VIPER_MGTM                  active    
+!VLAN: 25   IBM                              active    
+!VLAN: 31   Z:10.100.31.0/24:HUD-DMZ         active    
+!VLAN: 50   VLAN_TEST2                       active    
+!VLAN: 60   Interco ASR-CORE 172.31.254.0/30 active    
+!VLAN: 61   INTERCO ASR-CORE 172.31.254.4/30 active    
+!VLAN: 122  VLAN0122                         active    
+!VLAN: 124  VLAN0124                         active    
+!VLAN: 141  VLAN0141                         active    
+!VLAN: 171  S:AUDIOCODES_TO_SBC              active    
+!VLAN: 172  VLAN0172                         active    
+!VLAN: 173  X:172.16.0.16/28:Excel-SBC       active    
+!VLAN: 178  VLAN0178                         active    
+!VLAN: 179  X:185.37.222.0/26:INET_AS        active    
+!VLAN: 180  VLAN0180                         active    
+!VLAN: 181  VLAN0181                         active    
+!VLAN: 183  VLAN0183                         active    
+!VLAN: 184  VLAN0184                         active    
+!VLAN: 200  IBM:Prod:IPSec                   active    
+!VLAN: 252  X:172.31.252.8/29:CORE_SRX550    active    
+!VLAN: 300  Internet2-vIP_Net                active    
+!VLAN: 400  NTT_ROUTED                       active    
+!VLAN: 444  Z::185.37.220.0/26:AS_INET       active    
+!VLAN: 500  VL_ATL_500_AT1-MPLS-01           active    
+!VLAN: 757  X:MPLS-L2.GIN_P2P_ATL-TBR        active    
+!VLAN: 759  X:MPLS-L2.GIN_P2P_SJO-ATL        active    
+!VLAN: 820  E:100.64.247.88/30:EXT_CARR_SIP_ active    
+!VLAN: 901  VLAN0901                         active    
+!VLAN: 908  VLAN0908                         active    
+!VLAN: 997  TEST                             active    
+!VLAN: 999  X:172.16.254.16/30:ixrt          active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: 1103 SipCom-Arka                      active    
+!VLAN: 1110 Z:172.16.120.32/28:AMS-LB        active    
+!VLAN: 1111 Z:172.16.120.16/28:AMS-SBC       active    
+!VLAN: 1204 VLAN1204                         active    
+!VLAN: 1235 VLAN1235                         active    
+!VLAN: 1236 VLAN1236                         active    
+!VLAN: 1237 VLAN1237                         active    
+!VLAN: 1242 VLAN1242                         active    
+!VLAN: 1249 ROUTEMATCH_FW                    active    
+!VLAN: 1255 VLAN1255                         active    
+!VLAN: 1278 X:U:172.19.66.0/24:ONE_IS_SERVIC active    
+!VLAN: 1498 VLAN1498                         active    
+!VLAN: 1499 X:172.16.100.8/29:SEA_PEERING_PR active    
+!VLAN: 2001 VRF_ARKA_TEST                    active    
+!VLAN: 2024 X:VPN_CISCO_CCA:192.206.95.176/3 active    
+!VLAN: 2028 X:VPN_NTTA_WIRECARD:209.212.227. active    
+!VLAN: 2029 E:100.65.0.16/30:InterMountain:L active    
+!VLAN: 2031 E:Thermofisher:L                 active    Gi4/20
+!VLAN: 2083 X:U:172.30.251.4/30:COGENT_MAN_C active    
+!VLAN: 2601 VL_ATL_2601_MCC_106-EXT          active    
+!VLAN: 2602 VL_ATL_2602_NTTGN_SELF-EXT       active    
+!VLAN: 2997 X:172.16.120.240/29:VRF_BR-ARKA  active    
+!VLAN: 2999 X:172.16.240.32/29:VRF_ARKATEST  active    
+!VLAN: 3001 X:172.32.1.16/28:Axtel-SBC       active    
+!VLAN: 3002 X:172.16.100.32/28:Axatech-SBC   active    
+!VLAN: 3010 V-EXT_CUST_BROADSOFT-SBC         active    
+!VLAN: 3012 X:192.206.95.224/28:VRF_CPMP_SIP active    
+!VLAN: 3014 X:185.37.221.128/28:ThinkTel-SBC active    
+!VLAN: 3015 X:185.37.222.0/27:INET_AS        active    
+!VLAN: 3016 X:CISCO_CCA_SBC:192.206.95.184/2 active    
+!VLAN: 3017 X:VPN_APPLICABLE_SBC:100.64.40.1 active    
+!VLAN: 3018 X:VPN_IHC_SBC:10.5.250.128/28    active    
+!VLAN: 3019 X:VPN_NTTA_WIRECARD_SBC:209.212. active    
+!VLAN: 3020 X:172.16.100.96/28:EXT_SBC_SIP_B active    
+!VLAN: 3021 A:U:64.45.148.32/29:Blitz-GTT    active    
+!VLAN: 3022 VL_ATL_3022_PUBLIC-SIP           active    
+!VLAN: 3036 CCA:Thermofisher:L               active    
+!VLAN: 3101 VL_ATL_3101_MCC_106-LAN          active    
+!VLAN: 3102 X:VRF_IHC_SIP                    active    
+!VLAN: 3302 VL_ATL_3302_NTTGN_SELF-SBC       active    
+!VLAN: 3499 E:10.0.249.0/24:IBM_PP-SBC       active    
+!VLAN: 3500 E:10.0.249.0/24:IBM_PP-SBC2      active    
+!VLAN: 3502 E:216.149.232.24/30:Axatech_SIP  active    Gi2/1
+!VLAN: 3503 E:8.29.165.68/30:Excel_SIP       active    Gi2/4
+!VLAN: 3504 E:67.148.235.64/29:CenturyLink   active    
+!VLAN: 3508 VLAN3508                         active    
+!VLAN: 3509 E:BlITZ:64.45.148.5/30           active    
+!VLAN: 3510 E:10.0.253.0/24:IBM_PP-SBC2-SP1  active    
+!VLAN: 3512 E:VERIZON-ARKA:70.104.240.192/30 active    Gi2/13
+!VLAN: 3513 E:ATT-INTQ-ARKA:74.120.93.180/31 active    Gi2/10
+!VLAN: 3514 E:ThinkTel-crkt:206.80.252.98/30 active    
+!VLAN: 3516 E:Onovy:64.190.82.22/31          active    
+!VLAN: 3517 E:Peerless:207.223.73.63/31      active    
+!VLAN: 3518 E:10.183.6.32/28:IBM_PP-SBC2-IR3 active    
+!VLAN: 3519 E:U:64.45.148.16/30:Blitz-GTT    active    Gi2/3
+!VLAN: 3520 E-EXT_CUST_BROADSOFT-IX          active    
+!VLAN: 3521 E:SIP_BRTLNK                     active    
+!VLAN: 3522 X:10.190.0.29/31:VRF_CPMP_SIP-IX active    
+!VLAN: 4001 E:192.206.95.96/27:ATL_LB2       active    
+!VLAN: 4002 Vidyo-DMZ                        active    
+!VLAN: 4003 E:192.206.95.80/28:ATL_ARIN1_DIR active    
+!VLAN: 4004 VL_ATL_4004_VERIZ-IPSEC          active    
+!VLAN: 4044 Z::185.37.222.0/24:AS_INET       active    
+!VLAN: 4045 E:38.104.2.200/29:COGENT         active    
+!VLAN: 4046 VidyoWAN                         active    
+!VLAN: 4048 X:172.16.253.0/30:SRX_BDR_INTERC active    
+!VLAN: 4051 VLAN4051                         active    
+!VLAN: 4052 VLAN4052                         active    
+!VLAN: 4054 X:172.16.252.4/30:inter_MX5      active    
+!VLAN: 4061 I:MX_INTERCO:172.16.200.0/30     active    
+!VLAN: 4089 VLAN4089                         active    
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 4    enet  100004     1500  -      -      -        -    -        0      0   
+!VLAN: 6    enet  100006     1500  -      -      -        -    -        0      0   
+!VLAN: 10   enet  100010     1500  -      -      -        -    -        0      0   
+!VLAN: 11   enet  100011     1500  -      -      -        -    -        0      0   
+!VLAN: 19   enet  100019     1500  -      -      -        -    -        0      0   
+!VLAN: 21   enet  100021     1500  -      -      -        -    -        0      0   
+!VLAN: 22   enet  100022     1500  -      -      -        -    -        0      0   
+!VLAN: 23   enet  100023     1500  -      -      -        -    -        0      0   
+!VLAN: 25   enet  100025     1500  -      -      -        -    -        0      0   
+!VLAN: 31   enet  100031     1500  -      -      -        -    -        0      0   
+!VLAN: 50   enet  100050     1500  -      -      -        -    -        0      0   
+!VLAN: 60   enet  100060     1500  -      -      -        -    -        0      0   
+!VLAN: 61   enet  100061     1500  -      -      -        -    -        0      0   
+!VLAN: 122  enet  100122     1500  -      -      -        -    -        0      0   
+!VLAN: 124  enet  100124     1500  -      -      -        -    -        0      0   
+!VLAN: 141  enet  100141     1500  -      -      -        -    -        0      0   
+!VLAN: 171  enet  100171     1500  -      -      -        -    -        0      0   
+!VLAN: 172  enet  100172     1500  -      -      -        -    -        0      0   
+!VLAN: 173  enet  100173     1500  -      -      -        -    -        0      0   
+!VLAN: 178  enet  100178     1500  -      -      -        -    -        0      0   
+!VLAN: 179  enet  100179     1500  -      -      -        -    -        0      0   
+!VLAN: 180  enet  100180     1500  -      -      -        -    -        0      0   
+!VLAN: 181  enet  100181     1500  -      -      -        -    -        0      0   
+!VLAN: 183  enet  100183     1500  -      -      -        -    -        0      0   
+!VLAN: 184  enet  100184     1500  -      -      -        -    -        0      0   
+!VLAN: 200  enet  100200     1500  -      -      -        -    -        0      0   
+!VLAN: 252  enet  100252     1500  -      -      -        -    -        0      0   
+!VLAN: 300  enet  100300     1500  -      -      -        -    -        0      0   
+!VLAN: 400  enet  100400     1500  -      -      -        -    -        0      0   
+!VLAN: 444  enet  100444     1500  -      -      -        -    -        0      0   
+!VLAN: 500  enet  100500     1500  -      -      -        -    -        0      0   
+!VLAN: 757  enet  100757     1500  -      -      -        -    -        0      0   
+!VLAN: 759  enet  100759     1500  -      -      -        -    -        0      0   
+!VLAN: 820  enet  100820     1500  -      -      -        -    -        0      0   
+!VLAN: 901  enet  100901     1500  -      -      -        -    -        0      0   
+!VLAN: 908  enet  100908     1500  -      -      -        -    -        0      0   
+!VLAN: 997  enet  100997     1500  -      -      -        -    -        0      0   
+!VLAN: 999  enet  100999     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: 1103 enet  101103     1500  -      -      -        -    -        0      0   
+!VLAN: 1110 enet  101110     1500  -      -      -        -    -        0      0   
+!VLAN: 1111 enet  101111     1500  -      -      -        -    -        0      0   
+!VLAN: 1204 enet  101204     1500  -      -      -        -    -        0      0   
+!VLAN: 1235 enet  101235     1500  -      -      -        -    -        0      0   
+!VLAN: 1236 enet  101236     1500  -      -      -        -    -        0      0   
+!VLAN: 1237 enet  101237     1500  -      -      -        -    -        0      0   
+!VLAN: 1242 enet  101242     1500  -      -      -        -    -        0      0   
+!VLAN: 1249 enet  101249     1500  -      -      -        -    -        0      0   
+!VLAN: 1255 enet  101255     1500  -      -      -        -    -        0      0   
+!VLAN: 1278 enet  101278     1500  -      -      -        -    -        0      0   
+!VLAN: 1498 enet  101498     1500  -      -      -        -    -        0      0   
+!VLAN: 1499 enet  101499     1500  -      -      -        -    -        0      0   
+!VLAN: 2001 enet  102001     1500  -      -      -        -    -        0      0   
+!VLAN: 2024 enet  102024     1500  -      -      -        -    -        0      0   
+!VLAN: 2028 enet  102028     1500  -      -      -        -    -        0      0   
+!VLAN: 2029 enet  102029     1500  -      -      -        -    -        0      0   
+!VLAN: 2031 enet  102031     1500  -      -      -        -    -        0      0   
+!VLAN: 2083 enet  102083     1500  -      -      -        -    -        0      0   
+!VLAN: 2601 enet  102601     1500  -      -      -        -    -        0      0   
+!VLAN: 2602 enet  102602     1500  -      -      -        -    -        0      0   
+!VLAN: 2997 enet  102997     1500  -      -      -        -    -        0      0   
+!VLAN: 2999 enet  102999     1500  -      -      -        -    -        0      0   
+!VLAN: 3001 enet  103001     1500  -      -      -        -    -        0      0   
+!VLAN: 3002 enet  103002     1500  -      -      -        -    -        0      0   
+!VLAN: 3010 enet  103010     1500  -      -      -        -    -        0      0   
+!VLAN: 3012 enet  103012     1500  -      -      -        -    -        0      0   
+!VLAN: 3014 enet  103014     1500  -      -      -        -    -        0      0   
+!VLAN: 3015 enet  103015     1500  -      -      -        -    -        0      0   
+!VLAN: 3016 enet  103016     1500  -      -      -        -    -        0      0   
+!VLAN: 3017 enet  103017     1500  -      -      -        -    -        0      0   
+!VLAN: 3018 enet  103018     1500  -      -      -        -    -        0      0   
+!VLAN: 3019 enet  103019     1500  -      -      -        -    -        0      0   
+!VLAN: 3020 enet  103020     1500  -      -      -        -    -        0      0   
+!VLAN: 3021 enet  103021     1500  -      -      -        -    -        0      0   
+!VLAN: 3022 enet  103022     1500  -      -      -        -    -        0      0   
+!VLAN: 3036 enet  103036     1500  -      -      -        -    -        0      0   
+!VLAN: 3101 enet  103101     1500  -      -      -        -    -        0      0   
+!VLAN: 3102 enet  103102     1500  -      -      -        -    -        0      0   
+!VLAN: 3302 enet  103302     1500  -      -      -        -    -        0      0   
+!VLAN: 3499 enet  103499     1500  -      -      -        -    -        0      0   
+!VLAN: 3500 enet  103500     1500  -      -      -        -    -        0      0   
+!VLAN: 3502 enet  103502     1500  -      -      -        -    -        0      0   
+!VLAN: 3503 enet  103503     1500  -      -      -        -    -        0      0   
+!VLAN: 3504 enet  103504     1500  -      -      -        -    -        0      0   
+!VLAN: 3508 enet  103508     1500  -      -      -        -    -        0      0   
+!VLAN: 3509 enet  103509     1500  -      -      -        -    -        0      0   
+!VLAN: 3510 enet  103510     1500  -      -      -        -    -        0      0   
+!VLAN: 3512 enet  103512     1500  -      -      -        -    -        0      0   
+!VLAN: 3513 enet  103513     1500  -      -      -        -    -        0      0   
+!VLAN: 3514 enet  103514     1500  -      -      -        -    -        0      0   
+!VLAN: 3516 enet  103516     1500  -      -      -        -    -        0      0   
+!VLAN: 3517 enet  103517     1500  -      -      -        -    -        0      0   
+!VLAN: 3518 enet  103518     1500  -      -      -        -    -        0      0   
+!VLAN: 3519 enet  103519     1500  -      -      -        -    -        0      0   
+!VLAN: 3520 enet  103520     1500  -      -      -        -    -        0      0   
+!VLAN: 3521 enet  103521     1500  -      -      -        -    -        0      0   
+!VLAN: 3522 enet  103522     1500  -      -      -        -    -        0      0   
+!VLAN: 4001 enet  104001     1500  -      -      -        -    -        0      0   
+!VLAN: 4002 enet  104002     1500  -      -      -        -    -        0      0   
+!VLAN: 4003 enet  104003     1500  -      -      -        -    -        0      0   
+!VLAN: 4004 enet  104004     1500  -      -      -        -    -        0      0   
+!VLAN: 4044 enet  104044     1500  -      -      -        -    -        0      0   
+!VLAN: 4045 enet  104045     1500  -      -      -        -    -        0      0   
+!VLAN: 4046 enet  104046     1500  -      -      -        -    -        0      0   
+!VLAN: 4048 enet  104048     1500  -      -      -        -    -        0      0   
+!VLAN: 4051 enet  104051     1500  -      -      -        -    -        0      0   
+!VLAN: 4052 enet  104052     1500  -      -      -        -    -        0      0   
+!VLAN: 4054 enet  104054     1500  -      -      -        -    -        0      0   
+!VLAN: 4061 enet  104061     1500  -      -      -        -    -        0      0   
+!VLAN: 4089 enet  104089     1500  -      -      -        -    -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0x2102
+Using 32544 out of 1964024 bytes
+!
+upgrade fpd auto
+version 12.2
+service timestamps debug datetime show-timezone
+service timestamps log datetime localtime
+service password-encryption
+service sequence-numbers
+service counters max age 10
+!
+hostname atlixag01
+!
+boot-start-marker
+boot system flash sup-bootflash:s72033-adventerprisek9_wan-mz.122-33.SXI12.bin
+boot system flash sup-bootflash:s72033-ipservicesk9_wan-mz.122-18.SXF11.bin
+boot-end-marker
+!
+logging buffered 128000 notifications
+enable secret 5 $1$Y9LX$MKe7CTyNRwlqxLFnFM/qx0
+!
+!username netops privilege 15 password <removed>
+username noc privilege 0 secret 5 $1$eP65$dCkEJV6bg8FbfelRNGN9D1
+aaa new-model
+!
+aaa authentication login default local
+aaa authentication login ARKANETRADIUS group radius local
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+clock summer-time EDT recurring
+logging event link-status default
+!
+ip tcp synwait-time 5
+ip vrf VZ_VOIP
+ rd 53550:16016
+ route-target export 53550:16016
+ route-target import 53550:16016
+ route-target import 53550:14011
+!
+ip vrf gc-vidyo
+ rd 53550:14012
+ route-target export 53550:14012
+ route-target import 53550:14012
+!
+ip scp server enable
+no ip domain-lookup
+ip domain-name arkadin.lan
+ip sla 1
+ icmp-echo 10.100.24.130
+ timeout 1000
+ threshold 1000
+ frequency 1
+ip sla schedule 1 life forever start-time now
+ip sla 2
+ icmp-echo 10.100.23.140
+ timeout 1000
+ threshold 1000
+ frequency 1
+ip sla schedule 2 life forever start-time now
+ip sla 3
+ icmp-echo 10.100.23.3
+ timeout 1000
+ threshold 1000
+ frequency 1
+ip sla schedule 3 life forever start-time now
+ip sla 4
+ icmp-echo 10.100.124.170
+ timeout 1000
+ threshold 1000
+ frequency 1
+ip sla schedule 4 life forever start-time now
+ip sla 5
+ icmp-echo 10.100.23.142
+ timeout 1000
+ threshold 1000
+ frequency 1
+ip sla schedule 5 life forever start-time now
+login block-for 100 attempts 15 within 100
+login quiet-mode access-class OAM
+login on-failure log
+login on-success log
+udld aggressive
+
+vtp domain arkadin
+vtp mode off
+no mls acl tcam share-global
+mls netflow interface
+mls qos map cos-dscp 0 10 18 24 34 46 48 56
+no mls qos rewrite ip dscp
+mls qos
+mls cef error action freeze
+!
+archive
+ log config
+  logging enable
+  logging size 500
+  notify syslog contenttype plaintext
+  hidekeys
+ path sup-bootflash:
+file prompt quiet
+!
+spanning-tree mode rapid-pvst
+spanning-tree loopguard default
+spanning-tree portfast edge default
+no spanning-tree optimize bpdu transmission
+spanning-tree extend system-id
+spanning-tree vlan 1-999 priority 49152
+spanning-tree vlan 1000-4094 priority 0
+diagnostic bootup level minimal
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+errdisable recovery cause link-flap
+access-list 1 permit 72.89.243.119
+access-list 1 remark Management Access
+access-list 1 permit 10.0.0.0 0.255.255.255
+access-list 1 permit 38.65.194.0 0.0.0.255
+access-list 1 deny   any log
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+access-list 101 remark QuietMode
+access-list 101 permit ip 10.0.0.0 0.0.0.255 any
+!
+redundancy
+ main-cpu
+  auto-sync running-config
+ mode sso
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+!
+vlan internal allocation policy ascending
+vlan access-log ratelimit 2000
+!
+vlan 4
+ name NATIVE:inter-ixag:Po1
+!
+vlan 6
+ name VLAN_TEST
+!
+vlan 10
+ name NTT_MPLS
+!
+vlan 11,19 
+!
+vlan 21
+ name Z:10.100.21.0/24:ANW-DMZ
+!
+vlan 22
+ name Media
+!
+vlan 23
+ name VLAN_VIPER_MGTM
+!
+vlan 25
+ name IBM
+!
+vlan 31
+ name Z:10.100.31.0/24:HUD-DMZ
+!
+vlan 50
+ name VLAN_TEST2
+!
+vlan 60
+ name "Interco ASR-CORE 172.31.254.0/30"
+!
+vlan 61
+ name "INTERCO ASR-CORE 172.31.254.4/30"
+!
+vlan 122,124,141 
+!
+vlan 171
+ name S:AUDIOCODES_TO_SBC
+!
+vlan 172 
+!
+vlan 173
+ name X:172.16.0.16/28:Excel-SBC
+!
+vlan 178 
+!
+vlan 179
+ name X:185.37.222.0/26:INET_AS
+!
+vlan 180-181,183-184 
+!
+vlan 200
+ name IBM:Prod:IPSec
+!
+vlan 252
+ name X:172.31.252.8/29:CORE_SRX550
+!
+vlan 300
+ name Internet2-vIP_Net
+!
+vlan 400
+ name NTT_ROUTED
+!
+vlan 444
+ name Z::185.37.220.0/26:AS_INET
+!
+vlan 500
+ name VL_ATL_500_AT1-MPLS-01
+!
+vlan 757
+ name X:MPLS-L2.GIN_P2P_ATL-TBR
+!
+vlan 759
+ name X:MPLS-L2.GIN_P2P_SJO-ATL
+!
+vlan 820
+ name E:100.64.247.88/30:EXT_CARR_SIP_
+!
+vlan 901,908 
+!
+vlan 997
+ name TEST
+!
+vlan 999
+ name X:172.16.254.16/30:ixrt
+!
+vlan 1103
+ name SipCom-Arka
+!
+vlan 1110
+ name Z:172.16.120.32/28:AMS-LB
+!
+vlan 1111
+ name Z:172.16.120.16/28:AMS-SBC
+!
+vlan 1204,1235-1237,1242 
+!
+vlan 1249
+ name ROUTEMATCH_FW
+!
+vlan 1255 
+!
+vlan 1278
+ name X:U:172.19.66.0/24:ONE_IS_SERVIC
+!
+vlan 1498 
+!
+vlan 1499
+ name X:172.16.100.8/29:SEA_PEERING_PR
+!
+vlan 2001
+ name VRF_ARKA_TEST
+!
+vlan 2024
+ name X:VPN_CISCO_CCA:192.206.95.176/3
+!
+vlan 2028
+ name X:VPN_NTTA_WIRECARD:209.212.227.
+!
+vlan 2029
+ name E:100.65.0.16/30:InterMountain:L
+!
+vlan 2031
+ name E:Thermofisher:L
+!
+vlan 2083
+ name X:U:172.30.251.4/30:COGENT_MAN_C
+!
+vlan 2601
+ name VL_ATL_2601_MCC_106-EXT
+!
+vlan 2602
+ name VL_ATL_2602_NTTGN_SELF-EXT
+!
+vlan 2997
+ name X:172.16.120.240/29:VRF_BR-ARKA
+!
+vlan 2999
+ name X:172.16.240.32/29:VRF_ARKATEST
+!
+vlan 3001
+ name X:172.32.1.16/28:Axtel-SBC
+!
+vlan 3002
+ name X:172.16.100.32/28:Axatech-SBC
+!
+vlan 3010
+ name V-EXT_CUST_BROADSOFT-SBC
+!
+vlan 3012
+ name X:192.206.95.224/28:VRF_CPMP_SIP
+!
+vlan 3014
+ name X:185.37.221.128/28:ThinkTel-SBC
+!
+vlan 3015
+ name X:185.37.222.0/27:INET_AS
+!
+vlan 3016
+ name X:CISCO_CCA_SBC:192.206.95.184/2
+!
+vlan 3017
+ name X:VPN_APPLICABLE_SBC:100.64.40.1
+!
+vlan 3018
+ name X:VPN_IHC_SBC:10.5.250.128/28
+!
+vlan 3019
+ name X:VPN_NTTA_WIRECARD_SBC:209.212.
+!
+vlan 3020
+ name X:172.16.100.96/28:EXT_SBC_SIP_B
+!
+vlan 3021
+ name A:U:64.45.148.32/29:Blitz-GTT
+!
+vlan 3022
+ name VL_ATL_3022_PUBLIC-SIP
+!
+vlan 3036
+ name CCA:Thermofisher:L
+!
+vlan 3101
+ name VL_ATL_3101_MCC_106-LAN
+!
+vlan 3102
+ name X:VRF_IHC_SIP
+!
+vlan 3302
+ name VL_ATL_3302_NTTGN_SELF-SBC
+!
+vlan 3499
+ name E:10.0.249.0/24:IBM_PP-SBC
+!
+vlan 3500
+ name E:10.0.249.0/24:IBM_PP-SBC2
+!
+vlan 3502
+ name E:216.149.232.24/30:Axatech_SIP
+!
+vlan 3503
+ name E:8.29.165.68/30:Excel_SIP
+!
+vlan 3504
+ name E:67.148.235.64/29:CenturyLink
+!
+vlan 3508 
+!
+vlan 3509
+ name E:BlITZ:64.45.148.5/30
+!
+vlan 3510
+ name E:10.0.253.0/24:IBM_PP-SBC2-SP1
+!
+vlan 3512
+ name E:VERIZON-ARKA:70.104.240.192/30
+!
+vlan 3513
+ name E:ATT-INTQ-ARKA:74.120.93.180/31
+!
+vlan 3514
+ name E:ThinkTel-crkt:206.80.252.98/30
+!
+vlan 3516
+ name E:Onovy:64.190.82.22/31
+!
+vlan 3517
+ name E:Peerless:207.223.73.63/31
+!
+vlan 3518
+ name E:10.183.6.32/28:IBM_PP-SBC2-IR3
+!
+vlan 3519
+ name E:U:64.45.148.16/30:Blitz-GTT
+!
+vlan 3520
+ name E-EXT_CUST_BROADSOFT-IX
+!
+vlan 3521
+ name E:SIP_BRTLNK
+!
+vlan 3522
+ name X:10.190.0.29/31:VRF_CPMP_SIP-IX
+!
+vlan 4001
+ name E:192.206.95.96/27:ATL_LB2
+!
+vlan 4002
+ name Vidyo-DMZ
+!
+vlan 4003
+ name E:192.206.95.80/28:ATL_ARIN1_DIR
+!
+vlan 4004
+ name VL_ATL_4004_VERIZ-IPSEC
+!
+vlan 4044
+ name Z::185.37.222.0/24:AS_INET
+!
+vlan 4045
+ name E:38.104.2.200/29:COGENT
+!
+vlan 4046
+ name VidyoWAN
+!
+vlan 4048
+ name X:172.16.253.0/30:SRX_BDR_INTERC
+!
+vlan 4051-4052 
+!
+vlan 4054
+ name X:172.16.252.4/30:inter_MX5
+!
+vlan 4061
+ name I:MX_INTERCO:172.16.200.0/30
+!
+vlan 4089 
+lldp run
+!
+interface Port-channel1
+ description Q:atlixag02:po1
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 4
+ switchport trunk allowed vlan 6,8,19,21,25,31,171-173,178-184,200,300,301
+ switchport trunk allowed vlan add 612-699,725,745,757,759,901,908,999
+ switchport trunk allowed vlan add 1010-2029,2031-4094
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ spanning-tree link-type point-to-point
+!
+interface Port-channel10
+ description Q:atlcore01:po10
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1,5-4094
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet1/1
+ no ip address
+ shutdown
+!
+interface GigabitEthernet1/2
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/1
+ description E_CUST:NR:XO_AT_LMXX_986924_TQW:AXATECH_SIP
+ switchport
+ switchport access vlan 3502
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ no cdp enable
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet2/2
+ description MAN:PR:AT-VGAATL1-66:NTTGN_VIRTELA_ID_20986368_PP0203-180907_P5-6
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 2601,2602
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ speed nonegotiate
+ no cdp enable
+!
+interface GigabitEthernet2/3
+ description E_CARR:NR:00770570:GTT_BLITZ_CARR
+ switchport
+ switchport access vlan 3519
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ no cdp enable
+!
+interface GigabitEthernet2/4
+ description E_CARR:AA:VFG100713200A:IMPACT_EXCEL_CARR
+ switchport
+ switchport access vlan 3503
+ switchport mode access
+ bandwidth 200000
+ logging event link-status
+ load-interval 30
+ speed nonegotiate
+ no cdp enable
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet2/5
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/6
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/7
+ description E_CARR:AA:HE-3989925:HE_BRDSFT_CPMP_SIP
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 3520,3522
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet2/8
+ no ip address
+!
+interface GigabitEthernet2/9
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/10
+ description E_CARR:AA:18316291:ATT_INTQ_SIP
+ switchport
+ switchport access vlan 3513
+ switchport mode access
+ bandwidth 300000
+ logging event link-status
+ load-interval 30
+ speed nonegotiate
+ no cdp enable
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet2/11
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/12
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/13
+ description E_CARR:AA:18234673:VERIZ_SIP
+ switchport
+ switchport access vlan 3512
+ switchport mode access
+ bandwidth 750000
+ logging event link-status
+ load-interval 30
+ speed nonegotiate
+ no cdp enable
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet2/14
+ no ip address
+!
+interface GigabitEthernet2/15
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/16
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/17
+ description E:BRTLNK:PF-AP-ATL1-34242:SIP-TRUNK:CableID:PP:0703:1025457_PP209-210
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 3521
+ switchport mode trunk
+ load-interval 30
+ no cdp enable
+!
+interface GigabitEthernet2/18
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/19
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/20
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/21
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/22
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/23
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/24
+ description B:AA:VC-GIN-EU-SID2004630:Z-END_NTT_VLINK_VC-366-Z_P14620090_AT3-TBR_tbrixag02
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 757
+ switchport mode trunk
+ mtu 9216
+ bandwidth 100000
+ logging event link-status
+ load-interval 30
+ speed nonegotiate
+ no cdp enable
+ spanning-tree bpdufilter enable
+!
+interface TenGigabitEthernet3/1
+ description X:atlsbc02a:m01
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 6,8,25,172,173,178-190,200,300,301,1111,1204
+ switchport trunk allowed vlan add 1496,3001,3002,3010-3012,3014-3022,3036,3102
+ switchport trunk allowed vlan add 3302,3499,3500,3510,3518,4002,4004,4044
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+!
+interface TenGigabitEthernet3/2
+ no ip address
+ shutdown
+!
+interface TenGigabitEthernet3/3
+ no ip address
+ shutdown
+!
+interface TenGigabitEthernet3/4
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/1
+ no ip address
+ shutdown
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+!
+interface GigabitEthernet4/2
+ description E_CUST:NR:FRO2005643503_EON920667:LEVEL3_COLUMBIA_SIP
+ ip address 10.175.7.250 255.255.255.252
+ logging event link-status
+ load-interval 30
+ speed 100
+ duplex full
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+!
+interface GigabitEthernet4/3
+ description X:USNYCSBC3A:M10
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 6,8,25,171,178-190,200,300,301,1111,1204,1496
+ switchport trunk allowed vlan add 3001,3499,3500,3510,3518,4002,4044
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ wrr-queue bandwidth 20 100 200 
+ priority-queue queue-limit 5 
+ wrr-queue queue-limit 65 15 15 
+ wrr-queue random-detect min-threshold 1 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 2 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 3 40 40 50 50 60 60 70 70 
+ wrr-queue random-detect max-threshold 1 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 2 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 3 70 70 80 80 90 90 100 100 
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+!
+interface GigabitEthernet4/4
+ description X:USNYCSBC3A:M11
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 6,8,25,171,178-190,200,300,301,1111,1204,1496
+ switchport trunk allowed vlan add 3001,3499,4002,4044
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ wrr-queue bandwidth 20 100 200 
+ priority-queue queue-limit 5 
+ wrr-queue queue-limit 65 15 15 
+ wrr-queue random-detect min-threshold 1 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 2 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 3 40 40 50 50 60 60 70 70 
+ wrr-queue random-detect max-threshold 1 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 2 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 3 70 70 80 80 90 90 100 100 
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+!
+interface GigabitEthernet4/5
+ description X:usatlinet01:Gi1/1/0
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 725,745,3513,3514,3516,3517,3521,4054,4061
+ switchport mode trunk
+ mtu 9216
+ logging event link-status
+ load-interval 30
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+!
+interface GigabitEthernet4/6
+ description E_CUST:NR:1-135373639:COGENT_AXTEL_SIP
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 2014
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ speed 100
+ duplex full
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ no cdp enable
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet4/7
+ no ip address
+ shutdown
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+!
+interface GigabitEthernet4/8
+ no ip address
+ shutdown
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+!
+interface GigabitEthernet4/9
+ no ip address
+ shutdown
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+!
+interface GigabitEthernet4/10
+ no ip address
+ shutdown
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+!
+interface GigabitEthernet4/11
+ description X:usatlinet01:Gi1/1/1
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 3014,4048,4051,4052
+ switchport mode trunk
+ mtu 9216
+ logging event link-status
+ load-interval 30
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+!
+interface GigabitEthernet4/12
+ description X:usatlinet01:Gi1/1/2
+ switchport
+ switchport access vlan 4002
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 19,172,901,908,3015,3508-3519,4060
+ switchport mode trunk
+ mtu 9216
+ logging event link-status
+ load-interval 30
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+!
+interface GigabitEthernet4/13
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/14
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/15
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/16
+ description X:atlfw01-1:0/0/1:SRX1400
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 8,4044,4048,4089
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ spanning-tree portfast edge trunk
+!
+interface GigabitEthernet4/17
+ description X:atlfw01-1:0/0/3:SRX1400
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 21,31,1249
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ spanning-tree portfast edge trunk
+!
+interface GigabitEthernet4/18
+ description X:atlfw01-1:0/0/5:SRX1400
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 50
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ spanning-tree portfast edge trunk
+!
+interface GigabitEthernet4/19
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/20
+ description E_CUST:ATT_IZEC.565533..ATI_GA/KFGS/100052/TPM_002.08.01.64 JACK 64
+ switchport
+ switchport access vlan 2031
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ no cdp enable
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet4/21
+ description po1:atlixag02:Gi2/21
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 4
+ switchport trunk allowed vlan 6,8,19,21,25,31,171-173,178-184,200,300,301
+ switchport trunk allowed vlan add 612-699,725,745,757,759,901,908,999
+ switchport trunk allowed vlan add 1010-2029,2031-4094
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-group 1 mode desirable
+!
+interface GigabitEthernet4/22
+ description po1:atlixag02:Gi2/22
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 4
+ switchport trunk allowed vlan 6,8,19,21,25,31,171-173,178-184,200,300,301
+ switchport trunk allowed vlan add 612-699,725,745,757,759,901,908,999
+ switchport trunk allowed vlan add 1010-2029,2031-4094
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-group 1 mode desirable
+!
+interface GigabitEthernet4/23
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/24
+ description X:atlvpn01-1:ge-0/0/4:SRX550
+ switchport
+ switchport access vlan 4044
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 8,4004,4044
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+!
+interface GigabitEthernet4/25
+ description X:atlvpn01-1:ge-0/0/5:SRX550
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 200,252,1102,1278,1496,1497,3499,3500,3510,3518
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+!
+interface GigabitEthernet4/26
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/27
+ description Z:USNYCDMZSW1:P22
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 21,22,122,1110,1111,4044
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ speed 1000
+ duplex full
+ no cdp enable
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet4/28
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/29
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/30
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/31
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/32
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/33
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/34
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/35
+ description X:usatlinet01:Gi1/1/3
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 3015,3022,4001,4003
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/36
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/37
+ description M:USNYCOPS1
+ no ip address
+ logging event link-status
+ load-interval 30
+!
+interface GigabitEthernet4/38
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/39
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/40
+ description Q:atlcore01:Gi4/40
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1,5-4094
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-group 10 mode desirable
+!
+interface GigabitEthernet4/41
+ description X:atlixrt02:G0/0/0
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 500,725,757,759
+ switchport mode trunk
+ mtu 9216
+ logging event link-status
+ load-interval 30
+ spanning-tree portfast edge trunk
+!
+interface GigabitEthernet4/42
+ description X:atlixrt02:G0/0/1:internal
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 19,171,173,998,1102,1204,1235,1255,1498,2001
+ switchport trunk allowed vlan add 2020,2997,3001-3500,3510,3518,4002,4051,4052
+ switchport mode trunk
+ mtu 9216
+ logging event link-status
+ load-interval 30
+ spanning-tree portfast edge trunk
+!
+interface GigabitEthernet4/43
+ description X:atlixrt02:G0/0/2:collect
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 2001-3000,3501-4000
+ switchport mode trunk
+ mtu 9216
+ logging event link-status
+ load-interval 30
+!
+interface GigabitEthernet4/44
+ description X:atlixrt02:G0/0/3
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 999,2999,4046
+ switchport mode trunk
+ mtu 9216
+ logging event link-status
+ load-interval 30
+ spanning-tree portfast edge trunk
+!
+interface GigabitEthernet4/45
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/46
+ description Q:atlcore01:Gi4/46
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1,5-4094
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-group 10 mode desirable
+!
+interface GigabitEthernet4/47
+ description Q:Po1:atlixag02:Gi2/47
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 4
+ switchport trunk allowed vlan 6,8,19,21,25,31,171-173,178-184,200,300,301
+ switchport trunk allowed vlan add 612-699,725,745,757,759,901,908,999
+ switchport trunk allowed vlan add 1010-2029,2031-4094
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-group 1 mode desirable
+!
+interface GigabitEthernet4/48
+ description Q:Po1:atlixag02:Gi2/48
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 4
+ switchport trunk allowed vlan 6,8,19,21,25,31,171-173,178-184,200,300,301
+ switchport trunk allowed vlan add 612-699,725,745,757,759,901,908,999
+ switchport trunk allowed vlan add 1010-2029,2031-4094
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-group 1 mode desirable
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan6
+ description FW-Internet-Cogent
+ no ip address
+ no ip redirects
+ ip flow ingress
+ shutdown
+!
+interface Vlan19
+ ip address 10.100.19.251 255.255.255.0
+!
+interface Vlan172
+ no ip address
+ standby 1 priority 200
+ standby 1 preempt
+!
+interface Vlan173
+ no ip address
+ shutdown
+!
+interface Vlan178
+ no ip address
+!
+interface Vlan180
+ ip address 172.16.100.62 255.255.255.240
+!
+interface Vlan181
+ ip address 172.16.100.78 255.255.255.240
+!
+interface Vlan183
+ no ip address
+ shutdown
+!
+interface Vlan184
+ ip address 172.16.100.94 255.255.255.240
+!
+interface Vlan659
+ ip address 172.30.252.253 255.255.255.252
+ shutdown
+!
+interface Vlan901
+ no ip address
+!
+interface Vlan908
+ no ip address
+!
+interface Vlan3002
+ no ip address
+ shutdown
+!
+interface Vlan3499
+ ip address 10.0.249.254 255.255.255.0
+!
+interface Vlan4044
+ no ip address
+ shutdown
+!
+interface Vlan4046
+ ip vrf forwarding gc-vidyo
+ ip address 206.165.72.209 255.255.255.252
+!
+ip classless
+ip forward-protocol nd
+ip route 0.0.0.0 0.0.0.0 10.100.19.254
+ip route 10.100.1.252 255.255.255.255 172.16.100.59
+ip route 10.112.35.0 255.255.255.0 10.0.249.253
+ip route 10.112.48.0 255.255.255.0 10.0.249.253
+ip route 10.164.61.0 255.255.255.0 10.0.253.253
+ip route 10.164.66.0 255.255.255.0 10.0.253.253
+ip route 10.175.141.41 255.255.255.255 10.175.7.249
+ip route 10.222.4.79 255.255.255.255 172.16.100.75
+ip route 173.225.22.0 255.255.255.0 172.17.200.2
+!
+ip as-path access-list 10 permit ^3549$
+ip as-path access-list 500 permit ^701$
+!
+no ip http server
+no ip http secure-server
+!
+ip prefix-list BLITZ permit 185.37.222.0/26
+!
+ip prefix-list PFX-GC-BCPH9257-OUT permit 172.16.0.0/28
+!
+ip prefix-list PFX-GC-BCPH9258-OUT permit 172.16.0.0/28
+!
+ip prefix-list default-route permit 0.0.0.0/0
+!
+ip prefix-list level3-voip-out permit 4.28.72.240/28
+ip prefix-list level3-voip-out permit 4.28.135.32/28
+ip prefix-list level3-voip-out permit 172.16.0.32/28
+ip prefix-list level3-voip-out permit 208.49.141.128/27
+ip prefix-list level3-voip-out deny 0.0.0.0/0 le 32
+ip radius source-interface Vlan19 
+logging trap notifications
+logging origin-id hostname
+logging facility local5
+logging source-interface Vlan19
+logging 10.100.137.24
+logging 10.100.137.89
+!
+route-map BLITZ_OUT permit 10
+ match ip address prefix-list BLITZ
+!
+route-map GC-BCPH9257-IN permit 10
+ match as-path 10
+ set local-preference 200
+!
+route-map GC-BCPH9257-IN deny 100
+!
+route-map GC-BCPH9257-OUT permit 10
+ match ip address prefix-list PFX-GC-BCPH9257-OUT
+!
+route-map GC-BCPH9257-OUT deny 100
+!
+route-map GC-BCPH9258-IN permit 10
+ match as-path 10
+!
+route-map GC-BCPH9258-IN deny 100
+!
+route-map GC-BCPH9258-OUT permit 10
+ match ip address prefix-list PFX-GC-BCPH9258-OUT
+ set as-path prepend 64560 64560 64560
+!
+route-map GC-BCPH9258-OUT deny 100
+!
+route-map VZ701-IN permit 10
+ match as-path 500
+!
+route-map level3-voip-out permit 10
+ match ip address prefix-list level3-voip-out
+!
+route-map level3-voip-out deny 100
+!
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server ifindex persist
+snmp-server location noram-atl
+snmp-server contact nio@arkadin.com
+snmp-server host 10.100.19.21 version 2c noc_services 
+snmp-server host 10.100.137.55 version 2c noc_services 
+snmp ifmib ifindex persist
+!
+radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server timeout 3
+!radius-server key <removed>
+!
+control-plane
+!
+dial-peer cor custom
+!
+banner login ^C====================================================================
+=         UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED         =
+=    You must have explicit, authorized permission to access or    =
+=   configure this device. Unauthorized attempts and actions to    =
+=   access or use this system may result in civil and/or criminal  =
+= All activities performed on this device are logged and monitored =
+====================================================================
+^C
+alias exec siib sh ip int brief
+alias exec u undebug all
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+privilege exec level 0 show environment
+!
+line con 0
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 30 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+!
+monitor session 1 source interface Gi2/17
+monitor session 1 destination interface Gi4/37
+ntp source Vlan19
+ntp server 10.100.51.1 prefer
+ntp server 10.122.97.1
+mac-address-table aging-time 14400
+!
+end

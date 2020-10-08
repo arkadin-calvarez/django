@@ -1,0 +1,1950 @@
+#RANCID-CONTENT-TYPE: juniper
+#
+# pa2-lf-02> show chassis clocks 
+# pa2-lf-02> show chassis firmware local
+# pa2-lf-02> show chassis firmware 
+# Part                     Type       Version
+# FPC 0                    U-Boot                                       \x06 §À\x04    
+#                          loader           FreeBSD/i386 bootstrap loader 1.2    
+#                          BIOS       V0018.6U                                   
+#                          TMC FPGA   5.2.4                                      
+#                          Optics CPLD 6.1.6                                      
+#                          RE FPGA    3.1.3                                      
+#                          Power CPLD 1.9                                        
+# 
+# pa2-lf-02> show chassis fpc detail 
+# Slot 0 information:
+#   State                               Online    
+#   Total CPU DRAM                 3907 MB
+#   Total SRAM                        0 MB
+#   Total SDRAM                       0 MB
+# 
+# pa2-lf-02> show chassis hardware detail 
+# Hardware inventory:
+# Item             Version  Part number  Serial number     Description
+# Chassis                                WH0216500130      QFX5200-32C-32Q
+# Pseudo CB 0     
+# Routing Engine 0          BUILTIN      BUILTIN           RE-QFX5200-32C-32Q
+# FPC 0            REV 19   650-059720   WH0216500130      QFX5200-32C-32Q
+#   CPU                     BUILTIN      BUILTIN           FPC CPU
+#   PIC 0                   BUILTIN      BUILTIN           32X40G/32X100G-QSFP
+#     Xcvr 0       REV 01   740-038153   APF162800349YK    QSFP+-40G-CU3M
+#     Xcvr 1       REV 01   740-011613   E1706300085       QSFP+-40G-CU5M
+#     Xcvr 2       REV 01   740-038153   APF16310036HC2    QSFP+-40G-CU3M
+#     Xcvr 3       REV 01   740-011613   E1706300086       QSFP+-40G-CU3M
+#     Xcvr 4       REV 01   740-038153   APF1705003831K    QSFP+-40G-CU3M
+#     Xcvr 5       REV 01   740-011613   E1706300089       QSFP+-40G-CU3M
+#     Xcvr 6       REV01    740-061001   E1806030263       QSFP28-100G-CU3M
+#     Xcvr 7                NON-JNPR     AF1939GU00U       100GBASE-SR4
+#     Xcvr 8                NON-JNPR     AF1939GU01F       100GBASE-SR4
+#     Xcvr 24      REV 01   740-045627   M1811151938       40GBASE eSR4
+#     Xcvr 26      REV 01   740-038623   M9BH0337          QSFP28-100G-CU1M
+#     Xcvr 27               NON-JNPR     r2jtgfrd0040      QSFP28-100G-CU1M
+#     Xcvr 28      REV 01   740-038623   MOC17146230231    QSFP+-40G-CU1M
+#     Xcvr 29      REV 01   740-038623   MOC17146230551    QSFP+-40G-CU1M
+#     Xcvr 30      REV 01   740-038623   M9BH0024          QSFP28-100G-CU1M
+#     Xcvr 31      REV 01   740-038623   M9BH0022          QSFP28-100G-CU1M
+# Power Supply 0   REV 03   740-053351   1GA96030206       JPSU-850W-AC-AFI
+# Power Supply 1   REV 03   740-053351   1GA96030207       JPSU-850W-AC-AFI
+# Fan Tray 0                                               QFX5200 Fan Tray 0, Back to Front Airflow - AFI
+# Fan Tray 1                                               QFX5200 Fan Tray 1, Back to Front Airflow - AFI
+# Fan Tray 2                                               QFX5200 Fan Tray 2, Back to Front Airflow - AFI
+# Fan Tray 3                                               QFX5200 Fan Tray 3, Back to Front Airflow - AFI
+# Fan Tray 4                                               QFX5200 Fan Tray 4, Back to Front Airflow - AFI
+# 
+# pa2-lf-02> show chassis hardware models 
+# pa2-lf-02> show chassis scb 
+# pa2-lf-02> show chassis sfm detail 
+# pa2-lf-02> show chassis ssb 
+# pa2-lf-02> show chassis feb detail 
+# pa2-lf-02> show chassis feb 
+# pa2-lf-02> show chassis cfeb 
+# pa2-lf-02> show system boot-messages 
+# localre:
+# --------------------------------------------------------------------------
+# Copyright (c) 1992-2015 The FreeBSD Project.
+# Copyright (c) 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994
+# 	The Regents of the University of California. All rights reserved.
+# FreeBSD is a registered trademark of The FreeBSD Foundation.
+# FreeBSD JNPR-10.1-20160825.336113_builder_stable_10-331042 #0: Thu Aug 25 03:45:57 PDT 2016
+#     builder@basith.juniper.net:/volume/build/junos/occam/freebsd/stable_10-331042/20160825.builder.336113/obj/amd64/juniper/kernels/JNPR-AMD64-PRD/kernel amd64
+# gcc version 4.2.1 (for JUNOS)
+# VT: running with driver "vga".
+# can't re-use a leaf (mastership_keepalive)!
+# CPU: Intel Xeon E312xx (Sandy Bridge) (1800.95-MHz K8-class CPU)
+#   Origin="GenuineIntel"  Id=0x206a1  Family=0x6  Model=0x2a  Stepping=1
+#   Features=0x783fbfd<FPU,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,MMX,FXSR,SSE,SSE2>
+#   Features2=0x9fb82203<SSE3,PCLMULQDQ,SSSE3,CX16,SSE4.1,SSE4.2,x2APIC,POPCNT,TSCDLT,AESNI,XSAVE,OSXSAVE,AVX,HV>
+#   AMD Features=0x28100800<SYSCALL,NX,RDTSCP,LM>
+#   AMD Features2=0x1<LAHF>
+#   XSAVE Features=0x1<XSAVEOPT>
+#   TSC: P-state invariant
+# Hypervisor: Origin = "KVMKVMKVM"
+# addr found @ 0x800f0c80
+# Fast boot:0
+# 
+# Serial Number: WH0216500130
+# Product Name: PviModel
+# Version: pc-i440fx-2.2
+# Board Version: 0TVP: Model Name read from HostOS is qfx5200-32c-32q
+# Event timer "LAPIC" quality 400
+# ACPI APIC Table: <BOCHS  BXPCAPIC>
+# FreeBSD/SMP: Multiprocessor System Detected: 2 CPUs
+# FreeBSD/SMP: 2 package(s) x 1 core(s)
+#  cpu0 (BSP): APIC ID:  0
+#  cpu1 (AP): APIC ID:  1
+# Security policy loaded: Junos MAC/SDK (mac_sdk)
+# Security policy loaded: JUNOS MAC/privcheck (mac_privcheck)
+# Security policy loaded: MAC/veriexec (mac_veriexec)
+# Security policy loaded: Junos MAC/fips (mac_fips)
+# MAC/veriexec fingerprint module loaded: SHA1
+# MAC/veriexec fingerprint module loaded: SHA256
+# ioapic0 <Version 1.1> irqs 0-23 on motherboard
+# netisr_init: !debug_mpsafenet, forcing maxthreads from 2 to 1
+# random: <Software, Yarrow> initialized
+# pcidev module loaded, 0 (null)
+# fpga driver loaded, 0 (null)
+# Initializing Kernel PVIDB.
+# Initializing DCF  platform properties ..
+# rts_sysconf_ifstate_init: registerd rtcb osd: slotid 2
+# Calling dcf_ng_hw_init for platform hw vecs initialization
+# ofwbus0: <Open Firmware Device Tree> on motherboard
+# fdtio0: <FDT I/O port space> on ofwbus0
+# fpga0: <RE system controller> port 0x191-0x198 on fdtio0
+# cryptosoft0: <software crypto> on motherboard
+# acpi0: <BOCHS BXPCRSDT> on motherboard
+# acpi0: Power Button (fixed)
+# cpu0: <ACPI CPU> on acpi0
+# cpu1: <ACPI CPU> on acpi0
+# atrtc0: <AT realtime clock> port 0x70-0x71,0x72-0x77 irq 8 on acpi0
+# Event timer "RTC" frequency 32768 Hz quality 0
+# hpet0: <High Precision Event Timer> iomem 0xfed00000-0xfed003ff on acpi0
+# Timecounter "HPET" frequency 100000000 Hz quality 950
+# Timecounter "ACPI-fast" frequency 3579545 Hz quality 900
+# acpi_timer0: <24-bit timer at 3.579545MHz> port 0x608-0x60b on acpi0
+# pcib0: <ACPI Host-PCI bridge> port 0xcf8-0xcff on acpi0
+# pci0: <ACPI PCI bus> on pcib0
+# isab0: <PCI-ISA bridge> at device 1.0 on pci0
+# isa0: <ISA bus> on isab0
+# atapci0: <Intel PIIX3 WDMA2 controller> port 0x1f0-0x1f7,0x3f6,0x170-0x177,0x376,0xc0a0-0xc0af at device 1.1 on pci0
+# ata0: <ATA channel> at channel 0 on atapci0
+# ata1: <ATA channel> at channel 1 on atapci0
+# uhci0: <Intel 82371SB (PIIX3) USB controller> port 0xc000-0xc01f irq 11 at device 1.2 on pci0
+# usbus0: controller did not stop
+# usbus0 on uhci0
+# smb0: <Intel 82371AB SMB controller> irq 9 at device 1.3 on pci0
+# virtio_pci0: <VirtIO PCI Network adapter> port 0xc020-0xc03f mem 0xfebc0000-0xfebc0fff irq 11 at device 3.0 on pci0
+# vtnet0: <VirtIO Networking Adapter> on virtio_pci0
+# virtio_pci0: host features: 0x79bfffe7 <EventIdx,RingIndirect,0x8000000,NotifyOnEmpty,SetMacAddress,GuestAnnounce,RxModeExtra,VLanFilter,RxMode,ControlVq,Status,MrgRxBuf,TxUFO,TxTSOECN,TxTSOv6,TxTSOv4,RxUFO,RxECN,RxTSOv6,RxTSOv4,TxAllGSO,MacAddress,0x4,RxChecksum,TxChecksum>
+# virtio_pci0: negotiated features: 0x308f8020 <EventIdx,RingIndirect,SetMacAddress,VLanFilter,RxMode,ControlVq,Status,MrgRxBuf,MacAddress>
+# virtio_pci1: <VirtIO PCI Network adapter> port 0xc040-0xc05f mem 0xfebc1000-0xfebc1fff irq 11 at device 4.0 on pci0
+# vtnet1: <VirtIO Networking Adapter> on virtio_pci1
+# virtio_pci1: host features: 0x79bfffe7 <EventIdx,RingIndirect,0x8000000,NotifyOnEmpty,SetMacAddress,GuestAnnounce,RxModeExtra,VLanFilter,RxMode,ControlVq,Status,MrgRxBuf,TxUFO,TxTSOECN,TxTSOv6,TxTSOv4,RxUFO,RxECN,RxTSOv6,RxTSOv4,TxAllGSO,MacAddress,0x4,RxChecksum,TxChecksum>
+# virtio_pci1: negotiated features: 0x308f8020 <EventIdx,RingIndirect,SetMacAddress,VLanFilter,RxMode,ControlVq,Status,MrgRxBuf,MacAddress>
+# virtio_pci2: <VirtIO PCI Network adapter> port 0xc060-0xc07f mem 0xfebc2000-0xfebc2fff irq 10 at device 5.0 on pci0
+# vtnet2: <VirtIO Networking Adapter> on virtio_pci2
+# virtio_pci2: host features: 0x79bfffe7 <EventIdx,RingIndirect,0x8000000,NotifyOnEmpty,SetMacAddress,GuestAnnounce,RxModeExtra,VLanFilter,RxMode,ControlVq,Status,MrgRxBuf,TxUFO,TxTSOECN,TxTSOv6,TxTSOv4,RxUFO,RxECN,RxTSOv6,RxTSOv4,TxAllGSO,MacAddress,0x4,RxChecksum,TxChecksum>
+# virtio_pci2: negotiated features: 0x308f8020 <EventIdx,RingIndirect,SetMacAddress,VLanFilter,RxMode,ControlVq,Status,MrgRxBuf,MacAddress>
+# ehci0: <EHCI (generic) USB 2.0 controller> mem 0xfebc3000-0xfebc33ff irq 10 at device 6.0 on pci0
+# usbus1: EHCI version 1.0
+# usbus1 on ehci0
+# virtio_pci3: <VirtIO PCI Network adapter> port 0xc080-0xc09f mem 0xfebc4000-0xfebc4fff irq 11 at device 16.0 on pci0
+# vtnet3: <VirtIO Networking Adapter> on virtio_pci3
+# virtio_pci3: host features: 0x79bfffe7 <EventIdx,RingIndirect,0x8000000,NotifyOnEmpty,SetMacAddress,GuestAnnounce,RxModeExtra,VLanFilter,RxMode,ControlVq,Status,MrgRxBuf,TxUFO,TxTSOECN,TxTSOv6,TxTSOv4,RxUFO,RxECN,RxTSOv6,RxTSOv4,TxAllGSO,MacAddress,0x4,RxChecksum,TxChecksum>
+# virtio_pci3: negotiated features: 0x308f8020 <EventIdx,RingIndirect,SetMacAddress,VLanFilter,RxMode,ControlVq,Status,MrgRxBuf,MacAddress>
+# pci0: <old> at device 22.0 (no driver attached)
+# atkbdc0: <Keyboard controller (i8042)> port 0x60,0x64 irq 1 on acpi0
+# atkbd0: <AT Keyboard> irq 1 on atkbdc0
+# atkbd0: [GIANT-LOCKED]
+# uart0: <16550 or compatible> port 0x3f8-0x3ff irq 4 on acpi0
+# uart0: console (9600,n,8,1)
+# uart0: [GIANT-LOCKED]
+# orm0: <ISA Option ROM> at iomem 0xef000-0xeffff on isa0
+# Initializing product: 169 ..
+# 
+# Setting Serial ID!!!
+# md0: Preloaded image </packages/sets/active/boot/os-kernel/contents.izo> 7767552 bytes at 0xffffffff80af4fe0
+# usbus0: 12Mbps Full Speed USB v1.0
+#  Loading Redundant LT driver
+# Registered AMT tunnel Encap with UDP Tunnel!
+# rts_init: registered inrtsock osd: slotid 3
+# ###PCB Group initialized for udppcbgroup
+# ###PCB Group initialized for tcppcbgroup
+# usbus1: 480Mbps High Speed USB v2.0
+# ugen0.1: <Intel> at usbus0
+# uhub0: <Intel UHCI root HUB, class 9/0, rev 1.00/1.00, addr 1> on usbus0
+# ugen1.1: <Intel> at usbus1
+# uhub1: <Intel EHCI root HUB, class 9/0, rev 2.00/1.00, addr 1> on usbus1
+# ada0 at ata0 bus 0 scbus0 target 0 lun 0
+# ada0: <QEMU HARDDISK 2.2.0> ATA-7 device
+# ada0: Serial Number QM00001
+# ada0: 16.700MB/s transfers (WDMA2, PIO 8192bytes)
+# ada0: 8193MB (16779264 512 byte sectors: 16H 63S/T 16383C)
+# ada0: Previously was known as ad0
+# ada1 at ata0 bus 0 scbus0 target 1 lun 0
+# ada1: <QEMU HARDDISK 2.2.0> ATA-7 device
+# ada1: Serial Number QM00002
+# ada1: 16.700MB/s transfers (WDMA2, PIO 8192bytes)
+# ada1: 4096MB (8388608 512 byte sectors: 16H 63S/T 8322C)
+# ada1: Previously was known as ad1
+# ada2 at ata1 bus 0 scbus1 target 0 lun 0
+# ada2: <QEMU HARDDISK 2.2.0> ATA-7 device
+# ada2: Serial Number QM00003
+# ada2: 16.700MB/s transfers (WDMA2, PIO 8192bytes)
+# ada2: 512MB (1048576 512 byte sectors: 16H 63S/T 1040C)
+# ada2: Previously was known as ad2
+# ada3 at ata1 bus 0 scbus1 target 1 lun 0
+# ada3: <QEMU HARDDISK 2.2.0> ATA-7 device
+# ada3: Serial Number QM00004
+# ada3: 16.700MB/s transfers (WDMA2, PIO 8192bytes)
+# ada3: 1024MB (2097152 512 byte sectors: 16H 63S/T 2080C)
+# ada3: Previously was known as ad3
+# random: unblocking device.
+# SMP: AP CPU #1 Launched!
+# Kernel thread "wkupdaemon" (pid 23) exited prematurely.
+# uhub0: 2 ports with 2 removable, self powered
+# Root mount waiting for: usbus1 usbus0
+# uhub1: 2 ports with 2 removable, self powered
+# Root mount waiting for: usbus1
+# ugen1.2: <vendor 0x8087> at usbus1
+# uhub2: <vendor 0x8087 product 0x0020, class 9/0, rev 2.00/0.00, addr 2> on usbus1
+# Root mount waiting for: usbus1
+# uhub2: 6 ports with 6 removable, self powered
+# Trying to mount root from cd9660:/dev/md0.uzip []...
+# 
+# pci-hgcomdev module loadedhgcommdev0: <HGCOMMDEV For Host VM communication> mem 0xfebc5000-0xfebc5fff at device 22.0 on pci0
+# hgcommdev0: hgcommdev: registers at 0xfffff800febc5000
+# 
+# pa2-lf-02> show version detail 
+# localre:
+# --------------------------------------------------------------------------
+# Hostname: pa2-lf-02
+# Model: qfx5200-32c-32q
+# Junos: 15.1X53-D210.7
+# JUNOS OS Kernel 64-bit FLEX [20160825.336113_builder_stable_10-331042]
+# JUNOS OS libs [20160825.336113_builder_stable_10-331042]
+# JUNOS OS runtime [20160825.336113_builder_stable_10-331042]
+# JUNOS OS time zone information [20160825.336113_builder_stable_10-331042]
+# JUNOS OS libs compat32 [20160825.336113_builder_stable_10-331042]
+# JUNOS OS 32-bit compatibility [20160825.336113_builder_stable_10-331042]
+# JUNOS py extensions [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS py base [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS OS vmguest [20160825.336113_builder_stable_10-331042]
+# JUNOS OS crypto [20160825.336113_builder_stable_10-331042]
+# JUNOS network stack and utilities [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS libs compat32 [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS runtime [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS qfx runtime [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS qfx platform support [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS modules [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS qfx modules [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS libs [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Data Plane Crypto Support [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS daemons [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS qfx daemons [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Voice Services Container package [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Services SSL [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Services Stateful Firewall [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Services RPM [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Services PTSP Container package [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Services NAT [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Services Mobile Subscriber Service Container package [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Services MobileNext Software package [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Services LL-PDF Container package [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Services Jflow Container package [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Services IPSec [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS IDP Services [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Services HTTP Content Management package [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Services Crypto [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Services Captive Portal and Content Delivery Container package [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Border Gateway Function package [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS AppId Services [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Services Application Level Gateways [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Services AACL Container package [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS SDN Software Suite [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Packet Forwarding Engine Support (DC-PFE) [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Packet Forwarding Engine Support (M/T Common) [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Online Documentation [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS FIPS mode utilities [20161222.210549_builder_junos_151_x53_d210]
+# JUNOS Host Software [3.14.52-rt50-WR7.0.0.9_ovp:3.0.3]
+# JUNOS Host qfx-5e platform package [15.1X53-D210.7]
+# JUNOS Host qfx-5e control-plane flex package [15.1X53-D210.7]
+# JUNOS Host qfx-5e base package [15.1X53-D210.7]
+# JUNOS Host qfx-5e data-plane package [15.1X53-D210.7]
+# Junos for Automation Enhancement
+# KERNEL JNPR-10.1-20160825.336113_builder_stable_10-331042 #0 built by builder on Thu A
+# MGD release 15.1X53-D210.7 built by builder on 2016-12-22 21:57:03 UTC
+# CLI release 15.1X53-D210.7 built by builder on 2016-12-22 21:40:39 UTC
+# RPD release 15.1X53-D210.7 built by builder on 2016-12-22 21:59:07 UTC
+# CHASSISD release 15.1X53-D210.7 built by builder on 2016-12-22 21:43:57 UTC
+# JLAUNCHD release 15.1X53-D210.7 built by builder on 2016-12-22 21:36:48 UTC
+# KMD release 15.1X53-D210.7 built by builder on 2016-12-22 21:43:55 UTC
+# PKID release 15.1X53-D210.7 built by builder on 2016-12-22 21:44:18 UTC
+# SENDD release 15.1X53-D210.7 built by builder on 2016-12-22 21:41:40 UTC
+# DFWD release 15.1X53-D210.7 built by builder on 2016-12-22 21:45:20 UTC
+# DCD release 15.1X53-D210.7 built by builder on 2016-12-22 21:56:33 UTC
+# SNMPD release 15.1X53-D210.7 built by builder on 2016-12-22 21:56:28 UTC
+# MIB2D release 15.1X53-D210.7 built by builder on 2016-12-22 21:50:59 UTC
+# VRRPD release 15.1X53-D210.7 built by builder on 2016-12-22 21:48:11 UTC
+# ALARMD release 15.1X53-D210.7 built by builder on 2016-12-22 21:44:29 UTC
+# PFED release 15.1X53-D210.7 built by builder on 2016-12-22 21:46:19 UTC
+# ANALYTICSD release 15.1X53-D210.7 built by builder on 2016-12-22 21:41:27 UTC
+# SAMPLED release 15.1X53-D210.7 built by builder on 2016-12-22 21:47:57 UTC
+# SRRD release 15.1X53-D210.7 built by builder on 2016-12-22 21:43:23 UTC
+# RMOPD release 15.1X53-D210.7 built by builder on 2016-12-22 21:44:28 UTC
+# COSD release 15.1X53-D210.7 built by builder on 2016-12-22 21:50:01 UTC
+# FUD release 15.1X53-D210.7 built by builder on 2016-12-22 21:50:51 UTC
+# KSYNCD release 15.1X53-D210.7 built by builder on 2016-12-22 21:41:52 UTC
+# RDD release 15.1X53-D210.7 built by builder on 2016-12-22 21:41:58 UTC
+# LACPD release 15.1X53-D210.7 built by builder on 2016-12-22 21:45:47 UTC
+# LFMD release 15.1X53-D210.7 built by builder on 2016-12-22 21:41:52 UTC
+# OAMD release 15.1X53-D210.7 built by builder on 2016-12-22 21:41:56 UTC
+# CFMD release 15.1X53-D210.7 built by builder on 2016-12-22 21:44:50 UTC
+# JDHCPD release 15.1X53-D210.7 built by builder on 2016-12-22 21:45:36 UTC
+# SSD release 15.1X53-D210.7 built by builder on 2016-12-22 21:42:00 UTC
+# AUTHD release 15.1X53-D210.7 built by builder on 2016-12-22 21:44:07 UTC
+# BDBREPD release 15.1X53-D210.7 built by builder on 2016-12-22 21:41:43 UTC
+# ICCPD release 15.1X53-D210.7 built by builder on 2016-12-22 21:41:51 UTC
+# MCLAG-CFGCHKD release 15.1X53-D210.7 built by builder on 2016-12-22 21:42:24 UTC
+# SHM-RTSDBD release 15.1X53-D210.7 built by builder on 2016-12-22 21:51:20 UTC
+# DATAPATH-TRACED release 15.1X53-D210.7 built by builder on 2016-12-22 21:41:47 UTC
+# SMID release 15.1X53-D210.7 built by builder on 2016-12-22 21:41:59 UTC
+# JDDOSD release 15.1X53-D210.7 built by builder on 2016-12-22 21:42:41 UTC
+# CLKSYNCD release 15.1X53-D210.7 built by builder on 2016-12-22 21:48:30 UTC
+# GSTATD release 15.1X53-D210.7 built by builder on 2016-12-22 21:42:35 UTC
+# SFLOWD release 15.1X53-D210.7 built by builder on 2016-12-22 21:42:19 UTC
+# UFDD release 15.1X53-D210.7 built by builder on 2016-12-22 21:42:20 UTC
+# PPMD release 15.1X53-D210.7 built by builder on 2016-12-22 21:46:19 UTC
+# LRMUXD release 15.1X53-D210.7 built by builder on 2016-12-22 21:56:43 UTC
+# PGMD release 15.1X53-D210.7 built by builder on 2016-12-22 21:42:11 UTC
+# BFDD release 15.1X53-D210.7 built by builder on 2016-12-22 21:44:48 UTC
+# SDXD release 15.1X53-D210.7 built by builder on 2016-12-22 21:41:39 UTC
+# AUDITD release 15.1X53-D210.7 built by builder on 2016-12-22 21:41:42 UTC
+# L2ALD release 15.1X53-D210.7 built by builder on 2016-12-22 21:45:46 UTC
+# EVENTD release 15.1X53-D210.7 built by builder on 2016-12-22 21:45:22 UTC
+# L2CPD release 15.1X53-D210.7 built by builder on 2016-12-22 21:50:04 UTC
+# MCSNOOPD release 15.1X53-D210.7 built by builder on 2016-12-22 21:57:31 UTC
+# MPLSOAMD release 15.1X53-D210.7 built by builder on 2016-12-22 21:43:18 UTC
+# COMMITD release 15.1X53-D210.7 built by builder on 2016-12-22 21:56:53 UTC
+# JNUD release 15.1X53-D210.7 built by builder on 2016-12-22 21:45:43 UTC
+# lighttpd/1.4.32 (ssl) - a light and fast webserver
+# Build-Date: Dec 22 2016 21:22:14
+# OVERLAYD release 15.1X53-D210.7 built by builder on 2016-12-22 21:42:25 UTC
+# CAED release 15.1X53-D210.7 built by builder on 2016-12-22 21:41:28 UTC
+# PHONE-HOME release 15.1X53-D210.7 built by builder on 2016-12-22 21:42:21 UTC
+# SDPD release 15.1X53-D210.7 built by builder on 2016-12-22 21:43:46 UTC
+# SPMD release 15.1X53-D210.7 built by builder on 2016-12-22 21:49:23 UTC
+# SCPD release 15.1X53-D210.7 built by builder on 2016-12-22 21:43:46 UTC
+# OVSDBD release 15.1X53-D210.7 built by builder on 2016-12-22 21:42:30 UTC
+# OPENFLOWD release 15.1X53-D210.7 built by builder on 2016-12-22 21:50:17 UTC
+# VGD release 15.1X53-D210.7 built by builder on 2016-12-22 21:42:38 UTC
+# LFMD release 15.1X53-D210.7 built by builder on 2016-12-22 21:41:52 UTC
+# DOT1XD release 15.1X53-D210.7 built by builder on 2016-12-22 21:44:06 UTC
+# ANALYTICSD release 15.1X53-D210.7 built by builder on 2016-12-22 21:41:27 UTC
+# SFLOWD release 15.1X53-D210.7 built by builder on 2016-12-22 21:42:19 UTC
+# VCCPD release 15.1X53-D210.7 built by builder on 2016-12-22 21:50:03 UTC
+# SDK-MGMTD release 15.1X53-D210.7 built by builder on 2016-12-22 21:57:02 UTC
+# SDK-VMMD release 15.1X53-D210.7 built by builder on 2016-12-22 21:50:11 UTC
+# jroute-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:00 UTC
+# jkernel-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:07 UTC
+# appsecure-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:32:32 UTC
+# aprobe-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:32:35 UTC
+# authd_cmd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:32:39 UTC
+# autoconfd_cmd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:32:39 UTC
+# bdbrepd_cmd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:32:46 UTC
+# caed-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:32:48 UTC
+# cfm-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:32:50 UTC
+# chassis_cmd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:33:01 UTC
+# clksyncd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:33:06 UTC
+# cos_cmd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:33:17 UTC
+# cpcdd_cmd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:33:21 UTC
+# dcbx-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:33:25 UTC
+# dcd_cmd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:33:28 UTC
+# demuxd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:33:32 UTC
+# dfcd_cmd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:33:36 UTC
+# dot1xd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:33:41 UTC
+# dyn-sess-prof-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:33:44 UTC
+# elmi-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:33:46 UTC
+# forwarding_options_cmd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:33:51 UTC
+# gres-test-point-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:33:58 UTC
+# httpd_cmd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:33:59 UTC
+# iccp_cmd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:34:04 UTC
+# ilmid-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:34:05 UTC
+# jappid-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:34:06 UTC
+# jcrypto-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:34:07 UTC
+# jcrypto_junos-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:34:10 UTC
+# jddosd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:34:40 UTC
+# jdiameterd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:34:14 UTC
+# jidpd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:34:18 UTC
+# jkernel_cmd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:34:37 UTC
+# jroute_junos-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:34:31 UTC
+# l2ald-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:34:34 UTC
+# lldp-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:34:38 UTC
+# mclag_cfgchk_cmd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:34:43 UTC
+# mcsnoop-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:34:50 UTC
+# pccd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:09 UTC
+# rdd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:13 UTC
+# scpd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:14 UTC
+# sdpd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:15 UTC
+# services-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:26 UTC
+# sflow-service-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:16 UTC
+# spmd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:16 UTC
+# stp-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:20 UTC
+# stpng-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:20 UTC
+# subinfo-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:19 UTC
+# transportd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:23 UTC
+# ufdd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:27 UTC
+# vgd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:27 UTC
+# virtualchassis-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:28 UTC
+# vlans-ng-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:29 UTC
+# openflowd-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:35:06 UTC
+# jdocs-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:23:41 UTC
+# jkernel_dcp-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:23:43 UTC
+# services_dcp-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:23:49 UTC
+# autod-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:23:51 UTC
+# dhcp-dcp-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:23:36 UTC
+# jswitch_dcp_ng-actions-dd release 15.1X53-D210.7 built by builder on 2016-12-22 21:23:46 UTC
+#
+# pa2-lf-02> show version invoke-on other-routing-engine 
+#
+# pa2-lf-02> show configuration 
+version 15.1X53-D210.7;
+groups {
+    set-MTU {
+        interfaces {
+            <*> {
+                mtu 9192;
+            }
+        }
+    }
+    FLOWCONTROL4SANIF {
+        interfaces {
+            <xe-0/0/0:*> {
+                ether-options {
+                    flow-control;
+                }
+            }
+            <xe-0/0/1:*> {
+                ether-options {
+                    flow-control;
+                }
+            }
+            <xe-0/0/2:*> {
+                ether-options {
+                    flow-control;
+                }
+            }
+            <xe-0/0/3:*> {
+                ether-options {
+                    flow-control;
+                }
+            }
+            <xe-0/0/4:*> {
+                ether-options {
+                    flow-control;
+                }
+            }
+            <xe-0/0/5:*> {
+                ether-options {
+                    flow-control;
+                }
+            }
+            <et-0/0/6:*> {
+                ether-options {
+                    flow-control;
+                }
+            }
+        }
+    }
+    CG_SLT_OAM-CP-FILTER {
+        interfaces {
+            lo0 {
+                unit <*> {
+                    family inet {
+                        filter {
+                            input MGMT_RESTRICT_V4;
+                        }
+                    }
+                }
+            }
+        }
+        policy-options {
+            prefix-list MGMT_NETS_V4 {
+                10.0.1.0/24;
+                10.100.19.20/32;
+                10.100.19.21/32;
+                10.100.137.89/32;
+                10.115.137.89/32;
+                10.250.137.89/32;
+                10.245.2.0/24;
+                172.29.0.0/16;
+                172.30.0.0/16;
+            }
+        }
+        firewall {
+            family inet {
+                filter MGMT_RESTRICT_V4 {
+                    term ACCEPT_SSH_V4 {
+                        from {
+                            source-prefix-list {
+                                MGMT_NETS_V4;
+                            }
+                            protocol tcp;
+                            destination-port ssh;
+                        }
+                        then {
+                            count ACCEPT_SSH_V4;
+                            accept;
+                        }
+                    }
+                    term DISCARD_SSH_V4 {
+                        from {
+                            protocol tcp;
+                            destination-port ssh;
+                        }
+                        then {
+                            count DISCARD_SSH_V4;
+                            discard;
+                        }
+                    }
+                    term ACCEPT_ALL_V4 {
+                        then accept;
+                    }
+                }
+            }
+        }
+    }
+}
+apply-groups CG_SLT_OAM-CP-FILTER;
+system {
+    host-name pa2-lf-02;
+    authentication-order [ radius password ];
+    root-authentication {
+        encrypted-password "$1$Gn9eu9EK$UIZDKfjhkInqaJ858vHsg0";
+    }
+    radius-server {
+        10.115.38.110 {
+            port 1812;
+            accounting-port 1813;
+#            secret <removed>;
+            timeout 5;
+            source-address 10.115.137.253;
+        }
+        10.100.92.1 {
+            port 1812;
+            accounting-port 1813;
+#            secret <removed>;
+            timeout 5;
+            source-address 10.115.137.253;
+        }
+    }
+    login {
+        class roadmin {
+            idle-timeout 30;
+            permissions [ access admin firewall flow-tap interface network routing secret security snmp storage system trace view view-configuration ];
+        }
+        user netops {
+            uid 2000;
+            class super-user;
+            authentication {
+                encrypted-password "$1$iXKk3GaZ$Y5Rrb6sIn93RMGQrxDMWM.";
+            }
+        }
+        user ro {
+            uid 2001;
+            class roadmin;
+        }
+        user rw {
+            uid 2002;
+            class super-user;
+        }
+    }
+    services {
+        ssh;
+        netconf {
+            ssh;
+        }
+    }
+    syslog {
+        archive size 100k files 8;
+        user * {
+            any emergency;
+        }
+        host 10.115.137.89 {
+            any notice;
+            port 514;
+            source-address 10.115.137.253;
+        }
+        host 10.124.23.24 {
+            any notice;
+            port 514;
+            source-address 10.115.137.253;
+        }
+        file messages {
+            any notice;
+            authorization info;
+        }
+        file traffic-log {
+            user any;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+    }
+    ntp {
+        server 10.115.131.1;
+        server 10.125.19.1;
+        server 10.124.19.1;
+        source-address 10.115.137.253;
+    }
+}
+chassis {
+    aggregated-devices {
+        ethernet {
+            device-count 64;
+        }
+    }
+    fpc 0 {
+        pic 0 {
+            port 0 {
+                channel-speed 10g;
+            }
+            port 1 {
+                channel-speed 10g;
+            }
+            port 2 {
+                channel-speed 10g;
+            }
+            port 3 {
+                channel-speed 10g;
+            }
+            port 4 {
+                channel-speed 10g;
+            }
+            port 5 {
+                channel-speed 10g;
+            }
+            port 6 {
+                channel-speed 25g;
+            }
+            port 16 {
+                channel-speed 10g;
+            }
+            port 17 {
+                channel-speed 10g;
+            }
+        }
+    }
+}
+interfaces {
+    apply-groups [ set-MTU FLOWCONTROL4SANIF ];
+    interface-range STANDARD_40G {
+        member-range et-0/0/0 to et-0/0/6;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    xe-0/0/0:0 {
+        description COMPELLENT_C1S3P2;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ IS_SCSI2 IS_10G ];
+                }
+            }
+        }
+    }
+    xe-0/0/0:1 {
+        description COMPELLENT_C1S2P2;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ IS_SCSI2 IS_10G ];
+                }
+            }
+        }
+    }
+    xe-0/0/0:2 {
+        description COMPELLENT_C2S3P2;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ IS_SCSI2 IS_10G ];
+                }
+            }
+        }
+    }
+    xe-0/0/0:3 {
+        description COMPELLENT_C2S2P2;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ IS_SCSI2 IS_10G ];
+                }
+            }
+        }
+    }
+    xe-0/0/2:0 {
+        description FRPA2FX01S1;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    xe-0/0/2:1 {
+        description FRPA2FX01S2;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    xe-0/0/2:2 {
+        description FRPA2FX02S1;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    xe-0/0/2:3 {
+        description FRPA2FX02S2;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    xe-0/0/3:0 {
+        description FRPA2FX01S3;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    xe-0/0/3:1 {
+        description UNKNOWN;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    xe-0/0/3:2 {
+        description FRPA2FX02S3;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    xe-0/0/3:3 {
+        description FRPA2FX04S3;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    xe-0/0/4:0 {
+        description FRPA2FX03S1;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    xe-0/0/4:1 {
+        description FRPA2FX03S2;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    xe-0/0/4:2 {
+        description FRPA2FX04S1_2;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    xe-0/0/4:3 {
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    xe-0/0/5:0 {
+        description FRPA2FX01S4;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    xe-0/0/5:1 {
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    xe-0/0/5:2 {
+        description FRPA2FX05S4;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    xe-0/0/5:3 {
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    et-0/0/6:0 {
+        unit 0 {
+            description FRPA2FX05S1_PCIe25Gb_FC640_ESXi;
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    et-0/0/6:1 {
+        unit 0 {
+            description FRPA2FX05S2_PCIe25Gb_FC640_Hyper-v;
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    et-0/0/6:2 {
+        unit 0 {
+            description FRPA2FX05S3_PCIe25Gb_FC640_Hyper-v;
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    et-0/0/6:3 {
+        unit 0 {
+            description FRPA2FX02S4_PCIe25Gb_FC640_Hyper-v;
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    et-0/0/7 {
+        description S:PA2_NETAPP_CNTRL-1;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ IS_10G VL_PA2_1180_NETAPP VL_PA2_1138_NETAPP1 VL_PA2_1139_NETAPP2 VL_PA2_1140_NETAPP3 ];
+                }
+            }
+        }
+    }
+    et-0/0/8 {
+        description S:PA2_NETAPP_CNTRL-2;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ IS_10G VL_PA2_1180_NETAPP VL_PA2_1138_NETAPP1 VL_PA2_1139_NETAPP2 VL_PA2_1140_NETAPP3 ];
+                }
+            }
+        }
+    }
+    et-0/0/24 {
+        description Q:pa2-lf-04:swp55-bridging;
+        ether-options {
+            no-auto-negotiation;
+        }
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ 50-52 128-129 131-134 141 176 179 255-256 497-499 1136-1139 4036-4037 4044 ];
+                }
+            }
+        }
+    }
+    et-0/0/25 {
+        description Q:pa2-lf-04:swp55-bridging;
+        ether-options {
+            no-auto-negotiation;
+        }
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ 50-52 128-129 131-134 141 176 179 255-256 497-499 1136-1139 4036-4037 4044 ];
+                }
+            }
+        }
+    }
+    et-0/0/26 {
+        description WIP_29-05-20_CGRANT;
+        disable;
+    }
+    et-0/0/28 {
+        description pa2-sys-01:et-0/1/1;
+        ether-options {
+            no-auto-negotiation;
+        }
+        unit 0 {
+            family inet {
+                address 172.29.3.13/31;
+            }
+        }
+    }
+    et-0/0/29 {
+        description pa2-sys-02:et-0/1/1;
+        ether-options {
+            no-auto-negotiation;
+        }
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ 50-52 110-111 118 124-126 128-129 131-134 138-139 141-142 144-146 160-161 163 165 167-168 176 179 253 255-256 497-499 1007 1130-1133 1136-1139 1255-1257 1278 1283-1284 4036-4037 4044 ];
+                }
+            }
+        }
+    }
+    et-0/0/30 {
+        apply-groups-except set-MTU;
+        description pa2-lf-01:et-0/0/30;
+        ether-options {
+            no-auto-negotiation;
+            802.3ad ae0;
+        }
+    }
+    et-0/0/31 {
+        apply-groups-except set-MTU;
+        description pa2-lf-01:et-0/0/31;
+        ether-options {
+            no-auto-negotiation;
+            802.3ad ae0;
+        }
+    }
+    ae0 {
+        aggregated-ether-options {
+            lacp {
+                active;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    irb {
+        unit 51 {
+            family inet {
+                address 77.111.209.157/28 {
+                    vrrp-group 0 {
+                        virtual-address 77.111.209.158;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 63 {
+            family inet {
+                address 10.124.90.253/24 {
+                    vrrp-group 0 {
+                        virtual-address 10.124.90.254;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 64 {
+            family inet {
+                address 10.124.91.253/24 {
+                    vrrp-group 0 {
+                        virtual-address 10.124.91.254;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 65 {
+            family inet {
+                address 10.124.92.253/24 {
+                    vrrp-group 0 {
+                        virtual-address 10.124.92.254;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 66 {
+            family inet {
+                address 10.124.93.253/24 {
+                    vrrp-group 0 {
+                        virtual-address 10.124.93.254;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 143 {
+            family inet {
+                address 10.115.43.253/24 {
+                    vrrp-group 0 {
+                        virtual-address 10.115.43.254;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 144 {
+            family inet {
+                address 10.115.144.251/24 {
+                    vrrp-group 0 {
+                        virtual-address 10.115.144.254;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 160 {
+            family inet {
+                address 10.115.160.251/24 {
+                    vrrp-group 0 {
+                        virtual-address 10.115.160.254;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 161 {
+            family inet {
+                address 10.115.161.251/24 {
+                    vrrp-group 0 {
+                        virtual-address 10.115.161.254;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 163 {
+            family inet {
+                address 10.115.163.251/24 {
+                    vrrp-group 0 {
+                        virtual-address 10.115.163.254;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 165 {
+            family inet {
+                address 10.115.165.251/24 {
+                    vrrp-group 0 {
+                        virtual-address 10.115.165.254;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 167 {
+            family inet {
+                address 10.115.67.251/24 {
+                    vrrp-group 0 {
+                        virtual-address 10.115.67.254;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 169 {
+            family inet {
+                address 169.254.1.2/30;
+            }
+        }
+        unit 253 {
+            family inet {
+                address 172.29.3.11/31;
+            }
+        }
+        unit 256 {
+            description "NSX BGP peering";
+            family inet {
+                address 172.29.3.18/31;
+            }
+        }
+        unit 1007 {
+            description TEMP-17-07-20-ABABSON;
+            family inet {
+                address 172.22.10.11/31;
+            }
+        }
+        unit 1101 {
+            family inet {
+                address 10.115.1.61/26 {
+                    vrrp-group 0 {
+                        virtual-address 10.115.1.62;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 1102 {
+            family inet {
+                address 10.115.1.125/26 {
+                    vrrp-group 0 {
+                        virtual-address 10.115.1.126;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 1103 {
+            family inet {
+                address 10.115.1.189/26 {
+                    vrrp-group 0 {
+                        virtual-address 10.115.1.190;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 1104 {
+            family inet {
+                address 10.115.1.253/26 {
+                    vrrp-group 0 {
+                        virtual-address 10.115.1.254;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 1132 {
+            family inet {
+                address 10.115.132.251/24 {
+                    vrrp-group 0 {
+                        virtual-address 10.115.132.254;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 1137 {
+            family inet {
+                address 10.115.137.253/24 {
+                    arp 10.115.137.252 l2-interface ae0.0 mac 28:a2:4b:8a:43:c0;
+                    vrrp-group 137 {
+                        virtual-address 10.115.137.254;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 1180 {
+            family inet {
+                address 10.115.180.253/24 {
+                    vrrp-group 0 {
+                        virtual-address 10.115.180.254;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 1216 {
+            description VL_PA2_1216_UC-PFSENSE;
+            family inet {
+                address 185.37.220.221/29 {
+                    vrrp-group 0 {
+                        virtual-address 185.37.220.222;
+                        accept-data;
+                    }
+                }
+            }
+        }
+    }
+    lo0 {
+        unit 0 {
+            family inet;
+        }
+    }
+}
+snmp {
+    contact "nio@arkadin.com";
+    client-list SNMP_CLIENTS {
+        10.105.137.56/32;
+        10.105.137.57/32;
+        10.100.137.55/32;
+        10.250.137.55/32;
+        10.115.137.57/32;
+        10.100.19.21/32;
+        10.250.90.90/32;
+        192.206.95.169/32;
+        10.105.137.80/32;
+    }
+    community public {
+        authorization read-only;
+    }
+    community network_services {
+        authorization read-only;
+        client-list-name SNMP_CLIENTS;
+    }
+    community noc_services {
+        authorization read-only;
+        client-list-name SNMP_CLIENTS;
+    }
+    trap-options {
+        source-address 10.115.137.253;
+    }
+    trap-group Opmanager {
+        version v2;
+        categories {
+            chassis;
+            link;
+            routing;
+        }
+        targets {
+            10.115.38.134;
+        }
+    }
+}
+forwarding-options {
+    storm-control-profiles default {
+        all;
+    }
+}
+routing-options {
+    autonomous-system 65501;
+    forwarding-table {
+        export ECMP_BGP;
+    }
+}
+#
+# $Id:$
+#
+# Copyright (c) 2014, Juniper Networks, Inc.
+# All rights reserved.
+#
+# Filename: default.conf
+# Platform: DUCKHORN
+# Description: Default DST file.
+#
+#
+protocols {
+    bgp {
+        precision-timers;
+        traceoptions {
+            file bgp;
+            flag state;
+            flag timer;
+            flag bfd;
+        }
+        log-updown;
+        group NSX {
+            hold-time 6;
+            import PS_IMP_NSX_V4;
+            peer-as 65505;
+            graceful-restart;
+            neighbor 172.29.3.19;
+        }
+        group SPINE_V4 {
+            export PS_EXP_SPINE_V4;
+            peer-as 65502;
+            graceful-restart;
+            multipath;
+            neighbor 172.29.3.10;
+            neighbor 172.29.3.12;
+        }
+    }
+    iccp {
+        local-ip-addr 169.254.1.2;
+        peer 169.254.1.1 {
+            session-establishment-hold-time 340;
+            redundancy-group-id-list 1;
+            liveness-detection {
+                minimum-receive-interval 1000;
+                transmit-interval {
+                    minimum-interval 1000;
+                }
+            }
+        }
+    }
+    lldp {
+        port-id-subtype interface-name;
+        port-description-type interface-description;
+        interface all;
+    }
+    lldp-med {
+        interface all;
+    }
+    igmp-snooping {
+        vlan default;
+    }
+    vstp {
+        vlan 1130 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 1131 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 1136 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 1137 {
+            interface et-0/0/24;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 1138 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 1139 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 118 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 1216 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 124 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 125 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 1255 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 1256 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 1257 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 126 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 1278 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 128 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 1283 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 1284 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 129 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 131 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 132 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 133 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 134 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 138 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 139 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 141 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 167 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 168 {
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 176 {
+            bridge-priority 52k;
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 179 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 255 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 256 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 4036 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 4037 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 4044 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 497 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 498 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 499 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 50 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 51 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan 52 {
+            interface et-0/0/24;
+            interface et-0/0/25;
+            interface et-0/0/29;
+            interface ae0;
+        }
+        vlan all {
+            bridge-priority 56k;
+            interface all;
+        }
+    }
+}
+policy-options {
+    prefix-list PFX_PA2_ORIGIN_V4 {
+        10.115.0.0/16;
+        10.115.1.0/24;
+        10.115.43.0/24;
+        10.115.67.0/24;
+        10.115.132.0/24;
+        10.115.137.0/24;
+        10.115.144.0/24;
+        10.115.160.0/24;
+        10.115.161.0/24;
+        10.115.163.0/24;
+        10.115.165.0/24;
+    }
+    prefix-list PFX_PA2_NSX_V4 {
+        10.102.165.0/24;
+        10.102.166.0/24;
+        10.124.0.0/16;
+    }
+    prefix-list PFX_PA2_ORIGIN-EXT_V4 {
+        77.111.209.144/28;
+        185.37.220.216/29;
+    }
+    policy-statement ECMP_BGP {
+        term BGP {
+            from protocol bgp;
+            then {
+                load-balance per-packet;
+            }
+        }
+        term DEFAULT {
+            then accept;
+        }
+    }
+    policy-statement PS_EXP_SPINE_V4 {
+        term DIRECT {
+            from {
+                protocol direct;
+                prefix-list-filter PFX_PA2_ORIGIN_V4 orlonger;
+            }
+            then accept;
+        }
+        term P2P {
+            from {
+                protocol direct;
+                route-filter 172.29.3.0/24 orlonger;
+            }
+            then accept;
+        }
+        term BGP {
+            from protocol bgp;
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_SYS-EXT_V4 {
+        term 1 {
+            from {
+                prefix-list PFX_PA2_ORIGIN-EXT_V4;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_IMP_NSX_V4 {
+        term NSX {
+            from {
+                prefix-list-filter PFX_PA2_NSX_V4 orlonger;
+            }
+            then accept;
+        }
+    }
+}
+routing-instances {
+    VRF_ARKAD_EXT {
+        instance-type virtual-router;
+        interface irb.51;
+        interface irb.1007;
+        interface irb.1216;
+        protocols {
+            bgp {
+                group SYS-EXT_V4 {
+                    type external;
+                    export PS_EXP_SYS-EXT_V4;
+                    peer-as 65502;
+                    neighbor 172.22.10.10;
+                }
+            }
+        }
+    }
+}
+switch-options {
+    service-id 10;
+}
+vlans {
+    IS_10G {
+        description VL_PA2_1137_IS-10G;
+        vlan-id 1137;
+        l3-interface irb.1137;
+    }
+    IS_1G {
+        description VL_PA2_1136_MGMT-NAS-IDRAC_CMC;
+        vlan-id 1136;
+    }
+    IS_SCSI1 {
+        description VL_PA2_498_IS-SCSI1;
+        vlan-id 498;
+    }
+    IS_SCSI2 {
+        description VL_PA2_499_IS-SCSI2;
+        vlan-id 499;
+    }
+    IS_VMOTION {
+        vlan-id 178;
+    }
+    IS_VTEP {
+        description VL_PA2_497_IS_VTEP;
+        vlan-id 497;
+    }
+    M_10.115.24.0_24_MGMT_DMZ_NETSCR {
+        vlan-id 124;
+    }
+    M_10.115.25.0_24_MGMT_DMZ_SRX {
+        vlan-id 125;
+    }
+    M_10.115.34.0_24_MGMT {
+        description M:10.115.34.0/24:MGMT-VIPER;
+        vlan-id 134;
+    }
+    NSX_BGP01 {
+        description VL_PA2_255_NSX_EDGE-PRIVATE_LF01;
+        vlan-id 255;
+    }
+    NSX_BGP02 {
+        description VL_PA2_256_NSX_EDGE-PRIVATE_LF02;
+        vlan-id 256;
+        l3-interface irb.256;
+    }
+    NSX_LD4INET01 {
+        description VL_PA2_4037_NSX_EDGE-PUBLIC_LD4INET01;
+        vlan-id 4037;
+    }
+    NSX_PA2INET01 {
+        description VL_PA2_4036_NSX_EDGE-PUBLIC_PA2INET01;
+        vlan-id 4036;
+    }
+    PA2LF0102_BGP {
+        vlan-id 253;
+        l3-interface irb.253;
+    }
+    S_PA2ISCSI01_BLUESKY {
+        vlan-id 1130;
+    }
+    S_PA2ISCSI02_BLUESKY {
+        vlan-id 1131;
+    }
+    VLAN110 {
+        vlan-id 110;
+    }
+    VLAN111 {
+        vlan-id 111;
+    }
+    VLAN1133 {
+        vlan-id 1133;
+    }
+    VLAN128 {
+        description VL_PA2_128_SAN-NTT;
+        vlan-id 128;
+    }
+    VLAN129 {
+        description VL_PA2_129_PROD_IS_IT;
+        vlan-id 129;
+    }
+    VLAN131 {
+        description VL_PA2_131_EXCHANGE;
+        vlan-id 131;
+    }
+    VLAN142 {
+        vlan-id 142;
+    }
+    VLAN145 {
+        vlan-id 145;
+    }
+    VLAN146 {
+        vlan-id 146;
+    }
+    VLAN161 {
+        vlan-id 161;
+        l3-interface irb.161;
+    }
+    VLAN163 {
+        vlan-id 163;
+        l3-interface irb.163;
+    }
+    VLAN165 {
+        vlan-id 165;
+        l3-interface irb.165;
+    }
+    VLAN4044 {
+        description VL_PA2_4044_SHARED_DMZ;
+        vlan-id 4044;
+    }
+    VLAN_1101_UC_NOEXT {
+        vlan-id 1101;
+        l3-interface irb.1101;
+    }
+    VLAN_1102_UC_NOEXT {
+        vlan-id 1102;
+        l3-interface irb.1102;
+    }
+    VLAN_1103_UC_NOEXT {
+        vlan-id 1103;
+        l3-interface irb.1103;
+    }
+    VLAN_1104_UC_NOEXT {
+        vlan-id 1104;
+        l3-interface irb.1104;
+    }
+    VL_PA2_1007_LF-SYS-02-P2P {
+        vlan-id 1007;
+        l3-interface irb.1007;
+    }
+    VL_PA2_1132_ISD {
+        description S:10.115.132.0/24:ISD;
+        vlan-id 1132;
+        l3-interface irb.1132;
+    }
+    VL_PA2_1138_NETAPP1 {
+        description NETAPP1;
+        vlan-id 1138;
+    }
+    VL_PA2_1139_NETAPP2 {
+        description NETAPP2;
+        vlan-id 1139;
+    }
+    VL_PA2_1140_NETAPP3 {
+        vlan-id 1140;
+    }
+    VL_PA2_1180_NETAPP {
+        vlan-id 1180;
+        l3-interface irb.1180;
+    }
+    VL_PA2_1216_UC-PFSENSE {
+        description V:185.37.220.216/29:UC-PFSENSE;
+        vlan-id 1216;
+        l3-interface irb.1216;
+    }
+    VL_PA2_1217_UC-SIGNIFY-INT {
+        vlan-id 1217;
+    }
+    VL_PA2_1255_UC {
+        vlan-id 1255;
+    }
+    VL_PA2_1256_UC {
+        vlan-id 1256;
+    }
+    VL_PA2_1257_UC {
+        vlan-id 1257;
+    }
+    VL_PA2_1278_UC_IS_SVCS_VPN {
+        vlan-id 1278;
+    }
+    VL_PA2_1283_CLOUD_VOICE_EDGE_LAN {
+        description V:172.16.16.0/24:CLOUD_VOICE_EDGE_LAN;
+        vlan-id 1283;
+    }
+    VL_PA2_1284_CLOUD_VOICE_EDGE_WAN {
+        description V:172.16.17.0/24:CLOUD_VOICE_EDGE_WAN;
+        vlan-id 1284;
+    }
+    VL_PA2_141_MGMT-LYNC {
+        description M:10.115.41.0/24:MGMT-LYNC;
+        vlan-id 141;
+    }
+    VL_PA2_143_MGMT_UC_IPF {
+        vlan-id 143;
+        l3-interface irb.143;
+    }
+    VL_PA2_144_PP-IT-IS {
+        description S:10.115.144.0/24:PP_IT-IS;
+        vlan-id 144;
+        l3-interface irb.144;
+    }
+    VL_PA2_160_DEV-BLUESKY {
+        description S:10.115.160.0/24:DEV-BLUESKY;
+        vlan-id 160;
+        l3-interface irb.160;
+    }
+    VL_PA2_167 {
+        description S:10.115.67.0/24;
+        vlan-id 167;
+        l3-interface irb.167;
+    }
+    VL_PA2_179_IS_IDRAC_NOEXT {
+        description M:10.115.179.0/24:iDRAC;
+        vlan-id 179;
+    }
+    VL_PA2_50_VSBC-PUBLIC {
+        description S:185.37.220.208/29:VSBC;
+        vlan-id 50;
+    }
+    VL_PA2_51_VSBC-PUBLIC {
+        description S:172.16.130.0/30:VSBC;
+        vlan-id 51;
+        l3-interface irb.51;
+    }
+    VL_PA2_52_VSBC-PUBLIC {
+        description S:172.16.130.4/30:VSBC;
+        vlan-id 52;
+    }
+    VL_PA2_61_VSBC_HA_WANCOM1 {
+        description S:172.16.130.8/30:VSBC;
+        vlan-id 61;
+    }
+    VL_PA2_62_VSBC_HA_WANCOM2 {
+        description S:172.16.130.12/30:VSBC;
+        vlan-id 62;
+    }
+    VL_PA2_63_SIP_VSBC {
+        vlan-id 63;
+        l3-interface irb.63;
+    }
+    VL_PA2_64_RTP_VSBC {
+        vlan-id 64;
+        l3-interface irb.64;
+    }
+    VL_PA2_65_SIP_VSBC {
+        vlan-id 65;
+        l3-interface irb.65;
+    }
+    VL_PA2_66_RTP_VSBC {
+        vlan-id 66;
+        l3-interface irb.66;
+    }
+    VMOTION_LEGACY {
+        description VMOTION;
+        vlan-id 176;
+    }
+    V_10.115.32.0_24_SIP_VIPER {
+        description V:10.115.32.0/24:SIP-VIPER;
+        vlan-id 132;
+    }
+    V_10.115.33.0_24_RTP_VIPER {
+        description V:10.115.33.0/24:RTP-VIPER;
+        vlan-id 133;
+    }
+    V_10.115.38.0_24_PROD_LAN_SERVIC {
+        vlan-id 138;
+    }
+    V_10.115.68.0_24 {
+        vlan-id 168;
+    }
+    V_10.118.0.0_16_NOVASIGHT {
+        vlan-id 118;
+    }
+    Z_10.115.26.0_24_PRIVATE_DMZ {
+        vlan-id 126;
+    }
+    Z_10.115.39.0_24_FAX_DMZ {
+        vlan-id 139;
+    }
+}

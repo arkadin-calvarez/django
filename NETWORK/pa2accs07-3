@@ -1,0 +1,559 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!
+!
+!
+!
+Using 13453 out of 65536 bytes
+!
+version 12.2
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime show-timezone
+service timestamps log datetime localtime
+service password-encryption
+service sequence-numbers
+no service dhcp
+!
+hostname pa2accs07-3
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 128000 notifications
+enable secret 5 $1$84O8$E88OVdyiwFg2bIaT9iokt1
+!
+        username netops privilege 15 secret 5 $1$L8lT$Gn2HHwj5WdHcCajYi9egw/
+username noc privilege 0 secret 5 $1$6yVa$3JS6D/3.uSgI1AIFIvQdv/
+!
+aaa new-model
+!
+aaa authentication fail-message ^CWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login ARKANETRADIUS group radius local
+aaa authentication enable default enable
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+clock timezone GMT 0
+system mtu routing 1500
+vtp mode off
+authentication mac-move permit
+ip subnet-zero
+no ip source-route
+!
+        !
+no ip domain-lookup
+ip domain-name arkadin.lan
+login block-for 100 attempts 15 within 100
+login quiet-mode access-class OAM
+login on-failure
+login on-success
+!
+archive
+ log config
+  logging enable
+  logging size 500
+  notify syslog contenttype plaintext
+  hidekeys
+file prompt quiet
+!
+spanning-tree mode rapid-pvst
+spanning-tree loopguard default
+        spanning-tree portfast default
+spanning-tree portfast bpduguard default
+spanning-tree etherchannel guard misconfig
+spanning-tree extend system-id
+spanning-tree uplinkfast
+spanning-tree backbonefast
+spanning-tree vlan 1-4094 priority 49152
+!
+vlan internal allocation policy ascending
+!
+vlan 3
+ name native
+!
+vlan 98
+ name U:10.48.213.96/27:NOVA.OBS-Carre
+!
+vlan 99
+ name U:172.24.99.0/24:NOVA.OBS-REEL
+!
+vlan 114 
+!
+vlan 116
+ name X:10.29.129.0/28:NOVA_BIPS
+        !
+vlan 118
+ name V:10.118.0.0/16:Novasight
+!
+vlan 124
+ name M:10.115.24.0/24:MGMT_DMZ
+!
+vlan 132
+ name V:10.115.32.0/24:SIP
+!
+vlan 134
+ name M:10.115.34.0/24
+!
+vlan 140
+ name M:10.115.40.0/24:DRAC_LAN_Serv
+!
+vlan 250
+ name RSPAN
+ remote-span
+!
+vlan 503
+ name M:10.119.3.0/24:Lync_Sandbox
+!
+        vlan 504
+ name V:10.119.4.0/24:Lync_Sandbox
+!
+vlan 505
+ name V:10.119.5.0/24:Lync_Sandbox
+!
+vlan 600
+ name LYNC_SHARED_172_19_0_0/19
+!
+vlan 806
+ name X:10.8.6.0/24:NOVA_CH-Dunan
+!
+vlan 998
+ name U:Novasight_BackTOBack
+!
+vlan 1121
+ name X:172.20.205.0/24:NOVA_GroupSEB
+!
+vlan 1201
+ name X:172.17.0.32/27:MT_SBX_SBC
+!
+vlan 1202
+ name X:172.19.0.32/27:MT_SBX_EDGE
+        !
+vlan 1206
+ name X:172.17.0.64/27:SBC:SBX
+!
+vlan 1207
+ name X:172.19.0.64/27:Lync:sbx_edge
+!
+vlan 1260
+ name S:172.19.1.64/27:SBX_MT2_EDGE
+!
+vlan 1261
+ name S:172.19.1.96/27:SBX_MT2_DS
+!
+vlan 1262
+ name V:172.17.1.64/27:SBX_MT2_SBC
+!
+vlan 1263
+ name V:172.19.1.160/27:SBX_MT2_DS2
+!
+vlan 1270
+ name VL_PA2_1270_CCE-EDGE
+!
+vlan 1271
+         name VL_PA2_1271_CCE-IEDG
+!
+vlan 1283
+ name VL_PA2_1283_CLOUD_VOICE_EDGE_MGM
+!
+vlan 1284
+ name VL_PA2_1284_CLOUD_VOICE_EDGE_WAN
+!
+vlan 2007
+ name E:U:10.29.129.0/28:NOVA.SFR-BIPS
+!
+vlan 4044
+ name E:185.37.220.0/26:AS_INET
+!
+ip ssh authentication-retries 2
+ip ssh version 2
+ip scp server enable
+!
+interface Loopback0
+ no ip address
+ no ip route-cache
+!
+        interface GigabitEthernet0/1
+ description S:MCU06:LAN
+ switchport access vlan 118
+ switchport mode access
+!
+interface GigabitEthernet0/2
+ description S:MCU06:IP48-0/0
+ switchport access vlan 118
+ switchport mode access
+!
+interface GigabitEthernet0/3
+ description S:FRPA2PUB01-eth2
+ switchport access vlan 134
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/4
+ description S:FRPA2SIPTEST01-eth2
+ switchport access vlan 134
+ switchport trunk native vlan 118
+ switchport mode access
+ load-interval 30
+!
+        interface GigabitEthernet0/5
+ description S:NSSRV0009:Imm/Mngt
+ switchport access vlan 118
+ switchport mode access
+!
+interface GigabitEthernet0/6
+ description S:NSSRV0009:Port1
+ switchport access vlan 118
+ switchport mode access
+!
+interface GigabitEthernet0/7
+ description S:VBP-06:Port1
+ switchport access vlan 118
+ switchport mode access
+!
+interface GigabitEthernet0/8
+ description S:V2IU-01:Port1
+ switchport access vlan 118
+ switchport mode access
+!
+interface GigabitEthernet0/9
+ description S:MCU10:Shelf_Man
+ switchport access vlan 118
+         switchport mode access
+!
+interface GigabitEthernet0/10
+ description S:MCU10:control
+ switchport access vlan 118
+ switchport mode access
+!
+interface GigabitEthernet0/11
+ description S:MCU10:MPM-1
+ switchport access vlan 118
+ switchport mode access
+!
+interface GigabitEthernet0/12
+ description S:MCU10:signaling
+ switchport access vlan 118
+ switchport mode access
+!
+interface GigabitEthernet0/13
+ switchport trunk native vlan 118
+ switchport mode trunk
+!
+interface GigabitEthernet0/14
+ description <*> To LAN
+         switchport trunk native vlan 3
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet0/15
+ description <*> To LAN
+ switchport trunk native vlan 3
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast
+!
+interface GigabitEthernet0/16
+ description <*> To LAN
+ switchport trunk native vlan 3
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast
+!
+interface GigabitEthernet0/17
+ description <*> To LAN
+ switchport trunk native vlan 3
+ switchport mode trunk
+ load-interval 30
+         spanning-tree portfast
+!
+interface GigabitEthernet0/18
+ description <*> To LAN
+ switchport trunk native vlan 3
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast
+!
+interface GigabitEthernet0/19
+ description <*> To Storage Switch
+ switchport access vlan 134
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/20
+ description <*> To Idrac
+ switchport access vlan 140
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/21
+ description <*> To Idrac
+         switchport access vlan 140
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/22
+ description <*> To Idrac
+ switchport access vlan 140
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/23
+ description <*> To Idrac
+ switchport access vlan 140
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/24
+ description <*> To Idrac
+ switchport access vlan 140
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/25
+         description S:BEDIEBRI1MX:NIC1
+ switchport access vlan 132
+ switchport mode access
+ load-interval 30
+ spanning-tree portfast
+!
+interface GigabitEthernet0/26
+ description S:BEDIEBRI1CRS:NIC1
+ switchport access vlan 132
+ switchport mode access
+ load-interval 30
+ spanning-tree portfast
+!
+interface GigabitEthernet0/27
+ description S:BEDIEBRI2BX:NIC1
+ switchport access vlan 132
+ switchport mode access
+ load-interval 30
+ spanning-tree portfast
+!
+interface GigabitEthernet0/28
+ description S:BEDIEBRI2CRS2:NIC1
+ switchport access vlan 132
+         switchport mode access
+ load-interval 30
+ spanning-tree portfast
+!
+interface GigabitEthernet0/29
+ description S:BEDIEBRI1BX:NIC2
+ switchport access vlan 132
+ switchport mode access
+ load-interval 30
+ spanning-tree portfast
+!
+interface GigabitEthernet0/30
+ description S:BEDIEBRI1CRS2:NIC2
+ switchport access vlan 132
+ switchport mode access
+ load-interval 30
+ spanning-tree portfast
+!
+interface GigabitEthernet0/31
+ description S:BEDIEBRI2MX:NIC2
+ switchport access vlan 132
+ switchport mode access
+ load-interval 30
+         spanning-tree portfast
+!
+interface GigabitEthernet0/32
+ description S:BEDIEBRI2CRS:NIC2
+ switchport access vlan 132
+ switchport mode access
+ load-interval 30
+ spanning-tree portfast
+!
+interface GigabitEthernet0/33
+ description S:MCU06:IP48-0/1:BIPS
+ switchport access vlan 2007
+ switchport mode access
+!
+interface GigabitEthernet0/34
+ switchport access vlan 118
+ switchport mode access
+!
+interface GigabitEthernet0/35
+ shutdown
+!
+interface GigabitEthernet0/36
+ shutdown
+        !
+interface GigabitEthernet0/37
+ description CCE
+ switchport access vlan 1271
+ switchport trunk allowed vlan 1270,1271
+ switchport mode trunk
+!
+interface GigabitEthernet0/38
+ description CCE
+ switchport access vlan 1271
+ switchport trunk allowed vlan 1270,1271
+ switchport mode trunk
+!
+interface GigabitEthernet0/39
+ shutdown
+!
+interface GigabitEthernet0/40
+ shutdown
+!
+interface GigabitEthernet0/41
+ description S:BEDIEBRI1MX:DRAC
+ switchport access vlan 140
+ switchport mode access
+         load-interval 30
+!
+interface GigabitEthernet0/42
+ description S:BEDIEBRI1CRS:DRAC
+ switchport access vlan 140
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/43
+ description S:BEDIEBRI2BX:DRAC
+ switchport access vlan 140
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/44
+ description S:BEDIEBRI2CRS2:DRAC
+ switchport access vlan 140
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/45
+ shutdown
+!
+        interface GigabitEthernet0/46
+ shutdown
+!
+interface GigabitEthernet0/47
+ description Q:pa2core01:Gi0/27
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 116,118,124,132,134,140,250,503-505,806,998,1121
+ switchport trunk allowed vlan add 1122,1201,1202,1206,1207,1260,1262,1270,1271
+ switchport trunk allowed vlan add 1283,1284,2007,4044
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet0/48
+ description Q:pa2core02:Gi0/27
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 116,118,124,132,134,140,503-505,806,998,1121
+ switchport trunk allowed vlan add 1122,1201,1202,1206,1207,1260,1262,1270,1271
+ switchport trunk allowed vlan add 1283,1284,2007,4044
+ switchport mode trunk
+ load-interval 30
+!
+interface Vlan1
+ no ip address
+         no ip route-cache
+!
+interface Vlan134
+ description MGMT
+ ip address 10.115.34.236 255.255.255.0
+ no ip route-cache
+!
+ip default-gateway 10.115.34.253
+no ip http server
+no ip http secure-server
+!
+ip access-list extended OAM
+ remark allow only authorized protocols from OAM networks
+ permit tcp 10.0.0.0 0.255.255.255 host 0.0.0.0 eq 22 log-input
+ permit tcp 172.16.0.0 0.0.15.255 host 0.0.0.0 eq 22 log-input
+ permit tcp 192.168.0.0 0.0.255.255 host 0.0.0.0 eq 22 log-input
+ deny   ip any any log-input
+ip radius source-interface Vlan134 
+ip sla enable reaction-alerts
+logging trap notifications
+logging origin-id hostname
+logging facility local5
+logging source-interface Vlan134
+        logging 10.115.137.89
+logging 10.124.23.24
+access-list 20 permit 10.102.2.12
+access-list 20 permit 10.102.10.130
+access-list 20 permit 10.115.38.131
+access-list 20 permit 10.115.137.57
+access-list 20 remark SNMP ACL
+access-list 20 deny   any log
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server location emea-pa2
+snmp-server contact nio@arkadin.com
+snmp-server host 10.100.19.21 version 2c noc_services 
+snmp-server host 10.115.137.55 version 2c noc_services 
+        snmp ifmib ifindex persist
+radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server timeout 3
+!radius-server key <removed>
+banner login ^C========================================================================
+=                                                                      =                                                                             
+=               This is a private system of Arkadin                    =
+=         Authorization from Network Operations Team is                =
+=   required to use this system. Unauthorized access is prohibited!    =
+=                                                                      =
+=               This device is RADIUS authenticated                    = 
+=                                                                      =
+=                 network_operations@arkadin.com                       = 
+=                                                                      =
+========================================================================
+^C
+privilege exec level 0 traceroute ip
+privilege exec level 0 traceroute
+privilege exec level 0 ping ip
+privilege exec level 0 ping
+privilege exec level 0 show configuration
+        privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show mac address-table
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in vrf-also
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+line vty 5 15
+         session-timeout 30 
+ access-class OAM in vrf-also
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+!
+monitor session 1 source interface Gi0/13
+monitor session 1 destination remote vlan 250 
+ntp source Vlan134
+ntp server 10.115.131.1 prefer
+ntp server 10.124.19.1
+ntp server 10.125.19.1
+end

@@ -1,0 +1,524 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C2960S-48TD-L
+!CPU: PowerPC
+!
+!Memory: main 131072K
+!Serial Number: FOC1708X5KM
+!Model revision number           : J0
+!Model number                    : WS-C2960S-48TD-L
+!Motherboard assembly number     : 73-11905-11
+!Motherboard serial number       : FOC17085QHR
+!Motherboard revision number     : A0
+!Power supply part number        : 341-0327-04
+!Power supply serial number      : DCA1703P1J2
+!
+!Processor ID: FOC1708X5KM
+!
+!Image: Software: C2960S-UNIVERSALK9-M, 12.2(55)SE5, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Thu 09-Feb-12 19:22 by prod_rel_team
+!Image: flash:/c2960s-universalk9-mz.122-55.SE5/c2960s-universalk9-mz.122-55.SE5.bin
+!
+!BOOTLDR: Version 12.2(55r)SE, RELEASE SOFTWARE (fc1)
+!
+!% No entity named "raw"
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Gi1/0/1, Gi1/0/2, Gi1/0/3, Gi1/0/4, Gi1/0/5, Gi1/0/6, Gi1/0/7, Gi1/0/8, Gi1/0/9
+!VLAN:                                                 Gi1/0/10, Gi1/0/11, Gi1/0/12, Gi1/0/13, Gi1/0/14, Gi1/0/15, Gi1/0/16, Gi1/0/17
+!VLAN:                                                 Gi1/0/18, Gi1/0/19, Gi1/0/20, Gi1/0/21, Gi1/0/22, Gi1/0/44, Te1/0/1, Te1/0/2
+!VLAN: 5    V:10.102.23.0/24:                active    
+!VLAN: 12   VLAN0012                         active    Gi1/0/45, Gi1/0/46
+!VLAN: 141  V:10.102.141.0/24:PP-UC-training active    
+!VLAN: 143  V:10.102.143.0/24:LYNC_PS_LAB_DM active    
+!VLAN: 200  E:185.37.220.64/26:AUB_AS_INET   active    Gi1/0/41, Gi1/0/42
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: 1110 V:172.16.120.32/28:RTMP_SOFTPHON active    Gi1/0/24, Gi1/0/30
+!VLAN: 1111 V:172.16.120.16/28:SIP_SOFTPHONE active    Gi1/0/26, Gi1/0/31
+!VLAN: 1211 V:172.17.0.32/27:S4B_PSLAB_SBC   active    
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 5    enet  100005     1500  -      -      -        -    -        0      0   
+!VLAN: 12   enet  100012     1500  -      -      -        -    -        0      0   
+!VLAN: 141  enet  100141     1500  -      -      -        -    -        0      0   
+!VLAN: 143  enet  100143     1500  -      -      -        -    -        0      0   
+!VLAN: 200  enet  100200     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: 1110 enet  101110     1500  -      -      -        -    -        0      0   
+!VLAN: 1111 enet  101111     1500  -      -      -        -    -        0      0   
+!VLAN: 1211 enet  101211     1500  -      -      -        -    -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0xF
+Using 11132 out of 524288 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname aubaccs06
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 128000 notifications
+enable secret 5 $1$.DKE$SNatznSFS84WQBjxNWcwm/
+!
+!username netops privilege 15 password <removed>
+username noc privilege 0 secret 5 $1$C710$JJ10.7OUrwyhJWH6dm0j51
+!
+aaa new-model
+!
+aaa authentication fail-message ^CCWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login NS-Radius group radius local
+aaa authentication enable default enable
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+switch 1 provision ws-c2960s-48td-l
+!
+no ip domain-lookup
+ip domain-name arkadin.lan
+login on-failure log
+login on-success log
+vtp mode off
+!
+crypto pki trustpoint HTTPS_SS_CERT_KEYPAIR
+ enrollment selfsigned
+ serial-number
+ revocation-check none
+ rsakeypair HTTPS_SS_CERT_KEYPAIR
+!
+crypto pki certificate chain HTTPS_SS_CERT_KEYPAIR
+ certificate self-signed 01 nvram:5C299C00host#6E6E.cer
+file prompt quiet
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+errdisable recovery cause loopback
+!
+vlan internal allocation policy ascending
+!
+vlan 5
+ name V:10.102.23.0/24:
+!
+vlan 12 
+!
+vlan 141
+ name V:10.102.141.0/24:PP-UC-training
+!
+vlan 143
+ name V:10.102.143.0/24:LYNC_PS_LAB_DM
+!
+vlan 200
+ name E:185.37.220.64/26:AUB_AS_INET
+!
+vlan 1110
+ name V:172.16.120.32/28:RTMP_SOFTPHON
+!
+vlan 1111
+ name V:172.16.120.16/28:SIP_SOFTPHONE
+!
+vlan 1211
+ name V:172.17.0.32/27:S4B_PSLAB_SBC
+!
+ip ssh version 2
+ip scp server enable
+lldp run
+!
+interface FastEthernet0
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/1
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/2
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/3
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/4
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/5
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/6
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/7
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/8
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/9
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/10
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/11
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/12
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/13
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/14
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/15
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/16
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/17
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/18
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/19
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/20
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/21
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/22
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/23
+ description UNKNOWN
+ switchport trunk native vlan 5
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/24
+ description S:FRPPAMS01:NIC1:90b1.1c46.b935
+ switchport access vlan 1110
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet1/0/25
+ description UNKNOWN
+ switchport trunk native vlan 5
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/26
+ description S:FRPPAMS01:NIC3:90b1.1c46.b937
+ switchport access vlan 1111
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet1/0/27
+ description UNKNOWN
+ switchport trunk native vlan 5
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/28
+ description UNKNOWN
+ switchport trunk native vlan 5
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/29
+ description UNKNOWN
+ switchport trunk native vlan 5
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/30
+ description S:FRPPAMS02:NIC1:90b1.1c45.207c
+ switchport access vlan 1110
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet1/0/31
+ description S:FRPPAMS02:NIC3:90b1.1c45.207d
+ switchport access vlan 1111
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet1/0/32
+ description UNKNOWN
+ switchport trunk native vlan 5
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/33
+ description 90b1.1c4a.471f
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/34
+ description UNKNOWN
+ switchport trunk native vlan 5
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/35
+ description 90b1.1c49.e359
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/36
+ description UNKNOWN
+ switchport trunk native vlan 5
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/37
+ description 90b1.1c46.a51d
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/38
+ description UNKNOWN
+ switchport trunk native vlan 5
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/39
+ description 90b1.1c4a.45c9
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/40
+ description UNKNOWN
+ switchport trunk native vlan 5
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/41
+ description f01f.afe3.063a
+ switchport access vlan 200
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet1/0/42
+ description d4ae.52c2.24a6
+ switchport access vlan 200
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet1/0/43
+ description d067.e5ec.da66-d067.e5ec.da68-DELL
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/44
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/45
+ description FRPPEMS_G01:d4ae.52c9.2a39-DELL
+ switchport access vlan 12
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet1/0/46
+ description 10.102.12.218-0019.b9ed.6c43
+ switchport access vlan 12
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet1/0/47
+ description Q:aubcore01:Gi1/0/6
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/48
+ description Q:aubcore02:Gi1/0/6
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/49
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/50
+ load-interval 30
+ shutdown
+!
+interface TenGigabitEthernet1/0/1
+ load-interval 30
+ shutdown
+!
+interface TenGigabitEthernet1/0/2
+ load-interval 30
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan5
+ ip address 10.102.23.247 255.255.255.0
+ load-interval 30
+!
+ip default-gateway 10.102.23.254
+ip http server
+ip http secure-server
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+logging trap notifications
+logging origin-id hostname
+logging source-interface Vlan5
+logging 10.115.137.89
+logging 10.124.23.24
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server location emea-aub
+snmp-server contact nio@arkadin.com
+snmp-server host 10.100.19.21 version 2c noc_services 
+snmp-server host 10.115.137.55 version 2c noc_services 
+snmp ifmib ifindex persist
+radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server timeout 3
+!radius-server key <removed>
+banner login ^C====================================================================
+=         UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED         =
+=    You must have explicit, authorized permission to access or    =
+=   configure this device. Unauthorized attempts and actions to    =
+=   access or use this system may result in civil and/or criminal  =
+= All activities performed on this device are logged and monitored =
+====================================================================
+^C
+alias exec siib sh ip int brief
+alias exec u undebug all
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+privilege exec level 0 show environment
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ logging synchronous
+ login authentication NS-Radius
+ history size 256
+line vty 0 4
+ session-timeout 120 
+ exec-timeout 120 0
+ logging synchronous
+ login authentication NS-Radius
+ history size 256
+ transport input ssh
+line vty 5 15
+ session-timeout 120 
+ exec-timeout 120 0
+ logging synchronous
+ login authentication NS-Radius
+ history size 256
+ transport input ssh
+!
+ntp source Vlan5
+ntp server 10.115.131.1 prefer
+ntp server 10.124.19.1
+ntp server 10.125.19.1
+mac address-table aging-time 14400
+end

@@ -1,0 +1,408 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C2960S-24TS-L
+!CPU: PowerPC
+!
+!Memory: main 131072K
+!Serial Number: FOC1610Z36P
+!Model revision number           : E0
+!Model number                    : WS-C2960S-24TS-L
+!Motherboard assembly number     : 73-11910-08
+!Motherboard serial number       : FOC16081X1D
+!Motherboard revision number     : A0
+!Power supply part number        : 341-0328-02
+!Power supply serial number      : LIT16030F07
+!
+!Processor ID: FOC1610Z36P
+!
+!Image: Software: C2960S-UNIVERSALK9-M, 15.0(2)SE4, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Wed 26-Jun-13 02:59 by prod_rel_team
+!Image: flash:/c2960s-universalk9-mz.150-2.SE4/c2960s-universalk9-mz.150-2.SE4.bin
+!
+!BOOTLDR: Version 12.2(55r)SE, RELEASE SOFTWARE (fc1)
+!
+!% No entity named "raw"
+!
+!
+config-register 0xF
+Using 13989 out of 524288 bytes
+!
+version 15.0
+no service pad
+service timestamps debug datetime localtime show-timezone
+service timestamps log datetime localtime show-timezone
+service password-encryption
+!
+hostname atlaccs12
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 128000 notifications
+enable secret 4 RJRS7bPX11gs7ACKwHgYqNR221HpyQ.dyjXutfptU7I
+!
+username netops privilege 15 secret 4 RJRS7bPX11gs7ACKwHgYqNR221HpyQ.dyjXutfptU7I
+username sysops privilege 15 secret 4 DU3mS5RH2OrWIxZAhVbe0Y.rg/YGS5mVkCDUouHU.0Y
+aaa new-model
+!
+        !
+aaa authentication fail-message ^CCCWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login NS-Radius group radius local
+aaa authentication enable default enable
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+clock timezone EST -5 0
+clock summer-time EDT recurring
+switch 1 provision ws-c2960s-24ts-l
+!
+no ip domain-lookup
+ip domain-name arkadin.lan
+login on-failure log
+login on-success log
+vtp domain ATL-DC
+        vtp mode off
+!
+crypto pki trustpoint TP-self-signed-4185616384
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-4185616384
+ revocation-check none
+ rsakeypair TP-self-signed-4185616384
+!
+crypto pki certificate chain TP-self-signed-4185616384
+ certificate self-signed 01 nvram:IOS-Self-Sig#1.cer
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+spanning-tree vlan 1-4094 priority 53248
+!
+errdisable recovery cause udld
+!
+        !
+!
+vlan internal allocation policy ascending
+!
+vlan 19
+ name M:10.100.19.0/24:MGMT
+!
+vlan 4044 
+!
+ip ssh authentication-retries 2
+ip ssh version 2
+!
+interface Port-channel1
+         switchport trunk allowed vlan 19,22,23,30,32,122-124
+ switchport mode trunk
+ duplex full
+!
+interface FastEthernet0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet1/0/1
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/2
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/3
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/4
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+        !
+interface GigabitEthernet1/0/5
+ description Q:atlcore01:Gi4/19
+ switchport trunk allowed vlan 19
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/6
+!
+interface GigabitEthernet1/0/7
+!
+interface GigabitEthernet1/0/8
+!
+interface GigabitEthernet1/0/9
+!
+interface GigabitEthernet1/0/10
+!
+interface GigabitEthernet1/0/11
+!
+interface GigabitEthernet1/0/12
+!
+interface GigabitEthernet1/0/13
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+        !
+interface GigabitEthernet1/0/14
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/15
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/16
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/17
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/18
+!
+interface GigabitEthernet1/0/19
+!
+interface GigabitEthernet1/0/20
+!
+        interface GigabitEthernet1/0/21
+!
+interface GigabitEthernet1/0/22
+!
+interface GigabitEthernet1/0/23
+!
+interface GigabitEthernet1/0/24
+!
+interface GigabitEthernet1/0/25
+!
+interface GigabitEthernet1/0/26
+!
+interface GigabitEthernet1/0/27
+!
+interface GigabitEthernet1/0/28
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan19
+ ip address 10.100.19.218 255.255.255.0
+!
+        no ip http server
+ip http secure-server
+!
+ip access-list standard SSH-ACL
+ permit 10.0.0.0 0.255.255.255 log
+ permit 192.168.0.0 0.0.255.255 log
+ deny   any log
+ip radius source-interface Vlan19 
+logging trap notifications
+logging facility local5
+logging source-interface Vlan19
+logging host 10.100.137.24
+logging host 10.100.137.89
+access-list 1 remark Management Access
+access-list 1 permit 10.0.0.0 0.255.255.255 log
+access-list 10 permit 10.100.19.21
+access-list 10 permit 10.100.74.220
+access-list 10 permit 10.100.88.80
+access-list 10 permit 10.100.137.0 0.0.0.255
+access-list 10 permit 10.102.2.12
+access-list 10 permit 10.102.10.130
+access-list 10 permit 10.115.38.131
+        access-list 99 permit 10.102.10.36
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+access-list 101 remark QuietMode
+access-list 101 permit ip 10.0.0.0 0.0.0.255 any
+!
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server community public RO 99
+snmp-server trap link ietf
+snmp-server trap-source Vlan19
+snmp-server tftp-server-list 10
+snmp-server location USATL_Suite60048_Rack0202
+snmp-server enable traps snmp authentication linkdown linkup coldstart warmstart
+snmp-server enable traps transceiver all
+snmp-server enable traps call-home message-send-fail server-fail
+        snmp-server enable traps tty
+snmp-server enable traps license
+snmp-server enable traps auth-framework sec-violation
+snmp-server enable traps cluster
+snmp-server enable traps config-copy
+snmp-server enable traps config
+snmp-server enable traps config-ctid
+snmp-server enable traps dot1x auth-fail-vlan guest-vlan no-auth-fail-vlan no-guest-vlan
+snmp-server enable traps energywise
+snmp-server enable traps fru-ctrl
+snmp-server enable traps entity
+snmp-server enable traps event-manager
+snmp-server enable traps ike policy add
+snmp-server enable traps ike policy delete
+snmp-server enable traps ike tunnel start
+snmp-server enable traps ike tunnel stop
+snmp-server enable traps ipsec cryptomap add
+snmp-server enable traps ipsec cryptomap delete
+snmp-server enable traps ipsec cryptomap attach
+snmp-server enable traps ipsec cryptomap detach
+snmp-server enable traps ipsec tunnel start
+snmp-server enable traps ipsec tunnel stop
+snmp-server enable traps ipsec too-many-sas
+        snmp-server enable traps power-ethernet police
+snmp-server enable traps cpu threshold
+snmp-server enable traps rep
+snmp-server enable traps ipsla
+snmp-server enable traps vstack
+snmp-server enable traps bridge newroot topologychange
+snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistency
+snmp-server enable traps syslog
+snmp-server enable traps vtp
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps flash insertion removal
+snmp-server enable traps port-security
+snmp-server enable traps envmon fan shutdown supply temperature status
+snmp-server enable traps stackwise
+snmp-server enable traps errdisable
+snmp-server enable traps mac-notification change move threshold
+snmp-server enable traps vlan-membership
+snmp-server host 10.102.10.130 version 2c network_services 
+snmp-server host 10.115.38.131 version 2c noc_services 
+snmp-server file-transfer access-group 10 protocol tftp
+snmp ifmib ifindex persist
+!
+        radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server timeout 3
+!radius-server key <removed>
+!
+privilege exec level 0 traceroute ip
+privilege exec level 0 traceroute
+privilege exec level 0 ping ip
+privilege exec level 0 ping
+privilege exec level 0 show mac address-table
+privilege exec level 0 show mac
+privilege exec level 0 show inventory
+privilege exec level 0 show ip
+privilege exec level 0 show arp
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show processes memory
+privilege exec level 0 show processes
+privilege exec level 0 show version
+privilege exec level 0 show configuration
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces status
+        privilege exec level 0 show interfaces Vlan19 description
+privilege exec level 0 show interfaces Vlan19 status
+privilege exec level 0 show interfaces Vlan1 description
+privilege exec level 0 show interfaces Vlan1 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/28 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/28 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/27 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/27 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/26 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/26 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/25 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/25 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/24 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/24 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/23 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/23 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/22 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/22 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/21 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/21 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/20 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/20 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/19 description
+        privilege exec level 0 show interfaces GigabitEthernet1/0/19 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/18 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/18 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/17 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/17 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/16 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/16 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/15 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/15 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/14 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/14 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/13 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/13 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/12 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/12 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/11 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/11 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/10 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/10 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/9 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/9 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/8 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/8 status
+        privilege exec level 0 show interfaces GigabitEthernet1/0/7 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/7 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/6 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/6 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/5 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/5 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/4 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/4 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/3 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/3 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/2 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/2 status
+privilege exec level 0 show interfaces GigabitEthernet1/0/1 description
+privilege exec level 0 show interfaces GigabitEthernet1/0/1 status
+privilege exec level 0 show interfaces FastEthernet0 description
+privilege exec level 0 show interfaces FastEthernet0 status
+privilege exec level 0 show interfaces Port-channel1 description
+privilege exec level 0 show interfaces Port-channel1 status
+privilege exec level 0 show interfaces Null0 description
+privilege exec level 0 show interfaces Null0 status
+privilege exec level 0 show interfaces
+privilege exec level 0 show
+banner login ^C========================================================================
+        =                                                                      =
+=               This is a private system of Arkadin                    =
+=         Authorization from Network Operations Team is                =
+=   required to use this system. Unauthorized access is prohibited!    =
+=                                                                      =
+=               This device is NOT RADIUS authenticated                =
+=                                                                      =
+=                            nio@arkadin.com                           =
+=                                                                      =
+========================================================================
+^C
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 15 0
+ logging synchronous
+ login authentication NS-Radius
+ history size 256
+ stopbits 1
+line vty 0 4
+ session-timeout 30 
+ access-class SSH-ACL in
+ exec-timeout 60 0
+         logging synchronous
+ login authentication NS-Radius
+ history size 256
+ transport input ssh
+line vty 5 15
+ session-timeout 30 
+ access-class SSH-ACL in
+ exec-timeout 60 0
+ logging synchronous
+ login authentication NS-Radius
+ history size 256
+ transport input ssh
+!
+ntp source Vlan19
+ntp server 10.100.51.1 prefer
+ntp server 10.122.97.1
+end

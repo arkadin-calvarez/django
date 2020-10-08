@@ -1,0 +1,561 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C3750G-24TS-1U
+!CPU: PowerPC405
+!
+!Memory: main 131072K
+!Model number:  WS-C3750G-24TS-S1U
+!Serial number: FOC1412Y49M
+!
+!Processor ID: FOC1412Y49M
+!
+!Image: Software: C3750-IPSERVICESK9-M, 12.2(55)SE6, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Mon 23-Jul-12 13:22 by prod_rel_team
+!Image: flash:/c3750-ipservicesk9-mz.122-55.SE6.bin
+!
+!BOOTLDR: Version 12.2(44)SE5, RELEASE SOFTWARE (fc1)
+!
+!% No entity named "raw"
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Gi1/0/1, Gi1/0/12, Gi1/0/13, Gi1/0/14, Gi1/0/15, Gi1/0/16, Gi1/0/17, Gi1/0/18
+!VLAN:                                                 Gi1/0/19, Gi1/0/20, Gi1/0/21, Gi1/0/22, Gi1/0/25, Gi1/0/26, Gi1/0/27, Gi1/0/28
+!VLAN: 2    X:10.102.20.0/24:PP-FW2-SW_inter active    
+!VLAN: 3    V:10.102.21.0/24:PP_VIPER_SIP    active    
+!VLAN: 4    V:10.102.22.0/24:PP_VIPER_RTP    active    
+!VLAN: 5    M:10.102.23.0/24:PP_MGMT         active    Gi1/0/2, Gi1/0/7
+!VLAN: 12   S:10.102.12.0/24:PP_LAN1         active    
+!VLAN: 19   M:10.102.19.0/24:PP_MGMT_DMZ     active    
+!VLAN: 24   V:AUB_ANW_DMZ-NTT_CLOUD_SIMUL    active    
+!VLAN: 65   U:192.168.65.0/26:IT_LB_DMZ      active    
+!VLAN: 124  V:AUB_ANW_LAN-NTT_CLOUD_SIMUL    active    
+!VLAN: 165  V:10.102.165.0/24:IT_Exchange_PP active    
+!VLAN: 166  Z:10.102.166.0/24:DMZ_IT_PProxy  active    
+!VLAN: 200  E:185.37.220.64/26:AUB_AS_INET   active    
+!VLAN: 202  M:10.102.202.0/24:MGMT_LyncPP    active    
+!VLAN: 248  VLAN0248                         active    
+!VLAN: 860  U:192.168.1.0/24:iSCSI_LyncPP    active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: 1108 V:10.92.32.0/28:SIP_AdobePP      active    
+!VLAN: 1111 V:172.16.120.16/28:SIP_SOFTPHONE active    
+!VLAN: 1215 V:172.18.128.0/24:MT_int_LyncPP  active    
+!VLAN: 1217 V:172.19.0.32/27:MT_ext_LyncPP   active    
+!VLAN: 1219 V:185.37.220.128/25:Cust1_OnNet  active    
+!VLAN: 1220 V:172.18.0.0/24:Cust1_int_LyncPP active    
+!VLAN: 1221 V:172.17.0.64/27:Cust1_SBC_LyncP active    
+!VLAN: 1225 V:Cust2_int_LyncPP               active    
+!VLAN: 1226 V:172.17.0.160/27:SFBMT_SBC_LKPP active    
+!VLAN: 1227 V:172.19.0.160/27:SFBMT_ext_Lync active    
+!VLAN: 1228 V:172.17.224.192/27:ACODES_SBC1  active    
+!VLAN: 1229 V:172.17.224.224/27:ACODES_SBC2  active    
+!VLAN: 1232 V:172.19.0.128/27:SFB_ext_LyncPP active    
+!VLAN: 1240 X:172.19.224.0/27:SFB_QOS_TST    active    
+!VLAN: 1241 X:172.19.224.32/27:SFB_QOS_CLIEN active    
+!VLAN: 4038 X:172.31.251.0/29:LB_INTERCO_DMZ active    
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 2    enet  100002     1500  -      -      -        -    -        0      0   
+!VLAN: 3    enet  100003     1500  -      -      -        -    -        0      0   
+!VLAN: 4    enet  100004     1500  -      -      -        -    -        0      0   
+!VLAN: 5    enet  100005     1500  -      -      -        -    -        0      0   
+!VLAN: 12   enet  100012     1500  -      -      -        -    -        0      0   
+!VLAN: 19   enet  100019     1500  -      -      -        -    -        0      0   
+!VLAN: 24   enet  100024     1500  -      -      -        -    -        0      0   
+!VLAN: 65   enet  100065     1500  -      -      -        -    -        0      0   
+!VLAN: 124  enet  100124     1500  -      -      -        -    -        0      0   
+!VLAN: 165  enet  100165     1500  -      -      -        -    -        0      0   
+!VLAN: 166  enet  100166     1500  -      -      -        -    -        0      0   
+!VLAN: 200  enet  100200     1500  -      -      -        -    -        0      0   
+!VLAN: 202  enet  100202     1500  -      -      -        -    -        0      0   
+!VLAN: 248  enet  100248     1500  -      -      -        -    -        0      0   
+!VLAN: 860  enet  100860     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: 1108 enet  101108     1500  -      -      -        -    -        0      0   
+!VLAN: 1111 enet  101111     1500  -      -      -        -    -        0      0   
+!VLAN: 1215 enet  101215     1500  -      -      -        -    -        0      0   
+!VLAN: 1217 enet  101217     1500  -      -      -        -    -        0      0   
+!VLAN: 1219 enet  101219     1500  -      -      -        -    -        0      0   
+!VLAN: 1220 enet  101220     1500  -      -      -        -    -        0      0   
+!VLAN: 1221 enet  101221     1500  -      -      -        -    -        0      0   
+!VLAN: 1225 enet  101225     1500  -      -      -        -    -        0      0   
+!VLAN: 1226 enet  101226     1500  -      -      -        -    -        0      0   
+!VLAN: 1227 enet  101227     1500  -      -      -        -    -        0      0   
+!VLAN: 1228 enet  101228     1500  -      -      -        -    -        0      0   
+!VLAN: 1229 enet  101229     1500  -      -      -        -    -        0      0   
+!VLAN: 1232 enet  101232     1500  -      -      -        -    -        0      0   
+!VLAN: 1240 enet  101240     1500  -      -      -        -    -        0      0   
+!VLAN: 1241 enet  101241     1500  -      -      -        -    -        0      0   
+!VLAN: 4038 enet  104038     1500  -      -      -        -    -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0xF
+Using 12044 out of 524288 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime show-timezone
+service timestamps log datetime localtime
+service password-encryption
+service sequence-numbers
+!
+hostname aubaccs01
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 128000 notifications
+no logging console
+no logging monitor
+enable secret 5 $1$dY9J$/Aq86MNjg3BWjjczWVZf5.
+!
+!username netops privilege 15 password <removed>
+username noc privilege 0 secret 5 $1$OeCP$THwdLIFU9339zqOyZnjUd.
+!
+aaa new-model
+!
+aaa authentication fail-message ^CWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login ARKANETRADIUS group radius local
+aaa authentication enable default enable
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+clock timezone CET 1
+switch 1 provision ws-c3750g-24ts-1u
+system mtu routing 1500
+vtp mode transparent
+no ip subnet-zero
+ip routing
+no ip domain-lookup
+ip domain-name arkadin.lan
+!
+login on-failure log
+login on-success log
+!
+crypto pki trustpoint TP-self-signed-4267933952
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-4267933952
+ revocation-check none
+ rsakeypair TP-self-signed-4267933952
+!
+crypto pki certificate chain TP-self-signed-4267933952
+ certificate self-signed 01 nvram:IOS-Self-Sig#3232.cer
+!
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+errdisable recovery cause loopback
+errdisable recovery interval 60
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+spanning-tree vlan 1-4094 priority 49152
+!
+vlan internal allocation policy ascending
+!
+vlan 2
+ name X:10.102.20.0/24:PP-FW2-SW_inter
+!
+vlan 3
+ name V:10.102.21.0/24:PP_VIPER_SIP
+!
+vlan 4
+ name V:10.102.22.0/24:PP_VIPER_RTP
+!
+vlan 5
+ name M:10.102.23.0/24:PP_MGMT
+!
+vlan 12
+ name S:10.102.12.0/24:PP_LAN1
+!
+vlan 19
+ name M:10.102.19.0/24:PP_MGMT_DMZ
+!
+vlan 24
+ name V:AUB_ANW_DMZ-NTT_CLOUD_SIMUL
+!
+vlan 65
+ name U:192.168.65.0/26:IT_LB_DMZ
+!
+vlan 124
+ name V:AUB_ANW_LAN-NTT_CLOUD_SIMUL
+!
+vlan 165
+ name V:10.102.165.0/24:IT_Exchange_PP
+!
+vlan 166
+ name Z:10.102.166.0/24:DMZ_IT_PProxy
+!
+vlan 200
+ name E:185.37.220.64/26:AUB_AS_INET
+!
+vlan 202
+ name M:10.102.202.0/24:MGMT_LyncPP
+!
+vlan 248 
+!
+vlan 860
+ name U:192.168.1.0/24:iSCSI_LyncPP
+!
+vlan 1108
+ name V:10.92.32.0/28:SIP_AdobePP
+!
+vlan 1111
+ name V:172.16.120.16/28:SIP_SOFTPHONE
+!
+vlan 1215
+ name V:172.18.128.0/24:MT_int_LyncPP
+!
+vlan 1217
+ name V:172.19.0.32/27:MT_ext_LyncPP
+!
+vlan 1219
+ name V:185.37.220.128/25:Cust1_OnNet
+!
+vlan 1220
+ name V:172.18.0.0/24:Cust1_int_LyncPP
+!
+vlan 1221
+ name V:172.17.0.64/27:Cust1_SBC_LyncP
+!
+vlan 1225
+ name V:Cust2_int_LyncPP
+!
+vlan 1226
+ name V:172.17.0.160/27:SFBMT_SBC_LKPP
+!
+vlan 1227
+ name V:172.19.0.160/27:SFBMT_ext_Lync
+!
+vlan 1228
+ name V:172.17.224.192/27:ACODES_SBC1
+!
+vlan 1229
+ name V:172.17.224.224/27:ACODES_SBC2
+!
+vlan 1232
+ name V:172.19.0.128/27:SFB_ext_LyncPP
+!
+vlan 1240
+ name X:172.19.224.0/27:SFB_QOS_TST
+!
+vlan 1241
+ name X:172.19.224.32/27:SFB_QOS_CLIEN
+!
+vlan 4038
+ name X:172.31.251.0/29:LB_INTERCO_DMZ
+lldp run
+!
+ip tcp synwait-time 5
+ip tftp source-interface Vlan5
+ip ssh authentication-retries 2
+ip ssh version 2
+!
+interface GigabitEthernet1/0/1
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/2
+ description M:aubsbc01-1:mgmt0
+ switchport access vlan 5
+ load-interval 30
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/3
+ description V:Q:aubsbc01-1:m00
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/4
+ description V:Q:aubsbc01-1:m01
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/5
+ description V:Q:aubsbc01-1:m10
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/6
+ description V:Q:aubsbc01-1:m11
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/7
+ description M:aubsbc01-2:mgmt0
+ switchport access vlan 5
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet1/0/8
+ description V:Q:aubsbc01-2:m00
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/9
+ description V:Q:aubsbc01-2:m01
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/10
+ description V:Q:aubsbc01-2:m10
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/11
+ description V:Q:aubsbc01-2:m11
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/12
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/13
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/14
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/15
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/16
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/17
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/18
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/19
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/20
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/21
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/22
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/23
+ description Q:aubcore01:Gi1/0/1:
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/24
+ description Q:aubcore02:Gi1/0/1:
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/25
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/26
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/27
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/0/28
+ load-interval 30
+ shutdown
+!
+interface Vlan1
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface Vlan5
+ description M:10.102.23.0/24:PP_MGMT
+ ip address 10.102.23.1 255.255.255.0
+ load-interval 30
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 10.102.23.254
+ip route 10.0.1.0 255.255.255.0 10.102.23.254
+no ip http server
+no ip http secure-server
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+!
+ip radius source-interface Vlan5 
+logging trap notifications
+logging facility local5
+logging 10.115.137.89
+logging 10.124.23.24
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+!
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server trap link ietf
+snmp-server location AUBPP
+snmp-server contact Arkadin Network Services (network_operations@arkadin.com)
+snmp-server enable traps snmp linkdown linkup coldstart warmstart
+snmp-server enable traps tty
+snmp-server enable traps cluster
+snmp-server enable traps fru-ctrl
+snmp-server enable traps entity
+snmp-server enable traps cpu threshold
+snmp-server enable traps power-ethernet group 1-9
+snmp-server enable traps vtp
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps flash insertion removal
+snmp-server enable traps port-security
+snmp-server enable traps envmon fan shutdown supply temperature status
+snmp-server enable traps stackwise
+snmp-server enable traps license
+snmp-server enable traps config-copy
+snmp-server enable traps hsrp
+snmp-server enable traps bridge newroot topologychange
+snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistency
+snmp-server enable traps rtr
+snmp-server enable traps mac-notification change move threshold
+snmp-server enable traps vlan-membership
+snmp-server host 10.102.10.130 version 2c network_services 
+snmp-server host 10.115.38.131 version 2c noc_services 
+snmp ifmib ifindex persist
+radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server timeout 3
+!radius-server key <removed>
+!
+banner login ^C========================================================================
+=                                                                      =                                                                             
+=               This is a private system of Arkadin                    =
+=         Authorization from Network Operations Team is                =
+=   required to use this system. Unauthorized access is prohibited!    =
+=                                                                      =
+=               This device is RADIUS authenticated                    = 
+=                                                                      =
+=                 network_operations@arkadin.com                       = 
+=                                                                      =
+========================================================================
+^C
+alias exec u undebug all
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in vrf-also
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in vrf-also
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+!
+ntp source Vlan5
+ntp server 10.115.131.1 prefer
+ntp server 10.124.19.1
+ntp server 10.125.19.1
+end

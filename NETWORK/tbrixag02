@@ -1,0 +1,624 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C3750X-48
+!CPU: PowerPC405
+!
+!Memory: main 262144K
+!Model number:  WS-C3750X-48T-L
+!Serial number: FDO1617V03V
+!
+!Processor ID: FDO1617V03V
+!
+!Image: Software: C3750E-UNIVERSALK9-M, 12.2(55)SE3, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Thu 05-May-11 15:40 by prod_rel_team
+!Image: flash:/c3750e-universalk9-mz.122-55.SE3/c3750e-universalk9-mz.122-55.SE3.bin
+!
+!BOOTLDR: Version 12.2(53r)SE2, RELEASE SOFTWARE (fc1)
+!
+!% No entity named "raw"
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Gi1/0/4, Gi1/0/6, Gi1/0/7, Gi1/0/8, Gi1/0/9, Gi1/0/12, Gi1/0/13, Gi1/0/14, Gi1/0/15
+!VLAN:                                                 Gi1/0/16, Gi1/0/17, Gi1/0/18, Gi1/0/19, Gi1/0/20, Gi1/0/21, Gi1/0/22, Gi1/0/23
+!VLAN:                                                 Gi1/0/24, Gi1/0/25, Gi1/0/27, Gi1/0/28, Gi1/0/29, Gi1/0/30, Gi1/0/31, Gi1/0/32
+!VLAN:                                                 Gi1/0/33, Gi1/0/34, Gi1/0/35, Gi1/0/36, Gi1/0/37, Gi1/0/45, Gi1/1/2, Gi1/1/3
+!VLAN:                                                 Gi1/1/4
+!VLAN: 2    N:tbrixag0[12]:Po1               active    
+!VLAN: 3    M:10.120.3.0/24:MGMT             active    
+!VLAN: 101  X:186.193.235.48/28:Public_DMZ   active    
+!VLAN: 187  E:186.193.226.96/29:INTERNET-CTI active    Gi1/0/10
+!VLAN: 757  X:MPLS-L2.GIN_P2P_TBR-ATL        active    
+!VLAN: 999  X:172.16.254.24/30:ixrt          active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: 1100 E:201.12.204.136/29:SBC_intellig active    
+!VLAN: 1103 E:172.16.120.24/29:SBC_level3    active    
+!VLAN: 1105 E:186.231.68.216/29:SBC-timsmart active    
+!VLAN: 1113 E:186.193.234.158:CTI-ASR2       active    
+!VLAN: 2998 ARKATEST::172.16.241.48/29:tbrix active    
+!VLAN: 2999 X:172.16.240.48/29:eBGP_core-ASR active    
+!VLAN: 3003 X:142.40.223.32/28:SBC_VALE      active    
+!VLAN: 3012 X:172.16.120.0/28:CTI-FW         active    Gi1/0/11
+!VLAN: 3501 E:10.11.3.80/29:Level3-SIP.Trunk active    
+!VLAN: 3503 E:142.40.223.16/29:VALE_interco  active    
+!VLAN: 3505 E:201.12.204.200/30:Intelig_sec  active    Gi1/0/2, Gi1/0/3
+!VLAN: 3506 E:Telefonica                     active    Gi1/0/5
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 2    enet  100002     1500  -      -      -        -    -        0      0   
+!VLAN: 3    enet  100003     1500  -      -      -        -    -        0      0   
+!VLAN: 101  enet  100101     1500  -      -      -        -    -        0      0   
+!VLAN: 187  enet  100187     1500  -      -      -        -    -        0      0   
+!VLAN: 757  enet  100757     1500  -      -      -        -    -        0      0   
+!VLAN: 999  enet  100999     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: 1100 enet  101100     1500  -      -      -        -    -        0      0   
+!VLAN: 1103 enet  101103     1500  -      -      -        -    -        0      0   
+!VLAN: 1105 enet  101105     1500  -      -      -        -    -        0      0   
+!VLAN: 1113 enet  101113     1500  -      -      -        -    -        0      0   
+!VLAN: 2998 enet  102998     1500  -      -      -        -    -        0      0   
+!VLAN: 2999 enet  102999     1500  -      -      -        -    -        0      0   
+!VLAN: 3003 enet  103003     1500  -      -      -        -    -        0      0   
+!VLAN: 3012 enet  103012     1500  -      -      -        -    -        0      0   
+!VLAN: 3501 enet  103501     1500  -      -      -        -    -        0      0   
+!VLAN: 3503 enet  103503     1500  -      -      -        -    -        0      0   
+!VLAN: 3505 enet  103505     1500  -      -      -        -    -        0      0   
+!VLAN: 3506 enet  103506     1500  -      -      -        -    -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0xF
+Using 14033 out of 524288 bytes
+!
+version 12.2
+service nagle
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime msec localtime show-timezone
+service password-encryption
+service sequence-numbers
+no service dhcp
+!
+hostname tbrixag02
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 128000 notifications
+enable secret 5 $1$9KEu$XgJRzgsTstPwcEy.sILSw0
+!
+!username netops privilege 15 password <removed>
+username noc privilege 0 secret 5 $1$oLgH$e1RDuiVuEpDSRLBGfibEM0
+!
+aaa new-model
+!
+aaa authentication fail-message ^CWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login ARKANETRADIUS group radius local
+aaa authentication enable default enable
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+clock timezone GMT 0
+switch 1 provision ws-c3750x-48
+system mtu routing 9198
+no ip source-route
+!
+no ip domain-lookup
+ip domain-name net.arkadin.lan
+login block-for 100 attempts 15 within 100
+login quiet-mode access-class OAM
+login on-failure log
+login on-success log
+vtp mode off
+udld aggressive
+
+!
+archive
+ log config
+  logging enable
+  logging size 500
+  notify syslog contenttype plaintext
+  hidekeys
+file prompt quiet
+!
+spanning-tree mode rapid-pvst
+spanning-tree loopguard default
+spanning-tree portfast default
+spanning-tree portfast bpdufilter default
+spanning-tree extend system-id
+spanning-tree vlan 1-4094 priority 49152
+!
+errdisable recovery cause udld
+!
+vlan internal allocation policy ascending
+!
+vlan 2
+ name N:tbrixag0[12]:Po1
+!
+vlan 3
+ name M:10.120.3.0/24:MGMT
+!
+vlan 101
+ name X:186.193.235.48/28:Public_DMZ
+!
+vlan 187
+ name E:186.193.226.96/29:INTERNET-CTI
+!
+vlan 757
+ name X:MPLS-L2.GIN_P2P_TBR-ATL
+!
+vlan 999
+ name X:172.16.254.24/30:ixrt
+!
+vlan 1100
+ name E:201.12.204.136/29:SBC_intellig
+!
+vlan 1103
+ name E:172.16.120.24/29:SBC_level3
+!
+vlan 1105
+ name E:186.231.68.216/29:SBC-timsmart
+!
+vlan 1113
+ name E:186.193.234.158:CTI-ASR2
+!
+vlan 2998
+ name ARKATEST::172.16.241.48/29:tbrix
+!
+vlan 2999
+ name X:172.16.240.48/29:eBGP_core-ASR
+!
+vlan 3003
+ name X:142.40.223.32/28:SBC_VALE
+!
+vlan 3012
+ name X:172.16.120.0/28:CTI-FW
+!
+vlan 3501
+ name E:10.11.3.80/29:Level3-SIP.Trunk
+!
+vlan 3503
+ name E:142.40.223.16/29:VALE_interco
+!
+vlan 3505
+ name E:201.12.204.200/30:Intelig_sec
+!
+vlan 3506
+ name E:Telefonica
+!
+ip ssh authentication-retries 2
+ip ssh version 2
+ip scp server enable
+!
+interface Null0
+ no ip unreachables
+!
+interface Port-channel1
+ description Q:Gi1/0/47-48:tbrixag01:Po1
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 2
+ switchport trunk allowed vlan 3,187,999,1010-3900,4001-4094
+ switchport mode trunk
+ load-interval 30
+ spanning-tree link-type point-to-point
+ spanning-tree cost 100
+!
+interface FastEthernet0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet1/0/1
+ description E:CTI.INET:SE:Adobe&FMS:
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1113
+ switchport mode trunk
+ load-interval 30
+ no cdp enable
+ no cdp tlv server-location 
+ no cdp tlv app
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet1/0/2
+ description OLD:E:Intelig:SE:SIP_Trunk:BRELOC038645(230Mb)
+ switchport access vlan 3505
+ switchport mode access
+ load-interval 30
+ no cdp enable
+ no cdp tlv server-location 
+ no cdp tlv app
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet1/0/3
+ description E:Intelig:SE:SIP_Trunk:BRELOC038645(230Mb)
+ switchport access vlan 3505
+ switchport mode access
+ load-interval 30
+ speed 1000
+ duplex full
+ no cdp enable
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet1/0/4
+ switchport trunk allowed vlan 1-1113,1115-4094
+ load-interval 30
+!
+interface GigabitEthernet1/0/5
+ description E:Telefonica:SIP_Trunk(Primary)
+ switchport access vlan 3506
+ switchport mode access
+ load-interval 30
+ shutdown
+ no cdp enable
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet1/0/6
+ load-interval 30
+!
+interface GigabitEthernet1/0/7
+ load-interval 30
+!
+interface GigabitEthernet1/0/8
+ load-interval 30
+!
+interface GigabitEthernet1/0/9
+ load-interval 30
+!
+interface GigabitEthernet1/0/10
+ description X:BRTBRFW2:0/0:Untrust
+ switchport access vlan 187
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet1/0/11
+ description X:BRTBRFW2:0/1:CTI_Adobe.Softphone
+ switchport access vlan 3012
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet1/0/12
+ load-interval 30
+!
+interface GigabitEthernet1/0/13
+ load-interval 30
+!
+interface GigabitEthernet1/0/14
+ load-interval 30
+!
+interface GigabitEthernet1/0/15
+ load-interval 30
+!
+interface GigabitEthernet1/0/16
+ load-interval 30
+!
+interface GigabitEthernet1/0/17
+ load-interval 30
+!
+interface GigabitEthernet1/0/18
+ load-interval 30
+!
+interface GigabitEthernet1/0/19
+ load-interval 30
+!
+interface GigabitEthernet1/0/20
+ load-interval 30
+!
+interface GigabitEthernet1/0/21
+ load-interval 30
+!
+interface GigabitEthernet1/0/22
+ load-interval 30
+!
+interface GigabitEthernet1/0/23
+ load-interval 30
+!
+interface GigabitEthernet1/0/24
+ load-interval 30
+!
+interface GigabitEthernet1/0/25
+ load-interval 30
+!
+interface GigabitEthernet1/0/26
+ load-interval 30
+!
+interface GigabitEthernet1/0/27
+ load-interval 30
+!
+interface GigabitEthernet1/0/28
+ load-interval 30
+!
+interface GigabitEthernet1/0/29
+ load-interval 30
+!
+interface GigabitEthernet1/0/30
+ load-interval 30
+!
+interface GigabitEthernet1/0/31
+ load-interval 30
+!
+interface GigabitEthernet1/0/32
+ load-interval 30
+!
+interface GigabitEthernet1/0/33
+ load-interval 30
+!
+interface GigabitEthernet1/0/34
+ load-interval 30
+!
+interface GigabitEthernet1/0/35
+ load-interval 30
+!
+interface GigabitEthernet1/0/36
+ load-interval 30
+!
+interface GigabitEthernet1/0/37
+ load-interval 30
+!
+interface GigabitEthernet1/0/38
+ description X:Q:BRTBRSBC01s:m01:internet
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 101,4001-4094
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/39
+ description X:Q:BRTBRSBC01s:m10:customers
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 3001-3499
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/40
+ description X:Q:BRTBRSBC01s:m11:providers
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1100,1103,1105,1114,3001-3499
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/41
+ description X:tbrixrt02:G0/0/0:mpls
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 757,759,1010-1099
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast trunk
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet1/0/42
+ description X:tbrixrt02:G0/0/1:internal
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 999,1100,1103,1105,2998,2999,3001-3499,4001-4003
+ switchport trunk allowed vlan add 4044,4045,4051,4052
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast trunk
+!
+interface GigabitEthernet1/0/43
+ description X:tbrixrt02:G0/0/2:collection
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1113,3501-3999
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast trunk
+!
+interface GigabitEthernet1/0/44
+ description E:tbrixrt02:G0/0/3:internet
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 4001-4094
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast trunk
+!
+interface GigabitEthernet1/0/45
+ load-interval 30
+!
+interface GigabitEthernet1/0/46
+ description Q:tbrcore02:Gi0/1
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 3,101,187,2998,2999,3002
+ switchport mode trunk
+ load-interval 30
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet1/0/47
+ description Q:Po1:tbrixag01:Gi1/0/47
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 2
+ switchport trunk allowed vlan 3,187,999,1010-3900,4001-4094
+ switchport mode trunk
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-group 1 mode desirable
+!
+interface GigabitEthernet1/0/48
+ description Q:Po1:tbrixag01:Gi1/0/48
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 2
+ switchport trunk allowed vlan 3,187,999,1010-3900,4001-4094
+ switchport mode trunk
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-group 1 mode desirable
+!
+interface GigabitEthernet1/1/1
+ description B:AA:VC-GIN-EU-SID2004630:A-END_NTT_VLINK_VC-366-A_TBR-AT3_atlixag01
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 757
+ switchport mode trunk
+ bandwidth 100000
+ load-interval 30
+ speed nonegotiate
+ no cdp enable
+ no cdp tlv server-location 
+ no cdp tlv app
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet1/1/2
+ load-interval 30
+ no cdp enable
+ no cdp tlv server-location 
+ no cdp tlv app
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet1/1/3
+ load-interval 30
+ no cdp enable
+ no cdp tlv server-location 
+ no cdp tlv app
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet1/1/4
+ load-interval 30
+ no cdp enable
+ no cdp tlv server-location 
+ no cdp tlv app
+ spanning-tree bpdufilter enable
+!
+interface TenGigabitEthernet1/1/1
+!
+interface TenGigabitEthernet1/1/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan3
+ description M:10.120.3.0/24
+ ip address 10.120.3.250 255.255.255.0
+!
+interface Vlan3506
+ ip address 172.16.0.148 255.255.255.248
+!
+ip default-gateway 10.120.3.254
+no ip http server
+no ip http secure-server
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ip sla enable reaction-alerts
+logging trap notifications
+logging origin-id hostname
+logging facility local5
+logging source-interface Vlan3
+logging 10.100.137.24
+logging 10.100.137.89
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server location noram-tbr
+snmp-server contact nio@arkadin.com
+snmp-server host 10.100.19.21 version 2c noc_services 
+snmp-server host 10.100.137.55 version 2c noc_services 
+snmp ifmib ifindex persist
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+radius-server timeout 3
+!radius-server key <removed>
+!
+banner login ^C====================================================================
+=         UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED         =
+=    You must have explicit, authorized permission to access or    =
+=   configure this device. Unauthorized attempts and actions to    =
+=   access or use this system may result in civil and/or criminal  =
+= All activities performed on this device are logged and monitored =
+====================================================================
+^C
+alias exec siib sh ip int brief
+alias exec u undebug all
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+privilege exec level 0 show environment
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+!
+monitor session 1 source interface Gi1/0/2 , Gi1/0/38 - 40 , Gi1/0/46
+monitor session 1 source interface Po1
+monitor session 1 destination interface Gi1/0/26
+ntp source Vlan3
+ntp server 10.100.51.1 prefer
+ntp server 10.122.97.1
+mac address-table aging-time 14400
+end
