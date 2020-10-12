@@ -1,0 +1,854 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C3750G-24TS-1U
+!CPU: PowerPC405
+!
+!Memory: main 131072K
+!Model number:  WS-C3750G-24TS-S1U
+!Serial number: FOC1043Y3YR
+!
+!Processor ID: FOC1043Y3YR
+!
+!Image: Software: C3750-IPSERVICESK9-M, 12.2(55)SE6, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Mon 23-Jul-12 13:22 by prod_rel_team
+!Image: flash:/c3750-ipservicesk9-mz.122-55.SE6.bin
+!
+!BOOTLDR: Version 12.2(44)SE5, RELEASE SOFTWARE (fc1)
+!
+!% No entity named "raw"
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Gi1/0/2, Gi1/0/3, Gi1/0/6, Gi1/0/7, Gi1/0/10, Gi1/0/11, Gi1/0/12, Gi1/0/13, Gi1/0/15
+!VLAN:                                                 Gi1/0/16, Gi1/0/17, Gi1/0/18, Gi1/0/19, Gi1/0/20, Gi1/0/21, Gi1/0/22, Gi1/0/25
+!VLAN:                                                 Gi1/0/26, Gi1/0/27, Gi1/0/28
+!VLAN: 2    V:10.102.6.0/24:ServersI         active    
+!VLAN: 6    M:10.102.43.0/24:Mgmt            active    Gi1/0/8
+!VLAN: 7    V:10.102.45.0/24:Viper           active    
+!VLAN: 8    V:192.168.5.0/24:Anywhere        active    
+!VLAN: 9    V:10.102.46.0/24:Viper-RTP       active    
+!VLAN: 10   V:10.102.32.0/24:Viper           active    
+!VLAN: 11   V:10.102.33.0/24:Viper           active    
+!VLAN: 12   V:10.102.34.0/24:Viper           active    
+!VLAN: 13   V:192.168.6.0/24:HyperV          active    
+!VLAN: 14   V:192.168.11.0/24:SkypeForBusine active    
+!VLAN: 15   V:10.102.35.0/24:Fake-DMZ        active    
+!VLAN: 17   V:VzB-SIP                        active    
+!VLAN: 19   V:192.168.7.0/24:Lync2013        active    
+!VLAN: 21   V:Internet                       active    
+!VLAN: 23   V:10.102.47.0/24:LyncInfra       active    
+!VLAN: 24   V:192.168.8.0/24:Lync2010Pi      active    
+!VLAN: 25   V:192.168.25.0/24:Virtual        active    
+!VLAN: 26   V:192.168.26.0/24:Nstore         active    
+!VLAN: 27   V:172.25.8.125/28:OBS-Voice      active    
+!VLAN: 28   V:192.168.28.0/24:SametimePi     active    
+!VLAN: 29   V:192.168.29.0/24:Lync2013Pi     active    
+!VLAN: 30   V:192.168.30.0/24:Lync2013Dev    active    
+!VLAN: 31   V:192.168.31.0/24:HyperV-Cloud   active    
+!VLAN: 32   V:192.168.9.0/24:Lync2013Pi      active    
+!VLAN: 33   X:192.168.32.0/24:LIH            active    
+!VLAN: 35   192.168.35.0/24:SSO              active    
+!VLAN: 55   V:10.102.5.0/24:ServersII        active    Gi1/0/1, Gi1/0/14
+!VLAN: 56   V:10.102.56.0/24:Virtual-Mgmt    active    
+!VLAN: 59   S:10.102.59.0/24:ServersIII      active    
+!VLAN: 60   X:L.Devai:TEST:NTTC1             active    
+!VLAN: 153  V:10.102.53.0/24:Exchange_LAB1   active    
+!VLAN: 155  V:10.102.55.0/24:Exchange_LAB2   active    
+!VLAN: 200  PVLAN                            active    
+!VLAN: 458  LYNC_ARHI_MT01                   active    
+!VLAN: 459  LYNC_ARHI_VDED02                 active    
+!VLAN: 460  LYNC_ARHI_MGMT                   active    
+!VLAN: 461  LYNC_ARHI_HYPERV                 active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: 1219 X:62.23.149.128/26:C1-VR         active    
+!VLAN: 2003 E:172.17.21.0/29:NTTC-VPN        active    
+!VLAN: 2004 V:10.203.10.0/29:OrangeCI-Voice  active    
+!VLAN: 4034 X:77.111.208.0/25:AS-INET_MTP    active    
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 2    enet  100002     1500  -      -      -        -    -        0      0   
+!VLAN: 6    enet  100006     1500  -      -      -        -    -        0      0   
+!VLAN: 7    enet  100007     1500  -      -      -        -    -        0      0   
+!VLAN: 8    enet  100008     1500  -      -      -        -    -        0      0   
+!VLAN: 9    enet  100009     1500  -      -      -        -    -        0      0   
+!VLAN: 10   enet  100010     1500  -      -      -        -    -        0      0   
+!VLAN: 11   enet  100011     1500  -      -      -        -    -        0      0   
+!VLAN: 12   enet  100012     1500  -      -      -        -    -        0      0   
+!VLAN: 13   enet  100013     1500  -      -      -        -    -        0      0   
+!VLAN: 14   enet  100014     1500  -      -      -        -    -        0      0   
+!VLAN: 15   enet  100015     1500  -      -      -        -    -        0      0   
+!VLAN: 17   enet  100017     1500  -      -      -        -    -        0      0   
+!VLAN: 19   enet  100019     1500  -      -      -        -    -        0      0   
+!VLAN: 21   enet  100021     1500  -      -      -        -    -        0      0   
+!VLAN: 23   enet  100023     1500  -      -      -        -    -        0      0   
+!VLAN: 24   enet  100024     1500  -      -      -        -    -        0      0   
+!VLAN: 25   enet  100025     1500  -      -      -        -    -        0      0   
+!VLAN: 26   enet  100026     1500  -      -      -        -    -        0      0   
+!VLAN: 27   enet  100027     1500  -      -      -        -    -        0      0   
+!VLAN: 28   enet  100028     1500  -      -      -        -    -        0      0   
+!VLAN: 29   enet  100029     1500  -      -      -        -    -        0      0   
+!VLAN: 30   enet  100030     1500  -      -      -        -    -        0      0   
+!VLAN: 31   enet  100031     1500  -      -      -        -    -        0      0   
+!VLAN: 32   enet  100032     1500  -      -      -        -    -        0      0   
+!VLAN: 33   enet  100033     1500  -      -      -        -    -        0      0   
+!VLAN: 35   enet  100035     1500  -      -      -        -    -        0      0   
+!VLAN: 55   enet  100055     1500  -      -      -        -    -        0      0   
+!VLAN: 56   enet  100056     1500  -      -      -        -    -        0      0   
+!VLAN: 59   enet  100059     1500  -      -      -        -    -        0      0   
+!VLAN: 60   enet  100060     1500  -      -      -        -    -        0      0   
+!VLAN: 153  enet  100153     1500  -      -      -        -    -        0      0   
+!VLAN: 155  enet  100155     1500  -      -      -        -    -        0      0   
+!VLAN: 200  enet  100200     1500  -      -      -        -    -        0      0   
+!VLAN: 458  enet  100458     1500  -      -      -        -    -        0      0   
+!VLAN: 459  enet  100459     1500  -      -      -        -    -        0      0   
+!VLAN: 460  enet  100460     1500  -      -      -        -    -        0      0   
+!VLAN: 461  enet  100461     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: 1219 enet  101219     1500  -      -      -        -    -        0      0   
+!VLAN: 2003 enet  102003     1500  -      -      -        -    -        0      0   
+!VLAN: 2004 enet  102004     1500  -      -      -        -    -        0      0   
+!VLAN: 4034 enet  104034     1500  -      -      -        -    -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0xF
+Using 18790 out of 524288 bytes
+!
+version 12.2
+parser config cache interface
+service nagle
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime msec localtime show-timezone
+service password-encryption
+service sequence-numbers
+service unsupported-transceiver
+no service dhcp
+!
+hostname mtpdev02
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 128000 notifications
+no logging monitor
+enable secret 5 $1$v8SO$ceWvoWocrMK23P6LU8/Mr/
+!
+!username netops privilege 15 password <removed>
+username noc privilege 0 secret 5 $1$A4tO$K4TD16bRmdSalJm5ZWYX20
+!
+aaa new-model
+!
+aaa authentication fail-message ^CWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login ARKANETRADIUS group radius local
+aaa authentication enable default enable
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+switch 1 provision ws-c3750g-24ts-1u
+system mtu routing 1500
+vtp mode transparent
+no ip source-route
+ip routing
+no ip domain-lookup
+ip domain-name arkadin.lan
+!
+login on-failure log
+login on-success log
+!
+no errdisable detect cause gbic-invalid
+archive
+ log config
+  logging enable
+  logging size 500
+  notify syslog contenttype plaintext
+  hidekeys
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+spanning-tree vlan 1-4094 priority 12288
+!
+vlan internal allocation policy ascending
+!
+vlan 2
+ name V:10.102.6.0/24:ServersI
+!
+vlan 6
+ name M:10.102.43.0/24:Mgmt
+!
+vlan 7
+ name V:10.102.45.0/24:Viper
+!
+vlan 8
+ name V:192.168.5.0/24:Anywhere
+!
+vlan 9
+ name V:10.102.46.0/24:Viper-RTP
+!
+vlan 10
+ name V:10.102.32.0/24:Viper
+!
+vlan 11
+ name V:10.102.33.0/24:Viper
+!
+vlan 12
+ name V:10.102.34.0/24:Viper
+!
+vlan 13
+ name V:192.168.6.0/24:HyperV
+!
+vlan 14
+ name V:192.168.11.0/24:SkypeForBusine
+!
+vlan 15
+ name V:10.102.35.0/24:Fake-DMZ
+!
+vlan 17
+ name V:VzB-SIP
+!
+vlan 19
+ name V:192.168.7.0/24:Lync2013
+!
+vlan 21
+ name V:Internet
+!
+vlan 23
+ name V:10.102.47.0/24:LyncInfra
+!
+vlan 24
+ name V:192.168.8.0/24:Lync2010Pi
+!
+vlan 25
+ name V:192.168.25.0/24:Virtual
+!
+vlan 26
+ name V:192.168.26.0/24:Nstore
+!
+vlan 27
+ name V:172.25.8.125/28:OBS-Voice
+!
+vlan 28
+ name V:192.168.28.0/24:SametimePi
+!
+vlan 29
+ name V:192.168.29.0/24:Lync2013Pi
+!
+vlan 30
+ name V:192.168.30.0/24:Lync2013Dev
+!
+vlan 31
+ name V:192.168.31.0/24:HyperV-Cloud
+!
+vlan 32
+ name V:192.168.9.0/24:Lync2013Pi
+!
+vlan 33
+ name X:192.168.32.0/24:LIH
+!
+vlan 35
+ name 192.168.35.0/24:SSO
+!
+vlan 55
+ name V:10.102.5.0/24:ServersII
+!
+vlan 56
+ name V:10.102.56.0/24:Virtual-Mgmt
+!
+vlan 59
+ name S:10.102.59.0/24:ServersIII
+!
+vlan 60
+ name X:L.Devai:TEST:NTTC1
+!
+vlan 153
+ name V:10.102.53.0/24:Exchange_LAB1
+!
+vlan 155
+ name V:10.102.55.0/24:Exchange_LAB2
+!
+vlan 200
+ name PVLAN
+!
+vlan 458
+ name LYNC_ARHI_MT01
+!
+vlan 459
+ name LYNC_ARHI_VDED02
+!
+vlan 460
+ name LYNC_ARHI_MGMT
+!
+vlan 461
+ name LYNC_ARHI_HYPERV
+!
+vlan 1219
+ name X:62.23.149.128/26:C1-VR
+!
+vlan 2003
+ name E:172.17.21.0/29:NTTC-VPN
+!
+vlan 2004
+ name V:10.203.10.0/29:OrangeCI-Voice
+!
+vlan 4034
+ name X:77.111.208.0/25:AS-INET_MTP
+lldp run
+!
+ip tftp source-interface Vlan55
+ip ssh authentication-retries 2
+ip ssh version 2
+!
+interface GigabitEthernet1/0/1
+ description S:NAS:Novasight
+ switchport access vlan 55
+ switchport mode access
+!
+interface GigabitEthernet1/0/2
+ shutdown
+!
+interface GigabitEthernet1/0/3
+ shutdown
+!
+interface GigabitEthernet1/0/4
+ description X:Q:mtpviper02:Gi1/0/47
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/5
+ description X:Q:mtpaudio02:Gi1/0/27
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/6
+ shutdown
+!
+interface GigabitEthernet1/0/7
+ shutdown
+!
+interface GigabitEthernet1/0/8
+ description X:mtpfw01-2:eth1:TRUST
+ switchport access vlan 6
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet1/0/9
+ description Q:mtpfw01-2:eth4:UNTRUST
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 21
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/10
+ shutdown
+!
+interface GigabitEthernet1/0/11
+ shutdown
+!
+interface GigabitEthernet1/0/12
+ shutdown
+!
+interface GigabitEthernet1/0/13
+ shutdown
+!
+interface GigabitEthernet1/0/14
+ description S:p.joigneault:vlan55
+ switchport access vlan 55
+ switchport mode access
+!
+interface GigabitEthernet1/0/15
+ shutdown
+!
+interface GigabitEthernet1/0/16
+ shutdown
+!
+interface GigabitEthernet1/0/17
+ shutdown
+!
+interface GigabitEthernet1/0/18
+ shutdown
+!
+interface GigabitEthernet1/0/19
+ shutdown
+!
+interface GigabitEthernet1/0/20
+ shutdown
+!
+interface GigabitEthernet1/0/21
+ shutdown
+!
+interface GigabitEthernet1/0/22
+ shutdown
+!
+interface GigabitEthernet1/0/23
+ description X:mtp-sp-02:xe-0/0/45
+ no switchport
+ ip address 172.29.5.47 255.255.255.254
+ load-interval 30
+!
+interface GigabitEthernet1/0/24
+ description X:Q:mtpdev01:Gi1/0/24
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/25
+ shutdown
+!
+interface GigabitEthernet1/0/26
+ shutdown
+!
+interface GigabitEthernet1/0/27
+ shutdown
+!
+interface GigabitEthernet1/0/28
+ shutdown
+!
+interface Vlan1
+ description Administratively down
+ no ip address
+ shutdown
+!
+interface Vlan2
+ description Servers
+ ip address 10.102.6.246 255.255.255.0
+ standby 2 ip 10.102.6.254
+ standby 2 priority 50
+!
+interface Vlan6
+ description Mgmt
+ ip address 10.102.43.247 255.255.255.0
+ standby 43 ip 10.102.43.250
+ standby 43 priority 50
+!
+interface Vlan7
+ description Viper
+ ip address 10.102.45.252 255.255.255.0
+ standby 7 ip 10.102.45.250
+ standby 7 priority 50
+ standby 7 preempt
+!
+interface Vlan8
+ description Anywhere
+ ip address 192.168.5.253 255.255.255.0
+ standby 8 ip 192.168.5.254
+ standby 8 priority 50
+ standby 8 preempt
+!
+interface Vlan9
+ description Viper-RTP
+ ip address 10.102.46.252 255.255.255.0
+ standby 9 ip 10.102.46.250
+ standby 9 priority 50
+ standby 9 preempt
+!
+interface Vlan10
+ description Viper
+ ip address 10.102.32.252 255.255.255.0
+ standby 10 ip 10.102.32.250
+ standby 10 priority 50
+ standby 10 preempt
+!
+interface Vlan11
+ description Viper
+ ip address 10.102.33.252 255.255.255.0
+ standby 11 ip 10.102.33.250
+ standby 11 priority 50
+ standby 11 preempt
+!
+interface Vlan12
+ description Viper
+ ip address 10.102.34.252 255.255.255.0
+ standby 12 ip 10.102.34.250
+ standby 12 priority 50
+ standby 12 preempt
+!
+interface Vlan13
+ description HyperV
+ ip address 192.168.6.246 255.255.255.0
+ standby 13 ip 192.168.6.254
+ standby 13 priority 50
+ standby 13 preempt
+!
+interface Vlan14
+ ip address 192.168.11.253 255.255.255.0
+ standby 14 ip 192.168.11.254
+!
+interface Vlan15
+ description Fake-DMZ
+ ip address 10.102.35.252 255.255.255.0
+ standby 15 ip 10.102.35.250
+ standby 15 priority 50
+ standby 15 preempt
+!
+interface Vlan19
+ description Lync2013
+ ip address 192.168.7.253 255.255.255.0
+ standby 19 ip 192.168.7.254
+ standby 19 priority 50
+ standby 19 preempt
+!
+interface Vlan23
+ description LyncInfra
+ ip address 10.102.47.252 255.255.255.0
+ standby 23 ip 10.102.47.250
+ standby 23 priority 50
+ standby 23 preempt
+!
+interface Vlan24
+ description Lync2010Pi
+ ip address 192.168.8.253 255.255.255.0
+ standby 24 ip 192.168.8.254
+ standby 24 priority 50
+ standby 24 preempt
+!
+interface Vlan25
+ description Virtual
+ ip address 192.168.25.252 255.255.255.0
+ standby 25 ip 192.168.25.250
+ standby 25 priority 50
+ standby 25 preempt
+!
+interface Vlan26
+ description Nstore
+ ip address 192.168.26.253 255.255.255.0
+ standby 26 ip 192.168.26.254
+ standby 26 priority 50
+ standby 26 preempt
+!
+interface Vlan28
+ description SametimePi
+ ip address 192.168.28.253 255.255.255.0
+ standby 28 ip 192.168.28.254
+ standby 28 priority 50
+ standby 28 preempt
+!
+interface Vlan29
+ description Lync2013Pi
+ ip address 192.168.29.253 255.255.255.0
+ standby 29 ip 192.168.29.254
+ standby 29 priority 50
+ standby 29 preempt
+!
+interface Vlan30
+ description Lync2013Dev
+ ip address 192.168.30.253 255.255.255.0
+ standby 30 ip 192.168.30.254
+ standby 30 priority 50
+ standby 30 preempt
+!
+interface Vlan31
+ description HyperV-Cloud
+ ip address 192.168.31.253 255.255.255.0
+ standby 31 ip 192.168.31.254
+ standby 31 priority 50
+ standby 31 preempt
+!
+interface Vlan32
+ description HyperV-Cloud
+ ip address 192.168.9.253 255.255.255.0
+ standby 32 ip 192.168.9.254
+ standby 32 priority 50
+ standby 32 preempt
+!
+interface Vlan33
+ description LIH
+ ip address 192.168.32.253 255.255.255.0
+ standby 33 ip 192.168.32.254
+ standby 33 priority 50
+ standby 33 preempt
+!
+interface Vlan35
+ ip address 192.168.35.253 255.255.255.0
+ standby 35 ip 192.168.35.254
+ standby 35 priority 50
+ standby 35 preempt
+!
+interface Vlan55
+ description Servers
+ ip address 10.102.5.241 255.255.255.0
+ standby 55 ip 10.102.5.254
+ standby 55 priority 50
+ standby 55 preempt
+!
+interface Vlan56
+ description Virtual-Mgmt
+ ip address 10.102.56.252 255.255.255.0
+ standby 56 ip 10.102.56.250
+ standby 56 priority 50
+ standby 56 preempt
+!
+interface Vlan59
+ description Servers
+ ip address 10.102.59.253 255.255.255.0
+ standby 59 ip 10.102.59.254
+ standby 59 priority 50
+ standby 59 preempt
+!
+interface Vlan153
+ ip address 10.102.53.252 255.255.255.0
+ standby 153 ip 10.102.53.254
+ standby 153 priority 50
+ standby 153 preempt
+!
+interface Vlan155
+ ip address 10.102.55.252 255.255.255.0
+ standby 155 ip 10.102.55.254
+ standby 155 priority 50
+ standby 155 preempt
+!
+interface Vlan458
+ ip address 10.102.58.19 255.255.255.224
+ standby 158 ip 10.102.58.30
+ standby 158 priority 50
+ standby 158 preempt
+!
+interface Vlan459
+ ip address 10.102.58.56 255.255.255.224
+ standby 159 ip 10.102.58.62
+ standby 159 priority 50
+ standby 159 preempt
+!
+interface Vlan460
+ ip address 10.102.58.93 255.255.255.224
+ standby 160 ip 10.102.58.94
+ standby 160 priority 50
+ standby 160 preempt
+!
+interface Vlan461
+ ip address 10.102.58.125 255.255.255.224
+ standby 161 ip 10.102.58.126
+ standby 161 priority 50
+ standby 161 preempt
+!
+router bgp 64512
+ bgp router-id 192.168.34.14
+ bgp log-neighbor-changes
+ neighbor DEV-SP-PG peer-group
+ neighbor DEV-SP-PG remote-as 65535
+ neighbor 10.102.43.246 remote-as 64512
+ neighbor 10.102.43.246 description mtpdev02
+ neighbor 10.102.43.246 update-source Vlan6
+ neighbor 172.29.5.46 peer-group DEV-SP-PG
+ neighbor 172.29.5.46 description peering-mtp-sp-02
+ !
+ address-family ipv4
+  neighbor DEV-SP-PG default-originate
+  neighbor DEV-SP-PG soft-reconfiguration inbound
+  neighbor DEV-SP-PG route-map BGP-DEV-OUT out
+  neighbor 10.102.43.246 activate
+  neighbor 10.102.43.246 next-hop-self
+  neighbor 10.102.43.246 soft-reconfiguration inbound
+  neighbor 172.29.5.46 activate
+  no auto-summary
+  no synchronization
+  network 10.102.5.0 mask 255.255.255.0
+  network 10.102.6.0 mask 255.255.255.0
+  network 10.102.32.0 mask 255.255.255.0
+  network 10.102.33.0 mask 255.255.255.0
+  network 10.102.34.0 mask 255.255.255.0
+  network 10.102.35.0 mask 255.255.255.0
+  network 10.102.40.0 mask 255.255.255.0
+  network 10.102.41.0 mask 255.255.255.0
+  network 10.102.43.0 mask 255.255.255.0
+  network 10.102.45.0 mask 255.255.255.0
+  network 10.102.46.0 mask 255.255.255.0
+  network 10.102.47.0 mask 255.255.255.0
+  network 10.102.53.0 mask 255.255.255.0
+  network 10.102.55.0 mask 255.255.255.0
+  network 10.102.56.0 mask 255.255.255.0
+  network 10.102.58.0 mask 255.255.255.224
+  network 10.102.58.32 mask 255.255.255.224
+  network 10.102.58.64 mask 255.255.255.224
+  network 10.102.58.96 mask 255.255.255.224
+  network 10.102.59.0 mask 255.255.255.0
+  aggregate-address 10.102.58.0 255.255.255.0 summary-only
+ exit-address-family
+!
+ip classless
+no ip forward-protocol udp netbios-ns
+no ip forward-protocol udp netbios-dgm
+ip forward-protocol udp bootps
+ip forward-protocol udp bootpc
+ip route 0.0.0.0 0.0.0.0 10.102.43.254 permanent
+ip route 10.102.40.0 255.255.255.0 10.102.56.195
+ip route 10.102.41.0 255.255.255.0 10.102.56.195
+no ip http server
+no ip http secure-server
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+!
+ip prefix-list PFX-BGP-OUT deny 10.0.0.0/8
+ip prefix-list PFX-BGP-OUT permit 10.0.0.0/8 le 32
+ip radius source-interface Vlan6 
+logging trap notifications
+logging facility local5
+logging 10.115.137.89
+logging 10.124.23.24
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+route-map BGP-DEV-OUT permit 10
+ match ip address prefix-list PFX-BGP-OUT
+!
+!
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server trap link ietf
+snmp-server location Montpellier
+snmp-server enable traps snmp linkdown linkup coldstart warmstart
+snmp-server enable traps transceiver all
+snmp-server enable traps tty
+snmp-server enable traps eigrp
+snmp-server enable traps ospf state-change
+snmp-server enable traps ospf errors
+snmp-server enable traps ospf retransmit
+snmp-server enable traps ospf lsa
+snmp-server enable traps ospf cisco-specific state-change nssa-trans-change
+snmp-server enable traps ospf cisco-specific state-change shamlink interface-old
+snmp-server enable traps ospf cisco-specific state-change shamlink neighbor
+snmp-server enable traps ospf cisco-specific errors
+snmp-server enable traps ospf cisco-specific retransmit
+snmp-server enable traps ospf cisco-specific lsa
+snmp-server enable traps cluster
+snmp-server enable traps fru-ctrl
+snmp-server enable traps entity
+snmp-server enable traps cpu threshold
+snmp-server enable traps power-ethernet group 1-9
+snmp-server enable traps power-ethernet police
+snmp-server enable traps vtp
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps flash insertion removal
+snmp-server enable traps port-security
+snmp-server enable traps auth-framework sec-violation
+snmp-server enable traps dot1x auth-fail-vlan guest-vlan no-auth-fail-vlan no-guest-vlan
+snmp-server enable traps envmon fan shutdown supply temperature status
+snmp-server enable traps stackwise
+snmp-server enable traps license
+snmp-server enable traps cef resource-failure peer-state-change peer-fib-state-change inconsistency
+snmp-server enable traps config-copy
+snmp-server enable traps config-ctid
+snmp-server enable traps event-manager
+snmp-server enable traps hsrp
+snmp-server enable traps ipmulticast
+snmp-server enable traps pim neighbor-change rp-mapping-change invalid-pim-message
+snmp-server enable traps energywise
+snmp-server enable traps vstack
+snmp-server enable traps bridge newroot topologychange
+snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistency
+snmp-server enable traps rtr
+snmp-server enable traps mac-notification change move threshold
+snmp-server enable traps vlan-membership
+snmp-server enable traps errdisable
+snmp ifmib ifindex persist
+radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server timeout 3
+!radius-server key <removed>
+!
+banner login ^C========================================================================
+=                                                                      =                                                                             
+=               This is a private system of Arkadin                    =
+=         Authorization from Network Operations Team is                =
+=   required to use this system. Unauthorized access is prohibited!    =
+=                                                                      =
+=               This device is RADIUS authenticated                    = 
+=                                                                      =
+=                 network_operations@arkadin.com                       = 
+=                                                                      =
+========================================================================
+^C
+alias exec u undebug all
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input all
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input all
+!
+ntp source Vlan6
+ntp server 10.115.131.1 prefer
+ntp server 10.124.19.1
+ntp server 10.125.19.1
+end

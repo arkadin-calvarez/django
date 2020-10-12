@@ -1,0 +1,750 @@
+#RANCID-CONTENT-TYPE: netscreen
+#
+#Product: SSG-140
+#SN: 0185032009002063
+#HW: 1010(0)-(00)
+#Netscreen Type: Firewall+VPN
+#Software Version: 6.3.0r3.0
+#Feature: AV-K
+#File Name: screenos_image, Checksum: ae2c7a1b
+#Memory: 512MB
+#
+unset key protection enable
+set clock ntp
+set clock timezone 0
+set clock dst recurring start-weekday 2 0 3 02:00 end-weekday 1 0 11 02:00
+set vrouter trust-vr sharable
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+unset auto-route-export
+set protocol ospf
+set enable
+set area 0.0.0.4 
+set area 0.0.0.4 range 10.244.0.0 255.255.0.0 advertise
+exit
+exit
+set vrouter name "bharti" id 1025 
+set vrouter "bharti"
+unset auto-route-export
+exit
+set vrouter name "vidyo" id 1026 
+unset vrouter "vidyo" nsrp-config-sync
+set vrouter "vidyo"
+unset auto-route-export
+set preference nhrp 100
+set preference ospf-e2 254
+exit
+set vrouter name "vidyoAPI" id 1027 
+unset vrouter "vidyoAPI" nsrp-config-sync
+set vrouter "vidyoAPI"
+unset auto-route-export
+set preference nhrp 100
+set preference ospf-e2 254
+exit
+set service "ODBC" protocol tcp src-port 0-65535 dst-port 1433-1433 timeout never 
+set service "Anywhere" protocol tcp src-port 0-65535 dst-port 10000-10006 
+set service "Anywhere" + udp src-port 0-65535 dst-port 10000-10006 
+set service "Anywhere" timeout never
+set service "LCS" protocol tcp src-port 0-65535 dst-port 5060-5061 
+set service "LCS" + udp src-port 0-65535 dst-port 5060-5061 
+set service "LCS" + tcp src-port 0-65535 dst-port 1339-1339 
+set service "LCS" + udp src-port 0-65535 dst-port 1339-1339 
+set service "LCS" timeout never
+set service "Spectel Protocols + ODBC" protocol tcp src-port 0-65535 dst-port 5050-5050 
+set service "Spectel Protocols + ODBC" + tcp src-port 0-65535 dst-port 1433-1433 
+set service "Spectel Protocols + ODBC" + tcp src-port 0-65535 dst-port 2001-2001 
+set service "Remote NSM" protocol tcp src-port 0-65535 dst-port 5405-5405 
+set service "Terminal Server" protocol tcp src-port 0-65535 dst-port 3389-3389 
+set service "Terminal Server" + udp src-port 0-65535 dst-port 3389-3389 
+set service "Terminal Server" timeout never
+set service "8443" protocol tcp src-port 0-65535 dst-port 8443-8443 
+set service "SCIP" protocol tcp src-port 0-65535 dst-port 17990-17990 
+set service "stun-udp" protocol udp src-port 0-65535 dst-port 3478-3478 
+set service "stun-tcp" protocol tcp src-port 0-65535 dst-port 3478-3478 
+set service "vidyo-media" protocol udp src-port 0-65535 dst-port 50000-65535 
+set service "emcp" protocol tcp src-port 0-65535 dst-port 17992-17992 
+set service "rmcp" protocol tcp src-port 0-65535 dst-port 17991-17991 
+set service "VidyoWebRTCmedia" protocol udp src-port 0-65535 dst-port 60000-61000 
+set service "FTP_SFTP_10621" protocol tcp src-port 0-65535 dst-port 10621-10621 
+set service "Secure_ IMAP_993" protocol tcp src-port 0-65535 dst-port 993-993 
+set service "Secure_POP3_995" protocol tcp src-port 0-65535 dst-port 995-995 
+set service "SMTP_465" protocol tcp src-port 0-65535 dst-port 465-465 
+set service "SMTP_587" protocol tcp src-port 0-65535 dst-port 587-587 
+set service "SNMPTRAP" protocol udp src-port 0-65535 dst-port 162-162 
+set service "MS-CIFS" protocol tcp src-port 0-65535 dst-port 445-445 
+set alg appleichat enable
+unset alg appleichat re-assembly enable
+set alg sctp enable
+set auth-server "Local" id 0
+set auth-server "Local" server-name "Local"
+set auth-server "nps" id 1
+set auth-server "nps" server-name "10.115.38.110"
+set auth-server "nps" backup1 "10.100.92.1"
+set auth-server "nps" account-type admin 
+set auth-server "nps" radius port 1812
+#set auth-server "nps" radius secret <removed>
+set auth default auth server "nps"
+set auth radius accounting port 1646
+#set admin name <removed>
+#set admin password <removed>
+#set admin user "netops" password <removed> privilege "all"
+set admin manager-ip 10.0.1.0 255.255.255.0
+set admin manager-ip 10.100.19.20
+set admin manager-ip 10.100.19.21
+set admin manager-ip 38.104.2.203
+set admin manager-ip 62.23.57.186
+set admin manager-ip 81.93.181.219
+set admin manager-ip 185.37.220.222
+set admin manager-ip 185.37.222.62
+set admin manager-ip 10.244.0.0 255.255.0.0
+set admin mail server-name "10.102.2.3"
+set admin mail mail-addr1 "nio@arkadin.com"
+set admin auth web timeout 10
+set admin auth server "nps"
+set admin auth remote root
+set admin privilege read-write
+set admin format dos
+set zone "Trust" vrouter "trust-vr"
+set zone "Untrust" vrouter "trust-vr"
+set zone "DMZ" vrouter "trust-vr"
+set zone "VLAN" vrouter "trust-vr"
+set zone id 100 "WAN"
+set zone id 101 "VPN_Bharti"
+set zone id 102 "VIDYO"
+set zone "VIDYO" vrouter "vidyo"
+set zone id 104 "UntrustVidyoAPInterco"
+set zone "UntrustVidyoAPInterco" vrouter "vidyoAPI"
+set zone id 105 "VidyoAPI_DMZ"
+set zone "VidyoAPI_DMZ" vrouter "vidyoAPI"
+set zone "Untrust-Tun" vrouter "trust-vr"
+set zone "Trust" tcp-rst 
+set zone "Untrust" block 
+unset zone "Untrust" tcp-rst 
+set zone "MGT" block 
+unset zone "V1-Trust" tcp-rst 
+unset zone "V1-Untrust" tcp-rst 
+set zone "DMZ" tcp-rst 
+unset zone "V1-DMZ" tcp-rst 
+unset zone "VLAN" tcp-rst 
+set zone "WAN" tcp-rst 
+set zone "VPN_Bharti" tcp-rst 
+unset zone "VIDYO" tcp-rst 
+set zone "UntrustVidyoAPInterco" tcp-rst 
+set zone "VidyoAPI_DMZ" tcp-rst 
+unset zone "Untrust" screen tear-drop
+unset zone "Untrust" screen syn-flood
+unset zone "Untrust" screen ping-death
+unset zone "Untrust" screen ip-filter-src
+unset zone "Untrust" screen land
+set zone "V1-Untrust" screen tear-drop
+set zone "V1-Untrust" screen syn-flood
+set zone "V1-Untrust" screen ping-death
+set zone "V1-Untrust" screen ip-filter-src
+set zone "V1-Untrust" screen land
+set interface ethernet0/4 phy full 100mb
+set interface "ethernet0/0" zone "Trust"
+set interface "ethernet0/1" zone "Untrust"
+set interface "ethernet0/1.1" tag 201 zone "UntrustVidyoAPInterco"
+set interface "ethernet0/2" zone "Untrust"
+set interface "ethernet0/3" zone "Trust"
+set interface "ethernet0/4" zone "HA"
+set interface "ethernet0/5" zone "Trust"
+set interface "tunnel.2" zone "Trust"
+set interface "tunnel.12" zone "Untrust"
+set interface bgroup0/0 port ethernet0/8
+set interface ethernet0/0 ip 10.244.3.254/24
+set interface ethernet0/0 route
+unset interface vlan1 ip
+set interface ethernet0/1.1 ip 10.10.38.4/29
+set interface ethernet0/1.1 nat
+set interface ethernet0/2 ip 210.210.3.21/24
+set interface ethernet0/2 route
+set interface ethernet0/3 ip 10.244.1.2/30
+set interface ethernet0/3 nat
+set interface ethernet0/5 ip 10.244.15.1/24
+set interface ethernet0/5 route
+set interface tunnel.2 ip unnumbered interface ethernet0/0
+set interface tunnel.12 ip unnumbered interface ethernet0/0
+set interface tunnel.2 mtu 1500
+unset interface vlan1 bypass-others-ipsec
+unset interface vlan1 bypass-non-ip
+set interface ethernet0/5 manage-ip 10.244.15.2
+set interface ethernet0/0 ip manageable
+unset interface ethernet0/1 ip manageable
+set interface ethernet0/1.1 ip manageable
+set interface ethernet0/2 ip manageable
+set interface ethernet0/3 ip manageable
+set interface ethernet0/5 ip manageable
+set interface ethernet0/1 manage ping
+set interface ethernet0/2 manage ping
+set interface ethernet0/2 manage ssh
+set interface ethernet0/2 manage ssl
+set interface ethernet0/2 manage web
+unset interface ethernet0/3 manage telnet
+set interface vlan1 manage mtrace
+set interface ethernet0/3 monitor track-ip ip 10.244.1.1 weight 10
+unset interface ethernet0/3 monitor track-ip dynamic
+set auth-server "nps" src-interface "ethernet0/0"
+set interface "ethernet0/2" mip 210.210.3.22 host 10.244.17.53 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/2" mip 210.210.3.24 host 10.244.17.143 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/2" mip 210.210.3.25 host 10.244.17.190 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/2" mip 210.210.3.26 host 10.244.17.191 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/2" mip 210.210.3.23 host 10.244.17.20 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/2" mip 210.210.3.27 host 10.244.17.142 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/2" mip 210.210.3.30 host 10.244.17.140 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/2" mip 210.210.3.31 host 10.244.17.55 netmask 255.255.255.255 vr "trust-vr"
+set interface bgroup0/1 disable
+set tftp source-interface ethernet0/0
+unset flow no-tcp-seq-check
+set flow tcp-syn-check
+unset flow tcp-syn-bit-check
+set flow reverse-route clear-text prefer
+set flow reverse-route tunnel always
+set console page 0
+unset console dbuf
+set domain ARKADIN.LAN
+set hostname nedfw01-1
+set webauth server "nps"
+set pki authority default scep mode "auto"
+set pki x509 default cert-path partial
+set pki x509 dn org-name "Arkadin"
+set pki x509 dn name "NIO"
+set pki x509 dn email "Network_Infrastructure_Operations@arkadin.com"
+set pki x509 default send-to "d.santiago@arkadin.com"
+set nsrp cluster id 1
+set nsrp vsd-group id 0 priority 50
+set nsrp vsd-group id 0 preempt
+set nsrp vsd-group id 0 preempt hold-down 180
+set nsrp monitor interface ethernet0/0
+set nsrp monitor interface ethernet0/2
+set nsrp monitor interface ethernet0/3
+set nsrp monitor interface ethernet0/5
+set dns host dns1 10.244.2.1 src-interface ethernet0/0
+set dns host dns2 10.247.2.1 src-interface ethernet0/0
+set dns host schedule 06:28
+set address "Trust" "10.244.16.10" 10.244.16.10 255.255.255.255 "INNEDCRS"
+set address "Trust" "10.244.9.10/32" 10.244.9.10 255.255.255.255
+set address "Trust" "110.234.180.97/32" 110.234.180.97 255.255.255.255
+set address "Trust" "210.210.3.29/32" 210.210.3.29 255.255.255.255
+set address "Trust" "210.210.3.34/32" 210.210.3.34 255.255.255.255
+set address "Trust" "Arkanet" 10.0.0.0 255.0.0.0
+set address "Trust" "ArkanetTrust" 10.0.0.0 255.0.0.0
+set address "Trust" "INBHAGCEMS" 10.244.7.160 255.255.255.255
+set address "Trust" "INBHAMediation" 10.244.8.20 255.255.255.255 "Mediation server Bharti"
+set address "Trust" "INDIA" 10.244.0.0 255.255.0.0
+set address "Trust" "INNED-VIDWLVGW1P" 210.210.3.34 255.255.255.255
+set address "Trust" "INNED-VIDWLVGW2P" 210.210.3.35 255.255.255.255
+set address "Trust" "INNED-VIDWLVR1P" 210.210.3.32 255.255.255.255
+set address "Trust" "INNED-VIDWLVR2P" 210.210.3.33 255.255.255.255
+set address "Trust" "INNEDBAMDB" 10.244.17.59 255.255.255.255
+set address "Trust" "INNEDBKP1" 10.244.3.160 255.255.255.255
+set address "Trust" "INNEDBRI3-AMG4" 10.244.7.60 255.255.255.255
+set address "Trust" "INNEDBRI3-CRS3" 10.244.9.10 255.255.255.255
+set address "Trust" "INNEDBRI3-CRS4" 10.244.9.11 255.255.255.255
+set address "Trust" "INNEDCRS1" 10.244.16.10 255.255.255.255 "INNEDCRS1"
+set address "Trust" "INNEDCRS2" 10.244.16.11 255.255.255.255 "INNEDCRS2"
+set address "Trust" "INNEDENT" 10.244.3.100 255.255.255.255
+set address "Trust" "INNEDLAN" 10.244.3.0 255.255.255.0
+set address "Trust" "INNEDMX1" 10.244.16.200 255.255.255.255
+set address "Trust" "INNEDMX2" 10.244.16.201 255.255.255.255 "INNEDMX2"
+set address "Trust" "INNEDWAPI1" 10.244.17.51 255.255.255.255
+set address "Trust" "innoiws01" 10.244.2.1 255.255.255.255
+set address "Untrust" "ADDR_ARKAD_APNIC01" 103.214.228.0 255.255.255.0
+set address "Untrust" "ADDR_ARKAD_ARIN01" 192.206.95.0 255.255.255.0
+set address "Untrust" "ADDR_ARKAD_RIPE01" 77.111.208.0 255.255.252.0
+set address "Untrust" "ADDR_ARKAD_RIPE02" 185.37.220.0 255.255.252.0
+set address "Untrust" "ADDR_NED_ISP" 210.210.3.0 255.255.255.0
+set address "Untrust" "ADDR_NOI_ISP01" 115.249.217.48 255.255.255.248
+set address "Untrust" "ADDR_NOI_ISP02" 125.63.96.232 255.255.255.248
+set address "Untrust" "ADDR_RXPRISM01" 35.154.67.246 255.255.255.255
+set address "Untrust" "ADDR_RXPRISM02" 13.126.172.47 255.255.255.255
+set address "Untrust" "ADDR_RXPRISM03" 182.74.121.102 255.255.255.255
+set address "Untrust" "ADDR_RXPRISM04" 52.77.55.255 255.255.255.255
+set address "Untrust" "Arkanet" 10.0.0.0 255.0.0.0
+set address "Untrust" "Avaya" 135.27.4.249 255.255.255.255
+set address "Untrust" "bharti1" 10.6.3.5 255.255.255.255
+set address "Untrust" "bharti10" 10.6.3.14 255.255.255.255
+set address "Untrust" "bharti11" 10.6.3.15 255.255.255.255
+set address "Untrust" "bharti12" 10.6.3.16 255.255.255.255
+set address "Untrust" "bharti13" 10.6.3.17 255.255.255.255
+set address "Untrust" "bharti14" 10.6.3.18 255.255.255.255
+set address "Untrust" "bharti15" 10.6.3.19 255.255.255.255
+set address "Untrust" "bharti16" 10.6.3.20 255.255.255.255
+set address "Untrust" "bharti17" 10.6.3.21 255.255.255.255
+set address "Untrust" "bharti18" 10.6.3.22 255.255.255.255
+set address "Untrust" "bharti19" 10.6.3.23 255.255.255.255
+set address "Untrust" "bharti2" 10.6.3.6 255.255.255.255
+set address "Untrust" "bharti20" 10.6.3.24 255.255.255.255
+set address "Untrust" "bharti21" 10.6.3.25 255.255.255.255
+set address "Untrust" "bharti22" 10.6.3.26 255.255.255.255
+set address "Untrust" "bharti23" 10.6.3.27 255.255.255.255
+set address "Untrust" "bharti24" 10.6.3.28 255.255.255.255
+set address "Untrust" "bharti25" 10.6.3.29 255.255.255.255
+set address "Untrust" "bharti26" 10.6.3.30 255.255.255.255
+set address "Untrust" "bharti27" 10.6.3.31 255.255.255.255
+set address "Untrust" "bharti28" 10.6.3.32 255.255.255.255
+set address "Untrust" "bharti29" 10.6.3.33 255.255.255.255
+set address "Untrust" "bharti3" 10.6.3.7 255.255.255.255
+set address "Untrust" "bharti30" 10.6.3.34 255.255.255.255
+set address "Untrust" "bharti31" 10.6.3.35 255.255.255.255
+set address "Untrust" "bharti32" 10.6.3.36 255.255.255.255
+set address "Untrust" "bharti33" 10.6.3.37 255.255.255.255
+set address "Untrust" "bharti4" 10.6.3.8 255.255.255.255
+set address "Untrust" "bharti5" 10.6.3.9 255.255.255.255
+set address "Untrust" "bharti6" 10.6.3.10 255.255.255.255
+set address "Untrust" "bharti7" 10.6.3.11 255.255.255.255
+set address "Untrust" "bharti8" 10.6.3.12 255.255.255.255
+set address "Untrust" "bharti9" 10.6.3.13 255.255.255.255
+set address "Untrust" "BLACKLIST-1" 34.97.3.80 255.255.255.255
+set address "Untrust" "BLACKLIST-10" 23.34.61.201 255.255.255.255
+set address "Untrust" "BLACKLIST-11" 67.27.61.254 255.255.255.255
+set address "Untrust" "BLACKLIST-12" 72.246.190.49 255.255.255.255
+set address "Untrust" "BLACKLIST-13" 23.15.14.51 255.255.255.255
+set address "Untrust" "BLACKLIST-14" 52.163.254.104 255.255.255.255
+set address "Untrust" "BLACKLIST-15" 40.115.159.100 255.255.255.255
+set address "Untrust" "BLACKLIST-16" 13.76.227.209 255.255.255.255
+set address "Untrust" "BLACKLIST-17" 211.75.207.183 255.255.255.255
+set address "Untrust" "BLACKLIST-18" 13.71.149.55 255.255.255.255
+set address "Untrust" "BLACKLIST-19" 146.112.61.104 255.255.255.255
+set address "Untrust" "BLACKLIST-2" 35.187.223.139 255.255.255.255
+set address "Untrust" "BLACKLIST-20" 104.215.193.90 255.255.255.255
+set address "Untrust" "BLACKLIST-21" 13.67.78.63 255.255.255.255
+set address "Untrust" "BLACKLIST-22" 104.116.39.38 255.255.255.255
+set address "Untrust" "BLACKLIST-23" 13.76.45.133 255.255.255.255
+set address "Untrust" "BLACKLIST-3" 23.34.61.179 255.255.255.255
+set address "Untrust" "BLACKLIST-4" 67.27.59.254 255.255.255.255
+set address "Untrust" "BLACKLIST-5" 23.34.61.193 255.255.255.255
+set address "Untrust" "BLACKLIST-6" 8.255.31.254 255.255.255.255
+set address "Untrust" "BLACKLIST-7" 67.27.49.254 255.255.255.255
+set address "Untrust" "BLACKLIST-8" 23.34.61.208 255.255.255.255
+set address "Untrust" "BLACKLIST-9" 67.24.41.254 255.255.255.255
+set address "Untrust" "Dialogic 1" 203.126.153.226 255.255.255.255
+set address "Untrust" "Dialogic 2" 58.185.204.242 255.255.255.255
+set address "Untrust" "Dialogic 3" 173.210.79.14 255.255.255.255
+set address "Untrust" "FRSTDDMZ" 10.102.4.0 255.255.255.0
+set address "Untrust" "FRSTDLAN" 10.102.3.0 255.255.255.0
+set address "Untrust" "India Wapi" India  "Wapi"
+set address "Untrust" "INLeaseLine" 10.244.1.0 255.255.255.252 "Lease line btw indian sites"
+set address "Untrust" "INNOILAN" 10.244.2.0 255.255.255.0
+set address "Untrust" "Melbourne office IP" 203.100.252.26 255.255.255.255
+set address "Untrust" "PFX_MARTIANS-1" 0.0.0.0 255.0.0.0
+set address "Untrust" "PFX_MARTIANS-10" 198.18.0.0 255.254.0.0
+set address "Untrust" "PFX_MARTIANS-11" 198.51.100.0 255.255.255.0
+set address "Untrust" "PFX_MARTIANS-12" 203.0.113.0 255.255.255.0
+set address "Untrust" "PFX_MARTIANS-13" 224.0.0.0 224.0.0.0
+set address "Untrust" "PFX_MARTIANS-2" 10.0.0.0 255.0.0.0
+set address "Untrust" "PFX_MARTIANS-3" 100.64.0.0 255.192.0.0
+set address "Untrust" "PFX_MARTIANS-4" 127.0.0.0 255.0.0.0
+set address "Untrust" "PFX_MARTIANS-5" 169.254.0.0 255.255.0.0
+set address "Untrust" "PFX_MARTIANS-6" 172.16.0.0 255.240.0.0
+set address "Untrust" "PFX_MARTIANS-7" 192.0.0.0 255.255.255.0
+set address "Untrust" "PFX_MARTIANS-8" 192.0.2.0 255.255.255.0
+set address "Untrust" "PFX_MARTIANS-9" 192.168.0.0 255.255.0.0
+set address "Untrust" "PFX_NED-ORIGIN-1" 210.210.3.0 255.255.255.0
+set address "Untrust" "SGKCHOCS" 10.247.7.21 255.255.255.255
+set address "Untrust" "SGSINPublic" 115.42.214.178 255.255.255.255
+set address "Untrust" "Singapore Office" 115.42.214.178 255.255.255.255
+set address "Untrust" "singapore Public ip address" 115.42.214.178 255.255.255.255
+set address "Untrust" "Spectel IE 01" 135.124.124.8 255.255.255.255
+set address "Untrust" "Spectel IE 02" 135.124.124.9 255.255.255.255
+set address "Untrust" "Spectel IE 03" 135.124.124.10 255.255.255.255
+set address "Untrust" "Spectel IE 04" 135.124.124.11 255.255.255.255
+set address "Untrust" "Spectel IE 05" 135.124.124.12 255.255.255.255
+set address "Untrust" "Spectel IE 06" 135.124.124.13 255.255.255.255
+set address "Untrust" "Spectel IE 07" 135.124.124.14 255.255.255.255
+set address "Untrust" "Spectel IE 08" 135.124.124.15 255.255.255.255
+set address "Untrust" "Spectel IE 09" 135.124.124.16 255.255.255.255
+set address "Untrust" "Spectel IE 10" 135.124.124.17 255.255.255.255
+set address "Untrust" "Spectel IE 11" 135.124.124.18 255.255.255.255
+set address "Untrust" "Spectel IE 12" 135.124.124.19 255.255.255.255
+set address "Untrust" "Spectel IE 13" 135.27.4.249 255.255.255.255 "Singapore"
+set address "Untrust" "TalibartJY" 10.102.200.3 255.255.255.255
+set address "Untrust" "VIVO1" 115.254.77.141 255.255.255.255
+set address "Untrust" "VIVO2" 122.160.132.198 255.255.255.255
+set address "DMZ" "INNEDDMZ" 10.244.4.0 255.255.255.0
+set address "DMZ" "INNEDGCI" 10.244.4.50 255.255.255.255
+set address "DMZ" "INNEDVIVO" 10.244.4.50 255.255.255.255
+set address "WAN" "sgsinws03" 10.247.2.1 255.255.255.255
+set address "VPN_Bharti" "Local_Bharti" 10.2.28.57 255.255.255.255
+set group address "Trust" "INNEDBRI3"
+set group address "Trust" "INNEDBRI3" add "INNEDBAMDB"
+set group address "Trust" "INNEDBRI3" add "INNEDBRI3-AMG4"
+set group address "Trust" "INNEDBRI3" add "INNEDBRI3-CRS3"
+set group address "Trust" "INNEDBRI3" add "INNEDBRI3-CRS4"
+set group address "Trust" "INNEDBRI3" add "INNEDWAPI1"
+set group address "Untrust" "bharti_VPN"
+set group address "Untrust" "bharti_VPN" add "bharti1"
+set group address "Untrust" "bharti_VPN" add "bharti10"
+set group address "Untrust" "bharti_VPN" add "bharti11"
+set group address "Untrust" "bharti_VPN" add "bharti12"
+set group address "Untrust" "bharti_VPN" add "bharti13"
+set group address "Untrust" "bharti_VPN" add "bharti14"
+set group address "Untrust" "bharti_VPN" add "bharti15"
+set group address "Untrust" "bharti_VPN" add "bharti16"
+set group address "Untrust" "bharti_VPN" add "bharti17"
+set group address "Untrust" "bharti_VPN" add "bharti18"
+set group address "Untrust" "bharti_VPN" add "bharti19"
+set group address "Untrust" "bharti_VPN" add "bharti2"
+set group address "Untrust" "bharti_VPN" add "bharti20"
+set group address "Untrust" "bharti_VPN" add "bharti21"
+set group address "Untrust" "bharti_VPN" add "bharti22"
+set group address "Untrust" "bharti_VPN" add "bharti23"
+set group address "Untrust" "bharti_VPN" add "bharti24"
+set group address "Untrust" "bharti_VPN" add "bharti25"
+set group address "Untrust" "bharti_VPN" add "bharti26"
+set group address "Untrust" "bharti_VPN" add "bharti27"
+set group address "Untrust" "bharti_VPN" add "bharti28"
+set group address "Untrust" "bharti_VPN" add "bharti29"
+set group address "Untrust" "bharti_VPN" add "bharti3"
+set group address "Untrust" "bharti_VPN" add "bharti30"
+set group address "Untrust" "bharti_VPN" add "bharti31"
+set group address "Untrust" "bharti_VPN" add "bharti32"
+set group address "Untrust" "bharti_VPN" add "bharti33"
+set group address "Untrust" "bharti_VPN" add "bharti4"
+set group address "Untrust" "bharti_VPN" add "bharti5"
+set group address "Untrust" "bharti_VPN" add "bharti6"
+set group address "Untrust" "bharti_VPN" add "bharti7"
+set group address "Untrust" "bharti_VPN" add "bharti8"
+set group address "Untrust" "PFX_BLACKLIST_V4"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-1"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-10"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-11"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-12"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-13"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-14"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-15"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-16"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-17"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-18"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-19"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-2"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-20"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-21"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-22"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-23"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-3"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-4"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-5"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-6"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-7"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-8"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-9"
+set group address "Untrust" "PFX_MARTIANS_V4"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-1"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-10"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-11"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-12"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-13"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-2"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-3"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-4"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-5"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-6"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-7"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-8"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-9"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_NED-ORIGIN-1"
+set group address "Untrust" "Spectel Remote"
+set group address "Untrust" "Spectel Remote" add "Spectel IE 01"
+set group address "Untrust" "Spectel Remote" add "Spectel IE 02"
+set group address "Untrust" "Spectel Remote" add "Spectel IE 03"
+set group address "Untrust" "Spectel Remote" add "Spectel IE 04"
+set group address "Untrust" "Spectel Remote" add "Spectel IE 05"
+set group address "Untrust" "Spectel Remote" add "Spectel IE 06"
+set group address "Untrust" "Spectel Remote" add "Spectel IE 07"
+set group address "Untrust" "Spectel Remote" add "Spectel IE 08"
+set group address "Untrust" "Spectel Remote" add "Spectel IE 09"
+set group address "Untrust" "Spectel Remote" add "Spectel IE 10"
+set group address "Untrust" "Spectel Remote" add "Spectel IE 11"
+set group address "Untrust" "Spectel Remote" add "Spectel IE 12"
+set group address "Untrust" "Spectel Remote" add "Spectel IE 13"
+set group service "Internet Access"
+set group service "Internet Access" add "DNS"
+set group service "Internet Access" add "HTTP"
+set group service "Internet Access" add "HTTPS"
+set group service "Internet Access" add "MAIL"
+set group service "Internet Access" add "NTP"
+set group service "Internet Access" add "PING"
+set group service "Internet Access" add "POP3"
+set group service "Internet Access" add "TRACEROUTE"
+set vpnmonitor interval 15
+set vpnmonitor threshold 3
+set crypto-policy
+exit
+set ike p2-proposal "nopfs-3Des-sha1" no-pfs esp 3des sha-1 second 3600
+#set ike gateway "INNOIFW1" address 115.249.217.50 Main outgoing-interface "ethernet0/2" preshare <removed> proposal "pre-g2-3des-md5"
+#set ike gateway "CNCHQFW1" address 221.5.154.66 Main outgoing-interface "ethernet0/2" preshare <removed> proposal "pre-g2-3des-md5"
+#set ike gateway "HKSFCFW1" address 203.193.59.226 Main outgoing-interface "ethernet0/2" preshare <removed> proposal "pre-g2-3des-md5"
+set ike gateway "acvpn" acvpn-dynamic
+#set ike gateway "SGNTTFW" address 202.136.168.18 Main outgoing-interface "ethernet0/2" preshare <removed> sec-level standard
+set ike respond-bad-spi 1
+set ike ikev2 ike-sa-soft-lifetime 60
+unset ike ikeid-enumeration
+unset ike dos-protection
+unset ipsec access-session enable
+set ipsec access-session maximum 5000
+set ipsec access-session upper-threshold 0
+set ipsec access-session lower-threshold 0
+set ipsec access-session dead-p2-sa-timeout 0
+unset ipsec access-session log-error
+unset ipsec access-session info-exch-connected
+unset ipsec access-session use-error-log
+set vpn "INNOITUN" gateway "INNOIFW1" replay tunnel idletime 0 proposal "nopfs-esp-3des-md5" 
+set vpn "INNOITUN" monitor rekey
+set vpn "INNOITUN" id 0x10 bind interface tunnel.2
+set vpn "acvpn" acvpn-dynamic "acvpn"
+set vpn "SGNTTVPN" gateway "SGNTTFW" no-replay tunnel idletime 0 sec-level standard
+set vpn "SGNTTVPN" id 0x37 bind interface tunnel.12
+unset interface tunnel.12 acvpn-dynamic-routing
+set url protocol websense
+exit
+set policy id 34 from "DMZ" to "Trust"  "INNEDVIVO" "INBHAMediation" "ANY" permit log 
+set policy id 34
+exit
+set policy id 33 from "DMZ" to "Trust"  "INNEDVIVO" "10.244.9.10/32" "ANY" permit log 
+set policy id 33
+exit
+set policy id 37 from "DMZ" to "Trust"  "INNEDVIVO" "INNEDCRS1" "MS-SQL" permit log 
+set policy id 37
+exit
+set policy id 38 from "DMZ" to "Trust"  "INNEDVIVO" "INNEDMX2" "SSH" permit log 
+set policy id 38
+exit
+set policy id 32 from "DMZ" to "Trust"  "INNEDVIVO" "INNEDENT" "MS-SQL" permit log 
+set policy id 32
+exit
+set policy id 31 from "DMZ" to "Trust"  "INNEDVIVO" "INNEDBKP1" "MS-RPC-ANY" permit log 
+set policy id 31
+set service "MS-RPC-EPM"
+set service "SMB"
+exit
+set policy id 25 from "WAN" to "DMZ"  "Any" "Any" "ANY" permit log 
+set policy id 25
+exit
+set policy id 24 from "DMZ" to "WAN"  "INNEDVIVO" "sgsinws03" "DNS" permit log 
+set policy id 24
+exit
+set policy id 23 from "WAN" to "Trust"  "Any" "Any" "ANY" permit log 
+set policy id 23
+exit
+set policy id 22 from "Trust" to "WAN"  "Any" "Any" "ANY" permit log 
+set policy id 22
+exit
+set policy id 21 from "Untrust" to "DMZ"  "Arkanet" "Any" "ANY" permit log 
+set policy id 21
+exit
+set policy id 20 from "DMZ" to "Trust"  "INNEDVIVO" "innoiws01" "DNS" permit log 
+set policy id 20
+exit
+set policy id 19 from "DMZ" to "Untrust"  "Any" "Arkanet" "ANY" permit log 
+set policy id 19
+exit
+set policy id 18 from "DMZ" to "Untrust"  "Any" "Any" "ANY" nat src permit log 
+set policy id 18
+exit
+set policy id 17 from "Untrust" to "Trust"  "Arkanet" "INDIA" "ANY" permit log 
+set policy id 17
+exit
+set policy id 16 from "Trust" to "Untrust"  "INDIA" "Arkanet" "ANY" permit log 
+set policy id 16
+exit
+set policy id 54 from "Trust" to "Untrust"  "INNEDBRI3" "Any" "ANY" deny log 
+set policy id 54
+exit
+set policy id 15 from "Trust" to "Untrust"  "INDIA" "Any" "ANY" nat src permit log 
+set policy id 15
+exit
+set policy id 13 from "Trust" to "Untrust"  "INNEDLAN" "Any" "ANY" permit log 
+set policy id 13
+exit
+set policy id 11 from "DMZ" to "Untrust"  "Any" "Arkanet" "ANY" permit log 
+set policy id 11
+exit
+set policy id 1 from "Trust" to "Untrust"  "INNEDLAN" "Arkanet" "ANY" permit log 
+set policy id 1
+exit
+set policy id 2 from "Trust" to "Untrust"  "INNEDLAN" "Any" "HTTP" permit log 
+set policy id 2
+set service "HTTPS"
+exit
+set policy id 3 from "Trust" to "Untrust"  "Any" "Any" "ANY" deny log 
+set policy id 3
+exit
+set policy id 4 from "Untrust" to "Trust"  "Arkanet" "ArkanetTrust" "ANY" permit log 
+set policy id 4
+set src-address "INLeaseLine"
+set dst-address "INNEDLAN"
+exit
+set policy id 55 from "Untrust" to "Trust"  "ADDR_ARKAD_APNIC01" "MIP(210.210.3.31)" "HTTP" permit log 
+set policy id 55
+set src-address "ADDR_ARKAD_ARIN01"
+set src-address "ADDR_ARKAD_RIPE01"
+set src-address "ADDR_ARKAD_RIPE02"
+set src-address "ADDR_NED_ISP"
+set src-address "ADDR_NOI_ISP01"
+set src-address "ADDR_NOI_ISP02"
+set src-address "ADDR_RXPRISM01"
+set src-address "ADDR_RXPRISM02"
+set src-address "ADDR_RXPRISM03"
+set src-address "ADDR_RXPRISM04"
+set service "HTTPS"
+set service "PING"
+exit
+set policy id 43 from "Untrust" to "Trust"  "Any" "MIP(210.210.3.22)" "HTTP" permit log 
+set policy id 43
+set dst-address "MIP(210.210.3.23)"
+set dst-address "MIP(210.210.3.24)"
+set dst-address "MIP(210.210.3.27)"
+set dst-address "MIP(210.210.3.30)"
+set service "HTTPS"
+set service "PING"
+exit
+set policy id 10 from "Untrust" to "Trust"  "Any" "MIP(210.210.3.25)" "HTTP" permit log 
+set policy id 10
+set dst-address "MIP(210.210.3.26)"
+set service "HTTPS"
+set service "IMAP"
+set service "POP3"
+set service "Secure_ IMAP_993"
+set service "Secure_POP3_995"
+set service "SMTP"
+set service "SMTP_465"
+set service "SMTP_587"
+exit
+set policy id 47 name "VIDYO8443" from "Untrust" to "Trust"  "Any" "210.210.3.29/32" "8443" permit log 
+set policy id 47
+set dst-address "210.210.3.34/32"
+set dst-address "INNED-VIDWLVGW1P"
+set dst-address "INNED-VIDWLVGW2P"
+set dst-address "INNED-VIDWLVR1P"
+set dst-address "INNED-VIDWLVR2P"
+exit
+set policy id 5 from "Untrust" to "Trust"  "Any" "Any" "ANY" deny log 
+set policy id 5
+exit
+set policy id 6 from "Untrust" to "Untrust"  "Arkanet" "Arkanet" "ANY" permit log 
+set policy id 6
+exit
+set policy id 7 from "Untrust" to "Untrust"  "Any" "Any" "ANY" deny log 
+set policy id 7
+exit
+set policy id 26 from "Trust" to "DMZ"  "Any" "INNEDDMZ" "ANY" permit 
+set policy id 26
+exit
+set policy id 8 from "Trust" to "DMZ"  "INNEDLAN" "INNEDDMZ" "ANY" permit log 
+set policy id 8
+exit
+set policy id 9 from "Trust" to "DMZ"  "Any" "Any" "ANY" deny log 
+set policy id 9
+exit
+set policy id 14 from "Trust" to "Trust"  "Arkanet" "Arkanet" "ANY" permit log 
+set policy id 14
+exit
+set policy id 28 from "Untrust" to "DMZ"  "Any" "Any" "ANY" deny log 
+set policy id 28
+exit
+set policy id 30 from "DMZ" to "Trust"  "Any" "Any" "ANY" deny log 
+set policy id 30
+exit
+set policy id 39 name "VIDYO" from "Untrust" to "VIDYO"  "Any" "Any" "ANY" permit 
+set policy id 39
+exit
+set policy id 40 from "VIDYO" to "Untrust"  "Any" "Any" "ANY" permit 
+set policy id 40
+exit
+set policy id 48 from "VidyoAPI_DMZ" to "UntrustVidyoAPInterco"  "Any" "Any" "ANY" permit 
+set policy id 48
+exit
+set policy id 49 from "UntrustVidyoAPInterco" to "VidyoAPI_DMZ"  "Any" "Any" "PING" permit 
+set policy id 49
+exit
+set syslog config "apac-syslog.arkadin.lan"
+set syslog config "apac-syslog.arkadin.lan" facilities local0 local0
+set syslog config "10.250.137.24"
+set syslog config "10.250.137.24" facilities local0 local5
+set syslog config "10.250.137.89"
+set syslog config "10.250.137.89" facilities local0 local5
+set syslog src-interface ethernet0/0
+set syslog enable
+unset log module system level information destination internal
+unset log module system level debugging destination internal
+unset log module system level information destination syslog
+unset log module system level debugging destination syslog
+unset log module system level information destination NSM
+unset log module system level debugging destination NSM
+unset log module system level information destination usb
+unset log module system level debugging destination usb
+set nsmgmt bulkcli reboot-timeout 60
+set ssh version v2
+set ssh enable
+set config lock timeout 5
+unset license-key auto-update
+unset telnet client enable
+set ssl encrypt 3des sha-1
+set ntp server "10.249.38.1"
+set ntp server backup1 "10.250.137.1"
+set ntp interval 30
+set ntp max-adjustment 20
+set snmp community "Arkadin_AP" Read-Only Trap-on version any  
+set snmp community "noc_services" Read-Only Trap-off version any  
+set snmp community "network_services" Read-Only Trap-on traffic version any  
+set snmp host "noc_services" 10.0.0.0 255.0.0.0 
+set snmp host "noc_services" 10.105.137.56/32 src-interface ethernet0/0  trap v2
+set snmp host "noc_services" 10.105.137.57/32 src-interface ethernet0/0  trap v2
+set snmp host "noc_services" 10.100.137.55/32 src-interface ethernet0/0  trap v2
+set snmp host "noc_services" 10.250.137.55/32 src-interface ethernet0/0  trap v2
+set snmp host "noc_services" 10.115.137.57/32 src-interface ethernet0/0  trap v2
+set snmp host "noc_services" 10.100.19.21/32 src-interface ethernet0/0  trap v2
+set snmp host "noc_services" 10.250.90.90/32 src-interface ethernet0/0  trap v2
+set snmp host "noc_services" 192.206.95.169/32 src-interface ethernet0/0  trap v2
+set snmp host "noc_services" 10.105.137.80/32 src-interface ethernet0/0  trap v2
+set snmp host "Arkadin_AP" 10.247.0.0 255.255.0.0 src-interface ethernet0/0 
+set snmp name "INNEDFW1"
+set snmp rfc1213 ipforwarding enable
+set snmp port listen 161
+set snmp port trap 162
+set snmpv3 local-engine id "0185032009002063"
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+set access-list 1
+set access-list 1 permit ip 10.244.0.0/16 1
+set access-list 1 permit ip 10.0.0.0/8 2
+set route-map name "STATIC2OSPF" permit 1
+set match ip 1
+exit
+unset add-default-route
+set route 0.0.0.0/0 interface ethernet0/2 gateway 210.210.3.1 permanent
+set route 10.244.0.0/16 interface ethernet0/5 gateway 10.244.15.254
+set route 10.0.0.0/8 interface tunnel.12
+set protocol ospf
+set redistribute route-map "STATIC2OSPF" protocol static
+exit
+exit
+set vrouter "bharti"
+exit
+set vrouter "vidyo"
+exit
+set vrouter "vidyoAPI"
+set route 0.0.0.0/0 gateway 10.10.38.1
+exit
+set interface ethernet0/0 protocol ospf area 0.0.0.4
+set interface ethernet0/0 protocol ospf passive
+set interface ethernet0/0 protocol ospf enable
+set interface ethernet0/3 protocol ospf area 0.0.0.4
+set interface ethernet0/3 protocol ospf enable
+set interface ethernet0/3 protocol ospf cost 1
+set interface tunnel.2 protocol ospf area 0.0.0.4
+set interface tunnel.2 protocol ospf enable
+set interface tunnel.2 protocol ospf cost 10
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+exit
+set vrouter "bharti"
+exit
+set vrouter "vidyo"
+exit
+set vrouter "vidyoAPI"
+exit

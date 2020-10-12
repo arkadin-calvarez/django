@@ -1,0 +1,499 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C2960S-48TS-L
+!CPU: PowerPC
+!
+!Memory: main 131072K
+!Serial Number: FOC1441W89D
+!Model revision number           : B0
+!Model number                    : WS-C2960S-48TS-L
+!Motherboard assembly number     : 73-11909-06
+!Motherboard serial number       : FOC144207BC
+!Motherboard revision number     : A0
+!Power supply part number        : 341-0327-02
+!Power supply serial number      : LIT14350Q2Z
+!
+!Processor ID: FOC1441W89D
+!
+!FAN: FAN is OK
+!
+!Image: Software: C2960S-UNIVERSALK9-M, 15.0(2)SE4, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Wed 26-Jun-13 02:59 by prod_rel_team
+!Image: flash:/c2960s-universalk9-mz.150-2.SE4/c2960s-universalk9-mz.150-2.SE4.bin
+!
+!BOOTLDR: Version 12.2(53r)SE, RELEASE SOFTWARE (fc3)
+!
+!
+!Variable: BOOT path-list      : flash:/c2960s-universalk9-mz.150-2.SE4/c2960s-universalk9-mz.150-2.SE4.bin
+!Variable: Config file         : flash:/config.text
+!Variable: Private Config file : flash:/private-config.text
+!Variable: Enable Break        : no
+!Variable: Manual Boot         : no
+!Variable: Allow Dev Key         : yes
+!Variable: HELPER path-list    : 
+!Variable: Auto upgrade        : yes
+!Variable: Auto upgrade path   : 
+!Variable: NVRAM/Config file
+!Variable:       buffer size:   524288
+!Variable: Timeout for Config
+!Variable:           Download:    0 seconds
+!Variable: Config Download 
+!Variable:        via DHCP:       disabled (next boot: disabled)
+!
+! Index 1 Feature: lanlite        
+! 	Period left: <limited>
+! Index 2 Feature: lanbase        
+! 	Period left: Life time
+! 	License Type: Permanent
+! 	License State: Active, In Use
+! 	License Priority: Medium
+! 	License Count: Non-Counted
+!
+!
+!NAME: "C29xx Stacking",        DESCR: "Catalyst C29xx Switch Stack"
+!NAME: "1",                     DESCR: "WS-C2960S-48TS-L"
+!PID: WS-C2960S-48TS-L
+!VID: V02
+!SN: FOC1441W89D
+!NAME: "Switch 1 - Fan Container", DESCR: "Fan Container"
+!NAME: "Switch 1 - Power Supply Container", DESCR: "Power Supply Container"
+!NAME: "Switch 1 - RPS Container", DESCR: "RPS Container"
+!NAME: "Switch 1 - WS-C2960S-48TS-L - Power Supply 0", DESCR: "Switch 1 - WS-C2960S-48TS-L - Power Supply 0"
+!SN: LIT14350Q2Z
+!NAME: "Switch 1 - WS-C2960S-48TS-L - Fan 0", DESCR: "Switch 1 - WS-C2960S-48TS-L - Fan 0"
+!NAME: "Switch 1 - WS-C2960S-48TS-L - Sensor 0", DESCR: "Switch 1 - WS-C2960S-48TS-L - Sensor 0"
+!NAME: "Switch 1 - WS-C2960S-48TS-L - Fixed Module 0", DESCR: "Switch 1 - WS-C2960S-48TS-L - Fixed Module 0"
+!NAME: "GigabitEthernet1/0/49 Container", DESCR: "GigabitEthernet Container"
+!NAME: "GigabitEthernet1/0/50 Container", DESCR: "GigabitEthernet Container"
+!NAME: "GigabitEthernet1/0/51 Container", DESCR: "GigabitEthernet Container"
+!NAME: "GigabitEthernet1/0/52 Container", DESCR: "GigabitEthernet Container"
+!NAME: "StackPort1",            DESCR: "StackPort1"
+!NAME: "GigabitEthernet1/0/1",  DESCR: "GigabitEthernet1/0/1"
+!NAME: "GigabitEthernet1/0/2",  DESCR: "GigabitEthernet1/0/2"
+!NAME: "GigabitEthernet1/0/3",  DESCR: "GigabitEthernet1/0/3"
+!NAME: "GigabitEthernet1/0/4",  DESCR: "GigabitEthernet1/0/4"
+!NAME: "GigabitEthernet1/0/5",  DESCR: "GigabitEthernet1/0/5"
+!NAME: "GigabitEthernet1/0/6",  DESCR: "GigabitEthernet1/0/6"
+!NAME: "GigabitEthernet1/0/7",  DESCR: "GigabitEthernet1/0/7"
+!NAME: "GigabitEthernet1/0/8",  DESCR: "GigabitEthernet1/0/8"
+!NAME: "GigabitEthernet1/0/9",  DESCR: "GigabitEthernet1/0/9"
+!NAME: "GigabitEthernet1/0/10", DESCR: "GigabitEthernet1/0/10"
+!NAME: "GigabitEthernet1/0/11", DESCR: "GigabitEthernet1/0/11"
+!NAME: "GigabitEthernet1/0/12", DESCR: "GigabitEthernet1/0/12"
+!NAME: "GigabitEthernet1/0/13", DESCR: "GigabitEthernet1/0/13"
+!NAME: "GigabitEthernet1/0/14", DESCR: "GigabitEthernet1/0/14"
+!NAME: "GigabitEthernet1/0/15", DESCR: "GigabitEthernet1/0/15"
+!NAME: "GigabitEthernet1/0/16", DESCR: "GigabitEthernet1/0/16"
+!NAME: "GigabitEthernet1/0/17", DESCR: "GigabitEthernet1/0/17"
+!NAME: "GigabitEthernet1/0/18", DESCR: "GigabitEthernet1/0/18"
+!NAME: "GigabitEthernet1/0/19", DESCR: "GigabitEthernet1/0/19"
+!NAME: "GigabitEthernet1/0/20", DESCR: "GigabitEthernet1/0/20"
+!NAME: "GigabitEthernet1/0/21", DESCR: "GigabitEthernet1/0/21"
+!NAME: "GigabitEthernet1/0/22", DESCR: "GigabitEthernet1/0/22"
+!NAME: "GigabitEthernet1/0/23", DESCR: "GigabitEthernet1/0/23"
+!NAME: "GigabitEthernet1/0/24", DESCR: "GigabitEthernet1/0/24"
+!NAME: "GigabitEthernet1/0/25", DESCR: "GigabitEthernet1/0/25"
+!NAME: "GigabitEthernet1/0/26", DESCR: "GigabitEthernet1/0/26"
+!NAME: "GigabitEthernet1/0/27", DESCR: "GigabitEthernet1/0/27"
+!NAME: "GigabitEthernet1/0/28", DESCR: "GigabitEthernet1/0/28"
+!NAME: "GigabitEthernet1/0/29", DESCR: "GigabitEthernet1/0/29"
+!NAME: "GigabitEthernet1/0/30", DESCR: "GigabitEthernet1/0/30"
+!NAME: "GigabitEthernet1/0/31", DESCR: "GigabitEthernet1/0/31"
+!NAME: "GigabitEthernet1/0/32", DESCR: "GigabitEthernet1/0/32"
+!NAME: "GigabitEthernet1/0/33", DESCR: "GigabitEthernet1/0/33"
+!NAME: "GigabitEthernet1/0/34", DESCR: "GigabitEthernet1/0/34"
+!NAME: "GigabitEthernet1/0/35", DESCR: "GigabitEthernet1/0/35"
+!NAME: "GigabitEthernet1/0/36", DESCR: "GigabitEthernet1/0/36"
+!NAME: "GigabitEthernet1/0/37", DESCR: "GigabitEthernet1/0/37"
+!NAME: "GigabitEthernet1/0/38", DESCR: "GigabitEthernet1/0/38"
+!NAME: "GigabitEthernet1/0/39", DESCR: "GigabitEthernet1/0/39"
+!NAME: "GigabitEthernet1/0/40", DESCR: "GigabitEthernet1/0/40"
+!NAME: "GigabitEthernet1/0/41", DESCR: "GigabitEthernet1/0/41"
+!NAME: "GigabitEthernet1/0/42", DESCR: "GigabitEthernet1/0/42"
+!NAME: "GigabitEthernet1/0/43", DESCR: "GigabitEthernet1/0/43"
+!NAME: "GigabitEthernet1/0/44", DESCR: "GigabitEthernet1/0/44"
+!NAME: "GigabitEthernet1/0/45", DESCR: "GigabitEthernet1/0/45"
+!NAME: "GigabitEthernet1/0/46", DESCR: "GigabitEthernet1/0/46"
+!NAME: "GigabitEthernet1/0/47", DESCR: "GigabitEthernet1/0/47"
+!NAME: "GigabitEthernet1/0/48", DESCR: "GigabitEthernet1/0/48"
+!NAME: "Switch 1 - FastEthernet0", DESCR: "FastEthernet0"
+!
+!VTP: VTP Version capable             : 1 to 3
+!VTP: VTP version running             : 1
+!VTP: VTP Domain Name                 : 
+!VTP: VTP Pruning Mode                : Disabled
+!VTP: VTP Traps Generation            : Disabled
+!VTP: Device ID                       : b414.89f7.8100
+!VTP: Feature VLAN:
+!VTP: --------------
+!VTP: VTP Operating Mode                : Off
+!VTP: Maximum VLANs supported locally   : 255
+!VTP: Number of existing VLANs          : 7
+!VTP: Configuration Revision            : 0
+!VTP: MD5 digest                        : 0x02 0x64 0x3B 0xA5 0xF1 0x5D 0xC4 0x08 
+!VTP:                                     0x6D 0xF9 0xD0 0xE2 0x7D 0x09 0x64 0x64 
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    
+!VLAN: 10   oob                              active    Gi1/0/2, Gi1/0/3, Gi1/0/4, Gi1/0/5, Gi1/0/6, Gi1/0/7, Gi1/0/8, Gi1/0/9, Gi1/0/10
+!VLAN:                                                 Gi1/0/11, Gi1/0/12, Gi1/0/13, Gi1/0/14, Gi1/0/15, Gi1/0/16, Gi1/0/17, Gi1/0/18
+!VLAN:                                                 Gi1/0/19, Gi1/0/20, Gi1/0/21, Gi1/0/22, Gi1/0/23, Gi1/0/24, Gi1/0/25, Gi1/0/26
+!VLAN:                                                 Gi1/0/27, Gi1/0/28, Gi1/0/29, Gi1/0/30, Gi1/0/31, Gi1/0/32, Gi1/0/33, Gi1/0/34
+!VLAN:                                                 Gi1/0/36, Gi1/0/37, Gi1/0/38, Gi1/0/39, Gi1/0/40, Gi1/0/41, Gi1/0/42, Gi1/0/43
+!VLAN:                                                 Gi1/0/44, Gi1/0/45, Gi1/0/46, Gi1/0/49, Gi1/0/50, Gi1/0/51, Gi1/0/52
+!VLAN: 15   sys-managment                    active    Gi1/0/1
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: 4093 bastion-30                       active    
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 10   enet  100010     1500  -      -      -        -    -        0      0   
+!VLAN: 15   enet  100015     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: 4093 enet  104093     1500  -      -      -        -    -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!STACK: Switch/Stack Mac Address : b414.89f7.8100
+!STACK:                                            H/W   Current
+!STACK: Switch#  Role   Mac Address     Priority Version  State 
+!STACK: ----------------------------------------------------------
+!STACK: *1       Master b414.89f7.8100     1      1       Ready               
+!STACK:          Stack Port Status             Neighbors     
+!STACK: Switch#  Port 1     Port 2           Port 1   Port 2 
+!STACK: --------------------------------------------------------
+!STACK:   1       Down       Down             None     None
+!
+!SDM Template: default
+!
+!MTU: 1500
+!MTU-Jumbo: 1500
+!MTU-Routing: 1500
+!
+!
+config-register 0xF
+Using 7330 out of 524288 bytes
+!
+version 15.0
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname at1-oob-01
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 4 zw3Vu0oT1QXi0TwXTGrkTS6CRkGhYxbACQebPlYbAOc
+!
+!username netops privilege 15 password <removed>
+username rancid privilege 15 secret 4 KMJDkTnotfBBYWJt8H68.Vlunk/hIattCUhk3SAHFcc
+no aaa new-model
+switch 1 provision ws-c2960s-48ts-l
+!
+ip domain-name net.arkadin.lan
+vtp mode off
+!
+crypto pki trustpoint TP-self-signed-2314699008
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2314699008
+ revocation-check none
+ rsakeypair TP-self-signed-2314699008
+!
+crypto pki certificate chain TP-self-signed-2314699008
+ certificate self-signed 01 nvram:IOS-Self-Sig#1.cer
+!
+spanning-tree mode mst
+spanning-tree extend system-id
+spanning-tree mst 0 priority 57344
+!
+vlan internal allocation policy ascending
+!
+vlan 10
+ name oob
+!
+vlan 15
+ name sys-managment
+!
+vlan 4093
+ name bastion-30
+!
+lldp run
+!
+interface Port-channel1
+ switchport trunk allowed vlan 10,15,4093
+ switchport mode trunk
+!
+interface FastEthernet0
+ no ip address
+!
+interface GigabitEthernet1/0/1
+ switchport access vlan 15
+ switchport mode access
+!
+interface GigabitEthernet1/0/2
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/3
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/4
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/5
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/6
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/7
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/8
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/9
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/10
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/11
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/12
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/13
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/14
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/15
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/16
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/17
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/18
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/19
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/20
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/21
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/22
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/23
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/24
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/25
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/26
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/27
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/28
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/29
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/30
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/31
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/32
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/33
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/34
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/35
+ description at1-bastion-01
+ switchport trunk native vlan 4093
+ switchport trunk allowed vlan 10,4093
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/36
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/37
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/38
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/39
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/40
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/41
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/42
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/43
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/44
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/45
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/46
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/47
+ switchport trunk allowed vlan 10,15,4093
+ switchport mode trunk
+ channel-protocol lacp
+ channel-group 1 mode active
+!
+interface GigabitEthernet1/0/48
+ switchport trunk allowed vlan 10,15,4093
+ switchport mode trunk
+ channel-protocol lacp
+ channel-group 1 mode active
+!
+interface GigabitEthernet1/0/49
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/50
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/51
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/52
+ switchport access vlan 10
+ switchport mode access
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan10
+ ip address 10.122.128.240 255.255.255.0
+!
+ip default-gateway 10.122.128.254
+ip http server
+ip http secure-server
+!
+logging host 10.100.137.24
+logging host 10.100.137.89
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+!
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server location noram-at1
+snmp-server contact nio@arkadin.com
+snmp ifmib ifindex persist
+!
+banner login ^C====================================================================
+=         UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED         =
+=    You must have explicit, authorized permission to access or    =
+=   configure this device. Unauthorized attempts and actions to    =
+=   access or use this system may result in civil and/or criminal  =
+= All activities performed on this device are logged and monitored =
+====================================================================
+^C
+!
+line con 0
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+end

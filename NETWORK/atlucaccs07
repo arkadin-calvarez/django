@@ -1,0 +1,494 @@
+!RANCID-CONTENT-TYPE: dell10
+!
+!System Type: S5148F-ON
+!
+!Chassis: Node Id              : 1
+!Chassis: MAC                  : d8:9e:f3:be:fb:00
+!Chassis: Number of MACs       : 256
+!Chassis: -- Unit 1 --
+!Chassis: Status               : up
+!Chassis: System Identifier    : 1
+!Chassis: Down Reason          : user-triggered
+!Chassis: System Location LED  : off
+!Chassis: Required Type        : S5148F
+!Chassis: Current Type         : S5148F
+!Chassis: Hardware Revision    : A00
+!Chassis: Software Version     : 10.3.2E(R1)
+!Chassis: Physical Ports       : 48x25GbE, 6x100GbE
+!Chassis: BIOS                 : 3.36.0.1-2    
+!Chassis: SMF                  : 0.1           
+!Chassis: CPLD1                : 1.0           
+!Chassis: CPLD2                : 1.0           
+!Chassis: CPLD3                : 1.0           
+!Chassis: CPLD4                : 1.0           
+!Chassis: -- Power Supplies --
+!Chassis: 
+!Chassis: -- Fan Status --
+!Chassis: 2		up
+!Chassis: 2		up
+!Chassis: 2		up
+!Chassis: 2		up
+!
+!
+!Image: OS Version: 10.3.2E(R1)
+!Image: Build Version: 10.3.2E(R1.438)
+!Image: Build Time: 2018-01-05T17:21:13-0800
+!
+!Inventory: Product          : S5148F-ON
+!Inventory: Description      : S5148F-ON 48x25GbE, 6x100GbE QSFP28 Interface Module
+!Inventory: Software version : 10.3.2E(R1)
+!Inventory: Unit Type                 Part Number  Rev  Piece Part ID           Svc Tag  Exprs Svc Code
+!Inventory: * 1  S5148F-ON               0D1CM5  A00  CN-0D1CM5-CES00-7C6-0006  BV9SG02  258 355 008 02
+!Inventory:   1  S5148F-ON-PWR-1-AC-R    0HXWNF  A00  CN-0HXWNF-DED00-794-04A2                         
+!Inventory:   1  S5148F-ON-PWR-2-AC-R    0HXWNF  A00  CN-0HXWNF-DED00-794-042U                         
+!Inventory:   1  S5148F-ON-FANTRAY-1-R   0X3WCP  A00  CN-0X3WCP-CES00-81T-0076                         
+!Inventory:   1  S5148F-ON-FANTRAY-2-R   0X3WCP  A00  CN-0X3WCP-CES00-823-0255                         
+!Inventory:   1  S5148F-ON-FANTRAY-3-R   0X3WCP  A00  CN-0X3WCP-CES00-81T-0390                         
+!Inventory:   1  S5148F-ON-FANTRAY-4-R   0X3WCP  A00  CN-0X3WCP-CES00-823-0252                         
+!
+!VLAN: Codes: * - Default VLAN, M - Management VLAN, R - Remote Port Mirroring VLANs
+!VLAN: Q: A - Access (Untagged), T - Tagged
+!VLAN:     NUM    Status    Description                     Q Ports
+!VLAN: *   1      up                                        T Po1000 
+!VLAN:                                                      A Eth1/1/1-1/1/46,1/1/49-1/1/52 
+!VLAN:                                                      A Po127 
+!VLAN:     241    up                                        T Eth1/1/1-1/1/3,1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!VLAN:     1204   up                                        T Eth1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!VLAN:     1230   up                                        T Eth1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!VLAN:     1235   up                                        T Eth1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!VLAN:     1236   up                                        T Eth1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!VLAN:     1237   up                                        T Eth1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!VLAN:     1240   up                                        T Eth1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!VLAN:     1241   up                                        T Eth1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!VLAN:     1242   up                                        T Eth1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!VLAN:     1249   up                                        T Eth1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!VLAN:     1250   up                                        T Eth1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!VLAN:     1251   up                                        T Eth1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!VLAN:     1252   up                                        T Eth1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!VLAN:     1255   up                                        T Eth1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!VLAN:     1256   up                                        T Eth1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!VLAN:     1257   up                                        T Eth1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!VLAN:     1283   up        S:UC_SSDRN1_STORAGE_1           T Eth1/1/1-1/1/3 
+!VLAN:                                                      T Po1000 
+!VLAN:     1284   up        S:UC_SSDRN1_STORAGE_2           T Eth1/1/1-1/1/3 
+!VLAN:                                                      T Po1000 
+!VLAN:     1285   up        S:UC_SSDRN1_LM                  T Eth1/1/1-1/1/3 
+!VLAN:                                                      T Po1000 
+!VLAN:     1286   up        S:UC_SSDRN1_HB                  T Eth1/1/1-1/1/3 
+!VLAN:                                                      T Po1000 
+!VLAN:     4089   up                                        T Eth1/1/25-1/1/28 
+!VLAN:                                                      T Po127,1000 
+!
+! Version 10.3.2E(R1)
+! Last configuration change at Sep  24 08:41:26 2020
+!
+exec-timeout 1200
+snmp-server community noc_services ro
+snmp-server contact nio@arkadin.com
+snmp-server location ArkadinATLDatacenter
+hostname atlucaccs07
+interface breakout 1/1/49 map 100g-1x
+interface breakout 1/1/50 map 100g-1x
+interface breakout 1/1/51 map 100g-1x
+interface breakout 1/1/52 map 100g-1x
+interface breakout 1/1/53 map 100g-1x
+interface breakout 1/1/54 map 100g-1x
+!username admin password <removed>
+!username netops password <removed>
+aaa authentication local radius
+ntp server 10.100.51.1 prefer
+ntp server 10.122.97.1
+iscsi target port 860
+iscsi target port 3260
+logging server 10.100.137.24
+logging server 10.100.137.89
+logging log-file severity log-debug
+spanning-tree vlan 1-4093 priority 61440
+management route 0.0.0.0/0 10.100.224.254
+radius-server host 10.115.38.110 key PA2_NPS_IFC_PSK_ARKADIN_ATL
+radius-server timeout 10
+radius-server retransmit 1
+!
+interface vlan1
+ no shutdown
+!
+interface vlan241
+ no shutdown
+!
+interface vlan1204
+ no shutdown
+!
+interface vlan1230
+ no shutdown
+!
+interface vlan1235
+ no shutdown
+!
+interface vlan1236
+ no shutdown
+!
+interface vlan1237
+ no shutdown
+!
+interface vlan1240
+ no shutdown
+!
+interface vlan1241
+ no shutdown
+!
+interface vlan1242
+ no shutdown
+!
+interface vlan1249
+ no shutdown
+!
+interface vlan1250
+ no shutdown
+!
+interface vlan1251
+ no shutdown
+!
+interface vlan1252
+ no shutdown
+!
+interface vlan1255
+ no shutdown
+!
+interface vlan1256
+ no shutdown
+!
+interface vlan1257
+ no shutdown
+!
+interface vlan1283
+ description S:UC_SSDRN1_STORAGE_1
+ no shutdown
+!
+interface vlan1284
+ description S:UC_SSDRN1_STORAGE_2
+ no shutdown
+!
+interface vlan1285
+ description S:UC_SSDRN1_LM
+ no shutdown
+!
+interface vlan1286
+ description S:UC_SSDRN1_HB
+ no shutdown
+!
+interface vlan4089
+ no shutdown
+!
+interface port-channel127
+ description Q:UCACCS01_02_VPC
+ no shutdown
+ switchport mode trunk
+ switchport access vlan 1
+ switchport trunk allowed vlan 241,1204,1230,1235-1237,1240-1242,1249-1252,1255-1257,4089
+ vlt-port-channel 127
+!
+interface ethernet1/1/1
+ description S:ATLSSDRN01:25GB_NIC1
+ no shutdown
+ switchport mode trunk
+ switchport access vlan 1
+ switchport trunk allowed vlan 241,1283-1286
+ mtu 9216
+ negotiation off
+ flowcontrol receive off
+ flowcontrol transmit off
+ spanning-tree bpduguard enable
+ spanning-tree port type edge
+!
+interface ethernet1/1/2
+ description S:ATLSSDRN02:25GB_NIC1
+ no shutdown
+ switchport mode trunk
+ switchport access vlan 1
+ switchport trunk allowed vlan 241,1283-1286
+ mtu 9216
+ negotiation off
+ spanning-tree bpduguard enable
+ spanning-tree port type edge
+!
+interface ethernet1/1/3
+ description S:ATLSSDRN03:25GB_NIC1
+ no shutdown
+ switchport mode trunk
+ switchport access vlan 1
+ switchport trunk allowed vlan 241,1283-1286
+ mtu 9216
+ negotiation off
+ spanning-tree bpduguard enable
+ spanning-tree port type edge
+!
+interface ethernet1/1/4
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/5
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/6
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/7
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/8
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/9
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/10
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/11
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/12
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/13
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/14
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/15
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/16
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/17
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/18
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/19
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/20
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/21
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/22
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/23
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/24
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/25
+ description S:ATLSSDRN01:10GB_NIC1
+ no shutdown
+ switchport mode trunk
+ switchport access vlan 1
+ switchport trunk allowed vlan 241,1204,1230,1235-1237,1240-1242,1249-1252,1255-1257,4089
+ mtu 9216
+ spanning-tree bpduguard enable
+ spanning-tree port type edge
+!
+interface ethernet1/1/26
+ description S:ATLSSDRN02:10GB_NIC1
+ no shutdown
+ switchport mode trunk
+ switchport access vlan 1
+ switchport trunk allowed vlan 241,1204,1230,1235-1237,1240-1242,1249-1252,1255-1257,4089
+ mtu 9216
+ spanning-tree bpduguard enable
+ spanning-tree port type edge
+!
+interface ethernet1/1/27
+ description S:ATLSSDRN03:10GB_NIC1
+ no shutdown
+ switchport mode trunk
+ switchport access vlan 1
+ switchport trunk allowed vlan 241,1204,1230,1235-1237,1240-1242,1249-1252,1255-1257,4089
+ mtu 9216
+ spanning-tree bpduguard enable
+ spanning-tree port type edge
+!
+interface ethernet1/1/28
+ description S:ATLSSDRN02:10GB_NIC1
+ no shutdown
+ switchport mode trunk
+ switchport access vlan 1
+ switchport trunk allowed vlan 241,1204,1230,1235-1237,1240-1242,1249-1252,1255-1257,4089
+ mtu 9216
+ spanning-tree bpduguard enable
+ spanning-tree port type edge
+!
+interface ethernet1/1/29
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/30
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/31
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/32
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/33
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/34
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/35
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/36
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/37
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/38
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/39
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/40
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/41
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/42
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/43
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/44
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/45
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/46
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/47
+ description PO127:UCACCS01:ETH1/3
+ no shutdown
+ channel-group 127 mode active
+ no switchport
+!
+interface ethernet1/1/48
+ description PO127:UCACCS02:ETH1/3
+ no shutdown
+ channel-group 127 mode active
+ no switchport
+!
+interface ethernet1/1/49
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/50
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/51
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/52
+ shutdown
+ switchport access vlan 1
+!
+interface ethernet1/1/53
+ description Q:UCACCS08_VLTI:1/1/53
+ no shutdown
+ no switchport
+!
+interface ethernet1/1/54
+ description Q:UCACCS08_VLTI:1/1/54
+ no shutdown
+ no switchport
+!
+interface mgmt1/1/1
+ no shutdown
+ ip address 10.100.224.244/24
+ ipv6 address autoconfig
+ no ipv6 enable
+!
+support-assist
+!
+policy-map type application policy-iscsi
+!
+class-map type application class-iscsi
+!
+class-map type qos class-trust
+!
+vlt-domain 1
+ backup destination 10.100.224.245
+ discovery-interface ethernet1/1/53-1/1/54
+ vlt-mac 10:10:10:10:10:10
+!
+line vty

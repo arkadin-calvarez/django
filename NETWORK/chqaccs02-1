@@ -1,0 +1,550 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C3560X-24
+!CPU: PowerPC405
+!
+!Memory: main 262144K
+!Serial Number: FDO1725R0W4
+!Model revision number           : A0
+!Model number                    : WS-C3560X-24T-S
+!Motherboard assembly number     : 73-12554-11
+!Motherboard serial number       : FDO18080AKP
+!Motherboard revision number     : A0
+!
+!Processor ID: FDO1725R0W4
+!
+!Image: Software: C3560E-UNIVERSALK9-M, 15.0(2)SE5, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Fri 25-Oct-13 12:57 by prod_rel_team
+!Image: flash:/c3560e-universalk9-mz.150-2.SE5/c3560e-universalk9-mz.150-2.SE5.bin
+!
+!BOOTLDR: Version 12.2(53r)SE1, RELEASE SOFTWARE (fc1)
+!
+!% No entity named "raw"
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Gi0/18, Gi0/20
+!VLAN: 3    Trust-3                          active    
+!VLAN: 6    DMZ                              active    Gi0/21, Gi0/22
+!VLAN: 8    VLAN0008                         active    
+!VLAN: 31   Trust-31                         active    Gi0/1, Gi0/2, Gi0/3, Gi0/4, Gi0/5, Gi0/6, Gi0/7, Gi0/8, Gi0/15, Gi0/16, Gi0/17
+!VLAN: 32   Trust-32                         active    Gi0/9, Gi0/10, Gi0/11, Gi0/12, Gi0/13, Gi0/14
+!VLAN: 64   10.246.64.0/24:MGMT              active    Gi0/19
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 3    enet  100003     1500  -      -      -        -    -        0      0   
+!VLAN: 6    enet  100006     1500  -      -      -        -    -        0      0   
+!VLAN: 8    enet  100008     1500  -      -      -        -    -        0      0   
+!VLAN: 31   enet  100031     1500  -      -      -        -    -        0      0   
+!VLAN: 32   enet  100032     1500  -      -      -        -    -        0      0   
+!VLAN: 64   enet  100064     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0xF
+Using 18171 out of 524288 bytes
+!
+version 15.0
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname chqaccs02-1
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 128000 notifications
+enable secret 5 $1$21rj$kMe7xv4GfHSnsrRYM.IIq1
+!
+!username netops privilege 15 password <removed>
+username noc privilege 0 secret 5 $1$LaBJ$SL.llJI6Z8RG5I3Tniuts/
+aaa new-model
+!
+aaa authentication fail-message ^CCWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login NPS group radius local
+aaa authentication enable default enable
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+system mtu routing 1500
+ip routing
+!
+no ip domain-lookup
+ip domain-name arkadin.lan
+login on-failure log
+login on-success log
+!
+mls qos
+!
+crypto pki trustpoint TP-self-signed-3696184448
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3696184448
+ revocation-check none
+ rsakeypair TP-self-signed-3696184448
+!
+crypto pki certificate chain TP-self-signed-3696184448
+ certificate self-signed 01 nvram:IOS-Self-Sig#1.cer
+!
+spanning-tree mode rapid-pvst
+spanning-tree portfast default
+spanning-tree portfast bpdufilter default
+spanning-tree extend system-id
+spanning-tree vlan 1-4094 priority 12288
+!
+vlan internal allocation policy ascending
+!
+ip ssh authentication-retries 2
+ip ssh version 2
+!
+class-map match-all xiansu
+  match access-group 10
+!
+policy-map 3M
+ class xiansu
+  police 3000000 1000000 exceed-action drop
+!
+interface FastEthernet0
+ no ip address
+ no ip route-cache
+ shutdown
+!
+interface GigabitEthernet0/1
+ description IMG1:DATA0
+ switchport access vlan 31
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/2
+ description IMG2:DATA0
+ switchport access vlan 31
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/3
+ description CRS1:eth1
+ switchport access vlan 31
+ switchport mode access
+ speed 10
+ spanning-tree portfast
+ service-policy input 3M
+!
+interface GigabitEthernet0/4
+ description CRS2:eth1
+ switchport access vlan 31
+ switchport mode access
+ speed 10
+ spanning-tree portfast
+ service-policy input 3M
+!
+interface GigabitEthernet0/5
+ description MX1:eth1
+ switchport access vlan 31
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/6
+ description MX2:eth1
+ switchport access vlan 31
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/7
+ description IMG3:DATA0
+ switchport access vlan 31
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/8
+ description IMG4:DATA0
+ switchport access vlan 31
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/9
+ description IMG1:CRTL0
+ switchport access vlan 32
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/10
+ description IMG2:CRTL0
+ switchport access vlan 32
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/11
+ description VM1:eth1
+ switchport access vlan 32
+ switchport mode access
+ spanning-tree portfast
+ service-policy input 3M
+!
+interface GigabitEthernet0/12
+ description KVM:mgmt
+ switchport access vlan 32
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/13
+ description IMG3:CRTL0
+ switchport access vlan 32
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/14
+ description IMG4:CRTL0
+ switchport access vlan 32
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/15
+ description LAPTOP
+ switchport access vlan 31
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/16
+ description LAPTOP
+ switchport access vlan 31
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/17
+ description LAPTOP
+ switchport access vlan 31
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/18
+ shutdown
+!
+interface GigabitEthernet0/19
+ description chqvrtx01:S01:mgmt
+ switchport access vlan 64
+ switchport mode access
+!
+interface GigabitEthernet0/20
+ shutdown
+!
+interface GigabitEthernet0/21
+ description CNCHQ-VIDSDVR1P
+ switchport access vlan 6
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/22
+ description CNCHQ-VIDSDVGW1P
+ switchport access vlan 6
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/23
+ description Q:chqaccs01-1:Ge1/0/23
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet0/24
+ description Q:chqaccs01-2:Ge2/0/23
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet1/1
+ shutdown
+!
+interface GigabitEthernet1/2
+ shutdown
+!
+interface GigabitEthernet1/3
+ shutdown
+!
+interface GigabitEthernet1/4
+ shutdown
+!
+interface TenGigabitEthernet1/1
+ shutdown
+!
+interface TenGigabitEthernet1/2
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan31
+ ip address 10.246.31.252 255.255.255.0
+!
+interface Vlan32
+ ip address 10.246.32.252 255.255.255.0
+!
+interface Vlan64
+ ip address 10.246.64.248 255.255.255.0
+!
+ip default-gateway 10.246.31.254
+no ip http server
+no ip http secure-server
+!
+ip route 0.0.0.0 0.0.0.0 10.246.64.254
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+!
+ip radius source-interface Vlan64 
+logging trap notifications
+logging host 10.250.137.24
+logging host 10.250.137.89
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+!
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server host 10.247.7.188 version 2c noc_services 
+snmp ifmib ifindex persist
+!
+radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server timeout 3
+!radius-server key <removed>
+!
+privilege exec level 0 traceroute ip
+privilege exec level 0 traceroute
+privilege exec level 0 ping ip
+privilege exec level 0 ping
+privilege exec level 0 terminal width
+privilege exec level 0 terminal length
+privilege exec level 0 terminal
+privilege exec level 0 show mac address-table
+privilege exec level 0 show mac
+privilege exec level 0 show inventory
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show lldp
+privilege exec level 0 show vlan
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip route
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip interface brief
+privilege exec level 0 show ip interface
+privilege exec level 0 show ip
+privilege exec level 0 show arp
+privilege exec level 0 show standby brief
+privilege exec level 0 show standby Vlan64 brief
+privilege exec level 0 show standby Vlan32 brief
+privilege exec level 0 show standby Vlan31 brief
+privilege exec level 0 show standby Vlan1 brief
+privilege exec level 0 show standby TenGigabitEthernet1/2 brief
+privilege exec level 0 show standby TenGigabitEthernet1/1 brief
+privilege exec level 0 show standby GigabitEthernet1/4 brief
+privilege exec level 0 show standby GigabitEthernet1/3 brief
+privilege exec level 0 show standby GigabitEthernet1/2 brief
+privilege exec level 0 show standby GigabitEthernet1/1 brief
+privilege exec level 0 show standby GigabitEthernet0/24 brief
+privilege exec level 0 show standby GigabitEthernet0/23 brief
+privilege exec level 0 show standby GigabitEthernet0/22 brief
+privilege exec level 0 show standby GigabitEthernet0/21 brief
+privilege exec level 0 show standby GigabitEthernet0/20 brief
+privilege exec level 0 show standby GigabitEthernet0/19 brief
+privilege exec level 0 show standby GigabitEthernet0/18 brief
+privilege exec level 0 show standby GigabitEthernet0/17 brief
+privilege exec level 0 show standby GigabitEthernet0/16 brief
+privilege exec level 0 show standby GigabitEthernet0/15 brief
+privilege exec level 0 show standby GigabitEthernet0/14 brief
+privilege exec level 0 show standby GigabitEthernet0/13 brief
+privilege exec level 0 show standby GigabitEthernet0/12 brief
+privilege exec level 0 show standby GigabitEthernet0/11 brief
+privilege exec level 0 show standby GigabitEthernet0/10 brief
+privilege exec level 0 show standby GigabitEthernet0/9 brief
+privilege exec level 0 show standby GigabitEthernet0/8 brief
+privilege exec level 0 show standby GigabitEthernet0/7 brief
+privilege exec level 0 show standby GigabitEthernet0/6 brief
+privilege exec level 0 show standby GigabitEthernet0/5 brief
+privilege exec level 0 show standby GigabitEthernet0/4 brief
+privilege exec level 0 show standby GigabitEthernet0/3 brief
+privilege exec level 0 show standby GigabitEthernet0/2 brief
+privilege exec level 0 show standby GigabitEthernet0/1 brief
+privilege exec level 0 show standby FastEthernet0 brief
+privilege exec level 0 show standby
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show cdp
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show processes memory
+privilege exec level 0 show processes
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show running-config view full
+privilege exec level 0 show running-config view
+privilege exec level 0 show running-config
+privilege exec level 0 show configuration
+privilege exec level 0 show logging
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show interfaces status
+privilege exec level 0 show interfaces Vlan64 description
+privilege exec level 0 show interfaces Vlan64 counters
+privilege exec level 0 show interfaces Vlan64 status
+privilege exec level 0 show interfaces Vlan32 description
+privilege exec level 0 show interfaces Vlan32 counters
+privilege exec level 0 show interfaces Vlan32 status
+privilege exec level 0 show interfaces Vlan31 description
+privilege exec level 0 show interfaces Vlan31 counters
+privilege exec level 0 show interfaces Vlan31 status
+privilege exec level 0 show interfaces Vlan1 description
+privilege exec level 0 show interfaces Vlan1 counters
+privilege exec level 0 show interfaces Vlan1 status
+privilege exec level 0 show interfaces TenGigabitEthernet1/2 description
+privilege exec level 0 show interfaces TenGigabitEthernet1/2 counters
+privilege exec level 0 show interfaces TenGigabitEthernet1/2 status
+privilege exec level 0 show interfaces TenGigabitEthernet1/1 description
+privilege exec level 0 show interfaces TenGigabitEthernet1/1 counters
+privilege exec level 0 show interfaces TenGigabitEthernet1/1 status
+privilege exec level 0 show interfaces GigabitEthernet1/4 description
+privilege exec level 0 show interfaces GigabitEthernet1/4 counters
+privilege exec level 0 show interfaces GigabitEthernet1/4 status
+privilege exec level 0 show interfaces GigabitEthernet1/3 description
+privilege exec level 0 show interfaces GigabitEthernet1/3 counters
+privilege exec level 0 show interfaces GigabitEthernet1/3 status
+privilege exec level 0 show interfaces GigabitEthernet1/2 description
+privilege exec level 0 show interfaces GigabitEthernet1/2 counters
+privilege exec level 0 show interfaces GigabitEthernet1/2 status
+privilege exec level 0 show interfaces GigabitEthernet1/1 description
+privilege exec level 0 show interfaces GigabitEthernet1/1 counters
+privilege exec level 0 show interfaces GigabitEthernet1/1 status
+privilege exec level 0 show interfaces GigabitEthernet0/24 description
+privilege exec level 0 show interfaces GigabitEthernet0/24 counters
+privilege exec level 0 show interfaces GigabitEthernet0/24 status
+privilege exec level 0 show interfaces GigabitEthernet0/23 description
+privilege exec level 0 show interfaces GigabitEthernet0/23 counters
+privilege exec level 0 show interfaces GigabitEthernet0/23 status
+privilege exec level 0 show interfaces GigabitEthernet0/22 description
+privilege exec level 0 show interfaces GigabitEthernet0/22 counters
+privilege exec level 0 show interfaces GigabitEthernet0/22 status
+privilege exec level 0 show interfaces GigabitEthernet0/21 description
+privilege exec level 0 show interfaces GigabitEthernet0/21 counters
+privilege exec level 0 show interfaces GigabitEthernet0/21 status
+privilege exec level 0 show interfaces GigabitEthernet0/20 description
+privilege exec level 0 show interfaces GigabitEthernet0/20 counters
+privilege exec level 0 show interfaces GigabitEthernet0/20 status
+privilege exec level 0 show interfaces GigabitEthernet0/19 description
+privilege exec level 0 show interfaces GigabitEthernet0/19 counters
+privilege exec level 0 show interfaces GigabitEthernet0/19 status
+privilege exec level 0 show interfaces GigabitEthernet0/18 description
+privilege exec level 0 show interfaces GigabitEthernet0/18 counters
+privilege exec level 0 show interfaces GigabitEthernet0/18 status
+privilege exec level 0 show interfaces GigabitEthernet0/17 description
+privilege exec level 0 show interfaces GigabitEthernet0/17 counters
+privilege exec level 0 show interfaces GigabitEthernet0/17 status
+privilege exec level 0 show interfaces GigabitEthernet0/16 description
+privilege exec level 0 show interfaces GigabitEthernet0/16 counters
+privilege exec level 0 show interfaces GigabitEthernet0/16 status
+privilege exec level 0 show interfaces GigabitEthernet0/15 description
+privilege exec level 0 show interfaces GigabitEthernet0/15 counters
+privilege exec level 0 show interfaces GigabitEthernet0/15 status
+privilege exec level 0 show interfaces GigabitEthernet0/14 description
+privilege exec level 0 show interfaces GigabitEthernet0/14 counters
+privilege exec level 0 show interfaces GigabitEthernet0/14 status
+privilege exec level 0 show interfaces GigabitEthernet0/13 description
+privilege exec level 0 show interfaces GigabitEthernet0/13 counters
+privilege exec level 0 show interfaces GigabitEthernet0/13 status
+privilege exec level 0 show interfaces GigabitEthernet0/12 description
+privilege exec level 0 show interfaces GigabitEthernet0/12 counters
+privilege exec level 0 show interfaces GigabitEthernet0/12 status
+privilege exec level 0 show interfaces GigabitEthernet0/11 description
+privilege exec level 0 show interfaces GigabitEthernet0/11 counters
+privilege exec level 0 show interfaces GigabitEthernet0/11 status
+privilege exec level 0 show interfaces GigabitEthernet0/10 description
+privilege exec level 0 show interfaces GigabitEthernet0/10 counters
+privilege exec level 0 show interfaces GigabitEthernet0/10 status
+privilege exec level 0 show interfaces GigabitEthernet0/9 description
+privilege exec level 0 show interfaces GigabitEthernet0/9 counters
+privilege exec level 0 show interfaces GigabitEthernet0/9 status
+privilege exec level 0 show interfaces GigabitEthernet0/8 description
+privilege exec level 0 show interfaces GigabitEthernet0/8 counters
+privilege exec level 0 show interfaces GigabitEthernet0/8 status
+privilege exec level 0 show interfaces GigabitEthernet0/7 description
+privilege exec level 0 show interfaces GigabitEthernet0/7 counters
+privilege exec level 0 show interfaces GigabitEthernet0/7 status
+privilege exec level 0 show interfaces GigabitEthernet0/6 description
+privilege exec level 0 show interfaces GigabitEthernet0/6 counters
+privilege exec level 0 show interfaces GigabitEthernet0/6 status
+privilege exec level 0 show interfaces GigabitEthernet0/5 description
+privilege exec level 0 show interfaces GigabitEthernet0/5 counters
+privilege exec level 0 show interfaces GigabitEthernet0/5 status
+privilege exec level 0 show interfaces GigabitEthernet0/4 description
+privilege exec level 0 show interfaces GigabitEthernet0/4 counters
+privilege exec level 0 show interfaces GigabitEthernet0/4 status
+privilege exec level 0 show interfaces GigabitEthernet0/3 description
+privilege exec level 0 show interfaces GigabitEthernet0/3 counters
+privilege exec level 0 show interfaces GigabitEthernet0/3 status
+privilege exec level 0 show interfaces GigabitEthernet0/2 description
+privilege exec level 0 show interfaces GigabitEthernet0/2 counters
+privilege exec level 0 show interfaces GigabitEthernet0/2 status
+privilege exec level 0 show interfaces GigabitEthernet0/1 description
+privilege exec level 0 show interfaces GigabitEthernet0/1 counters
+privilege exec level 0 show interfaces GigabitEthernet0/1 status
+privilege exec level 0 show interfaces FastEthernet0 description
+privilege exec level 0 show interfaces FastEthernet0 counters
+privilege exec level 0 show interfaces FastEthernet0 status
+privilege exec level 0 show interfaces Null0 description
+privilege exec level 0 show interfaces Null0 counters
+privilege exec level 0 show interfaces Null0 status
+privilege exec level 0 show interfaces
+privilege exec level 0 show
+alias exec u undebug all
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ logging synchronous
+ login authentication NPS
+ history size 256
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication NPS
+ history size 256
+ transport input ssh
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication NPS
+ history size 256
+ transport input ssh
+!
+ntp source Vlan64
+ntp server 10.249.38.1 prefer
+ntp server 10.250.137.1
+end

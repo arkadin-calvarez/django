@@ -1,0 +1,313 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C2950-24
+!CPU: RC32300
+!
+!Memory: main 21013K
+!Serial Number: FCZ1020W09T
+!Model revision number: R0
+!Model number: WS-C2950-24
+!Motherboard assembly number: 73-5781-13
+!Motherboard serial number: FOC10181393
+!Motherboard revision number: A0
+!Power supply part number: 34-0965-01
+!Power supply serial number: DAB10071RDL
+!
+!Processor ID: FCZ1020W09T
+!
+!Power: RPS is NOT present
+!FAN: FAN is OK
+!
+!Image: Software: C2950-I6Q4L2-M, 12.1(22)EA6, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Fri 21-Oct-05 01:59 by yenanh
+!Image: flash:/c2950-i6q4l2-mz.121-22.EA6.bin
+!
+!
+!
+!Variable: BOOT path-list:       
+!Variable: Config file:          flash:/config.text
+!Variable: Private Config file:  flash:/private-config.text
+!Variable: Enable Break:         no
+!Variable: Manual Boot:          no
+!Variable: HELPER path-list:     
+!Variable: NVRAM/Config file
+!Variable:       buffer size:    32768
+!
+!NAME: "ld4accs05",             DESCR: "Cisco Catalyst c2950 switch with 24 10/100 BaseTX ports"
+!PID: WS-C2950-24
+!VID: R0
+!SN: FCZ1020W09T
+!NAME: "FastEthernet0/1",       DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/2",       DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/3",       DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/4",       DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/5",       DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/6",       DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/7",       DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/8",       DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/9",       DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/10",      DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/11",      DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/12",      DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/13",      DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/14",      DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/15",      DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/16",      DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/17",      DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/18",      DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/19",      DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/20",      DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/21",      DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/22",      DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/23",      DESCR: "10/100BaseTXFast Ethernet"
+!NAME: "FastEthernet0/24",      DESCR: "10/100BaseTXFast Ethernet"
+!
+!VTP: VTP Version                     : 2
+!VTP: Configuration Revision          : 2
+!VTP: Maximum VLANs supported locally : 64
+!VTP: Number of existing VLANs        : 8
+!VTP: VTP Operating Mode              : Server
+!VTP: VTP Domain Name                 : 
+!VTP: VTP Pruning Mode                : Disabled
+!VTP: VTP V2 Mode                     : Disabled
+!VTP: VTP Traps Generation            : Disabled
+!VTP: MD5 digest                      : 0x69 0x3C 0xC2 0x5E 0x21 0xC0 0xF7 0xF7 
+!VTP: Local updater ID is 10.101.14.251 on interface Vl101 (lowest numbered VLAN interface found)
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    
+!VLAN: 101  MAIN                             active    Fa0/1, Fa0/2, Fa0/3, Fa0/4, Fa0/5, Fa0/6, Fa0/7, Fa0/8, Fa0/9, Fa0/10, Fa0/11
+!VLAN:                                                 Fa0/12, Fa0/13, Fa0/14, Fa0/15, Fa0/16, Fa0/17, Fa0/18, Fa0/19, Fa0/20, Fa0/21
+!VLAN:                                                 Fa0/22
+!VLAN: 102  CONSOLE                          active    
+!VLAN: 103  VOICE                            active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 101  enet  100101     1500  -      -      -        -    -        0      0   
+!VLAN: 102  enet  100102     1500  -      -      -        -    -        0      0   
+!VLAN: 103  enet  100103     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!MTU: 1500
+!
+!
+config-register 0xF
+Using 5874 out of 32768 bytes
+!
+version 12.1
+no service pad
+service timestamps debug uptime
+service timestamps log uptime
+service password-encryption
+!
+hostname ld4accs05
+!
+logging buffered 128000 notifications
+aaa new-model
+aaa authentication login default local
+aaa authentication enable default enable
+aaa authorization exec default local
+enable secret 5 $1$G9PQ$M.16aOFH637yoj3.NTCrv1
+!
+username netops privilege 15 secret 5 $1$5/c7$vn0AQrWCx4BN19VBt2h451
+username noc privilege 0 secret 5 $1$W58v$h2IUP9otsXS0YZkUUq3iF0
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+errdisable recovery cause link-flap
+ip subnet-zero
+!
+no ip domain-lookup
+!
+spanning-tree mode rapid-pvst
+no spanning-tree optimize bpdu transmission
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ description UKSLOFW FIREWALL
+ switchport access vlan 101
+!
+interface FastEthernet0/2
+ switchport access vlan 101
+!
+interface FastEthernet0/3
+ switchport access vlan 101
+!
+interface FastEthernet0/4
+ switchport access vlan 101
+!
+interface FastEthernet0/5
+ description LD4FW2 FIREWALL
+ switchport access vlan 101
+!
+interface FastEthernet0/6
+ switchport access vlan 101
+!
+interface FastEthernet0/7
+ switchport access vlan 101
+!
+interface FastEthernet0/8
+ switchport access vlan 101
+!
+interface FastEthernet0/9
+ switchport access vlan 101
+!
+interface FastEthernet0/10
+ switchport access vlan 101
+!
+interface FastEthernet0/11
+ switchport access vlan 101
+!
+interface FastEthernet0/12
+ switchport access vlan 101
+!
+interface FastEthernet0/13
+ switchport access vlan 101
+!
+interface FastEthernet0/14
+ switchport access vlan 101
+!
+interface FastEthernet0/15
+ switchport access vlan 101
+!
+interface FastEthernet0/16
+ switchport access vlan 101
+!
+interface FastEthernet0/17
+ switchport access vlan 101
+!
+interface FastEthernet0/18
+ switchport access vlan 101
+!
+interface FastEthernet0/19
+ switchport access vlan 101
+!
+interface FastEthernet0/20
+ switchport access vlan 101
+!
+interface FastEthernet0/21
+ switchport access vlan 101
+!
+interface FastEthernet0/22
+ switchport access vlan 101
+!
+interface FastEthernet0/23
+ switchport trunk allowed vlan 1,101-103
+ switchport mode trunk
+!
+interface FastEthernet0/24
+ description TRUNK TO UKSLOCSO06
+ switchport trunk allowed vlan 1,101-103
+ switchport mode trunk
+!
+interface Vlan1
+ no ip address
+ no ip route-cache
+ shutdown
+!
+interface Vlan101
+ description MANAGMENT IP
+ ip address 10.101.14.251 255.255.255.0
+ no ip route-cache
+!
+ip default-gateway 10.101.14.254
+no ip http server
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq telnet
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq telnet
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq telnet
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq telnet
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq telnet
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq telnet
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq telnet
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq telnet
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq telnet
+logging trap notifications
+logging 10.115.137.89
+logging 10.124.23.24
+access-list 10 permit 10.100.19.20
+access-list 10 permit 10.100.19.21
+access-list 10 permit 10.102.2.12
+access-list 10 permit 10.102.10.130
+access-list 10 permit 10.102.23.112
+access-list 10 permit 10.115.38.131
+access-list 10 permit 10.115.137.0 0.0.0.255
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server ifindex persist
+snmp-server location emea-ld4
+snmp-server contact nio@arkadin.com
+snmp-server enable traps snmp warmstart linkdown linkup coldstart
+snmp-server host 10.105.137.55 version 2c noc_services 
+snmp-server host 10.115.137.57 version 2c noc_services 
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+! password <removed>
+line vty 5 15
+!
+ntp source Vlan101
+ntp server 10.115.131.1 prefer
+ntp server 10.124.19.1
+ntp server 10.125.19.1
+!
+end

@@ -1,0 +1,860 @@
+#RANCID-CONTENT-TYPE: netscreen
+#
+#Product: SSG-140
+#SN: 0185112009000163
+#HW: 1010(0)-(00)
+#Netscreen Type: Firewall+VPN
+#Software Version: 6.1.0r7.0
+#Feature: AV-K
+#File Name: screenos_image, Checksum: abb7b86c
+#Memory: 512MB
+#
+set clock ntp
+set clock timezone 0
+set clock dst recurring start-weekday 2 0 3 02:00 end-weekday 1 0 11 02:00
+set vrouter trust-vr sharable
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+unset auto-route-export
+set protocol ospf
+set enable
+set area 0.0.0.44 
+exit
+exit
+set service "SSH" timeout 120 
+set service "TELNET" timeout 60 
+set service "Terminal Server" protocol tcp src-port 0-65535 dst-port 3389-3389 
+set service "Terminal Server" + udp src-port 0-65535 dst-port 3389-3389 
+set service "Remote NSM" protocol tcp src-port 0-65535 dst-port 5405-5405 
+set service "Bridge6200_SSL" protocol tcp src-port 0-65535 dst-port 20004-20004 
+set service "Bridge6200_SSL" + udp src-port 0-65535 dst-port 20004-20004 
+set service "Bridge6200_SSL" + tcp src-port 0-65535 dst-port 20010-20010 
+set service "Bridge6200_SSL" + udp src-port 0-65535 dst-port 20010-20010 
+set service "VNC 2" protocol tcp src-port 0-65535 dst-port 5900-5910 
+set service "VNC 2" + tcp src-port 0-65535 dst-port 5800-5810 
+set service "Anywhere AudioManager" protocol tcp src-port 0-65535 dst-port 10002-10002 timeout 360 
+set service "Chat Nuba+" protocol tcp src-port 0-65535 dst-port 17500-17500 
+set service "Chat Nuba+" + udp src-port 0-65535 dst-port 17500-17500 
+set service "Anywhere" protocol tcp src-port 0-65535 dst-port 10000-10006 timeout 360 
+set service "Anywhere Web Service" protocol tcp src-port 0-65535 dst-port 86-86 
+set service "COBRA" protocol tcp src-port 0-65535 dst-port 8080-8080 
+set service "C+ 5061" protocol tcp src-port 0-65535 dst-port 5061-5061 
+set service "c+ 8100" protocol tcp src-port 0-65535 dst-port 8100-8100 
+set service "TCP_5045" protocol tcp src-port 0-65535 dst-port 5045-5045 
+set service "SNMPTRAP" protocol udp src-port 0-65535 dst-port 162-162 
+set service "MS-CIFS" protocol tcp src-port 0-65535 dst-port 445-445 
+set alg appleichat enable
+unset alg appleichat re-assembly enable
+set alg sctp enable
+set auth-server "Local" id 0
+set auth-server "Local" server-name "Local"
+set auth-server "Radius" id 1
+set auth-server "Radius" server-name "10.115.38.110"
+set auth-server "Radius" backup1 "10.100.92.1"
+set auth-server "Radius" account-type admin 
+set auth-server "Radius" radius port 1812
+#set auth-server "Radius" radius secret <removed>
+set auth default auth server "Radius"
+set auth radius accounting port 1813
+#set admin name <removed>
+#set admin password <removed>
+set admin manager-ip 10.0.1.0 255.255.255.0
+set admin manager-ip 10.100.19.20 255.255.255.255
+set admin manager-ip 10.100.19.21 255.255.255.255
+set admin manager-ip 10.100.92.1 255.255.255.255
+set admin manager-ip 38.104.2.203 255.255.255.255
+set admin manager-ip 62.23.57.186 255.255.255.255
+set admin manager-ip 81.93.181.219 255.255.255.255
+set admin manager-ip 185.37.220.222 255.255.255.255
+set admin http redirect
+set admin mail server-name "10.101.2.7"
+set admin mail mail-addr1 "nio@arkadin.com"
+set admin auth web timeout 0
+set admin auth server "Radius"
+set admin auth remote root
+set admin privilege read-write
+set admin format dos
+set zone "Trust" vrouter "trust-vr"
+set zone "Untrust" vrouter "trust-vr"
+set zone "DMZ" vrouter "trust-vr"
+set zone "VLAN" vrouter "trust-vr"
+set zone "Untrust-Tun" vrouter "trust-vr"
+set zone "Trust" tcp-rst 
+set zone "Untrust" block 
+unset zone "Untrust" tcp-rst 
+set zone "MGT" block 
+set zone "DMZ" tcp-rst 
+set zone "VLAN" block 
+unset zone "VLAN" tcp-rst 
+set zone "Untrust" screen winnuke
+set zone "Untrust" screen port-scan
+set zone "Untrust" screen ip-sweep
+unset zone "Untrust" screen tear-drop
+set zone "Untrust" screen syn-flood
+set zone "Untrust" screen ip-spoofing
+set zone "Untrust" screen ping-death
+set zone "Untrust" screen ip-filter-src
+set zone "Untrust" screen land
+set zone "Untrust" screen limit-session source-ip-based
+set zone "Untrust" screen syn-ack-ack-proxy
+set zone "Untrust" screen limit-session destination-ip-based
+set zone "Untrust" screen ip-spoofing drop-no-rpf-route
+set zone "V1-Untrust" screen tear-drop
+set zone "V1-Untrust" screen syn-flood
+set zone "V1-Untrust" screen ping-death
+set zone "V1-Untrust" screen ip-filter-src
+set zone "V1-Untrust" screen land
+set zone "Untrust" screen ip-sweep threshold 30000
+set zone "Untrust" screen limit-session source-ip-based 512
+set zone "Untrust" screen limit-session destination-ip-based 512
+set interface "ethernet0/0" zone "Trust"
+set interface "ethernet0/1" zone "DMZ"
+set interface "ethernet0/2" zone "Untrust"
+set interface "ethernet0/3" zone "Trust"
+set interface "ethernet0/4" zone "Trust"
+set interface "ethernet0/5" zone "HA"
+set interface "tunnel.1" zone "Untrust"
+set interface "tunnel.2" zone "Untrust"
+set interface "tunnel.3" zone "Untrust"
+set interface "tunnel.4" zone "Untrust"
+set interface "tunnel.5" zone "Untrust"
+set interface "tunnel.7" zone "Untrust"
+set interface "tunnel.11" zone "Trust"
+set interface "loopback.1" zone "Trust"
+set interface ethernet0/0 ip 10.101.14.254/24
+set interface ethernet0/0 nat
+unset interface vlan1 ip
+set interface ethernet0/1 ip 10.101.8.254/24
+set interface ethernet0/1 nat
+set interface ethernet0/2 ip 83.244.248.52/28
+set interface ethernet0/2 route
+set interface ethernet0/3 ip 10.101.13.254/24
+set interface ethernet0/3 route
+set interface ethernet0/4 ip 10.101.9.254/24
+set interface ethernet0/4 nat
+set interface loopback.1 ip 172.21.10.1/32
+set interface loopback.1 nat
+set interface tunnel.1 ip unnumbered interface ethernet0/0
+set interface tunnel.2 ip unnumbered interface ethernet0/0
+set interface tunnel.3 ip unnumbered interface ethernet0/0
+set interface tunnel.4 ip unnumbered interface ethernet0/0
+set interface tunnel.5 ip unnumbered interface ethernet0/2
+set interface tunnel.7 ip unnumbered interface ethernet0/2
+set interface tunnel.11 ip 10.101.251.2/30
+set interface tunnel.11 tunnel encap gre
+set interface tunnel.11 tunnel local-if loopback.1 dst-ip 172.21.10.2
+set interface tunnel.11 tunnel keep-alive interval 10 threshold 3
+set interface tunnel.1 mtu 1400
+set interface tunnel.2 mtu 1400
+set interface tunnel.3 mtu 1400
+set interface tunnel.4 mtu 1400
+set interface tunnel.5 mtu 1500
+set interface tunnel.11 mtu 1476
+unset interface vlan1 bypass-others-ipsec
+unset interface vlan1 bypass-non-ip
+set interface ethernet0/0 manage-ip 10.101.14.253
+set interface ethernet0/0 ip manageable
+unset interface ethernet0/1 ip manageable
+unset interface ethernet0/2 ip manageable
+set interface ethernet0/3 ip manageable
+unset interface ethernet0/4 ip manageable
+unset interface loopback.1 ip manageable
+set interface ethernet0/1 manage ssh
+set interface ethernet0/2 manage ping
+set interface ethernet0/2 manage ssh
+unset interface ethernet0/2 g-arp
+set interface vlan1 manage mtrace
+set auth-server "Radius" src-interface "ethernet0/0"
+set interface "ethernet0/2" mip 83.244.248.54 host 10.101.8.46 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/2" mip 83.244.248.55 host 10.101.13.11 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/2" mip 83.244.248.56 host 10.101.8.150 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/2" mip 83.244.248.58 host 10.101.9.31 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/2" mip 83.244.248.59 host 10.101.16.136 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/2" mip 83.244.248.60 host 10.101.8.47 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/2" mip 83.244.248.53 host 10.101.8.48 netmask 255.255.255.255 vr "trust-vr"
+set flow tcp-mss 1300
+unset flow no-tcp-seq-check
+unset flow tcp-syn-check
+unset flow tcp-syn-bit-check
+set flow reverse-route clear-text prefer
+set flow reverse-route tunnel always
+set console timeout 120
+set console page 0
+set hostname ld4fw01-1
+set webauth server "Radius"
+set pki authority default scep mode "auto"
+set pki x509 default cert-path partial
+set nsrp cluster id 1
+set nsrp rto-mirror sync
+set nsrp rto-mirror route
+set nsrp vsd-group id 0 priority 50
+set nsrp vsd-group id 0 preempt
+set nsrp monitor interface ethernet0/0
+set nsrp monitor interface ethernet0/1
+set nsrp monitor interface ethernet0/2
+set nsrp monitor interface ethernet0/3
+set nsrp monitor interface ethernet0/4
+set dns host dns1 62.244.176.176 src-interface ethernet0/2
+set dns host dns2 62.244.177.177 src-interface ethernet0/2
+set dns host dns3 0.0.0.0
+set address "Trust" "10.100.0.0/16" 10.100.0.0 255.255.0.0
+set address "Trust" "10.100.88.15/32" 10.100.88.15 255.255.255.255
+set address "Trust" "10.101.13.0/24" 10.101.13.0 255.255.255.0
+set address "Trust" "10.101.13.200/32" 10.101.13.200 255.255.255.255
+set address "Trust" "10.101.13.201/32" 10.101.13.201 255.255.255.255
+set address "Trust" "10.101.14.0/24" 10.101.14.0 255.255.255.0
+set address "Trust" "10.101.14.131/32" 10.101.14.131 255.255.255.255
+set address "Trust" "10.101.20.46/24" 10.101.20.46 255.255.255.0
+set address "Trust" "10.102.2.34" 10.102.2.34 255.255.255.255
+set address "Trust" "192.168.0.0/16" 192.168.0.0 255.255.0.0
+set address "Trust" "192.168.10.0/24" 192.168.10.0 255.255.255.0 "AUB FR PP"
+set address "Trust" "Arkadin-Express Web Service" 10.101.9.50 255.255.255.255
+set address "Trust" "Arkadin-ExpressLAN" 10.101.9.0 255.255.255.0 "Lan Colloc Arkadin-Express"
+set address "Trust" "Arkanet" 10.0.0.0 255.0.0.0
+set address "Trust" "Conference Plus 172.16.0.0/12" 172.16.0.0 255.240.0.0
+set address "Trust" "Conference Plus 172.17.0.0/16" 172.17.0.0 255.255.0.0
+set address "Trust" "Conference Plus 172.21.128.0/24" 172.21.128.0 255.255.255.0
+set address "Trust" "Conference Plus 172.21.129.0/24" 172.21.129.0 255.255.255.0
+set address "Trust" "Conference Plus 172.21.130.0/24" 172.21.130.0 255.255.255.0
+set address "Trust" "Conference Plus 172.21.9.0/24" 172.21.9.0 255.255.255.0
+set address "Trust" "Conference Plus 172.29.12.0/24" 172.29.12.0 255.255.255.0 "Dublin office"
+set address "Trust" "Conference Plus 172.29.4.0/23" 172.29.4.0 255.255.254.0 "Dublin office"
+set address "Trust" "DHCP address 3" 10.101.14.103 255.255.255.0
+set address "Trust" "PFX_LDFW01_TEST" 10.124.22.0 255.255.255.0
+set address "Trust" "SipCom France 1" 93.187.229.64 255.255.255.224 "Sipcom Lync internal addresses"
+set address "Trust" "SipCom France 2" 93.187.229.112 255.255.255.240 "Sipcom Lync internal addresses"
+set address "Trust" "SipCom US 1" 93.187.229.128 255.255.255.224
+set address "Trust" "SipCom US 2" 93.187.229.176 255.255.255.240
+set address "Trust" "UKLD4AMG1" 10.101.13.60 255.255.255.0 "UKLD4AMG1"
+set address "Trust" "UKLD4BRI1-AMG1" 10.101.13.60 255.255.255.255
+set address "Trust" "UKLD4BRI1-CRS1" 10.101.13.10 255.255.255.255
+set address "Trust" "UKLD4BRI1-CRS1B" 10.101.13.11 255.255.255.255
+set address "Trust" "UKLD4CPLEgacy" 10.101.20.0 255.255.255.0
+set address "Trust" "UKLD4NMS01" 10.101.14.123 255.255.255.255 "Op Management server"
+set address "Trust" "UKLD4OSPREYPX01" 10.101.16.136 255.255.255.255 "Transnexus"
+set address "Trust" "UKLD4PAS01" 10.101.20.48 255.255.255.255 " UKLD4PAS01 C+ legacy server"
+set address "Trust" "UKLD4VIPERAS01" 10.101.9.130 255.255.255.255
+set address "Trust" "UKLD4VIPERAS01B" 10.101.9.131 255.255.255.255
+set address "Trust" "UKNETOPSVM" 10.101.13.45 255.255.255.0
+set address "Trust" "UKSLOBRI1" 10.101.13.0 255.255.255.0
+set address "Trust" "UKSLOMGMT" 10.101.14.0 255.255.255.0
+set address "Trust" "WAPI EU - 10.102.4.90" 10.102.4.90 255.255.255.255
+set address "Untrust" "10.100.88.15/32" 10.100.88.15 255.255.255.255
+set address "Untrust" "46.137.103.4" 46.137.103.4 255.255.255.255 "46.137.103.4"
+set address "Untrust" "83.244.248.52/24" 83.244.248.52 255.255.255.0
+set address "Untrust" "ARKANET" 10.0.0.0 255.0.0.0
+set address "Untrust" "BLACKLIST-1" 34.97.3.80 255.255.255.255
+set address "Untrust" "BLACKLIST-10" 23.34.61.201 255.255.255.255
+set address "Untrust" "BLACKLIST-11" 67.27.61.254 255.255.255.255
+set address "Untrust" "BLACKLIST-12" 72.246.190.49 255.255.255.255
+set address "Untrust" "BLACKLIST-13" 23.15.14.51 255.255.255.255
+set address "Untrust" "BLACKLIST-14" 52.163.254.104 255.255.255.255
+set address "Untrust" "BLACKLIST-15" 40.115.159.100 255.255.255.255
+set address "Untrust" "BLACKLIST-16" 13.76.227.209 255.255.255.255
+set address "Untrust" "BLACKLIST-17" 211.75.207.183 255.255.255.255
+set address "Untrust" "BLACKLIST-18" 13.71.149.55 255.255.255.255
+set address "Untrust" "BLACKLIST-19" 146.112.61.104 255.255.255.255
+set address "Untrust" "BLACKLIST-2" 35.187.223.139 255.255.255.255
+set address "Untrust" "BLACKLIST-20" 104.215.193.90 255.255.255.255
+set address "Untrust" "BLACKLIST-21" 13.67.78.63 255.255.255.255
+set address "Untrust" "BLACKLIST-22" 104.116.39.38 255.255.255.255
+set address "Untrust" "BLACKLIST-23" 13.76.45.133 255.255.255.255
+set address "Untrust" "BLACKLIST-3" 23.34.61.179 255.255.255.255
+set address "Untrust" "BLACKLIST-4" 67.27.59.254 255.255.255.255
+set address "Untrust" "BLACKLIST-5" 23.34.61.193 255.255.255.255
+set address "Untrust" "BLACKLIST-6" 8.255.31.254 255.255.255.255
+set address "Untrust" "BLACKLIST-7" 67.27.49.254 255.255.255.255
+set address "Untrust" "BLACKLIST-8" 23.34.61.208 255.255.255.255
+set address "Untrust" "BLACKLIST-9" 67.24.41.254 255.255.255.255
+set address "Untrust" "CC Group access email" 80.195.146.162 255.255.255.255 "IPofCCgrouptologontoCobra"
+set address "Untrust" "CISCO_UMBREL_SRV1" 208.67.222.222 255.255.255.255
+set address "Untrust" "CISCO_UMBREL_SRV2" 208.67.222.220 255.255.255.255
+set address "Untrust" "Conf plus Interco" 10.101.254.1 255.255.255.252
+set address "Untrust" "Conference Plus 172.16.0.0/12" 172.16.0.0 255.240.0.0
+set address "Untrust" "Conference Plus 172.17.0.0/16" 172.17.0.0 255.255.0.0
+set address "Untrust" "Conference Plus 172.21.128.0/24" 172.21.128.0 255.255.255.0
+set address "Untrust" "Conference Plus 172.21.129.0/24" 172.21.129.0 255.255.255.0
+set address "Untrust" "Conference Plus 172.21.130.0/24" 172.21.130.0 255.255.255.0
+set address "Untrust" "Conference Plus 172.21.250.0/24" 172.21.250.0 255.255.255.0
+set address "Untrust" "Conference Plus 172.21.9.0/24" 172.21.9.0 255.255.255.0
+set address "Untrust" "Eloqua FTP Server access" 67.192.20.12 255.255.255.255 "Eloqua internet facing IP"
+set address "Untrust" "FRPARLAN" 10.102.2.0 255.255.255.0
+set address "Untrust" "ftp.webdialogs.com" ftp.webdialogs.com  "FTP site for C+"
+set address "Untrust" "ftp://emaillingsolution.com" 89.248.208.185 255.255.255.255
+set address "Untrust" "ftp://ftp.emailingsolution.com/" 79.99.34.96 255.255.255.255
+set address "Untrust" "LMC" 86.64.67.71 255.255.255.255 "LMC_RemoteIP_forWebsiteUpdates"
+set address "Untrust" "LMC2" 81.65.98.120 255.255.255.255 "home LMC connection"
+set address "Untrust" "LMC3" 90.28.28.9 255.255.255.255
+set address "Untrust" "PFX_LD4-ORIGIN" 83.244.248.48 255.255.255.240
+set address "Untrust" "PFX_MARTIANS-1" 0.0.0.0 255.0.0.0
+set address "Untrust" "PFX_MARTIANS-10" 198.18.0.0 255.254.0.0
+set address "Untrust" "PFX_MARTIANS-11" 198.51.100.0 255.255.255.0
+set address "Untrust" "PFX_MARTIANS-12" 203.0.113.0 255.255.255.0
+set address "Untrust" "PFX_MARTIANS-13" 224.0.0.0 244.0.0.0
+set address "Untrust" "PFX_MARTIANS-2" 10.0.0.0 255.0.0.0
+set address "Untrust" "PFX_MARTIANS-3" 100.64.0.0 255.192.0.0
+set address "Untrust" "PFX_MARTIANS-4" 127.0.0.0 255.0.0.0
+set address "Untrust" "PFX_MARTIANS-5" 169.254.0.0 255.255.0.0
+set address "Untrust" "PFX_MARTIANS-6" 172.16.0.0 255.240.0.0
+set address "Untrust" "PFX_MARTIANS-7" 192.0.0.0 255.255.255.0
+set address "Untrust" "PFX_MARTIANS-8" 192.0.2.0 255.255.255.0
+set address "Untrust" "PFX_MARTIANS-9" 192.168.0.0 255.255.0.0
+set address "Untrust" "PFX_UKFELD_TEST" 10.101.12.0 255.255.255.0
+set address "Untrust" "SipCom France 1" 93.187.229.64 255.255.255.224 "Sipcom Lync internal addresses"
+set address "Untrust" "SipCom France 2" 93.187.229.112 255.255.255.240 "Sipcom Lync internal addresses"
+set address "Untrust" "SipCom US 1" 93.187.229.128 255.255.255.224
+set address "Untrust" "SipCom US 2" 93.187.229.176 255.255.255.240
+set address "Untrust" "Spectel Arkadin 01" 80.175.122.89 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "Spectel IE 01" 135.124.124.8 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "Spectel IE 02" 135.124.124.9 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "Spectel IE 03" 135.124.124.10 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "Spectel IE 04" 135.124.124.11 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "Spectel IE 05" 135.124.124.12 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "Spectel IE 06" 135.124.124.13 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "Spectel IE 07" 135.124.124.14 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "Spectel IE 08" 135.124.124.15 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "Spectel IE 09" 135.124.124.16 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "Spectel IE 10" 135.124.124.17 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "Spectel IE 11" 135.124.124.18 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "Spectel IE 12" 135.124.124.19 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "Spectel USA 01" 12.25.17.108 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "Spectel USA 02" 12.25.17.110 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "Spectel USA 03" 12.25.17.111 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "Spectel USA 04" 12.25.17.108 255.255.255.255 "Avaya address for NSM access"
+set address "Untrust" "TRANSNEXUS2" 99.165.178.161 255.255.255.255
+set address "Untrust" "TRANSNEXUS3" 52.149.189.38 255.255.255.255
+set address "Untrust" "UKPAN LAN - 10.101.3.0" 10.101.3.0 255.255.255.0
+set address "Untrust" "UKPANAMG1" 10.101.3.60 255.255.255.255
+set address "Untrust" "UKPANBCK - 10.101.3.160" 10.101.3.160 255.255.255.255
+set address "DMZ" "10.101.8.150" 10.101.8.150 255.255.255.255
+set address "DMZ" "10.101.8.155" 10.101.8.155 255.255.255.255
+set address "DMZ" "10.101.8.43" 10.101.8.43 255.255.255.255
+set address "DMZ" "Arkadin-Express Web Server" 10.101.8.150 255.255.255.255
+set address "DMZ" "Arkadin-ExpressDMZ" 10.101.8.0 255.255.255.0 "UKLD4 DMZ"
+set address "DMZ" "global.confplus" 10.101.8.43 255.255.255.255 "global.confplus web Server IP"
+set address "DMZ" "PAPZ01" 10.101.8.46 255.255.255.255 "PAPZ01 Server IP"
+set address "DMZ" "UKLD4DMZ" 10.101.8.0 255.255.255.0
+set address "DMZ" "yourconfcentre" 10.101.8.44 255.255.255.255 " yourconfcentre Server IP"
+set group address "Trust" "Conference Plus Network"
+set group address "Trust" "Conference Plus Network" add "Conference Plus 172.16.0.0/12"
+set group address "Trust" "Conference Plus Network" add "Conference Plus 172.17.0.0/16"
+set group address "Trust" "Conference Plus Network" add "Conference Plus 172.21.128.0/24"
+set group address "Trust" "Conference Plus Network" add "Conference Plus 172.21.129.0/24"
+set group address "Trust" "Conference Plus Network" add "Conference Plus 172.21.130.0/24"
+set group address "Trust" "Conference Plus Network" add "Conference Plus 172.21.9.0/24"
+set group address "Trust" "Dublin office" comment "Dublin networks"
+set group address "Trust" "Dublin office" add "Conference Plus 172.17.0.0/16"
+set group address "Trust" "Dublin office" add "Conference Plus 172.29.12.0/24"
+set group address "Trust" "Dublin office" add "Conference Plus 172.29.4.0/23"
+set group address "Trust" "Sipcom Internal"
+set group address "Trust" "Sipcom Internal" add "SipCom France 1"
+set group address "Trust" "Sipcom Internal" add "SipCom France 2"
+set group address "Trust" "Sipcom Internal" add "SipCom US 1"
+set group address "Trust" "Sipcom Internal" add "SipCom US 2"
+set group address "Trust" "UKLD4BRI1"
+set group address "Trust" "UKLD4BRI1" add "UKLD4BRI1-AMG1"
+set group address "Trust" "UKLD4BRI1" add "UKLD4BRI1-CRS1"
+set group address "Trust" "UKLD4BRI1" add "UKLD4BRI1-CRS1B"
+set group address "Trust" "UKSLOMGMT GROUP"
+set group address "Trust" "UKSLOMGMT GROUP" add "UKSLOMGMT"
+set group address "Untrust" "Conference Plus Network"
+set group address "Untrust" "Conference Plus Network" add "Conference Plus 172.16.0.0/12"
+set group address "Untrust" "Conference Plus Network" add "Conference Plus 172.17.0.0/16"
+set group address "Untrust" "Conference Plus Network" add "Conference Plus 172.21.128.0/24"
+set group address "Untrust" "Conference Plus Network" add "Conference Plus 172.21.129.0/24"
+set group address "Untrust" "Conference Plus Network" add "Conference Plus 172.21.130.0/24"
+set group address "Untrust" "Conference Plus Network" add "Conference Plus 172.21.250.0/24"
+set group address "Untrust" "Conference Plus Network" add "Conference Plus 172.21.9.0/24"
+set group address "Untrust" "PFX_BLACKLIST_V4"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-1"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-10"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-11"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-12"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-13"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-14"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-15"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-16"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-17"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-18"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-19"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-2"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-20"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-21"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-22"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-23"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-3"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-4"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-5"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-6"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-7"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-8"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-9"
+set group address "Untrust" "PFX_MARTIANS_V4"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_LD4-ORIGIN"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-1"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-10"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-11"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-12"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-2"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-3"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-4"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-5"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-6"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-7"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-8"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-9"
+set group address "Untrust" "Sipcom Internal All"
+set group address "Untrust" "Sipcom Internal All" add "SipCom France 1"
+set group address "Untrust" "Sipcom Internal All" add "SipCom France 2"
+set group address "Untrust" "Sipcom Internal All" add "SipCom US 1"
+set group address "Untrust" "Sipcom Internal All" add "SipCom US 2"
+set group address "Untrust" "Spectel NSM Remote Access Group" comment "used for remote NSM access"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel Arkadin 01"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel IE 01"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel IE 02"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel IE 03"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel IE 04"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel IE 05"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel IE 06"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel IE 07"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel IE 08"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel IE 09"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel IE 10"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel IE 11"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel IE 12"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel USA 01"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel USA 02"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel USA 03"
+set group address "Untrust" "Spectel NSM Remote Access Group" add "Spectel USA 04"
+set group address "DMZ" "Arkadin-ExpressDMZMachines"
+set group address "DMZ" "Arkadin-ExpressDMZMachines" add "10.101.8.150"
+set group address "DMZ" "Arkadin-ExpressDMZMachines" add "10.101.8.155"
+set group service "BLOCKED_PORTS"
+set group service "BLOCKED_PORTS" add "HTTP-EXT"
+set group service "BLOCKED_PORTS" add "IMAP"
+set group service "BLOCKED_PORTS" add "MS-CIFS"
+set group service "BLOCKED_PORTS" add "MS-RPC-EPM"
+set group service "BLOCKED_PORTS" add "MS-SQL"
+set group service "BLOCKED_PORTS" add "NBDS"
+set group service "BLOCKED_PORTS" add "NBNAME"
+set group service "BLOCKED_PORTS" add "NTP"
+set group service "BLOCKED_PORTS" add "POP3"
+set group service "BLOCKED_PORTS" add "SMB"
+set group service "BLOCKED_PORTS" add "SNMP"
+set group service "BLOCKED_PORTS" add "SNMPTRAP"
+set group service "BLOCKED_PORTS" add "SUN-RPC-PORTMAPPER"
+set group service "BLOCKED_PORTS" add "TELNET"
+set group service "BLOCKED_PORTS" add "Terminal Server"
+set user-group "test" id 1
+#set ike gateway "UKLONFW1" address 83.244.248.36 Main outgoing-interface "ethernet0/2" preshare <removed> proposal "pre-g2-3des-md5"
+#set ike gateway "UKFELFW1" address 62.190.22.58 Main outgoing-interface "ethernet0/2" preshare <removed> proposal "pre-g2-3des-md5"
+#set ike gateway "UKPANFW1" address 195.217.52.93 Main outgoing-interface "ethernet0/2" preshare <removed> proposal "pre-g2-3des-md5"
+#set ike gateway "IEDUBFW1" address 87.198.239.82 Main outgoing-interface "ethernet0/2" preshare <removed> proposal "pre-g2-3des-md5"
+#set ike gateway "ERIMYFW01" address 129.192.196.170 Main outgoing-interface "ethernet0/2" preshare <removed> proposal "pre-g2-3des-sha"
+#set ike gateway "ERISEFW01" address 192.16.133.130 Main outgoing-interface "ethernet0/2" preshare <removed> proposal "pre-g2-3des-sha"
+set ike respond-bad-spi 1
+set ike ikev2 ike-sa-soft-lifetime 60
+unset ike ikeid-enumeration
+unset ike dos-protection
+unset ipsec access-session enable
+set ipsec access-session maximum 5000
+set ipsec access-session upper-threshold 0
+set ipsec access-session lower-threshold 0
+set ipsec access-session dead-p2-sa-timeout 0
+unset ipsec access-session log-error
+unset ipsec access-session info-exch-connected
+unset ipsec access-session use-error-log
+set vpn "UKLONTUN" gateway "UKLONFW1" replay tunnel idletime 0 proposal "nopfs-esp-3des-md5" 
+set vpn "UKLONTUN" monitor rekey
+set vpn "UKLONTUN" id 0x2 bind interface tunnel.1
+set vpn "UKFELTUN" gateway "UKFELFW1" replay tunnel idletime 0 proposal "nopfs-esp-3des-md5" 
+set vpn "UKFELTUN" monitor rekey
+set vpn "UKFELTUN" id 0x4 bind interface tunnel.3
+set vpn "UKPANTUN" gateway "UKPANFW1" replay tunnel idletime 0 proposal "nopfs-esp-3des-md5" 
+set vpn "UKPANTUN" monitor rekey
+set vpn "UKPANTUN" id 0x5 bind interface tunnel.4
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+exit
+set url protocol websense
+exit
+set policy id 71 name "LOG_DNS" from "Trust" to "Untrust"  "Any" "CISCO_UMBREL_SRV1" "DNS" permit log 
+set policy id 71
+exit
+set policy id 72 name "LOG_DNS" from "Trust" to "Untrust"  "Any" "CISCO_UMBREL_SRV2" "DNS" permit log 
+set policy id 72
+exit
+set policy id 73 name "LOG_DNS" from "Trust" to "Untrust"  "Any" "Any" "DNS" permit log 
+set policy id 73
+exit
+set policy id 67 from "Trust" to "Untrust"  "UKLD4BRI1" "Any" "ANY" deny 
+set policy id 67
+exit
+set policy id 68 from "Trust" to "Untrust"  "UKLD4VIPERAS01" "Any" "ANY" nat src permit log 
+set policy id 68
+set src-address "UKLD4VIPERAS01B"
+exit
+set policy id 61 from "Trust" to "Untrust"  "UKNETOPSVM" "Any" "ANY" nat src permit log 
+set policy id 61
+exit
+set policy id 60 name "Dublin office to Internet" from "Trust" to "Untrust"  "Dublin office" "Any" "ANY" nat src permit log 
+set policy id 60
+set log session-init
+exit
+set policy id 59 from "Trust" to "Untrust"  "UKLD4PAS01" "ftp.webdialogs.com" "PING" nat src permit log 
+set policy id 59
+set service "SSH"
+exit
+set policy id 75 name "PFX_UKFELD_ALLOW" from "Untrust" to "Trust"  "PFX_UKFELD_TEST" "PFX_LDFW01_TEST" "ANY" permit log 
+set policy id 75
+exit
+set policy id 69 name "PFX_MARTIANS_BLOCK" from "Untrust" to "Trust"  "PFX_MARTIANS_V4" "Any" "ANY" deny log 
+set policy id 69
+exit
+set policy id 74 name "BLACKLIST" from "Untrust" to "Trust"  "PFX_BLACKLIST_V4" "Any" "ANY" deny log 
+set policy id 74
+exit
+set policy id 70 name "PF_GLOBAL-EDGE" from "Untrust" to "Trust"  "Any" "Any" "BLOCKED_PORTS" deny 
+set policy id 70
+exit
+set policy id 51 from "Untrust" to "Trust"  "Any" "Arkadin-ExpressLAN" "ANY" permit log 
+set policy id 51
+exit
+set policy id 50 from "Trust" to "Trust"  "Arkadin-ExpressLAN" "Any" "ANY" permit log 
+set policy id 50
+exit
+set policy id 46 from "Untrust" to "Trust"  "UKPANAMG1" "Any" "ANY" permit log traffic gbw 100 priority 0
+set policy id 46
+exit
+set policy id 52 name "Internet Access" from "Trust" to "Untrust"  "UKLD4CPLEgacy" "Any" "FTP" nat src permit log 
+set policy id 52
+set src-address "UKLD4OSPREYPX01"
+set service "HTTP"
+set service "HTTPS"
+set service "PING"
+set service "SMTP"
+exit
+set policy id 47 from "Trust" to "Untrust"  "WAPI EU - 10.102.4.90" "ARKANET" "MS-SQL" permit log traffic gbw 500 priority 0
+set policy id 47
+exit
+set policy id 45 from "Trust" to "Untrust"  "Any" "UKPANAMG1" "ANY" permit log traffic gbw 100 priority 0
+set policy id 45
+exit
+set policy id 49 from "Trust" to "Untrust"  "Any" "UKPAN LAN - 10.101.3.0" "ICMP-ANY" permit log 
+set policy id 49
+exit
+set policy id 48 from "Trust" to "Untrust"  "Any" "UKPAN LAN - 10.101.3.0" "ANY" permit log 
+set policy id 48
+exit
+set policy id 38 from "Trust" to "Untrust"  "Any" "ARKANET" "ANY" permit log 
+set policy id 38
+set dst-address "Conference Plus Network"
+exit
+set policy id 42 name "Outgoing link to Eloqua" from "Trust" to "Untrust"  "Arkadin-Express Web Service" "Eloqua FTP Server access" "FTP" permit log 
+set policy id 42
+set service "HTTPS"
+exit
+set policy id 41 from "Trust" to "Untrust"  "MIP(83.244.248.58)" "CC Group access email" "COBRA" permit log 
+set policy id 41
+exit
+set policy id 39 from "Untrust" to "Trust"  "ARKANET" "Any" "ANY" permit log 
+set policy id 39
+set src-address "Conference Plus Network"
+exit
+set policy id 40 name "CC Access to Cobra" from "Untrust" to "Trust"  "CC Group access email" "MIP(83.244.248.58)" "COBRA" permit log 
+set policy id 40
+exit
+set policy id 54 from "Untrust" to "DMZ"  "46.137.103.4" "MIP(83.244.248.54)" "c+ 8100" permit log 
+set policy id 54
+set dst-address "MIP(83.244.248.59)"
+exit
+set policy id 57 from "Untrust" to "DMZ"  "Conference Plus 172.16.0.0/12" "Arkadin-ExpressDMZ" "ANY" permit log 
+set policy id 57
+set src-address "Conference Plus 172.17.0.0/16"
+set src-address "Conference Plus 172.21.128.0/24"
+set src-address "Conference Plus 172.21.129.0/24"
+set src-address "Conference Plus 172.21.130.0/24"
+set src-address "Conference Plus 172.21.250.0/24"
+set src-address "Conference Plus 172.21.9.0/24"
+exit
+set policy id 55 from "Untrust" to "DMZ"  "Any" "MIP(83.244.248.54)" "C+ 5061" permit log 
+set policy id 55
+exit
+set policy id 53 name "global.confplus" from "Untrust" to "DMZ"  "Any" "MIP(83.244.248.53)" "HTTP" permit log 
+set policy id 53
+set dst-address "MIP(83.244.248.54)"
+set dst-address "MIP(83.244.248.59)"
+set dst-address "MIP(83.244.248.60)"
+set service "HTTP-EXT"
+set service "HTTPS"
+set service "ICMP-ANY"
+exit
+set policy id 35 from "Untrust" to "DMZ"  "Any" "MIP(83.244.248.56)" "Chat Nuba+" permit log 
+set policy id 35
+set service "DNS"
+set service "HTTP"
+set service "PING"
+exit
+set policy id 34 from "Untrust" to "DMZ"  "LMC" "MIP(83.244.248.56)" "FTP" permit log 
+set policy id 34
+set src-address "LMC2"
+set src-address "LMC3"
+set service "Terminal Server"
+exit
+set policy id 26 from "Untrust" to "DMZ"  "Any" "Arkadin-ExpressDMZMachines" "ANY" permit log 
+set policy id 26
+exit
+set policy id 28 from "Untrust" to "DMZ"  "ARKANET" "UKLD4DMZ" "ANY" permit log 
+set policy id 28
+exit
+set policy id 23 name "Internet Access" from "Trust" to "Untrust"  "Arkadin-ExpressLAN" "Any" "FTP" permit log 
+set policy id 23
+set src-address "DHCP address 3"
+set src-address "UKLD4NMS01"
+set src-address "UKLD4OSPREYPX01"
+set service "HTTP"
+set service "HTTPS"
+set service "PING"
+set service "SMTP"
+exit
+set policy id 1 name "Trust to Untrust" from "Trust" to "Untrust"  "UKSLOMGMT" "ARKANET" "ANY" permit log 
+set policy id 1
+exit
+set policy id 5 name "UKSLOBRI1" from "Trust" to "Untrust"  "Arkadin-ExpressLAN" "ARKANET" "ANY" permit log 
+set policy id 5
+set src-address "UKSLOBRI1"
+set src-address "Conference Plus Network"
+exit
+set policy id 31 from "Trust" to "Untrust"  "Arkadin-Express Web Service" "ftp://emaillingsolution.com" "FTP" permit log 
+set policy id 31
+set dst-address "ftp://ftp.emailingsolution.com/"
+exit
+set policy id 21 name "6200 SSL Blcok" from "Untrust" to "Trust"  "Any" "10.101.13.201/32" "Bridge6200_SSL" deny 
+set policy id 21
+exit
+set policy id 20 name "6200 SSL Blcok" from "Untrust" to "Trust"  "Any" "10.101.13.200/32" "Bridge6200_SSL" deny 
+set policy id 20
+exit
+set policy id 2 name "Untrust to trust" from "Untrust" to "Trust"  "ARKANET" "UKSLOMGMT" "ANY" permit log 
+set policy id 2
+exit
+set policy id 6 name "UKSLOBRI1" from "Untrust" to "Trust"  "ARKANET" "Arkadin-ExpressLAN" "ANY" permit log 
+set policy id 6
+set dst-address "UKSLOBRI1"
+exit
+set policy id 22 name "Spectel Remote AccessUKLD4CRS1B" from "Untrust" to "Trust"  "Spectel NSM Remote Access Group" "MIP(83.244.248.55)" "Remote NSM" permit log 
+set policy id 22
+exit
+set policy id 66 name "TRANSNEXUS_TO_OSPREY-SIP-PROXY" from "Untrust" to "Trust"  "TRANSNEXUS2" "MIP(83.244.248.59)" "HTTPS" permit log 
+set policy id 66
+set src-address "TRANSNEXUS3"
+set service "PING"
+set service "SSH"
+exit
+set policy id 3 name "Deny all" from "Trust" to "Untrust"  "Any" "Any" "ANY" deny log 
+set policy id 3
+exit
+set policy id 4 name "Deny all" from "Untrust" to "Trust"  "Any" "Any" "ANY" deny log 
+set policy id 4
+exit
+set policy id 7 from "Untrust" to "Untrust"  "ARKANET" "ARKANET" "ANY" permit log 
+set policy id 7
+set src-address "SipCom France 1"
+set src-address "SipCom France 2"
+set src-address "Conference Plus Network"
+set src-address "Sipcom Internal All"
+set dst-address "SipCom France 1"
+set dst-address "SipCom France 2"
+set dst-address "Conference Plus Network"
+set dst-address "Sipcom Internal All"
+exit
+set policy id 8 from "Untrust" to "Untrust"  "Any" "Any" "ANY" deny log 
+set policy id 8
+exit
+set policy id 33 from "DMZ" to "Trust"  "UKLD4DMZ" "Arkadin-ExpressLAN" "Anywhere" permit log 
+set policy id 33
+set service "FTP"
+set service "HTTP"
+set service "MS-SQL"
+set service "PING"
+exit
+set policy id 37 from "DMZ" to "Trust"  "Arkadin-ExpressDMZ" "Arkanet" "ANY" permit log 
+set policy id 37
+set dst-address "Conference Plus 172.16.0.0/12"
+set dst-address "Conference Plus 172.17.0.0/16"
+set dst-address "Conference Plus 172.21.128.0/24"
+set dst-address "Conference Plus 172.21.129.0/24"
+set dst-address "Conference Plus 172.21.130.0/24"
+set dst-address "Conference Plus 172.21.9.0/24"
+set dst-address "UKLD4NMS01"
+exit
+set policy id 11 from "DMZ" to "Trust"  "Any" "Any" "ANY" deny log 
+set policy id 11
+exit
+set policy id 58 from "DMZ" to "Untrust"  "Arkadin-ExpressDMZ" "Any" "HTTP" nat src permit log 
+set policy id 58
+set src-address "UKLD4DMZ"
+set service "HTTPS"
+set service "PING"
+exit
+set policy id 12 from "DMZ" to "Untrust"  "Arkadin-ExpressDMZ" "Any" "c+ 8100" permit log 
+set policy id 12
+set src-address "UKLD4DMZ"
+set service "FTP"
+set service "HTTP"
+set service "HTTP-EXT"
+set service "HTTPS"
+set service "ICMP-ANY"
+set service "PING"
+set service "Terminal Server"
+exit
+set policy id 56 from "DMZ" to "Untrust"  "Arkadin-ExpressDMZ" "Conference Plus 172.16.0.0/12" "ANY" permit log 
+set policy id 56
+set dst-address "Conference Plus 172.17.0.0/16"
+set dst-address "Conference Plus 172.21.128.0/24"
+set dst-address "Conference Plus 172.21.129.0/24"
+set dst-address "Conference Plus 172.21.130.0/24"
+set dst-address "Conference Plus 172.21.250.0/24"
+set dst-address "Conference Plus 172.21.9.0/24"
+exit
+set policy id 29 from "DMZ" to "Untrust"  "Arkadin-ExpressDMZMachines" "Any" "ANY" permit log 
+set policy id 29
+exit
+set policy id 30 from "DMZ" to "Untrust"  "Arkadin-ExpressDMZMachines" "ARKANET" "DNS" permit log 
+set policy id 30
+set service "NTP"
+exit
+set policy id 13 from "DMZ" to "Untrust"  "Any" "Any" "ANY" deny log 
+set policy id 13
+exit
+set policy id 15 from "Untrust" to "DMZ"  "Any" "Any" "ANY" deny log 
+set policy id 15
+exit
+set policy id 16 from "Trust" to "DMZ"  "Arkadin-ExpressLAN" "UKLD4DMZ" "ANY" permit log 
+set policy id 16
+set src-address "Arkanet"
+set src-address "UKSLOBRI1"
+set src-address "UKSLOMGMT"
+set src-address "Conference Plus Network"
+exit
+set policy id 18 from "Trust" to "DMZ"  "Any" "Any" "ANY" deny log 
+set policy id 18
+exit
+set policy id 44 from "Trust" to "Trust"  "Arkanet" "192.168.10.0/24" "ANY" permit log 
+set policy id 44
+set src-address "SipCom France 1"
+set src-address "SipCom France 2"
+set src-address "Conference Plus Network"
+set src-address "Sipcom Internal"
+set dst-address "Arkanet"
+set dst-address "SipCom France 1"
+set dst-address "SipCom France 2"
+set dst-address "Conference Plus Network"
+set dst-address "Sipcom Internal"
+exit
+set policy id 43 from "Trust" to "Trust"  "Any" "Any" "ANY" deny log 
+set policy id 43 disable
+set policy id 43
+exit
+set policy id 62 name "Confplus SMTP" from "Trust" to "Untrust"  "10.101.20.46/24" "83.244.248.52/24" "SMTP" permit 
+set policy id 62
+exit
+set policy id 63 name "SMTP Block" from "Trust" to "Untrust"  "Any" "Any" "SMTP" deny 
+set policy id 63
+exit
+set syslog config "10.124.23.24"
+set syslog config "10.124.23.24" facilities local0 local5
+set syslog config "10.115.137.89"
+set syslog config "10.115.137.89" facilities local0 local5
+set syslog src-interface ethernet0/0
+set syslog enable
+set nsmgmt bulkcli reboot-timeout 60
+set ssh version v2
+set ssh enable
+set config lock timeout 5
+unset license-key auto-update
+set ntp server "10.101.2.1"
+set ntp server src-interface "tunnel.1"
+set ntp server backup1 "10.101.2.8"
+set ntp server backup1 src-interface "tunnel.1"
+set ntp "no-ha-sync"
+set snmp community "public" Read-Only Trap-on traffic version any  
+set snmp community "network_services" Read-Only Trap-on traffic version any  
+set snmp community "noc_services" Read-Only Trap-on traffic version any  
+set snmp host "public" 10.102.10.14 255.255.255.255 src-interface ethernet0/0 trap v2
+set snmp host "public" 10.101.14.123 255.255.255.255 src-interface ethernet0/0 trap v2
+set snmp host "public" 10.101.14.190 255.255.255.255 src-interface ethernet0/0 trap v2
+set snmp host "network_services" 10.102.10.130 255.255.255.255 src-interface ethernet0/0 trap v2
+set snmp host "noc_services" 10.115.38.131 255.255.255.255 src-interface ethernet0/0 trap v2
+set snmp host "noc_services" 10.115.137.55 255.255.255.255 src-interface ethernet0/0 trap v2
+set snmp host "noc_services" 10.115.137.56 255.255.255.255 src-interface ethernet0/0 trap v2
+set snmp host "noc_services" 10.115.137.57 255.255.255.255 src-interface ethernet0/0 trap v2
+set snmp location "LD4 - Equinix/Slough"
+set snmp contact "UK-Support"
+set snmp name "UKLD4FW1"
+set snmp port listen 161
+set snmp port trap 162
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+set route-map name "STATIC2OSPF" permit 1
+set match tag 0.0.7.208
+exit
+set route-map name "STATIC2OSPF" permit 2
+set match tag 0.0.11.184
+set metric-type type-2
+exit
+unset add-default-route
+set route 10.0.0.0/8 interface ethernet0/3 gateway 10.101.13.3 tag 2000
+set route 172.16.0.0/12 interface ethernet0/3 gateway 10.101.13.3 tag 2000
+set route 192.168.254.2/32 interface ethernet0/3 gateway 10.101.13.3 tag 2000
+set route 172.17.0.0/24 interface ethernet0/3 gateway 10.101.13.3
+set route 10.101.20.0/24 interface ethernet0/3 gateway 10.101.13.3 tag 2000
+set route 51.1.2.1/32 interface ethernet0/3 gateway 10.101.13.3
+set route 10.101.21.0/24 interface ethernet0/3 gateway 10.101.13.2
+set route 172.21.9.0/24 interface ethernet0/3 gateway 10.101.13.3 tag 2000
+set route 192.168.10.0/24 interface ethernet0/3 gateway 10.101.13.3
+set route 93.187.229.64/27 interface ethernet0/3
+set route 93.187.229.112/28 interface ethernet0/3
+set route 93.187.229.128/27 interface ethernet0/3
+set route 93.187.229.176/28 interface ethernet0/3
+set route 10.102.0.0/16 interface ethernet0/0 gateway 10.101.14.3
+set route 10.115.0.0/16 interface ethernet0/0 gateway 10.101.14.3
+set route 0.0.0.0/0 gateway 83.244.248.51
+set route 10.11.0.0/20 interface ethernet0/0 gateway 10.101.14.3
+set route 10.13.0.0/20 interface ethernet0/0 gateway 10.101.14.3
+set route 172.21.10.2/32 interface ethernet0/3 gateway 10.101.13.205
+set protocol ospf
+set redistribute route-map "STATIC2OSPF" protocol static
+exit
+exit
+set interface ethernet0/0 protocol ospf area 0.0.0.44
+set interface ethernet0/0 protocol ospf passive
+set interface ethernet0/0 protocol ospf enable
+set interface ethernet0/3 protocol ospf area 0.0.0.44
+set interface ethernet0/3 protocol ospf passive
+set interface ethernet0/3 protocol ospf enable
+set interface ethernet0/4 protocol ospf area 0.0.0.44
+set interface ethernet0/4 protocol ospf passive
+set interface ethernet0/4 protocol ospf enable
+set interface tunnel.1 protocol ospf area 0.0.0.44
+set interface tunnel.1 protocol ospf enable
+set interface tunnel.1 protocol ospf cost 500
+set interface tunnel.11 protocol ospf area 0.0.0.44
+set interface tunnel.11 protocol ospf enable
+set interface tunnel.11 protocol ospf cost 400
+set interface tunnel.2 protocol ospf area 0.0.0.44
+set interface tunnel.2 protocol ospf enable
+set interface tunnel.2 protocol ospf cost 500
+set interface tunnel.3 protocol ospf area 0.0.0.44
+set interface tunnel.3 protocol ospf enable
+set interface tunnel.3 protocol ospf cost 500
+set interface tunnel.4 protocol ospf area 0.0.0.44
+set interface tunnel.4 protocol ospf enable
+set interface tunnel.4 protocol ospf cost 500
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+exit

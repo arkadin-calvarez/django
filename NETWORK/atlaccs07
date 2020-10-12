@@ -1,0 +1,669 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C2960S-48TS-S
+!CPU: PowerPC
+!
+!Memory: main 131072K
+!Serial Number: FOC1811Y0R5
+!Model revision number           : K0
+!Model number                    : WS-C2960S-48TS-S
+!Motherboard assembly number     : 73-12424-09
+!Motherboard serial number       : FOC18110EFF
+!Motherboard revision number     : A0
+!Power supply part number        : 341-0327-04
+!Power supply serial number      : LIT1747022D
+!
+!Processor ID: FOC1811Y0R5
+!
+!Image: Software: C2960S-UNIVERSALK9-M, 12.2(55)SE7, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Mon 28-Jan-13 10:28 by prod_rel_team
+!Image: flash:/c2960s-universalk9-mz.122-55.SE7/c2960s-universalk9-mz.122-55.SE7.bin
+!
+!BOOTLDR: Version 12.2(55r)SE, RELEASE SOFTWARE (fc1)
+!
+!% No entity named "raw"
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Gi0/49, Gi0/50
+!VLAN: 3    NATIVE:core-accsSW               active    
+!VLAN: 8    VLAN0008                         active    
+!VLAN: 19   M:10.100.19.0/24:MGMT            active    Gi0/20, Gi0/31, Gi0/32
+!VLAN: 20   VLAN0020                         active    
+!VLAN: 22   V:10.100.22.0/24:ANW_LAN         active    Gi0/13, Gi0/14, Gi0/21, Gi0/38, Gi0/39, Gi0/40, Gi0/41
+!VLAN: 23   M:10.100.23.0/24:VIPER_MGMT      active    Gi0/6, Gi0/15, Gi0/17, Gi0/18
+!VLAN: 24   V:10.100.24.0/24:VIPER_SIP       active    Gi0/12, Gi0/16, Gi0/19, Gi0/23
+!VLAN: 30   V:10.100.30.0/24:HUD_LAN         active    Gi0/27, Gi0/28, Gi0/36, Gi0/37
+!VLAN: 31   VLAN0031                         active    Gi0/26, Gi0/42
+!VLAN: 32   V:10.100.32.0/24:HUD2_LAN        active    
+!VLAN: 122  V:10.100.122.0/24:NYC2_LAN       active    Gi0/1, Gi0/2
+!VLAN: 123  V:10.100.123.0/24:HUD1_LAN       active    
+!VLAN: 124  V:10.100.124.0/24:VIPER_RTP      active    Gi0/5, Gi0/7, Gi0/8, Gi0/9, Gi0/10, Gi0/11, Gi0/22, Gi0/24, Gi0/25, Gi0/29, Gi0/30
+!VLAN:                                                 Gi0/33, Gi0/34, Gi0/35, Gi0/44
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: 4044 VLAN4044                         active    
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 3    enet  100003     1500  -      -      -        -    -        0      0   
+!VLAN: 8    enet  100008     1500  -      -      -        -    -        0      0   
+!VLAN: 19   enet  100019     1500  -      -      -        -    -        0      0   
+!VLAN: 20   enet  100020     1500  -      -      -        -    -        0      0   
+!VLAN: 22   enet  100022     1500  -      -      -        -    -        0      0   
+!VLAN: 23   enet  100023     1500  -      -      -        -    -        0      0   
+!VLAN: 24   enet  100024     1500  -      -      -        -    -        0      0   
+!VLAN: 30   enet  100030     1500  -      -      -        -    -        0      0   
+!VLAN: 31   enet  100031     1500  -      -      -        -    -        0      0   
+!VLAN: 32   enet  100032     1500  -      -      -        -    -        0      0   
+!VLAN: 122  enet  100122     1500  -      -      -        -    -        0      0   
+!VLAN: 123  enet  100123     1500  -      -      -        -    -        0      0   
+!VLAN: 124  enet  100124     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: 4044 enet  104044     1500  -      -      -        -    -        0      0   
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0xF
+Using 15759 out of 524288 bytes
+!
+version 12.2
+parser config cache interface
+service nagle
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime show-timezone
+service timestamps log datetime localtime
+service password-encryption
+service sequence-numbers
+no service dhcp
+!
+hostname atlaccs07
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 128000 notifications
+no logging console
+enable secret 5 $1$E5r2$j1InpBP75R4FvNL8FJqpQ1
+!
+!username netops privilege 15 password <removed>
+username noc privilege 0 secret 5 $1$7wWC$BbcKB5tYIIj7WIRbl.GfV.
+!
+aaa new-model
+!
+aaa authentication fail-message ^CCWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login NS-Radius group radius local
+aaa authentication enable default enable
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+no ip source-route
+!
+no ip domain-lookup
+ip domain-name arkadin.lan
+login block-for 100 attempts 15 within 100
+login quiet-mode access-class OAM
+login on-failure log
+login on-success log
+vtp mode off
+!
+archive
+ log config
+  logging enable
+  logging size 500
+  notify syslog contenttype plaintext
+  hidekeys
+!
+spanning-tree mode rapid-pvst
+spanning-tree loopguard default
+spanning-tree portfast default
+spanning-tree portfast bpduguard default
+spanning-tree extend system-id
+spanning-tree uplinkfast
+spanning-tree backbonefast
+spanning-tree vlan 1-4094 priority 53248
+!
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+errdisable recovery cause link-flap
+port-channel load-balance src-dst-mac
+!
+vlan internal allocation policy ascending
+!
+vlan 3
+ name NATIVE:core-accsSW
+!
+vlan 8 
+!
+vlan 19
+ name M:10.100.19.0/24:MGMT
+!
+vlan 20 
+!
+vlan 22
+ name V:10.100.22.0/24:ANW_LAN
+!
+vlan 23
+ name M:10.100.23.0/24:VIPER_MGMT
+!
+vlan 24
+ name V:10.100.24.0/24:VIPER_SIP
+!
+vlan 30
+ name V:10.100.30.0/24:HUD_LAN
+!
+vlan 31 
+!
+vlan 32
+ name V:10.100.32.0/24:HUD2_LAN
+!
+vlan 122
+ name V:10.100.122.0/24:NYC2_LAN
+!
+vlan 123
+ name V:10.100.123.0/24:HUD1_LAN
+!
+vlan 124
+ name V:10.100.124.0/24:VIPER_RTP
+!
+vlan 4044 
+!
+ip tcp synwait-time 5
+ip ssh version 2
+!
+interface Null0
+ no ip unreachables
+!
+interface Port-channel1
+ description Q:Po1:atlcore02:Po1
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 1,3-4094
+ switchport mode trunk
+ load-interval 30
+ spanning-tree link-type point-to-point
+!
+interface Port-channel2
+ description Q:Po2:atlcore01:Po5
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 1,3-4094
+ switchport mode trunk
+ load-interval 30
+ spanning-tree link-type point-to-point
+!
+interface FastEthernet0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/1
+ description USNYCPX01
+ switchport access vlan 122
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/2
+ description USNYCPX01
+ switchport access vlan 122
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/3
+ description USNYCINFRA02
+ switchport trunk allowed vlan 20-24,30,122,124
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet0/4
+ description USNYINFRA02
+ switchport trunk allowed vlan 8,4044
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet0/5
+ description USNYCMPC7-BCKP
+ switchport access vlan 124
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/6
+ description USNYCCMS04-MPC7-1
+ switchport access vlan 23
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/7
+ description USNYCMPC2-MAIN
+ switchport access vlan 124
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/8
+ description USNYCMPC3-MAIN
+ switchport access vlan 124
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/9
+ description USNYCMPC4-MAIN
+ switchport access vlan 124
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/10
+ description USNYCMPC5-MAIN
+ switchport access vlan 124
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/11
+ description USNYCMPC13-MAIN
+ switchport access vlan 124
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/12
+ description USNYCSCC1-SIP-MAIN
+ switchport access vlan 24
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/13
+ description USNYCOPS1
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/14
+ description USNYCOPS1
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet0/15
+ description USNYCSCC1-MGMT-MAIN
+ switchport access vlan 23
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/16
+ description USNYCCMS04 SCC14-P2
+ switchport access vlan 24
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/17
+ description USNYCBRI5-AE
+ switchport access vlan 23
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/18
+ description USNYCBRI5-AE
+ switchport access vlan 23
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/19
+ description USNYCBRI5-AE
+ switchport access vlan 24
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/20
+ description PDU
+ switchport access vlan 19
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/21
+ description infra02-idrac
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/22
+ description USNYCMPC13-BCKP
+ switchport access vlan 124
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/23
+ description USNYCBRI5-AE
+ switchport access vlan 24
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/24
+ description USNYCCMS04-MPC3-2
+ switchport access vlan 124
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/25
+ description USNYCMPC5-BCKP
+ switchport access vlan 124
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/26
+ description USHUDGCI1-ETH1 (OLD physical)
+ switchport access vlan 31
+ switchport mode access
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet0/27
+ description USNYCNMS1
+ switchport access vlan 30
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/28
+ description USNYCNMS1
+ switchport access vlan 30
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/29
+ description USNYCMPC4-BCKP
+ switchport access vlan 124
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/30
+ description USNYCMPC7-MAIN
+ switchport access vlan 124
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/31
+ description USNYCNS01
+ switchport access vlan 19
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/32
+ description USNYCNS01
+ switchport access vlan 19
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/33
+ description PDU
+ switchport access vlan 124
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/34
+ description PDU
+ switchport access vlan 124
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/35
+ description USNYCCMS04-MPC8-2
+ switchport access vlan 124
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/36
+ description USHUDDB1
+ switchport access vlan 30
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/37
+ description USHUDDB1
+ switchport access vlan 30
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/38
+ description USNYCDB1
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/39
+ description USATLANWVOIP-1
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/40
+ description USATLANWVOIP-2
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/41
+ description USNYCDB1
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/42
+ description USHUDGCI1
+ switchport access vlan 31
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/43
+ description port_mon_nycops
+ load-interval 30
+!
+interface GigabitEthernet0/44
+ switchport access vlan 124
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/45
+ description Q:Po2:atlcore01:Po5:Gi4/36
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 1,3-4094
+ switchport mode trunk
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-group 2 mode active
+!
+interface GigabitEthernet0/46
+ description Q:Po1:atlcore02:Po1:Gi3/36
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 1,3-4094
+ switchport mode trunk
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-group 1 mode active
+!
+interface GigabitEthernet0/47
+ description Q:Po2:atlcore01:Po5:Gi4/35
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 1,3-4094
+ switchport mode trunk
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-group 2 mode active
+!
+interface GigabitEthernet0/48
+ description Q:Po1:atlcore02:Po1:Gi3/35
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 1,3-4094
+ switchport mode trunk
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-group 1 mode active
+!
+interface GigabitEthernet0/49
+ load-interval 30
+!
+interface GigabitEthernet0/50
+ load-interval 30
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan19
+ ip address 10.100.19.240 255.255.255.0
+!
+ip default-gateway 10.100.19.254
+no ip http server
+no ip http secure-server
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ip radius source-interface Vlan19 
+logging trap notifications
+logging facility local5
+logging 10.100.137.24
+logging 10.100.137.89
+access-list 99 permit 10.102.10.36
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+access-list 101 remark QuietMode
+access-list 101 permit ip 10.0.0.0 0.0.0.255 any
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server community public RO 99
+snmp-server trap link ietf
+snmp-server tftp-server-list 10
+snmp-server location USATL_Suite60048_Rack0205
+snmp-server contact Arkadin Network Services (Network_Infrastructure_Operations@arkadin.com)
+snmp-server enable traps snmp linkdown linkup coldstart warmstart
+snmp-server enable traps transceiver all
+snmp-server enable traps tty
+snmp-server enable traps license
+snmp-server enable traps auth-framework sec-violation
+snmp-server enable traps cluster
+snmp-server enable traps config-copy
+snmp-server enable traps config-ctid
+snmp-server enable traps dot1x auth-fail-vlan guest-vlan no-auth-fail-vlan no-guest-vlan
+snmp-server enable traps energywise
+snmp-server enable traps fru-ctrl
+snmp-server enable traps entity
+snmp-server enable traps power-ethernet group 1-4
+snmp-server enable traps power-ethernet police
+snmp-server enable traps cpu threshold
+snmp-server enable traps rep
+snmp-server enable traps vstack
+snmp-server enable traps bridge newroot topologychange
+snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistency
+snmp-server enable traps vtp
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps flash insertion removal
+snmp-server enable traps port-security
+snmp-server enable traps envmon fan shutdown supply temperature status
+snmp-server enable traps errdisable
+snmp-server enable traps mac-notification change move threshold
+snmp-server enable traps vlan-membership
+snmp-server host 10.115.38.131 version 2c noc_services 
+snmp-server file-transfer access-group 10 protocol tftp
+snmp ifmib ifindex persist
+radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server timeout 3
+!radius-server key <removed>
+banner login ^CC========================================================================
+=                                                                      =                                                                             
+=               This is a private system of Arkadin                    =
+=         Authorization from Network Operations Team is                =
+=   required to use this system. Unauthorized access is prohibited!    =
+=                                                                      =
+=               This device is RADIUS authenticated                    = 
+=                                                                      =
+=                 network_operations@arkadin.com                       = 
+=                                                                      =
+========================================================================
+^C
+alias exec u undebug all
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ logging synchronous
+ login authentication NS-Radius
+ history size 256
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 60 0
+ logging synchronous
+ login authentication NS-Radius
+ history size 256
+ transport input ssh
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 60 0
+ logging synchronous
+ login authentication NS-Radius
+ history size 256
+ transport input ssh
+!
+monitor session 1 source interface Gi0/12
+monitor session 1 destination interface Gi0/43
+ntp source Vlan19
+ntp server 10.100.51.1 prefer
+ntp server 10.122.97.1
+end

@@ -1,0 +1,4478 @@
+#RANCID-CONTENT-TYPE: juniper
+#
+# chi-bl-02> show chassis clocks 
+# chi-bl-02> show chassis firmware local
+# chi-bl-02> show chassis firmware 
+# Part                     Type       Version
+# RE 0                     PRI BIOS   CBEP_P_SUM1_00.13.01                       
+#                          RE-FPGA    304                                        
+#                          RE-SSD1    SF-SBR12028                                
+#                          RE-SSD2    SF-SBR12028                                
+# FPC                      ROM        PC Bios                                    
+#                          O/S        Version 18.3R1.9 by builder on 2018-09-20 20:24:16 UTC
+# 
+# chi-bl-02> show chassis fpc detail 
+# Slot 0 information:
+#   State                               Online    
+#   Total CPU DRAM                 3136 MB
+#   Total RLDRAM                    257 MB
+#   Total DDR DRAM                 4096 MB
+# 
+# chi-bl-02> show chassis hardware detail 
+# Hardware inventory:
+# Item             Version  Part number  Serial number     Description
+# Chassis                                BG494             JNP204 [MX204]
+# Routing Engine 0          BUILTIN      BUILTIN           RE-S-1600x8
+#   vtbd0 17408 MB                                         Virtio Block Disk
+#   vtbd1 32768 MB                                         Virtio Block Disk
+#   ada0    512 MB  QEMU                 QM00002           Virtio Block Disk
+#   ada1    128 MB  QEMU                 QM00004           Virtio Block Disk
+#   usb0 (addr 0.1) XHCI root HUB 0      0x8086            uhub0
+# CB 0             REV 27   750-069579   CAKH8823          JNP204 [MX204]
+# FPC 0                     BUILTIN      BUILTIN           MPC
+#   PIC 0                   BUILTIN      BUILTIN           4XQSFP28 PIC
+#     Xcvr 0       REV 01   740-045627   M1807195791       40GBASE eSR4
+#     Xcvr 1       REV 01   740-045627   M1811154276       40GBASE eSR4
+#     Xcvr 3       REV 1    740-061001   E1809140013       QSFP28-100G-CU5M
+#   PIC 1                   BUILTIN      BUILTIN           8XSFPP PIC
+#     Xcvr 0       REV 01   740-031980   CH09KN2MD         SFP+-10G-SR
+#     Xcvr 1       REV 01   740-031980   CH09KN1E5         SFP+-10G-SR
+#     Xcvr 4       REV 01   740-031981   AD1647500KM       SFP+-10G-LR
+#     Xcvr 5       REV 01   740-031981   AD1647500LC       SFP+-10G-LR
+#     Xcvr 6       REV 01   740-011783   EB160830014       SFP-LX10
+#     Xcvr 7       REV 01   740-031981   AD1647500MZ       SFP+-10G-LR
+# PEM 0            REV 03   740-070749   1F187480786       JPSU-650W-AC-AO
+# PEM 1            REV 03   740-070749   1F187480351       JPSU-650W-AC-AO
+# Fan Tray 0                                               Fan Tray, Front to Back Airflow - AFO
+# Fan Tray 1                                               Fan Tray, Front to Back Airflow - AFO
+# Fan Tray 2                                               Fan Tray, Front to Back Airflow - AFO
+# 
+# chi-bl-02> show chassis hardware models 
+# Hardware inventory:
+# Item             Version  Part number  Serial number     FRU model number
+# CB 0             REV 27   750-069579   CAKH8823          JNP204-CHAS
+# FPC 0                     BUILTIN      BUILTIN           PROTO-ASSEMBLY
+# PEM 0            REV 03   740-070749   1F187480786       JPSU-650W-AC-AO
+# PEM 1            REV 03   740-070749   1F187480351       JPSU-650W-AC-AO
+# Fan Tray 0                                               JNP-FAN-1RU
+# Fan Tray 1                                               JNP-FAN-1RU
+# Fan Tray 2                                               JNP-FAN-1RU
+# 
+# chi-bl-02> show chassis scb 
+# chi-bl-02> show chassis sfm detail 
+# chi-bl-02> show chassis ssb 
+# chi-bl-02> show chassis feb detail 
+# chi-bl-02> show chassis feb 
+# chi-bl-02> show chassis cfeb 
+# chi-bl-02> show system boot-messages 
+# random: unblocking device.
+# Renaming vtnet1 interface to em2 for TVP Summit
+# Renaming vtnet2 interface to em3 for TVP Summit
+# Renaming vtnet3 interface to em4 for TVP Summit
+# Loading JUNOS chassis module
+# chassis_init_hw_chassis_startup_time: chassis startup time 0.000000, shared: 0x7ffffffff300, base: 0x7ffffffff000, offset: 0x300
+# IPsec: Initialized Security Association Processing.
+# hgcommdev0: <HGCOMMDEV For Host VM communication> port 0xc000-0xc0ff mem 0xfe915000-0xfe915fff at device 22.0 on pci0
+# hgcommdev0: hgcommdev: registers at 0xfffff800fe915000
+# 
+# pci-hgcomdev module loadedLoading the CHMIC module
+# Loading POS driver
+#  Loading Aggregate sonet driver
+# Loading the IMA Group Media Layer; Attaching to media services layer
+# Loading the IMA Link Media Layer; Attaching to media services layer
+# Loading the SONET Media Layer; Attaching to media services layer
+# Loading the Protobuf-C module
+# Loading the JAM-Core module
+# Loading the JAM-Core module - succeeded
+# Loading Multilink Services PICs module.
+# Loading the M&T Platform NETPFE module
+# MTX Platform JAM-Core module - load success
+# MPC NG 2E/3E JAM Plugin: load succeeded
+# 
+#  Loading BCMSDK module.....
+# lag enhanced disabled 0
+# setsockopt(RTS_ASYNC_NEED_RESYNC) ignored (sdk-vmmd): client already active
+# setsockopt(RTS_ASYNC_NEED_RESYNC) ignored (shm-rtsdbd): client already active
+# setsockopt(RTS_ASYNC_NEED_RESYNC) ignored (ppmd): client already active
+# setsockopt(RTS_ASYNC_NEED_RESYNC) ignored (pfed): client already active
+# setsockopt(RTS_ASYNC_NEED_RESYNC) ignored (license-check): client already active
+# setsockopt(RTS_ASYNC_NEED_RESYNC) ignored (lfmd): client already active
+# setsockopt(RTS_ASYNC_NEED_RESYNC) ignored (clksyncd): client already active
+# setsockopt(RTS_ASYNC_NEED_RESYNC) ignored (agentd): client already active
+# rts_ifstate_chk_multi_registration: daemon ppmd(15008) has previously registered 1 time(s)
+# mastership: routing engine 0 becoming master tnp_local_addr:4
+# summit_become_master: routing engine 0 became master after 0 usec
+# em3.0 ip address changed (ADD) addr: 128.0.0.1
+# em3.0 ip address changed (ADD) addr: 10.0.0.1
+# em4.0 ip address changed (ADD) addr: 128.0.0.1
+# em4.0 ip address changed (ADD) addr: 10.0.0.1
+# setting server address to 0x00000001
+# TNPv3: adding local neighbor entry 0x00000001 hopcount 0 to interface em3.
+# TNPv3: adding local neighbor entry 0x00000001 hopcount 1 to interface em4.
+# transition_to_master: Setting jsr_prevent_tcp_pkt_on_switchover  to 0
+# vksid: 0 VKS old/cur: 0/1 RE old/cur: 0/1
+# update_slave_peer_gres_status: vksid 0 is_slave_peer_gres_ready 0 is_local_slave_peer_gres_ready 0
+# vks[0] 0 vks[1] 0
+# PFE-MASTER - vks[0] 1 vks[1] 0
+# vksid: 1 VKS old/cur: 0/0 RE old/cur: 0/1
+# disable_netdaemon_briefly:ISSU/GRES in progress. Starting timer for netdaemon
+# PURGE AE pending table: 0 entries and 0 child NHs removed
+# Trio NH optimizations enabled on primary RE
+# ifstate client : snmpd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff80223711400, cl num:125, cl name:snmpd, next_state:0 ticks 2146977778 start_ticks 2146977778
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff80223711400, cl num:125,  cl name:snmpd, next_state:0xfffff80009590b00, ifs_head:0xfffff80009590b00 ticks 2146977778 start_ticks 2146977778
+# rts_ifstate_client_close_job_handler: client:0xfffff80223711400 client close job done, cl name:snmpd, cl num:125
+# rts_ifstate_client_close_job_handler: Client-closing completed!  snmpd(125):0xfffff80223711400  num:0ticks 2146977778 start_ticks 2146977778
+# Cleanup of dead ifstate client: snmpd done  Total dead ifstate client : 0
+# ifstate client : snmpd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8020c2f1600, cl num:125, cl name:snmpd, next_state:0 ticks 2146977783 start_ticks 2146977783
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8020c2f1600, cl num:125,  cl name:snmpd, next_state:0xfffff80009590b00, ifs_head:0xfffff80009590b00 ticks 2146977783 start_ticks 2146977783
+# rts_ifstate_client_close_job_handler: client:0xfffff8020c2f1600 client close job done, cl name:snmpd, cl num:125
+# rts_ifstate_client_close_job_handler: Client-closing completed!  snmpd(125):0xfffff8020c2f1600  num:0ticks 2146977783 start_ticks 2146977783
+# Cleanup of dead ifstate client: snmpd done  Total dead ifstate client : 0
+# ifstate client : pfed closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8020c1fac00, cl num:120, cl name:pfed, next_state:0 ticks 2146977789 start_ticks 2146977789
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8020c1fac00, cl num:120,  cl name:pfed, next_state:0xfffff80009590b00, ifs_head:0xfffff80009590b00 ticks 2146977789 start_ticks 2146977789
+# rts_ifstate_client_close_job_handler: client:0xfffff8020c1fac00 client close job done, cl name:pfed, cl num:120
+# rts_ifstate_client_close_job_handler: Client-closing completed!  pfed(120):0xfffff8020c1fac00  num:0ticks 2146977789 start_ticks 2146977789
+# Cleanup of dead ifstate client: pfed done  Total dead ifstate client : 0
+# ifstate client : irsd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8020cb0ce00, cl num:62, cl name:irsd, next_state:0 ticks 2146977791 start_ticks 2146977791
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8020cb0ce00, cl num:62,  cl name:irsd, next_state:0xfffff80009590b00, ifs_head:0xfffff80009590b00 ticks 2146977791 start_ticks 2146977791
+# rts_ifstate_client_close_job_handler: client:0xfffff8020cb0ce00 client close job done, cl name:irsd, cl num:62
+# rts_ifstate_client_close_job_handler: Client-closing completed!  irsd(62):0xfffff8020cb0ce00  num:0ticks 2146977791 start_ticks 2146977791
+# Cleanup of dead ifstate client: irsd done  Total dead ifstate client : 0
+# ifstate client : dfwd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f1ada00, cl num:115, cl name:dfwd, next_state:0 ticks 2146977798 start_ticks 2146977798
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f1ada00, cl num:115,  cl name:dfwd, next_state:0xfffff80009590b00, ifs_head:0xfffff80009590b00 ticks 2146977798 start_ticks 2146977798
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f1ada00 client close job done, cl name:dfwd, cl num:115
+# rts_ifstate_client_close_job_handler: Client-closing completed!  dfwd(115):0xfffff8026f1ada00  num:0ticks 2146977798 start_ticks 2146977798
+# Cleanup of dead ifstate client: dfwd done  Total dead ifstate client : 0
+# ifstate client : ppmd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8020cb0bc00, cl num:113, cl name:ppmd, next_state:0 ticks 2146977811 start_ticks 2146977811
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8020cb0bc00, cl num:113,  cl name:ppmd, next_state:0xfffff80009590b00, ifs_head:0xfffff80009590b00 ticks 2146977811 start_ticks 2146977811
+# rts_ifstate_client_close_job_handler: client:0xfffff8020cb0bc00 client close job done, cl name:ppmd, cl num:113
+# rts_ifstate_client_close_job_handler: Client-closing completed!  ppmd(113):0xfffff8020cb0bc00  num:0ticks 2146977812 start_ticks 2146977811
+# Cleanup of dead ifstate client: ppmd done  Total dead ifstate client : 0
+# setsockopt(RTS_ASYNC_NEED_RESYNC) ignored (mib2d): client already active
+# ifstate client : agentd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f260600, cl num:114, cl name:agentd, next_state:0 ticks 2146977837 start_ticks 2146977837
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f260600, cl num:114,  cl name:agentd, next_state:0xfffff80009590b00, ifs_head:0xfffff80009590b00 ticks 2146977837 start_ticks 2146977837
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f260600 client close job done, cl name:agentd, cl num:114
+# rts_ifstate_client_close_job_handler: Client-closing completed!  agentd(114):0xfffff8026f260600  num:0ticks 2146977837 start_ticks 2146977837
+# Cleanup of dead ifstate client: agentd done  Total dead ifstate client : 0
+# setsockopt(RTS_ASYNC_NEED_RESYNC) ignored (pppd): client already active
+# ifstate client : ksyncd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff80223540400, cl num:61, cl name:ksyncd, next_state:0 ticks 2146977935 start_ticks 2146977935
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff80223540400, cl num:61,  cl name:ksyncd, next_state:0xfffff80009590b00, ifs_head:0xfffff80009590b00 ticks 2146977935 start_ticks 2146977935
+# rts_ifstate_client_close_job_handler: client:0xfffff80223540400 client close job done, cl name:ksyncd, cl num:61
+# rts_ifstate_client_close_job_handler: Client-closing completed!  ksyncd(61):0xfffff80223540400  num:0ticks 2146977935 start_ticks 2146977935
+# Cleanup of dead ifstate client: ksyncd done  Total dead ifstate client : 0
+# ip_rttable_op() rtb id 1795 jpf_iif_maxindex ifl map table max size 262144.
+# setsockopt(RTS_ASYNC_NEED_RESYNC) ignored (kod): client already active
+# ifstate client : snmpd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f05a200, cl num:107, cl name:snmpd, next_state:0 ticks 2146978149 start_ticks 2146978149
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f05a200, cl num:107,  cl name:snmpd, next_state:0xfffff80009590b00, ifs_head:0xfffff80009590b00 ticks 2146978149 start_ticks 2146978149
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f05a200 client close job done, cl name:snmpd, cl num:107
+# rts_ifstate_client_close_job_handler: Client-closing completed!  snmpd(107):0xfffff8026f05a200  num:0ticks 2146978150 start_ticks 2146978149
+# Cleanup of dead ifstate client: snmpd done  Total dead ifstate client : 0
+# if_rtb_default_ifl_bitmap_set() rtb ifl bitmap itable op 1 done. rtb id 1795 ifl idx 323 iff 0xfffff8026f6d12d0.
+# setsockopt(RTS_ASYNC_NEED_RESYNC) ignored (l2ald): client already active
+# rts_ifstate_chk_multi_registration: daemon mib2d(14965) has previously registered 1 time(s)
+# ifstate client : rpd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f22ba00, cl num:59, cl name:rpd, next_state:0xfffff80223a1a0f0 ticks 2146978741 start_ticks 2146978741
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f22ba00, cl num:59,  cl name:rpd, next_state:0xfffff80009590b00, ifs_head:0xfffff80009590b00 ticks 2146978741 start_ticks 2146978741
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f22ba00 client close job done, cl name:rpd, cl num:59
+# rts_ifstate_client_close_job_handler: Client-closing completed!  rpd(59):0xfffff8026f22ba00  num:0ticks 2146978742 start_ticks 2146978741
+# Cleanup of dead ifstate client: rpd done  Total dead ifstate client : 0
+# stp_destroy: destroy_all 0 stp_index delete count = 0. Protocol backup kernel 0
+# trying to unregister protocol ka format for 179which was never registered
+# ip_rttable_op() rtb id 1797 jpf_iif_maxindex ifl map table max size 262144.
+# ip6_rttable_op() rtb id 1797 ifl map table max size 262144.
+# ip6_rttable_op() rtb id 1798 ifl map table max size 262144.
+# pointchange for TLV type 00000020 not supported on IFD fxp0
+# setsockopt(RTS_ASYNC_NEED_RESYNC) ignored (cosd): client already active
+# ip_rttable_op() rtb id 1798 jpf_iif_maxindex ifl map table max size 262144.
+# if_rtb_default_ifl_bitmap_set() rtb ifl bitmap itable op 1 done. rtb id 1798 ifl idx 329 iff 0xfffff8000b761488.
+# if_rtb_default_ifl_bitmap_set() rtb ifl bitmap itable op 1 done. rtb id 1798 ifl idx 329 iff 0xfffff8026fcca0e8.
+# if_rtb_default_ifl_bitmap_set() rtb ifl bitmap itable op 1 done. rtb id 1798 ifl idx 328 iff 0xfffff8020c1e7b60.
+# tnp_neighbor_ifd_up: Not a PSD
+# setsockopt(RTS_ASYNC_NEED_RESYNC) ignored (pfed): client already active
+# setsockopt(RTS_ASYNC_NEED_RESYNC) ignored (agentd): client already active
+# ip_rttable_op() rtb id 1800 jpf_iif_maxindex ifl map table max size 262144.
+# netdaemon_disable_timer:ISSU/GRES in progress. Stopping timer for netdaemon
+# rts_ifstate_chk_multi_registration: daemon mib2d(14965) has previously registered 2 time(s)
+# rts_ifstate_chk_multi_registration: daemon mib2d(14965) has previously registered 3 time(s)
+# hw.chassis.startup_time update to 1545137399.540227
+# TNPv3: adding remote neighbor entry 0x00000010 hopcount 0 to interface em3.
+# pic_listener_connect: 261: Accepted TCP connection for mgmt addr 0x80000010, so: 0xfffff8026ff6d000, so_type: 1, so_state: 2, so_proto: 0xffffffff814d34b0, remote_addr: 0xfffff80223633c10 iproto: 6, type: 1, domain: 0xffffffff814d3380
+# pfe_listener_common_task: 1610: Enabling the tcp keep alives with default values
+# if_pfe_peek_peer_info: 1347: class: 0, type: 17, index: 0, vksid: 0
+# pfe_peer_alloc: addr = 0x80000010
+# pfe_listener_alloc: max_idx_peer_listener:   1 peer_type:  17 peer_index:   0 pfe_listener_index:   0
+# pfe_peer_alloc: 2291: Initializing timers, mtx_lock,flusher and handler for peer class: 0, type: 0, index: 0, vksid: 0, state: 0
+# pfe_peer_update_mgmt_state: 245: class: 0, type: 0, index: 0, vksid: 0, old state Init new state Opening mastership 1
+# pfe_peer_alloc: 2497: pfe_peer_alloc: done for the peer class: 0, type: 0, index: 0, vksid: 0, state: 0, addr = 0x80000010
+# pfe_tcp_listener_expand: 363: class: 0, type: 17, index: 0, vksid: 0, state: 0sync_update = 1
+# pfe_msg_peer_info_post_decode: idx = 0
+# pfe_msg_peer_info_post_decode: 3285: peer (class: 0, type: 17, index: 0, vksid: 0 state: 0 , mgmt_state Opening): ifstate registration: [0, 1]
+# if_pfe_pic_check_msg_types: Unexpected message received when peer is in OPENING state: msg_type=3 msg_subtype=39 pfe_index=0 pfe_type=17 pfe_mgmt_addr=0x80000010
+# if_pfe_msg_handler: pfe_peer_msg_handler error: 89 for msg type 3, msg subtype 39, opcode 1 and peer index 0
+# if_rtb_default_ifl_bitmap_set() rtb ifl bitmap itable op 1 done. rtb id 1 ifl idx 332 iff 0xfffff8020c23acb0.
+# if_rtb_default_ifl_bitmap_set() rtb ifl bitmap itable op 1 done. rtb id 2 ifl idx 334 iff 0xfffff8020c23a9f8.
+# pfe_peer_attach: attaching peer=0xfffffe0004402000, type=17, index=0
+# peertype 17 initialized
+# pfe_peer_attach: attached peer=0xfffffe0004402000, type=17, index=0
+# pfe_resync_msg_handler: 167: peer (class: 0, type: 17, index: 0, vksid: 0, state: 1) registiered with ifstate
+# pfe_peer_update_mgmt_state: 245: class: 0, type: 17, index: 0, vksid: 0, old state Opening new state Resync mastership 1
+# re_svc_reserve_tokens: NULL tokens received though RE is GLOBAL/PROTO master
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# pfe_peer_update_mgmt_state: 245: class: 0, type: 17, index: 0, vksid: 0, old state Resync new state Online mastership 1
+# GENCFG: op for 83 (RPD evpn blob) failed; err 1 (Unknown) minor type: 0x7. Error originated from pfe type: 17, pfe index: 0, mgmt addr: 0x80000010
+# IF_MSG_IFD_BULK_MUP_DOWN: IFD[0] idx 49156 is NULL; peer type 17 index 0 ignored
+# IF_MSG_IFD_BULK_MUP_DOWN: IFD[1] idx 49157 is NULL; peer type 17 index 0 ignored
+# IF_MSG_IFD_BULK_MUP_DOWN: IFD[2] idx 53281 is NULL; peer type 17 index 0 ignored
+# IF_MSG_IFD_BULK_MUP_DOWN: IFD[3] idx 53282 is NULL; peer type 17 index 0 ignored
+# IF_MSG_IFD_BULK_MUP_DOWN: IFD[4] idx 53283 is NULL; peer type 17 index 0 ignored
+# IF_MSG_IFD_BULK_MUP_DOWN: IFD[5] idx 53254 is NULL; peer type 17 index 0 ignored
+# IF_MSG_IFD_BULK_MUP_DOWN: IFD[6] idx 53256 is NULL; peer type 17 index 0 ignored
+# IF_MSG_IFD_BULK_ALARM: IFD is NULL (0/53256); ignored
+# kern_gencfg_pfe_capab_handler: ifl_idx_pfe_init reporting higher iif_table_width fpc_slot 0 pfe_num 0 table-width 1048576
+# jp_summit_pic_add: PIC(0/0/2771): pic add successful
+# jp_summit_pic_ifd_add: ifd add successful
+# jp_summit_pic_ifd_add: ifd add successful
+# jp_summit_pic_ifd_add: ifd add successful
+# jp_summit_pic_ifd_add: ifd add successful
+# ether_iflconfig(3122): , Allocated and Initialized MAC Filter table successfully for et-0/0/0.0 IFD et-0/0/0 MAC 64:c3:d6:bf:19:17
+# if_rtb_default_ifl_bitmap_set() rtb ifl bitmap itable op 1 done. rtb id 0 ifl idx 335 iff 0xfffff802238134b0.
+# ether_iflconfig(3122): , Allocated and Initialized MAC Filter table successfully for et-0/0/1.0 IFD et-0/0/1 MAC 64:c3:d6:bf:19:1b
+# if_rtb_default_ifl_bitmap_set() rtb ifl bitmap itable op 1 done. rtb id 1798 ifl idx 336 iff 0xfffff802238132d0.
+# ether_iflconfig(3122): , Allocated and Initialized MAC Filter table successfully for et-0/0/2.0 IFD et-0/0/2 MAC 64:c3:d6:bf:19:1f
+# if_rtb_default_ifl_bitmap_set() rtb ifl bitmap itable op 1 done. rtb id 1798 ifl idx 337 iff 0xfffff8026f0f93c0.
+# jp_summit_pic_add: PIC(0/1/2772): pic add successful
+# jp_summit_pic_ifd_add: ifd add successful
+# jp_summit_pic_ifd_add: ifd add successful
+# jp_summit_pic_ifd_add: ifd add successful
+# jp_summit_pic_ifd_add: ifd add successful
+# jp_summit_pic_ifd_add: ifd add successful
+# jp_summit_pic_ifd_add: ifd add successful
+# jp_summit_pic_ifd_add: ifd add successful
+# jp_summit_pic_ifd_add: ifd add successful
+# xe-0/1/6: Illegal media change: invalid speed
+# ether_iflconfig(3122): , Allocated and Initialized MAC Filter table successfully for xe-0/1/6.32767 IFD xe-0/1/6 MAC 64:c3:d6:bf:21:0d
+# if_pfe_ge_ifdstat_ipc:handling ALARM ASSERT/CLEAR
+# if_pfe_ge_ifdstat_ipc:handling ALARM ASSERT/CLEAR
+# if_pfe_ge_ifdstat_ipc:handling ALARM ASSERT/CLEAR
+# if_pfe_ge_ifdstat_ipc:handling ALARM ASSERT/CLEAR
+# if_pfe_ge_ifdstat_ipc:handling ALARM ASSERT/CLEAR
+# if_pfe_ge_ifdstat_ipc:handling ALARM ASSERT/CLEAR
+# if_pfe_ge_ifdstat_ipc:handling ALARM ASSERT/CLEAR
+# if_pfe_ge_ifdstat_ipc:handling ALARM ASSERT/CLEAR
+# if_pfe_ge_ifdstat_ipc:handling ALARM ASSERT/CLEAR
+# if_pfe_ge_ifdstat_ipc:handling ALARM ASSERT/CLEAR
+# if_pfe_ge_ifdstat_ipc:handling ALARM ASSERT/CLEAR
+# if_pfe_ge_ifdstat_ipc:handling ALARM ASSERT/CLEAR
+# if_pfe_ge_ifdstat_ipc:handling ALARM ASSERT/CLEAR
+# if_pfe_ge_ifdstat_ipc:handling ALARM ASSERT/CLEAR
+# if_pfe_ge_ifdstat_ipc:handling ALARM ASSERT/CLEAR
+# if_pfe_ge_ifdstat_ipc:handling ALARM ASSERT/CLEAR
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# peer_ifstate_is_non_local_private: Private states blocked for peer type 17 index 0
+# ifstate client : snmpd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f683e00, cl num:107, cl name:snmpd, next_state:0 ticks 2147222937 start_ticks 2147222937
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f683e00, cl num:107,  cl name:snmpd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222937 start_ticks 2147222937
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f683e00 client close job done, cl name:snmpd, cl num:107
+# rts_ifstate_client_close_job_handler: Client-closing completed!  snmpd(107):0xfffff8026f683e00  num:0ticks 2147222938 start_ticks 2147222937
+# Cleanup of dead ifstate client: snmpd done  Total dead ifstate client : 0
+# ifstate client : lmpd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff80223753600, cl num:125, cl name:lmpd, next_state:0 ticks 2147222938 start_ticks 2147222938
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff80223753600, cl num:125,  cl name:lmpd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222938 start_ticks 2147222938
+# rts_ifstate_client_close_job_handler: client:0xfffff80223753600 client close job done, cl name:lmpd, cl num:125
+# rts_ifstate_client_close_job_handler: Client-closing completed!  lmpd(125):0xfffff80223753600  num:0ticks 2147222938 start_ticks 2147222938
+# Cleanup of dead ifstate client: lmpd done  Total dead ifstate client : 0
+# ifstate client : license-check closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8020cb0c600, cl num:119, cl name:license-check, next_state:0 ticks 2147222939 start_ticks 2147222939
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8020cb0c600, cl num:119,  cl name:license-check, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222939 start_ticks 2147222939
+# rts_ifstate_client_close_job_handler: client:0xfffff8020cb0c600 client close job done, cl name:license-check, cl num:119
+# rts_ifstate_client_close_job_handler: Client-closing completed!  license-check(119):0xfffff8020cb0c600  num:0ticks 2147222939 start_ticks 2147222939
+# Cleanup of dead ifstate client: license-check done  Total dead ifstate client : 0
+# ifstate client : lfmd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f011a00, cl num:118, cl name:lfmd, next_state:0 ticks 2147222939 start_ticks 2147222939
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f011a00, cl num:118,  cl name:lfmd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222939 start_ticks 2147222939
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f011a00 client close job done, cl name:lfmd, cl num:118
+# rts_ifstate_client_close_job_handler: Client-closing completed!  lfmd(118):0xfffff8026f011a00  num:0ticks 2147222939 start_ticks 2147222939
+# Cleanup of dead ifstate client: lfmd done  Total dead ifstate client : 0
+# ifstate client : irsd closing down  Total dead ifstate clients : 1
+# ifstate client : bfdd closing down  Total dead ifstate clients : 2
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026fa3ce00, cl num:58, cl name:irsd, next_state:0 ticks 2147222940 start_ticks 2147222940
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026fa3ce00, cl num:58,  cl name:irsd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222940 start_ticks 2147222940
+# rts_ifstate_client_close_job_handler: client:0xfffff8026fa3ce00 client close job done, cl name:irsd, cl num:58
+# rts_ifstate_client_close_job_handler: client close tail after:cl bfdd(123):0xfffff802235c5200 tail next:0xffffffff816d3d68
+# rts_ifstate_client_close_job_handler: Client-closing completed!  irsd(58):0xfffff8026fa3ce00  num:1ticks 2147222940 start_ticks 2147222940
+# Cleanup of dead ifstate client: irsd done  Total dead ifstate client : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff802235c5200, cl num:123, cl name:bfdd, next_state:0 ticks 2147222940 start_ticks 2147222940
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff802235c5200, cl num:123,  cl name:bfdd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222940 start_ticks 2147222940
+# rts_ifstate_client_close_job_handler: client:0xfffff802235c5200 client close job done, cl name:bfdd, cl num:123
+# rts_ifstate_client_close_job_handler: Client-closing completed!  bfdd(123):0xfffff802235c5200  num:0ticks 2147222940 start_ticks 2147222940
+# Cleanup of dead ifstate client: bfdd done  Total dead ifstate client : 0
+# ifstate client : mib2d closing down  Total dead ifstate clients : 1
+# ifstate client : mib2d closing down  Total dead ifstate clients : 2
+# ifstate client : shm-rtsdbd closing down  Total dead ifstate clients : 3
+# ifstate client : mib2d closing down  Total dead ifstate clients : 4
+# ifstate client : mib2d closing down  Total dead ifstate clients : 5
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8020cb0bc00, cl num:62, cl name:mib2d, next_state:0 ticks 2147222940 start_ticks 2147222940
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8020cb0bc00, cl num:62,  cl name:mib2d, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222940 start_ticks 2147222940
+# rts_ifstate_client_close_job_handler: client:0xfffff8020cb0bc00 client close job done, cl name:mib2d, cl num:62
+# rts_ifstate_client_close_job_handler: client close tail after:cl mib2d(103):0xfffff8026f31b000 tail next:0xfffff8020c375600
+# rts_ifstate_client_close_job_handler: Client-closing completed!  mib2d(62):0xfffff8020cb0bc00  num:4ticks 2147222941 start_ticks 2147222940
+# Cleanup of dead ifstate client: mib2d done  Total dead ifstate client : 4
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f31b000, cl num:103, cl name:mib2d, next_state:0 ticks 2147222941 start_ticks 2147222940
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f31b000, cl num:103,  cl name:mib2d, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222941 start_ticks 2147222940
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f31b000 client close job done, cl name:mib2d, cl num:103
+# rts_ifstate_client_close_job_handler: client close tail after:cl shm-rtsdbd(124):0xfffff8020c375600 tail next:0xfffff8026fd3da00
+# rts_ifstate_client_close_job_handler: Client-closing completed!  mib2d(103):0xfffff8026f31b000  num:3ticks 2147222941 start_ticks 2147222940
+# Cleanup of dead ifstate client: mib2d done  Total dead ifstate client : 3
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8020c375600, cl num:124, cl name:shm-rtsdbd, next_state:0 ticks 2147222941 start_ticks 2147222940
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8020c375600, cl num:124,  cl name:shm-rtsdbd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222941 start_ticks 2147222940
+# rts_ifstate_client_close_job_handler: client:0xfffff8020c375600 client close job done, cl name:shm-rtsdbd, cl num:124
+# rts_ifstate_client_close_job_handler: client close tail after:cl mib2d(95):0xfffff8026fd3da00 tail next:0xfffff8026fd3dc00
+# rts_ifstate_client_close_job_handler: Client-closing completed!  shm-rtsdbd(124):0xfffff8020c375600  num:2ticks 2147222941 start_ticks 2147222940
+# Cleanup of dead ifstate client: shm-rtsdbd done  Total dead ifstate client : 2
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026fd3da00, cl num:95, cl name:mib2d, next_state:0 ticks 2147222941 start_ticks 2147222940
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026fd3da00, cl num:95,  cl name:mib2d, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222941 start_ticks 2147222940
+# rts_ifstate_client_close_job_handler: client:0xfffff8026fd3da00 client close job done, cl name:mib2d, cl num:95
+# rts_ifstate_client_close_job_handler: client close tail after:cl mib2d(96):0xfffff8026fd3dc00 tail next:0xffffffff816d3d68
+# rts_ifstate_client_close_job_handler: Client-closing completed!  mib2d(95):0xfffff8026fd3da00  num:1ticks 2147222941 start_ticks 2147222940
+# Cleanup of dead ifstate client: mib2d done  Total dead ifstate client : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026fd3dc00, cl num:96, cl name:mib2d, next_state:0 ticks 2147222941 start_ticks 2147222940
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026fd3dc00, cl num:96,  cl name:mib2d, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222941 start_ticks 2147222940
+# rts_ifstate_client_close_job_handler: client:0xfffff8026fd3dc00 client close job done, cl name:mib2d, cl num:96
+# rts_ifstate_client_close_job_handler: Client-closing completed!  mib2d(96):0xfffff8026fd3dc00  num:0ticks 2147222941 start_ticks 2147222940
+# Cleanup of dead ifstate client: mib2d done  Total dead ifstate client : 0
+# ifstate client : oamd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f31aa00, cl num:104, cl name:oamd, next_state:0 ticks 2147222950 start_ticks 2147222950
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f31aa00, cl num:104,  cl name:oamd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222950 start_ticks 2147222950
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f31aa00 client close job done, cl name:oamd, cl num:104
+# rts_ifstate_client_close_job_handler: Client-closing completed!  oamd(104):0xfffff8026f31aa00  num:0ticks 2147222950 start_ticks 2147222950
+# Cleanup of dead ifstate client: oamd done  Total dead ifstate client : 0
+# ifstate client : pppd closing down  Total dead ifstate clients : 1
+# ifstate client : clksyncd closing down  Total dead ifstate clients : 2
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8020c2f4a00, cl num:115, cl name:pppd, next_state:0 ticks 2147222951 start_ticks 2147222951
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8020c2f4a00, cl num:115,  cl name:pppd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222951 start_ticks 2147222951
+# rts_ifstate_client_close_job_handler: client:0xfffff8020c2f4a00 client close job done, cl name:pppd, cl num:115
+# rts_ifstate_client_close_job_handler: client close tail after:cl clksyncd(116):0xfffff80223f0e400 tail next:0xffffffff816d3d68
+# rts_ifstate_client_close_job_handler: Client-closing completed!  pppd(115):0xfffff8020c2f4a00  num:1ticks 2147222951 start_ticks 2147222951
+# Cleanup of dead ifstate client: pppd done  Total dead ifstate client : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff80223f0e400, cl num:116, cl name:clksyncd, next_state:0 ticks 2147222951 start_ticks 2147222951
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff80223f0e400, cl num:116,  cl name:clksyncd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222952 start_ticks 2147222951
+# rts_ifstate_client_close_job_handler: client:0xfffff80223f0e400 client close job done, cl name:clksyncd, cl num:116
+# rts_ifstate_client_close_job_handler: Client-closing completed!  clksyncd(116):0xfffff80223f0e400  num:0ticks 2147222952 start_ticks 2147222951
+# Cleanup of dead ifstate client: clksyncd done  Total dead ifstate client : 0
+# ifstate client : ppmd closing down  Total dead ifstate clients : 1
+# ifstate client : apsd closing down  Total dead ifstate clients : 2
+# ifstate client : iccpd closing down  Total dead ifstate clients : 3
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8020c375a00, cl num:122, cl name:ppmd, next_state:0 ticks 2147222952 start_ticks 2147222952
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8020c375a00, cl num:122,  cl name:ppmd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222952 start_ticks 2147222952
+# rts_ifstate_client_close_job_handler: client:0xfffff8020c375a00 client close job done, cl name:ppmd, cl num:122
+# rts_ifstate_client_close_job_handler: client close tail after:cl apsd(113):0xfffff8026f684800 tail next:0xfffff8020c374800
+# rts_ifstate_client_close_job_handler: Client-closing completed!  ppmd(122):0xfffff8020c375a00  num:2ticks 2147222952 start_ticks 2147222952
+# Cleanup of dead ifstate client: ppmd done  Total dead ifstate client : 2
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f684800, cl num:113, cl name:apsd, next_state:0 ticks 2147222953 start_ticks 2147222952
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f684800, cl num:113,  cl name:apsd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222953 start_ticks 2147222952
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f684800 client close job done, cl name:apsd, cl num:113
+# rts_ifstate_client_close_job_handler: client close tail after:cl iccpd(112):0xfffff8020c374800 tail next:0xffffffff816d3d68
+# rts_ifstate_client_close_job_handler: Client-closing completed!  apsd(113):0xfffff8026f684800  num:1ticks 2147222953 start_ticks 2147222952
+# Cleanup of dead ifstate client: apsd done  Total dead ifstate client : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8020c374800, cl num:112, cl name:iccpd, next_state:0 ticks 2147222953 start_ticks 2147222952
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8020c374800, cl num:112,  cl name:iccpd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222953 start_ticks 2147222952
+# rts_ifstate_client_close_job_handler: client:0xfffff8020c374800 client close job done, cl name:iccpd, cl num:112
+# rts_ifstate_client_close_job_handler: Client-closing completed!  iccpd(112):0xfffff8020c374800  num:0ticks 2147222953 start_ticks 2147222952
+# Cleanup of dead ifstate client: iccpd done  Total dead ifstate client : 0
+# ifstate client : mspd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f229000, cl num:109, cl name:mspd, next_state:0xfffff8020c1e69c0 ticks 2147222955 start_ticks 2147222955
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f229000, cl num:109,  cl name:mspd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222955 start_ticks 2147222955
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f229000 client close job done, cl name:mspd, cl num:109
+# rts_ifstate_client_close_job_handler: Client-closing completed!  mspd(109):0xfffff8026f229000  num:0ticks 2147222955 start_ticks 2147222955
+# Cleanup of dead ifstate client: mspd done  Total dead ifstate client : 0
+# ifstate client : agentd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026fcb3400, cl num:97, cl name:agentd, next_state:0 ticks 2147222956 start_ticks 2147222956
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026fcb3400, cl num:97,  cl name:agentd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222956 start_ticks 2147222956
+# rts_ifstate_client_close_job_handler: client:0xfffff8026fcb3400 client close job done, cl name:agentd, cl num:97
+# rts_ifstate_client_close_job_handler: Client-closing completed!  agentd(97):0xfffff8026fcb3400  num:0ticks 2147222956 start_ticks 2147222956
+# Cleanup of dead ifstate client: agentd done  Total dead ifstate client : 0
+# ifstate client : rdd closing down  Total dead ifstate clients : 1
+# ifstate client : transportd closing down  Total dead ifstate clients : 2
+# ifstate client : sdk-vmmd closing down  Total dead ifstate clients : 3
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8020c2f4800, cl num:120, cl name:rdd, next_state:0xfffff8020c1e69c0 ticks 2147222957 start_ticks 2147222957
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8020c2f4800, cl num:120,  cl name:rdd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222957 start_ticks 2147222957
+# rts_ifstate_client_close_job_handler: client:0xfffff8020c2f4800 client close job done, cl name:rdd, cl num:120
+# rts_ifstate_client_close_job_handler: client close tail after:cl transportd(100):0xfffff8026fcb4400 tail next:0xfffff8020c2dd400
+# rts_ifstate_client_close_job_handler: Client-closing completed!  rdd(120):0xfffff8020c2f4800  num:2ticks 2147222958 start_ticks 2147222957
+# Cleanup of dead ifstate client: rdd done  Total dead ifstate client : 2
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026fcb4400, cl num:100, cl name:transportd, next_state:0xfffff8020c1e69c0 ticks 2147222958 start_ticks 2147222957
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026fcb4400, cl num:100,  cl name:transportd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222958 start_ticks 2147222957
+# rts_ifstate_client_close_job_handler: client:0xfffff8026fcb4400 client close job done, cl name:transportd, cl num:100
+# rts_ifstate_client_close_job_handler: client close tail after:cl sdk-vmmd(126):0xfffff8020c2dd400 tail next:0xffffffff816d3d68
+# rts_ifstate_client_close_job_handler: Client-closing completed!  transportd(100):0xfffff8026fcb4400  num:1ticks 2147222958 start_ticks 2147222957
+# Cleanup of dead ifstate client: transportd done  Total dead ifstate client : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8020c2dd400, cl num:126, cl name:sdk-vmmd, next_state:0 ticks 2147222958 start_ticks 2147222957
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8020c2dd400, cl num:126,  cl name:sdk-vmmd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222958 start_ticks 2147222957
+# rts_ifstate_client_close_job_handler: client:0xfffff8020c2dd400 client close job done, cl name:sdk-vmmd, cl num:126
+# rts_ifstate_client_close_job_handler: Client-closing completed!  sdk-vmmd(126):0xfffff8020c2dd400  num:0ticks 2147222958 start_ticks 2147222957
+# Cleanup of dead ifstate client: sdk-vmmd done  Total dead ifstate client : 0
+# ifstate client : kod closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f3bfe00, cl num:106, cl name:kod, next_state:0 ticks 2147222959 start_ticks 2147222959
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f3bfe00, cl num:106,  cl name:kod, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222959 start_ticks 2147222959
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f3bfe00 client close job done, cl name:kod, cl num:106
+# rts_ifstate_client_close_job_handler: Client-closing completed!  kod(106):0xfffff8026f3bfe00  num:0ticks 2147222959 start_ticks 2147222959
+# Cleanup of dead ifstate client: kod done  Total dead ifstate client : 0
+# ifstate client : pfed closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026fcb3c00, cl num:99, cl name:pfed, next_state:0xfffff8
+# 020c1e69c0 ticks 2147222962 start_ticks 2147222962
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026fcb3c00, cl num:99,  cl name:pfed, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222962 start_ticks 2147222962
+# rts_ifstate_client_close_job_handler: client:0xfffff8026fcb3c00 client close job done, cl name:pfed, cl num:99
+# rts_ifstate_client_close_job_handler: Client-closing completed!  pfed(99):0xfffff8026fcb3c00  num:0ticks 2147222962 start_ticks 2147222962
+# Cleanup of dead ifstate client: pfed done  Total dead ifstate client : 0
+# ifstate client : fsad closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff80223711400, cl num:114, cl name:fsad, next_state:0xfffff8020c1e69c0 ticks 2147222962 start_ticks 2147222962
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff80223711400, cl num:114,  cl name:fsad, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222962 start_ticks 2147222962
+# rts_ifstate_client_close_job_handler: client:0xfffff80223711400 client close job done, cl name:fsad, cl num:114
+# rts_ifstate_client_close_job_handler: Client-closing completed!  fsad(114):0xfffff80223711400  num:0ticks 2147222963 start_ticks 2147222962
+# Cleanup of dead ifstate client: fsad done  Total dead ifstate client : 0
+# ifstate client : appidd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8020c374c00, cl num:121, cl name:appidd, next_state:0 ticks 2147222967 start_ticks 2147222967
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8020c374c00, cl num:121,  cl name:appidd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222967 start_ticks 2147222967
+# rts_ifstate_client_close_job_handler: client:0xfffff8020c374c00 client close job done, cl name:appidd, cl num:121
+# rts_ifstate_client_close_job_handler: Client-closing completed!  appidd(121):0xfffff8020c374c00  num:0ticks 2147222967 start_ticks 2147222967
+# Cleanup of dead ifstate client: appidd done  Total dead ifstate client : 0
+# ifstate client : l2cpd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f1ad200, cl num:105, cl name:l2cpd, next_state:0xfffff8020c1e69c0 ticks 2147222968 start_ticks 2147222968
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f1ad200, cl num:105,  cl name:l2cpd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222968 start_ticks 2147222968
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f1ad200 client close job done, cl name:l2cpd, cl num:105
+# rts_ifstate_client_close_job_handler: Client-closing completed!  l2cpd(105):0xfffff8026f1ad200  num:0ticks 2147222968 start_ticks 2147222968
+# Cleanup of dead ifstate client: l2cpd done  Total dead ifstate client : 0
+# ifstate client : overlayd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f22be00, cl num:102, cl name:overlayd, next_state:0 ticks 2147222971 start_ticks 2147222971
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f22be00, cl num:102,  cl name:overlayd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222971 start_ticks 2147222971
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f22be00 client close job done, cl name:overlayd, cl num:102
+# rts_ifstate_client_close_job_handler: Client-closing completed!  overlayd(102):0xfffff8026f22be00  num:0ticks 2147222971 start_ticks 2147222971
+# Cleanup of dead ifstate client: overlayd done  Total dead ifstate client : 0
+# ifstate client : dcd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f229c00, cl num:108, cl name:dcd, next_state:0xfffff8020c1e69c0 ticks 2147222972 start_ticks 2147222972
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f229c00, cl num:108,  cl name:dcd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222972 start_ticks 2147222972
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f229c00 client close job done, cl name:dcd, cl num:108
+# rts_ifstate_client_close_job_handler: Client-closing completed!  dcd(108):0xfffff8026f229c00  num:0ticks 2147222972 start_ticks 2147222972
+# Cleanup of dead ifstate client: dcd done  Total dead ifstate client : 0
+# ifstate client : dfcd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f229800, cl num:110, cl name:dfcd, next_state:0xfffff8020c1e69c0 ticks 2147222983 start_ticks 2147222983
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f229800, cl num:110,  cl name:dfcd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222983 start_ticks 2147222983
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f229800 client close job done, cl name:dfcd, cl num:110
+# rts_ifstate_client_close_job_handler: Client-closing completed!  dfcd(110):0xfffff8026f229800  num:0ticks 2147222983 start_ticks 2147222983
+# Cleanup of dead ifstate client: dfcd done  Total dead ifstate client : 0
+# ifstate client : dfwd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f467e00, cl num:98, cl name:dfwd, next_state:0xfffff8020c1e69c0 ticks 2147222985 start_ticks 2147222985
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f467e00, cl num:98,  cl name:dfwd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222985 start_ticks 2147222985
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f467e00 client close job done, cl name:dfwd, cl num:98
+# rts_ifstate_client_close_job_handler: Client-closing completed!  dfwd(98):0xfffff8026f467e00  num:0ticks 2147222985 start_ticks 2147222985
+# Cleanup of dead ifstate client: dfwd done  Total dead ifstate client : 0
+# ifstate client : l2ald closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8020c2de200, cl num:61, cl name:l2ald, next_state:0xfffff8020c1e69c0 ticks 2147222987 start_ticks 2147222987
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8020c2de200, cl num:61,  cl name:l2ald, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222987 start_ticks 2147222987
+# rts_ifstate_client_close_job_handler: client:0xfffff8020c2de200 client close job done, cl name:l2ald, cl num:61
+# rts_ifstate_client_close_job_handler: Client-closing completed!  l2ald(61):0xfffff8020c2de200  num:0ticks 2147222988 start_ticks 2147222987
+# Cleanup of dead ifstate client: l2ald done  Total dead ifstate client : 0
+# ifstate client : dot1xd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f05be00, cl num:111, cl name:dot1xd, next_state:0xfffff8020c1e69c0 ticks 2147222990 start_ticks 2147222990
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f05be00, cl num:111,  cl name:dot1xd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147222990 start_ticks 2147222990
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f05be00 client close job done, cl name:dot1xd, cl num:111
+# rts_ifstate_client_close_job_handler: Client-closing completed!  dot1xd(111):0xfffff8026f05be00  num:0ticks 2147222990 start_ticks 2147222990
+# Cleanup of dead ifstate client: dot1xd done  Total dead ifstate client : 0
+# ifstate client : smid closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff80223f0ec00, cl num:117, cl name:smid, next_state:0 ticks 2147223215 start_ticks 2147223215
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff80223f0ec00, cl num:117,  cl name:smid, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147223215 start_ticks 2147223215
+# rts_ifstate_client_close_job_handler: client:0xfffff80223f0ec00 client close job done, cl name:smid, cl num:117
+# rts_ifstate_client_close_job_handler: Client-closing completed!  smid(117):0xfffff80223f0ec00  num:0ticks 2147223215 start_ticks 2147223215
+# Cleanup of dead ifstate client: smid done  Total dead ifstate client : 0
+# ifstate client : rpd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026fa3ee00, cl num:59, cl name:rpd, next_state:0 ticks 2147223970 start_ticks 2147223970
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026fa3ee00, cl num:59,  cl name:rpd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147223970 start_ticks 2147223970
+# rts_ifstate_client_close_job_handler: client:0xfffff8026fa3ee00 client close job done, cl name:rpd, cl num:59
+# rts_ifstate_client_close_job_handler: Client-closing completed!  rpd(59):0xfffff8026fa3ee00  num:0ticks 2147223970 start_ticks 2147223970
+# Cleanup of dead ifstate client: rpd done  Total dead ifstate client : 0
+# ifstate client : chassisd closing down  Total dead ifstate clients : 1
+# rts_ifstate_client_close_job_handler: PHASE 1 entered, client:0xfffff8026f22ae00, cl num:60, cl name:chassisd, next_state:0xfffff8020c1fd120 ticks 2147224965 start_ticks 2147224965
+# rts_ifstate_client_close_job_handler: PHASE 2 entered, client:0xfffff8026f22ae00, cl num:60,  cl name:chassisd, next_state:0xfffff8000945dea0, ifs_head:0xfffff8000945dea0 ticks 2147224965 start_ticks 2147224965
+# rts_ifstate_client_close_job_handler: client:0xfffff8026f22ae00 client close job done, cl name:chassisd, cl num:60
+# rts_ifstate_client_close_job_handler: Client-closing completed!  chassisd(60):0xfffff8026f22ae00  num:0ticks 2147224965 start_ticks 2147224965
+# Cleanup of dead ifstate client: chassisd done  Total dead ifstate client : 0
+# peer_input_pending_internal: 5652: peer class: 0, type: 17, index: 0, vksid: 0, state: 1 reported a so_error 54
+# peer_input_pending_internal: 5652: peer class: 0, type: 17, index: 0, vksid: 0, state: 1 reported a so_error 54
+# peer_inputs: 5914: VKS0 closing connection peer class: 0, type: 17, index: 0, vksid: 0, state: 1, err 5
+# peer_socket_close: peer 0x80000010 (type 17 index 0), so_error 54, snd sb_state 0x10, rcv sb_state 0x20
+# pfe_peer_update_mgmt_state: 245: class: 0, type: 17, index: 0, vksid: 0, old state Online new state Valid mastership 1
+# pfe_peer_set_timeout: setting reconnect timeout of 15 sec for peer type=17, index=0
+# tnp_delete_entry_and_update_with_backup deleting remote nb 0x00000010 hopcount 0 on ifd em3 for cid 0 from active neighbor table
+# TNPv3: deleting active remote neighbor entry 0x00000010 hopcount 0 from interface em3.
+# Waiting (max 60 seconds) for system process `vnlru' to stop... done
+# Waiting (max 60 seconds) for system process `bufdaemon' to stop... done
+# Waiting (max 60 seconds) for system process `syncer' to stop...
+# Syncing disks, vnodes remaining... 0 0 0 0 done
+# All buffers synced.
+# peer_proxy: 5073: Peer proxy(class: 0, type: 17, index: 0, vksid: 0, state: 1) is marked for the closing
+# Uptime: 6m0s
+# Khelp module "jsocket" can't unload until its refcount drops from 4 to 0.
+# Rebooting...
+# cpu_reset: Stopping other CPUs
+# 
+# Copyright (c) 1992-2016 The FreeBSD Project.
+# Copyright (c) 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994
+# 	The Regents of the University of California. All rights reserved.
+# FreeBSD is a registered trademark of The FreeBSD Foundation.
+# FreeBSD JNPR-11.0-20180816.8630ec5_builder_stable_11 #0 r356482+8630ec5(HEAD): Wed Aug 15 23:22:16 PDT 2018
+#     builder@feyrith.juniper.net:/volume/build/junos/occam/llvm/freebsd/stable_11/20180802.092200_builder_stable_11.8630ec5/obj/amd64/juniper/kernels/JNPR-AMD64-PRD/kernel amd64
+# Juniper clang version 3.7.1 (git@psd-tools-git01.juniper.net:tools-tot/clang 63f1303046145b90e850977ecc06ee582672ee5c) (git@psd-tools-git01.juniper.net:tools-tot/llvm e88f11d432a3b7e0176d4c32f391d467b7019e83) (based on LLVM 3.7.1)
+# VT(vga): text 80x25
+# CPU: QEMU Virtual CPU version 1.7.2 (1600.04-MHz K8-class CPU)
+#   Origin="GenuineIntel"  Id=0x663  Family=0x6  Model=0x6  Stepping=3
+#   Features=0x783fbfd<FPU,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,MMX,FXSR,SSE,SSE2>
+#   Features2=0x80802001<SSE3,CX16,POPCNT,HV>
+#   AMD Features=0x20100800<SYSCALL,NX,LM>
+#   AMD Features2=0x21<LAHF,ABM>
+#   TSC: P-state invariant
+# mtx_platform_early_bootinit: M/T/EX/SRX Series Early Boot Initialization
+# mtx_platform_set_re_type: vm_retype :RE-S-2X00x6
+# 
+# Using default hgcomm API hgcommdev_io_read
+# TVP mode:1
+# jnx_product_sub_type:1
+# jnx_vm_index:0
+# jnx_re_slotid:0
+# jnx_re_tissu:0
+# jnx_lc_issuboot:0
+# jnx_re_fastboot:0
+# TVP: Model Name read from HostOS is mx10001
+# jnx_product_sub_type:4
+# tvp modular platform 1 chas_max_fpc 2 router_max_fpc 2 VC enabled: 16 max_pfe_per_fpc: 1 cluster enabled 0
+# Event timer "LAPIC" quality 400
+# ACPI APIC Table: <BOCHS  BXPCAPIC>
+# FreeBSD/SMP: Multiprocessor System Detected: 5 CPUs
+# FreeBSD/SMP: 5 package(s)
+# random: entropy device external interface
+# random: <Fortuna> initialized
+# Security policy loaded: MAC/veriexec (mac_veriexec)
+# Security policy loaded: Junos MAC/SDK (mac_sdk)
+# Security policy loaded: JUNOS MAC/privcheck (mac_privcheck)
+# Security policy loaded: Junos MAC/fips (mac_fips)
+# MAC/veriexec fingerprint module loaded: SHA256
+# MAC/veriexec fingerprint module loaded: SHA384
+# MAC/veriexec fingerprint module loaded: SHA1
+# ioapic0 <Version 1.1> irqs 0-23 on motherboard
+# Creating PCI Scan thread
+# pcidev module loaded, 0 (null)
+# Initializing M/T/EX platform properties ..
+# Don't init dcf_ng_hw_token_init - bypassing the init
+# vtvga0: <VT VGA driver> on motherboard
+# ofwbus0: <Open Firmware Device Tree> on motherboard
+# fdtio0: <FDT I/O port space> on ofwbus0
+# fpga0: <RE system controller> port 0x191-0x198 on fdtio0
+# cryptosoft0: <software crypto> on motherboard
+# acpi0: <BOCHS BXPCRSDT> on motherboard
+# acpi0: Power Button (fixed)
+# cpu0: <ACPI CPU> on acpi0
+# cpu1: <ACPI CPU> on acpi0
+# cpu2: <ACPI CPU> on acpi0
+# cpu3: <ACPI CPU> on acpi0
+# cpu4: <ACPI CPU> on acpi0
+# atrtc0: <AT realtime clock> port 0x70-0x71,0x72-0x77 irq 8 on acpi0
+# Event timer "RTC" frequency 32768 Hz quality 0
+# hpet0: <High Precision Event Timer> iomem 0xfed00000-0xfed003ff on acpi0
+# Timecounter "HPET" frequency 100000000 Hz quality 950
+# Timecounter "ACPI-fast" frequency 3579545 Hz quality 900
+# acpi_timer0: <24-bit timer at 3.579545MHz> port 0xb008-0xb00b on acpi0
+# pcib0: <ACPI Host-PCI bridge> port 0xcf8-0xcff on acpi0
+# pci0: <ACPI PCI bus> on pcib0
+# isab0: <PCI-ISA bridge> at device 1.0 on pci0
+# isa0: <ISA bus> on isab0
+# atapci0: <Intel PIIX3 WDMA2 controller> port 0x1f0-0x1f7,0x3f6,0x170-0x177,0x376,0xc280-0xc28f at device 1.1 on pci0
+# ata0: <ATA channel> at channel 0 on atapci0
+# ata1: <ATA channel> at channel 1 on atapci0
+# summitcb_mstr0: <Summit Control Subsystem> mem 0xfe400000-0xfe7fffff irq 10 at device 2.0 on pci0
+# summit CBC PCIe Function-1 (Mastership block) attach
+# CB_FPGA0 map 0xfffff800fe400000: REG-0 = 0x28071709, REG-1 = 0x130400a4
+# CB_FPGA0 map 0xfffff800fe400000: REG-144 = 0x28071709, REG- = 0x130400a4
+# CB_FPGA0 map 0xfffff800fe400000: REG-146 = 0x00000000, REG- = 0x80210019
+# xhci0: <Intel Wellsburg USB 3.0 controller> mem 0xfe900000-0xfe90ffff irq 11 at device 3.0 on pci0
+# xhci0: 32 bytes context size, 64-bit DMA
+# usbus0 on xhci0
+# esb0: <i6300esb watchdog Driver, Version - 0.05> mem 0xfe910000-0xfe91000f at device 16.0 on pci0
+# virtio_pci0: <VirtIO PCI Network adapter> port 0xc1e0-0xc1ff mem 0xfe911000-0xfe911fff irq 10 at device 17.0 on pci0
+# vtnet0: <VirtIO Networking Adapter> on virtio_pci0
+# virtio_pci1: <VirtIO PCI Network adapter> port 0xc200-0xc21f mem 0xfe912000-0xfe912fff irq 10 at device 18.0 on pci0
+# vtnet1: <VirtIO Networking Adapter> on virtio_pci1
+# virtio_pci2: <VirtIO PCI Block adapter> port 0xc100-0xc13f mem 0xfe913000-0xfe913fff irq 11 at device 19.0 on pci0
+# vtblk0: <VirtIO Block Adapter> on virtio_pci2
+# vtblk0: 17408MB (35651712 512 byte sectors)
+# virtio_pci3: <VirtIO PCI Block adapter> port 0xc140-0xc17f mem 0xfe914000-0xfe914fff irq 10 at device 21.0 on pci0
+# vtblk1: <VirtIO Block Adapter> on virtio_pci3
+# vtblk1: 32768MB (67108864 512 byte sectors)
+# pci0: <old> at device 22.0 (no driver attached)
+# virtio_pci4: <VirtIO PCI SCSI adapter> port 0xc180-0xc1bf mem 0xfe916000-0xfe916fff irq 11 at device 23.0 on pci0
+# vtscsi0: <VirtIO SCSI Adapter> on virtio_pci4
+# virtio_pci5: <VirtIO PCI Network adapter> port 0xc220-0xc23f mem 0xfe917000-0xfe917fff irq 11 at device 28.0 on pci0
+# vtnet2: <VirtIO Networking Adapter> on virtio_pci5
+# virtio_pci6: <VirtIO PCI Network adapter> port 0xc240-0xc25f mem 0xfe918000-0xfe918fff irq 10 at device 29.0 on pci0
+# vtnet3: <VirtIO Networking Adapter> on virtio_pci6
+# virtio_pci7: <VirtIO PCI Entropy adapter> port 0xc260-0xc27f irq 10 at device 30.0 on pci0
+# vtrnd0: <VirtIO Entropy Adapter> on virtio_pci7
+# uart0: <16550 or compatible> port 0x3f8-0x3ff irq 4 on acpi0
+# uart0: console (9600,n,8,1)
+# uart0: [GIANT-LOCKED]
+# uart1: <16550 or compatible> port 0x2f8-0x2ff irq 3 on acpi0
+# uart1: [GIANT-LOCKED]
+# orm0: <ISA Option ROM> at iomem 0xeb800-0xeffff on isa0
+# uart2: <16550 or compatible> at port 0x3e8 irq 4 on isa0
+# uart2: [GIANT-LOCKED]
+# uart3: <16550 or compatible> at port 0x2e8 irq 3 on isa0
+# uart3: [GIANT-LOCKED]
+# Setting the peertype and VKS
+# Setting the product type to TVP
+# Initializing Kernel PVIDB.
+# pvidb_size=0
+# mt_product_prop_init: product_model = mx10001 mx10001
+# mt_product_prop_init: Initialising MX Early PVIDB len = 60840
+# Unified Services mode is turned off(0)
+# Initializing product: 217 ..
+# Setting up M/T interface operations and attributes
+# 
+# ure_set_prodinfo Setting PDK(0xfffff80004f7e780) vectors for Unified RE
+# md0: Preloaded image </packages/sets/active/boot/os-kernel/contents.izo> 8699904 bytes at 0xffffffff822cdf18
+# usbus0: 5.0Gbps Super Speed USB v3.0
+# Error: RE does not have MAC map for mac type 7 (ixlv), 0xffffffff821db248
+# Error: Could not set RE's IFD MAC for cplane 0
+# Error: RE does not have MAC map for mac type 6 (igb), 0xffffffff821db248
+# Error: Could not set RE's IFD MAC for cplane 1
+# failed to configure mac address for em3
+# failed to configure mac address for em4
+# can't re-use a leaf (pvidb_rootnode)!
+# Registering tcp_platform_dependent = tcp_handle_special_ports
+# ugen0.1: <0x8086> at usbus0
+# uhub0: <0x8086 XHCI root HUB, class 9/0, rev 3.00/1.00, addr 1> on usbus0
+# ada0 at ata0 bus 0 scbus0 target 1 lun 0
+# ada0: <QEMU HARDDISK 1.7.2> ATA-7 device
+# ada0: Serial Number QM00002
+# ada0: 16.700MB/s transfers (WDMA2, PIO 8192bytes)
+# ada0: 512MB (1048576 512 byte sectors)
+# ada1 at ata1 bus 0 scbus1 target 1 lun 0
+# ada1: <QEMU HARDDISK 1.7.2> ATA-7 device
+# ada1: Serial Number QM00004
+# ada1: 16.700MB/s transfers (WDMA2, PIO 8192bytes)
+# ada1: 128MB (262144 512 byte sectors)
+# SMP: AP CPU #1 Launched!
+# Kernel thread "wkupdaemon" (pid 54) exited prematurely.
+# SMP: AP CPU #3 Launched!
+# SMP: AP CPU #2 Launched!
+# SMP: AP CPU #4 Launched!
+# Trying to mount root from cd9660:/dev/md0.uzip []...
+# uhub0: 21 ports with 21 removable, self powered
+# random: unblocking device.
+# Renaming vtnet1 interface to em2 for TVP Summit
+# Renaming vtnet2 interface to em3 for TVP Summit
+# Renaming vtnet3 interface to em4 for TVP Summit
+# 
+# chi-bl-02> show version detail 
+# Hostname: chi-bl-02
+# Model: mx204
+# Junos: 18.3R1.9
+# JUNOS OS Kernel 64-bit  [20180816.8630ec5_builder_stable_11]
+# JUNOS OS libs [20180816.8630ec5_builder_stable_11]
+# JUNOS OS runtime [20180816.8630ec5_builder_stable_11]
+# JUNOS OS time zone information [20180816.8630ec5_builder_stable_11]
+# JUNOS network stack and utilities [20180920.185504_builder_junos_183_r1]
+# JUNOS libs [20180920.185504_builder_junos_183_r1]
+# JUNOS OS libs compat32 [20180816.8630ec5_builder_stable_11]
+# JUNOS OS 32-bit compatibility [20180816.8630ec5_builder_stable_11]
+# JUNOS libs compat32 [20180920.185504_builder_junos_183_r1]
+# JUNOS runtime [20180920.185504_builder_junos_183_r1]
+# Junos vmguest package [20180920.185504_builder_junos_183_r1]
+# JUNOS sflow mx [20180920.185504_builder_junos_183_r1]
+# JUNOS py extensions [20180920.185504_builder_junos_183_r1]
+# JUNOS py base [20180920.185504_builder_junos_183_r1]
+# JUNOS OS vmguest [20180816.8630ec5_builder_stable_11]
+# JUNOS OS crypto [20180816.8630ec5_builder_stable_11]
+# JUNOS na telemetry [18.3R1.9]
+# JUNOS mx libs compat32 [20180920.185504_builder_junos_183_r1]
+# JUNOS mx runtime [20180920.185504_builder_junos_183_r1]
+# JUNOS common platform support [20180920.185504_builder_junos_183_r1]
+# JUNOS Openconfig [18.3R1.9]
+# JUNOS mtx network modules [20180920.185504_builder_junos_183_r1]
+# JUNOS modules [20180920.185504_builder_junos_183_r1]
+# JUNOS mx modules [20180920.185504_builder_junos_183_r1]
+# JUNOS mx libs [20180920.185504_builder_junos_183_r1]
+# JUNOS mtx Data Plane Crypto Support [20180920.185504_builder_junos_183_r1]
+# JUNOS daemons [20180920.185504_builder_junos_183_r1]
+# JUNOS mx daemons [20180920.185504_builder_junos_183_r1]
+# JUNOS Services URL Filter package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services TLB Service PIC package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Telemetry [20180920.185504_builder_junos_183_r1]
+# JUNOS Services SSL [20180920.185504_builder_junos_183_r1]
+# JUNOS Services SOFTWIRE [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Stateful Firewall [20180920.185504_builder_junos_183_r1]
+# JUNOS Services RPM [20180920.185504_builder_junos_183_r1]
+# JUNOS Services PCEF package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services NAT [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Mobile Subscriber Service Container package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services MobileNext Software package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Logging Report Framework package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services LL-PDF Container package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Jflow Container package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Deep Packet Inspection package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services IPSec [20180920.185504_builder_junos_183_r1]
+# JUNOS Services IDS [20180920.185504_builder_junos_183_r1]
+# JUNOS IDP Services [20180920.185504_builder_junos_183_r1]
+# JUNOS Services HTTP Content Management package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Flowd MS-MPC Software package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Crypto [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Captive Portal and Content Delivery Container package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services COS [20180920.185504_builder_junos_183_r1]
+# JUNOS AppId Services [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Application Level Gateways [20180920.185504_builder_junos_183_r1]
+# JUNOS Services AACL Container package [20180920.185504_builder_junos_183_r1]
+# JUNOS SDN Software Suite [20180920.185504_builder_junos_183_r1]
+# JUNOS Extension Toolkit [20180920.185504_builder_junos_183_r1]
+# JUNOS Packet Forwarding Engine Support (wrlinux) [20180920.185504_builder_junos_183_r1]
+# JUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20180920.185504_builder_junos_183_r1]
+# JUNOS Packet Forwarding Engine Support (M/T Common) [20180920.185504_builder_junos_183_r1]
+# JUNOS Packet Forwarding Engine Support (MX Common) [20180920.185504_builder_junos_183_r1]
+# JUNOS J-Insight [20180920.185504_builder_junos_183_r1]
+# JUNOS jfirmware [20180920.185504_builder_junos_183_r1]
+# JUNOS Online Documentation [20180920.185504_builder_junos_183_r1]
+# JUNOS jail runtime [20180816.8630ec5_builder_stable_11]
+# KERNEL JNPR-11.0-20180816.8630ec5_builder_stable_11 #0 r356482+8630ec5(HEAD) built by 
+# MGD release 18.3R1.9 built by builder on 2018-09-20 23:22:54 UTC
+# CLI release 18.3R1.9 built by builder on 2018-09-20 21:43:05 UTC
+# JLAUNCHD release 18.3R1.9 built by builder on 2018-09-20 21:36:08 UTC
+# RPD release 18.3R1.9 built by builder on 2018-09-20 23:43:01 UTC
+# CHASSISD release 18.3R1.9 built by builder on 2018-09-20 22:49:02 UTC
+# DFWD release 18.3R1.9 built by builder on 2018-09-20 22:24:02 UTC
+# DCD release 18.3R1.9 built by builder on 2018-09-20 22:48:58 UTC
+# SNMPD release 18.3R1.9 built by builder on 2018-09-20 22:46:07 UTC
+# ALARM-MGMTD release 18.3R1.9 built by builder on 2018-09-20 22:46:05 UTC
+# MIB2D release 18.3R1.9 built by builder on 2018-09-20 22:50:57 UTC
+# APSD release 18.3R1.9 built by builder on 2018-09-20 22:23:55 UTC
+# VRRPD release 18.3R1.9 built by builder on 2018-09-20 22:54:38 UTC
+# ALARMD release 18.3R1.9 built by builder on 2018-09-20 22:23:52 UTC
+# PFED release 18.3R1.9 built by builder on 2018-09-20 22:51:06 UTC
+# AGENTD release 18.3R1.9 built by builder on 2018-09-20 22:55:37 UTC
+# CRAFTD release 18.3R1.9 built by builder on 2018-09-20 22:23:58 UTC
+# SAMPLED release 18.3R1.9 built by builder on 2018-09-20 22:25:21 UTC
+# SRRD release 18.3R1.9 built by builder on 2018-09-20 22:18:01 UTC
+# JFLOWD release 18.3R1.9 built by builder on 2018-09-20 22:22:35 UTC
+# ILMID release 18.3R1.9 built by builder on 2018-09-20 22:24:02 UTC
+# RMOPD release 18.3R1.9 built by builder on 2018-09-20 22:49:29 UTC
+# COSD release 18.3R1.9 built by builder on 2018-09-20 22:26:20 UTC
+# FSAD release 18.3R1.9 built by builder on 2018-09-20 22:16:53 UTC
+# IRSD release 18.3R1.9 built by builder on 2018-09-20 22:21:47 UTC
+# FUD release 18.3R1.9 built by builder on 2018-09-20 22:17:04 UTC
+# RTSPD release 18.3R1.9 built by builder on 2018-09-20 21:36:46 UTC
+# smartd 6.4 2015-06-04 r4109 [FreeBSD JNPR-11.0-20180816.8630ec5_buil amd64] Junos Build
+# Copyright (C) 2002-15, Bruce Allen, Christian Franke, www.smartmontools.org
+# SPD release 18.3R1.9 built by builder on 2018-09-20 22:44:59 UTC
+# JL2TPD release 18.3R1.9 built by builder on 2018-09-20 22:50:10 UTC
+# JPPPOED release 18.3R1.9 built by builder on 2018-09-20 22:24:05 UTC
+# RDD release 18.3R1.9 built by builder on 2018-09-20 21:46:01 UTC
+# PPPD release 18.3R1.9 built by builder on 2018-09-20 22:51:16 UTC
+# DFCD release 18.3R1.9 built by builder on 2018-09-20 22:24:00 UTC
+# LACPD release 18.3R1.9 built by builder on 2018-09-20 22:50:29 UTC
+# LFMD release 18.3R1.9 built by builder on 2018-09-20 22:24:15 UTC
+# OAMD release 18.3R1.9 built by builder on 2018-09-20 22:24:36 UTC
+# TNETD release 18.3R1.9 built by builder on 2018-09-20 21:36:44 UTC
+# CFMD release 18.3R1.9 built by builder on 2018-09-20 22:23:55 UTC
+# JDHCPD release 18.3R1.9 built by builder on 2018-09-20 22:50:03 UTC
+# JSAVALD release 18.3R1.9 built by builder on 2018-09-20 22:21:23 UTC
+# PSSD release 18.3R1.9 built by builder on 2018-09-20 21:45:59 UTC
+# SSD release 18.3R1.9 built by builder on 2018-09-20 21:49:03 UTC
+# MSPD release 18.3R1.9 built by builder on 2018-09-20 21:45:59 UTC
+# AUTHD release 18.3R1.9 built by builder on 2018-09-20 22:49:23 UTC
+# PMOND release 18.3R1.9 built by builder on 2018-09-20 21:45:13 UTC
+# AUTOCONFD release 18.3R1.9 built by builder on 2018-09-20 22:20:24 UTC
+# BBE-SMGD release 18.3R1.9 built by builder on 2018-09-20 22:55:46 UTC
+# JDIAMETERD release 18.3R1.9 built by builder on 2018-09-20 22:17:17 UTC
+# BDBREPD release 18.3R1.9 built by builder on 2018-09-20 21:45:36 UTC
+# APPIDD release 18.3R1.9 built by builder on 2018-09-20 22:19:43 UTC
+# JPPPD release 18.3R1.9 built by builder on 2018-09-20 22:55:55 UTC
+# JSSCD release 18.3R1.9 built by builder on 2018-09-20 22:20:28 UTC
+# ICCPD release 18.3R1.9 built by builder on 2018-09-20 21:45:43 UTC
+# MCLAG-CFGCHKD release 18.3R1.9 built by builder on 2018-09-20 22:14:47 UTC
+# SHM-RTSDBD release 18.3R1.9 built by builder on 2018-09-20 22:22:42 UTC
+# DATAPATH-TRACED release 18.3R1.9 built by builder on 2018-09-20 21:45:38 UTC
+# CPCDD release 18.3R1.9 built by builder on 2018-09-20 22:20:27 UTC
+# SMID release 18.3R1.9 built by builder on 2018-09-20 22:54:18 UTC
+# SMIHELPERD release 18.3R1.9 built by builder on 2018-09-20 22:25:24 UTC
+# JDDOSD release 18.3R1.9 built by builder on 2018-09-20 22:20:28 UTC
+# TRANSPORTD release 18.3R1.9 built by builder on 2018-09-20 22:25:26 UTC
+# CLKSYNCD release 18.3R1.9 built by builder on 2018-09-20 22:26:09 UTC
+# srd release 18.3R1.9 built by builder on 2018-09-20 22:25:25 UTC
+# SDK-VMMD release 18.3R1.9 built by builder on 2018-09-20 22:25:24 UTC
+# GSTATD release 18.3R1.9 built by builder on 2018-09-20 21:37:40 UTC
+# SFLOWD release 18.3R1.9 built by builder on 2018-09-20 22:21:54 UTC
+# KOD release 18.3R1.9 built by builder on 2018-09-20 22:55:58 UTC
+# DOT1XD release 18.3R1.9 built by builder on 2018-09-20 22:22:58 UTC
+# ESSMD release 18.3R1.9 built by builder on 2018-09-20 22:20:25 UTC
+# VMOND release 18.3R1.9 built by builder on 2018-09-20 22:25:40 UTC
+# BBE-MIBD release 18.3R1.9 built by builder on 2018-09-20 22:26:08 UTC
+# NET-MONITORD release 18.3R1.9 built by builder on 2018-09-20 22:26:21 UTC
+# BBE-STATSD release 18.3R1.9 built by builder on 2018-09-20 22:55:41 UTC
+# TRAFFIC-DIRD release 18.3R1.9 built by builder on 2018-09-20 22:25:26 UTC
+# JINSIGHTD release 18.3R1.9 built by builder on 2018-09-20 22:48:40 UTC
+# TCPFWDD release 18.3R1.9 built by builder on 2018-09-20 22:19:31 UTC
+# RDMD release 18.3R1.9 built by builder on 2018-09-20 22:20:31 UTC
+# PPMD release 18.3R1.9 built by builder on 2018-09-20 22:23:47 UTC
+# LMPD release 18.3R1.9 built by builder on 2018-09-20 21:43:01 UTC
+# LRMUXD release 18.3R1.9 built by builder on 2018-09-20 22:50:50 UTC
+# PGMD release 18.3R1.9 built by builder on 2018-09-20 21:43:07 UTC
+# BFDD release 18.3R1.9 built by builder on 2018-09-20 22:23:47 UTC
+# SDXD release 18.3R1.9 built by builder on 2018-09-20 21:42:51 UTC
+# AUDITD release 18.3R1.9 built by builder on 2018-09-20 22:44:07 UTC
+# L2ALD release 18.3R1.9 built by builder on 2018-09-20 22:48:04 UTC
+# EVENTD release 18.3R1.9 built by builder on 2018-09-20 22:49:58 UTC
+# L2CPD release 18.3R1.9 built by builder on 2018-09-20 22:50:26 UTC
+# ANCPD release 18.3R1.9 built by builder on 2018-09-20 22:49:48 UTC
+# MCSNOOPD release 18.3R1.9 built by builder on 2018-09-20 22:50:51 UTC
+# MPLSOAMD release 18.3R1.9 built by builder on 2018-09-20 22:17:24 UTC
+# JNUD release 18.3R1.9 built by builder on 2018-09-20 22:55:36 UTC
+# WEB-API release 18.3R1.9 built by builder on 2018-09-20 21:30:27 UTC
+# JSD release 18.3R1.9 built by builder on 2018-09-20 22:48:40 UTC
+# UI-PUBD release 18.3R1.9 built by builder on 2018-09-20 22:15:00 UTC
+# MGD-API release 18.3R1.9 built by builder on 2018-09-20 22:49:35 UTC
+# PCCD release 18.3R1.9 built by builder on 2018-09-20 22:26:26 UTC
+# OVERLAYD release 18.3R1.9 built by builder on 2018-09-20 22:14:53 UTC
+# NTAD release 18.3R1.9 built by builder on 2018-09-20 21:43:01 UTC
+# SDPD release 18.3R1.9 built by builder on 2018-09-20 22:30:30 UTC
+# SPMD release 18.3R1.9 built by builder on 2018-09-20 22:26:30 UTC
+# SCPD release 18.3R1.9 built by builder on 2018-09-20 22:30:26 UTC
+# VCCPD release 18.3R1.9 built by builder on 2018-09-20 22:25:53 UTC
+# OVSDBD release 18.3R1.9 built by builder on 2018-09-20 22:14:42 UTC
+# OPENFLOWD release 18.3R1.9 built by builder on 2018-09-20 22:22:47 UTC
+# VGD release 18.3R1.9 built by builder on 2018-09-20 22:14:41 UTC
+# KMD release 18.3R1.9 built by builder on 2018-09-20 22:48:43 UTC
+# GKMD release 18.3R1.9 built by builder on 2018-09-20 22:23:00 UTC
+# PKID release 18.3R1.9 built by builder on 2018-09-20 22:23:49 UTC
+# SENDD release 18.3R1.9 built by builder on 2018-09-20 21:45:34 UTC
+# base-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:41:57 UTC
+# jroute-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:42:50 UTC
+# jkernel-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:45:21 UTC
+# aaad-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:42:24 UTC
+# ancpd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:42:30 UTC
+# appsecure-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:34 UTC
+# aprobe-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:01 UTC
+# apsd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:36 UTC
+# authd_cmd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:05 UTC
+# autoconfd_cmd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:42:30 UTC
+# cfm-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:06 UTC
+# chassis_cmd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:43:57 UTC
+# clksyncd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:10 UTC
+# collector-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:43:36 UTC
+# cos_cmd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:43:52 UTC
+# cpcdd_cmd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:03 UTC
+# dcd_cmd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:43:45 UTC
+# demuxd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:03 UTC
+# dfcd_cmd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:04 UTC
+# dot1xd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:42:02 UTC
+# dyn-sess-prof-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:10 UTC
+# elmi-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:11 UTC
+# essmd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:42:42 UTC
+# forwarding_options_cmd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:13 UTC
+# fsad-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:32 UTC
+# gres-test-point-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:14 UTC
+# httpd_cmd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:16 UTC
+# iccp_cmd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:17 UTC
+# ilmid-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:18 UTC
+# jappid-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:43:44 UTC
+# jcrypto-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:41:53 UTC
+# jcrypto_junos-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:43:36 UTC
+# jddosd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:48:01 UTC
+# jdiameterd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:42:16 UTC
+# jdocs-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:42:28 UTC
+# jidpd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:43:35 UTC
+# jkernel_junos-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:42:31 UTC
+# jpppd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:43:33 UTC
+# jroute_junos-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:19 UTC
+# l2ald-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:41:54 UTC
+# lldp-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:20 UTC
+# lrf-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:43:37 UTC
+# macsec-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:42:10 UTC
+# mclag_cfgchk_cmd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:19 UTC
+# mcsnoop-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:26 UTC
+# mo-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:37 UTC
+# mobiled-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:42:33 UTC
+# pccd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:43:55 UTC
+# pppd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:33 UTC
+# pppoed-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:42:42 UTC
+# r2cpd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:47:48 UTC
+# rdd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:21 UTC
+# rdmd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:43:34 UTC
+# repd_cmd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:22 UTC
+# rmpsd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:47:48 UTC
+# scpd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:23 UTC
+# sdpd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:24 UTC
+# services-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:42:24 UTC
+# sflow-service-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:42:12 UTC
+# spmd_common-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:24 UTC
+# srd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:33 UTC
+# stp-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:28 UTC
+# subinfo-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:25 UTC
+# tcpfwdd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:43:33 UTC
+# traffic-dird-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:27 UTC
+# transportd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:28 UTC
+# url-filterd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:44:31 UTC
+# vgd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:41:42 UTC
+# virtualchassis-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:43:49 UTC
+# vlans-ng-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:41:47 UTC
+# openflowd-actions-dd release 18.3R1.9 built by builder on 2018-09-20 21:41:39 UTC
+#
+# chi-bl-02> show version invoke-on other-routing-engine 
+# Hostname: chi-bl-02
+# Model: mx204
+# Junos: 18.3R1.9
+# JUNOS OS Kernel 64-bit  [20180816.8630ec5_builder_stable_11]
+# JUNOS OS libs [20180816.8630ec5_builder_stable_11]
+# JUNOS OS runtime [20180816.8630ec5_builder_stable_11]
+# JUNOS OS time zone information [20180816.8630ec5_builder_stable_11]
+# JUNOS network stack and utilities [20180920.185504_builder_junos_183_r1]
+# JUNOS libs [20180920.185504_builder_junos_183_r1]
+# JUNOS OS libs compat32 [20180816.8630ec5_builder_stable_11]
+# JUNOS OS 32-bit compatibility [20180816.8630ec5_builder_stable_11]
+# JUNOS libs compat32 [20180920.185504_builder_junos_183_r1]
+# JUNOS runtime [20180920.185504_builder_junos_183_r1]
+# Junos vmguest package [20180920.185504_builder_junos_183_r1]
+# JUNOS sflow mx [20180920.185504_builder_junos_183_r1]
+# JUNOS py extensions [20180920.185504_builder_junos_183_r1]
+# JUNOS py base [20180920.185504_builder_junos_183_r1]
+# JUNOS OS vmguest [20180816.8630ec5_builder_stable_11]
+# JUNOS OS crypto [20180816.8630ec5_builder_stable_11]
+# JUNOS na telemetry [18.3R1.9]
+# JUNOS mx libs compat32 [20180920.185504_builder_junos_183_r1]
+# JUNOS mx runtime [20180920.185504_builder_junos_183_r1]
+# JUNOS common platform support [20180920.185504_builder_junos_183_r1]
+# JUNOS Openconfig [18.3R1.9]
+# JUNOS mtx network modules [20180920.185504_builder_junos_183_r1]
+# JUNOS modules [20180920.185504_builder_junos_183_r1]
+# JUNOS mx modules [20180920.185504_builder_junos_183_r1]
+# JUNOS mx libs [20180920.185504_builder_junos_183_r1]
+# JUNOS mtx Data Plane Crypto Support [20180920.185504_builder_junos_183_r1]
+# JUNOS daemons [20180920.185504_builder_junos_183_r1]
+# JUNOS mx daemons [20180920.185504_builder_junos_183_r1]
+# JUNOS Services URL Filter package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services TLB Service PIC package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Telemetry [20180920.185504_builder_junos_183_r1]
+# JUNOS Services SSL [20180920.185504_builder_junos_183_r1]
+# JUNOS Services SOFTWIRE [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Stateful Firewall [20180920.185504_builder_junos_183_r1]
+# JUNOS Services RPM [20180920.185504_builder_junos_183_r1]
+# JUNOS Services PCEF package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services NAT [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Mobile Subscriber Service Container package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services MobileNext Software package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Logging Report Framework package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services LL-PDF Container package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Jflow Container package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Deep Packet Inspection package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services IPSec [20180920.185504_builder_junos_183_r1]
+# JUNOS Services IDS [20180920.185504_builder_junos_183_r1]
+# JUNOS IDP Services [20180920.185504_builder_junos_183_r1]
+# JUNOS Services HTTP Content Management package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Flowd MS-MPC Software package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Crypto [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Captive Portal and Content Delivery Container package [20180920.185504_builder_junos_183_r1]
+# JUNOS Services COS [20180920.185504_builder_junos_183_r1]
+# JUNOS AppId Services [20180920.185504_builder_junos_183_r1]
+# JUNOS Services Application Level Gateways [20180920.185504_builder_junos_183_r1]
+# JUNOS Services AACL Container package [20180920.185504_builder_junos_183_r1]
+# JUNOS SDN Software Suite [20180920.185504_builder_junos_183_r1]
+# JUNOS Extension Toolkit [20180920.185504_builder_junos_183_r1]
+# JUNOS Packet Forwarding Engine Support (wrlinux) [20180920.185504_builder_junos_183_r1]
+# JUNOS Packet Forwarding Engine Support (MX/EX92XX Common) [20180920.185504_builder_junos_183_r1]
+# JUNOS Packet Forwarding Engine Support (M/T Common) [20180920.185504_builder_junos_183_r1]
+# JUNOS Packet Forwarding Engine Support (MX Common) [20180920.185504_builder_junos_183_r1]
+# JUNOS J-Insight [20180920.185504_builder_junos_183_r1]
+# JUNOS jfirmware [20180920.185504_builder_junos_183_r1]
+# JUNOS Online Documentation [20180920.185504_builder_junos_183_r1]
+# JUNOS jail runtime [20180816.8630ec5_builder_stable_11]
+#
+# chi-bl-02> show configuration 
+version 18.3R1.9;
+groups {
+    CG_SLT_OAM-CP-FILTER {
+        interfaces {
+            lo0 {
+                unit <*> {
+                    family inet {
+                        filter {
+                            input-list [ ACCEPT_NETWORK_SERVICES_V4 ACCEPT_MGMT_SERVICES_V4 DISCARD_ALL_V4 ];
+                        }
+                    }
+                    family inet6 {
+                        filter {
+                            input-list [ ACCEPT_NETWORK_SERVICES_V6 ACCEPT_MGMT_SERVICES_V6 DISCARD_ALL_V6 ];
+                        }
+                    }
+                }
+            }
+        }
+        policy-options {
+            prefix-list BGP_NEIGHBORS_V4 {
+                apply-path "protocols bgp group <*> neighbor <*.*.*.*>";
+            }
+            prefix-list BGP_NEIGHBORS_VRF_V4 {
+                apply-path "routing-instances <*> protocols bgp group <*> neighbor <*.*.*.*>";
+            }
+            prefix-list LOCAL_IPV4 {
+                apply-path "interfaces <*> unit <*> family inet address <*.*.*.*>";
+            }
+            prefix-list MCAST_ALL_ROUTERS_V4 {
+                224.0.0.2/32;
+            }
+            prefix-list LOCAL_FXP0_V4 {
+                apply-path "interfaces fxp0 unit <*> family inet address <*.*.*.*>";
+            }
+            prefix-list LOOPBACKS_V4 {
+                apply-path "interfaces lo0 unit 0 family inet address <*.*.*.*>";
+            }
+            prefix-list VRRP_V4 {
+                224.0.0.18/32;
+            }
+            prefix-list DNS_SERVERS_V4 {
+                apply-path "system name-server <*.*.*.*>";
+            }
+            prefix-list NTP_SERVERS_V4 {
+                apply-path "system ntp server <*.*.*.*>";
+            }
+            prefix-list SNMP_CLIENT_LISTS_V4 {
+                apply-path "snmp client-list <*> <*.*.*.*>";
+            }
+            prefix-list SNMP_TRAP_GROUP_V4 {
+                apply-path "snmp trap-group <*> targets <*.*.*.*>";
+            }
+            prefix-list RADIUS_SERVERS_V4 {
+                apply-path "system radius-server <*.*.*.*>";
+            }
+            prefix-list MGMT_NETS_V4 {
+                10.0.1.0/24;
+                10.100.19.20/32;
+                10.100.19.21/32;
+                10.100.137.89/32;
+                10.115.137.89/32;
+                10.250.137.89/32;
+                10.245.2.0/24;
+                172.29.0.0/16;
+                172.30.0.0/16;
+                38.104.2.203/32;
+                185.37.220.222/32;
+                62.23.57.186/32;
+                81.93.181.219/32;
+                149.97.132.238/32;
+            }
+            prefix-list OSPF_V4 {
+                224.0.0.5/32;
+                224.0.0.6/32;
+            }
+            prefix-list LOCAL_IPV6 {
+                apply-path "interfaces <*> unit <*> family inet6 address <*:*:*>";
+            }
+            prefix-list MCAST_ALL_ROUTERS_V6 {
+                ff02::2/128;
+            }
+            prefix-list LOCAL_FXP0_V6 {
+                apply-path "interfaces fxp0 unit <*> family inet6 address <*:*:*>";
+            }
+            prefix-list LOOPBACKS_V6 {
+                apply-path "interfaces lo0 unit 0 family inet6 address <*:*:*>";
+            }
+            prefix-list BGP_NEIGHBORS_V6 {
+                apply-path "protocols bgp group <*> neighbor <*:*:*>";
+            }
+            prefix-list VRRP_V6 {
+                ff02::12/128;
+            }
+            prefix-list MGMT_NETS_V6;
+            prefix-list BGP_NEIGHBORS_VRF_V6 {
+                apply-path "routing-instances <*> protocols bgp group <*> neighbor <*:*:*>";
+            }
+        }
+        firewall {
+            family inet {
+                filter ACCEPT_BGP_V4 {
+                    term ACCEPT_BGP_V4 {
+                        from {
+                            source-prefix-list {
+                                BGP_NEIGHBORS_V4;
+                                BGP_NEIGHBORS_VRF_V4;
+                            }
+                            destination-prefix-list {
+                                LOCAL_IPV4;
+                            }
+                            protocol tcp;
+                            port bgp;
+                        }
+                        then {
+                            count ACCEPT_BGP_V4;
+                            accept;
+                        }
+                    }
+                }
+                filter ACCEPT_BFD_V4 {
+                    term ACCEPT_BFD_V4 {
+                        from {
+                            destination-prefix-list {
+                                LOCAL_IPV4;
+                            }
+                            protocol udp;
+                            port [ 3784 4784 ];
+                        }
+                        then {
+                            count ACCEPT_BFD_V4;
+                            accept;
+                        }
+                    }
+                }
+                filter ACCEPT_VRRP_V4 {
+                    term ACCEPT_VRRP_V4 {
+                        from {
+                            source-prefix-list {
+                                LOCAL_IPV4;
+                            }
+                            destination-prefix-list {
+                                VRRP_V4;
+                            }
+                            protocol [ vrrp ah ];
+                        }
+                        then {
+                            count ACCEPT_VRRP_V4;
+                            accept;
+                        }
+                    }
+                }
+                filter ACCEPT_ICMP_V4 {
+                    term NO_ICMP_FRAGMENTS_V4 {
+                        from {
+                            is-fragment;
+                            protocol icmp;
+                        }
+                        then {
+                            count NO_ICMP_FRAGMENTS_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                    term ACCEPT_ICMP_V4 {
+                        from {
+                            protocol icmp;
+                        }
+                        then {
+                            policer 5MB_CP_POLICER;
+                            count ACCEPT_ICMP_V4;
+                            accept;
+                        }
+                    }
+                }
+                filter ACCEPT_TRACERT_V4 {
+                    term ACCEPT_TRACERT_UDP_V4 {
+                        from {
+                            destination-prefix-list {
+                                LOCAL_IPV4;
+                            }
+                            protocol udp;
+                            ttl 1;
+                            destination-port 33435-33450;
+                        }
+                        then {
+                            policer 5MB_CP_POLICER;
+                            count ACCEPT_TRACERT_UDP_V4;
+                            accept;
+                        }
+                    }
+                    term ACCEPT_TRACERT_ICMP_V4 {
+                        from {
+                            destination-prefix-list {
+                                LOCAL_IPV4;
+                            }
+                            protocol icmp;
+                            ttl 1;
+                            icmp-type [ echo-request timestamp time-exceeded ];
+                        }
+                        then {
+                            policer 5MB_CP_POLICER;
+                            count ACCEPT_TRACERT_ICMP_V4;
+                            accept;
+                        }
+                    }
+                }
+                filter ACCEPT_GRE_V4 {
+                    term ACCEPT_GRE_V4 {
+                        from {
+                            protocol gre;
+                        }
+                        then {
+                            count ACCEPT_GRE_V4;
+                            log;
+                            accept;
+                        }
+                    }
+                }
+                filter DISCARD_ALL_V4 {
+                    term DISCARD_IP_OPTIONS_V4 {
+                        from {
+                            ip-options any;
+                        }
+                        then {
+                            count DISCARD_IP_OPTIONS_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                    term DISCARD_TCP_V4 {
+                        from {
+                            protocol tcp;
+                        }
+                        then {
+                            count DISCARD_TCP_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                    term DISCARD_UDP_V4 {
+                        from {
+                            protocol udp;
+                        }
+                        then {
+                            count DISCARD_UDP_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                    term DISCARD_ICMP_V4 {
+                        from {
+                            protocol icmp;
+                        }
+                        then {
+                            count DISCARD_ICMP_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                    term DISCARD_UNKNOWN_V4 {
+                        then {
+                            count DISCARD_UNKNOWN_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                }
+                filter ACCEPT_MGMT_SERVICES_V4 {
+                    term ACCEPT_SSH_V4 {
+                        filter ACCEPT_SSH_V4;
+                    }
+                    term ACCEPT_NETCONF_V4 {
+                        filter ACCEPT_NETCONF_V4;
+                    }
+                    term ACCEPT_NTP_V4 {
+                        filter ACCEPT_NTP_V4;
+                    }
+                    term ACCEPT_DNS_V4 {
+                        filter ACCEPT_DNS_V4;
+                    }
+                    term ACCEPT_TRACERT {
+                        filter ACCEPT_TRACERT_V4;
+                    }
+                    term ACCEPT_GRE_V4 {
+                        filter ACCEPT_GRE_V4;
+                    }
+                    term ACCEPT_ICMP_V4 {
+                        filter ACCEPT_ICMP_V4;
+                    }
+                    term ACCEPT_SNMP_V4 {
+                        filter ACCEPT_SNMP_V4;
+                    }
+                    term ACCEPT_RADIUS_V4 {
+                        filter ACCEPT_RADIUS_V4;
+                    }
+                }
+                filter ACCEPT_NETWORK_SERVICES_V4 {
+                    term ACCEPT_BGP_V4 {
+                        filter ACCEPT_BGP_V4;
+                    }
+                    term ACCEPT_BFD_V4 {
+                        filter ACCEPT_BFD_V4;
+                    }
+                    term ACCEPT_VRRP_V4 {
+                        filter ACCEPT_VRRP_V4;
+                    }
+                    term ACCEPT_OSPF_V4 {
+                        filter ACCEPT_OSPF_V4;
+                    }
+                    term ACCEPT_LDP_V4 {
+                        filter ACCEPT_LDP_V4;
+                    }
+                }
+                filter ACCEPT_SSH_V4 {
+                    term ACCEPT_SSH_V4 {
+                        from {
+                            source-prefix-list {
+                                MGMT_NETS_V4;
+                            }
+                            protocol tcp;
+                            destination-port ssh;
+                        }
+                        then {
+                            count ACCEPT_SSH_V4;
+                            accept;
+                        }
+                    }
+                }
+                filter ACCEPT_DNS_V4 {
+                    term ACCEPT_DNS_V4 {
+                        from {
+                            prefix-list {
+                                DNS_SERVERS_V4;
+                            }
+                            protocol [ tcp udp ];
+                            port 53;
+                        }
+                        then policer DNS_POLICER;
+                    }
+                }
+                filter ACCEPT_NETCONF_V4 {
+                    term ACCEPT_NETCONF_V4 {
+                        from {
+                            source-prefix-list {
+                                MGMT_NETS_V4;
+                            }
+                            protocol tcp;
+                            destination-port 830;
+                        }
+                        then {
+                            count ACCEPT_NETCONF_V4;
+                            accept;
+                        }
+                    }
+                }
+                filter ACCEPT_NTP_V4 {
+                    term ACCEPT_NTP_V4 {
+                        from {
+                            source-prefix-list {
+                                NTP_SERVERS_V4;
+                                LOCAL_IPV4;
+                            }
+                            protocol udp;
+                            port ntp;
+                        }
+                        then {
+                            policer 1MB_CP_POLICER;
+                            count ACCEPT_NTP_V4;
+                            accept;
+                        }
+                    }
+                }
+                filter ACCEPT_SNMP_V4 {
+                    term ACCEPT_SNMP_V4 {
+                        from {
+                            source-prefix-list {
+                                SNMP_CLIENT_LISTS_V4;
+                            }
+                            destination-prefix-list {
+                                LOCAL_IPV4;
+                            }
+                            protocol udp;
+                            destination-port snmp;
+                        }
+                        then {
+                            policer 5MB_CP_POLICER;
+                            count ACCEPT_SNMP_V4;
+                            accept;
+                        }
+                    }
+                    term ACCEPT_SNMP_TRAPS_V4 {
+                        from {
+                            source-prefix-list {
+                                LOOPBACKS_V4;
+                                LOCAL_FXP0_V4;
+                            }
+                            destination-prefix-list {
+                                SNMP_TRAP_GROUP_V4;
+                            }
+                            protocol udp;
+                            destination-port snmptrap;
+                        }
+                        then {
+                            count ACCEPT_SNMP_TRAPS_V4;
+                            accept;
+                        }
+                    }
+                }
+                filter ACCEPT_RADIUS_V4 {
+                    term ACCEPT_RADIUS_V4 {
+                        from {
+                            source-prefix-list {
+                                RADIUS_SERVERS_V4;
+                            }
+                            protocol udp;
+                            source-port [ radius radacct ];
+                        }
+                        then {
+                            policer 1MB_CP_POLICER;
+                            count ACCEPT_RADIUS_V4;
+                            accept;
+                        }
+                    }
+                }
+                filter ACCEPT_OSPF_V4 {
+                    term OSPF_MULTICAST {
+                        from {
+                            destination-prefix-list {
+                                OSPF_V4;
+                            }
+                            protocol ospf;
+                        }
+                        then {
+                            count ACCEPT_OSPF_V4;
+                            accept;
+                        }
+                    }
+                    term OSPF_UNICAST {
+                        from {
+                            destination-prefix-list {
+                                LOCAL_IPV4;
+                            }
+                            protocol ospf;
+                        }
+                        then {
+                            count ACCEPT_OSPF_V4;
+                            accept;
+                        }
+                    }
+                }
+                filter ACCEPT_LDP_V4 {
+                    term LDP_DISCOVERY {
+                        from {
+                            destination-address {
+                                224.0.0.2/32;
+                            }
+                            protocol udp;
+                            destination-port 646;
+                        }
+                        then {
+                            count ACCEPT_LDP_V4;
+                            accept;
+                        }
+                    }
+                    term LDP_SESSION {
+                        from {
+                            prefix-list {
+                                LOOPBACKS_V4;
+                            }
+                            protocol tcp;
+                            port 646;
+                        }
+                        then {
+                            count ACCEPT_LDP_V4;
+                            accept;
+                        }
+                    }
+                }
+            }
+            family inet6 {
+                filter ACCEPT_BGP_V6 {
+                    term ACCEPT_BGP_V6 {
+                        from {
+                            source-prefix-list {
+                                BGP_NEIGHBORS_V6;
+                                BGP_NEIGHBORS_VRF_V6;
+                            }
+                            destination-prefix-list {
+                                LOCAL_IPV6;
+                            }
+                            payload-protocol tcp;
+                            port bgp;
+                        }
+                        then {
+                            count ACCEPT_BGP_V6;
+                            accept;
+                        }
+                    }
+                }
+                filter ACCEPT_BFD_V6 {
+                    term ACCEPT_BFD_V6 {
+                        from {
+                            destination-prefix-list {
+                                LOCAL_IPV6;
+                            }
+                            payload-protocol udp;
+                            port [ 3784 4784 ];
+                        }
+                        then {
+                            count ACCEPT_BFD_V6;
+                            accept;
+                        }
+                    }
+                }
+                filter ACCEPT_VRRP_V6 {
+                    term ACCEPT_VRRP_V6 {
+                        from {
+                            source-prefix-list {
+                                LOCAL_IPV6;
+                            }
+                            destination-prefix-list {
+                                VRRP_V6;
+                            }
+                            payload-protocol [ vrrp ah ];
+                        }
+                        then {
+                            count ACCEPT_VRRP_V6;
+                            accept;
+                        }
+                    }
+                }
+                filter ACCEPT_ICMP_V6 {
+                    term NO_ICMP_FRAGMENTS_V6 {
+                        from {
+                            next-header fragment;
+                            payload-protocol icmp6;
+                        }
+                        then {
+                            count NO_ICMP6_FRAGMENTS_V6;
+                            log;
+                            discard;
+                        }
+                    }
+                    term ACCEPT_ICMP_V6 {
+                        from {
+                            payload-protocol icmp6;
+                        }
+                        then {
+                            policer 5MB_CP_POLICER;
+                            count ACCEPT_ICMP_V6;
+                            accept;
+                        }
+                    }
+                }
+                filter ACCEPT_TRACERT_V6 {
+                    term ACCEPT_TRACERT_UDP_V6 {
+                        from {
+                            destination-prefix-list {
+                                LOCAL_IPV6;
+                            }
+                            payload-protocol udp;
+                            destination-port 33435-33450;
+                            hop-limit 1;
+                        }
+                        then {
+                            policer 5MB_CP_POLICER;
+                            count ACCEPT_TRACERT_UDP_V6;
+                            accept;
+                        }
+                    }
+                    term ACCEPT_TRACERT_ICMP_V6 {
+                        from {
+                            destination-prefix-list {
+                                LOCAL_IPV6;
+                            }
+                            payload-protocol icmp6;
+                            icmp-type [ echo-request node-information-request time-exceeded ];
+                            hop-limit 1;
+                        }
+                        then {
+                            policer 5MB_CP_POLICER;
+                            count ACCEPT_TRACERT_ICMP_V6;
+                            accept;
+                        }
+                    }
+                }
+                filter DISCARD_ALL_V6 {
+                    term DISCARD_ALL {
+                        then discard;
+                    }
+                }
+                filter ACCEPT_MGMT_SERVICES_V6 {
+                    term ACCEPT_SSH_V6 {
+                        filter ACCEPT_SSH_V6;
+                    }
+                    term ACCEPT_TRACERT_V6 {
+                        filter ACCEPT_TRACERT_V6;
+                    }
+                    term ACCEPT_ICMP_V6 {
+                        filter ACCEPT_ICMP_V6;
+                    }
+                }
+                filter ACCEPT_NETWORK_SERVICES_V6 {
+                    term ACCEPT_BGP_V6 {
+                        filter ACCEPT_BGP_V6;
+                    }
+                    term ACCEPT_BFD_V6 {
+                        filter ACCEPT_BFD_V6;
+                    }
+                    term ACCEPT_VRRP_V6 {
+                        filter ACCEPT_VRRP_V6;
+                    }
+                    term ACCEPT_LDP_V6 {
+                        filter ACCEPT_LDP_V6;
+                    }
+                }
+                filter ACCEPT_SSH_V6 {
+                    term ACCEPT_SSH_V6 {
+                        from {
+                            source-prefix-list {
+                                MGMT_NETS_V6;
+                            }
+                            destination-port ssh;
+                        }
+                        then {
+                            count ACCEPT_SSH_V6;
+                            accept;
+                        }
+                    }
+                }
+                filter ACCEPT_LDP_V6 {
+                    term ACCEPT_LDP_DISCOVER_V6 {
+                        from {
+                            source-prefix-list {
+                                LOCAL_IPV6;
+                            }
+                            destination-prefix-list {
+                                MCAST_ALL_ROUTERS_V6;
+                            }
+                            payload-protocol udp;
+                            destination-port ldp;
+                        }
+                        then accept;
+                    }
+                    term ACCEPT_LDP_UCAST_V6 {
+                        from {
+                            destination-prefix-list {
+                                LOCAL_IPV6;
+                            }
+                            payload-protocol tcp;
+                            port ldp;
+                        }
+                        then count ACCEPT_LDP_UCAST;
+                    }
+                    term ACCEPT_TLDP_DISCOVER_V6 {
+                        from {
+                            destination-prefix-list {
+                                LOCAL_IPV6;
+                            }
+                            payload-protocol udp;
+                            destination-port ldp;
+                        }
+                        then {
+                            count ACCEPT_TLDP_DISCOVER;
+                            accept;
+                        }
+                    }
+                }
+            }
+            policer 5MB_CP_POLICER {
+                if-exceeding {
+                    bandwidth-limit 5m;
+                    burst-size-limit 1m;
+                }
+                then discard;
+            }
+            policer 1MB_CP_POLICER {
+                if-exceeding {
+                    bandwidth-limit 1m;
+                    burst-size-limit 200k;
+                }
+                then discard;
+            }
+            policer DNS_POLICER {
+                if-exceeding {
+                    bandwidth-limit 8k;
+                    burst-size-limit 1500;
+                }
+                then discard;
+            }
+        }
+    }
+    CG_SLT_EDGE-FILTER {
+        policy-options {
+            prefix-list PFX_MARTIANS_V4 {
+                0.0.0.0/8;
+                10.0.0.0/8;
+                100.64.0.0/10;
+                127.0.0.0/8;
+                169.254.0.0/16;
+                172.16.0.0/12;
+                192.0.0.0/24;
+                192.0.2.0/24;
+                192.168.0.0/16;
+                198.18.0.0/15;
+                198.51.100.0/24;
+                203.0.113.0/24;
+                224.0.0.0/3;
+            }
+            prefix-list PFX_BLACKLIST_V4 {
+                34.97.3.80/32;
+                35.187.223.139/32;
+                52.163.254.104/32;
+                40.115.159.100/32;
+                13.76.227.209/32;
+                211.75.207.183/32;
+                13.71.149.55/32;
+                104.215.193.90/32;
+                13.67.78.63/32;
+                13.76.45.133/32;
+                207.244.157.98/32;
+            }
+            prefix-list PFX_SNMP_ALLOW_V4 {
+                185.37.223.1/32;
+                185.37.220.35/32;
+                185.37.220.41/32;
+            }
+            prefix-list PFX_UMBREL_V4 {
+                208.67.220.220/32;
+                208.67.222.222/32;
+            }
+            prefix-list PFX_UMBREL_V6 {
+                2620:119:35::35/128;
+                2620:119:53::53/128;
+            }
+            prefix-list PFX_BLACKLIST_V6;
+        }
+        firewall {
+            family inet {
+                filter PF_GLOBAL-EDGE_V4 {
+                    term BLACKLISTED {
+                        from {
+                            source-prefix-list {
+                                PFX_BLACKLIST_V4;
+                            }
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term ICMP_FIRST_FRAG {
+                        from {
+                            first-fragment;
+                            protocol icmp;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term ICMP_FRAGS {
+                        from {
+                            is-fragment;
+                            protocol icmp;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term ICMP {
+                        from {
+                            protocol icmp;
+                            icmp-type [ echo-reply echo-request time-exceeded unreachable ];
+                        }
+                        then accept;
+                    }
+                    term ICMP_DEFAULT {
+                        from {
+                            protocol icmp;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term UDP_FIRST_FRAG {
+                        from {
+                            first-fragment;
+                            protocol udp;
+                        }
+                        then {
+                            syslog;
+                            accept;
+                        }
+                    }
+                    term UDP_FRAGS {
+                        from {
+                            is-fragment;
+                            protocol udp;
+                        }
+                        then {
+                            syslog;
+                            accept;
+                        }
+                    }
+                    term TCP_EST {
+                        from {
+                            protocol tcp;
+                            tcp-established;
+                        }
+                        then accept;
+                    }
+                    term MARTIANS_V4 {
+                        from {
+                            source-prefix-list {
+                                PFX_MARTIANS_V4;
+                            }
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term TELNET {
+                        from {
+                            protocol tcp;
+                            destination-port 23;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term POP3 {
+                        from {
+                            protocol tcp;
+                            destination-port 110;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term RPC {
+                        from {
+                            destination-port 111;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term NTP_TCP {
+                        from {
+                            protocol tcp;
+                            destination-port 123;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term NTP_UDP {
+                        from {
+                            protocol udp;
+                            destination-port 123;
+                        }
+                        then accept;
+                    }
+                    term LOC_SRV {
+                        from {
+                            destination-port 135;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term NETBIOS_NS {
+                        from {
+                            destination-port 137;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term NETBIOS_DGM {
+                        from {
+                            destination-port 138;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term NETBIOS_SSN {
+                        from {
+                            destination-port 139;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term IMAP {
+                        from {
+                            protocol tcp;
+                            destination-port 143;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term SNMP_ALLOW {
+                        from {
+                            source-prefix-list {
+                                PFX_SNMP_ALLOW_V4;
+                            }
+                            destination-port 161;
+                        }
+                        then accept;
+                    }
+                    term SNMP {
+                        from {
+                            destination-port 161;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term SNMP_TRAP {
+                        from {
+                            destination-port 162;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term MS_DS {
+                        from {
+                            destination-port 445;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term MS_SQL {
+                        from {
+                            destination-port 1433;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term MS_RDP {
+                        from {
+                            protocol tcp;
+                            destination-port 3389;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term ESP {
+                        from {
+                            protocol esp;
+                        }
+                        then accept;
+                    }
+                    term ISAKMP {
+                        from {
+                            protocol udp;
+                            destination-port 500;
+                        }
+                        then accept;
+                    }
+                    term NAT-T {
+                        from {
+                            protocol udp;
+                            destination-port 4500;
+                        }
+                        then accept;
+                    }
+                    term SSH {
+                        from {
+                            protocol tcp;
+                            destination-port 22;
+                        }
+                        then accept;
+                    }
+                    term HTTP {
+                        from {
+                            protocol tcp;
+                            destination-port 80;
+                        }
+                        then accept;
+                    }
+                    term HTTPS {
+                        from {
+                            protocol tcp;
+                            destination-port 443;
+                        }
+                        then accept;
+                    }
+                    term SIP {
+                        from {
+                            destination-port 5060;
+                        }
+                        then accept;
+                    }
+                    term SIP_TLS {
+                        from {
+                            destination-port 5061;
+                        }
+                        then accept;
+                    }
+                    term HTTP_ALT {
+                        from {
+                            protocol tcp;
+                            destination-port 8080;
+                        }
+                        then accept;
+                    }
+                    term DNS_QUERY {
+                        from {
+                            protocol udp;
+                            destination-port 53;
+                        }
+                        then {
+                            syslog;
+                            accept;
+                        }
+                    }
+                    term DNS_UMBREL_REPLY {
+                        from {
+                            source-prefix-list {
+                                PFX_UMBREL_V4;
+                            }
+                            protocol udp;
+                            source-port 53;
+                        }
+                        then {
+                            syslog;
+                            accept;
+                        }
+                    }
+                    term DNS_REPLY {
+                        from {
+                            protocol udp;
+                            source-port 53;
+                        }
+                        then {
+                            syslog;
+                            accept;
+                        }
+                    }
+                    term DNS_ZONE_XFER {
+                        from {
+                            protocol tcp;
+                            destination-port 53;
+                        }
+                        then {
+                            syslog;
+                            accept;
+                        }
+                    }
+                    term BGP {
+                        from {
+                            source-prefix-list {
+                                BGP_NEIGHBORS_V4;
+                            }
+                            destination-prefix-list {
+                                LOCAL_IPV4;
+                            }
+                            protocol tcp;
+                            port bgp;
+                        }
+                        then accept;
+                    }
+                    term BGP_DISCARD {
+                        from {
+                            protocol tcp;
+                            port bgp;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term UDP {
+                        from {
+                            protocol udp;
+                            destination-port 1024-65535;
+                        }
+                        then accept;
+                    }
+                    term ACCEPT_ALL {
+                        then {
+                            syslog;
+                            accept;
+                        }
+                    }
+                }
+            }
+            family inet6 {
+                filter PF_GLOBAL-EDGE_V6 {
+                    term BLACKLIST {
+                        from {
+                            source-prefix-list {
+                                PFX_BLACKLIST_V6;
+                            }
+                        }
+                        then discard;
+                    }
+                    term SSH {
+                        from {
+                            destination-port 22;
+                        }
+                        then accept;
+                    }
+                    term TCP_EST {
+                        from {
+                            payload-protocol tcp;
+                        }
+                        then accept;
+                    }
+                    term DNS_UMBREL_REPLY {
+                        from {
+                            source-prefix-list {
+                                PFX_UMBREL_V6;
+                            }
+                            source-port 53;
+                        }
+                        then {
+                            syslog;
+                            accept;
+                        }
+                    }
+                    term DISCARD {
+                        then discard;
+                    }
+                }
+            }
+        }
+    }
+}
+apply-groups [ CG_SLT_OAM-CP-FILTER CG_SLT_EDGE-FILTER ];
+system {
+    login {
+        class backups {
+            permissions [ view view-configuration ];
+        }
+        user c.alvarez {
+            uid 2004;
+            class super-user;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user cgrant {
+            uid 2005;
+            class super-user;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user dturner {
+            uid 2003;
+            class super-user;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user go-svc-ockl {
+            uid 2010;
+            class read-only;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user go-svc-saltstack {
+            uid 2001;
+            class super-user;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user ppaiva {
+            uid 2008;
+            class super-user;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user rancid {
+            uid 2002;
+            class backups;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user sklamm {
+            uid 2006;
+            class super-user;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user tmutasa {
+            uid 2011;
+            class super-user;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user vmaselli {
+            uid 2009;
+            class read-only;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        message "====================================================================\n=         UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED         =\n=    You must have explicit, authorized permission to access or    =\n=   configure this device. Unauthorized attempts and actions to    =\n=   access or use this system may result in civil and/or criminal  =\n= All activities performed on this device are logged and monitored =\n====================================================================\n";
+    }
+    root-authentication {
+        encrypted-password /* SECRET-DATA */;
+    }
+    host-name chi-bl-02;
+    services {
+        ssh;
+        netconf {
+            ssh;
+        }
+    }
+    syslog {
+        archive size 100k files 8;
+        user * {
+            any emergency;
+        }
+        host 10.100.137.89 {
+            any notice;
+            port 514;
+            source-address 10.100.80.61;
+        }
+        host 10.100.137.24 {
+            any notice;
+            port 514;
+            source-address 10.100.80.61;
+        }
+        file messages {
+            any notice;
+            authorization info;
+        }
+        file traffic-log {
+            user any;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+    }
+    processes {
+        na-grpc-server disable;
+        jsd disable;
+    }
+    ntp {
+        server 10.115.131.1;
+        server 10.125.19.1;
+        server 10.124.19.1;
+        source-address 10.100.80.61;
+    }
+}
+chassis {
+    aggregated-devices {
+        ethernet {
+            device-count 15;
+        }
+    }
+    fpc 0 {
+        pic 0 {
+            port 0 {
+                speed 40g;
+            }
+            port 1 {
+                speed 40g;
+            }
+            port 2 {
+                speed 40g;
+            }
+            port 3 {
+                speed 100g;
+            }
+        }
+        pic 1 {
+            port 0 {
+                speed 10g;
+            }
+            port 1 {
+                speed 10g;
+            }
+            port 2 {
+                speed 10g;
+            }
+            port 3 {
+                speed 10g;
+            }
+            port 4 {
+                speed 10g;
+            }
+            port 5 {
+                speed 10g;
+            }
+            port 6 {
+                speed 10g;
+            }
+            port 7 {
+                speed 10g;
+            }
+        }
+    }
+}
+services {
+    rpm {
+        probe TELEMETRY {
+            test CHI-BL-02_PA2-BL-01 {
+                probe-type icmp-ping-timestamp;
+                target address 172.30.251.29;
+                probe-count 3;
+                probe-interval 1;
+                test-interval 10;
+                source-address 172.30.251.30;
+                data-size 64;
+                thresholds {
+                    successive-loss 3;
+                }
+                one-way-hardware-timestamp;
+            }
+            test CHI-BL-02_SJCIXRT02 {
+                probe-type icmp-ping-timestamp;
+                target address 172.30.251.10;
+                probe-count 3;
+                probe-interval 1;
+                test-interval 10;
+                source-address 172.30.251.9;
+                data-size 64;
+                thresholds {
+                    successive-loss 3;
+                }
+                one-way-hardware-timestamp;
+            }
+            test CHI-BL-02_AT1-BL-02 {
+                probe-type icmp-ping-timestamp;
+                target address 172.30.251.2;
+                probe-count 3;
+                probe-interval 1;
+                test-interval 10;
+                source-address 172.30.251.1;
+                data-size 64;
+                thresholds {
+                    successive-loss 3;
+                }
+                one-way-hardware-timestamp;
+            }
+        }
+    }
+}
+interfaces {
+    et-0/0/0 {
+        description X:chi-lf-01:et-0/0/49:fabric;
+        gigether-options {
+            802.3ad ae1;
+        }
+    }
+    et-0/0/1 {
+        description X:chi-lf-02:et-0/0/49:fabric;
+        gigether-options {
+            802.3ad ae2;
+        }
+    }
+    et-0/0/3 {
+        description X:chi-bl-01:et-0/0/3:b2b;
+        gigether-options {
+            802.3ad ae0;
+        }
+    }
+    xe-0/1/0 {
+        description Q:chi-ce-01:xe-0/0/47:ce;
+        gigether-options {
+            802.3ad ae11;
+        }
+    }
+    xe-0/1/1 {
+        description Q:chi-ce-02:xe-0/0/47:ce;
+        gigether-options {
+            802.3ad ae12;
+        }
+    }
+    xe-0/1/4 {
+        mtu 1580;
+        gigether-options {
+            no-auto-negotiation;
+            speed 1g;
+        }
+        unit 0 {
+            description B:AA:SID-EU-01611480:NTT_ZAYO_ETYX/236544//ZYO_CHI-PA2_pa2-bl-01;
+            family inet {
+                sampling {
+                    input;
+                    output;
+                }
+                address 172.30.251.30/30;
+            }
+            family inet6 {
+                address 2a00:fa60:1:1525::1:2/64;
+            }
+            family mpls;
+        }
+    }
+    xe-0/1/5 {
+        description MAN:NR:1-300402253:COGENT_MAN;
+        vlan-tagging;
+        mtu 1580;
+        unit 1420 {
+            description O:NR:1-300403277:COGENT_SCH_OFFICE;
+            vlan-id 1420;
+            family inet {
+                sampling {
+                    input;
+                    output;
+                }
+                address 172.29.100.13/30;
+            }
+        }
+        unit 2141 {
+            description B:AA:1-300402958:COGENT_CHI-AT1_at1-bl-02;
+            vlan-id 2141;
+            family inet {
+                sampling {
+                    input;
+                    output;
+                }
+                address 172.30.251.1/30;
+            }
+            family mpls;
+        }
+        unit 2153 {
+            description O:NR:1-300403268:COGENT_ATL_OFFICE;
+            vlan-id 2153;
+            family inet {
+                sampling {
+                    input;
+                    output;
+                }
+                address 10.100.0.65/30;
+            }
+        }
+    }
+    xe-0/1/6 {
+        description Q:sjccore02:gi4/5:legacy-integration;
+        vlan-tagging;
+        mtu 9234;
+        gigether-options {
+            no-auto-negotiation;
+            speed 1g;
+        }
+        unit 513 {
+            description B:AA:ETYX/115839//ZYO:ZAYO_CHI-SJC_sjccore02;
+            bandwidth 1g;
+            vlan-id 513;
+            family inet {
+                sampling {
+                    input;
+                    output;
+                }
+                address 172.30.251.9/30;
+            }
+            family mpls;
+        }
+    }
+    xe-0/1/7 {
+        gigether-options {
+            no-auto-negotiation;
+            speed 1g;
+        }
+        unit 0 {
+            description E_ISP:AA:HE_3984524:HE_INET;
+            bandwidth 1g;
+            family inet {
+                sampling {
+                    input;
+                    output;
+                }
+                address 184.105.38.122/29;
+            }
+            family inet6 {
+                address 2001:470:1:987::2/124;
+            }
+        }
+    }
+    ae0 {
+        description X:chi-bl-01:ae0.0:b2b;
+        mtu 9234;
+        aggregated-ether-options {
+            lacp {
+                active;
+                periodic fast;
+            }
+        }
+        unit 0 {
+            family inet {
+                sampling {
+                    input;
+                    output;
+                }
+                address 172.22.0.1/31;
+            }
+            family inet6 {
+                address 2a00:fa60:25:3300::2/64;
+            }
+            family mpls;
+        }
+    }
+    ae1 {
+        description X:chi-lf-01:ae2.0:fabric;
+        aggregated-ether-options {
+            lacp {
+                active;
+                periodic fast;
+            }
+        }
+        unit 0 {
+            family inet {
+                sampling {
+                    input;
+                    output;
+                }
+                address 172.22.0.18/31;
+            }
+            family inet6 {
+                address 2a00:fa60:25:2121::1/64;
+            }
+        }
+    }
+    ae2 {
+        description X:chi-lf-02:ae2.0:fabric;
+        aggregated-ether-options {
+            lacp {
+                active;
+                periodic fast;
+            }
+        }
+        unit 0 {
+            family inet {
+                sampling {
+                    input;
+                    output;
+                }
+                address 172.22.0.20/31;
+            }
+            family inet6 {
+                address 2a00:fa60:25:2122::1/64;
+            }
+        }
+    }
+    ae11 {
+        description Q:chi-ce-01:ae2.10:ce;
+        vlan-tagging;
+        mtu 1600;
+        aggregated-ether-options {
+            lacp {
+                active;
+                periodic fast;
+            }
+        }
+        unit 10 {
+            vlan-id 10;
+            family inet {
+                sampling {
+                    input;
+                    output;
+                }
+                address 172.22.0.6/31;
+            }
+            family inet6 {
+                address 2a00:fa60:25:3c21::1/64;
+            }
+            family mpls;
+        }
+    }
+    ae12 {
+        description Q:chi-ce-02:ae2.10:ce;
+        vlan-tagging;
+        mtu 1600;
+        aggregated-ether-options {
+            lacp {
+                active;
+                periodic fast;
+            }
+        }
+        unit 10 {
+            vlan-id 10;
+            family inet {
+                sampling {
+                    input;
+                    output;
+                }
+                address 172.22.0.8/31;
+            }
+            family inet6 {
+                address 2a00:fa60:25:3c22::1/64;
+            }
+            family mpls;
+        }
+    }
+    fxp0 {
+        description M:10.100.80.0/24:mgmt;
+        unit 0 {
+            family inet {
+                address 10.100.80.61/24;
+            }
+        }
+    }
+    lo0 {
+        unit 0 {
+            description L:172.16.0.20/32:backbone;
+            family inet {
+                address 172.16.0.20/32;
+            }
+            family inet6 {
+                address 2a00:fa60:0:2532::1/128;
+            }
+        }
+        unit 1 {
+            description L:192.168.0.4/32:border;
+            family inet {
+                address 192.168.0.4/32;
+            }
+        }
+        unit 2 {
+            description L:185.37.223.33/32:inet;
+            family inet {
+                address 185.37.223.33/32;
+            }
+        }
+    }
+}
+snmp {
+    location noram-chi;
+    contact "nio@arkadin.com";
+    client-list SNMP_CLIENTS {
+        10.105.137.56/32;
+        10.105.137.57/32;
+        10.100.137.55/32;
+        10.250.137.55/32;
+        10.115.137.57/32;
+        10.100.19.21/32;
+        10.250.90.90/32;
+        192.206.95.169/32;
+        10.105.137.80/32;
+    }
+    community network_services {
+        authorization read-only;
+        client-list-name SNMP_CLIENTS;
+    }
+    community noc_services {
+        authorization read-only;
+        client-list-name SNMP_CLIENTS;
+    }
+    trap-group noc_services {
+        version v2;
+        categories {
+            chassis;
+            link;
+            routing;
+        }
+        targets {
+            10.100.137.55;
+            10.100.19.21;
+        }
+    }
+}
+forwarding-options {
+    sampling {
+        input {
+            rate 500;
+        }
+        family inet {
+            output {
+                flow-server 10.250.90.90 {
+                    port 2055;
+                    autonomous-system-type origin;
+                    no-local-dump;
+                    version 5;
+                }
+            }
+        }
+    }
+}
+routing-options {
+    static {
+        route 0.0.0.0/0 next-hop 10.100.80.254;
+    }
+    router-id 172.16.0.20;
+    autonomous-system 53550 asdot-notation;
+    forwarding-table {
+        export PS_ECMP;
+    }
+}
+protocols {
+    mpls {
+        ipv6-tunneling;
+        interface ae0.0;
+        interface ae11.10;
+        interface ae12.10;
+        interface xe-0/1/4.0;
+        interface xe-0/1/5.2141;
+        interface xe-0/1/6.513;
+    }
+    bgp {
+        log-updown;
+        group IXRT_V4 {
+            local-address 172.16.0.20;
+            import PS_IMP_IXRT_V4;
+            family inet-vpn {
+                unicast;
+            }
+#            authentication-key <removed> SECRET-DATA */;
+            export PS_EXP_IXRT_V4;
+            vpn-apply-export;
+            peer-as 53550;
+            neighbor 172.16.0.17 {
+                description atlixrt01;
+            }
+            neighbor 172.16.0.18 {
+                description atlixrt02;
+            }
+            neighbor 172.16.0.13 {
+                description ifcixrt01;
+            }
+            neighbor 172.16.0.14 {
+                description ifcixrt02;
+            }
+            neighbor 172.16.0.5 {
+                description ld4ixrt01;
+            }
+            neighbor 172.16.0.6 {
+                description ld4ixrt02;
+            }
+            neighbor 172.16.0.1 {
+                description pa2ixrt01;
+            }
+            neighbor 172.16.0.2 {
+                description pa2ixrt02;
+            }
+            neighbor 172.16.0.35 {
+                description pyrixrt01;
+            }
+            neighbor 172.16.0.36 {
+                description pyrixrt02;
+            }
+            neighbor 172.16.0.21 {
+                description sgnixrt01;
+            }
+            neighbor 172.16.0.22 {
+                description sgnixrt02;
+            }
+            neighbor 172.16.0.29 {
+                description shiixrt01;
+            }
+            neighbor 172.16.0.30 {
+                description shiixrt02;
+            }
+            neighbor 172.16.0.31 {
+                description sjcixrt01;
+            }
+            neighbor 172.16.0.32 {
+                description sjcixrt02;
+            }
+            neighbor 172.16.0.9 {
+                description tauixrt01;
+            }
+            neighbor 172.16.0.10 {
+                description tauixrt02;
+            }
+            neighbor 172.16.0.25 {
+                description tbrixrt01;
+            }
+            neighbor 172.16.0.26 {
+                description tbrixrt02;
+            }
+        }
+        group BL_V4-V6 {
+            description "intra-DC PE routers";
+            local-address 172.16.0.20;
+            import PS_IMP_BL_V4-V6;
+            family inet-vpn {
+                unicast;
+            }
+            family inet6-vpn {
+                unicast;
+            }
+#            authentication-key <removed> SECRET-DATA */;
+            export PS_EXP_BL_V4-V6;
+            vpn-apply-export;
+            peer-as 53550;
+            neighbor 172.16.0.19 {
+                description chi-bl-01;
+            }
+        }
+        group BBONE_V4-V6 {
+            description "inter-DC PE routers";
+            local-address 172.16.0.20;
+            import PS_IMP_BBONE_V4-V6;
+            family inet-vpn {
+                unicast;
+            }
+            family inet6-vpn {
+                unicast;
+            }
+#            authentication-key <removed> SECRET-DATA */;
+            export PS_EXP_BBONE_V4-V6;
+            vpn-apply-export;
+            peer-as 53550;
+            neighbor 192.168.201.1 {
+                description at1-bl-01;
+            }
+            neighbor 192.168.201.2 {
+                description at1-bl-02;
+            }
+            neighbor 172.16.0.27 {
+                description ld4-bl-01;
+            }
+            neighbor 172.16.0.28 {
+                description ld4-bl-02;
+            }
+            neighbor 172.16.0.23 {
+                description pa2-bl-01;
+            }
+            neighbor 172.16.0.24 {
+                description pa2-bl-02;
+            }
+            neighbor 172.16.0.33 {
+                description tau-bl-01;
+            }
+            neighbor 172.16.0.34 {
+                description tau-bl-02;
+            }
+        }
+        group CE_V4-V6 {
+            type internal;
+            local-address 172.16.0.20;
+            log-updown;
+            import PS_IMP_CE_V4;
+            family inet-vpn {
+                unicast;
+            }
+            family inet6-vpn {
+                unicast;
+            }
+            family route-target {
+                advertise-default;
+            }
+#            authentication-key <removed> SECRET-DATA */;
+            export PS_EXP_CE_V4;
+            vpn-apply-export;
+            cluster 172.16.0.19;
+            peer-as 53550;
+            neighbor 192.168.200.3 {
+                description chi-ce-01;
+            }
+            neighbor 192.168.200.4 {
+                description chi-ce-02;
+            }
+        }
+    }
+    ospf {
+        traceoptions {
+            file ospf.trace;
+            flag all;
+        }
+        reference-bandwidth 100g;
+        area 0.0.0.0 {
+            interface lo0.0 {
+                passive;
+            }
+            interface ae0.0 {
+                interface-type p2p;
+                metric 1;
+                ldp-synchronization;
+                hello-interval 1;
+                dead-interval 3;
+                authentication {
+#                    md5 1 key <removed> SECRET-DATA */;
+                }
+            }
+            interface ae11.10 {
+                interface-type p2p;
+                metric 10;
+                ldp-synchronization;
+                hello-interval 1;
+                dead-interval 3;
+                authentication {
+#                    md5 1 key <removed> SECRET-DATA */;
+                }
+            }
+            interface ae12.10 {
+                interface-type p2p;
+                metric 10;
+                ldp-synchronization;
+                hello-interval 1;
+                dead-interval 3;
+                authentication {
+#                    md5 1 key <removed> SECRET-DATA */;
+                }
+            }
+            interface xe-0/1/4.0 {
+                interface-type p2p;
+                metric 1700;
+                ldp-synchronization;
+                hello-interval 1;
+                dead-interval 3;
+                authentication {
+#                    md5 1 key <removed> SECRET-DATA */;
+                }
+            }
+            interface xe-0/1/5.2141 {
+                interface-type p2p;
+                metric 1700;
+                ldp-synchronization;
+                hello-interval 1;
+                dead-interval 3;
+                authentication {
+#                    md5 1 key <removed> SECRET-DATA */;
+                }
+            }
+            interface xe-0/1/6.513 {
+                interface-type p2p;
+                metric 1850;
+                ldp-synchronization;
+                hello-interval 1;
+                dead-interval 3;
+                authentication {
+#                    md5 1 key <removed> SECRET-DATA */;
+                }
+            }
+        }
+    }
+    ldp {
+        interface xe-0/1/4.0;
+        interface xe-0/1/5.2141;
+        interface xe-0/1/6.513;
+        interface ae0.0;
+        interface ae11.10;
+        interface ae12.10;
+    }
+    lldp {
+        port-id-subtype interface-name;
+        port-description-type interface-description;
+        interface et-0/0/0;
+        interface et-0/0/1;
+        interface et-0/0/3;
+        interface xe-0/1/0;
+        interface xe-0/1/1;
+        interface xe-0/1/4;
+        interface xe-0/1/5;
+        interface xe-0/1/6;
+    }
+}
+policy-options {
+    prefix-list PFX_NORAM-ISP-ANNOUNCE_V4 {
+        185.37.220.0/22;
+        185.37.222.0/24;
+        185.37.223.0/24;
+        192.206.95.0/24;
+    }
+    prefix-list PFX_ARKAD_RIPE1_V4 {
+        185.37.220.0/22;
+    }
+    prefix-list PFX_ARKAD_RIPE2_V4 {
+        77.111.208.0/22;
+    }
+    prefix-list PFX_ARKAD_ARIN1_V4 {
+        192.206.95.0/24;
+    }
+    prefix-list PFX_ARKAD_RIPE1_V6 {
+        2a00:fa60::/32;
+    }
+    prefix-list PFX_ARKADIN_PUBLIC_V4 {
+        185.37.220.0/22;
+        192.206.95.0/24;
+    }
+    prefix-list PFX_ARKAD-EXT-LEAK_V4 {
+        38.65.194.240/30;
+    }
+    prefix-list PFX_TEST {
+        10.0.0.0/8;
+        172.16.0.0/12;
+        192.168.0.0/16;
+    }
+    prefix-list PFX_COGENT_V4 {
+        38.65.194.0/24;
+    }
+    prefix-list PFX_ATL_V4 {
+        10.100.0.232/29;
+        10.100.97.0/24;
+        10.100.98.0/24;
+        10.100.190.0/24;
+    }
+    prefix-list PFX_SCH_V4 {
+        10.10.180.0/24;
+        10.100.9.0/24;
+        10.100.13.0/24;
+        10.100.84.0/24;
+        10.100.85.0/24;
+        10.100.86.0/24;
+        10.100.87.0/24;
+        10.100.88.0/24;
+        10.100.89.0/25;
+        10.100.89.128/25;
+        10.100.130.0/27;
+        10.100.130.32/27;
+        10.100.131.0/24;
+        10.100.133.0/24;
+        10.100.197.0/24;
+        10.100.254.10/32;
+        172.16.0.0/16;
+        172.19.0.0/16;
+        172.50.0.0/24;
+        172.50.8.0/24;
+    }
+    policy-statement PS_ECMP {
+        then {
+            load-balance per-packet;
+        }
+    }
+    policy-statement PS_EXP_BBONE_V4-V6 {
+        term FILTER-ARKAD-EXT_V4 {
+            from {
+                community COMM_VRF_ARKAD_EXT;
+                policy PS_EXP_SUB-ARKAD-EXT_V4;
+            }
+            then accept;
+        }
+        term FILTER-ARKAD-EXT_V6 {
+            from {
+                community COMM_VRF_ARKAD_EXT;
+                prefix-list-filter PFX_ARKAD_RIPE1_V6 orlonger;
+            }
+            then accept;
+        }
+        term ACCEPT-ARKAD-INT {
+            from community COMM_VRF_ARKAD_INT;
+            then accept;
+        }
+        term REJECT-ARKAD-EXT-TRANSIT {
+            from community COMM_VRF_ARKAD_EXT;
+            then reject;
+        }
+        term ACCEPT {
+            then accept;
+        }
+    }
+    policy-statement PS_EXP_BL_V4-V6 {
+        /* intra-site border leaf policy */
+        term REJECT-BB-MESH_V4 {
+            from community COMM_BB-MESH;
+            then reject;
+        }
+        term ACCEPT {
+            then accept;
+        }
+    }
+    policy-statement PS_EXP_CE_V4 {
+        /* permit only local and ibgp learnt internal prefixes */
+        term ARKAD-53550 {
+            from {
+                as-path AS_NULL;
+                community COMM_VRF_ARKAD_EXT;
+            }
+            then accept;
+        }
+        term ACCEPT-ARKAD-INT {
+            from community COMM_VRF_ARKAD_INT;
+            then accept;
+        }
+        term REJECT-ARKAD-EXT-TRANSIT {
+            from community COMM_VRF_ARKAD_EXT;
+            then reject;
+        }
+        term ACCEPT {
+            then accept;
+        }
+    }
+    policy-statement PS_EXP_HE_V4 {
+        term ACCEPT {
+            from {
+                prefix-list PFX_NORAM-ISP-ANNOUNCE_V4;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_HE_V6 {
+        term NO_ADV_MARTIANS {
+            from policy PS_MARTIANS_V6;
+            then reject;
+        }
+        term CHI_V6 {
+            from {
+                route-filter 2a00:fa60:1250::/44 exact;
+            }
+            then accept;
+        }
+        term AGGR_V6 {
+            from {
+                route-filter 2a00:fa60::/32 exact;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_INET_V4 {
+        term FILTER-ARKAD-EXT_V4 {
+            from policy PS_EXP_SUB-ARKAD-EXT_V4;
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_IXRT_V4 {
+        term ACCEPT-LO_V4 {
+            from {
+                community COMM_VRF_ARKAD_EXT;
+                route-filter 185.37.223.33/32 exact;
+            }
+            then accept;
+        }
+        term REJECT-ARKAD-EXT {
+            from community COMM_VRF_ARKAD_EXT;
+            then reject;
+        }
+        term ACCEPT {
+            then accept;
+        }
+    }
+    policy-statement PS_EXP_LEAF_V4 {
+        term DEFAULT-ROUTE {
+            from {
+                route-filter 0.0.0.0/0 exact;
+            }
+            then accept;
+        }
+    }
+    policy-statement PS_EXP_LEAF_V6 {
+        term DEFAULT {
+            from {
+                route-filter ::/0 exact;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_SCH_V4 {
+        term ACCEPT {
+            then accept;
+        }
+    }
+    policy-statement PS_EXP_SPINE_V4 {
+        term DEFAULT-ROUTE {
+            from {
+                route-filter 0.0.0.0/0 exact;
+            }
+            then accept;
+        }
+    }
+    policy-statement PS_EXP_SPINE_V6 {
+        term DEFAULT {
+            from {
+                route-filter ::/0 exact;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_SUB-ARKAD-EXT_V4 {
+        term REJECT-BB-MESH_V4 {
+            from community COMM_BB-MESH;
+            then reject;
+        }
+        term REJECT-LO_V4 {
+            from {
+                route-filter 185.37.223.33/32 exact;
+            }
+            then reject;
+        }
+        term ARKAD_V4 {
+            from {
+                prefix-list-filter PFX_ARKAD_RIPE1_V4 orlonger;
+                prefix-list-filter PFX_ARKAD_RIPE2_V4 orlonger;
+                prefix-list-filter PFX_ARKAD_ARIN1_V4 orlonger;
+            }
+            then accept;
+        }
+        term BB-LEAK_V4 {
+            from community COMM_BB-LEAK;
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_VRF-ARKAD-INT {
+        term FABRIC_BGP {
+            from {
+                protocol bgp;
+                route-filter 10.127.0.0/16 orlonger;
+                route-filter 172.22.0.0/22 orlonger;
+                route-filter 192.168.0.0/24 prefix-length-range /32-/32;
+                route-filter 10.0.1.4/30 exact;
+            }
+            then {
+                community add COMM_VRF_ARKAD_INT;
+                accept;
+            }
+        }
+        term LEGACY_PFXS {
+            from {
+                protocol bgp;
+                community COMM_LEGACY_PFXS;
+            }
+            then {
+                community add COMM_VRF_ARKAD_INT;
+                community delete COMM_LEGACY_PFXS;
+                accept;
+            }
+        }
+        term LEAK_TO_ARKAD-EXT_V4 {
+            from {
+                prefix-list-filter PFX_ARKAD-EXT-LEAK_V4 orlonger;
+            }
+            then {
+                community add COMM_VRF_ARKAD_INT;
+                community add COMM_VRF_ARKAD_EXT;
+                accept;
+            }
+        }
+        term LEAK_TO_ARKAD-EXT_V6 {
+            from {
+                prefix-list-filter PFX_ARKAD_RIPE1_V6 orlonger;
+            }
+            then {
+                community add COMM_VRF_ARKAD_INT;
+                community add COMM_VRF_ARKAD_EXT;
+                accept;
+            }
+        }
+        term ATL_STATIC {
+            from {
+                protocol static;
+                prefix-list-filter PFX_ATL_V4 exact;
+            }
+            then {
+                community add COMM_VRF_ARKAD_INT;
+                accept;
+            }
+        }
+        term SCH_BGP {
+            from {
+                protocol bgp;
+                prefix-list-filter PFX_SCH_V4 exact;
+            }
+            then {
+                community add COMM_VRF_ARKAD_INT;
+                accept;
+            }
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_IMP_BBONE_V4-V6 {
+        term ACCEPT {
+            then {
+                community add COMM_BB-MESH;
+                accept;
+            }
+        }
+    }
+    policy-statement PS_IMP_BL_V4-V6 {
+        term ACCEPT {
+            then {
+                community add COMM_BB-MESH;
+                accept;
+            }
+        }
+    }
+    policy-statement PS_IMP_CE_V4 {
+        term ACCEPT {
+            then accept;
+        }
+    }
+    policy-statement PS_IMP_HE_V4 {
+        term ACCEPT {
+            then accept;
+        }
+    }
+    policy-statement PS_IMP_HE_V6 {
+        term REJECT_MARTIANS {
+            from policy PS_MARTIANS_V6;
+            then reject;
+        }
+        term REJECT_ASN_INVALID {
+            from as-path-group ASN_INVALID;
+            then reject;
+        }
+        term GLOBAL_UCAST_V6 {
+            from {
+                route-filter 2000::/3 prefix-length-range /3-/48;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_IMP_INET_V4 {
+        term ACCEPT {
+            then {
+                community add COMM_BB-MESH;
+                accept;
+            }
+        }
+    }
+    policy-statement PS_IMP_IXRT_V4 {
+        term ACCEPT {
+            then accept;
+        }
+    }
+    policy-statement PS_IMP_LEAF_V4 {
+        term ACCEPT {
+            then accept;
+        }
+    }
+    policy-statement PS_IMP_LEAF_V6 {
+        term ACCEPT {
+            then accept;
+        }
+    }
+    policy-statement PS_IMP_SCH_V4 {
+        term SCH_BGP {
+            from {
+                protocol bgp;
+                prefix-list-filter PFX_SCH_V4 exact;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_IMP_SPINE_V4 {
+        term ACCEPT {
+            then accept;
+        }
+    }
+    policy-statement PS_IMP_SPINE_V6 {
+        term ACCEPT {
+            then accept;
+        }
+    }
+    policy-statement PS_IMP_TRANSIT-FILTER_V4 {
+        term REJECT_DEFAULT_V4 {
+            from {
+                route-filter 0.0.0.0/0 exact;
+            }
+            then reject;
+        }
+        term REJECT_SMALL_V4 {
+            from {
+                route-filter 0.0.0.0/0 prefix-length-range /25-/32;
+            }
+            then reject;
+        }
+        term REJECT_MARTIAN_V4 {
+            from policy PS_MARTIANS_V4;
+            then reject;
+        }
+        term REJECT_INVALID_ASN {
+            from as-path-group ASN_INVALID;
+            then reject;
+        }
+        term REJECT_ARKADIN_PUBLIC_V4 {
+            from {
+                prefix-list-filter PFX_ARKADIN_PUBLIC_V4 orlonger;
+            }
+            then reject;
+        }
+    }
+    policy-statement PS_IMP_VRF-ARKAD-INT {
+        term IMPORT {
+            from community COMM_VRF_ARKAD_INT;
+            then {
+                community add COMM_BBONE_PFXS;
+                accept;
+            }
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_MARTIANS_V4 {
+        term MARTIAN {
+            from {
+                route-filter 0.0.0.0/8 orlonger;
+                route-filter 10.0.0.0/8 orlonger;
+                route-filter 100.64.0.0/10 orlonger;
+                route-filter 127.0.0.0/8 orlonger;
+                route-filter 169.254.0.0/16 orlonger;
+                route-filter 172.16.0.0/12 orlonger;
+                route-filter 192.0.0.0/24 orlonger;
+                route-filter 192.0.2.0/24 orlonger;
+                route-filter 192.168.0.0/16 orlonger;
+                route-filter 198.18.0.0/15 orlonger;
+                route-filter 198.51.100.0/24 orlonger;
+                route-filter 203.0.113.0/24 orlonger;
+                route-filter 224.0.0.0/4 orlonger;
+                route-filter 240.0.0.0/4 orlonger;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_MARTIANS_V6 {
+        term MARTIAN {
+            from {
+                route-filter ::/0 exact;
+                route-filter ::/3 orlonger;
+                route-filter 2001::/40 orlonger;
+                route-filter 2001:0:a00::/40 orlonger;
+                route-filter 2001:0:7f00::/40 orlonger;
+                route-filter 2001:0:a9fe::/48 orlonger;
+                route-filter 2001:0:ac10::/44 orlonger;
+                route-filter 2001:0:c000::/56 orlonger;
+                route-filter 2001:0:c000:200::/56 orlonger;
+                route-filter 2001:0:c0a8::/48 orlonger;
+                route-filter 2001:0:c612::/47 orlonger;
+                route-filter 2001:0:c633:6400::/56 orlonger;
+                route-filter 2001:0:cb00:7100::/56 orlonger;
+                route-filter 2001:0:e000::/36 orlonger;
+                route-filter 2001:0:f000::/36 orlonger;
+                route-filter 2001:0:ffff:ffff::/64 orlonger;
+                route-filter 2002::/24 orlonger;
+                route-filter 2002:a00::/24 orlonger;
+                route-filter 2002:7f00::/24 orlonger;
+                route-filter 2002:a9fe::/32 orlonger;
+                route-filter 2002:ac10::/28 orlonger;
+                route-filter 2002:c000::/40 orlonger;
+                route-filter 2002:c000:200::/40 orlonger;
+                route-filter 2002:c0a8::/32 orlonger;
+                route-filter 2002:c612::/31 orlonger;
+                route-filter 2002:c633:6400::/40 orlonger;
+                route-filter 2002:cb00:7100::/40 orlonger;
+                route-filter 2002:e000::/20 orlonger;
+                route-filter 2002:f000::/20 orlonger;
+                route-filter 2002:ffff:ffff::/48 orlonger;
+                route-filter 2001:db8::/32 orlonger;
+                route-filter 3000::/4 orlonger;
+                route-filter 4000::/2 orlonger;
+                route-filter 8000::/1 orlonger;
+                route-filter 2000::/4 prefix-length-range /49-/128;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_SET-LP {
+        /* RFC8326 - Graceful BGP Session Shutdown */
+        term GRACEFUL_SHUTDOWN {
+            from community COMM_LP0;
+            then {
+                local-preference 0;
+                next policy;
+            }
+        }
+        term LP80 {
+            from community COMM_LP80;
+            then {
+                local-preference 80;
+                next policy;
+            }
+        }
+        term LP120 {
+            from community COMM_LP120;
+            then {
+                local-preference 120;
+                next policy;
+            }
+        }
+    }
+    policy-statement PS_TEST {
+        term ACCEPT {
+            from {
+                prefix-list PFX_TEST;
+                prefix-list-filter PFX_TEST orlonger;
+            }
+            then accept;
+        }
+    }
+    community COMM_BB-LEAK members 53550:11111;
+    community COMM_BB-MESH members 53550:53550;
+    community COMM_BBONE_PFXS members 64100:100;
+    community COMM_LEGACY_PFXS members 64100:101;
+    community COMM_LP0 members 65535:0;
+    community COMM_LP120 members 53550:120;
+    community COMM_LP80 members 53550:80;
+    community COMM_VRF_ARKAD_EXT members target:53550:2;
+    community COMM_VRF_ARKAD_INT members target:53550:1;
+    as-path AS_NULL "^$";
+    as-path-group ASN_INVALID {
+        as-path ASN_RFC7607 ".* 0 .*";
+        as-path ASN_RFC4893 ".* 23456 .*";
+        as-path ASN_RFC5398-1 ".* [64496-64511] .*";
+        as-path ASN_RFC5398-2 ".* [65536-65551] .*";
+        as-path ASN_RFC6996-1 ".* [64512-65534] .*";
+        as-path ASN_RFC6996-2 ".* [4200000000-4294967295] .*";
+        as-path ASN_RFC6996-3 ".* 65535 .*";
+        as-path ASN_RFC6996-4 ".* 4294967295 .*";
+        as-path IANA-RESERVED ".* [65552-131071] .*";
+    }
+}
+class-of-service {
+    classifiers {
+        exp COS_EXP_RECLASSIFY {
+            forwarding-class best-effort {
+                loss-priority low code-points [ 000 010 100 ];
+                loss-priority high code-points [ 001 011 101 ];
+            }
+            forwarding-class network-control {
+                loss-priority low code-points 110;
+                loss-priority high code-points 111;
+            }
+        }
+    }
+    interfaces {
+        xe-0/1/4 {
+            unit 0 {
+                classifiers {
+                    exp COS_EXP_RECLASSIFY;
+                }
+            }
+        }
+        xe-0/1/5 {
+            unit 2141 {
+                classifiers {
+                    exp COS_EXP_RECLASSIFY;
+                }
+            }
+        }
+        xe-0/1/6 {
+            unit 513 {
+                classifiers {
+                    exp COS_EXP_RECLASSIFY;
+                }
+            }
+        }
+        ae0 {
+            unit 0 {
+                classifiers {
+                    exp COS_EXP_RECLASSIFY;
+                }
+            }
+        }
+        ae11 {
+            unit 10 {
+                classifiers {
+                    exp COS_EXP_RECLASSIFY;
+                }
+            }
+        }
+        ae12 {
+            unit 10 {
+                classifiers {
+                    exp COS_EXP_RECLASSIFY;
+                }
+            }
+        }
+    }
+}
+firewall {
+    family inet {
+        filter PF_SQL-EXCEPT_V4 {
+            term MEETBRIDGE {
+                from {
+                    source-address {
+                        207.97.229.92/32;
+                        72.92.16.74/32;
+                    }
+                    destination-address {
+                        38.65.194.120/32;
+                    }
+                    protocol tcp;
+                    destination-port 1433;
+                }
+                then {
+                    syslog;
+                    accept;
+                }
+            }
+        }
+        filter ACCEPT_GRE_V4 {
+            term ACCEPT_GRE_V4 {
+                from {
+                    protocol gre;
+                }
+                then {
+                    count ACCEPT_GRE_V4;
+                    log;
+                    accept;
+                }
+            }
+        }
+        filter PF_GLOBAL-EDGE_V4 {
+            term BLACKLISTED {
+                from {
+                    source-prefix-list {
+                        PFX_BLACKLIST_V4;
+                    }
+                }
+                then {
+                    discard;
+                }
+            }
+            term ICMP_FIRST_FRAG {
+                from {
+                    first-fragment;
+                    protocol icmp;
+                }
+                then {
+                    discard;
+                }
+            }
+            term ICMP_FRAGS {
+                from {
+                    is-fragment;
+                    protocol icmp;
+                }
+                then {
+                    discard;
+                }
+            }
+            term ICMP {
+                from {
+                    protocol icmp;
+                    icmp-type [ echo-reply echo-request time-exceeded unreachable ];
+                }
+                then accept;
+            }
+            term ICMP_DEFAULT {
+                from {
+                    protocol icmp;
+                }
+                then {
+                    discard;
+                }
+            }
+            term UDP_FIRST_FRAG {
+                from {
+                    first-fragment;
+                    protocol udp;
+                }
+                then {
+                    syslog;
+                    accept;
+                }
+            }
+            term UDP_FRAGS {
+                from {
+                    is-fragment;
+                    protocol udp;
+                }
+                then {
+                    syslog;
+                    accept;
+                }
+            }
+            term TCP_EST {
+                from {
+                    protocol tcp;
+                    tcp-established;
+                }
+                then accept;
+            }
+            term MARTIANS_V4 {
+                from {
+                    source-prefix-list {
+                        PFX_MARTIANS_V4;
+                    }
+                }
+                then {
+                    discard;
+                }
+            }
+            term TELNET {
+                from {
+                    protocol tcp;
+                    destination-port 23;
+                }
+                then {
+                    discard;
+                }
+            }
+            term POP3 {
+                from {
+                    protocol tcp;
+                    destination-port 110;
+                }
+                then {
+                    discard;
+                }
+            }
+            term RPC {
+                from {
+                    destination-port 111;
+                }
+                then {
+                    discard;
+                }
+            }
+            term NTP_TCP {
+                from {
+                    protocol tcp;
+                    destination-port 123;
+                }
+                then {
+                    discard;
+                }
+            }
+            term NTP_UDP {
+                from {
+                    protocol udp;
+                    destination-port 123;
+                }
+                then accept;
+            }
+            term LOC_SRV {
+                from {
+                    destination-port 135;
+                }
+                then {
+                    discard;
+                }
+            }
+            term NETBIOS_NS {
+                from {
+                    destination-port 137;
+                }
+                then {
+                    discard;
+                }
+            }
+            term NETBIOS_DGM {
+                from {
+                    destination-port 138;
+                }
+                then {
+                    discard;
+                }
+            }
+            term NETBIOS_SSN {
+                from {
+                    destination-port 139;
+                }
+                then {
+                    discard;
+                }
+            }
+            term IMAP {
+                from {
+                    protocol tcp;
+                    destination-port 143;
+                }
+                then {
+                    discard;
+                }
+            }
+            term SNMP_ALLOW {
+                from {
+                    source-prefix-list {
+                        PFX_SNMP_ALLOW_V4;
+                    }
+                    destination-port 161;
+                }
+                then accept;
+            }
+            term SNMP {
+                from {
+                    destination-port 161;
+                }
+                then {
+                    discard;
+                }
+            }
+            term SNMP_TRAP {
+                from {
+                    destination-port 162;
+                }
+                then {
+                    discard;
+                }
+            }
+            term MS_DS {
+                from {
+                    destination-port 445;
+                }
+                then {
+                    discard;
+                }
+            }
+            term MS_SQL {
+                from {
+                    destination-port 1433;
+                }
+                then {
+                    discard;
+                }
+            }
+            term MS_RDP {
+                from {
+                    protocol tcp;
+                    destination-port 3389;
+                }
+                then {
+                    discard;
+                }
+            }
+            term ESP {
+                from {
+                    protocol esp;
+                }
+                then accept;
+            }
+            term ISAKMP {
+                from {
+                    protocol udp;
+                    destination-port 500;
+                }
+                then accept;
+            }
+            term NAT-T {
+                from {
+                    protocol udp;
+                    destination-port 4500;
+                }
+                then accept;
+            }
+            term SSH {
+                from {
+                    protocol tcp;
+                    destination-port 22;
+                }
+                then accept;
+            }
+            term HTTP {
+                from {
+                    protocol tcp;
+                    destination-port 80;
+                }
+                then accept;
+            }
+            term HTTPS {
+                from {
+                    protocol tcp;
+                    destination-port 443;
+                }
+                then accept;
+            }
+            term SIP {
+                from {
+                    destination-port 5060;
+                }
+                then accept;
+            }
+            term SIP_TLS {
+                from {
+                    destination-port 5061;
+                }
+                then accept;
+            }
+            term HTTP_ALT {
+                from {
+                    protocol tcp;
+                    destination-port 8080;
+                }
+                then accept;
+            }
+            term DNS_QUERY {
+                from {
+                    protocol udp;
+                    destination-port 53;
+                }
+                then {
+                    syslog;
+                    accept;
+                }
+            }
+            term DNS_UMBREL_REPLY {
+                from {
+                    source-prefix-list {
+                        PFX_UMBREL_V4;
+                    }
+                    protocol udp;
+                    source-port 53;
+                }
+                then {
+                    syslog;
+                    accept;
+                }
+            }
+            term DNS_REPLY {
+                from {
+                    protocol udp;
+                    source-port 53;
+                }
+                then {
+                    syslog;
+                    accept;
+                }
+            }
+            term DNS_ZONE_XFER {
+                from {
+                    protocol tcp;
+                    destination-port 53;
+                }
+                then {
+                    syslog;
+                    accept;
+                }
+            }
+            term BGP {
+                from {
+                    source-prefix-list {
+                        BGP_NEIGHBORS_V4;
+                    }
+                    destination-prefix-list {
+                        LOCAL_IPV4;
+                    }
+                    protocol tcp;
+                    port bgp;
+                }
+                then accept;
+            }
+            term UDP {
+                from {
+                    protocol udp;
+                    destination-port 1024-65535;
+                }
+                then accept;
+            }
+            term ACCEPT_ALL {
+                then {
+                    syslog;
+                    accept;
+                }
+            }
+        }
+    }
+    family inet6 {
+        filter PF_GLOBAL-EDGE_V6 {
+            term BLACKLIST {
+                from {
+                    source-prefix-list {
+                        PFX_BLACKLIST_V6;
+                    }
+                }
+                then discard;
+            }
+            term NO_ICMP_FRAGMENTS_V6 {
+                from {
+                    next-header fragment;
+                    payload-protocol icmp6;
+                }
+                then {
+                    count NO_ICMP6_FRAGMENTS_V6;
+                    log;
+                    discard;
+                }
+            }
+            term ACCEPT_ICMP_V6 {
+                from {
+                    payload-protocol icmp6;
+                }
+                then {
+                    policer 5MB_CP_POLICER;
+                    count ACCEPT_ICMP_V6;
+                    accept;
+                }
+            }
+            term BGP {
+                from {
+                    source-prefix-list {
+                        BGP_NEIGHBORS_VRF_V6;
+                        BGP_NEIGHBORS_V6;
+                    }
+                    destination-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    payload-protocol tcp;
+                    port bgp;
+                }
+                then accept;
+            }
+            term SSH {
+                from {
+                    destination-port 22;
+                }
+                then accept;
+            }
+            term TCP_EST {
+                from {
+                    payload-protocol tcp;
+                    tcp-established;
+                }
+                then accept;
+            }
+            term DNS_UMBREL_REPLY {
+                from {
+                    source-prefix-list {
+                        PFX_UMBREL_V6;
+                    }
+                    source-port 53;
+                }
+                then {
+                    syslog;
+                    accept;
+                }
+            }
+            term DISCARD {
+                then discard;
+            }
+        }
+        filter ACCEPT_BGP_V6 {
+            term ACCEPT_BGP_V6 {
+                from {
+                    source-prefix-list {
+                        BGP_NEIGHBORS_V6;
+                        BGP_NEIGHBORS_VRF_V6;
+                    }
+                    destination-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    payload-protocol tcp;
+                    port bgp;
+                }
+                then {
+                    count ACCEPT_BGP_V6;
+                    accept;
+                }
+            }
+        }
+        filter ACCEPT_BFD_V6 {
+            term ACCEPT_BFD_V6 {
+                from {
+                    destination-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    payload-protocol udp;
+                    port [ 3784 4784 ];
+                }
+                then {
+                    count ACCEPT_BFD_V6;
+                    accept;
+                }
+            }
+        }
+        filter ACCEPT_VRRP_V6 {
+            term ACCEPT_VRRP_V6 {
+                from {
+                    source-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    destination-prefix-list {
+                        VRRP_V6;
+                    }
+                    payload-protocol [ vrrp ah ];
+                }
+                then {
+                    count ACCEPT_VRRP_V6;
+                    accept;
+                }
+            }
+        }
+        filter ACCEPT_ICMP_V6 {
+            term NO_ICMP_FRAGMENTS_V6 {
+                from {
+                    next-header fragment;
+                    payload-protocol icmp6;
+                }
+                then {
+                    count NO_ICMP6_FRAGMENTS_V6;
+                    log;
+                    discard;
+                }
+            }
+            term ACCEPT_ICMP_V6 {
+                from {
+                    payload-protocol icmp6;
+                }
+                then {
+                    policer 5MB_CP_POLICER;
+                    count ACCEPT_ICMP_V6;
+                    accept;
+                }
+            }
+        }
+        filter ACCEPT_TRACERT_V6 {
+            term ACCEPT_TRACERT_UDP_V6 {
+                from {
+                    destination-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    payload-protocol udp;
+                    destination-port 33435-33450;
+                    hop-limit 1;
+                }
+                then {
+                    policer 5MB_CP_POLICER;
+                    count ACCEPT_TRACERT_UDP_V6;
+                    accept;
+                }
+            }
+            term ACCEPT_TRACERT_ICMP_V6 {
+                from {
+                    destination-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    payload-protocol icmp6;
+                    icmp-type [ echo-request node-information-request time-exceeded ];
+                    hop-limit 1;
+                }
+                then {
+                    policer 5MB_CP_POLICER;
+                    count ACCEPT_TRACERT_ICMP_V6;
+                    accept;
+                }
+            }
+        }
+        filter DISCARD_ALL_V6 {
+            term DISCARD_ALL {
+                then discard;
+            }
+        }
+        filter ACCEPT_MGMT_SERVICES_V6 {
+            term ACCEPT_SSH_V6 {
+                filter ACCEPT_SSH_V6;
+            }
+            term ACCEPT_TRACERT_V6 {
+                filter ACCEPT_TRACERT_V6;
+            }
+            term ACCEPT_ICMP_V6 {
+                filter ACCEPT_ICMP_V6;
+            }
+        }
+        filter ACCEPT_NETWORK_SERVICES_V6 {
+            term ACCEPT_BGP_V6 {
+                filter ACCEPT_BGP_V6;
+            }
+            term ACCEPT_BFD_V6 {
+                filter ACCEPT_BFD_V6;
+            }
+            term ACCEPT_VRRP_V6 {
+                filter ACCEPT_VRRP_V6;
+            }
+            term ACCEPT_LDP_V6 {
+                filter ACCEPT_LDP_V6;
+            }
+        }
+        filter ACCEPT_SSH_V6 {
+            term ACCEPT_SSH_V6 {
+                from {
+                    source-prefix-list {
+                        MGMT_NETS_V6;
+                    }
+                    destination-port ssh;
+                }
+                then {
+                    count ACCEPT_SSH_V6;
+                    accept;
+                }
+            }
+        }
+        filter ACCEPT_LDP_V6 {
+            term ACCEPT_LDP_DISCOVER_V6 {
+                from {
+                    source-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    destination-prefix-list {
+                        MCAST_ALL_ROUTERS_V6;
+                    }
+                    payload-protocol udp;
+                    destination-port ldp;
+                }
+                then accept;
+            }
+            term ACCEPT_LDP_UCAST_V6 {
+                from {
+                    destination-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    payload-protocol tcp;
+                    port ldp;
+                }
+                then count ACCEPT_LDP_UCAST;
+            }
+            term ACCEPT_TLDP_DISCOVER_V6 {
+                from {
+                    destination-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    payload-protocol udp;
+                    destination-port ldp;
+                }
+                then {
+                    count ACCEPT_TLDP_DISCOVER;
+                    accept;
+                }
+            }
+        }
+    }
+}
+routing-instances {
+    VRF_ARKAD_EXT {
+        description "Arkadin Public Routing";
+        instance-type vrf;
+        interface xe-0/1/7.0;
+        interface lo0.2;
+        route-distinguisher 172.16.0.20:2;
+        vrf-target target:53550:2;
+        vrf-table-label;
+        routing-options {
+            rib VRF_ARKAD_EXT.inet6.0 {
+                static {
+                    route ::/0 discard;
+                    route 2a00:fa60::/32 discard;
+                    route 2a00:fa60:2000::/38 discard;
+                    route 2a00:fa60:1250::/44 discard;
+                }
+            }
+            static {
+                route 0.0.0.0/0 {
+                    next-hop [ 185.37.223.16 185.37.223.17 ];
+                    resolve;
+                }
+            }
+            auto-export;
+        }
+        protocols {
+            bgp {
+                log-updown;
+                group INET_V4 {
+                    type external;
+                    multihop {
+                        ttl 16;
+                    }
+                    local-address 185.37.223.33;
+                    import PS_IMP_INET_V4;
+                    family inet {
+                        unicast;
+                    }
+                    export PS_EXP_INET_V4;
+                    peer-as 200077;
+                    neighbor 185.37.223.16 {
+                        description atlinet01;
+                    }
+                    neighbor 185.37.223.17 {
+                        description atlinet02;
+                    }
+                    neighbor 185.37.223.22 {
+                        description ifcinet01;
+                    }
+                    neighbor 185.37.223.23 {
+                        description ifcinet02;
+                    }
+                    neighbor 185.37.223.20 {
+                        description ld4inet01;
+                    }
+                    neighbor 185.37.223.21 {
+                        description pa2inet01;
+                    }
+                    neighbor 185.37.223.26 {
+                        description pyrinet01;
+                    }
+                    neighbor 185.37.223.27 {
+                        description pyrinet02;
+                    }
+                    neighbor 185.37.223.31 {
+                        description sgninet01;
+                    }
+                    neighbor 185.37.223.18 {
+                        description shiinet01;
+                    }
+                    neighbor 185.37.223.19 {
+                        description shiinet02;
+                    }
+                    neighbor 185.37.223.24 {
+                        description sjcinet01;
+                    }
+                    neighbor 185.37.223.25 {
+                        description sjcinet02;
+                    }
+                }
+                group ISP_HE_V4 {
+                    hold-time 12;
+                    import [ PS_IMP_TRANSIT-FILTER_V4 PS_IMP_HE_V4 ];
+#                    authentication-key <removed> SECRET-DATA */;
+                    export PS_EXP_HE_V4;
+                    peer-as 6939;
+                    neighbor 184.105.38.121;
+                }
+                group ISP_HE_V6 {
+                    hold-time 12;
+                    import PS_IMP_HE_V6;
+#                    authentication-key <removed> SECRET-DATA */;
+                    export PS_EXP_HE_V6;
+                    peer-as 6939;
+                    neighbor 2001:470:1:987::1;
+                }
+            }
+        }
+    }
+    VRF_ARKAD_INT {
+        description "Arkadin Infrastructure";
+        instance-type vrf;
+        interface xe-0/1/5.1420;
+        interface xe-0/1/5.2153;
+        interface ae1.0;
+        interface ae2.0;
+        interface lo0.1;
+        route-distinguisher 172.16.0.20:1;
+        vrf-import PS_IMP_VRF-ARKAD-INT;
+        vrf-export PS_EXP_VRF-ARKAD-INT;
+        vrf-table-label;
+        routing-options {
+            rib VRF_ARKAD_INT.inet6.0 {
+                static {
+                    route ::/0 next-table VRF_ARKAD_EXT.inet6.0;
+                }
+            }
+            static {
+                route 0.0.0.0/0 next-table VRF_ARKAD_EXT.inet.0;
+                route 10.100.0.232/29 next-hop 10.100.0.66;
+                route 10.100.98.0/24 next-hop 10.100.0.66;
+                route 10.100.190.0/24 next-hop 10.100.0.66;
+            }
+            auto-export;
+        }
+        protocols {
+            bgp {
+                log-updown;
+                group LEAF_V4 {
+                    type external;
+                    import PS_SET-LP;
+                    family inet {
+                        unicast;
+                    }
+                    export PS_EXP_LEAF_V4;
+                    multipath {
+                        multiple-as;
+                    }
+                    neighbor 172.22.0.19 {
+                        description chi-lf-01;
+                        peer-as 64100.1;
+                    }
+                    neighbor 172.22.0.21 {
+                        description chi-lf-02;
+                        peer-as 64100.2;
+                    }
+                }
+                group LEAF_V6 {
+                    type external;
+                    hold-time 10;
+                    import PS_IMP_LEAF_V6;
+                    family inet6 {
+                        unicast;
+                    }
+                    export PS_EXP_LEAF_V6;
+                    multipath {
+                        multiple-as;
+                    }
+                    neighbor 2a00:fa60:25:2121::2 {
+                        description chi-lf-01;
+                        peer-as 64100.1;
+                    }
+                    neighbor 2a00:fa60:25:2122::2 {
+                        description chi-lf-02;
+                        peer-as 64100.2;
+                    }
+                }
+                group SCH_V4 {
+                    type external;
+                    import PS_IMP_SCH_V4;
+                    family inet {
+                        unicast;
+                    }
+                    export PS_EXP_SCH_V4;
+                    neighbor 172.29.100.14 {
+                        description SCHCORE01;
+                        peer-as 65110;
+                    }
+                }
+            }
+        }
+    }
+}

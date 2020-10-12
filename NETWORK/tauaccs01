@@ -1,0 +1,542 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C2960G-48TC-L
+!CPU: PowerPC405
+!
+!Memory: main 65536K
+!Serial Number: FOC1523Z3FE
+!Model revision number           : H0
+!Model number                    : WS-C2960G-48TC-L
+!Motherboard assembly number     : 73-10300-12
+!Motherboard serial number       : FOC152304WP
+!Motherboard revision number     : A0
+!Power supply part number        : 341-0098-02
+!Power supply serial number      : AZS152006YK
+!
+!Processor ID: FOC1523Z3FE
+!
+!Image: Software: C2960-LANBASEK9-M, 12.2(50)SE5, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Tue 28-Sep-10 13:44 by prod_rel_team
+!Image: flash:c2960-lanbasek9-mz.122-50.SE5/c2960-lanbasek9-mz.122-50.SE5.bin
+!
+!BOOTLDR: Version 12.2(44)SE5, RELEASE SOFTWARE (fc1)
+!% No entity named "raw"
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Gi0/8, Gi0/45, Gi0/46, Gi0/47, Gi0/48
+!VLAN: 21   V:10.105.21.0/24:SIG_VIPER       active    Gi0/33, Gi0/35, Gi0/36, Gi0/39
+!VLAN: 22   V:10.105.22.0/24:RTP_VIPER       active    Gi0/17, Gi0/18, Gi0/19, Gi0/20, Gi0/21, Gi0/22, Gi0/31
+!VLAN: 23   M:10.105.23.0/24:MGMT_VIPER      active    Gi0/1, Gi0/2, Gi0/3, Gi0/4, Gi0/5, Gi0/6, Gi0/7, Gi0/10, Gi0/23, Gi0/24, Gi0/32
+!VLAN:                                                 Gi0/34, Gi0/37, Gi0/38, Gi0/40, Gi0/41, Gi0/42
+!VLAN: 31   V:10.105.31.0/24:DETAU3          active    Gi0/25, Gi0/26, Gi0/27, Gi0/28
+!VLAN: 101  VLAN0101                         active    
+!VLAN: 102  VLAN0102                         active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 21   enet  100021     1500  -      -      -        -    -        0      0   
+!VLAN: 22   enet  100022     1500  -      -      -        -    -        0      0   
+!VLAN: 23   enet  100023     1500  -      -      -        -    -        0      0   
+!VLAN: 31   enet  100031     1500  -      -      -        -    -        0      0   
+!VLAN: 101  enet  100101     1500  -      -      -        -    -        0      0   
+!VLAN: 102  enet  100102     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0xF
+Using 12569 out of 65536 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime show-timezone
+service password-encryption
+!
+hostname tauaccs01
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 128000 notifications
+enable secret 5 $1$/mDt$Nb08iqk17vZxjxdOYYDXE/
+!
+username netops privilege 15 secret 5 $1$0WyN$f72d5Njg1QNfOVSYSIzeE.
+username noc privilege 0 secret 5 $1$m3Z8$xXNiHTn1kzrfi1k9GygPo0
+aaa new-model
+!
+aaa authentication fail-message ^CWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login ARKANETRADIUS group radius local
+aaa authentication enable default enable
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+system mtu routing 1500
+vtp mode transparent
+ip subnet-zero
+!
+ip domain-name arkadin.lan
+login on-failure log
+login on-success log
+!
+crypto pki trustpoint HTTPS_SS_CERT_KEYPAIR
+ enrollment selfsigned
+ serial-number
+ revocation-check none
+ rsakeypair HTTPS_SS_CERT_KEYPAIR
+!
+crypto pki certificate chain HTTPS_SS_CERT_KEYPAIR
+ certificate self-signed 01 nvram:D9A2E900host#2E2E.cer
+!
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+errdisable recovery cause link-flap
+!
+spanning-tree mode rapid-pvst
+spanning-tree portfast default
+spanning-tree portfast bpdufilter default
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+vlan 21
+ name V:10.105.21.0/24:SIG_VIPER
+!
+vlan 22
+ name V:10.105.22.0/24:RTP_VIPER
+!
+vlan 23
+ name M:10.105.23.0/24:MGMT_VIPER
+!
+vlan 31
+ name V:10.105.31.0/24:DETAU3
+!
+vlan 101-102 
+!
+ip ssh authentication-retries 2
+ip ssh version 2
+!
+interface GigabitEthernet0/1
+ description DETAUSCC1:eth0
+ switchport access vlan 23
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/2
+ description DETAUWITNESS01:MGMT1
+ switchport access vlan 23
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/3
+ description DETAUVIPERAS01:MGMT1
+ switchport access vlan 23
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/4
+ description DETAUVIPERAS01B:MGMT1
+ switchport access vlan 23
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/5
+ description DETAUVIPERDB01:MGMT1
+ switchport access vlan 23
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/6
+ description DETAUVIPERDB01B:MGMT1
+ switchport access vlan 23
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/7
+ description detaufraud:eth0
+ switchport access vlan 23
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/8
+ shutdown
+!
+interface GigabitEthernet0/9
+ description DETAUSNIFF01:eth0:monitor
+ load-interval 30
+!
+interface GigabitEthernet0/10
+ description unidentified
+ switchport access vlan 23
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/11
+ description DETAU3AMG:eth1
+ switchport access vlan 30
+ switchport mode access
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet0/12
+ description DETAUAPS
+ switchport access vlan 30
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/13
+ description DETAU3AMG:eth1
+ switchport access vlan 30
+ switchport mode access
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet0/14
+ description DETAU3CRSB:eth1
+ switchport access vlan 30
+ switchport mode access
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet0/15
+ description DETAU3BX:eth0
+ switchport access vlan 30
+ switchport mode access
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet0/16
+ description DETAU3MX:eth0
+ switchport access vlan 30
+ switchport mode access
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet0/17
+ description DETAUNFS01:eth1
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/18
+ description unidentified
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/19
+ description DETAUMPC3:eth0
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/20
+ description DETAUMPC4:eth0
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+ speed 1000
+!
+interface GigabitEthernet0/21
+ description DETAUMPC5:eth0
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+ speed 1000
+!
+interface GigabitEthernet0/22
+ description DETAUMPC6:eth0
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/23
+ description tautap09:mgmt
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/24
+ description tautap10:mgmt
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/25
+ description DETAU3IMG1:mgmt
+ switchport access vlan 31
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/26
+ description DETAU3IMG2:mgmt
+ switchport access vlan 31
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/27
+ description detau3gcems:eth0
+ switchport access vlan 31
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/28
+ description unidentified
+ switchport access vlan 31
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/29
+ description DETAU3IMG1:sip
+ switchport access vlan 30
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/30
+ description DETAU3IMG2:sip
+ switchport access vlan 30
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/31
+ description DETAUMPC7:eth0
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+ spanning-tree portfast
+!
+interface GigabitEthernet0/32
+ description tautap11:mgmt
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/33
+ description DETAUSCC1:eth1
+ switchport access vlan 21
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/34
+ description tautap12:mgmt
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/35
+ description DETAUVIPERAS01:SIP1
+ switchport access vlan 21
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/36
+ description DETAUVIPERAS01B:SIP1
+ switchport access vlan 21
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/37
+ description tautap01:mgmt
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/38
+ description tautap02:mgmt
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/39
+ description unidentified
+ switchport access vlan 21
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/40
+ description tautap03:mgmt
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/41
+ description tautap04:mgmt
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/42
+ description tauagg01:mgmt
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/43
+ description Q:taucore02:Gi0/46
+ switchport trunk allowed vlan 21-23,30,31,101,102
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet0/44
+ description Q:taucore01:Gi0/46
+ switchport trunk allowed vlan 21-23,30,31,101,102
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet0/45
+ shutdown
+!
+interface GigabitEthernet0/46
+ shutdown
+!
+interface GigabitEthernet0/47
+ shutdown
+!
+interface GigabitEthernet0/48
+ shutdown
+!
+interface Vlan1
+ no ip address
+ no ip route-cache
+ shutdown
+!
+interface Vlan21
+ description V:10.105.21.0/24:SIG_VIPER
+ ip address 10.105.21.152 255.255.255.0
+ no ip route-cache
+!
+interface Vlan22
+ description V:10.105.22.0/24:RTP_VIPER
+ ip address 10.105.22.152 255.255.255.0
+ no ip route-cache
+!
+interface Vlan23
+ description M:10.105.23.0/24:MGMT_VIPER
+ ip address 10.105.23.152 255.255.255.0
+ no ip route-cache
+!
+interface Vlan31
+ description V:10.105.31.0/24:DETAU3
+ ip address 10.105.31.152 255.255.255.0
+ no ip route-cache
+!
+ip default-gateway 10.105.23.254
+no ip http server
+no ip http secure-server
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ip radius source-interface Vlan23 
+logging trap notifications
+logging 10.115.137.89
+logging 10.124.23.24
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server host 10.105.2.133 noc_services 
+snmp-server host 10.115.38.131 noc_services 
+snmp-server host 10.115.137.57 version 2c noc_services 
+snmp ifmib ifindex persist
+radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server timeout 3
+!radius-server key <removed>
+!
+control-plane
+!
+banner login ^C========================================================================
+=                                                                      =                                                                             
+=               This is a private system of Arkadin                    =
+=         Authorization from Network Operations Team is                =
+=   required to use this system. Unauthorized access is prohibited!    =
+=                                                                      =
+=               This device is RADIUS authenticated                    = 
+=                                                                      =
+=                 network_operations@arkadin.com                       = 
+=                                                                      =
+========================================================================
+^C
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ logging synchronous
+ history size 256
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+!
+monitor session 1 source interface Gi0/36
+monitor session 1 destination interface Gi0/9
+ntp server 10.115.131.1
+ntp server 10.124.19.1
+ntp server 10.125.19.1 prefer
+end

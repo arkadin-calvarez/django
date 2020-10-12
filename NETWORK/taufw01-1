@@ -1,0 +1,462 @@
+#RANCID-CONTENT-TYPE: netscreen
+#
+#Product: SSG-140
+#SN: 0185042009000727
+#HW: 1010(0)-(00)
+#Netscreen Type: Firewall+VPN
+#Software Version: 6.3.0r3.0
+#Feature: AV-K
+#File Name: screenos_image, Checksum: ae2c7a1b
+#Memory: 256MB
+#
+unset key protection enable
+set clock ntp
+set clock timezone 1
+set clock dst recurring start-weekday 2 0 3 02:00 end-weekday 1 0 11 02:00
+set vrouter trust-vr sharable
+set vrouter "untrust-vr"
+set protocol ospf
+set enable
+set area 0.0.0.33 
+exit
+exit
+set vrouter "trust-vr"
+unset auto-route-export
+set protocol ospf
+set enable
+set area 0.0.0.49 
+exit
+exit
+set vrouter name "vidyo-vr" id 1025 
+unset vrouter "vidyo-vr" nsrp-config-sync
+set vrouter "vidyo-vr"
+unset auto-route-export
+set protocol ospf
+set enable
+set area 0.0.0.45 
+exit
+set preference nhrp 100
+set preference ospf-e2 254
+exit
+set vrouter name "ELISA" id 1026 
+set vrouter "ELISA"
+unset auto-route-export
+exit
+set service "HTTP" timeout 5 
+set service "HTTP-EXT" timeout 60
+set service "Remote NSM" protocol tcp src-port 0-65535 dst-port 5405-5405 
+set service "Spectel Protocols & ODBC" protocol tcp src-port 0-65535 dst-port 5050-5050 
+set service "Spectel Protocols & ODBC" + tcp src-port 0-65535 dst-port 2001-2011 
+set service "Spectel Protocols & ODBC" + tcp src-port 0-65535 dst-port 1433-1433 
+set service "Anywhere-SL" protocol tcp src-port 0-65535 dst-port 10000-10006 
+set service "Anywhere-SL" + udp src-port 0-65535 dst-port 10000-10006 
+unset alg sip enable
+unset alg mgcp enable
+unset alg sccp enable
+set alg appleichat enable
+unset alg appleichat re-assembly enable
+unset alg h323 enable
+set alg sctp enable
+set auth-server "Local" id 0
+set auth-server "Local" server-name "Local"
+set auth-server "Radius" id 1
+set auth-server "Radius" server-name "10.115.38.110"
+set auth-server "Radius" backup1 "10.100.92.1"
+set auth-server "Radius" account-type admin 
+set auth-server "Radius" radius port 1812
+#set auth-server "Radius" radius secret <removed>
+set auth default auth server "Radius"
+set auth radius accounting port 1646
+#set admin name <removed>
+#set admin password <removed>
+set admin manager-ip 10.0.1.0 255.255.255.0
+set admin manager-ip 10.100.19.20
+set admin manager-ip 10.100.19.21
+set admin manager-ip 38.104.2.203
+set admin manager-ip 62.23.57.186
+set admin manager-ip 81.93.181.219
+set admin manager-ip 185.37.220.222
+set admin mail alert
+set admin mail server-name "10.115.129.2"
+set admin mail mail-addr1 "nio@arkadin.com"
+set admin auth web timeout 0
+set admin auth server "Radius"
+set admin auth remote root
+set admin privilege read-write
+set admin format dos
+set zone "Trust" vrouter "trust-vr"
+set zone "Untrust" vrouter "trust-vr"
+set zone "DMZ" vrouter "trust-vr"
+set zone "VLAN" vrouter "trust-vr"
+set zone id 100 "MGMT"
+set zone id 101 "VPN"
+set zone "VPN" vrouter "untrust-vr"
+set zone id 102 "Vidyo-int"
+set zone "Vidyo-int" vrouter "vidyo-vr"
+set zone id 103 "ELISA"
+set zone "ELISA" vrouter "ELISA"
+set zone "Untrust-Tun" vrouter "trust-vr"
+set zone "Trust" tcp-rst 
+set zone "Untrust" block 
+unset zone "Untrust" tcp-rst 
+set zone "MGT" block 
+unset zone "V1-Trust" tcp-rst 
+unset zone "V1-Untrust" tcp-rst 
+set zone "DMZ" tcp-rst 
+unset zone "V1-DMZ" tcp-rst 
+unset zone "VLAN" tcp-rst 
+unset zone "MGMT" tcp-rst 
+unset zone "VPN" tcp-rst 
+unset zone "Vidyo-int" tcp-rst 
+set zone "ELISA" tcp-rst 
+set zone "Trust" screen syn-frag
+set zone "Trust" screen tcp-no-flag
+set zone "Trust" screen unknown-protocol
+set zone "Trust" screen syn-fin
+set zone "Trust" screen fin-no-ack
+set zone "Untrust" screen tear-drop
+set zone "Untrust" screen syn-flood
+set zone "Untrust" screen ping-death
+set zone "Untrust" screen ip-filter-src
+set zone "Untrust" screen land
+set zone "V1-Untrust" screen tear-drop
+set zone "V1-Untrust" screen syn-flood
+set zone "V1-Untrust" screen ping-death
+set zone "V1-Untrust" screen ip-filter-src
+set zone "V1-Untrust" screen land
+set interface ethernet0/5 phy full 10mb
+set interface ethernet0/9 phy full 10mb
+set interface "ethernet0/0" zone "Trust"
+set interface "ethernet0/1" zone "HA"
+set interface "ethernet0/2" zone "Trust"
+set interface "ethernet0/3" zone "Trust"
+set interface "ethernet0/3.3" tag 101 zone "Trust"
+set interface "ethernet0/5" zone "Untrust"
+set interface "ethernet0/7" zone "Vidyo-int"
+set interface "tunnel.2" zone "Untrust"
+set interface "tunnel.4" zone "Untrust"
+set interface "tunnel.8" zone "Untrust"
+set interface "tunnel.15" zone "VPN"
+set interface "tunnel.18" zone "VPN"
+set interface ethernet0/0 ip 10.105.10.251/24
+set interface ethernet0/0 nat
+unset interface vlan1 ip
+set interface ethernet0/2 ip 10.105.15.254/24
+set interface ethernet0/2 nat
+set interface ethernet0/3.3 ip 10.105.11.251/24
+set interface ethernet0/3.3 nat
+set interface tunnel.2 ip unnumbered interface ethernet0/0
+set interface tunnel.4 ip unnumbered interface ethernet0/0
+set interface tunnel.8 ip unnumbered interface ethernet0/0
+set interface ethernet0/9 mtu 1500
+set interface tunnel.2 mtu 1400
+set interface tunnel.4 mtu 1400
+set interface tunnel.8 mtu 1400
+set interface tunnel.15 mtu 1476
+set interface tunnel.18 mtu 1476
+unset interface vlan1 bypass-others-ipsec
+unset interface vlan1 bypass-non-ip
+set interface ethernet0/0 manage-ip 10.105.10.250
+set interface ethernet0/2 manage-ip 10.105.15.253
+set interface ethernet0/0 ip manageable
+set interface ethernet0/2 ip manageable
+set interface ethernet0/3.3 ip manageable
+unset interface ethernet0/5 ip manageable
+unset interface ethernet0/2 manage ssh
+unset interface ethernet0/2 manage snmp
+unset interface ethernet0/2 manage ssl
+unset interface ethernet0/3 manage ssh
+unset interface ethernet0/3 manage telnet
+unset interface ethernet0/3 manage ssl
+unset interface ethernet0/3 manage web
+set interface ethernet0/5 manage ping
+set interface ethernet0/5 manage ssh
+set interface ethernet0/5 manage ssl
+set interface ethernet0/7 manage ping
+set interface ethernet0/7 manage ssh
+set interface ethernet0/7 manage snmp
+set interface ethernet0/7 manage ssl
+set interface ethernet0/7 manage web
+set auth-server "Radius" src-interface "ethernet0/0"
+set interface ethernet0/6 disable
+unset flow no-tcp-seq-check
+set flow tcp-syn-check
+unset flow tcp-syn-bit-check
+set flow reverse-route clear-text prefer
+set flow reverse-route tunnel always
+set console page 0
+set domain arkadin.lan
+set hostname taufw01-1
+set dbuf size 4096
+set webauth server "Radius"
+set pki authority default scep mode "auto"
+set pki x509 default cert-path partial
+set nsrp cluster id 1
+set nsrp rto-mirror sync
+set nsrp rto-mirror route
+set nsrp vsd-group id 0 priority 50
+set nsrp vsd-group id 0 preempt
+set nsrp encrypt password Arkadin
+set nsrp auth password Arkadin
+set nsrp vsd-group id 0 monitor interface ethernet0/0
+set nsrp vsd-group id 0 monitor interface ethernet0/3
+set dns host dns1 10.105.2.1 src-interface tunnel.4
+set dns host dns3 0.0.0.0
+set address "Trust" "172.21.128.0/24" 172.21.128.0 255.255.255.0
+set address "Trust" "172.31.1.1/32" 172.31.1.1 255.255.255.255
+set address "Trust" "213.138.57.107/32" 213.138.57.107 255.255.255.255
+set address "Trust" "ARKANET" 10.0.0.0 255.0.0.0
+set address "Trust" "Conference Plus Network" 172.16.0.0 255.240.0.0
+set address "Trust" "DETAU3LAN" 10.105.30.0 255.255.255.0
+set address "Trust" "DETAULAN" 10.105.10.0 255.255.255.0
+set address "Trust" "DETAUMANLAN" 10.105.11.0 255.255.255.0
+set address "Trust" "DETAUVIPLAN" 10.105.22.0 255.255.255.0
+set address "Trust" "DETAUVIPMGMTLAN" 10.105.23.0 255.255.255.0
+set address "Trust" "DETAUVIPSIGLAN" 10.105.21.0 255.255.255.0
+set address "Trust" "SBC_ELISA" 172.31.1.1 255.255.255.255
+set address "Trust" "SIPCOM" 93.187.0.0 255.255.0.0
+set address "Untrust" "10.80.140.10/32" 10.80.140.10 255.255.255.255
+set address "Untrust" "172.21.128.0/24" 172.21.128.0 255.255.255.0
+set address "Untrust" "ARKANET" 10.0.0.0 255.0.0.0
+set address "Untrust" "Avaya 1" 135.27.180.167 255.255.255.255
+set address "Untrust" "Conference Plus Network" 172.16.0.0 255.240.0.0
+set address "Untrust" "DELAN" 10.105.0.0 255.255.0.0
+set address "Untrust" "ELISA_SBC" 10.80.147.11 255.255.255.255
+set address "Untrust" "SDaniel Home Office" 217.111.24.62 255.255.255.255
+set address "Untrust" "Spectel IE 01" 135.124.124.8 255.255.255.255
+set address "Untrust" "Spectel IE 02" 135.124.124.9 255.255.255.255
+set address "Untrust" "Spectel IE 03" 135.124.124.10 255.255.255.255
+set address "Untrust" "Spectel IE 04" 135.124.124.11 255.255.255.255
+set address "Untrust" "Spectel IE 05" 135.124.124.12 255.255.255.255
+set address "Untrust" "Spectel IE 06" 135.124.124.13 255.255.255.255
+set address "Untrust" "Spectel IE 07" 135.124.124.14 255.255.255.255
+set address "Untrust" "Spectel IE 08" 135.124.124.15 255.255.255.255
+set address "Untrust" "Spectel IE 09" 135.124.124.16 255.255.255.255
+set address "Untrust" "Spectel IE 10" 135.124.124.17 255.255.255.255
+set address "Untrust" "Spectel IE 11" 135.124.124.18 255.255.255.255
+set address "Untrust" "Spectel IE 12" 135.124.124.19 255.255.255.255
+set address "Untrust" "Spectel USA 01" 12.25.17.108 255.255.255.255
+set address "Untrust" "Spectel USA 02" 12.25.17.110 255.255.255.255
+set address "Untrust" "Spectel USA 03" 12.25.17.111 255.255.255.255
+set address "Untrust" "Spectel USA 04" 12.25.17.112 255.255.255.255
+set address "DMZ" "DETAUDMZ" 10.105.12.0 255.255.255.0
+set address "ELISA" "172.31.1.1/32" 172.31.1.1 255.255.255.255
+set group address "Trust" "DETAUGRPLAN"
+set group address "Trust" "DETAUGRPLAN" add "DETAU3LAN"
+set group address "Trust" "DETAUGRPLAN" add "DETAULAN"
+set group address "Trust" "DETAUGRPLAN" add "DETAUMANLAN"
+set group address "Trust" "DETAUGRPLAN" add "DETAUVIPLAN"
+set group address "Trust" "DETAUGRPLAN" add "DETAUVIPMGMTLAN"
+set group address "Trust" "DETAUGRPLAN" add "DETAUVIPSIGLAN"
+set group address "Untrust" "Spectel Remote Access" comment "For Remote NSM Accessa"
+set group address "Untrust" "Spectel Remote Access" add "Avaya 1"
+set group address "Untrust" "Spectel Remote Access" add "SDaniel Home Office"
+set group address "Untrust" "Spectel Remote Access" add "Spectel IE 01"
+set group address "Untrust" "Spectel Remote Access" add "Spectel IE 02"
+set group address "Untrust" "Spectel Remote Access" add "Spectel IE 03"
+set group address "Untrust" "Spectel Remote Access" add "Spectel IE 04"
+set group address "Untrust" "Spectel Remote Access" add "Spectel IE 05"
+set group address "Untrust" "Spectel Remote Access" add "Spectel IE 06"
+set group address "Untrust" "Spectel Remote Access" add "Spectel IE 07"
+set group address "Untrust" "Spectel Remote Access" add "Spectel IE 08"
+set group address "Untrust" "Spectel Remote Access" add "Spectel IE 09"
+set group address "Untrust" "Spectel Remote Access" add "Spectel IE 10"
+set group address "Untrust" "Spectel Remote Access" add "Spectel IE 11"
+set group address "Untrust" "Spectel Remote Access" add "Spectel IE 12"
+set group address "Untrust" "Spectel Remote Access" add "Spectel USA 01"
+set group address "Untrust" "Spectel Remote Access" add "Spectel USA 02"
+set group address "Untrust" "Spectel Remote Access" add "Spectel USA 03"
+set group address "Untrust" "Spectel Remote Access" add "Spectel USA 04"
+set group service "Internet Access"
+set group service "Internet Access" add "DNS"
+set group service "Internet Access" add "HTTP"
+set group service "Internet Access" add "HTTPS"
+set group service "Internet Access" add "MAIL"
+set group service "Internet Access" add "NTP"
+set group service "Internet Access" add "PING"
+set group service "Internet Access" add "POP3"
+set group service "Internet Access" add "TRACEROUTE"
+set crypto-policy
+exit
+set ike p1-proposal "pre-g2-aes256-sha1" preshare group2 esp aes256 sha-1
+set ike p2-proposal "pfsg2-esp-aes256-sha1" group2 esp aes256 sha-1 second 3600
+set ike p2-proposal "nopfs-esp-aes256-sha1" no-pfs esp aes256 sha-1 second 3600
+set ike respond-bad-spi 1
+set ike ikev2 ike-sa-soft-lifetime 60
+unset ike ikeid-enumeration
+unset ike dos-protection
+unset ipsec access-session enable
+set ipsec access-session maximum 5000
+set ipsec access-session upper-threshold 0
+set ipsec access-session lower-threshold 0
+set ipsec access-session dead-p2-sa-timeout 0
+unset ipsec access-session log-error
+unset ipsec access-session info-exch-connected
+unset ipsec access-session use-error-log
+unset interface tunnel.15 acvpn-dynamic-routing
+unset interface tunnel.18 acvpn-dynamic-routing
+set l2tp default dns1 10.105.2.1
+set url protocol websense
+exit
+set policy id 48 from "Untrust" to "Trust"  "ELISA_SBC" "SBC_ELISA" "ANY" permit log 
+set policy id 48
+exit
+set policy id 47 from "Trust" to "Untrust"  "SBC_ELISA" "ELISA_SBC" "ANY" permit log 
+set policy id 47
+exit
+set policy id 45 name "LYNC" from "Untrust" to "Untrust"  "ARKANET" "ARKANET" "ANY" permit log 
+set policy id 45 disable
+set policy id 45
+set log session-init
+exit
+set policy id 46 name "LYNC" from "Untrust" to "Trust"  "ARKANET" "SIPCOM" "ANY" permit log 
+set policy id 46
+set log session-init
+exit
+set policy id 39 from "Untrust" to "Trust"  "DELAN" "ARKANET" "ANY" permit log 
+set policy id 39
+set dst-address "Conference Plus Network"
+exit
+set policy id 33 from "Trust" to "Untrust"  "DETAUGRPLAN" "ARKANET" "ANY" permit log 
+set policy id 33
+set dst-address "Conference Plus Network"
+exit
+set policy id 26 from "Trust" to "Untrust"  "DETAUGRPLAN" "Any" "Internet Access" permit 
+set policy id 26
+exit
+set policy id 38 from "Trust" to "Untrust"  "ARKANET" "DELAN" "ANY" permit 
+set policy id 38
+exit
+set policy id 3 from "Trust" to "Untrust"  "Any" "Any" "ANY" permit 
+set policy id 3
+exit
+set policy id 21 from "Untrust" to "Trust"  "ARKANET" "DETAUGRPLAN" "ANY" permit log 
+set policy id 21
+exit
+set policy id 5 from "Untrust" to "Trust"  "Any" "Any" "ANY" deny log 
+set policy id 5
+exit
+set policy id 23 from "Trust" to "Trust"  "DETAUGRPLAN" "DETAUGRPLAN" "ANY" permit log 
+set policy id 23
+exit
+set policy id 36 from "Untrust" to "Untrust"  "ARKANET" "ARKANET" "ANY" permit log 
+set policy id 36
+exit
+set policy id 44 from "Untrust" to "Untrust"  "ARKANET" "172.21.128.0/24" "ANY" permit log 
+set policy id 44
+exit
+set policy id 37 from "Untrust" to "Untrust"  "Any" "Any" "ANY" reject log 
+set policy id 37
+exit
+set policy id 41 from "Vidyo-int" to "Vidyo-int"  "Any" "Any" "ANY" permit log 
+set policy id 41
+exit
+set policy id 42 from "VPN" to "VPN"  "Any" "Any" "ANY" permit log 
+set policy id 42
+exit
+set policy id 49 from "ELISA" to "Untrust"  "172.31.1.1/32" "10.80.140.10/32" "ANY" permit 
+set policy id 49
+exit
+set policy id 50 from "Untrust" to "ELISA"  "10.80.140.10/32" "172.31.1.1/32" "ANY" permit 
+set policy id 50
+exit
+set syslog config "10.124.23.24"
+set syslog config "10.124.23.24" facilities local0 local5
+set syslog config "10.115.137.89"
+set syslog config "10.115.137.89" facilities local0 local5
+set syslog src-interface ethernet0/0
+set syslog enable
+unset log module system level notification destination internal
+unset log module system level information destination internal
+unset log module system level debugging destination internal
+unset log module system level notification destination email
+unset log module system level information destination syslog
+unset log module system level debugging destination syslog
+unset log module system level notification destination webtrends
+unset log module system level notification destination NSM
+unset log module system level information destination NSM
+unset log module system level debugging destination NSM
+unset log module system level notification destination usb
+unset log module system level information destination usb
+unset log module system level debugging destination usb
+set nsmgmt bulkcli reboot-timeout 60
+set ssh version v2
+set ssh enable
+set config lock timeout 5
+unset license-key auto-update
+unset telnet client enable
+set ntp server "10.115.131.1"
+set ntp server backup1 "10.124.19.1"
+set snmp community "network_services" Read-Only Trap-on traffic version any  
+set snmp community "noc_services" Read-Only Trap-on traffic version any  
+set snmp host "noc_services" 10.115.137.57/32 src-interface ethernet0/0  trap v2
+set snmp host "noc_services" 10.105.137.57/32 src-interface ethernet0/0  trap v2
+set snmp host "noc_services" 10.105.137.56/32 src-interface ethernet0/0  trap v2
+set snmp host "noc_services" 10.100.137.55/32 src-interface ethernet0/0  trap v2
+set snmp host "noc_services" 10.250.137.55/32 src-interface ethernet0/0  trap v2
+set snmp host "noc_services" 10.100.19.21/32 src-interface ethernet0/0  trap v2
+set snmp host "noc_services" 10.250.90.90/32 src-interface ethernet0/0  trap v2
+set snmp host "noc_services" 192.206.95.169/32 src-interface ethernet0/0  trap v2
+set snmp host "noc_services" 10.105.137.80/32 src-interface ethernet0/0  trap v2
+set snmp location "DEUTSCHLAND"
+set snmp name "taufw01"
+set snmp port listen 161
+set snmp port trap 162
+set snmpv3 local-engine id "0185042009000727"
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+set access-list 1
+set access-list 1 deny ip 10.105.6.0/16 1
+set access-list 1 permit ip 10.0.0.0/8 2
+set access-list 1 permit ip 10.105.21.0/24 3
+set access-list 2
+set access-list 2 deny ip 172.21.128.0/24 1
+set access-list 2 permit ip 172.16.0.0/12 2
+set access-list 3
+set access-list 3 permit ip 93.187.0.0/16 3
+set access-list 4
+set access-list 4 permit ip 10.105.10.0/24 1
+set access-list 4 permit ip 10.105.11.0/24 2
+set access-list 4 permit ip 10.105.15.0/24 3
+set route-map name "STATIC2OSPF" permit 1
+set match ip 1
+exit
+set route-map name "STATIC2OSPF" permit 2
+set match ip 2
+exit
+set route-map name "STATIC2OSPF" permit 3
+set match ip 3
+exit
+set route-map name "CONNECTED2OSPF" permit 1
+set match ip 4
+exit
+unset add-default-route
+set route 10.0.0.0/8 interface ethernet0/0 gateway 10.105.10.254
+set route 172.16.0.0/12 interface ethernet0/0 gateway 10.105.10.254
+set route 172.21.128.0/24 interface tunnel.8
+set route 10.105.3.0/24 interface tunnel.2
+set route 93.187.0.0/16 gateway 10.105.10.254
+set protocol ospf
+set redistribute route-map "CONNECTED2OSPF" protocol connected
+set redistribute route-map "STATIC2OSPF" protocol static
+exit
+exit
+set vrouter "vidyo-vr"
+exit
+set vrouter "ELISA"
+exit
+set interface ethernet0/0 protocol ospf area 0.0.0.49
+set interface ethernet0/0 protocol ospf passive
+set interface ethernet0/0 protocol ospf enable
+set interface tunnel.4 protocol ospf area 0.0.0.49
+set interface tunnel.4 protocol ospf enable
+set interface tunnel.4 protocol ospf cost 1000
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+exit
+set vrouter "vidyo-vr"
+exit
+set vrouter "ELISA"
+exit

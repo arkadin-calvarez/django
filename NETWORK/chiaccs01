@@ -1,0 +1,357 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!
+!
+!
+!
+!
+Using 4072 out of 2097152 bytes, uncompressed size = 8805 bytes
+!
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+service compress-config
+!
+hostname chiaccs01
+!
+boot-start-marker
+boot-end-marker
+!
+vrf definition Mgmt-vrf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+         address-family ipv6
+ exit-address-family
+!
+logging buffered 128000 notifications
+enable secret 5 $1$42U0$0LwvVKW8qjzC0FUvH3l/p0
+!
+username netops privilege 15 secret 5 $1$UiXo$r0TkWs1MOTrzjcu5OxvsI1
+aaa new-model
+!
+aaa group server radius AAA_RADIUS
+ server-private 10.115.38.110 auth-port 1812 acct-port 1813 key 7 097C6F5B262B27213425220914141B180A03212C3727287866796778
+ server-private 10.100.92.1 auth-port 1812 acct-port 1813 key 7 14273359332A1A181B0115161D23343D3C20647279777D203C392275
+!
+aaa authentication fail-message ^CWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login ARKANETRADIUS group AAA_RADIUS local
+aaa authentication enable default enable
+aaa authorization exec default group AAA_RADIUS if-authenticated 
+!
+        !
+!
+aaa session-id common
+switch 1 provision ws-c3850-24t
+!
+ip domain-name arkadin.lan
+!
+login on-failure log
+login on-success log
+qos queue-softmax-multiplier 100
+!
+diagnostic bootup level minimal
+!
+spanning-tree mode rapid-pvst
+spanning-tree loopguard default
+spanning-tree portfast default
+        spanning-tree portfast bpduguard default
+spanning-tree extend system-id
+spanning-tree uplinkfast
+spanning-tree backbonefast
+spanning-tree vlan 1-4094 priority 53248
+hw-switch switch 1 logging onboard message level 3
+!
+redundancy
+ mode sso
+!
+class-map match-any non-client-nrt-class
+!
+policy-map port_child_policy
+ class non-client-nrt-class
+  bandwidth remaining ratio 10
+!
+        !
+!
+interface GigabitEthernet0/0
+ vrf forwarding Mgmt-vrf
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet1/0/1
+ description chiremote3A
+ switchport access vlan 180
+ switchport mode access
+!
+interface GigabitEthernet1/0/2
+ description chiremote3B
+ switchport access vlan 180
+ switchport mode access
+        !
+interface GigabitEthernet1/0/3
+ description uschiesxops02-int2
+ switchport mode trunk
+ shutdown
+!
+interface GigabitEthernet1/0/4
+ description uschisan01-2-int2
+ switchport mode trunk
+ shutdown
+!
+interface GigabitEthernet1/0/5
+ description uschiesxops01-int2
+ switchport mode trunk
+ shutdown
+!
+interface GigabitEthernet1/0/6
+ description uschisan01-1-int1
+ switchport mode trunk
+ shutdown
+!
+interface GigabitEthernet1/0/7
+ description uschiesxops02-int1
+         switchport mode trunk
+ shutdown
+!
+interface GigabitEthernet1/0/8
+ description uschisan01-1-int3
+ switchport mode trunk
+ shutdown
+!
+interface GigabitEthernet1/0/9
+ shutdown
+!
+interface GigabitEthernet1/0/10
+ description chi-ce-02-mgmt
+ switchport access vlan 180
+ switchport mode access
+!
+interface GigabitEthernet1/0/11
+ description chi-lf-02-mgmt
+ switchport access vlan 180
+ switchport mode access
+!
+interface GigabitEthernet1/0/12
+ description chi-br-02-mgmt
+         switchport access vlan 180
+ switchport mode access
+!
+interface GigabitEthernet1/0/13
+ description chiprobe01
+ switchport access vlan 180
+ switchport mode access
+!
+interface GigabitEthernet1/0/14
+ description chiprobe02
+ switchport access vlan 180
+ switchport mode access
+!
+interface GigabitEthernet1/0/15
+ description chiprobe03
+ switchport access vlan 180
+ switchport mode access
+!
+interface GigabitEthernet1/0/16
+ description chiprobe04
+ switchport access vlan 180
+ switchport mode access
+!
+        interface GigabitEthernet1/0/17
+ description chiprobe05
+ switchport access vlan 180
+ switchport mode access
+!
+interface GigabitEthernet1/0/18
+ description chiprobe06
+ switchport access vlan 180
+ switchport mode access
+!
+interface GigabitEthernet1/0/19
+ description chiprobe07
+ switchport access vlan 180
+ switchport mode access
+!
+interface GigabitEthernet1/0/20
+ description chiprobe08
+ switchport access vlan 180
+ switchport mode access
+!
+interface GigabitEthernet1/0/21
+ shutdown
+!
+        interface GigabitEthernet1/0/22
+ description Q:chicore02:Gi2/26
+ switchport trunk allowed vlan 180
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/23
+ description chicore02-gi2/24
+ shutdown
+!
+interface GigabitEthernet1/0/24
+ description chicore01-gi2/24
+ switchport trunk allowed vlan 180
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/1/1
+ shutdown
+!
+interface GigabitEthernet1/1/2
+ shutdown
+!
+interface GigabitEthernet1/1/3
+         shutdown
+!
+interface GigabitEthernet1/1/4
+ shutdown
+!
+interface TenGigabitEthernet1/1/1
+ shutdown
+!
+interface TenGigabitEthernet1/1/2
+ shutdown
+!
+interface TenGigabitEthernet1/1/3
+ shutdown
+!
+interface TenGigabitEthernet1/1/4
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan180
+ ip address 10.100.80.233 255.255.255.0
+        !
+ip default-gateway 10.100.80.254
+ip forward-protocol nd
+no ip http server
+ip http authentication aaa login-authentication ARKANETRADIUS
+no ip http secure-server
+ip ssh authentication-retries 2
+ip ssh version 2
+!
+ip access-list extended OAM
+ remark allow only authorized protocols from OAM networks
+ permit tcp 10.0.0.0 0.255.255.255 host 0.0.0.0 eq 22 log-input
+ permit tcp 172.16.0.0 0.0.15.255 host 0.0.0.0 eq 22 log-input
+ permit tcp 192.168.0.0 0.0.255.255 host 0.0.0.0 eq 22 log-input
+ deny   ip any any log-input
+!
+ip radius source-interface Vlan180 
+logging trap notifications
+logging host 10.100.137.24
+logging host 10.100.137.89
+access-list 10 permit 10.102.2.12
+access-list 10 permit 10.247.7.188
+access-list 10 permit 10.250.137.55
+        access-list 10 permit 10.100.19.21
+access-list 10 permit 10.100.137.55
+access-list 10 permit 10.100.137.56
+access-list 10 permit 10.100.137.57
+access-list 10 permit 10.102.10.130
+access-list 10 permit 10.115.38.131
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+!
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp ifmib ifindex persist
+!
+privilege exec level 0 traceroute ip
+        privilege exec level 0 traceroute
+privilege exec level 0 ping ip
+privilege exec level 0 ping
+privilege exec level 0 show processes cpu
+privilege exec level 0 show processes memory
+privilege exec level 0 show processes
+privilege exec level 0 show arp
+privilege exec level 0 show standby brief
+privilege exec level 0 show standby
+privilege exec level 0 show configuration
+privilege exec level 0 show interfaces
+privilege exec level 0 show
+banner login ^C========================================================================
+=                                                                      =                                                                             
+=               This is a private system of Arkadin                    =
+=         Authorization from Network Operations Team is                =
+=   required to use this system. Unauthorized access is prohibited!    =
+=                                                                      =
+=               This device is RADIUS authenticated                    = 
+=                                                                      =
+=                 network_operations@arkadin.com                       = 
+=                                                                      =
+        ========================================================================
+^C
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 120 0
+ logging synchronous
+ history size 256
+ stopbits 1
+line aux 0
+ session-timeout 30 
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ stopbits 1
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+         transport input ssh
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+!
+ntp server 10.100.51.1 prefer
+ntp server 10.122.97.1
+wsma agent exec
+ profile httplistener
+ profile httpslistener
+!
+wsma agent config
+ profile httplistener
+ profile httpslistener
+!
+wsma agent filesys
+ profile httplistener
+ profile httpslistener
+        !
+wsma agent notify
+ profile httplistener
+ profile httpslistener
+!
+wsma profile listener httplistener
+ transport http
+!
+wsma profile listener httpslistener
+ transport https
+!
+ap group default-group
+end

@@ -1,0 +1,1499 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: ASR1002
+!CPU: 2RU
+!
+!Memory: main 1666531K/6147K
+!Memory: physical 4194304K
+!Memory: nvram 32768K
+!
+!Processor ID: FOX1615G97T
+!
+!Image: Software: PPC_LINUX_IOSD-ADVENTERPRISEK9-M, 15.3(3)S3, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Sun 01-Jun-14 09:08 by mcpre
+!Image: bootflash:/asr1000rp1-adventerprisek9.03.10.03.S.153-3.S3-ext.b
+!
+!
+!% No entity named "raw"
+!
+!
+config-register 0x2102
+Using 53726 out of 33554432 bytes
+!
+version 15.3
+service nagle
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime show-timezone
+service timestamps log datetime localtime
+service password-encryption
+service sequence-numbers
+no service dhcp
+no platform punt-keepalive disable-kernel-core
+!
+hostname atlixrt01
+!
+boot-start-marker
+boot system bootflash:/asr1000rp1-adventerprisek9.03.10.03.S.153-3.S3-ext.bin
+boot-end-marker
+!
+aqm-register-fnf
+!
+vrf definition EXT_CARR_UC_SIPCOM
+ rd 53550:11103
+ route-target export 53550:11103
+ route-target import 53550:11103
+ route-target import 53550:12000
+ !
+ address-family ipv4
+ exit-address-family
+!
+vrf definition EXT_CUST_VPN_ROUTEMATCH
+ rd 53550:2046
+ route-target export 53550:2046
+ route-target import 53550:2046
+ !
+ address-family ipv4
+ exit-address-family
+!
+vrf definition EXT_VPN_CISCO_CCA_SIP
+ rd 53550:2024
+ route-target export 53550:2024
+ route-target import 53550:2024
+ !
+ address-family ipv4
+  import map RM_CCA-IMPORT_V4
+ exit-address-family
+!
+vrf definition EXT_VPN_ISP_ARKADIN
+ rd 53550:14051
+ route-target export 53550:14051
+ route-target export 53550:2
+ route-target import 53550:14051
+ route-target import 53550:334051
+ route-target import 53550:444051
+ route-target import 53550:814052
+ route-target import 53550:2
+ !
+ address-family ipv4
+ exit-address-family
+!
+vrf definition INT_VPN_CUST_ARKADIN
+ rd 53550:43641
+ route-target export 53550:43641
+ route-target export 53550:1
+ route-target import 53550:43641
+ route-target import 53550:336666
+ route-target import 53550:446666
+ route-target import 53550:496666
+ route-target import 53550:856666
+ route-target import 53550:337777
+ route-target import 53550:447777
+ route-target import 53550:497777
+ route-target import 53550:857777
+ route-target import 53550:656666
+ route-target import 53550:657777
+ route-target import 53550:1
+ !
+ address-family ipv4
+ exit-address-family
+!
+vrf definition INT_VPN_CUST_LYNC_C1
+ rd 53550:11235
+ route-target export 53550:11235
+ route-target import 53550:11235
+ route-target import 53550:331235
+ route-target import 53550:3361235
+ route-target import 53550:3371235
+ !
+ address-family ipv4
+ exit-address-family
+!
+vrf definition INT_VPN_CUST_UC_SFB_MT
+ rd 53550:1255
+ route-target export 53550:1255
+ route-target import 53550:1255
+ route-target import 53550:1499
+ !
+ address-family ipv4
+  import ipv4 unicast map IMPORT
+  export ipv4 unicast map EXPORT
+ exit-address-family
+!
+vrf definition Mgmt-intf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+vrf definition VRF_MCC_106
+ rd 172.16.0.17:106
+ route-target export 53550:106
+ route-target import 53550:106
+ !
+ address-family ipv4
+ exit-address-family
+!
+vrf definition VRF_NTTGN_SELF
+ rd 172.16.0.17:3302
+ route-target export 53550:3302
+ route-target import 53550:3302
+ !
+ address-family ipv4
+ exit-address-family
+!
+vrf definition VRF_THERMO_SIP_112
+ rd 53550:112
+ route-target export 53550:112
+ route-target import 53550:112
+ !
+ address-family ipv4
+ exit-address-family
+!
+logging buffered 128000 notifications
+enable secret 5 $1$qbnf$LO0WwAOGPv1j3Sfk0Gw3/1
+!
+aaa new-model
+!
+aaa group server radius AAA_RADIUS
+ server-private 10.115.38.110 auth-port 1812 acct-port 1813 key 7 097C6F5B262B27213425220914141B180A03212C3727287866796778
+ server-private 10.100.92.1 auth-port 1812 acct-port 1813 key 7 097C6F5B262B27213425220914141B180A03212C3727287866796778
+ ip vrf forwarding Mgmt-intf
+!
+aaa authentication fail-message ^CWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login ARKANETRADIUS group AAA_RADIUS local
+aaa authentication enable default enable
+aaa authorization exec default group AAA_RADIUS if-authenticated 
+!
+aaa session-id common
+no ip source-route
+!
+ip vrf EXT_APPLICABLE_SIP
+ rd 53550:12026
+ route-target export 53550:12026
+ route-target import 53550:12025
+!
+ip vrf EXT_CARR_BLITZ_SIP
+ rd 53550:13519
+ route-target export 53550:13519
+!
+ip vrf EXT_CARR_SIP_BELLCA
+ rd 53550:1820
+ route-target export 53550:1820
+!
+ip vrf EXT_CUST_BROADSOFT
+ description "Broadsoft BroadCloud Customers"
+ rd 172.16.0.17:3010
+ route-target export 53550:3010
+ route-target import 53550:3010
+!
+ip vrf EXT_VPN_IHC_SIP
+ rd 53550:12027
+ route-target export 53550:12027
+ route-target export 53550:107
+ route-target import 53550:12028
+ route-target import 53550:107
+!
+ip vrf EXT_VPN_NTTA_WC_SIP
+ rd 53550:12029
+ route-target export 53550:12029
+!
+ip vrf POC_SBC_SIP_MSCCE
+ rd 53550:1171
+ route-target export 53550:1171
+!
+ip vrf VRF_CPMP_SIP
+ description "Cisco PMP"
+ rd 172.16.0.17:3012
+ route-target export 53550:3012
+ route-target import 53550:3012
+!
+
+
+ip flow-cache timeout active 1
+no ip bootp server
+no ip domain lookup
+ip domain name arkadin.lan
+!
+login on-failure log
+login on-success log
+!
+! mpls ldp neighbor 172.16.0.1 password <removed>
+! mpls ldp neighbor 172.16.0.2 password <removed>
+! mpls ldp neighbor 172.16.0.5 password <removed>
+! mpls ldp neighbor 172.16.0.6 password <removed>
+! mpls ldp neighbor 172.16.0.9 password <removed>
+! mpls ldp neighbor 172.16.0.10 password <removed>
+! mpls ldp neighbor 172.16.0.13 password <removed>
+! mpls ldp neighbor 172.16.0.14 password <removed>
+! mpls ldp neighbor 172.16.0.18 password <removed>
+! mpls ldp neighbor 172.16.0.21 password <removed>
+! mpls ldp neighbor 172.16.0.22 password <removed>
+! mpls ldp neighbor 172.16.0.25 password <removed>
+! mpls ldp neighbor 172.16.0.26 password <removed>
+! mpls ldp neighbor 172.16.0.29 password <removed>
+! mpls ldp neighbor 172.16.0.30 password <removed>
+! mpls ldp neighbor 172.16.0.31 password <removed>
+! mpls ldp neighbor 172.16.0.32 password <removed>
+! mpls ldp neighbor 172.16.0.35 password <removed>
+! mpls ldp neighbor 172.16.0.36 password <removed>
+!
+flow record Scrutinizer-TCP-APP-analysis
+ match routing vrf input
+ match ipv4 protocol
+ match ipv4 source address
+ match ipv4 destination address
+ match transport source-port
+ match transport destination-port
+ match transport tcp source-port
+ match transport tcp destination-port
+ match transport udp source-port
+ match transport udp destination-port
+ match interface input
+ match application name
+ match routing vrf output
+ collect routing source as
+ collect routing destination as
+ collect routing next-hop address ipv4
+ collect ipv4 dscp
+ collect ipv4 ttl
+ collect ipv4 source prefix
+ collect ipv4 destination prefix
+ collect transport tcp flags
+ collect interface output
+ collect flow sampler
+ collect counter bytes long
+ collect counter packets long
+ collect timestamp sys-uptime first
+ collect timestamp sys-uptime last
+!
+flow exporter Scrutinizer
+ destination 10.250.90.90 vrf INT_VPN_CUST_ARKADIN
+ source Loopback9
+ transport udp 2055
+ template data timeout 60
+ option interface-table timeout 60
+ option vrf-table
+ option sampler-table timeout 60
+ option application-table
+!
+flow monitor Scrutinizer-FMM
+ exporter Scrutinizer
+ cache timeout active 60
+ record Scrutinizer-TCP-APP-analysis
+!
+sampler Scrutinizer-SM
+ description sampling_1outof500
+ mode random 1 out-of 500
+!
+multilink bundle-name authenticated
+!
+archive
+ log config
+  logging enable
+  logging size 500
+  notify syslog contenttype plaintext
+  hidekeys
+file prompt quiet
+spanning-tree extend system-id
+!
+!username netops privilege 15 password <removed>
+username noc privilege 0 secret 5 $1$nlBN$5WmE4YK4YlAG6o7S.XmLv0
+!
+redundancy
+ mode none
+!
+cdp run
+!
+ip tcp mss 1460
+ip tcp synwait-time 5
+ip tftp source-interface GigabitEthernet0
+ip ssh authentication-retries 2
+ip ssh version 2
+ip scp server enable
+!
+policy-map POLICER_20M
+ class class-default
+  police 20971500 conform-action transmit  exceed-action drop 
+policy-map POLICER_50M
+ class class-default
+  police 52428500 conform-action transmit  exceed-action drop 
+policy-map POLICER_30M
+ class class-default
+  police 31457000 conform-action transmit  exceed-action drop 
+policy-map POLICER_100M
+ class class-default
+  police 104857500 conform-action transmit  exceed-action drop 
+!
+interface Loopback0
+ description L:nycixrt01:ibgp
+ ip address 172.16.0.17 255.255.255.255
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip ospf 1 area 0
+!
+interface Loopback9
+ vrf forwarding INT_VPN_CUST_ARKADIN
+ ip address 172.16.90.10 255.255.255.255
+!
+interface GigabitEthernet0/0/0
+ description X:atlixag02:Gi2/41:mpls
+ mtu 9216
+ no ip address
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ load-interval 30
+ negotiation auto
+ cdp enable
+!
+interface GigabitEthernet0/0/0.501
+ description X:at1-bl-02:ae2.501:backbone                      
+ encapsulation dot1Q 501
+ ip address 172.30.251.250 255.255.255.252
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ ip ospf authentication message-digest
+! ip ospf message-digest-key 1 md5 <removed>
+ ip ospf network point-to-point
+ ip ospf dead-interval 3
+ ip ospf hello-interval 1
+ ip ospf 1 area 0
+ ip ospf cost 1000
+ mpls ip
+ mpls mtu 1516
+!
+interface GigabitEthernet0/0/1
+ description X:atlixag02:Gi2/42:internal
+ mtu 9216
+ no ip address
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ load-interval 30
+ negotiation auto
+ cdp enable
+!
+interface GigabitEthernet0/0/1.19
+ encapsulation dot1Q 19
+ vrf forwarding INT_VPN_CUST_ARKADIN
+ ip address 10.100.19.101 255.255.255.0
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ standby version 2
+ standby 19 ip 10.100.19.102
+ standby 19 priority 200
+ standby 19 preempt
+!
+interface GigabitEthernet0/0/1.171
+ description "POC MSCCE"
+ encapsulation dot1Q 171
+ ip vrf forwarding POC_SBC_SIP_MSCCE
+ ip address 172.16.0.46 255.255.255.240
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+!
+interface GigabitEthernet0/0/1.1103
+ description E:SIPCOM-1:172.16.69.10:65535
+ encapsulation dot1Q 1103
+ vrf forwarding EXT_CARR_UC_SIPCOM
+ ip address 172.16.69.9 255.255.255.252
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ shutdown
+!
+interface GigabitEthernet0/0/1.1204
+ encapsulation dot1Q 1204
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ standby 204 priority 200
+ standby 204 preempt
+ shutdown
+!
+interface GigabitEthernet0/0/1.1235
+ description X:LYNC_VDED_C1:172.18.32.0/24:INT_VPN_CUST_LYNC_C1
+ encapsulation dot1Q 1235
+ vrf forwarding INT_VPN_CUST_LYNC_C1
+ ip address 172.18.32.253 255.255.255.0
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ standby version 2
+ standby 0 preempt
+ standby 1235 ip 172.18.32.254
+ standby 1235 priority 200
+ standby 1235 preempt
+!
+interface GigabitEthernet0/0/1.1249
+ description ROUTEMATCH
+ encapsulation dot1Q 1249
+ vrf forwarding EXT_CUST_VPN_ROUTEMATCH
+ ip address 185.37.222.253 255.255.255.128
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ standby version 2
+ standby 1249 ip 185.37.222.254
+ standby 1249 priority 110
+ standby 1249 preempt
+!
+interface GigabitEthernet0/0/1.1255
+ description VRF_INT_VPN_CUST_UC_SFB_MT
+ encapsulation dot1Q 1255
+ vrf forwarding INT_VPN_CUST_UC_SFB_MT
+ ip address 172.18.32.253 255.255.255.0
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ standby version 2
+ standby 1255 ip 172.18.32.254
+ standby 1255 priority 110
+ standby 1255 preempt
+!
+interface GigabitEthernet0/0/1.2046
+ description ROUTEMATCH
+ encapsulation dot1Q 2046
+ vrf forwarding EXT_CUST_VPN_ROUTEMATCH
+ ip address 172.31.250.1 255.255.255.252
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+!
+interface GigabitEthernet0/0/1.2999
+ description X:atlcore:vl2999:VRF_ARKADIN
+ encapsulation dot1Q 2999
+ vrf forwarding INT_VPN_CUST_ARKADIN
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ shutdown
+!
+interface GigabitEthernet0/0/1.3010
+ description "V:EXT_CUST_BROADSOFT_SBC"
+ encapsulation dot1Q 3010
+ ip vrf forwarding EXT_CUST_BROADSOFT
+ ip address 10.0.65.140 255.255.255.240
+ no ip redirects
+ no ip proxy-arp
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ vrrp 1 ip 10.0.65.142
+ vrrp 1 priority 150
+!
+interface GigabitEthernet0/0/1.3012
+ description VRF_CPMP_SIP:SBC
+ encapsulation dot1Q 3012
+ ip vrf forwarding VRF_CPMP_SIP
+ ip address 192.206.95.228 255.255.255.240
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ vrrp 1 ip 192.206.95.230
+ vrrp 1 priority 150
+!
+interface GigabitEthernet0/0/1.3016
+ description EXT_VPN_CISCO_CCA_SIP
+ encapsulation dot1Q 3016
+ vrf forwarding EXT_VPN_CISCO_CCA_SIP
+ ip address 192.206.95.69 255.255.255.248
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ standby version 2
+ standby 3016 ip 192.206.95.70
+ standby 3016 priority 110
+ standby 3016 preempt
+!
+interface GigabitEthernet0/0/1.3017
+ description EXT_APPLICABLE_SIP_SBC:NR
+ encapsulation dot1Q 3017
+ ip vrf forwarding EXT_APPLICABLE_SIP
+ ip address 100.64.40.141 255.255.255.240
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ standby version 2
+ standby 3017 ip 100.64.40.142
+ standby 3017 priority 110
+ standby 3017 preempt
+!
+interface GigabitEthernet0/0/1.3018
+ description EXT_VPN_IHC_SIP:NR
+ encapsulation dot1Q 3018
+ ip vrf forwarding EXT_VPN_IHC_SIP
+ ip address 10.5.250.141 255.255.255.240
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ standby version 2
+ standby 3018 ip 10.5.250.142
+ standby 3018 priority 110
+ standby 3018 preempt
+!
+interface GigabitEthernet0/0/1.3019
+ description V:NTTA-WIRECARD:SBC:
+ encapsulation dot1Q 3019
+ ip vrf forwarding EXT_VPN_NTTA_WC_SIP
+ ip address 209.212.229.237 255.255.255.240
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ standby version 2
+ standby 3019 ip 209.212.229.238
+ standby 3019 timers msec 300 msec 900
+ standby 3019 priority 150
+ standby 3019 preempt
+!
+interface GigabitEthernet0/0/1.3020
+ description "Bell CA SBC"
+ encapsulation dot1Q 3020
+ ip vrf forwarding EXT_CARR_SIP_BELLCA
+ ip address 172.16.100.110 255.255.255.240
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+!
+interface GigabitEthernet0/0/1.3021
+ description A:Blitz-GTT_SBC
+ encapsulation dot1Q 3021
+ ip vrf forwarding EXT_CARR_BLITZ_SIP
+ ip address 64.45.148.38 255.255.255.248
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+!
+interface GigabitEthernet0/0/1.3036
+ description E_internal:thermo-atl:primary
+ encapsulation dot1Q 3036
+ vrf forwarding VRF_THERMO_SIP_112
+ ip address 10.166.232.140 255.255.255.240
+ no ip redirects
+ no ip proxy-arp
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ vrrp 2 ip 10.166.232.142
+ vrrp 2 priority 150
+!
+interface GigabitEthernet0/0/1.3101
+ description V:192.168.1.0/29:MCC_106:LAN
+ encapsulation dot1Q 3101
+ vrf forwarding VRF_MCC_106
+ ip address 192.168.1.2 255.255.255.248
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ standby version 2
+ standby 3101 ip 192.168.1.1
+ standby 3101 priority 200
+ standby 3101 preempt
+!
+interface GigabitEthernet0/0/1.3102
+ description EXT_VPN_IHC_SIP:NR
+ encapsulation dot1Q 3102
+ ip vrf forwarding EXT_VPN_IHC_SIP
+ ip address 10.5.250.28 255.255.255.240
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ standby version 2
+ standby 3102 ip 10.5.250.30
+ standby 3102 priority 110
+ standby 3102 preempt
+!
+interface GigabitEthernet0/0/1.3302
+ description A_NTTGN_SELF-SBC
+ encapsulation dot1Q 3302
+ vrf forwarding VRF_NTTGN_SELF
+ ip address 192.168.100.28 255.255.255.224
+ standby version 2
+ standby 3302 ip 192.168.100.30
+ standby 3302 priority 200
+ standby 3302 preempt
+!
+interface GigabitEthernet0/0/1.4002
+ description Connection to Public Vidyo-DMZ
+ encapsulation dot1Q 4002
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ shutdown
+!
+interface GigabitEthernet0/0/1.4051
+ description EXT_VPN_ISP_ARKADIN
+ encapsulation dot1Q 4051
+ vrf forwarding EXT_VPN_ISP_ARKADIN
+ ip address 172.16.249.18 255.255.255.252
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ mpls bgp forwarding
+!
+interface GigabitEthernet0/0/2
+ description X:atlixag02:Gi2/43:collect
+ mtu 9216
+ no ip address
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ load-interval 30
+ negotiation auto
+ cdp enable
+!
+interface GigabitEthernet0/0/2.820
+ description E_CARR:NR:TBD:BELL_CA_CARR
+ encapsulation dot1Q 820
+ ip vrf forwarding EXT_CARR_SIP_BELLCA
+ ip address 100.64.247.90 255.255.255.252
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+!
+interface GigabitEthernet0/0/2.2024
+ description EXT_VPN_CISCO_CCA_SIP
+ encapsulation dot1Q 2024
+ vrf forwarding EXT_VPN_CISCO_CCA_SIP
+ ip address 192.206.95.181 255.255.255.252
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ shutdown
+ bfd interval 300 min_rx 300 multiplier 3
+!
+interface GigabitEthernet0/0/2.2026
+ description E_CUST:AA:ETYX/152371//ZYO:APPLIC_SIP
+ encapsulation dot1Q 2026
+ ip vrf forwarding EXT_APPLICABLE_SIP
+ ip address 100.64.35.2 255.255.255.252
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ bfd interval 300 min_rx 300 multiplier 3
+!
+interface GigabitEthernet0/0/2.2028
+ description E_CUST:PR:CID_W170000819:NTTA_WIRECARD_SIP
+ encapsulation dot1Q 2028
+ ip vrf forwarding EXT_VPN_NTTA_WC_SIP
+ ip address 209.212.227.66 255.255.255.252
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+!
+interface GigabitEthernet0/0/2.2029
+ description MIGRATED-EXT_VPN_IHC_SIP
+ encapsulation dot1Q 2029
+ ip vrf forwarding EXT_VPN_IHC_SIP
+ ip address 100.65.0.18 255.255.255.252
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ shutdown
+ bfd interval 300 min_rx 300 multiplier 3
+!
+interface GigabitEthernet0/0/2.2030
+ description E_edge:thermo-atl:primary
+ encapsulation dot1Q 2030
+ vrf forwarding VRF_THERMO_SIP_112
+ ip address 10.166.232.2 255.255.255.252
+ no ip redirects
+ no ip proxy-arp
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ bfd interval 999 min_rx 999 multiplier 3
+!
+interface GigabitEthernet0/0/2.2046
+!
+interface GigabitEthernet0/0/2.2601
+ description E_CUST_MCC_106:KM60004:W190000612
+ encapsulation dot1Q 2601
+ vrf forwarding VRF_MCC_106
+ ip address 172.16.14.34 255.255.255.252
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ bfd interval 999 min_rx 999 multiplier 30
+ service-policy input POLICER_20M
+!
+interface GigabitEthernet0/0/2.2602
+ description E_CUST:AA:CG-DGAATL5-7:NTTGN_SELF
+ encapsulation dot1Q 2602
+ vrf forwarding VRF_NTTGN_SELF
+ ip address 172.16.20.2 255.255.255.252
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+ bfd interval 999 min_rx 999 multiplier 30
+ service-policy input POLICER_50M
+!
+interface GigabitEthernet0/0/2.3519
+ description E_CARR:NR:00770570:GTT_BLITZ_CARR
+ encapsulation dot1Q 3519
+ ip vrf forwarding EXT_CARR_BLITZ_SIP
+ ip address 64.45.148.18 255.255.255.252
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+!
+interface GigabitEthernet0/0/2.3520
+ description E_CARR:AA:HE-3989925:HE_BRDSFT_SIP
+ bandwidth 100000
+ encapsulation dot1Q 3520
+ ip vrf forwarding EXT_CUST_BROADSOFT
+ ip address 10.0.65.1 255.255.255.248
+ no ip redirects
+ no ip proxy-arp
+ bfd interval 300 min_rx 300 multiplier 3
+!
+interface GigabitEthernet0/0/2.3522
+!
+interface GigabitEthernet0/0/3
+ description X:atlixag01:Gi4/29:unused
+ mtu 9216
+ no ip address
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ load-interval 30
+ negotiation auto
+ cdp enable
+!
+interface GigabitEthernet0/0/3.999
+ description X:atlixrt02:Gi0/0/3.999:ibgp
+ encapsulation dot1Q 999
+ ip address 172.16.254.17 255.255.255.252
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+! ip ospf message-digest-key 1 md5 <removed>
+ ip ospf network point-to-point
+ ip ospf dead-interval 3
+ ip ospf hello-interval 1
+ ip ospf 1 area 0
+ ip ospf cost 100
+ mpls ip
+ mpls mtu 1516
+!
+interface GigabitEthernet0/0/3.2999
+ description X:atlcore:vl2999:VRF_ARKADIN
+ encapsulation dot1Q 2999
+ vrf forwarding INT_VPN_CUST_ARKADIN
+ ip address 172.16.240.34 255.255.255.248
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM input
+ ip flow monitor Scrutinizer-FMM sampler Scrutinizer-SM output
+!
+interface GigabitEthernet0
+ description M:USATLRCK5-SW1:Gi1/9
+ vrf forwarding Mgmt-intf
+ ip address 10.100.19.246 255.255.255.0
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+ negotiation auto
+!
+router ospf 1
+ router-id 172.16.254.17
+ log-adjacency-changes detail
+ auto-cost reference-bandwidth 100000
+ timers throttle spf 10 100 5000
+ timers throttle lsa 10 100 5000
+ maximum-paths 1
+ mpls ldp sync
+!
+router bgp 53550
+ bgp router-id 172.16.0.17
+ bgp log-neighbor-changes
+ neighbor AS53550-VPNV4-RR-PG peer-group
+ neighbor AS53550-VPNV4-RR-PG remote-as 53550
+! neighbor AS53550-VPNV4-RR-PG password <removed>
+ neighbor AS53550-VPNV4-RR-PG update-source Loopback0
+ neighbor AS53550-VPNV4-RR-PG timers 7 20
+ neighbor AS53550-VPNV4-RR-PG fall-over
+ neighbor 172.16.0.1 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.2 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.5 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.6 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.9 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.10 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.13 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.14 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.18 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.19 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.20 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.21 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.22 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.23 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.24 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.25 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.26 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.27 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.28 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.29 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.30 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.31 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.32 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.33 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.34 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.35 peer-group AS53550-VPNV4-RR-PG
+ neighbor 172.16.0.36 peer-group AS53550-VPNV4-RR-PG
+ neighbor 192.168.201.1 peer-group AS53550-VPNV4-RR-PG
+ neighbor 192.168.201.2 peer-group AS53550-VPNV4-RR-PG
+ !
+ address-family ipv4
+  no neighbor 172.16.0.1 activate
+  no neighbor 172.16.0.2 activate
+  no neighbor 172.16.0.5 activate
+  no neighbor 172.16.0.6 activate
+  no neighbor 172.16.0.9 activate
+  no neighbor 172.16.0.10 activate
+  no neighbor 172.16.0.13 activate
+  no neighbor 172.16.0.14 activate
+  no neighbor 172.16.0.18 activate
+  no neighbor 172.16.0.19 activate
+  no neighbor 172.16.0.20 activate
+  no neighbor 172.16.0.21 activate
+  no neighbor 172.16.0.22 activate
+  no neighbor 172.16.0.23 activate
+  no neighbor 172.16.0.24 activate
+  no neighbor 172.16.0.25 activate
+  no neighbor 172.16.0.26 activate
+  no neighbor 172.16.0.27 activate
+  no neighbor 172.16.0.28 activate
+  no neighbor 172.16.0.29 activate
+  no neighbor 172.16.0.30 activate
+  no neighbor 172.16.0.31 activate
+  no neighbor 172.16.0.32 activate
+  no neighbor 172.16.0.33 activate
+  no neighbor 172.16.0.34 activate
+  no neighbor 172.16.0.35 activate
+  no neighbor 172.16.0.36 activate
+  no neighbor 192.168.201.1 activate
+  no neighbor 192.168.201.2 activate
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor AS53550-VPNV4-RR-PG send-community extended
+  neighbor 172.16.0.1 activate
+  neighbor 172.16.0.2 activate
+  neighbor 172.16.0.5 activate
+  neighbor 172.16.0.6 activate
+  neighbor 172.16.0.9 activate
+  neighbor 172.16.0.10 activate
+  neighbor 172.16.0.13 activate
+  neighbor 172.16.0.14 activate
+  neighbor 172.16.0.18 activate
+  neighbor 172.16.0.19 activate
+  neighbor 172.16.0.20 activate
+  neighbor 172.16.0.21 activate
+  neighbor 172.16.0.22 activate
+  neighbor 172.16.0.23 activate
+  neighbor 172.16.0.24 activate
+  neighbor 172.16.0.25 activate
+  neighbor 172.16.0.26 activate
+  neighbor 172.16.0.27 activate
+  neighbor 172.16.0.28 activate
+  neighbor 172.16.0.29 activate
+  neighbor 172.16.0.30 activate
+  neighbor 172.16.0.31 activate
+  neighbor 172.16.0.32 activate
+  neighbor 172.16.0.33 activate
+  neighbor 172.16.0.34 activate
+  neighbor 172.16.0.35 activate
+  neighbor 172.16.0.36 activate
+  neighbor 192.168.201.1 activate
+  neighbor 192.168.201.2 activate
+ exit-address-family
+ !
+ address-family ipv4 vrf EXT_APPLICABLE_SIP
+  network 100.64.40.0 mask 255.255.255.240
+  network 100.64.40.128 mask 255.255.255.240
+  neighbor 100.64.35.1 remote-as 65153
+  neighbor 100.64.35.1 fall-over bfd
+  neighbor 100.64.35.1 activate
+  neighbor 100.64.35.1 soft-reconfiguration inbound
+  neighbor 100.64.35.1 route-map RM_EXT_APPLICABLE_SIP_OUT out
+ exit-address-family
+ !
+ address-family ipv4 vrf EXT_CARR_BLITZ_SIP
+  network 64.45.148.32 mask 255.255.255.248
+  neighbor 64.45.148.17 remote-as 7944
+  neighbor 64.45.148.17 activate
+  neighbor 64.45.148.17 soft-reconfiguration inbound
+  neighbor 64.45.148.17 prefix-list BLITZ-IN in
+  neighbor 64.45.148.17 prefix-list BLITZ-OUT out
+ exit-address-family
+ !
+ address-family ipv4 vrf EXT_CARR_UC_SIPCOM
+ exit-address-family
+ !
+ address-family ipv4 vrf EXT_CUST_BROADSOFT
+  redistribute connected
+  redistribute static
+  neighbor EXTERNAL peer-group
+  neighbor EXTERNAL remote-as 21534
+  neighbor EXTERNAL description external customer peerings
+! neighbor EXTERNAL password <removed>
+  neighbor EXTERNAL timers 10 30
+  neighbor EXTERNAL fall-over bfd
+  neighbor EXTERNAL route-map POL_EXT_CUST_BROADSOFT_IM in
+  neighbor EXTERNAL route-map POL_EXT_CUST_BROADSOFT_EX out
+  neighbor 10.0.65.6 peer-group EXTERNAL
+  neighbor 10.0.65.6 activate
+ exit-address-family
+ !
+ address-family ipv4 vrf EXT_CUST_VPN_ROUTEMATCH
+  network 185.37.222.160 mask 255.255.255.224
+  redistribute static
+ exit-address-family
+ !
+ address-family ipv4 vrf EXT_VPN_CISCO_CCA_SIP
+  network 192.206.95.64 mask 255.255.255.248
+  network 192.206.95.72 mask 255.255.255.248
+  network 192.206.95.184 mask 255.255.255.248
+ exit-address-family
+ !
+ address-family ipv4 vrf EXT_VPN_IHC_SIP
+  redistribute connected
+ exit-address-family
+ !
+ address-family ipv4 vrf EXT_VPN_ISP_ARKADIN
+  neighbor 172.16.249.17 remote-as 200077
+  neighbor 172.16.249.17 activate
+  neighbor 172.16.249.17 as-override
+  neighbor 172.16.249.17 soft-reconfiguration inbound
+  neighbor 172.16.249.17 send-label
+  neighbor 172.16.249.17 maximum-prefix 5
+ exit-address-family
+ !
+ address-family ipv4 vrf EXT_VPN_NTTA_WC_SIP
+  network 209.212.229.224 mask 255.255.255.240
+  neighbor 209.212.227.65 remote-as 18486
+  neighbor 209.212.227.65 fall-over bfd
+  neighbor 209.212.227.65 activate
+  neighbor 209.212.227.65 soft-reconfiguration inbound
+ exit-address-family
+ !
+ address-family ipv4 vrf INT_VPN_CUST_ARKADIN
+  network 10.100.0.0 mask 255.255.0.0
+  network 172.16.90.10 mask 255.255.255.255
+  neighbor 172.16.240.36 remote-as 65116
+  neighbor 172.16.240.36 activate
+  neighbor 172.16.240.36 soft-reconfiguration inbound
+  neighbor 172.16.240.36 route-map VRF_INT_VPN_CUST_ARKADIN_IN in
+  neighbor 172.16.240.36 route-map PS_EXP_CORE_V4 out
+ exit-address-family
+ !
+ address-family ipv4 vrf INT_VPN_CUST_LYNC_C1
+  network 172.18.32.0 mask 255.255.255.0
+ exit-address-family
+ !
+ address-family ipv4 vrf INT_VPN_CUST_UC_SFB_MT
+  network 172.18.32.0 mask 255.255.255.0
+ exit-address-family
+ !
+ address-family ipv4 vrf VRF_CPMP_SIP
+  redistribute connected
+  redistribute static
+  neighbor SIP_CPMP_V4 peer-group
+  neighbor SIP_CPMP_V4 remote-as 21534
+  neighbor SIP_CPMP_V4 description Cisco PMP
+! neighbor SIP_CPMP_V4 password <removed>
+  neighbor SIP_CPMP_V4 timers 10 30
+  neighbor SIP_CPMP_V4 fall-over bfd
+  neighbor SIP_CPMP_V4 route-map RM_IMP_CPMP_V4 in
+  neighbor SIP_CPMP_V4 route-map RM_EXP_CPMP_V4 out
+ exit-address-family
+ !
+ address-family ipv4 vrf VRF_MCC_106
+  network 192.168.1.0 mask 255.255.255.248
+  neighbor 172.16.14.33 remote-as 18486
+  neighbor 172.16.14.33 fall-over bfd
+  neighbor 172.16.14.33 activate
+  neighbor 172.16.14.33 soft-reconfiguration inbound
+  neighbor 172.16.14.33 route-map IM_MCC_V4 in
+  neighbor 172.16.14.33 maximum-prefix 50 warning-only
+ exit-address-family
+ !
+ address-family ipv4 vrf VRF_NTTGN_SELF
+  network 192.168.100.0 mask 255.255.255.224
+  neighbor 172.16.20.1 remote-as 18486
+  neighbor 172.16.20.1 fall-over bfd
+  neighbor 172.16.20.1 activate
+  neighbor 172.16.20.1 soft-reconfiguration inbound
+  neighbor 172.16.20.1 route-map RM_IM_NTTGN_V4 in
+  neighbor 172.16.20.1 maximum-prefix 50 warning-only
+ exit-address-family
+ !
+ address-family ipv4 vrf VRF_THERMO_SIP_112
+  redistribute connected
+  redistribute static
+  neighbor THERMO_V4 peer-group
+  neighbor THERMO_V4 remote-as 65354
+  neighbor THERMO_V4 description THERMOFISH customer peerings
+! neighbor THERMO_V4 password <removed>
+  neighbor THERMO_V4 timers 5 15
+  neighbor THERMO_V4 fall-over bfd
+  neighbor THERMO_V4 route-map RM_IMP_THERMO_V4 in
+  neighbor THERMO_V4 route-map RM_EXP_THERMO_V4 out
+  neighbor 10.166.232.1 peer-group THERMO_V4
+  neighbor 10.166.232.1 activate
+ exit-address-family
+!
+ip forward-protocol nd
+!
+ip community-list standard COMM_AT1-MIGRATIONS_V4 permit 4200923236
+ip community-list standard COMM_CCA-CHICAGO permit 4267521157
+ip as-path access-list 10 permit ^$
+ip flow-export version 9
+ip flow-export destination 10.250.90.90 2055 vrf INT_VPN_CUST_ARKADIN
+no ip http server
+ip http authentication aaa login-authentication ARKANETRADIUS
+no ip http secure-server
+ip route vrf Mgmt-intf 0.0.0.0 0.0.0.0 10.100.22.254
+ip route vrf Mgmt-intf 0.0.0.0 0.0.0.0 10.100.19.254
+ip route vrf EXT_CUST_VPN_ROUTEMATCH 185.37.222.58 255.255.255.255 185.37.222.129
+ip route vrf EXT_CUST_VPN_ROUTEMATCH 185.37.222.170 255.255.255.255 185.37.222.129
+ip route vrf EXT_CUST_VPN_ROUTEMATCH 185.37.222.171 255.255.255.255 185.37.222.129
+ip route vrf EXT_CUST_VPN_ROUTEMATCH 185.37.222.172 255.255.255.255 185.37.222.129
+ip route vrf EXT_CUST_VPN_ROUTEMATCH 185.37.222.173 255.255.255.255 185.37.222.129
+ip route vrf EXT_CUST_VPN_ROUTEMATCH 185.37.222.174 255.255.255.255 185.37.222.129
+ip route vrf EXT_CUST_VPN_ROUTEMATCH 185.37.222.175 255.255.255.255 185.37.222.129
+ip route vrf EXT_CUST_VPN_ROUTEMATCH 185.37.222.176 255.255.255.255 185.37.222.129
+ip route vrf INT_VPN_CUST_LYNC_C1 0.0.0.0 0.0.0.0 172.18.32.5
+ip route vrf INT_VPN_CUST_UC_SFB_MT 0.0.0.0 0.0.0.0 172.18.32.7
+ip route vrf VRF_THERMO_SIP_112 10.166.232.0 255.255.255.0 Null0
+ip route vrf VRF_THERMO_SIP_112 10.166.233.0 255.255.255.0 Null0
+ip route vrf VRF_THERMO_SIP_112 10.166.235.0 255.255.255.224 Null0
+ip route vrf EXT_APPLICABLE_SIP 100.64.40.0 255.255.255.240 Null0
+ip route vrf EXT_CARR_SIP_BELLCA 100.64.244.128 255.255.255.248 100.64.247.89
+!
+ip access-list extended ACL_INET_SELF
+ deny   ip any host 206.165.72.210
+ deny   ip any host 206.165.72.209
+ deny   ip any host 208.49.141.155
+ deny   ip any host 208.49.141.156
+ deny   ip any host 208.49.141.129
+ permit ip any 208.49.141.128 0.0.0.31
+ permit udp host 206.165.72.209 eq 1985 host 224.0.0.102 eq 1985
+ip access-list extended IPSEC_EXT_CUST_UC_ArkaTest_104_ACL
+ permit ip 172.17.70.0 0.0.0.255 10.100.41.0 0.0.0.255
+ip access-list extended IPSEC_EXT_CUST_UC_DGWV_103_ACL
+ permit ip 172.16.69.0 0.0.0.255 172.16.0.0 0.0.255.255
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+!
+ip prefix-list BLITZ-IN permit 64.45.148.16/30
+ip prefix-list BLITZ-IN permit 64.45.150.0/23
+!
+ip prefix-list BLITZ-OUT permit 64.45.148.32/29
+!
+ip prefix-list EXPORT permit 172.18.32.0/24
+!
+ip prefix-list EXT_APPLICABLE_SIP_OUT permit 100.64.40.0/28
+ip prefix-list EXT_APPLICABLE_SIP_OUT permit 100.64.40.128/28
+!
+ip prefix-list MT_VRF permit 172.18.32.0/24
+!
+ip prefix-list PFX-VRF_EXT_CARR_UC_SIPCOM-IN permit 93.187.229.0/24 le 32
+!
+ip prefix-list PFX-VRF_EXT_CARR_UC_SIPCOM-OUT permit 10.0.0.0/8
+ip prefix-list PFX-VRF_EXT_CARR_UC_SIPCOM-OUT permit 10.100.0.0/16
+ip prefix-list PFX-VRF_EXT_CARR_UC_SIPCOM-OUT permit 172.16.0.0/12
+!
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 10.0.1.0/30
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 10.0.1.36/30
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 10.10.80.0/24
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 10.10.180.0/24
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 10.100.0.0/16
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 10.100.0.0/16 le 32
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 10.100.0.0/19
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 10.100.112.0/20
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 10.100.224.0/24
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 10.121.2.0/24
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 10.122.0.0/16 le 32
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 10.200.0.0/16
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 10.222.4.79/32
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 10.250.90.90/32
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 172.16.0.0/12
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 172.16.83.0/24
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 172.22.4.0/22
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 172.31.252.8/29
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 192.168.1.0/24
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN permit 192.168.240.0/22 le 32
+ip prefix-list PFX_ASR_VRF_ARKADIN_IN deny 0.0.0.0/0 le 32
+!
+ip prefix-list PFX_CCA-CHICAGO_V4 permit 192.168.200.3/32
+!
+ip prefix-list PFX_CCA-SIP_SJC permit 192.206.95.184/29
+!
+ip prefix-list PFX_EXP_CPMP_V4 permit 192.206.95.224/28
+!
+ip prefix-list PFX_EXP_THERMO_PREPEND_V4 permit 10.166.233.0/24
+ip prefix-list PFX_EXP_THERMO_PREPEND_V4 permit 10.166.235.0/27
+!
+ip prefix-list PFX_EXP_THERMO_V4 permit 10.166.232.0/24
+!
+ip prefix-list PFX_EXT_CUST_BROADSOFT_IN permit 199.59.65.0/25
+!
+ip prefix-list PFX_EXT_CUST_BROADSOFT_OUT permit 10.0.65.128/28
+!
+ip prefix-list PFX_IMP_CPMP_V4 permit 199.59.65.0/25
+!
+ip prefix-list PFX_IMP_THERMO_V4 permit 10.165.136.0/23 ge 24
+ip prefix-list PFX_IMP_THERMO_V4 permit 10.166.136.0/23 ge 24
+!
+ip prefix-list PFX_RFC1918 permit 10.0.0.0/8 le 32
+ip prefix-list PFX_RFC1918 permit 172.16.0.0/12 le 32
+ip prefix-list PFX_RFC1918 permit 192.168.0.0/16 le 32
+!
+ip prefix-list PL_EXT_VPN_NTTA_WC_SIP_OUT permit 209.212.229.224/28
+!
+ip prefix-list SEA permit 172.16.98.0/24
+ip prefix-list SEA permit 172.16.99.0/24
+!
+ip prefix-list test permit 172.16.240.0/29
+ip radius source-interface GigabitEthernet0 vrf Mgmt-intf
+ip sla responder
+logging alarm informational
+logging trap notifications
+logging origin-id hostname
+logging facility local5
+logging source-interface GigabitEthernet0 vrf Mgmt-intf
+logging host 10.100.137.89 vrf Mgmt-intf
+logging host 10.100.137.24 vrf Mgmt-intf
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+!
+route-map EXPORT permit 10
+ match ip address prefix-list EXPORT
+ set ip next-hop self
+ set ip next-hop 172.16.0.17
+!
+route-map IMPORT permit 10
+ match ip address prefix-list SEA
+!
+route-map IMPORT_FROM_MT_VRF permit 10
+ match ip address prefix-list MT_VRF
+!
+route-map IM_MCC_V4 permit 10
+ set local-preference 200
+!
+route-map POL_EXT_CUST_BROADSOFT_EX permit 1
+ match ip address prefix-list PFX_EXT_CUST_BROADSOFT_OUT
+ set as-path prepend 53550 53550
+!
+route-map POL_EXT_CUST_BROADSOFT_IM permit 1
+ match ip address prefix-list PFX_EXT_CUST_BROADSOFT_IN
+!
+route-map PS_EXP_CORE_V4 permit 5
+ set as-path prepend 53550 53550 53550 53550
+!
+route-map RM_CCA-IMPORT_V4 permit 10
+ match community COMM_CCA-CHICAGO
+ set weight 100
+!
+route-map RM_CCA-IMPORT_V4 permit 20
+!
+route-map RM_CCA-SIP_EXP permit 10
+ set as-path prepend 53550 53550
+!
+route-map RM_CCA-SIP_EXP permit 50
+!
+route-map RM_CCA-SIP_IMP permit 10
+ set local-preference 10
+!
+route-map RM_EXP_CPMP_V4 permit 1
+ match ip address prefix-list PFX_EXP_CPMP_V4
+ set as-path prepend 53550 53550
+!
+route-map RM_EXP_THERMO_V4 permit 10
+ match ip address prefix-list PFX_EXP_THERMO_V4
+ set metric 50
+!
+route-map RM_EXP_THERMO_V4 permit 20
+ match ip address prefix-list PFX_EXP_THERMO_PREPEND_V4
+ set metric 50
+ set as-path prepend 53550 53550
+!
+route-map RM_EXT_APPLICABLE_SIP_OUT permit 10
+ match ip address prefix-list EXT_APPLICABLE_SIP_OUT
+!
+route-map RM_EXT_APPLICABLE_SIP_PPEND permit 10
+ set as-path prepend 53550
+!
+route-map RM_IMP_CPMP_V4 permit 1
+ match ip address prefix-list PFX_IMP_CPMP_V4
+!
+route-map RM_IMP_THERMO_V4 permit 10
+ match ip address prefix-list PFX_IMP_THERMO_V4
+!
+route-map RM_IM_NTTGN_V4 permit 10
+ set local-preference 200
+!
+route-map VRF_EXT_CARR_UC_SIPCOM_BGP_IN permit 10
+ match ip address prefix-list PFX-VRF_EXT_CARR_UC_SIPCOM-IN
+!
+route-map VRF_EXT_CARR_UC_SIPCOM_BGP_OUT permit 10
+ match ip address prefix-list PFX-VRF_EXT_CARR_UC_SIPCOM-OUT
+!
+route-map VRF_EXT_PEER_BGP_IN_BKP permit 10
+ set local-preference 50
+!
+route-map VRF_EXT_PEER_BGP_OUT_BKP permit 10
+ match as-path 10
+ set as-path prepend 53550 53550
+!
+route-map VRF_INT_VPN_CUST_ARKADIN_IN permit 5
+ match ip address prefix-list PFX_RFC1918
+ match community COMM_AT1-MIGRATIONS_V4
+ set local-preference 50
+!
+route-map VRF_INT_VPN_CUST_ARKADIN_IN permit 10
+ match ip address prefix-list PFX_ASR_VRF_ARKADIN_IN
+ set local-preference 50
+!
+route-map VRF_INT_VPN_CUST_ARKATEST_OUT permit 5
+ match ip address prefix-list test
+!
+route-map v permit 10
+!
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server location noram-atl
+snmp-server contact nio@arkadin.com
+snmp-server host 10.100.19.21 vrf Mgmt-intf version 2c noc_services 
+snmp-server host 10.100.137.55 vrf Mgmt-intf version 2c noc_services 
+snmp ifmib ifindex persist
+mpls ldp router-id Loopback0 force
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+privilege exec level 0 traceroute ip
+privilege exec level 0 traceroute
+privilege exec level 0 ping ip
+privilege exec level 0 ping
+privilege exec level 0 terminal width
+privilege exec level 0 terminal length
+privilege exec level 0 terminal
+privilege exec level 0 show environment
+privilege exec level 0 show inventory
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show lldp
+privilege exec level 0 show ip ospf neighbor
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip bgp vrf
+privilege exec level 0 show ip bgp all summary
+privilege exec level 0 show ip bgp all
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip route
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip interface brief
+privilege exec level 0 show ip interface
+privilege exec level 0 show ip
+privilege exec level 0 show arp
+privilege exec level 0 show standby brief
+privilege exec level 0 show standby GigabitEthernet0 brief
+privilege exec level 0 show standby GigabitEthernet0/0/3.2999 brief
+privilege exec level 0 show standby GigabitEthernet0/0/3.999 brief
+privilege exec level 0 show standby GigabitEthernet0/0/3 brief
+privilege exec level 0 show standby GigabitEthernet0/0/2.3522 brief
+privilege exec level 0 show standby GigabitEthernet0/0/2.3520 brief
+privilege exec level 0 show standby GigabitEthernet0/0/2.3519 brief
+privilege exec level 0 show standby GigabitEthernet0/0/2.2602 brief
+privilege exec level 0 show standby GigabitEthernet0/0/2.2601 brief
+privilege exec level 0 show standby GigabitEthernet0/0/2.2046 brief
+privilege exec level 0 show standby GigabitEthernet0/0/2.2030 brief
+privilege exec level 0 show standby GigabitEthernet0/0/2.2029 brief
+privilege exec level 0 show standby GigabitEthernet0/0/2.2028 brief
+privilege exec level 0 show standby GigabitEthernet0/0/2.2026 brief
+privilege exec level 0 show standby GigabitEthernet0/0/2.2024 brief
+privilege exec level 0 show standby GigabitEthernet0/0/2.820 brief
+privilege exec level 0 show standby GigabitEthernet0/0/2 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.4051 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.4002 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.3302 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.3102 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.3101 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.3036 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.3021 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.3020 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.3019 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.3018 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.3017 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.3016 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.3012 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.3010 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.2999 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.2046 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.1255 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.1249 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.1235 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.1204 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.1103 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.171 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1.19 brief
+privilege exec level 0 show standby GigabitEthernet0/0/1 brief
+privilege exec level 0 show standby GigabitEthernet0/0/0.501 brief
+privilege exec level 0 show standby GigabitEthernet0/0/0 brief
+privilege exec level 0 show standby
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show cdp
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show processes memory
+privilege exec level 0 show processes
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show logging
+privilege exec level 0 show running-config view full
+privilege exec level 0 show running-config view
+privilege exec level 0 show running-config
+privilege exec level 0 show configuration
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show interfaces GigabitEthernet0 description
+privilege exec level 0 show interfaces GigabitEthernet0 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/3.2999 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/3.2999 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/3.999 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/3.999 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/3 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/3 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.3522 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.3522 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.3520 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.3520 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.3519 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.3519 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.2602 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.2602 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.2601 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.2601 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.2046 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.2046 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.2030 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.2030 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.2029 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.2029 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.2028 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.2028 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.2026 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.2026 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.2024 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.2024 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.820 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/2.820 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/2 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/2 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.4051 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.4051 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.4002 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.4002 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3302 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3302 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3102 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3102 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3101 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3101 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3036 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3036 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3021 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3021 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3020 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3020 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3019 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3019 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3018 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3018 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3017 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3017 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3016 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3016 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3012 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3012 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3010 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.3010 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.2999 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.2999 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.2046 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.2046 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.1255 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.1255 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.1249 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.1249 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.1235 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.1235 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.1204 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.1204 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.1103 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.1103 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.171 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.171 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.19 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1.19 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/1 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/1 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/0.501 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/0.501 counters
+privilege exec level 0 show interfaces GigabitEthernet0/0/0 description
+privilege exec level 0 show interfaces GigabitEthernet0/0/0 counters
+privilege exec level 0 show interfaces Loopback9 description
+privilege exec level 0 show interfaces Loopback9 counters
+privilege exec level 0 show interfaces Loopback0 description
+privilege exec level 0 show interfaces Loopback0 counters
+privilege exec level 0 show interfaces Null0 description
+privilege exec level 0 show interfaces Null0 counters
+privilege exec level 0 show interfaces
+privilege exec level 0 show
+banner login ^C====================================================================
+=         UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED         =
+=    You must have explicit, authorized permission to access or    =
+=   configure this device. Unauthorized attempts and actions to    =
+=   access or use this system may result in civil and/or criminal  =
+= All activities performed on this device are logged and monitored =
+====================================================================
+^C
+alias exec siib sh ip int brief
+alias exec u undebug all
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ stopbits 1
+line aux 0
+ session-timeout 30 
+ exec-timeout 120 0
+ logging synchronous
+ history size 256
+ stopbits 1
+line vty 0 4
+ session-timeout 120 
+ access-class OAM in vrf-also
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+line vty 5 15
+ session-timeout 120 
+ access-class OAM in vrf-also
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+!
+ntp source GigabitEthernet0
+ntp server vrf Mgmt-intf 10.100.51.1 prefer
+ntp server vrf Mgmt-intf 10.122.97.1
+!
+end

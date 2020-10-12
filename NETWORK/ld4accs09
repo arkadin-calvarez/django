@@ -1,0 +1,460 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C3750G-24TS-1U
+!CPU: PowerPC405
+!
+!Memory: main 118784K/12280K
+!Model number:  WS-C3750G-24TS-S1U
+!Serial number: FOC1431Y58B
+!
+!Processor ID: FOC1431Y58B
+!
+!FAN: FAN is OK
+!
+!Image: Software: C3750-IPBASE-M, 12.2(35)SE5, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Thu 19-Jul-07 19:15 by nachen
+!Image: flash:c3750-ipbase-mz.122-35.SE5/c3750-ipbase-mz.122-35.SE5.bin
+!
+!BOOTLDR: Version 12.2(25r)SEE4, RELEASE SOFTWARE (fc1)
+!
+!
+!BootFlash: BOOT path-list      : flash:c3750-ipbase-mz.122-35.SE5/c3750-ipbase-mz.122-35.SE5.bin
+!BootFlash: Config file         : flash:/config.text
+!BootFlash: Private Config file : flash:/private-config.text
+!BootFlash: Enable Break        : no
+!BootFlash: Manual Boot         : no
+!BootFlash: HELPER path-list    : 
+!BootFlash: Auto upgrade        : yes
+!BootFlash: Auto upgrade path   : 
+!
+!
+!NAME: "Cat37xx Stacking",      DESCR: "Catalyst 37xx Switch Stack"
+!NAME: "1",                     DESCR: "WS-C3750G-24TS-1U"
+!PID: WS-C3750G-24TS-S1U
+!VID: V05
+!SN: FOC1431Y58B
+!NAME: "WS-C3750G-24TS-1U - Power Supply 0", DESCR: "WS-C3750G-24TS-1U - Power Supply 0"
+!SN: AZS142905N0
+!NAME: "WS-C3750G-24TS-1U - Fan 0", DESCR: "WS-C3750G-24TS-1U - Fan 0"
+!NAME: "WS-C3750G-24TS-1U - Sensor 0", DESCR: "WS-C3750G-24TS-1U - Sensor 0"
+!NAME: "WS-C3750G-24TS-1U - Fixed Module 0", DESCR: "WS-C3750G-24TS-1U - Fixed Module 0"
+!NAME: "GigabitEthernet1/0/25 Container", DESCR: "GigabitEthernet Container"
+!NAME: "GigabitEthernet1/0/26 Container", DESCR: "GigabitEthernet Container"
+!NAME: "GigabitEthernet1/0/27 Container", DESCR: "GigabitEthernet Container"
+!NAME: "GigabitEthernet1/0/28 Container", DESCR: "GigabitEthernet Container"
+!NAME: "StackPort1",            DESCR: "StackPort1"
+!NAME: "GigabitEthernet1/0/1",  DESCR: "GigabitEthernet1/0/1"
+!NAME: "GigabitEthernet1/0/2",  DESCR: "GigabitEthernet1/0/2"
+!NAME: "GigabitEthernet1/0/3",  DESCR: "GigabitEthernet1/0/3"
+!NAME: "GigabitEthernet1/0/4",  DESCR: "GigabitEthernet1/0/4"
+!NAME: "GigabitEthernet1/0/5",  DESCR: "GigabitEthernet1/0/5"
+!NAME: "GigabitEthernet1/0/6",  DESCR: "GigabitEthernet1/0/6"
+!NAME: "GigabitEthernet1/0/7",  DESCR: "GigabitEthernet1/0/7"
+!NAME: "GigabitEthernet1/0/8",  DESCR: "GigabitEthernet1/0/8"
+!NAME: "GigabitEthernet1/0/9",  DESCR: "GigabitEthernet1/0/9"
+!NAME: "GigabitEthernet1/0/10", DESCR: "GigabitEthernet1/0/10"
+!NAME: "GigabitEthernet1/0/11", DESCR: "GigabitEthernet1/0/11"
+!NAME: "GigabitEthernet1/0/12", DESCR: "GigabitEthernet1/0/12"
+!NAME: "GigabitEthernet1/0/13", DESCR: "GigabitEthernet1/0/13"
+!NAME: "GigabitEthernet1/0/14", DESCR: "GigabitEthernet1/0/14"
+!NAME: "GigabitEthernet1/0/15", DESCR: "GigabitEthernet1/0/15"
+!NAME: "GigabitEthernet1/0/16", DESCR: "GigabitEthernet1/0/16"
+!NAME: "GigabitEthernet1/0/17", DESCR: "GigabitEthernet1/0/17"
+!NAME: "GigabitEthernet1/0/18", DESCR: "GigabitEthernet1/0/18"
+!NAME: "GigabitEthernet1/0/19", DESCR: "GigabitEthernet1/0/19"
+!NAME: "GigabitEthernet1/0/20", DESCR: "GigabitEthernet1/0/20"
+!NAME: "GigabitEthernet1/0/21", DESCR: "GigabitEthernet1/0/21"
+!NAME: "GigabitEthernet1/0/22", DESCR: "GigabitEthernet1/0/22"
+!NAME: "GigabitEthernet1/0/23", DESCR: "GigabitEthernet1/0/23"
+!NAME: "GigabitEthernet1/0/24", DESCR: "GigabitEthernet1/0/24"
+!
+!VTP: VTP Version                     : 2
+!VTP: Configuration Revision          : 2
+!VTP: Maximum VLANs supported locally : 1005
+!VTP: Number of existing VLANs        : 8
+!VTP: VTP Operating Mode              : Server
+!VTP: VTP Domain Name                 : 
+!VTP: VTP Pruning Mode                : Disabled
+!VTP: VTP V2 Mode                     : Disabled
+!VTP: VTP Traps Generation            : Disabled
+!VTP: MD5 digest                      : 0x9D 0x90 0xC2 0xE0 0x17 0xE8 0x64 0xD9 
+!VTP: Local updater ID is 10.101.9.252 on interface Vl140 (lowest numbered VLAN interface found)
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Gi1/0/22, Gi1/0/25, Gi1/0/26, Gi1/0/27, Gi1/0/28
+!VLAN: 120  SIG-VLAN                         active    Gi1/0/13, Gi1/0/14, Gi1/0/15, Gi1/0/16
+!VLAN: 130  VIP-MEDIA                        active    Gi1/0/17, Gi1/0/18, Gi1/0/19, Gi1/0/20, Gi1/0/21
+!VLAN: 140  VIP-MGMT                         active    Gi1/0/1, Gi1/0/2, Gi1/0/3, Gi1/0/4, Gi1/0/5, Gi1/0/6, Gi1/0/7, Gi1/0/8, Gi1/0/9
+!VLAN:                                                 Gi1/0/10, Gi1/0/11, Gi1/0/12
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 120  enet  100120     1500  -      -      -        -    -        0      0   
+!VLAN: 130  enet  100130     1500  -      -      -        -    -        0      0   
+!VLAN: 140  enet  100140     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!STACK: Switch/Stack Mac Address : 58bc.27fc.3780
+!STACK:                                            H/W   Current
+!STACK: Switch#  Role   Mac Address     Priority Version  State 
+!STACK: ----------------------------------------------------------
+!STACK: *1       Master 58bc.27fc.3780     1      0       Ready               
+!STACK:          Stack Port Status             Neighbors     
+!STACK: Switch#  Port 1     Port 2           Port 1   Port 2 
+!STACK: --------------------------------------------------------
+!STACK:   1       Down       Down             None     None
+!
+!SDM Template: desktop default
+!
+!MTU: 1500
+!MTU-Jumbo: 1500
+!MTU-Routing: 1500
+!
+!
+config-register 0xF
+Using 8660 out of 524288 bytes
+!
+version 12.2
+no service pad
+service timestamps debug uptime
+service timestamps log uptime
+service password-encryption
+!
+hostname ld4accs09
+!
+logging buffered 128000 notifications
+enable secret 5 $1$LOn6$e8HC3QBSnpUXHGXDYRzRJ/
+!
+username netops privilege 15 secret 5 $1$XAXy$3tFuryVdI79m71RxmyoLk0
+username noc privilege 0 secret 5 $1$RWbH$PPSssclnLh3aLZy3bB1G2.
+aaa new-model
+aaa authentication login default local
+aaa authentication enable default enable
+aaa authorization exec default local 
+!
+aaa session-id common
+clock timezone GMT 0
+clock summer-time GMT recurring 1 Sun Apr 0:01 last Sun Oct 0:01
+switch 1 provision ws-c3750g-24ts-1u
+system mtu routing 1500
+ip subnet-zero
+no ip domain-lookup
+!
+login on-failure log
+login on-success log
+!
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+errdisable recovery cause link-flap
+no file verify auto
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+interface GigabitEthernet1/0/1
+ description UKLD4PILOT2 MGMT2
+ switchport access vlan 140
+ speed 1000
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/2
+ description UKLD4VIPDB2 MGMT2
+ switchport access vlan 140
+ speed 1000
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/3
+ description UKLD4NFS2 MGMT2
+ switchport access vlan 140
+ speed 1000
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/4
+ description UKLD4CMS SCC-MGMT2
+ switchport access vlan 140
+ speed 100
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/5
+ description UKVIPIMG CTRL1
+ switchport access vlan 140
+ speed 100
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/6
+ description --UNUSED--
+ switchport access vlan 140
+ speed 1000
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/7
+ description ld4tap05
+ switchport access vlan 140
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/8
+ description ld4tap06
+ switchport access vlan 140
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/9
+ description UKNUBNFS1 MGMT2
+ switchport access vlan 140
+ speed 1000
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/10
+ description UKNUBAS1 MGMT2
+ switchport access vlan 140
+ speed 1000
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/11
+ description ld4tap08
+ switchport access vlan 140
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/12
+ description ld4tap09
+ switchport access vlan 140
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/13
+ description UKLD4PILOT2 SIG2
+ switchport access vlan 120
+ shutdown
+ speed 1000
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/14
+ description UKNUBVIP2 SIG2
+ switchport access vlan 120
+ speed 1000
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/15
+ description UKVIPIMG SIG1
+ switchport access vlan 120
+ speed 100
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/16
+ description UKLD4CMS SCC SIG2
+ switchport access vlan 120
+ speed 1000
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/17
+ description UKVIPIMG DATA1
+ switchport access vlan 130
+ speed 1000
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/18
+ description UKLD4CMS MPC1 MEDIA2
+ switchport access vlan 130
+ speed 1000
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/19
+ description UKLD4CMS MPC2 MEDIA2
+ switchport access vlan 130
+ speed 1000
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/20
+ description UKLD4NFS2 MEDIA2
+ switchport access vlan 130
+ speed 1000
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/21
+ description ---RESERVED---
+ switchport access vlan 130
+ speed 1000
+ duplex full
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/22
+ description TRUNK TO UKLD4CSW08
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ shutdown
+!
+interface GigabitEthernet1/0/23
+ description TRUNK TO UKLD4CSW02
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/24
+ description TRUNK TO UKLD4CSW01
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/25
+!
+interface GigabitEthernet1/0/26
+!
+interface GigabitEthernet1/0/27
+!
+interface GigabitEthernet1/0/28
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan120
+ no ip address
+!
+interface Vlan130
+ no ip address
+!
+interface Vlan140
+ description MGMT-VLAN
+ ip address 10.101.9.252 255.255.255.0
+!
+ip classless
+no ip http server
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq telnet
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq telnet
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq telnet
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq telnet
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq telnet
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq telnet
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq telnet
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq telnet
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq telnet
+!
+logging trap notifications
+logging 10.115.137.89
+logging 10.124.23.24
+access-list 10 permit 10.100.19.20
+access-list 10 permit 10.100.19.21
+access-list 10 permit 10.102.2.12
+access-list 10 permit 10.102.10.130
+access-list 10 permit 10.102.23.112
+access-list 10 permit 10.115.38.131
+access-list 10 permit 10.115.137.0 0.0.0.255
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server trap link ietf
+snmp-server location emea-ld4
+snmp-server contact nio@arkadin.com
+snmp-server enable traps license
+snmp-server host 10.105.137.55 version 2c noc_services 
+snmp-server host 10.115.38.131 version 2c noc_services 
+snmp ifmib ifindex persist
+radius-server source-ports 1645-1646
+!
+control-plane
+!
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+! password <removed>
+line vty 5 15
+!
+ntp source Vlan140
+ntp server 10.115.131.1 prefer
+ntp server 10.124.19.1
+ntp server 10.125.19.1
+end

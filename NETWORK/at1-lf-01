@@ -1,0 +1,322 @@
+!RANCID-CONTENT-TYPE: cumulus
+!
+net del all
+net add dns nameserver ipv4 10.124.23.53
+net add syslog host ipv4 10.100.137.89 port udp 514
+net add syslog host ipv4 10.100.137.24 port udp 514
+net add time zone Etc/UTC
+net add time ntp server 10.115.131.1 iburst
+net add time ntp server 10.125.19.1 iburst
+net add time ntp server 10.124.19.1 iburst
+net add time ntp source 192.168.1.21
+net add snmp-server listening-address localhost
+net add snmp-server listening-address 192.168.1.21
+net add snmp-server readonly-community PASSWORD REMOVED access 10.105.137.56/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.105.137.57/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.100.137.55/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.250.137.55/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.115.137.57/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.100.19.21/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.250.90.90/32
+net add snmp-server readonly-community PASSWORD REMOVED access 192.206.95.169/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.105.137.80/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.105.137.56/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.105.137.57/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.100.137.55/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.250.137.55/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.115.137.57/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.100.19.21/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.250.90.90/32
+net add snmp-server readonly-community PASSWORD REMOVED access 192.206.95.169/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.105.137.80/32
+net add snmp-server system-contact nio@arkadin.com
+net add snmp-server system-location noram-at1
+net add snmp-server system-name at1-lf-01
+net add snmp-server trap-destination REMOVED-PARAMS
+net add snmp-server trap-destination REMOVED-PARAMS
+net add bgp autonomous-system 4200923137
+net add routing defaults datacenter
+net add routing agentx
+net add routing service integrated-vtysh-config
+net add routing log syslog informational
+net add routing route 0.0.0.0/0 10.100.19.254 vrf MGMT_AT3
+net add routing prefix-list ipv4 PFX_AT1_V4 seq 5 permit 10.122.0.0/16 le 32
+net add routing prefix-list ipv4 PFX_AT1_V4 seq 10 permit 172.22.4.0/22 ge 30 le 31
+net add routing prefix-list ipv4 PFX_AT1_V4 seq 15 permit 192.168.1.0/24 ge 32
+net add routing prefix-list ipv4 PFX_AT1_V4 seq 20 permit 192.206.95.192/29
+net add routing prefix-list ipv4 PFX_AT1_V4 seq 25 permit 10.0.1.36/30
+net add routing prefix-list ipv4 PFX_DEFAULT-ROUTE_V4 seq 5 permit 0.0.0.0/0
+net add routing prefix-list ipv4 PFX_NSX-MIGRATED_V4 seq 5 permit 10.100.64.0/24
+net add routing prefix-list ipv4 PFX_NSX-MIGRATED_V4 seq 10 permit 10.100.65.128/25
+net add routing prefix-list ipv4 PFX_NSX-MIGRATED_V4 seq 15 permit 10.100.66.128/25
+net add routing prefix-list ipv4 PFX_NSX-MIGRATED_V4 seq 20 permit 10.100.67.0/24
+net add routing prefix-list ipv4 PFX_NSX-MIGRATED_V4 seq 25 permit 192.206.95.132/30
+net add routing prefix-list ipv4 PFX_NSX-MIGRATED_V4 seq 30 permit 10.100.73.0/24
+net add routing prefix-list ipv4 PFX_NSX-MIGRATED_V4 seq 35 permit 10.100.74.0/25
+net add routing prefix-list ipv4 PFX_NSX-MIGRATED_V4 seq 40 permit 10.100.75.0/24
+net add routing prefix-list ipv4 PFX_NSX-MIGRATED_V4 seq 45 permit 10.100.76.0/24
+net add routing prefix-list ipv4 PFX_NSX-MIGRATED_V4 seq 50 permit 185.37.223.96/27
+net add routing prefix-list ipv4 PFX_NSX-MIGRATED_V4 seq 55 permit 192.206.95.128/27
+net add routing prefix-list ipv4 PFX_NSX-MIGRATED_V4 seq 60 permit 10.100.63.0/24
+net add routing prefix-list ipv4 PFX_NSX-NETS_V4 seq 5 permit 10.122.0.0/17 le 32
+net add routing community-list standard COMM_AT1-MIGRATIONS_V4 permit 64101:100
+net add routing route-map PS_IMP_AT3_V4 permit 10
+net add routing route-map PS_EXP_AT3_V4 permit 2 match ip address prefix-list PFX_NSX-MIGRATED_V4
+net add routing route-map PS_EXP_AT3_V4 permit 2 match source-protocol connected
+net add routing route-map PS_EXP_AT3_V4 permit 2 set community 64101:100 additive
+net add routing route-map PS_EXP_AT3_V4 permit 5 match community COMM_AT1-MIGRATIONS_V4
+net add routing route-map PS_EXP_AT3_V4 permit 10 match ip address prefix-list PFX_AT1_V4
+net add routing route-map PS_EXP_AT3_V4 permit 15
+net add routing route-map PS_IMP_NSX_V4 permit 5 match ip address prefix-list PFX_NSX-MIGRATED_V4
+net add routing route-map PS_IMP_NSX_V4 permit 5 set community 64101:100 additive
+net add routing route-map PS_IMP_NSX_V4 permit 10 match ip address prefix-list PFX_NSX-NETS_V4
+net add routing route-map PS_EXP_NSX_V4 permit 10 match ip address prefix-list PFX_DEFAULT-ROUTE_V4
+net add username cumulus nopassword
+net add bgp neighbor BORDER_V4 peer-group
+net add bgp neighbor BORDER_V4 remote-as 53550
+net add bgp neighbor NSX-TIER-0 peer-group
+net add bgp neighbor NSX-TIER-0 remote-as 4200924136
+net add bgp neighbor 172.22.4.2 peer-group BORDER_V4
+net add bgp neighbor 172.22.4.6 peer-group BORDER_V4
+net add bgp neighbor vlan17 interface peer-group NSX-TIER-0
+net add bgp neighbor vlan18 interface peer-group NSX-TIER-0
+net add bgp neighbor peerlink.5 interface remote-as 4200923138
+net add bgp neighbor peerlink.5 timers 2 6
+net add bgp neighbor swp48.5 interface remote-as 65116
+net add bgp neighbor swp48.5 timers 2 6
+net add bgp ipv4 unicast network 10.0.1.36/30 
+net add bgp ipv4 unicast redistribute connected
+net add bgp ipv4 unicast neighbor NSX-TIER-0 route-map PS_IMP_NSX_V4 in
+net add bgp ipv4 unicast neighbor NSX-TIER-0 route-map PS_EXP_NSX_V4 out
+net add bgp ipv4 unicast neighbor swp48.5 route-map PS_IMP_AT3_V4 in
+net add bgp ipv4 unicast neighbor swp48.5 route-map PS_EXP_AT3_V4 out
+net add interface swp1-49,52-56 breakout 1x
+net add ptp global slave-only no
+net add ptp global priority1 255
+net add ptp global priority2 255
+net add ptp global domain-number 0
+net add ptp global logging-level 5
+net add ptp global path-trace-enabled no
+net add ptp global use-syslog yes
+net add ptp global verbose no
+net add ptp global summary-interval 0
+net add ptp global time-stamping
+net add bond ae1 bond slaves swp49
+net add bond ae13 bond slaves swp13,swp14
+net add bond ae15 bond slaves swp15,swp16
+net add bond ae2 bond slaves swp52
+net add bond ae46 bond slaves swp46
+net add bond ae47 bond slaves swp47
+net add bond peerlink bond slaves swp55,swp56
+net add bond ae13 clag id 13
+net add bond ae13,15 bridge vids 13-15,22
+net add bond ae15 clag id 15
+net add bond ae46 bridge vids 10,15,4093
+net add bond ae46 clag id 46
+net add bond ae47 bridge vids 10,15
+net add bond ae47 clag id 47
+net add bridge bridge ports ae13,ae15,ae46,ae47,peerlink,swp1,swp2,swp3,swp4,swp5,swp6,swp11,swp17,swp18,swp19,swp20,swp21,swp22,swp23,swp24,swp25,swp26,swp27,swp28,swp29,swp30,swp12
+net add bridge bridge vids 10-22,50-53,4043,4093
+net add bridge bridge vlan-aware
+net add bridge vlan1019_19 ports peerlink.1019,swp17.1019,swp18.1019,swp19.1019,swp20.1019,swp21.1019,swp22.1019,swp23.1019,swp24.1019,swp25.1019,swp48.19
+net add bridge vlan1022_22 ports peerlink.1022,swp17.1022,swp18.1022,swp19.1022,swp20.1022,swp21.1022,swp22.1022,swp23.1022,swp24.1022,swp25.1022,swp48.22
+net add bridge vlan1031_31 ports peerlink.1031,swp17.1031,swp18.1031,swp19.1031,swp20.1031,swp21.1031,swp22.1031,swp23.1031,swp24.1031,swp25.1031,swp48.31
+net add bridge vlan1032_32 ports peerlink.1032,swp17.1032,swp18.1032,swp19.1032,swp20.1032,swp21.1032,swp22.1032,swp23.1032,swp24.1032,swp25.1032,swp48.32
+net add bridge vlan1044_44 ports peerlink.1044,swp17.1044,swp18.1044,swp19.1044,swp20.1044,swp21.1044,swp22.1044,swp23.1044,swp24.1044,swp25.1044,swp48.44
+net add bridge vlan1045_45 ports peerlink.1045,swp17.1045,swp18.1045,swp19.1045,swp20.1045,swp21.1045,swp22.1045,swp23.1045,swp24.1045,swp25.1045,swp48.45
+net add bridge vlan1046_46 ports peerlink.1046,swp17.1046,swp18.1046,swp19.1046,swp20.1046,swp21.1046,swp22.1046,swp23.1046,swp24.1046,swp25.1046,swp48.46
+net add bridge vlan1110 ports peerlink.1110,swp17.1110,swp18.1110,swp19.1110,swp20.1110,swp21.1110,swp22.1110,swp23.1110,swp24.1110,swp25.1110,swp48.1110
+net add bridge vlan1121_21 ports peerlink.1121,swp8,swp17.1121,swp18.1121,swp19.1121,swp20.1121,swp21.1121,swp22.1121,swp23.1121,swp24.1121,swp25.1121,swp48.21
+net add bridge vlan1125_125 ports peerlink.1125,swp17.1125,swp18.1125,swp19.1125,swp20.1125,swp21.1125,swp22.1125,swp23.1125,swp24.1125,swp25.1125,swp48.125
+net add bridge vlan1137 ports peerlink.1137,swp17.1137,swp18.1137,swp19.1137,swp20.1137,swp21.1137,swp22.1137,swp23.1137,swp24.1137,swp25.1137,swp48.1137
+net add bridge vlan124 ports peerlink.124,swp17.124,swp18.124,swp19.124,swp20.124,swp21.124,swp22.124,swp23.124,swp24.124,swp25.124,swp48.124
+net add bridge vlan23 ports peerlink.23,swp17.23,swp18.23,swp19.23,swp20.23,swp21.23,swp22.23,swp23.23,swp24.23,swp25.23,swp48.23
+net add bridge vlan24 ports peerlink.24,swp17.24,swp18.24,swp19.24,swp20.24,swp21.24,swp22.24,swp23.24,swp24.24,swp25.24,swp48.24
+net add bridge vlan4001 ports peerlink.4001,swp17.4001,swp18.4001,swp19.4001,swp20.4001,swp21.4001,swp22.4001,swp23.4001,swp24.4001,swp25.4001,swp48.4001
+net add bridge vlan4044 ports peerlink.4044,swp7,swp9,swp10,swp17.4044,swp18.4044,swp19.4044,swp20.4044,swp21.4044,swp22.4044,swp23.4044,swp24.4044,swp25.4044,swp48.4044
+net add bridge vlan4089 ports peerlink.4089,swp17.4089,swp18.4089,swp19.4089,swp20.4089,swp21.4089,swp22.4089,swp23.4089,swp24.4089,swp25.4089,swp48.4089
+net add bridge vlan500 ports ae1.500,swp48.500
+net add interface ae1.10 ip address 172.22.4.3/31
+net add interface ae2.10 ip address 172.22.4.7/31
+net add interface eth0 ip address 169.254.2.1/30
+net add interface eth0 mtu 1500
+net add interface peerlink.4094 clag peer-ip 169.254.1.2
+net add interface peerlink.4094 clag sys-mac 44:38:39:7f:d9:59
+net add interface peerlink.4094 ip address 169.254.1.1/30
+net add interface peerlink.5 ip address 172.22.6.4/31
+net add interface swp1 alias A:radisys01-ssc-s1:p1-manage
+net add interface swp1 bridge access 51
+net add interface swp1-12,46-47 link speed 1000
+net add interface swp10 alias S:ATL_VIDWLVYCTN1P
+net add interface swp11 alias A:radisys01-mpc-s6:p1-rtp
+net add interface swp12 alias A:radisys01-mpc-s7:p1-rtp
+net add interface swp13 alias at101nascl01ct1:e0c
+net add interface swp14 alias at101nascl01ct1:e0d
+net add interface swp15 alias at101nascl01ct2:e0c
+net add interface swp16 alias at101nascl01ct2:e0d
+net add interface swp17 alias at101w02esx05:vmnic0
+net add interface swp18 alias at101w01esx01:vmnic0
+net add interface swp19 alias at101w01esx02:vmnic0
+net add interface swp2 alias A:radisys01-mpc-s4:p1-rtp
+net add interface swp2-3,5-6,11-12 bridge access 53
+net add interface swp20 alias at101w01esx03:vmnic0
+net add interface swp21 alias at101w01esx04:vmnic0
+net add interface swp22 alias at101w02esx01:vmnic0
+net add interface swp23 alias at101w02esx02:vmnic0
+net add interface swp24 alias at101w02esx03:vmnic0
+net add interface swp25 alias at101w02esx04:vmnic0
+net add interface swp26-30,53-56
+net add interface swp3 alias A:radisys01-mpc-s5:p1-rtp
+net add interface swp4 alias A:radisys01-ssc-s1:p2-sip
+net add interface swp4 bridge access 52
+net add interface swp48 alias Q:atlcore01:Te3/3:legacy-integration
+net add interface swp48.5 ip address 172.22.6.0/31
+net add interface swp49 alias at1-bl-01
+net add interface swp49,52 link speed 40000
+net add interface swp5 alias A:radisys01-mpc-s2:p1-rtp
+net add interface swp52 alias at1-bl-02
+net add interface swp6 alias A:radisys01-mpc-s3:p1-rtp
+net add interface swp7 alias S:ATL_VIDWLVGW2P
+net add interface swp8 alias S:ATL_VIDWLVP1P
+net add interface swp9 alias S:ATL_VIDWLVR2P
+net add loopback lo ip address 192.168.1.21/32
+net add vlan 10 alias VL_AT1_10_OOB
+net add vlan 10 ip address 10.122.128.252/24
+net add vlan 10 ip address-virtual 00:00:5e:00:01:01 10.122.128.254/24
+net add vlan 10 vlan-id 10
+net add vlan 10 vlan-raw-device bridge
+net add vlan 11 alias VL_AT1_11_ESXI-MANAGE
+net add vlan 11 ip address 10.122.129.252/24
+net add vlan 11 ip address-virtual 00:00:5e:00:01:01 10.122.129.254/24
+net add vlan 11 vlan-id 11
+net add vlan 11 vlan-raw-device bridge
+net add vlan 12 alias VL_AT1_12_VMOTION
+net add vlan 12 vlan-id 12
+net add vlan 12 vlan-raw-device bridge
+net add vlan 13 alias VL_AT1_13_NFS1
+net add vlan 13 vlan-id 13
+net add vlan 13 vlan-raw-device bridge
+net add vlan 14 alias VL_AT1_14_NFS2
+net add vlan 14 vlan-id 14
+net add vlan 14 vlan-raw-device bridge
+net add vlan 15 alias VL_AT1_15_SYS-MANAGE
+net add vlan 15 ip address 10.122.133.252/24
+net add vlan 15 ip address-virtual 00:00:5e:00:01:01 10.122.133.254/24
+net add vlan 15 vlan-id 15
+net add vlan 15 vlan-raw-device bridge
+net add vlan 16 alias VL_AT1_16_ESXI-VTEP
+net add vlan 16 ip address 10.122.134.124/25
+net add vlan 16 ip address-virtual 00:00:5e:00:01:01 10.122.134.126/25
+net add vlan 16 vlan-id 16
+net add vlan 16 vlan-raw-device bridge
+net add vlan 17 alias VL_AT1_17_ESG1-LF1
+net add vlan 17 ip address 172.22.5.0/31
+net add vlan 17 vlan-id 17
+net add vlan 17 vlan-raw-device bridge
+net add vlan 18 alias VL_AT1_18_ESG2-LF1
+net add vlan 18 ip address 172.22.5.2/31
+net add vlan 18 vlan-id 18
+net add vlan 18 vlan-raw-device bridge
+net add vlan 19 alias VL_AT1_19_ESG1-LF2
+net add vlan 19 vlan-id 19
+net add vlan 19 vlan-raw-device bridge
+net add vlan 20 alias VL_AT1_20_ESG2-LF2
+net add vlan 20 vlan-id 20
+net add vlan 20 vlan-raw-device bridge
+net add vlan 21 alias VL_AT1_21_ESG-VTEP
+net add vlan 21 ip address 10.122.134.252/25
+net add vlan 21 ip address-virtual 00:00:5e:00:01:01 10.122.134.254/25
+net add vlan 21 vlan-id 21
+net add vlan 21 vlan-raw-device bridge
+net add vlan 22 alias VL_AT1_22_NAS-SHARES
+net add vlan 22 vlan-id 22
+net add vlan 22 vlan-raw-device bridge
+net add vlan 4043 ip address 185.37.223.124/27
+net add vlan 4043 ip address 192.206.95.156/27
+net add vlan 4043 ip address-virtual 00:00:5e:00:01:01 185.37.223.126/27
+net add vlan 4043 ip address-virtual 00:00:5e:00:01:02 192.206.95.158/27
+net add vlan 4043 vlan-id 4043
+net add vlan 4043 vlan-raw-device bridge
+net add vlan 4093 ip address 10.0.1.37/30
+net add vlan 4093 vlan-id 4093
+net add vlan 4093 vlan-raw-device bridge
+net add vlan 50 alias VL_AT1_50_VSBC-PUBLIC
+net add vlan 50 ip address 192.206.95.196/29
+net add vlan 50 ip address-virtual 00:00:5e:00:01:01 192.206.95.198/29
+net add vlan 50 vlan-id 50
+net add vlan 50 vlan-raw-device bridge
+net add vlan 51 alias VL_AT1_51_RADISYS-MGMT-01
+net add vlan 51 ip address 10.122.135.12/28
+net add vlan 51 ip address-virtual 00:00:5e:00:01:01 10.122.135.14/28
+net add vlan 51 vlan-id 51
+net add vlan 51 vlan-raw-device bridge
+net add vlan 52 alias VL_AT1_52_RADISYS-SIP-01
+net add vlan 52 ip address 10.122.135.28/28
+net add vlan 52 ip address-virtual 00:00:5e:00:01:01 10.122.135.30/28
+net add vlan 52 vlan-id 52
+net add vlan 52 vlan-raw-device bridge
+net add vlan 53 alias VL_AT1_53_RADISYS-RTP-01
+net add vlan 53 ip address 10.122.135.44/28
+net add vlan 53 ip address-virtual 00:00:5e:00:01:01 10.122.135.46/28
+net add vlan 53 vlan-id 53
+net add vlan 53 vlan-raw-device bridge
+net add acl ipv4 ACL_PEXIP_EGRESS_V4 priority 10 accept tcp source-ip any source-port any dest-ip 192.206.95.224/29 dest-port http
+net add acl ipv4 ACL_PEXIP_EGRESS_V4 priority 20 accept tcp source-ip any source-port any dest-ip 192.206.95.224/29 dest-port https
+net add acl ipv4 ACL_PEXIP_EGRESS_V4 priority 30 accept tcp source-ip any source-port any dest-ip 192.206.95.224/29 dest-port 1935-1936
+net add acl ipv4 ACL_PEXIP_EGRESS_V4 priority 40 accept tcp source-ip any source-port any dest-ip 192.206.95.224/29 dest-port 5060-5061
+net add acl ipv4 ACL_PEXIP_EGRESS_V4 priority 50 accept tcp source-ip any source-port any dest-ip 192.206.95.224/29 dest-port 1720
+net add acl ipv4 ACL_PEXIP_EGRESS_V4 priority 60 accept tcp source-ip any source-port any dest-ip 192.206.95.224/29 dest-port 33000-39999
+net add acl ipv4 ACL_PEXIP_EGRESS_V4 priority 70 accept udp source-ip any source-port any dest-ip 192.206.95.224/29 dest-port 1719
+net add acl ipv4 ACL_PEXIP_EGRESS_V4 priority 80 accept udp source-ip any source-port any dest-ip 192.206.95.224/29 dest-port 40000-50000
+net add acl ipv4 ACL_PEXIP_EGRESS_V4 priority 90 accept udp source-ip any source-port any dest-ip 192.206.95.224/29 dest-port 500
+net add dot1x radius accounting-port 1813
+net add dot1x max-number-stations 4
+net add dot1x radius authentication-port 1812
+net add dot1x eap-reauth-period 0
+net add dot1x mab-activation-delay 30
+net commit
+# There are some configuration commands that are not yet supported by nclu.
+# The following will append those commands to the appropriate files.
+# ========================================================================
+sudo sh -c "printf 'interface 10\ndescription VL_AT1_10_OOB\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface 11\ndescription VL_AT1_11_ESXI-MANAGE\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface 12\ndescription VL_AT1_12_VMOTION\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface 13\ndescription VL_AT1_13_NFS1\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface 14\ndescription VL_AT1_14_NFS2\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface 15\ndescription VL_AT1_15_SYS-MANAGE\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface 16\ndescription VL_AT1_16_ESXI-VTEP\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface 17\ndescription VL_AT1_17_ESG1-LF1\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface 18\ndescription VL_AT1_18_ESG2-LF1\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface 19\ndescription VL_AT1_19_ESG1-LF2\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface 20\ndescription VL_AT1_20_ESG2-LF2\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface 21\ndescription VL_AT1_21_ESG-VTEP\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface 22\ndescription VL_AT1_22_NAS-SHARES\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface 50\ndescription VL_AT1_50_VSBC-PUBLIC\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp7\ndescription S:ATL_VIDWLVGW2P\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp8\ndescription S:ATL_VIDWLVP1P\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp9\ndescription S:ATL_VIDWLVR2P\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp10\ndescription S:ATL_VIDWLVYCTN1P\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp13\ndescription at101nascl01ct1:e0c\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp14\ndescription at101nascl01ct1:e0d\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp15\ndescription at101nascl01ct2:e0c\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp16\ndescription at101nascl01ct2:e0d\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp17\ndescription at101w02esx05:vmnic0\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp18\ndescription at101w01esx01:vmnic0\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp19\ndescription at101w01esx02:vmnic0\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp20\ndescription at101w01esx03:vmnic0\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp21\ndescription at101w01esx04:vmnic0\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp22\ndescription at101w02esx01:vmnic0\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp23\ndescription at101w02esx02:vmnic0\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp24\ndescription at101w02esx03:vmnic0\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp25\ndescription at101w02esx04:vmnic0\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface swp48\ndescription Q:atlcore01:Te3/3:legacy-integration\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface vlan23\ndescription VL_ATL_23_BRIDGED-FROM-ATL\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface vlan24\ndescription VL_ATL_24_BRIDGED-FROM-ATL\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface vlan124\ndescription VL_ATL_124_BRIDGED-FROM-ATL\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface vlan1121_21\ndescription VL_ATL_1121-21_BRIDGED-FROM-ATL\n' >> /etc/frr/frr.conf"
+sudo sh -c "printf 'interface vlan4044\ndescription VL_ATL_4044_BRIDGED-FROM-ATL\n' >> /etc/frr/frr.conf"
+net add bridge vlan23 alias VL_ATL_23_BRIDGED-FROM-ATL
+net add bridge vlan24 alias VL_ATL_24_BRIDGED-FROM-ATL
+net add bridge vlan124 alias VL_ATL_124_BRIDGED-FROM-ATL
+net add bridge vlan1121_21 alias VL_ATL_1121-21_BRIDGED-FROM-ATL
+net add bridge vlan4044 alias VL_ATL_4044_BRIDGED-FROM-ATL 

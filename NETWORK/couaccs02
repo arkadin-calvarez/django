@@ -1,0 +1,94 @@
+!RANCID-CONTENT-TYPE: foundry
+!
+Current configuration:
+!
+ver 07.1.00T7f3
+!
+stack unit 1
+  module 1 fcx-48-4x-port-management-module
+!
+global-stp
+!
+!
+!
+spanning-tree single
+!
+vlan 1 name DEFAULT-VLAN by port
+ no spanning-tree
+!
+vlan 7 name MGT by port
+ tagged ethe 1/1/47 to 1/1/48 
+ router-interface ve 7
+ spanning-tree
+!
+vlan 8 name DMZ by port
+ tagged ethe 1/1/47 to 1/1/48 
+                                                                   untagged ethe 1/1/37 to 1/1/46 
+ spanning-tree
+!
+vlan 16 name COU1 by port
+ tagged ethe 1/1/47 to 1/1/48 
+ spanning-tree
+!
+vlan 18 name COU3 by port
+ tagged ethe 1/1/47 to 1/1/48 
+ untagged ethe 1/1/1 to 1/1/36 
+ spanning-tree
+!
+!
+spanning-tree single 802-1w
+!
+!
+!
+!
+!
+!
+!
+aaa authentication web-server default radius local
+aaa authentication enable default none
+                                                                  aaa authentication login default radius local
+enable password-display
+enable super-user-password 8 $1$Bj3..U7/$8McbeK5hkgkk4PC614twu1
+hostname couaccs02
+no ip dhcp-client auto-update enable
+ip dns domain-name arkadin.lan
+ip route 0.0.0.0 0.0.0.0 10.102.7.254
+!
+logging host 10.124.23.24
+logging host 10.115.137.89
+logging facility local5
+no telnet server
+username netops password 8 $1$23...2F1$LoovSD/aTAHU3Yhc416yR.
+username noc password 8 $1$DI0..8W0$39UORIYlcpqNxGOwbOAPT0
+password-change any
+radius-server host 10.115.38.11 auth-port 1812 acct-port 1646 authentication-only key 1 $5q|}t5%}'wB}5%h}qPhq:'t}ql#
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1646 authentication-only key 1 $5q|}t5%}'wB}5%h}qPhq:'t}ql#
+radius-server key 1 $5q|}t5%}'wB}5%h}qPhq:'t}ql#
+cdp run
+fdp run
+snmp-server community 1 $gno+sUD}-nUr=dn- ro
+snmp-server community 0 noc_services ro
+snmp-server contact network_operations@arkadin.com
+                                                                  snmp-server enable vlan 7
+snmp-server location frcou
+snmp-server host 10.102.10.130 version v1 1 $Si2^=d
+sntp server 10.115.131.1
+sntp server 10.115.131.2
+sntp server 10.125.19.1
+no web-management http
+web-management https
+interface ve 7
+ ip address 10.102.7.250 255.255.255.0
+!
+ip radius source-interface ve 7
+!
+!
+!
+!
+!
+!
+!
+!
+crypto-ssl certificate generate secret_data MIICyzCCAjSgAwIBAgIEfFWHyDANBgkqhkiG9w0BAQUFADBwMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEYMBYGA1UEChMPVGhlIERlbW8gVmVuZG9yMRwwGgYDVQQLExNTZWN1cmUgRGV2aWNlcyBEZXB0MRQwEgYDVQQDEwtEZW1vIFZlbmRvcjAeFw0wNzA5MDcwMDAwMDBaFw0xOTAxMDEwMDAwMDBaMIGwMRgwFgYDVQQDEw93d3cuYnJvY2FkZS5jb20xLTArBgNVBAoTJEJyb2NhZGUgQ29tbXVuaWNhdGlvbnMgU3lzdGVtcywgSW5jLjEtMCsGA1UECxMkQnJvY2FkZSBDb21tdW5pY2F0aW9ucyBTeXN0ZW1zLCBJbmMuMRQwEgYDVQQHEwtTYW50YSBDbGFyYTETMBEGA1UECBMKQ2FsaWZvcm5pYTELMAkGA1UEBhMCVVMwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAKwAN0NvbrkBEGQ0GxA74HVo7wKv71rStoMssD9cgAnAcLBrrJwxlQgB/gXKGtPyijE0Y6tvJNI3boCehL88ApIzJl/VNJYYVmoLQMo9CSQ7x1NNUA9GBTGW++ja1dtP6U79PmVnGgBPyTPfN8PNQwIQ4T+rX4l9Lnq3O5dSdzqbAgMBAAGjMTAvMB8GA1UdIwQYMBaAFEIo/VN7ViV8xc56L0txqqpk8NAeMAwGA1UdDwQFAwMHoAAwDQYJKoZIhvcNAQEFBQADgYEAMs9pdFheSXBBlVu8BF1bxJ+NVt44VK9tesxMBmKH/E4y5Dr/LsBBJvZL4B1yLjrwoSWbkKnQwiSoKI0QO63E6sTlchKhfqvaV0BmHeilfc8astAcLGFB+4nFCNMDIjt36/cm4gL3WT9o94A3gBSlAUTys0nLtBV2r8TcBJ0+Yp0wggJcAgEAAoGBAKwAN0NvbrkBEGQ0GxA74HVo7wKv71rStoMssD9cgAnAcLBrrJwxlQgB/gXKGtPyijE0Y6tvJNI3boCehL88ApIzJl/VNJYYVmoLQMo9CSQ7x1NNUA9GBTGW++ja1dtP6U79PmVnGgBPyTPfN8PNQwIQ4T+rX4l9Lnq3O5dSdzqbAgMBAAECgYEAo2vhFhV+IhE8vbg0Lox1i5iT3v3CcYzbFG8VVl5Q2PMbHsRvUEhbzSv3axDHxLEhU/bu7CfB2GoKd/IlNn2SAj/oVFmUU/PcFtstcbrub7g1kM4d6lDd9ZBg5Yx69m2PgQCQRDMyMeYBZuWl4MDh3lZQ4688gFqP4bUi9BOQyEECQQDXtw7KDxrTNvtfDzyN0KO/87Y1yw3+x5gbJ5szzj1vc7S+gZxEb3+luCqMyq2NJX01mbQr8lFq6lblWj4XImlzAkEAzB9C08G4Nu43syo/hQWklg0Z8abhR/73gcF/rDD/Nn3t+6LuUeLnk5sBsgSaB5lvgpgzGunsaVuwKFyucItAOQJAZNyIArxLS6TypgDmzFxYpGDcuoxF7/H9Uf0T2YY+PYV5ZnYNzgXgRmk1I/2EZnG3+L70enPj07zcgoLOc1y4twJAN7IH7/OZqhNRy2cpscgaYn7sp00bhyOAsTz08yzjViECQHjyghFhkprm2YX76TrqfD2/JAbT5OOJq1mulzLHsQJASttIj0mxgsowKK3kY4cQCVXcW7pEYYtTRrCBNwTT/ablpRZk3zXTV7W06+EYls8c+cfjAVucFp5zFouJil+DJA==
+!
+end

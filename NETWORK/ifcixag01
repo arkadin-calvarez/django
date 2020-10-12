@@ -1,0 +1,1132 @@
+!RANCID-CONTENT-TYPE: cisco-nx
+!
+!Chassis type: Nexus5548 - a NXOS router
+!Hardware: cisco Nexus5548 Chassis ("O2 32X10GE/Modular Universal Platform Supervisor")
+!Hardware: Intel(R) Xeon(R) CPU with 8060 MB of memory.
+!Hardware: Processor Board ID FOC18170TLK
+!
+!
+!Memory: bootflash: 1960 MB
+!
+!Software: BIOS: version 3.6.0
+!Software: loader: version N/A
+!Software: kickstart: version 6.0(2)N2(2)
+!Software: system: version 6.0(2)N2(2)
+!Software: Power Sequencer Firmware: 
+!Software: Module 1: version v2.0
+!Software: Module 2: version v1.0
+!Software: Module 3: version v2.0
+!Software: Microcontroller Firmware: version v1.2.0.1
+!Software: SFP uC: Module 1: v1.0.0.0
+!Software: QSFP uC: Module not detected
+!Software: BIOS compile time: 05/09/2012
+!Software: kickstart image file is: bootflash:///n5000-uk9-kickstart.6.0.2.N2.2.bin
+!Software: kickstart compile time: 10/4/2013 12:00:00 [10/04/2013 20:04:23]
+!Software: system image file is: bootflash:///n5000-uk9.6.0.2.N2.2.bin
+!Software: system compile time: 10/4/2013 12:00:00 [10/04/2013 22:23:49]
+!
+!
+!
+!
+!
+!LIC: Feature                      Ins  Lic   Status Expiry Date Comments
+!LIC:                                  Count
+!LIC: FCOE_NPV_PKG                  No    -   Unused             -
+!LIC: FM_SERVER_PKG                 No    -   Unused             -
+!LIC: ENTERPRISE_PKG                No    -   Unused             -
+!LIC: FC_FEATURES_PKG               No    -   Unused             -
+!LIC: VMFEX_FEATURE_PKG             No    -   Unused             -
+!LIC: ENHANCED_LAYER2_PKG           No    -   Unused             -
+!LIC: LAN_BASE_SERVICES_PKG         No    -   Unused             -
+!LIC: LAN_ENTERPRISE_SERVICES_PKG   No    -   Unused             -
+!
+!LIC: License hostid: VDH=SSI180805WW
+!
+!Env: Fan:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis-1       N5548P-FAN           --         ok
+!Env: Chassis-2       N5548P-FAN           --         ok
+!Env: PS-1            N55-PAC-750W         --         ok
+!Env: PS-2            N55-PAC-750W         --         ok
+!
+!Env: Power Supply:
+!Env: Voltage: 12 Volts
+!Env: -----------------------------------------------------------
+!Env: PS  Model                Input Power       Current   Status
+!Env:                          Type  (Watts)     (Amps)
+!Env: -----------------------------------------------------------
+!Env: 1   N55-PAC-750W         AC     780.00     65.00     ok
+!Env: 2   N55-PAC-750W         AC     780.00     65.00     ok
+!Env: Mod Model                   Power     Current     Power     Current     Status
+!Env:                             Requested Requested   Allocated Allocated
+!Env:                             (Watts)   (Amps)      (Watts)   (Amps)
+!Env: --- ----------------------  -------   ----------  --------- ----------  ----------
+!Env: 1    N5K-C5548UP-SUP        492.00    41.00       492.00    41.00       powered-up
+!Env: 2    N55-M16UP              90.00     7.50        90.00     7.50        powered-up
+!Env: 3    N55-DL2                24.00     2.00        24.00     2.00        powered-up
+!Env: Power Usage Summary:
+!Env: --------------------
+!Env: Power Supply redundancy mode:                 Redundant
+!Env: Power Supply redundancy operational mode:     Redundant
+!Env: Total Power Capacity                             1560.00 W
+!Env: Power reserved for Supervisor(s)                  492.00 W
+!Env: Power currently used by Modules                   114.00 W
+!Env:                                                 -------------
+!Env: Total Power Available                             954.00 W
+!Env:                                                 -------------
+!
+!Variable: Current Boot Variables:
+!Variable: kickstart = bootflash:/n5000-uk9-kickstart.6.0.2.N2.2.bin
+!Variable: system = bootflash:/n5000-uk9.6.0.2.N2.2.bin
+!Variable: Boot Variables on next reload:
+!Variable: kickstart = bootflash:/n5000-uk9-kickstart.6.0.2.N2.2.bin
+!Variable: system = bootflash:/n5000-uk9.6.0.2.N2.2.bin
+!
+!Flash: bootflash:        4096    Jun 18 07:18:01 2015  .patch/
+!Flash: bootflash:         262    Dec 21 01:40:33 2015  assoc_ascii_cnv.log
+!Flash: bootflash:       16760    Aug 01 17:02:32 2018  config_2018-08-01_17:02:31.467293
+!Flash: bootflash:       17460    Aug 02 08:44:53 2018  config_2018-08-02_08:44:52.934664
+!Flash: bootflash:       17521    Aug 02 08:56:10 2018  config_2018-08-02_08:56:09.280250
+!Flash: bootflash:       17637    Aug 02 08:58:55 2018  config_2018-08-02_08:58:54.859424
+!Flash: bootflash:       17637    Aug 02 09:00:25 2018  config_2018-08-02_09:00:24.998588
+!Flash: bootflash:       17637    Aug 02 09:01:39 2018  config_2018-08-02_09:01:38.395750
+!Flash: bootflash:       18137    Aug 02 09:02:21 2018  config_2018-08-02_09:02:21.086358
+!Flash: bootflash:       18138    Aug 02 09:04:05 2018  config_2018-08-02_09:04:04.250472
+!Flash: bootflash:       18138    Aug 02 09:05:51 2018  config_2018-08-02_09:05:51.116818
+!Flash: bootflash:       18173    Aug 02 12:25:43 2018  config_2018-08-02_12:25:41.314418
+!Flash: bootflash:       18173    Aug 02 14:35:29 2018  config_2018-08-02_14:35:28.172332
+!Flash: bootflash:       18173    Aug 02 14:39:58 2018  config_2018-08-02_14:39:57.401782
+!Flash: bootflash:       18173    Aug 03 08:57:11 2018  config_2018-08-03_08:57:09.984120
+!Flash: bootflash:       49152    Dec 21 01:34:25 2015  lost+found/
+!Flash: bootflash:        5659    Dec 18 03:01:29 2015  mts.log
+!Flash: bootflash:    25140224    Oct 11 09:02:25 2014  n5000-uk9-kickstart.5.0.3.N2.1.bin
+!Flash: bootflash:    31646720    Dec 17 12:22:07 2015  n5000-uk9-kickstart.5.2.1.N1.1.bin
+!Flash: bootflash:    35511296    Dec 19 15:39:08 2015  n5000-uk9-kickstart.6.0.2.N2.2.bin
+!Flash: bootflash:   147256572    Oct 11 09:04:28 2014  n5000-uk9.5.0.3.N2.1.bin
+!Flash: bootflash:   163548672    Dec 18 02:59:08 2015  n5000-uk9.5.2.1.N1.1.bin
+!Flash: bootflash:   229496408    Dec 20 13:04:42 2015  n5000-uk9.6.0.2.N2.2.bin
+!Flash: bootflash:       19805    Dec 11 14:06:23 2019  rollback_config.txt
+!Flash: bootflash:        4096    Jun 18 07:19:41 2015  scripts/
+!Flash: bootflash:        4096    Jan 01 09:07:24 2009  vdc_2/
+!Flash: bootflash:        4096    Jan 01 09:07:24 2009  vdc_3/
+!Flash: bootflash:        4096    Jan 01 09:07:24 2009  vdc_4/
+!Flash: bootflash:        4096    Jun 18 04:56:59 2015  virt_strg_pool_bf/
+!Flash: bootflash:        4096    Jun 18 07:18:04 2015  virtual-instance-stby-sync/
+!Flash: bootflash: Usage for bootflash://sup-local
+!Flash: bootflash: 1 GB total (54% free)
+!
+!Flash: debug: Usage for debug://sup-local
+!Flash: debug: 20 MB total (100% free)
+!
+!Flash: volatile: Usage for volatile://sup-local
+!Flash: volatile: 150 MB total (100% free)
+!
+!Mod: Mod Ports Module-Type                         Model                  Status
+!Mod: --- ----- ----------------------------------- ---------------------- ------------
+!Mod: 1   32    O2 32X10GE/Modular Universal Platfo N5K-C5548UP-SUP        active
+!Mod: 2   16    O2 16 port flexible GEM             N55-M16UP              ok
+!Mod: 3   0     O2 Non L3 Daughter Card             N55-DL2                ok
+!Mod: 
+!Mod: Mod  Sw              Hw      World-Wide-Name(s) (WWN)
+!Mod: ---  --------------  ------  ----------------------------------------------------
+!Mod: 1    6.0(2)N2(2)     1.0     --
+!Mod: 2    6.0(2)N2(2)     1.0     --
+!Mod: 3    6.0(2)N2(2)     1.0     --
+!Mod: 
+!Mod: Mod  MAC-Address(es)                         Serial-Num
+!Mod: ---  --------------------------------------  ----------
+!Mod: 1    002a.6acb.5968 to 002a.6acb.5987         FOC18170TLK
+!Mod: 2    547f.ee5c.0c40 to 547f.ee5c.0c4f         FOC16010CAT
+!Mod: 3    0000.0000.0000 to 0000.0000.000f         FOC18331WYL
+!
+!NAME: "Chassis",               DESCR: "Nexus5548 Chassis"
+!PID: N5K-C5548UP
+!VID: V01
+!SN: SSI180805WW
+!NAME: "Module 1",              DESCR: "O2 32X10GE/Modular Universal Platform Supervisor"
+!PID: N5K-C5548UP
+!VID: V01
+!SN: FOC18170TLK
+!NAME: "Module 2",              DESCR: "O2 16 port flexible GEM"
+!PID: N55-M16UP
+!VID: V01
+!SN: FOC16010CAT
+!NAME: "Fan 1",                 DESCR: "Chassis fan module"
+!PID: N5548P-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "Fan 2",                 DESCR: "Chassis fan module"
+!PID: N5548P-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "Power supply 1",        DESCR: "AC power supply"
+!PID: N55-PAC-750W
+!VID: V02
+!SN: ART1817113J
+!NAME: "Power supply 2",        DESCR: "AC power supply"
+!PID: N55-PAC-750W
+!VID: V01
+!SN: ART1510X0BE
+!NAME: "Module 3",              DESCR: "O2 Non L3 Daughter Card"
+!PID: N55-DL2
+!VID: V02
+!SN: FOC18331WYL
+!
+!Ethernet1/1
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232098     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/2
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232101     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/3
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232087     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/4
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232031     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/5
+!    transceiver is not present
+!Ethernet1/6
+!    transceiver is not present
+!Ethernet1/7
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232084     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/8
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232062     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/9
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232075     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/10
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232079     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/11
+!    transceiver is not present
+!Ethernet1/12
+!    transceiver is not present
+!Ethernet1/13
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232072     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/14
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232083     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/15
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232095     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/16
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232078     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/17
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232090     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/18
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232066     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/19
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232097     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/20
+!    transceiver is not present
+!Ethernet1/21
+!    transceiver is not present
+!Ethernet1/22
+!    transceiver is not present
+!Ethernet1/23
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232093     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/24
+!    transceiver is not present
+!Ethernet1/25
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232064     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/26
+!    transceiver is not present
+!Ethernet1/27
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232074     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/28
+!    transceiver is not present
+!Ethernet1/29
+!    transceiver is not present
+!Ethernet1/30
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232089     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/31
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232045     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/32
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is OEM             
+!    part number is GLC-T-CURV      
+!    revision is 11.0
+!    serial number is H1509232076     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet2/1
+!    transceiver is present
+!    type is SFP-1000BASE-LX
+!    name is CISCO           
+!    part number is FTLF1318P3BTL-C1
+!    revision is A   
+!    serial number is FNS190711N4     
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for 9/125um fiber is 10 km
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet2/2
+!    transceiver is not present
+!Ethernet2/3
+!    transceiver is not present
+!Ethernet2/4
+!    transceiver is not present
+!Ethernet2/5
+!    transceiver is not present
+!Ethernet2/6
+!    transceiver is not present
+!Ethernet2/7
+!    transceiver is not present
+!Ethernet2/8
+!    transceiver is not present
+!Ethernet2/9
+!    transceiver is not present
+!Ethernet2/10
+!    transceiver is not present
+!Ethernet2/11
+!    transceiver is not present
+!Ethernet2/12
+!    transceiver is not present
+!Ethernet2/13
+!    transceiver is not present
+!Ethernet2/14
+!    transceiver is not present
+!Ethernet2/15
+!    transceiver is not present
+!Ethernet2/16
+!    transceiver is not present
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Po1, Eth1/1, Eth1/5, Eth1/6
+!VLAN:                                                 Eth1/9, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/12, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/19, Eth1/20, Eth1/21
+!VLAN:                                                 Eth1/22, Eth1/24, Eth1/26
+!VLAN:                                                 Eth1/28, Eth1/29, Eth1/31
+!VLAN:                                                 Eth1/32, Eth2/2, Eth2/3, Eth2/4
+!VLAN:                                                 Eth2/5, Eth2/6, Eth2/7, Eth2/8
+!VLAN:                                                 Eth2/9, Eth2/10, Eth2/11
+!VLAN:                                                 Eth2/12, Eth2/13, Eth2/14
+!VLAN:                                                 Eth2/15, Eth2/16
+!VLAN: 23   M:10.250.23.0/24:Mgmt            active    Po1, Eth1/1, Eth1/8, Eth1/10
+!VLAN:                                                 Eth1/11, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/30, Eth1/31, Eth1/32
+!VLAN: 299  X:172.16.240.24/29:VRF_ARKADIN   active    Po1, Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/14, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/31, Eth1/32
+!VLAN: 400  X:203.131.246.192/28:NTT         active    Po1, Eth1/1, Eth1/2, Eth1/7
+!VLAN:                                                 Eth1/10, Eth1/11, Eth1/16
+!VLAN:                                                 Eth1/17, Eth1/31, Eth1/32
+!VLAN: 404  X:172.31.253.16/29:FW_MX         active    Po1, Eth1/1, Eth1/8, Eth1/10
+!VLAN:                                                 Eth1/11, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/31, Eth1/32
+!VLAN: 444  Z:185.37.220.0/26:AS_INET        active    Po1, Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 500  X:VOXBONE                        active    Po1, Eth1/1, Eth1/3, Eth1/10
+!VLAN:                                                 Eth1/11, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/25, Eth1/31, Eth1/32
+!VLAN: 600  X:218.213.92.64/28:VIP-NET       active    Po1, Eth1/1, Eth1/2, Eth1/7
+!VLAN:                                                 Eth1/10, Eth1/11, Eth1/16
+!VLAN:                                                 Eth1/17, Eth1/31, Eth1/32
+!VLAN: 614  X:MPLS-L2.UNO_P2P_PA2-IFC        active    Po1, Eth1/10, Eth1/11, Eth1/13
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/31
+!VLAN:                                                 Eth1/32, Eth2/1
+!VLAN: 624  X:MPLS-L2.UNO_P2P_LD4-IFC        active    Po1, Eth1/10, Eth1/11, Eth1/13
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/31
+!VLAN:                                                 Eth1/32, Eth2/1
+!VLAN: 634  X:MPLS-L2.UNO_P2P_TAU-IFC        active    Po1, Eth1/10, Eth1/11, Eth1/13
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/31
+!VLAN:                                                 Eth1/32, Eth2/1
+!VLAN: 640  X:MPLS-L2.UNO_P2P_PYR-IFC        active    Po1, Eth1/10, Eth1/11, Eth1/13
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/31
+!VLAN:                                                 Eth1/32, Eth2/1
+!VLAN: 645  X:MPLS-L2.UNO_P2P_ATL-IFC        active    Po1, Eth1/10, Eth1/11, Eth1/13
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/31
+!VLAN:                                                 Eth1/32, Eth2/1
+!VLAN: 646  X:MPLS-L2.UNO_P2P_SGN-IFC        active    Po1, Eth1/10, Eth1/11, Eth1/13
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/31
+!VLAN:                                                 Eth1/32, Eth2/1
+!VLAN: 648  X:MPLS-L2.UNO_P2P_SHI-IFC        active    Po1, Eth1/10, Eth1/11, Eth1/13
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/31
+!VLAN:                                                 Eth1/32, Eth2/1
+!VLAN: 649  X:MPLS-L2.UNO_P2P_SJO-IFC        active    Po1, Eth1/10, Eth1/11, Eth1/13
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/31
+!VLAN:                                                 Eth1/32, Eth2/1
+!VLAN: 999  X:172.16.254.12/30:B2B_ASR       active    Po1, Eth1/10, Eth1/11, Eth1/14
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 2996 ARKA-PP:172.16.242.0/29:core-ASR active    Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/14, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/27
+!VLAN: 2997 ARKA-PP:172.16.242.0/29:core-RSH active    Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/30
+!VLAN: 3000 X:172.16.251.24/29:INTER_RSH     active    Po1, Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/15, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/27, Eth1/31, Eth1/32
+!VLAN: 3001 X:172.28.0.16/28:SBC_BAOTEL      active    Po1, Eth1/4, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/14, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/31, Eth1/32
+!VLAN: 3002 X:10.16.0.0/28:SBC_M800          active    Po1, Eth1/1, Eth1/4, Eth1/10
+!VLAN:                                                 Eth1/11, Eth1/14, Eth1/16
+!VLAN:                                                 Eth1/17, Eth1/31, Eth1/32
+!VLAN: 3003 X:172.28.0.48/28:SBC_OBS         active    Po1, Eth1/1, Eth1/4, Eth1/10
+!VLAN:                                                 Eth1/11, Eth1/14, Eth1/16
+!VLAN:                                                 Eth1/17, Eth1/31, Eth1/32
+!VLAN: 3004 X:172.16.0.32/28:SBC_SG.GS       active    Po1, Eth1/1, Eth1/4, Eth1/10
+!VLAN:                                                 Eth1/11, Eth1/14, Eth1/16
+!VLAN:                                                 Eth1/17, Eth1/31, Eth1/32
+!VLAN: 3006 X:103.214.228.120/29:SBC_CCASP   active    Po1, Eth1/1, Eth1/4, Eth1/10
+!VLAN:                                                 Eth1/11, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/31, Eth1/32
+!VLAN: 3013 X:172.16.242.4/30:UNO_AIM-IFC    active    Po1, Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/31
+!VLAN:                                                 Eth1/32, Eth2/1
+!VLAN: 3501 X:10.11.11.0/29:EXT_BAOTEL       active    Po1, Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/15, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/31, Eth1/32
+!VLAN: 3502 XX:192.168.4.240/29:EXT_M800     active    Po1, Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/15, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/31, Eth1/32
+!VLAN: 3503 X:172.28.0.40/29:EXT_OBS         active    Po1, Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/15, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/23, Eth1/31, Eth1/32
+!VLAN: 3504 X:172.16.0.0/28:EXT_SG.GS        active    Po1, Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/15, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/31, Eth1/32
+!VLAN: 3505 X:100.64.36.32/29:EXT_APPLICABLE active    Po1, Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 4001 Z:185.37.221.176/28:SBC_AS       active    Po1, Eth1/1, Eth1/2, Eth1/8
+!VLAN:                                                 Eth1/10, Eth1/11, Eth1/16
+!VLAN:                                                 Eth1/17, Eth1/31, Eth1/32
+!VLAN: 4002 S:103.214.228.112/29:NOCTION_IRP active    Po1, Eth1/1, Eth1/7, Eth1/10
+!VLAN:                                                 Eth1/11, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/31, Eth1/32
+!VLAN: 4038 X:172.31.251.8/29:LB_INTERCO_DMZ active    Po1, Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 4040 X:172.31.100.0/30:IA_INET01_SGN  active    Po1, Eth1/1, Eth1/8, Eth1/10
+!VLAN:                                                 Eth1/11, Eth1/14, Eth1/16
+!VLAN:                                                 Eth1/17, Eth1/31, Eth1/32
+!VLAN: 4044 Z:185.37.221.0/27:SHARED-DMZ     active    Po1, Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 4048 X:172.31.253.24/30:SRX_RSH_MX1   active    Po1, Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/30
+!VLAN:                                                 Eth1/31, Eth1/32
+!VLAN: 4049 E:203.131.246.184/30:NTT_RSH_MX1 active    Po1, Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/30
+!VLAN:                                                 Eth1/31, Eth1/32
+!VLAN: 4050 X:172.31.253.27/30:SRX_RSH_MX2   active    Po1, Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/30
+!VLAN:                                                 Eth1/31, Eth1/32
+!VLAN: 4051 X:172.16.249.24/30:eBGP_MX5-ASR1 active    Po1, Eth1/1, Eth1/8, Eth1/10
+!VLAN:                                                 Eth1/11, Eth1/14, Eth1/16
+!VLAN:                                                 Eth1/17, Eth1/31, Eth1/32
+!VLAN: 4054 X:172.16.252.0/30:B2B_MX5        active    Po1, Eth1/1, Eth1/7, Eth1/10
+!VLAN:                                                 Eth1/11, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/31, Eth1/32
+!VLAN: 4058 X:172.31.253.24/30:MX1_RSH_SRX   active    Po1, Eth1/1, Eth1/8, Eth1/10
+!VLAN:                                                 Eth1/11, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/27, Eth1/31, Eth1/32
+!VLAN: 4059 E:203.131.246.184/30:MX1_RSH_NTT active    Po1, Eth1/1, Eth1/7, Eth1/10
+!VLAN:                                                 Eth1/11, Eth1/16, Eth1/17
+!VLAN:                                                 Eth1/18, Eth1/27, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 4064 E:x.x.x.x/x:SG.GS                active    Po1, Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 4065 E:x.x.x.x/x:CiscoCCA             active    Po1, Eth1/1, Eth1/10, Eth1/11
+!VLAN:                                                 Eth1/16, Eth1/17, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 4066 10.246.255.0/30:IFC_CHQ          active    Po1, Eth1/10, Eth1/11, Eth1/16
+!VLAN:                                                 Eth1/17, Eth1/31, Eth1/32
+!VLAN: 4067 VL_IFC_4067_IPLC-SGGS_SH6        active    Po1, Eth1/10, Eth1/11, Eth1/16
+!VLAN:                                                 Eth1/17, Eth1/31, Eth1/32
+!VLAN: VLAN Type  Vlan-mode
+!VLAN: ---- ----- ----------
+!VLAN: 1    enet  CE     
+!VLAN: 23   enet  CE     
+!VLAN: 299  enet  CE     
+!VLAN: 400  enet  CE     
+!VLAN: 404  enet  CE     
+!VLAN: 444  enet  CE     
+!VLAN: 500  enet  CE     
+!VLAN: 600  enet  CE     
+!VLAN: 614  enet  CE     
+!VLAN: 624  enet  CE     
+!VLAN: 634  enet  CE     
+!VLAN: 640  enet  CE     
+!VLAN: 645  enet  CE     
+!VLAN: 646  enet  CE     
+!VLAN: 648  enet  CE     
+!VLAN: 649  enet  CE     
+!VLAN: 999  enet  CE     
+!VLAN: 2996 enet  CE     
+!VLAN: 2997 enet  CE     
+!VLAN: 3000 enet  CE     
+!VLAN: 3001 enet  CE     
+!VLAN: 3002 enet  CE     
+!VLAN: 3003 enet  CE     
+!VLAN: 3004 enet  CE     
+!VLAN: 3006 enet  CE     
+!VLAN: 3013 enet  CE     
+!VLAN: 3501 enet  CE     
+!VLAN: 3502 enet  CE     
+!VLAN: 3503 enet  CE     
+!VLAN: 3504 enet  CE     
+!VLAN: 3505 enet  CE     
+!VLAN: 4001 enet  CE     
+!VLAN: 4002 enet  CE     
+!VLAN: 4038 enet  CE     
+!VLAN: 4040 enet  CE     
+!VLAN: 4044 enet  CE     
+!VLAN: 4048 enet  CE     
+!VLAN: 4049 enet  CE     
+!VLAN: 4050 enet  CE     
+!VLAN: 4051 enet  CE     
+!VLAN: 4054 enet  CE     
+!VLAN: 4058 enet  CE     
+!VLAN: 4059 enet  CE     
+!VLAN: 4064 enet  CE     
+!VLAN: 4065 enet  CE     
+!VLAN: 4066 enet  CE     
+!VLAN: 4067 enet  CE     
+!VLAN: Primary  Secondary  Type             Ports
+!VLAN: -------  ---------  ---------------  -------------------------------------------
+!
+!CORES: Module  Instance  Process-name     PID       Date(Year-Month-Day Time)
+!CORES: ------  --------  ---------------  --------  -------------------------
+!
+!PROC_LOGS: Process          PID     Normal-exit  Stack  Core   Log-create-time
+!PROC_LOGS: ---------------  ------  -----------  -----  -----  ---------------
+!
+
+
+version 6.0(2)N2(2)
+hostname ifcixag01
+
+no feature telnet
+cfs eth distribute
+feature interface-vlan
+feature lacp
+feature vpc
+feature lldp
+
+username admin password 5 $1$FaCGNJrl$IwOOlHoCRJoV2UZ6g6BTJ1  role network-admin
+username netops password 5 $1$Gmjlk/hq$XhL6X7yuSetMbX/eIZQvK/  role network-admin
+username noc password 5 $1$oTwfnDeR$fYJe8Aq3vwlopGPILRSCN0  role priv-0
+
+banner motd #====================================================================
+=         UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED         =
+=    You must have explicit, authorized permission to access or    =
+=   configure this device. Unauthorized attempts and actions to    =
+=   access or use this system may result in civil and/or criminal  =
+= All activities performed on this device are logged and monitored =
+====================================================================
+#
+
+no ip domain-lookup
+!radius-server key 7 <removed>
+radius-server timeout 3
+radius-server retransmit 3
+radius-server host 10.115.38.110 authentication accounting 
+radius-server host 10.100.92.1 authentication accounting 
+aaa group server radius ARKANETRADIUS 
+    server 10.115.38.110 
+    server 10.100.92.1 
+    deadtime 30
+    use-vrf management
+logging event link-status default
+service unsupported-transceiver
+no errdisable detect cause link-flap
+errdisable recovery cause link-flap
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+no errdisable detect cause loopback
+no errdisable detect cause inline-power
+ip access-list OAM
+ permit tcp 10.0.1.0/24 10.250.23.251/32 eq 22
+ permit tcp 10.100.19.20/32 10.250.23.251/32 eq 22
+ permit tcp 10.100.19.21/32 10.250.23.251/32 eq 22
+ permit tcp 10.100.137.89/32 10.250.23.251/32 eq 22
+ permit tcp 10.115.137.89/32 10.250.23.251/32 eq 22
+ permit tcp 10.245.2.0/24 10.250.23.251/32 eq 22
+ permit tcp 10.250.137.89/32 10.250.23.251/32 eq 22
+ permit tcp 172.29.0.0/16 10.250.23.251/32 eq 22
+ permit tcp 172.30.0.0/16 10.250.23.251/32 eq 22
+ip access-list SNMP_CLIENTS
+ permit ip 10.100.19.21/32 any
+ permit ip 10.100.137.55/32 any
+ permit ip 10.105.137.56/32 any
+ permit ip 10.105.137.57/32 any
+ permit ip 10.105.137.80/32 any
+ permit ip 10.115.137.57/32 any
+ permit ip 10.250.90.90/32 any
+ permit ip 10.250.137.55/32 any
+ permit ip 192.206.95.169/32 any
+  
+  
+system vlan 3800 reserve
+
+slot 2
+  port 1-16 type ethernet
+snmp-server contact nio@arkadin.com
+snmp-server location  apac-ifc
+snmp-server user admin network-admin auth md5 0x253e7fbfdca5d880acb392f0f1c09abe priv 0x253e7fbfdca5d880acb392f0f1c09abe localizedkey
+snmp-server user netops network-admin auth md5 0x253e7fbfdca5d880acb392f0f1c09abe priv 0x253e7fbfdca5d880acb392f0f1c09abe localizedkey
+snmp-server user noc priv-0 auth md5 0x72b77a27f575d803e8b07e3e36bbdbc3 priv 0x72b77a27f575d803e8b07e3e36bbdbc3 localizedkey
+snmp-server host 10.100.19.21 traps version 2c noc_services 
+snmp-server host 10.100.19.21 use-vrf management
+snmp-server host 10.250.137.55 traps version 2c noc_services 
+snmp-server host 10.250.137.55 use-vrf management
+snmp-server community network_services group network-operator
+snmp-server community network_services use-acl SNMP_CLIENTS
+snmp-server community noc_services group network-operator
+snmp-server community noc_services use-acl SNMP_CLIENTS
+ntp server 10.249.38.1 prefer use-vrf management
+ntp server 10.250.137.1 use-vrf management
+ntp source-interface  mgmt0
+aaa authentication login default group ARKANETRADIUS 
+aaa authentication login console group ARKANETRADIUS local 
+
+vrf context management
+  ip route 0.0.0.0/0 10.250.23.254
+vlan 1
+vlan 23
+  name M:10.250.23.0/24:Mgmt
+vlan 299
+  name X:172.16.240.24/29:VRF_ARKADIN
+vlan 400
+  name X:203.131.246.192/28:NTT
+vlan 404
+  name X:172.31.253.16/29:FW_MX
+vlan 444
+  name Z:185.37.220.0/26:AS_INET
+vlan 500
+  name X:VOXBONE
+vlan 600
+  name X:218.213.92.64/28:VIP-NET
+vlan 614
+  name X:MPLS-L2.UNO_P2P_PA2-IFC
+vlan 624
+  name X:MPLS-L2.UNO_P2P_LD4-IFC
+vlan 634
+  name X:MPLS-L2.UNO_P2P_TAU-IFC
+vlan 640
+  name X:MPLS-L2.UNO_P2P_PYR-IFC
+vlan 645
+  name X:MPLS-L2.UNO_P2P_ATL-IFC
+vlan 646
+  name X:MPLS-L2.UNO_P2P_SGN-IFC
+vlan 648
+  name X:MPLS-L2.UNO_P2P_SHI-IFC
+vlan 649
+  name X:MPLS-L2.UNO_P2P_SJO-IFC
+vlan 999
+  name X:172.16.254.12/30:B2B_ASR
+vlan 2996
+  name ARKA-PP:172.16.242.0/29:core-ASR
+vlan 2997
+  name ARKA-PP:172.16.242.0/29:core-RSH
+vlan 3000
+  name X:172.16.251.24/29:INTER_RSH
+vlan 3001
+  name X:172.28.0.16/28:SBC_BAOTEL
+vlan 3002
+  name X:10.16.0.0/28:SBC_M800
+vlan 3003
+  name X:172.28.0.48/28:SBC_OBS
+vlan 3004
+  name X:172.16.0.32/28:SBC_SG.GS
+vlan 3006
+  name X:103.214.228.120/29:SBC_CCASP
+vlan 3013
+  name X:172.16.242.4/30:UNO_AIM-IFC
+vlan 3501
+  name X:10.11.11.0/29:EXT_BAOTEL
+vlan 3502
+  name XX:192.168.4.240/29:EXT_M800
+vlan 3503
+  name X:172.28.0.40/29:EXT_OBS
+vlan 3504
+  name X:172.16.0.0/28:EXT_SG.GS
+vlan 3505
+  name X:100.64.36.32/29:EXT_APPLICABLE
+vlan 4001
+  name Z:185.37.221.176/28:SBC_AS
+vlan 4002
+  name S:103.214.228.112/29:NOCTION_IRP
+vlan 4038
+  name X:172.31.251.8/29:LB_INTERCO_DMZ
+vlan 4040
+  name X:172.31.100.0/30:IA_INET01_SGN
+vlan 4044
+  name Z:185.37.221.0/27:SHARED-DMZ
+vlan 4048
+  name X:172.31.253.24/30:SRX_RSH_MX1
+vlan 4049
+  name E:203.131.246.184/30:NTT_RSH_MX1
+vlan 4050
+  name X:172.31.253.27/30:SRX_RSH_MX2
+vlan 4051
+  name X:172.16.249.24/30:eBGP_MX5-ASR1
+vlan 4054
+  name X:172.16.252.0/30:B2B_MX5
+vlan 4058
+  name X:172.31.253.24/30:MX1_RSH_SRX
+vlan 4059
+  name E:203.131.246.184/30:MX1_RSH_NTT
+vlan 4064
+  name E:x.x.x.x/x:SG.GS
+vlan 4065
+  name E:x.x.x.x/x:CiscoCCA
+vlan 4066
+  name 10.246.255.0/30:IFC_CHQ
+vlan 4067
+  name VL_IFC_4067_IPLC-SGGS_SH6
+no spanning-tree vlan 4066
+vpc domain 1
+  role priority 8192
+  system-priority 8192
+  peer-keepalive destination 10.250.23.252
+  peer-gateway
+  auto-recovery
+
+
+interface Vlan1
+
+interface port-channel1
+  description b2b_IXAG0x
+  switchport mode trunk
+  switchport trunk allowed vlan 1-2995,2998-4094
+  spanning-tree port type network
+  speed 1000
+  flowcontrol receive on
+  flowcontrol send on
+  vpc peer-link
+
+interface Ethernet1/1
+  description X:Q:ifccore01:Gi1/0/29
+  switchport mode trunk
+  switchport trunk allowed vlan 1-611,800-998,1000-3000,3002-4052,4054-4062,4064-4065,4068-4094
+  speed 1000
+
+interface Ethernet1/2
+  description X:Q:ifcsbc01p:m01
+  switchport mode trunk
+  switchport trunk allowed vlan 400,600,4001
+  speed 1000
+
+interface Ethernet1/3
+  description X:Q:ifcsbc01p:m10
+  switchport mode trunk
+  switchport trunk allowed vlan 500
+  speed 1000
+  duplex full
+
+interface Ethernet1/4
+  description X:Q:ifcsbc01p:m11
+  switchport mode trunk
+  switchport trunk allowed vlan 3001-3004,3006
+  speed 1000
+
+interface Ethernet1/5
+  shutdown
+  speed 1000
+
+interface Ethernet1/6
+  shutdown
+  speed 1000
+
+interface Ethernet1/7
+  description X:Q:apacifcinet01:ge-1/1/0
+  switchport mode trunk
+  switchport trunk allowed vlan 400,600,4002,4054,4059
+  spanning-tree port type edge trunk
+  speed 1000
+
+interface Ethernet1/8
+  description X:Q:apacifcinet01:ge-1/1/1
+  switchport mode trunk
+  switchport trunk allowed vlan 23,404,4001,4040,4051,4058
+  spanning-tree port type edge trunk
+  speed 1000
+
+interface Ethernet1/9
+  description X:ifcinet01:ge-1/1/2:unused:
+
+interface Ethernet1/10
+  description X:Q:apacifcinet01:ge-1/1/3
+  shutdown
+  switchport mode trunk
+  speed 1000
+
+interface Ethernet1/11
+  description X:Q:apacifcinet01:ge-1/1/4
+  shutdown
+  switchport mode trunk
+  speed 1000
+
+interface Ethernet1/12
+  shutdown
+  speed 1000
+
+interface Ethernet1/13
+  description X:Q:ifcixrt01:Gi0/0/0
+  switchport mode trunk
+  switchport trunk allowed vlan 612-649
+  spanning-tree port type edge trunk
+  speed 1000
+
+interface Ethernet1/14
+  description X:Q:ifcixrt01:Gi0/0/1
+  switchport mode trunk
+  switchport trunk allowed vlan 299,999,2996,3001-3004,4040,4051
+  spanning-tree port type edge trunk
+  speed 1000
+
+interface Ethernet1/15
+  description X:Q:ifcixrt01:Gi0/0/2
+  switchport mode trunk
+  switchport trunk allowed vlan 3000,3501-3504
+  spanning-tree port type edge trunk
+  speed 1000
+
+interface Ethernet1/16
+  description X:Q:ifcixrt01:Gi0/0/3
+  shutdown
+  switchport mode trunk
+  speed 1000
+
+interface Ethernet1/17
+  description X:Q:ifcfw01-1:ge-0/0/4
+  switchport mode trunk
+  switchport trunk allowed vlan 1-4052,4054-4062,4064-4094
+  spanning-tree port type edge trunk
+  speed 1000
+
+interface Ethernet1/18
+  description E_ISP:AA:GIN-EU-SID2009009:NTT_ASN2914_HKB00313_203.131.246.185
+  no lldp transmit
+  no lldp receive
+  no cdp enable
+  switchport access vlan 4059
+  spanning-tree port type edge
+  speed 1000
+  bandwidth 100000
+
+interface Ethernet1/19
+  description E:HK-IX:910041330:DECOM-07-04-20-AB
+  shutdown
+
+interface Ethernet1/20
+  shutdown
+  speed 1000
+
+interface Ethernet1/21
+  shutdown
+  speed 1000
+
+interface Ethernet1/22
+  shutdown
+  speed 1000
+
+interface Ethernet1/23
+  description E_CARR:PR:PHKG3229:OBC_CPE01_Gi0/0
+  no lldp transmit
+  no lldp receive
+  no cdp enable
+  switchport access vlan 3503
+  spanning-tree bpdufilter enable
+  speed 1000
+
+interface Ethernet1/24
+  shutdown
+
+interface Ethernet1/25
+  description E_CARR:NR:910040636:VOXBONE_SIP_HGC_LL
+  no lldp transmit
+  no lldp receive
+  no cdp enable
+  switchport access vlan 500
+  spanning-tree bpdufilter enable
+  speed 1000
+
+interface Ethernet1/26
+  shutdown
+
+interface Ethernet1/27
+  description X:ifcrsh01:WAN3_0
+  switchport mode trunk
+  switchport trunk allowed vlan 2996,3000,4058-4059
+  spanning-tree port type edge trunk
+  speed 1000
+  duplex full
+
+interface Ethernet1/28
+  speed 1000
+
+interface Ethernet1/29
+  speed 1000
+
+interface Ethernet1/30
+  description Q:ifcixag03_C3750:0/48
+  switchport mode trunk
+  switchport trunk allowed vlan 23,2997,4048-4050
+  speed 1000
+
+interface Ethernet1/31
+  description ifcixag0x:Eth1/31
+  switchport mode trunk
+  switchport trunk allowed vlan 1-2995,2998-4094
+  speed 1000
+  flowcontrol receive on
+  flowcontrol send on
+  channel-group 1 mode active
+
+interface Ethernet1/32
+  description ifcixag0x:Eth1/32
+  switchport mode trunk
+  switchport trunk allowed vlan 1-2995,2998-4094
+  speed 1000
+  flowcontrol receive on
+  flowcontrol send on
+  channel-group 1 mode active
+
+interface Ethernet2/1
+  description B:AA:W131003201:NTT_UNO_IFC
+  no lldp transmit
+  no lldp receive
+  no cdp enable
+  switchport mode trunk
+  switchport trunk allowed vlan 612-656,3013
+  spanning-tree bpdufilter enable
+  speed 1000
+  no negotiate auto
+  bandwidth 200000
+
+interface Ethernet2/2
+
+interface Ethernet2/3
+
+interface Ethernet2/4
+
+interface Ethernet2/5
+
+interface Ethernet2/6
+
+interface Ethernet2/7
+
+interface Ethernet2/8
+
+interface Ethernet2/9
+
+interface Ethernet2/10
+
+interface Ethernet2/11
+
+interface Ethernet2/12
+
+interface Ethernet2/13
+
+interface Ethernet2/14
+
+interface Ethernet2/15
+
+interface Ethernet2/16
+
+interface mgmt0
+  ip address 10.250.23.251/24
+cli alias name siib sh ip int brief
+cli alias name u undebug all
+line console
+line vty
+  access-class OAM in
+boot kickstart bootflash:/n5000-uk9-kickstart.6.0.2.N2.2.bin
+boot system bootflash:/n5000-uk9.6.0.2.N2.2.bin 
+ip radius source-interface mgmt0
+ip route 0.0.0.0/0 10.250.23.254
+
+monitor erspan origin ip-address 10.250.23.220 global
+mac address-table aging-time 14400
+logging server 10.250.137.89 5 use-vrf management facility syslog
+logging server 10.250.137.24 5 use-vrf management facility syslog
+logging monitor 3
+
+

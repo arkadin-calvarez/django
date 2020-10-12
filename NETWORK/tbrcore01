@@ -1,0 +1,738 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C3560V2-24TS
+!CPU: PowerPC405
+!
+!Memory: main 122880K/8184K
+!Serial Number: FDO1531X0K0
+!Model revision number           : L0
+!Model number                    : WS-C3560V2-24TS-S
+!Motherboard assembly number     : 73-12636-01
+!Motherboard serial number       : FDO15311EY9
+!Motherboard revision number     : C0
+!Power supply part number        : 341-0328-02
+!Power supply serial number      : DCA1525M5P6
+!
+!Processor ID: FDO1531X0K0
+!
+!FAN: FAN is OK
+!
+!Image: Software: C3560-IPSERVICES-M, 12.2(50)SE1, RELEASE SOFTWARE (fc2)
+!Image: Compiled: Mon 06-Apr-09 02:26 by amvarma
+!Image: flash:c3560-ipservices-mz.122-50.SE1.bin
+!
+!BOOTLDR: Version 12.2(53r)SEY4, RELEASE SOFTWARE (fc1)
+!
+!
+!Variable: BOOT path-list      : flash:c3560-ipservices-mz.122-50.SE1.bin
+!Variable: Config file         : flash:/config.text
+!Variable: Private Config file : flash:/private-config.text
+!Variable: Enable Break        : no
+!Variable: Manual Boot         : no
+!Variable: HELPER path-list    : 
+!Variable: Auto upgrade        : yes
+!Variable: Auto upgrade path   : 
+!Variable: Timeout for Config
+!Variable:           Download:    0 seconds
+!Variable: Config Download 
+!Variable:        via DHCP:       disabled (next boot: disabled)
+!
+!
+!NAME: "1",                     DESCR: "WS-C3560V2-24TS"
+!PID: WS-C3560V2-24TS-S
+!VID: V06
+!SN: FDO1531X0K0
+!NAME: "Container 0",           DESCR: "WS-C3560V2-24TS - Container 0"
+!NAME: "Power Supply Container", DESCR: "Power Supply Container"
+!NAME: "RPS Container",         DESCR: "RPS Container"
+!NAME: "WS-C3560V2-24TS - Power Supply 0", DESCR: "WS-C3560V2-24TS - Power Supply 0"
+!SN: DCA1525M5P6
+!NAME: "WS-C3560V2-24TS - Fan 0", DESCR: "WS-C3560V2-24TS - Fan 0"
+!NAME: "WS-C3560V2-24TS - Sensor 0", DESCR: "WS-C3560V2-24TS - Sensor 0"
+!NAME: "WS-C3560V2-24TS - Fixed Module 0", DESCR: "WS-C3560V2-24TS - Fixed Module 0"
+!NAME: "GigabitEthernet0/1 Container", DESCR: "GigabitEthernet Container"
+!NAME: "GigabitEthernet0/1",    DESCR: "10/100/1000BaseTX SFP"
+!SN: AGM150420X3
+!NAME: "GigabitEthernet0/2 Container", DESCR: "GigabitEthernet Container"
+!NAME: "GigabitEthernet0/2",    DESCR: "10/100/1000BaseTX SFP"
+!SN: AGM1442299X
+!NAME: "FastEthernet0/1",       DESCR: "FastEthernet0/1"
+!NAME: "FastEthernet0/2",       DESCR: "FastEthernet0/2"
+!NAME: "FastEthernet0/3",       DESCR: "FastEthernet0/3"
+!NAME: "FastEthernet0/4",       DESCR: "FastEthernet0/4"
+!NAME: "FastEthernet0/5",       DESCR: "FastEthernet0/5"
+!NAME: "FastEthernet0/6",       DESCR: "FastEthernet0/6"
+!NAME: "FastEthernet0/7",       DESCR: "FastEthernet0/7"
+!NAME: "FastEthernet0/8",       DESCR: "FastEthernet0/8"
+!NAME: "FastEthernet0/9",       DESCR: "FastEthernet0/9"
+!NAME: "FastEthernet0/10",      DESCR: "FastEthernet0/10"
+!NAME: "FastEthernet0/11",      DESCR: "FastEthernet0/11"
+!NAME: "FastEthernet0/12",      DESCR: "FastEthernet0/12"
+!NAME: "FastEthernet0/13",      DESCR: "FastEthernet0/13"
+!NAME: "FastEthernet0/14",      DESCR: "FastEthernet0/14"
+!NAME: "FastEthernet0/15",      DESCR: "FastEthernet0/15"
+!NAME: "FastEthernet0/16",      DESCR: "FastEthernet0/16"
+!NAME: "FastEthernet0/17",      DESCR: "FastEthernet0/17"
+!NAME: "FastEthernet0/18",      DESCR: "FastEthernet0/18"
+!NAME: "FastEthernet0/19",      DESCR: "FastEthernet0/19"
+!NAME: "FastEthernet0/20",      DESCR: "FastEthernet0/20"
+!NAME: "FastEthernet0/21",      DESCR: "FastEthernet0/21"
+!NAME: "FastEthernet0/22",      DESCR: "FastEthernet0/22"
+!NAME: "FastEthernet0/23",      DESCR: "FastEthernet0/23"
+!NAME: "FastEthernet0/24",      DESCR: "FastEthernet0/24"
+!
+!VTP: VTP Version                     : running VTP1 (VTP2 capable)
+!VTP: Configuration Revision          : 0
+!VTP: Maximum VLANs supported locally : 1005
+!VTP: Number of existing VLANs        : 18
+!VTP: VTP Operating Mode              : Transparent
+!VTP: VTP Domain Name                 : 
+!VTP: VTP Pruning Mode                : Disabled
+!VTP: VTP V2 Mode                     : Disabled
+!VTP: VTP Traps Generation            : Enabled
+!VTP: MD5 digest                      : 0x5D 0x41 0x0B 0x17 0xF6 0x5E 0x68 0x50 
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Fa0/1, Fa0/3, Fa0/16, Fa0/17
+!VLAN: 2    FW-LAN                           active    Fa0/6
+!VLAN: 3    M:10.120.3.0/24:MGMT             active    Fa0/2, Fa0/7, Fa0/10, Fa0/11, Fa0/14, Fa0/18
+!VLAN: 4    BRTBR-DMZ                        active    Fa0/8
+!VLAN: 21   V:10.120.21.0/24:VIPER_SIP       active    
+!VLAN: 22   V:10.120.22.0/24:VIPER_RTP       active    
+!VLAN: 23   V:10.120.23.0/24:VIPER_MGT       active    Fa0/15
+!VLAN: 24   V:10.120.24.0/24:WebEx_Core      active    
+!VLAN: 25   V:10.120.25.0/24:Core-Vidyo      active    
+!VLAN: 30   V:10.120.30.0/24:BROFFICE_SIP    active    
+!VLAN: 99   X:192.168.120.0/29:ospf_core     active    
+!VLAN: 101  X:186.193.235.48/28:Public_DMZ   active    Fa0/12
+!VLAN: 187  E:186.193.226.96/29:INTERNET-CTI active    
+!VLAN: 200  OLD:FW-WAN                       active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: 2998 ARKATEST::172.16.241.48/29:tbrix active    
+!VLAN: 2999 X:172.16.240.48/29:eBGP_core-ASR active    
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 2    enet  100002     1500  -      -      -        -    -        0      0   
+!VLAN: 3    enet  100003     1500  -      -      -        -    -        0      0   
+!VLAN: 4    enet  100004     1500  -      -      -        -    -        0      0   
+!VLAN: 21   enet  100021     1500  -      -      -        -    -        0      0   
+!VLAN: 22   enet  100022     1500  -      -      -        -    -        0      0   
+!VLAN: 23   enet  100023     1500  -      -      -        -    -        0      0   
+!VLAN: 24   enet  100024     1500  -      -      -        -    -        0      0   
+!VLAN: 25   enet  100025     1500  -      -      -        -    -        0      0   
+!VLAN: 30   enet  100030     1500  -      -      -        -    -        0      0   
+!VLAN: 99   enet  100099     1500  -      -      -        -    -        0      0   
+!VLAN: 101  enet  100101     1500  -      -      -        -    -        0      0   
+!VLAN: 187  enet  100187     1500  -      -      -        -    -        0      0   
+!VLAN: 200  enet  100200     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: 2998 enet  102998     1500  -      -      -        -    -        0      0   
+!VLAN: 2999 enet  102999     1500  -      -      -        -    -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!SDM Template: desktop default
+!
+!MTU: 1500
+!MTU-Jumbo: 1500
+!MTU-Routing: 1500
+!
+!
+config-register 0xF
+Using 17489 out of 524288 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime localtime show-timezone
+service timestamps log datetime localtime show-timezone
+service password-encryption
+!
+hostname tbrcore01
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 128000 notifications
+enable secret 5 $1$99eR$Oc0iaeWIhfg12/U4dT1ze0
+!
+username netops privilege 15 secret 5 $1$u1X2$F2YOp3IGzFu29.MjSiy6w1
+username noc privilege 0 secret 5 $1$vtnn$MItMkmxDKvXHlVpoiW.cv1
+aaa new-model
+!
+aaa authentication fail-message ^CWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication enable default enable
+aaa authorization exec default local 
+!
+aaa session-id common
+clock timezone BRT -3
+system mtu routing 1500
+vtp mode transparent
+ip subnet-zero
+ip routing
+no ip domain-lookup
+!
+login on-failure log
+login on-success log
+!
+spanning-tree mode rapid-pvst
+spanning-tree loopguard default
+spanning-tree etherchannel guard misconfig
+spanning-tree extend system-id
+spanning-tree backbonefast
+spanning-tree vlan 1-999 priority 0
+spanning-tree vlan 1000-4094 priority 61440
+!
+vlan internal allocation policy ascending
+!
+vlan 2
+ name FW-LAN
+!
+vlan 3
+ name M:10.120.3.0/24:MGMT
+!
+vlan 4
+ name BRTBR-DMZ
+!
+vlan 21
+ name V:10.120.21.0/24:VIPER_SIP
+!
+vlan 22
+ name V:10.120.22.0/24:VIPER_RTP
+!
+vlan 23
+ name V:10.120.23.0/24:VIPER_MGT
+!
+vlan 24
+ name V:10.120.24.0/24:WebEx_Core
+!
+vlan 25
+ name V:10.120.25.0/24:Core-Vidyo
+!
+vlan 30
+ name V:10.120.30.0/24:BROFFICE_SIP
+!
+vlan 99
+ name X:192.168.120.0/29:ospf_core
+!
+vlan 101
+ name X:186.193.235.48/28:Public_DMZ
+!
+vlan 187
+ name E:186.193.226.96/29:INTERNET-CTI
+!
+vlan 200
+ name OLD:FW-WAN
+!
+vlan 2998
+ name ARKATEST::172.16.241.48/29:tbrix
+!
+vlan 2999
+ name X:172.16.240.48/29:eBGP_core-ASR
+!
+interface Loopback0
+ description Lo:172.30.120.1:CORE_iBGP
+ ip address 172.30.120.1 255.255.255.255
+!
+interface Port-channel1
+ description Q:Fa0/20-24:tbrcore02:Po1
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 99
+ switchport trunk allowed vlan 1-2998,3000-4094
+ switchport mode trunk
+ load-interval 30
+ spanning-tree link-type point-to-point
+!
+interface FastEthernet0/1
+!
+interface FastEthernet0/2
+ switchport access vlan 3
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/3
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 187,1107,1112
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast
+!
+interface FastEthernet0/4
+ description REMOVE:X:BRSAOFW01:0/3:L2L
+ no switchport
+ bandwidth 30000
+ no ip address
+ load-interval 30
+ shutdown
+ spanning-tree portfast
+!
+interface FastEthernet0/5
+ description X:BRSAOFW01:0/3:L2L
+ no switchport
+ bandwidth 100000
+ ip address 10.120.0.25 255.255.255.252
+ load-interval 30
+ spanning-tree portfast
+!
+interface FastEthernet0/6
+ description X:BRTBRFW1:0/3:LAN
+ switchport access vlan 2
+ switchport mode access
+ load-interval 30
+ spanning-tree portfast
+!
+interface FastEthernet0/7
+ switchport access vlan 3
+ switchport mode access
+ load-interval 30
+!
+interface FastEthernet0/8
+ description X:BRTBRFW1:0/4:DMZ
+ switchport access vlan 4
+ switchport mode access
+ load-interval 30
+ spanning-tree portfast
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+ description M:BRTBRSBC01:MGMT0
+ switchport access vlan 3
+ switchport mode access
+ load-interval 30
+!
+interface FastEthernet0/11
+ description M:tbrixrt01:Gi0
+ switchport access vlan 3
+ switchport mode access
+ load-interval 30
+!
+interface FastEthernet0/12
+ description X:BRTBRFW1:0/2:Public_DMZ
+ switchport access vlan 101
+ switchport mode access
+ load-interval 30
+!
+interface FastEthernet0/13
+ description Q:tbraccs05:Gi0/24:VIDYO_PLATFORM
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ load-interval 30
+ spanning-tree link-type point-to-point
+!
+interface FastEthernet0/14
+ switchport access vlan 3
+ switchport mode access
+ load-interval 30
+!
+interface FastEthernet0/15
+ description X:BRTBRCONSOLE01:0/0:LAN
+ switchport access vlan 23
+ switchport mode access
+ load-interval 30
+!
+interface FastEthernet0/16
+ switchport trunk encapsulation dot1q
+ load-interval 30
+ shutdown
+!
+interface FastEthernet0/17
+ shutdown
+!
+interface FastEthernet0/18
+ description TEMP:TBR-FW-01:FXP0
+ switchport access vlan 3
+ switchport mode access
+ load-interval 30
+!
+interface FastEthernet0/19
+ description TMP_BASTION_INTERNAL
+ load-interval 30
+ shutdown
+!
+interface FastEthernet0/20
+ description Q:Po1:tbrcore02:Fa0/20
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 99
+ switchport trunk allowed vlan 1-2998,3000-4094
+ switchport mode trunk
+ load-interval 30
+ channel-group 1 mode desirable
+ spanning-tree link-type point-to-point
+!
+interface FastEthernet0/21
+ description Q:Po1:tbrcore02:Fa0/21
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 99
+ switchport trunk allowed vlan 1-2998,3000-4094
+ switchport mode trunk
+ load-interval 30
+ channel-group 1 mode desirable
+ spanning-tree link-type point-to-point
+!
+interface FastEthernet0/22
+ description Q:Po1:tbrcore02:Fa0/22
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 99
+ switchport trunk allowed vlan 1-2998,3000-4094
+ switchport mode trunk
+ load-interval 30
+ channel-group 1 mode desirable
+ spanning-tree link-type point-to-point
+!
+interface FastEthernet0/23
+ description Q:Po1:tbrcore02:Fa0/23
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 99
+ switchport trunk allowed vlan 1-2998,3000-4094
+ switchport mode trunk
+ load-interval 30
+ channel-group 1 mode desirable
+ spanning-tree link-type point-to-point
+!
+interface FastEthernet0/24
+ description Q:Po1:tbrcore02:Fa0/24
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 99
+ switchport trunk allowed vlan 1-2998,3000-4094
+ switchport mode trunk
+ load-interval 30
+ channel-group 1 mode desirable
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet0/1
+ description X:Q:tbrixag01:Gi1/0/46
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 3,101,187,2998,2999
+ switchport mode trunk
+ load-interval 30
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet0/2
+ description Q:tbraccs03:Gi0/37
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 3,4,21-25,30
+ switchport mode trunk
+ spanning-tree link-type point-to-point
+!
+interface Vlan1
+ description UNUSED - SHUTDOWN
+ no ip address
+ shutdown
+!
+interface Vlan2
+ description Isolation VLAN SWITCH2FIREWALL
+ ip address 10.120.0.5 255.255.255.248
+ standby 2 ip 10.120.0.3
+ standby 2 preempt
+!
+interface Vlan3
+ description Management VLAN
+ ip address 10.120.3.252 255.255.255.0
+ standby 3 ip 10.120.3.254
+ standby 3 preempt
+!
+interface Vlan4
+ description DMZ VLAN
+ ip address 10.120.4.252 255.255.255.0
+!
+interface Vlan21
+ description VIPER_SIP
+ ip address 10.120.21.252 255.255.255.0
+ standby 21 ip 10.120.21.254
+ standby 21 preempt
+!
+interface Vlan22
+ description VIPER_RTP
+ ip address 10.120.22.252 255.255.255.0
+ standby 22 ip 10.120.22.254
+ standby 22 preempt
+!
+interface Vlan23
+ description VIPER_MGT
+ ip address 10.120.23.252 255.255.255.0
+ standby 23 ip 10.120.23.254
+ standby 23 preempt
+!
+interface Vlan24
+ description WebEx_Core
+ ip address 10.120.24.252 255.255.255.0
+ standby 24 ip 10.120.24.254
+ standby 24 preempt
+!
+interface Vlan25
+ ip address 10.120.25.252 255.255.255.0
+!
+interface Vlan30
+ description TBR_Core_peer_BROffice
+ ip address 10.120.30.252 255.255.255.0
+ standby 30 ip 10.120.30.254
+ standby 30 preempt
+!
+interface Vlan99
+ description X:tbrcore:ospf
+ ip address 192.168.120.1 255.255.255.248
+ ip ospf authentication message-digest
+! ip ospf message-digest-key 1 md5 <removed>
+ ip ospf 1 area 0
+!
+interface Vlan101
+ no ip address
+!
+interface Vlan2998
+ description X:tbrixrt01:Gi0/0/1.2998:VRF_ARKATEST
+ ip address 172.16.241.51 255.255.255.248
+!
+interface Vlan2999
+ description X:tbrixrt01:Gi0/0/1.2999:VRF_ARKADIN
+ ip address 172.16.240.51 255.255.255.248
+ load-interval 30
+!
+router ospf 1
+ router-id 172.30.120.1
+ log-adjacency-changes
+ auto-cost reference-bandwidth 50000
+ network 172.30.120.1 0.0.0.0 area 0
+!
+router bgp 65113
+ bgp router-id 172.30.120.1
+ bgp log-neighbor-changes
+ neighbor 172.16.240.49 remote-as 53550
+ neighbor 172.16.240.49 transport path-mtu-discovery
+ neighbor 172.16.240.49 version 4
+ neighbor 172.16.240.49 timers 2 7
+ neighbor 172.30.120.2 remote-as 65113
+ neighbor 172.30.120.2 transport path-mtu-discovery
+ neighbor 172.30.120.2 update-source Loopback0
+ neighbor 172.30.120.2 version 4
+ neighbor 172.30.120.2 timers 2 7
+ !
+ address-family ipv4
+  neighbor 172.16.240.49 activate
+  neighbor 172.16.240.49 soft-reconfiguration inbound
+  neighbor 172.16.240.49 route-map ASR_VRF_ARKADIN_OUT out
+  neighbor 172.30.120.2 activate
+  neighbor 172.30.120.2 next-hop-self
+  neighbor 172.30.120.2 soft-reconfiguration inbound
+  no auto-summary
+  no synchronization
+ exit-address-family
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 10.120.0.1
+ip route 10.115.34.61 255.255.255.255 172.16.241.49
+ip route 10.120.0.0 255.255.0.0 10.120.0.1
+ip route 10.120.2.0 255.255.255.0 10.120.0.26
+ip route 10.120.2.252 255.255.255.252 10.120.0.26
+ip route 10.120.102.0 255.255.255.0 10.120.0.26
+ip route 172.16.34.32 255.255.255.248 172.16.241.49
+ip route 172.21.6.199 255.255.255.255 192.168.126.250
+ip route 172.30.120.2 255.255.255.255 172.30.120.2
+ip http server
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq telnet
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq telnet
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq telnet
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq telnet
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq telnet
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq telnet
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq telnet
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq telnet
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq telnet
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ip access-list extended SIP-Intellig
+ permit icmp any host 172.16.25.220
+ permit udp any host 172.16.25.220 log
+!
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 10.120.0.0/16
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN deny 0.0.0.0/0 le 32
+ip radius source-interface Vlan3 
+kron occurrence BRTBRSW01_backup at 11:50 recurring
+ policy-list save-config
+!
+kron occurrence BACKUP at 22:00 recurring
+ policy-list save-config
+!
+kron policy-list save-config
+ cli show run | redirect tftp://10.120.23.5/BRTBRSW1/BRTBRSW1_ShRunn.cfg
+!
+logging trap notifications
+logging 10.100.137.24
+logging 10.100.137.89
+access-list 1 remark Management Access
+access-list 1 permit 10.0.0.0 0.255.255.255
+access-list 1 permit 172.16.0.0 0.0.255.255
+access-list 1 deny   any log
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+route-map ASR_VRF_ARKADIN_OUT permit 10
+ match ip address prefix-list PFX-BGP-OUT-ASR-ARKADIN
+!
+!
+snmp-server community arkadin-br RO
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server community public RO
+snmp-server community sC0mmBrN3t RO
+snmp-server location Brazil - Tambore
+snmp-server contact sa-oncallalerts@arkadin.com
+snmp-server enable traps snmp authentication linkdown linkup coldstart warmstart
+snmp-server enable traps transceiver all
+snmp-server enable traps tty
+snmp-server enable traps eigrp
+snmp-server enable traps ospf state-change
+snmp-server enable traps ospf errors
+snmp-server enable traps ospf retransmit
+snmp-server enable traps ospf lsa
+snmp-server enable traps ospf cisco-specific state-change nssa-trans-change
+snmp-server enable traps ospf cisco-specific state-change shamlink interface-old
+snmp-server enable traps ospf cisco-specific state-change shamlink neighbor
+snmp-server enable traps ospf cisco-specific errors
+snmp-server enable traps ospf cisco-specific retransmit
+snmp-server enable traps ospf cisco-specific lsa
+snmp-server enable traps cluster
+snmp-server enable traps entity
+snmp-server enable traps cpu threshold
+snmp-server enable traps power-ethernet group 1
+snmp-server enable traps power-ethernet police
+snmp-server enable traps rep
+snmp-server enable traps vtp
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps flash insertion removal
+snmp-server enable traps port-security
+snmp-server enable traps auth-framework sec-violation
+snmp-server enable traps dot1x auth-fail-vlan guest-vlan no-auth-fail-vlan no-guest-vlan
+snmp-server enable traps envmon fan shutdown supply temperature status
+snmp-server enable traps bgp
+snmp-server enable traps cef resource-failure peer-state-change peer-fib-state-change inconsistency
+snmp-server enable traps config-copy
+snmp-server enable traps config
+snmp-server enable traps config-ctid
+snmp-server enable traps event-manager
+snmp-server enable traps hsrp
+snmp-server enable traps ipmulticast
+snmp-server enable traps isis
+snmp-server enable traps msdp
+snmp-server enable traps pim neighbor-change rp-mapping-change invalid-pim-message
+snmp-server enable traps energywise
+snmp-server enable traps bridge newroot topologychange
+snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistency
+snmp-server enable traps syslog
+snmp-server enable traps rtr
+snmp-server enable traps mac-notification change move threshold
+snmp-server enable traps vlan-membership
+snmp-server enable traps errdisable
+snmp-server host 10.120.3.1 informs version 2c noc_services 
+snmp-server host 10.120.3.1 version 2c noc_services 
+snmp-server host 10.120.3.1 version 2c public 
+snmp ifmib ifindex persist
+!
+control-plane
+!
+banner login ^C========================================================================
+=                                                                      =                                                                             
+=               This is a private system of Arkadin                    =
+=         Authorization from Network Operations Team is                =
+=   required to use this system. Unauthorized access is prohibited!    =
+=                                                                      =
+=               This device is RADIUS authenticated                    = 
+=                                                                      =
+=          Network_Infrastructure_Operations@arkadin.com               = 
+=                                                                      =
+========================================================================
+^C
+alias exec siib sh ip int brief
+alias exec u undebug all
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+privilege exec level 0 show environment
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ logging synchronous
+ history size 256
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ history size 256
+ transport input telnet
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ history size 256
+ transport input telnet
+!
+monitor session 1 source interface Fa0/15
+monitor session 1 source interface Gi0/1
+monitor session 1 destination interface Fa0/9
+ntp source Vlan3
+ntp server 10.100.51.1 prefer
+ntp server 10.122.97.1
+mac address-table aging-time 14400
+end

@@ -1,0 +1,666 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C4948
+!CPU: MPC8245, MPC8245 CPU at 266Mhz, Fixed Module
+!
+!Memory: main 262144K
+!Memory: nvram 511K
+!
+!Processor ID: FOX114509WN
+!
+!Image: Software: cat4000-I9K91S-M, 12.2(25)EWA12, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Thu 15-Nov-07 18:28 by kellythw
+!Image: bootflash:cat4000-i9k91s-mz.122-25.EWA12.bin
+!
+!
+!BootFlash: -#- ED ----type---- --crc--- -seek-- nlen -length- ---------date/time--------- name
+!BootFlash: 1   .. image        0725B57F  C96CB0   34 12938288 Feb 18 2008 08:38:56 -05:00 cat4000-i9k91s-mz.122-25.EWA12.bin
+!BootFlash: 47878992 bytes available (12938416 bytes used)
+!
+!
+!% No entity named "raw"
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Gi1/40, Gi1/43, Gi1/45, Gi1/46, Gi1/47, Gi1/48
+!VLAN: 2    X:10.100.0.216/29:FW-core_interc active    
+!VLAN: 3    NATIVE:core-accsSW               active    
+!VLAN: 8    VLAN0008                         active    
+!VLAN: 19   M:10.100.19.0/24:MGMT            active    Gi1/1, Gi1/2, Gi1/3, Gi1/4, Gi1/22, Gi1/44
+!VLAN: 20   VLAN0020                         active    
+!VLAN: 21   Z:10.100.21.0/24:DMZ             active    
+!VLAN: 22   V:10.100.22.0/24:ANW_LAN         active    Gi1/5, Gi1/6, Gi1/7, Gi1/8, Gi1/10, Gi1/12, Gi1/14, Gi1/15, Gi1/16, Gi1/18, Gi1/19
+!VLAN:                                                 Gi1/20, Gi1/21, Gi1/23, Gi1/24, Gi1/25, Gi1/26, Gi1/27, Gi1/28, Gi1/29, Gi1/30
+!VLAN:                                                 Gi1/31, Gi1/32, Gi1/34, Gi1/35, Gi1/36, Gi1/37, Gi1/38
+!VLAN: 23   M:10.100.23.0/24:VIPER_MGMT      active    Gi1/11, Gi1/13, Gi1/33
+!VLAN: 24   V:10.100.24.0/24:VIPER_SIP       active    Gi1/9
+!VLAN: 25   VLAN0025                         active    
+!VLAN: 30   V:10.100.30.0/24:HUD_LAN         active    
+!VLAN: 31   Z:10.100.31.0/24:HUD-DMZ         active    
+!VLAN: 32   V:10.100.32.0/24:HUD2_LAN        active    
+!VLAN: 99   X:192.168.100.4/30:ospf_core     active    
+!VLAN: 122  V:10.100.122.0/24:NYC2_LAN       active    Gi1/17, Gi1/39
+!VLAN: 123  V:10.100.123.0/24:HUD1_LAN       active    
+!VLAN: 124  V:10.100.124.0/24:VIPER_RTP      active    
+!VLAN: 125  V:10.100.125.0/24::              active    
+!VLAN: 141  VLAN0141                         active    
+!VLAN: 200  X:192.168.200.24/29:NTT.L3_MPLS  active    
+!VLAN: 224  M:10.100.224.0/24:LYNC_DRAC      active    
+!VLAN: 241  M:10.100.241.0/24:LYNC_MGMT      active    
+!VLAN: 252  X:172.31.252.8/29:CORE_SRX550    active    
+!VLAN: 253  X:172.31.252.16/29:CORE_SRX1400  active    
+!VLAN: 535  X:10.100.0.68/30:MAN-GTT_CHI     active    
+!VLAN: 997  TEST                             active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 2    enet  100002     1500  -      -      -        -    -        0      0   
+!VLAN: 3    enet  100003     1500  -      -      -        -    -        0      0   
+!VLAN: 8    enet  100008     1500  -      -      -        -    -        0      0   
+!VLAN: 19   enet  100019     1500  -      -      -        -    -        0      0   
+!VLAN: 20   enet  100020     1500  -      -      -        -    -        0      0   
+!VLAN: 21   enet  100021     1500  -      -      -        -    -        0      0   
+!VLAN: 22   enet  100022     1500  -      -      -        -    -        0      0   
+!VLAN: 23   enet  100023     1500  -      -      -        -    -        0      0   
+!VLAN: 24   enet  100024     1500  -      -      -        -    -        0      0   
+!VLAN: 25   enet  100025     1500  -      -      -        -    -        0      0   
+!VLAN: 30   enet  100030     1500  -      -      -        -    -        0      0   
+!VLAN: 31   enet  100031     1500  -      -      -        -    -        0      0   
+!VLAN: 32   enet  100032     1500  -      -      -        -    -        0      0   
+!VLAN: 99   enet  100099     1500  -      -      -        -    -        0      0   
+!VLAN: 122  enet  100122     1500  -      -      -        -    -        0      0   
+!VLAN: 123  enet  100123     1500  -      -      -        -    -        0      0   
+!VLAN: 124  enet  100124     1500  -      -      -        -    -        0      0   
+!VLAN: 125  enet  100125     1500  -      -      -        -    -        0      0   
+!VLAN: 141  enet  100141     1500  -      -      -        -    -        0      0   
+!VLAN: 200  enet  100200     1500  -      -      -        -    -        0      0   
+!VLAN: 224  enet  100224     1500  -      -      -        -    -        0      0   
+!VLAN: 241  enet  100241     1500  -      -      -        -    -        0      0   
+!VLAN: 252  enet  100252     1500  -      -      -        -    -        0      0   
+!VLAN: 253  enet  100253     1500  -      -      -        -    -        0      0   
+!VLAN: 535  enet  100535     1500  -      -      -        -    -        0      0   
+!VLAN: 997  enet  100997     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0x2101
+Using 5810 out of 524280 bytes, uncompressed size = 14724 bytes
+Uncompressed configuration from 5810 bytes to 14724 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime localtime show-timezone
+service timestamps log datetime localtime show-timezone
+service password-encryption
+service compress-config
+!
+hostname atlaccs02
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 128000 notifications
+enable secret 5 $1$AuAC$cXKK8pqi4n7Q/op7POoIB/
+!
+!username netops privilege 15 password <removed>
+username noc privilege 0 secret 5 $1$wObN$drMGHIfFsTE36NeWRmdf91
+aaa new-model
+aaa authentication fail-message ^CCWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login NS-Radius group radius local
+aaa authentication enable default enable
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+clock timezone EST -5
+clock summer-time EDT recurring
+vtp domain ATL-DC
+vtp mode transparent
+ip subnet-zero
+no ip domain-lookup
+ip domain-name arkadin.lan
+!
+ip ssh authentication-retries 2
+ip ssh version 2
+login on-failure log
+login on-success log
+!
+no file verify auto
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+errdisable recovery cause link-flap
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+power redundancy-mode redundant
+!
+vlan internal allocation policy ascending
+!
+vlan 2
+ name X:10.100.0.216/29:FW-core_interc
+!
+vlan 3
+ name NATIVE:core-accsSW
+!
+vlan 8 
+!
+vlan 19
+ name M:10.100.19.0/24:MGMT
+!
+vlan 20 
+!
+vlan 21
+ name Z:10.100.21.0/24:DMZ
+!
+vlan 22
+ name V:10.100.22.0/24:ANW_LAN
+!
+vlan 23
+ name M:10.100.23.0/24:VIPER_MGMT
+!
+vlan 24
+ name V:10.100.24.0/24:VIPER_SIP
+!
+vlan 25 
+!
+vlan 30
+ name V:10.100.30.0/24:HUD_LAN
+!
+vlan 31
+ name Z:10.100.31.0/24:HUD-DMZ
+!
+vlan 32
+ name V:10.100.32.0/24:HUD2_LAN
+!
+vlan 99
+ name X:192.168.100.4/30:ospf_core
+!
+vlan 122
+ name V:10.100.122.0/24:NYC2_LAN
+!
+vlan 123
+ name V:10.100.123.0/24:HUD1_LAN
+!
+vlan 124
+ name V:10.100.124.0/24:VIPER_RTP
+!
+vlan 125
+ name V:10.100.125.0/24::
+!
+vlan 141 
+!
+vlan 200
+ name X:192.168.200.24/29:NTT.L3_MPLS
+!
+vlan 224
+ name M:10.100.224.0/24:LYNC_DRAC
+!
+vlan 241
+ name M:10.100.241.0/24:LYNC_MGMT
+!
+vlan 252
+ name X:172.31.252.8/29:CORE_SRX550
+!
+vlan 253
+ name X:172.31.252.16/29:CORE_SRX1400
+!
+vlan 535
+ name X:10.100.0.68/30:MAN-GTT_CHI
+!
+vlan 997
+ name TEST
+!
+interface GigabitEthernet1/1
+ switchport access vlan 19
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/2
+ description PDU-LEFT
+ switchport access vlan 19
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/3
+ switchport access vlan 19
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/4
+ description atlprobe01-2
+ switchport access vlan 19
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/5
+ description atlme01-10gb-eth2
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/6
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/7
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/8
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/9
+ description USNYCVIPERAS01B-SIP-BCKP
+ switchport access vlan 24
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/10
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/11
+ description USNYCVIPERAS01B-MGMT-BCKP
+ switchport access vlan 23
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/12
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/13
+ switchport access vlan 23
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/14
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/15
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/16
+ description USNYCVIPERAS01B-iDrac
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/17
+ description USNYCAMG2-iDrac
+ switchport access vlan 122
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/18
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/19
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/20
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/21
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/22
+ description USHUDAMG2-iDrac
+ switchport access vlan 19
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/23
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/24
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/25
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/26
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/27
+ description USNYCVIPERAS01B-iDrac
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/28
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/29
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ shutdown
+ spanning-tree portfast
+!
+interface GigabitEthernet1/30
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/31
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/32
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/33
+ switchport access vlan 23
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/34
+ description USNYCVIPERDB04-iDrac
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/35
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/36
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/37
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ shutdown
+ spanning-tree portfast
+!
+interface GigabitEthernet1/38
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ shutdown
+ spanning-tree portfast
+!
+interface GigabitEthernet1/39
+ switchport access vlan 122
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/40
+ switchport mode access
+ logging event link-status
+ shutdown
+ spanning-tree portfast
+!
+interface GigabitEthernet1/41
+ description Q:atlcore01:Gi4/30
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 3
+ switchport mode trunk
+ logging event link-status
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet1/42
+ description Q:atlcore02:Gi3/30
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 3
+ switchport mode trunk
+ logging event link-status
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet1/43
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/44
+ switchport access vlan 19
+ switchport mode access
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/45
+!
+interface GigabitEthernet1/46
+!
+interface GigabitEthernet1/47
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ logging event link-status
+ spanning-tree portfast
+!
+interface GigabitEthernet1/48
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ logging event link-status
+ spanning-tree portfast
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan19
+ description ManagementAccess
+ ip address 10.100.19.241 255.255.255.0
+!
+ip route 0.0.0.0 0.0.0.0 10.100.19.254 10
+no ip http server
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ip radius source-interface Vlan19 
+logging trap notifications
+logging facility local5
+logging source-interface Vlan19
+logging 10.100.137.24
+logging 10.100.137.89
+access-list 1 remark Management Access
+access-list 1 permit 10.0.0.0 0.255.255.255 log
+access-list 99 permit 10.102.10.36
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+access-list 101 remark QuietMode
+access-list 101 permit ip 10.0.0.0 0.0.0.255 any
+!
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server community public RO 99
+snmp-server ifindex persist
+snmp-server trap link ietf
+snmp-server trap-source Vlan19
+snmp-server location USATL_Suite60048_Rack0202
+snmp-server contact Arkadin Network Services (Network_Infrastructure_Operations@arkadin.com)
+snmp-server enable traps snmp linkdown linkup coldstart warmstart
+snmp-server enable traps tty
+snmp-server enable traps vtp
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps port-security
+snmp-server enable traps entity
+snmp-server enable traps cpu threshold
+snmp-server enable traps fru-ctrl
+snmp-server enable traps flash insertion removal
+snmp-server enable traps envmon fan shutdown supply temperature status
+snmp-server enable traps vlan-membership
+snmp-server host 10.100.137.55 version 2c noc_services 
+snmp-server host 10.115.38.131 version 2c noc_services 
+snmp-server tftp-server-list 10
+radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server source-ports 1645-1646
+radius-server timeout 3
+!radius-server key <removed>
+banner login ^CC========================================================================
+=                                                                      =                                                                             
+=               This is a private system of Arkadin                    =
+=         Authorization from Network Operations Team is                =
+=   required to use this system. Unauthorized access is prohibited!    =
+=                                                                      =
+=               This device is RADIUS authenticated                    = 
+=                                                                      =
+=                 network_operations@arkadin.com                       = 
+=                                                                      =
+========================================================================
+^C
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ logging synchronous
+ login authentication NS-Radius
+ history size 256
+ stopbits 1
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 60 0
+ logging synchronous
+ login authentication NS-Radius
+ history size 256
+ transport input ssh
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 60 0
+ logging synchronous
+ login authentication NS-Radius
+ history size 256
+ transport input ssh
+!
+ntp source Vlan19
+ntp server 10.100.51.1 prefer
+ntp server 10.122.97.1
+!
+end

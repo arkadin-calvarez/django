@@ -1,0 +1,380 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C3560E-24TD
+!CPU: PowerPC405
+!
+!Memory: main 131072K
+!Serial Number: FDO1504X2S3
+!Model revision number           : M0
+!Model number                    : WS-C3560E-24TD-E
+!Motherboard assembly number     : 73-11173-14
+!Motherboard serial number       : FDO15050GE7
+!Motherboard revision number     : A0
+!
+!Processor ID: FDO1504X2S3
+!
+!Image: Software: C3560E-UNIVERSALK9-M, 12.2(55)SE8, RELEASE SOFTWARE (fc2)
+!Image: Compiled: Wed 26-Jun-13 10:58 by prod_rel_team
+!Image: flash:c3560e-universalk9-mz.122-55.SE8.bin
+!
+!BOOTLDR: Version 12.2(44r)SE3, RELEASE SOFTWARE (fc3)
+!
+!% No entity named "raw"
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Gi0/3, Gi0/11, Gi0/12, Gi0/15, Gi0/16, Gi0/17, Gi0/20, Gi0/25, Gi0/26, Gi0/27
+!VLAN:                                                 Gi0/28
+!VLAN: 2    S:10.244.7.0/24:VM2              active    
+!VLAN: 21   V:10.244.21.0/24:VIPER-SIG       active    Gi0/23, Gi0/24
+!VLAN: 100  V:10.244.9.0/24:VIPER-RTP2       active    Gi0/5, Gi0/6, Gi0/7, Gi0/8, Gi0/13, Gi0/14, Gi0/18, Gi0/19, Gi0/21, Gi0/22
+!VLAN: 115  X:10.244.15.0/24:CR-FW           active    
+!VLAN: 117  V:10.244.17.0/24:Avaya-RTP       active    Gi0/9, Gi0/10
+!VLAN: 201  X:INTERNET:Sify_Vidyo            active    
+!VLAN: 202  V:210.210.18.176/28:Sify_Vidyo_D active    
+!VLAN: 250  RSPAN                            active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 2    enet  100002     1500  -      -      -        -    -        0      0   
+!VLAN: 21   enet  100021     1500  -      -      -        -    -        0      0   
+!VLAN: 100  enet  100100     1500  -      -      -        -    -        0      0   
+!VLAN: 115  enet  100115     1500  -      -      -        -    -        0      0   
+!VLAN: 117  enet  100117     1500  -      -      -        -    -        0      0   
+!VLAN: 201  enet  100201     1500  -      -      -        -    -        0      0   
+!VLAN: 202  enet  100202     1500  -      -      -        -    -        0      0   
+!VLAN: 250  enet  100250     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: 250
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0xF
+Using 8896 out of 524288 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname nedaccs01-1
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 128000 notifications
+no logging console
+enable secret 5 $1$H2PN$WKQwJFtX6mufwEKybcP51.
+!
+!username netops privilege 15 password <removed>
+username noc privilege 0 secret 5 $1$fbxN$ZHK65AxigHIgxrOAl0t/s.
+!
+aaa new-model
+!
+aaa authentication fail-message ^CWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login ARKANETRADIUS group radius local
+aaa authentication enable default enable
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+system mtu routing 1500
+ip routing
+!
+no ip domain-lookup
+login on-failure log
+login on-success log
+!
+crypto pki trustpoint TP-self-signed-1803132416
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-1803132416
+ revocation-check none
+ rsakeypair TP-self-signed-1803132416
+!
+crypto pki certificate chain TP-self-signed-1803132416
+ certificate self-signed 01 nvram:IOS-Self-Sig#3637.cer
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+ip ssh authentication-retries 2
+ip ssh version 2
+!
+interface FastEthernet0
+ no ip address
+ no ip route-cache cef
+ no ip route-cache
+ no ip mroute-cache
+ shutdown
+!
+interface GigabitEthernet0/1
+ description X:Q:nedcore01:Gi1/0/26
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+ description X:Q:nedcore02:Gi1/0/27
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet0/3
+ shutdown
+!
+interface GigabitEthernet0/4
+ description VMWARE2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ spanning-tree portfast
+!
+interface GigabitEthernet0/5
+ description UNIDENTIFIED
+ switchport access vlan 100
+!
+interface GigabitEthernet0/6
+ description UNIDENTIFIED
+ switchport access vlan 100
+!
+interface GigabitEthernet0/7
+ description UNIDENTIFIED
+ switchport access vlan 100
+!
+interface GigabitEthernet0/8
+ description UNIDENTIFIED
+ switchport access vlan 100
+!
+interface GigabitEthernet0/9
+ description INNEDCONFHOSTING:lan1
+ switchport access vlan 117
+ switchport mode access
+!
+interface GigabitEthernet0/10
+ description INNEDCONFERHOSTINGBCK:lan1
+ switchport access vlan 117
+ switchport mode access
+!
+interface GigabitEthernet0/11
+ shutdown
+!
+interface GigabitEthernet0/12
+ shutdown
+!
+interface GigabitEthernet0/13
+ description UNIDENTIFIED
+ switchport access vlan 100
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/14
+ description UNIDENTIFIED
+ switchport access vlan 100
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/15
+ shutdown
+!
+interface GigabitEthernet0/16
+ shutdown
+!
+interface GigabitEthernet0/17
+ shutdown
+!
+interface GigabitEthernet0/18
+ description UNIDENTIFIED
+ switchport access vlan 100
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/19
+ description MX_SERVER1
+ switchport access vlan 100
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet0/20
+ shutdown
+!
+interface GigabitEthernet0/21
+ description UNIDENTIFIED
+ switchport access vlan 100
+!
+interface GigabitEthernet0/22
+ switchport access vlan 100
+ shutdown
+!
+interface GigabitEthernet0/23
+ description Media gateway
+ switchport access vlan 21
+ switchport mode access
+!
+interface GigabitEthernet0/24
+ description Media gateway
+ switchport access vlan 21
+ switchport mode access
+!
+interface GigabitEthernet0/25
+ shutdown
+!
+interface GigabitEthernet0/26
+ shutdown
+!
+interface GigabitEthernet0/27
+ shutdown
+!
+interface GigabitEthernet0/28
+ shutdown
+!
+interface TenGigabitEthernet0/1
+ shutdown
+!
+interface TenGigabitEthernet0/2
+ shutdown
+!
+interface Vlan1
+ description "Disabled by administrator"
+ no ip address
+ shutdown
+!
+interface Vlan2
+ description S:10.244.7.0/24:VM2
+ no ip address
+!
+interface Vlan115
+ description X:10.244.15.0/24:CR-FW
+ ip address 10.244.15.251 255.255.255.0
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 10.244.15.1
+!
+ip http server
+ip http secure-server
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+!
+ip radius source-interface Vlan115 
+logging trap notifications
+logging facility local6
+logging source-interface Vlan2
+logging 10.250.137.24
+logging 10.250.137.89
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+!
+snmp-server community Arkadin_AP RO
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp ifmib ifindex persist
+radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server timeout 3
+!radius-server key <removed>
+!
+banner login ^C========================================================================
+=                                                                      =                                                                             
+=               This is a private system of Arkadin                    =
+=         Authorization from Network Operations Team is                =
+=   required to use this system. Unauthorized access is prohibited!    =
+=                                                                      =
+=               This device is RADIUS authenticated                    = 
+=                                                                      =
+=          Network_Infrastructure_Operations@arkadin.com               = 
+=                                                                      =
+========================================================================
+^C
+privilege exec level 0 show ip interfaces brief
+privilege exec level 0 show ip ospf neighbor
+privilege exec level 0 show ip ospf ip
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+!
+monitor session 1 source interface Gi0/4 , Gi0/13
+monitor session 1 destination remote vlan 250 
+ntp source Vlan115
+ntp server 10.249.38.1 prefer
+ntp server 10.250.137.1
+end

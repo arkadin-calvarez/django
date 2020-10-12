@@ -1,0 +1,459 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!
+!
+!
+!
+!
+Using 14084 out of 524288 bytes
+!
+version 15.0
+parser config cache interface
+service nagle
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime msec localtime show-timezone
+service password-encryption
+service sequence-numbers
+no service dhcp
+!
+hostname sgnaccs01-1
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 128000 notifications
+        no logging console
+no logging monitor
+enable secret 5 $1$jakW$RYYW9w1ez./fRGmp5WN0y.
+!
+username netops privilege 15 secret 5 $1$O2K.$zmRNO6f1Ak5P7pxKOlwgK/
+username noc privilege 15 secret 5 $1$lmuO$jyTb1Z6wUQ7380wfZoFD.0
+aaa new-model
+!
+aaa authentication fail-message ^CWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login ARKANETRADIUS group radius local
+aaa authentication enable default enable
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+system mtu routing 1500
+no ip source-route
+        !
+!
+no ip domain-lookup
+ip domain-name arkadin.lan
+login on-failure log
+login on-success log
+!
+archive
+ log config
+  logging enable
+  logging size 500
+  notify syslog contenttype plaintext
+  hidekeys
+!
+spanning-tree mode rapid-pvst
+spanning-tree portfast default
+spanning-tree portfast bpdufilter default
+spanning-tree extend system-id
+        spanning-tree vlan 1-2,5-4094 priority 61440
+!
+vlan internal allocation policy ascending
+!
+ip ssh authentication-retries 2
+!
+        interface FastEthernet0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/1
+ description S:laptop
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/2
+ shutdown
+!
+interface GigabitEthernet0/3
+ shutdown
+!
+interface GigabitEthernet0/4
+ shutdown
+!
+interface GigabitEthernet0/5
+ shutdown
+!
+interface GigabitEthernet0/6
+ shutdown
+        !
+interface GigabitEthernet0/7
+ shutdown
+!
+interface GigabitEthernet0/8
+ shutdown
+!
+interface GigabitEthernet0/9
+ shutdown
+!
+interface GigabitEthernet0/10
+ shutdown
+!
+interface GigabitEthernet0/11
+ shutdown
+!
+interface GigabitEthernet0/12
+ shutdown
+!
+interface GigabitEthernet0/13
+ shutdown
+!
+interface GigabitEthernet0/14
+         shutdown
+!
+interface GigabitEthernet0/15
+ shutdown
+!
+interface GigabitEthernet0/16
+ shutdown
+!
+interface GigabitEthernet0/17
+ shutdown
+!
+interface GigabitEthernet0/18
+ shutdown
+!
+interface GigabitEthernet0/19
+ shutdown
+!
+interface GigabitEthernet0/20
+ shutdown
+!
+interface GigabitEthernet0/21
+ shutdown
+!
+        interface GigabitEthernet0/22
+ shutdown
+!
+interface GigabitEthernet0/23
+ shutdown
+!
+interface GigabitEthernet0/24
+ shutdown
+!
+interface GigabitEthernet0/25
+ shutdown
+!
+interface GigabitEthernet0/26
+ shutdown
+!
+interface GigabitEthernet0/27
+ shutdown
+!
+interface GigabitEthernet0/28
+ shutdown
+!
+interface GigabitEthernet0/29
+ shutdown
+        !
+interface GigabitEthernet0/30
+ shutdown
+!
+interface GigabitEthernet0/31
+ shutdown
+!
+interface GigabitEthernet0/32
+ shutdown
+!
+interface GigabitEthernet0/33
+ shutdown
+!
+interface GigabitEthernet0/34
+ shutdown
+!
+interface GigabitEthernet0/35
+ shutdown
+!
+interface GigabitEthernet0/36
+ shutdown
+!
+interface GigabitEthernet0/37
+         shutdown
+!
+interface GigabitEthernet0/38
+ shutdown
+!
+interface GigabitEthernet0/39
+ shutdown
+!
+interface GigabitEthernet0/40
+ shutdown
+!
+interface GigabitEthernet0/41
+ shutdown
+!
+interface GigabitEthernet0/42
+ shutdown
+!
+interface GigabitEthernet0/43
+ shutdown
+!
+interface GigabitEthernet0/44
+ shutdown
+!
+        interface GigabitEthernet0/45
+ shutdown
+!
+interface GigabitEthernet0/46
+ shutdown
+!
+interface GigabitEthernet0/47
+ shutdown
+!
+interface GigabitEthernet0/48
+ description X:Q:sgncore01:Gi0/15
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 23
+ switchport mode trunk
+!
+interface GigabitEthernet1/1
+ shutdown
+!
+interface GigabitEthernet1/2
+ shutdown
+!
+interface GigabitEthernet1/3
+ shutdown
+        !
+interface GigabitEthernet1/4
+ shutdown
+!
+interface TenGigabitEthernet1/1
+ shutdown
+!
+interface TenGigabitEthernet1/2
+ shutdown
+!
+interface Vlan1
+ description "Disabled by administrator"
+ no ip address
+ shutdown
+!
+interface Vlan23
+ description M:10.247.23.0/24:Mgmt
+ ip address 10.247.23.234 255.255.255.0
+!
+ip default-gateway 10.247.23.254
+no ip http server
+no ip http secure-server
+!
+        !
+ip access-list extended OAM
+ remark allow only authorized protocols from OAM networks
+ permit tcp 10.0.0.0 0.255.255.255 host 0.0.0.0 eq 22 log-input
+ permit tcp 172.16.0.0 0.0.15.255 host 0.0.0.0 eq 22 log-input
+ permit tcp 192.168.0.0 0.0.255.255 host 0.0.0.0 eq 22 log-input
+ deny   ip any any log-input
+!
+ip radius source-interface Vlan23 
+logging trap notifications
+logging facility local5
+logging host 10.250.137.24
+logging host 10.250.137.89
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+!
+        snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server trap link ietf
+snmp-server location Singapore
+snmp-server contact Arkadin Network Infrastructure Operations (Network_Infrastructure_Operations@arkadin.com)
+snmp-server enable traps snmp linkdown linkup coldstart warmstart
+snmp-server enable traps flowmon
+snmp-server enable traps transceiver all
+snmp-server enable traps call-home message-send-fail server-fail
+snmp-server enable traps tty
+snmp-server enable traps eigrp
+snmp-server enable traps ospf state-change
+snmp-server enable traps ospf errors
+snmp-server enable traps ospf retransmit
+snmp-server enable traps ospf lsa
+snmp-server enable traps ospf cisco-specific state-change nssa-trans-change
+snmp-server enable traps ospf cisco-specific state-change shamlink interface
+snmp-server enable traps ospf cisco-specific state-change shamlink neighbor
+snmp-server enable traps ospf cisco-specific errors
+snmp-server enable traps ospf cisco-specific retransmit
+snmp-server enable traps ospf cisco-specific lsa
+snmp-server enable traps license
+snmp-server enable traps auth-framework sec-violation
+        snmp-server enable traps cef resource-failure peer-state-change peer-fib-state-change inconsistency
+snmp-server enable traps cluster
+snmp-server enable traps config-copy
+snmp-server enable traps config-ctid
+snmp-server enable traps dot1x auth-fail-vlan guest-vlan no-auth-fail-vlan no-guest-vlan
+snmp-server enable traps energywise
+snmp-server enable traps fru-ctrl
+snmp-server enable traps entity
+snmp-server enable traps event-manager
+snmp-server enable traps hsrp
+snmp-server enable traps ipmulticast
+snmp-server enable traps ike policy add
+snmp-server enable traps ike policy delete
+snmp-server enable traps ike tunnel start
+snmp-server enable traps ike tunnel stop
+snmp-server enable traps ipsec cryptomap add
+snmp-server enable traps ipsec cryptomap delete
+snmp-server enable traps ipsec cryptomap attach
+snmp-server enable traps ipsec cryptomap detach
+snmp-server enable traps ipsec tunnel start
+snmp-server enable traps ipsec tunnel stop
+snmp-server enable traps ipsec too-many-sas
+snmp-server enable traps power-ethernet police
+        snmp-server enable traps pim neighbor-change rp-mapping-change invalid-pim-message
+snmp-server enable traps cpu threshold
+snmp-server enable traps rep
+snmp-server enable traps ipsla
+snmp-server enable traps vstack
+snmp-server enable traps bridge newroot topologychange
+snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistency
+snmp-server enable traps vtp
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps flash insertion removal
+snmp-server enable traps port-security
+snmp-server enable traps envmon fan shutdown supply temperature status
+snmp-server enable traps stackwise
+snmp-server enable traps mac-notification change move threshold
+snmp-server enable traps vrfmib vrf-up vrf-down vnet-trunk-up vnet-trunk-down
+snmp-server enable traps errdisable
+snmp-server enable traps vlan-membership
+snmp-server host 10.102.10.130 version 2c network_services 
+snmp-server host 10.247.7.188 version 2c noc_services 
+snmp ifmib ifindex persist
+!
+radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+        radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server timeout 3
+!radius-server key <removed>
+!
+privilege exec level 0 traceroute ip
+privilege exec level 0 traceroute
+privilege exec level 0 ping ip
+privilege exec level 0 ping
+privilege exec level 0 show arp
+privilege exec level 0 show standby brief
+privilege exec level 0 show standby Vlan23 brief
+privilege exec level 0 show standby Vlan1 brief
+privilege exec level 0 show standby TenGigabitEthernet1/2 brief
+privilege exec level 0 show standby TenGigabitEthernet1/1 brief
+privilege exec level 0 show standby GigabitEthernet1/4 brief
+privilege exec level 0 show standby GigabitEthernet1/3 brief
+privilege exec level 0 show standby GigabitEthernet1/2 brief
+privilege exec level 0 show standby GigabitEthernet1/1 brief
+privilege exec level 0 show standby GigabitEthernet0/48 brief
+privilege exec level 0 show standby GigabitEthernet0/47 brief
+privilege exec level 0 show standby GigabitEthernet0/46 brief
+privilege exec level 0 show standby GigabitEthernet0/45 brief
+        privilege exec level 0 show standby GigabitEthernet0/44 brief
+privilege exec level 0 show standby GigabitEthernet0/43 brief
+privilege exec level 0 show standby GigabitEthernet0/42 brief
+privilege exec level 0 show standby GigabitEthernet0/41 brief
+privilege exec level 0 show standby GigabitEthernet0/40 brief
+privilege exec level 0 show standby GigabitEthernet0/39 brief
+privilege exec level 0 show standby GigabitEthernet0/38 brief
+privilege exec level 0 show standby GigabitEthernet0/37 brief
+privilege exec level 0 show standby GigabitEthernet0/36 brief
+privilege exec level 0 show standby GigabitEthernet0/35 brief
+privilege exec level 0 show standby GigabitEthernet0/34 brief
+privilege exec level 0 show standby GigabitEthernet0/33 brief
+privilege exec level 0 show standby GigabitEthernet0/32 brief
+privilege exec level 0 show standby GigabitEthernet0/31 brief
+privilege exec level 0 show standby GigabitEthernet0/30 brief
+privilege exec level 0 show standby GigabitEthernet0/29 brief
+privilege exec level 0 show standby GigabitEthernet0/28 brief
+privilege exec level 0 show standby GigabitEthernet0/27 brief
+privilege exec level 0 show standby GigabitEthernet0/26 brief
+privilege exec level 0 show standby GigabitEthernet0/25 brief
+privilege exec level 0 show standby GigabitEthernet0/24 brief
+privilege exec level 0 show standby GigabitEthernet0/23 brief
+privilege exec level 0 show standby GigabitEthernet0/22 brief
+        privilege exec level 0 show standby GigabitEthernet0/21 brief
+privilege exec level 0 show standby GigabitEthernet0/20 brief
+privilege exec level 0 show standby GigabitEthernet0/19 brief
+privilege exec level 0 show standby GigabitEthernet0/18 brief
+privilege exec level 0 show standby GigabitEthernet0/17 brief
+privilege exec level 0 show standby GigabitEthernet0/16 brief
+privilege exec level 0 show standby GigabitEthernet0/15 brief
+privilege exec level 0 show standby GigabitEthernet0/14 brief
+privilege exec level 0 show standby GigabitEthernet0/13 brief
+privilege exec level 0 show standby GigabitEthernet0/12 brief
+privilege exec level 0 show standby GigabitEthernet0/11 brief
+privilege exec level 0 show standby GigabitEthernet0/10 brief
+privilege exec level 0 show standby GigabitEthernet0/9 brief
+privilege exec level 0 show standby GigabitEthernet0/8 brief
+privilege exec level 0 show standby GigabitEthernet0/7 brief
+privilege exec level 0 show standby GigabitEthernet0/6 brief
+privilege exec level 0 show standby GigabitEthernet0/5 brief
+privilege exec level 0 show standby GigabitEthernet0/4 brief
+privilege exec level 0 show standby GigabitEthernet0/3 brief
+privilege exec level 0 show standby GigabitEthernet0/2 brief
+privilege exec level 0 show standby GigabitEthernet0/1 brief
+privilege exec level 0 show standby FastEthernet0 brief
+privilege exec level 0 show standby
+        privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show processes memory
+privilege exec level 0 show processes
+privilege exec level 0 show configuration
+privilege exec level 0 show interfaces
+privilege exec level 0 show
+banner login ^C========================================================================
+=                                                                      =                                                                             
+=               This is a private system of Arkadin                    =
+=         Authorization from Network Operations Team is                =
+=   required to use this system. Unauthorized access is prohibited!    =
+=                                                                      =
+=               This device is RADIUS authenticated                    = 
+=                                                                      =
+=          Network_Infrastructure_Operations@arkadin.com               = 
+=                                                                      =
+========================================================================
+^C
+alias exec u undebug all
+!
+line con 0
+         session-timeout 30 
+ exec-timeout 120 0
+ logging synchronous
+ history size 256
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+!
+ntp source Vlan23
+ntp server 10.250.137.1
+        ntp server 10.249.38.1 prefer
+end

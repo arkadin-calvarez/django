@@ -1,0 +1,549 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C3560E-24TD
+!CPU: PowerPC405
+!
+!Memory: main 122880K/8184K
+!Serial Number: FDO1413R1ZG
+!Model revision number           : G0
+!Model number                    : WS-C3560E-24TD-S
+!Motherboard assembly number     : 73-11173-13
+!Motherboard serial number       : FDO141404UD
+!Motherboard revision number     : B0
+!
+!Processor ID: FDO1413R1ZG
+!
+!FAN: FAN is OK
+!
+!Image: Software: C3560E-UNIVERSAL-M, 12.2(35)SE5, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Thu 19-Jul-07 17:18 by nachen
+!Image: flash:c3560e-universal-mz.122-35.SE5/c3560e-universal-mz.122-35.SE5.bin
+!
+!BOOTLDR: Version 12.2(44r)SE3, RELEASE SOFTWARE (fc3)
+!
+!
+!Variable: BOOT path-list      : flash:c3560e-universal-mz.122-35.SE5/c3560e-universal-mz.122-35.SE5.bin
+!Variable: Config file         : flash:/config.text
+!Variable: Private Config file : flash:/private-config.text
+!Variable: Enable Break        : no
+!Variable: Manual Boot         : no
+!Variable: HELPER path-list    : 
+!Variable: Auto upgrade        : yes
+!Variable: Auto upgrade path   : 
+!
+! Device#	  PID			SN		UDI
+! -----------------------------------------------------------------------------
+! *1  	  WS-C3560E-24TD-S	FDO1413R1ZG	WS-C3560E-24TD-S:FDO1413R1ZG
+!
+! Feature name			Enforcement	Evaluation	Clear Allowed
+! ipbase                          yes        	no        	yes       
+! ipservices                      yes        	no        	yes       
+! advipservices                   yes        	no        	yes       
+!
+!
+!NAME: "1",                     DESCR: "WS-C3560E-24TD"
+!PID: WS-C3560E-24TD-S
+!VID: V03
+!SN: FDO1413R1ZG
+!NAME: "Switch 1 - Fan Container", DESCR: "Fan Container"
+!NAME: "Switch 1 - Fan",        DESCR: "Switch FRU Fan"
+!NAME: "Switch 1 - Power Supply Container", DESCR: "Power Supply Container"
+!NAME: "Switch 1 - Power Supply", DESCR: "FRU Power Supply"
+!PID: C3K-PWR-265WAC
+!VID: V01
+!SN: QCS1403C1JV
+!NAME: "Switch 1 - RPS Container", DESCR: "RPS Container"
+!NAME: "WS-C3560E-24TD - Sensor 0", DESCR: "WS-C3560E-24TD - Sensor 0"
+!NAME: "WS-C3560E-24TD - Fixed Module 0", DESCR: "WS-C3560E-24TD - Fixed Module 0"
+!NAME: "TenGigabitEthernet0/1 Container", DESCR: "TenGigabitEthernet Container"
+!NAME: "Switch 1 - Slot 1",     DESCR: "TwinGig Converter Module"
+!PID: 800-27645-02    B , VID: B0 , SN: FDO1413119U     
+!NAME: "GigabitEthernet0/25",   DESCR: "GigabitEthernet Container"
+!NAME: "GigabitEthernet0/25",   DESCR: "1000BaseSX SFP"
+!SN: FNS0939B3RU
+!NAME: "GigabitEthernet0/26",   DESCR: "GigabitEthernet Container"
+!NAME: "TenGigabitEthernet0/2 Container", DESCR: "TenGigabitEthernet Container"
+!NAME: "Switch 1 - Slot 2",     DESCR: "TwinGig Converter Module"
+!PID: 800-27645-02    B , VID: B0 , SN: FDO141311VP     
+!NAME: "GigabitEthernet0/27",   DESCR: "GigabitEthernet Container"
+!NAME: "GigabitEthernet0/27",   DESCR: "1000BaseSX SFP"
+!SN: FNS0926M47G
+!NAME: "GigabitEthernet0/28",   DESCR: "GigabitEthernet Container"
+!NAME: "GigabitEthernet0/1",    DESCR: "GigabitEthernet0/1"
+!NAME: "GigabitEthernet0/2",    DESCR: "GigabitEthernet0/2"
+!NAME: "GigabitEthernet0/3",    DESCR: "GigabitEthernet0/3"
+!NAME: "GigabitEthernet0/4",    DESCR: "GigabitEthernet0/4"
+!NAME: "GigabitEthernet0/5",    DESCR: "GigabitEthernet0/5"
+!NAME: "GigabitEthernet0/6",    DESCR: "GigabitEthernet0/6"
+!NAME: "GigabitEthernet0/7",    DESCR: "GigabitEthernet0/7"
+!NAME: "GigabitEthernet0/8",    DESCR: "GigabitEthernet0/8"
+!NAME: "GigabitEthernet0/9",    DESCR: "GigabitEthernet0/9"
+!NAME: "GigabitEthernet0/10",   DESCR: "GigabitEthernet0/10"
+!NAME: "GigabitEthernet0/11",   DESCR: "GigabitEthernet0/11"
+!NAME: "GigabitEthernet0/12",   DESCR: "GigabitEthernet0/12"
+!NAME: "GigabitEthernet0/13",   DESCR: "GigabitEthernet0/13"
+!NAME: "GigabitEthernet0/14",   DESCR: "GigabitEthernet0/14"
+!NAME: "GigabitEthernet0/15",   DESCR: "GigabitEthernet0/15"
+!NAME: "GigabitEthernet0/16",   DESCR: "GigabitEthernet0/16"
+!NAME: "GigabitEthernet0/17",   DESCR: "GigabitEthernet0/17"
+!NAME: "GigabitEthernet0/18",   DESCR: "GigabitEthernet0/18"
+!NAME: "GigabitEthernet0/19",   DESCR: "GigabitEthernet0/19"
+!NAME: "GigabitEthernet0/20",   DESCR: "GigabitEthernet0/20"
+!NAME: "GigabitEthernet0/21",   DESCR: "GigabitEthernet0/21"
+!NAME: "GigabitEthernet0/22",   DESCR: "GigabitEthernet0/22"
+!NAME: "GigabitEthernet0/23",   DESCR: "GigabitEthernet0/23"
+!NAME: "GigabitEthernet0/24",   DESCR: "GigabitEthernet0/24"
+!NAME: "Switch 1 - FastEthernet0", DESCR: "FastEthernet0"
+!
+!VTP: VTP Version                     : 2
+!VTP: Configuration Revision          : 0
+!VTP: Maximum VLANs supported locally : 1005
+!VTP: Number of existing VLANs        : 8
+!VTP: VTP Operating Mode              : Transparent
+!VTP: VTP Domain Name                 : 
+!VTP: VTP Pruning Mode                : Disabled
+!VTP: VTP V2 Mode                     : Disabled
+!VTP: VTP Traps Generation            : Disabled
+!VTP: MD5 digest                      : 0x10 0xB0 0xFC 0x6B 0xB1 0x45 0xD5 0xBF 
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Gi0/11, Gi0/12, Gi0/13, Gi0/15, Gi0/16, Gi0/17, Gi0/18, Gi0/19, Gi0/20, Gi0/26
+!VLAN:                                                 Gi0/27, Gi0/28
+!VLAN: 124  VLAN0124                         active    Gi0/1, Gi0/2, Gi0/3, Gi0/4, Gi0/5, Gi0/6, Gi0/7, Gi0/8, Gi0/14, Gi0/23, Gi0/24
+!VLAN: 139  X:10.115.39.0/24:FAX_DMZ         active    
+!VLAN: 141  VLAN0141                         active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: 1204 X:172.19.64.96/27:LYNC_VISUALWAR active    
+!VLAN: 1205 VLAN1205                         active    
+!VLAN: 1230 VLAN1230                         active    
+!VLAN: 1231 VLAN1231                         active    
+!VLAN: 1232 VLAN1232                         active    
+!VLAN: 1233 VLAN1233                         active    
+!VLAN: 1234 VLAN1234                         active    
+!VLAN: 1235 VLAN1235                         active    
+!VLAN: 1236 VLAN1236                         active    
+!VLAN: 1237 VLAN1237                         active    
+!VLAN: 1238 VLAN1238                         active    
+!VLAN: 1245 172.18.0.0/24:Lync_GNRX_Pool     active    
+!VLAN: 1246 X:172.17.0.224/27:VDED_GENRX_SBC active    
+!VLAN: 1247 X:172.19.0.224/27:VDED_GNRX_EDGE active    
+!VLAN: 1255 VLAN1255                         active    
+!VLAN: 1256 VLAN1256                         active    
+!VLAN: 1257 VLAN1257                         active    
+!VLAN: 1270 VL_PA2_1270_CCE-EDGE             active    
+!VLAN: 1278 X:UC_IS_SVCS_VPN                 active    
+!VLAN: 1279 S:172.19.1.128/27:LYNC_MGMT_DMZ  active    
+!VLAN: 1283 VL_PA2_1283_CLOUD_VOICE_EDGE_MGM active    
+!VLAN: 1284 VL_PA2_1284_CLOUD_VOICE_EDGE_WAN active    
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 124  enet  100124     1500  -      -      -        -    -        0      0   
+!VLAN: 139  enet  100139     1500  -      -      -        -    -        0      0   
+!VLAN: 141  enet  100141     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: 1204 enet  101204     1500  -      -      -        -    -        0      0   
+!VLAN: 1205 enet  101205     1500  -      -      -        -    -        0      0   
+!VLAN: 1230 enet  101230     1500  -      -      -        -    -        0      0   
+!VLAN: 1231 enet  101231     1500  -      -      -        -    -        0      0   
+!VLAN: 1232 enet  101232     1500  -      -      -        -    -        0      0   
+!VLAN: 1233 enet  101233     1500  -      -      -        -    -        0      0   
+!VLAN: 1234 enet  101234     1500  -      -      -        -    -        0      0   
+!VLAN: 1235 enet  101235     1500  -      -      -        -    -        0      0   
+!VLAN: 1236 enet  101236     1500  -      -      -        -    -        0      0   
+!VLAN: 1237 enet  101237     1500  -      -      -        -    -        0      0   
+!VLAN: 1238 enet  101238     1500  -      -      -        -    -        0      0   
+!VLAN: 1245 enet  101245     1500  -      -      -        -    -        0      0   
+!VLAN: 1246 enet  101246     1500  -      -      -        -    -        0      0   
+!VLAN: 1247 enet  101247     1500  -      -      -        -    -        0      0   
+!VLAN: 1255 enet  101255     1500  -      -      -        -    -        0      0   
+!VLAN: 1256 enet  101256     1500  -      -      -        -    -        0      0   
+!VLAN: 1257 enet  101257     1500  -      -      -        -    -        0      0   
+!VLAN: 1270 enet  101270     1500  -      -      -        -    -        0      0   
+!VLAN: 1278 enet  101278     1500  -      -      -        -    -        0      0   
+!VLAN: 1279 enet  101279     1500  -      -      -        -    -        0      0   
+!VLAN: 1283 enet  101283     1500  -      -      -        -    -        0      0   
+!VLAN: 1284 enet  101284     1500  -      -      -        -    -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!SDM Template: desktop default
+!
+!MTU: 1500
+!MTU-Jumbo: 1500
+!MTU-Routing: 1500
+!
+!
+config-register 0xF
+Using 9638 out of 524288 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime localtime
+service timestamps log datetime localtime
+service password-encryption
+!
+hostname pa2ucaccs06
+!
+logging buffered 128000 notifications
+enable secret 5 $1$qBTr$UQaqRWZ2qXgO.7ynBnzMb/
+!
+username netops privilege 15 secret 5 $1$4HiT$w8ocApIx0b6VRkrYvop1d0
+username noc privilege 0 secret 5 $1$6Fbk$BN/Aki8uOJtZI/zwSaBvg.
+aaa new-model
+aaa authentication login default local
+aaa authentication enable default enable
+aaa authorization exec default local 
+!
+aaa session-id common
+system mtu routing 1500
+vtp mode transparent
+ip subnet-zero
+ip routing
+no ip domain-lookup
+!
+login on-failure log
+login on-success log
+!
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+errdisable recovery cause link-flap
+no file verify auto
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+vlan 124 
+!
+vlan 139
+ name X:10.115.39.0/24:FAX_DMZ
+!
+vlan 141 
+!
+vlan 1204
+ name X:172.19.64.96/27:LYNC_VISUALWAR
+!
+vlan 1205,1230-1238 
+!
+vlan 1245
+ name 172.18.0.0/24:Lync_GNRX_Pool
+!
+vlan 1246
+ name X:172.17.0.224/27:VDED_GENRX_SBC
+!
+vlan 1247
+ name X:172.19.0.224/27:VDED_GNRX_EDGE
+!
+vlan 1255-1257 
+!
+vlan 1270
+ name VL_PA2_1270_CCE-EDGE
+!
+vlan 1278
+ name X:UC_IS_SVCS_VPN
+!
+vlan 1279
+ name S:172.19.1.128/27:LYNC_MGMT_DMZ
+!
+vlan 1283
+ name VL_PA2_1283_CLOUD_VOICE_EDGE_MGM
+!
+vlan 1284
+ name VL_PA2_1284_CLOUD_VOICE_EDGE_WAN
+!
+interface FastEthernet0
+ description *** Unused - SHUTDOWN ***
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/1
+ switchport access vlan 124
+ switchport mode access
+!
+interface GigabitEthernet0/2
+ switchport access vlan 124
+ switchport mode access
+!
+interface GigabitEthernet0/3
+ switchport access vlan 124
+ switchport mode access
+!
+interface GigabitEthernet0/4
+ switchport access vlan 124
+ switchport mode access
+!
+interface GigabitEthernet0/5
+ switchport access vlan 124
+ switchport mode access
+!
+interface GigabitEthernet0/6
+ switchport access vlan 124
+ switchport mode access
+!
+interface GigabitEthernet0/7
+ switchport access vlan 124
+ switchport mode access
+!
+interface GigabitEthernet0/8
+ switchport access vlan 124
+ switchport mode access
+!
+interface GigabitEthernet0/9
+ description S:FRPA22M:G1:VM_VSWITCH
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 141,1279
+ switchport mode trunk
+ spanning-tree portfast trunk
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet0/10
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 141
+ switchport mode trunk
+!
+interface GigabitEthernet0/11
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 141
+ switchport mode trunk
+!
+interface GigabitEthernet0/12
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 141
+ switchport mode trunk
+!
+interface GigabitEthernet0/13
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 141
+ switchport mode trunk
+!
+interface GigabitEthernet0/14
+ switchport access vlan 124
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 141
+ switchport mode access
+!
+interface GigabitEthernet0/15
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 141
+ switchport mode trunk
+!
+interface GigabitEthernet0/16
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 141
+ switchport mode trunk
+!
+interface GigabitEthernet0/17
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 141
+ switchport mode trunk
+!
+interface GigabitEthernet0/18
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 141
+ switchport mode trunk
+!
+interface GigabitEthernet0/19
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 141
+ switchport mode trunk
+!
+interface GigabitEthernet0/20
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 141
+ switchport mode trunk
+!
+interface GigabitEthernet0/21
+ description PA2UCACCS05
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet0/22
+ description pa2core02
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet0/23
+ description TO LABSWSTACK-gi1/0/45
+ switchport access vlan 124
+ switchport mode access
+ duplex full
+!
+interface GigabitEthernet0/24
+ description TO LABSW3-3560E eth0/24
+ switchport access vlan 124
+ switchport mode access
+ duplex full
+!
+interface GigabitEthernet0/25
+ description FRPA2UCACCS02
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet0/26
+ description *** Unused - SHUTDOWN ***
+ shutdown
+!
+interface GigabitEthernet0/27
+ description iSCSI-1-DeactivatedOnApril5-2018
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ shutdown
+!
+interface GigabitEthernet0/28
+ description *** Unused - SHUTDOWN ***
+!
+interface TenGigabitEthernet0/1
+ description *** Unused - SHUTDOWN ***
+ shutdown
+!
+interface TenGigabitEthernet0/2
+ description *** Unused - SHUTDOWN ***
+ shutdown
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan2
+ ip address 10.102.2.102 255.255.255.0
+!
+interface Vlan112
+ ip address 10.102.112.102 255.255.255.0
+!
+interface Vlan124
+ ip address 10.115.24.252 255.255.255.0
+!
+interface Vlan1231
+ ip address 172.17.0.133 255.255.255.224
+ shutdown
+!
+ip default-gateway 10.102.112.254
+ip classless
+ip route 10.0.0.0 255.0.0.0 10.115.24.254
+no ip http server
+ip radius source-interface Vlan124 
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq telnet
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq telnet
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq telnet
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq telnet
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq telnet
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq telnet
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq telnet
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq telnet
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq telnet
+!
+logging trap notifications
+logging 10.115.137.89
+logging 10.124.23.24
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server community public RO
+snmp-server enable traps license
+snmp-server enable traps syslog
+snmp ifmib ifindex persist
+radius-server source-ports 1645-1646
+!
+control-plane
+!
+banner motd ^CCCCCCC
+*********************************************************
+* [WARNING]                                             *
+* This is a private system owned by ARKADIN.            *
+* Unauthorized access to this system is forbidden by    *
+* company policies, national, and international laws.   *
+* Unauthorized users are subject to criminal and civil  *
+* penalties as well as company initiated disciplinary   *
+* proceedings.                                          *
+* By entering into this system you acknowledge that you *
+* are authorized to access it and have the level of     *
+* privilege at which you subsequently operate on        *
+* this system.                                          *
+* You consent by entry into this system to the          *
+* monitoring of your activities                         *
+*********************************************************
+^C
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ logging synchronous
+ history size 256
+ transport output none
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ history size 256
+ transport input telnet
+ transport output none
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ history size 256
+ transport input telnet
+ transport output none
+!
+ntp server 10.115.131.1 prefer
+ntp server 10.124.19.1
+ntp server 10.125.19.1
+end

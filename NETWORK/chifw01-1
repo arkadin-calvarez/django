@@ -1,0 +1,2142 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: ASA5520 - a PIX
+!CPU: Pentium 4 Celeron 2000 MHz
+!Encryption: Cisco ASA-55x0 on-board accelerator (revision 0x0)
+!
+!Memory: 512 MB RAM
+!Serial Number: JMX0951K0QT
+!
+!This platform has an ASA 5520 VPN Plus license.
+!Key: 0xcf38d57f 0xa09e448c 0x29721d48 0xf1904c54 0xce344d96 
+!
+!Image: Compiled: on Fri 06-Aug-10 07:51 by builders
+!Image: disk0:/asa823-k8.bin
+!
+!
+!BootFlash: BOOT variable = disk0:/asa823-k8.bin;disk0:/asa821-18-k8.bin
+!BootFlash: Current BOOT variable = disk0:/asa823-k8.bin;disk0:/asa821-18-k8.bin
+!BootFlash: CONFIG_FILE variable = 
+!BootFlash: Current CONFIG_FILE variable = 
+!
+!BootFlash: BOOT variable = disk0:/asa823-k8.bin;disk0:/asa821-18-k8.bin
+!BootFlash: Current BOOT variable = disk0:/asa823-k8.bin;disk0:/asa821-18-k8.bin
+!BootFlash: CONFIG_FILE variable = 
+!BootFlash: Current CONFIG_FILE variable = 
+!
+! Serial Number:  JMX0951K0QT
+! Running Activation Key: 0xcf38d57f 0xa09e448c 0x29721d48 0xf1904c54 0xce344d96 
+! Licensed features for this platform:
+! Maximum Physical Interfaces    : Unlimited
+! Maximum VLANs                  : 150
+! Inside Hosts                   : Unlimited
+! Failover                       : Active/Active
+! VPN-DES                        : Enabled
+! VPN-3DES-AES                   : Enabled
+! Security Contexts              : 2
+! GTP/GPRS                       : Disabled
+! SSL VPN Peers                  : 2
+! Total VPN Peers                : 750
+! Shared License                 : Disabled
+! AnyConnect for Mobile          : Disabled
+! AnyConnect for Cisco VPN Phone : Disabled
+! AnyConnect Essentials          : Enabled
+! Advanced Endpoint Assessment   : Disabled
+! UC Phone Proxy Sessions        : 2
+! Total UC Proxy Sessions        : 2
+! Botnet Traffic Filter          : Disabled
+!
+! This platform has an ASA 5520 VPN Plus license.
+! The flash activation key is the SAME as the running key.
+!
+!Flash: disk0: Directory of disk0:/
+!Flash: disk0: 92     -rwx  15243264    10:19:28 Mar 10 2011  asa823-k8.bin
+!Flash: disk0: 3      drwx  4096        13:34:16 Aug 28 2009  log
+!Flash: disk0: 13     drwx  4096        13:40:04 Aug 28 2009  coredumpinfo
+!Flash: disk0: 94     -rwx  4686889     09:15:04 Mar 29 2011  anyconnect-win-2.5.2019-k9.pkg
+!Flash: disk0: 12     drwx  4096        16:29:44 Oct 24 2008  crypto_archive
+!Flash: disk0: 95     -rwx  14497692    10:20:28 Mar 10 2011  asdm-633.bin
+!Flash: disk0: 96     drwx  4096        21:44:32 Jun 08 2012  tmp
+!Flash: disk0: 97     -rwx  6975261     15:05:10 Oct 29 2012  anyconnect-linux-2.5.3055-k9.pkg
+!Flash: disk0: 98     -rwx  6300827     14:57:26 Oct 29 2012  anyconnect-macosx-i386-2.5.3055-k9.pkg
+!Flash: disk0: 99     -rwx  69852       05:10:58 Oct 31 2014  startup-config_oldVPNMexico
+!Flash: disk0: 105    -rwx  80082       16:17:18 Jun 22 2017  running-config
+!Flash: disk0: 60 MB total (22% free)
+!
+!Slot 0/: type ASA 5520 Adaptive
+!Slot 0/: part Security, serial Appliance
+!Slot 0/: hvers ASA5520
+!Slot 0: hvers 1.1, firmware 1.0(10)0, sw 8.2(3)
+!
+!Slot 1: hvers 1.0, firmware 1.0(11)2, sw 6.2(2)E4
+!
+!Name: "Chassis", DESCR: "ASA 5520 Adaptive Security Appliance"
+!PID: ASA5520
+!VID: V01
+!SN: JMX0951K0QT
+!Name: "module 1", DESCR: "ASA_5500_Series_Security_Services_Module-10"
+!PID: ASA-SSM-10
+!VID: V01
+!SN: JAB101700J9
+!Name: "power supply", DESCR: "ASA/IPS 180W AC Power Supply"
+!PID: ASA-180W-PWR-AC
+!VID: V01
+!SN: DTH09300JD9
+!
+!VLAN: 10, 178, 231, 906, 908
+!
+!
+config-register 0x1
+!
+ASA Version 8.2(3) 
+!
+hostname chifw01-1
+domain-name conferenceplus.com
+!enable password <removed>
+!passwd <removed>
+no names
+name 172.16.0.0 Sch_Network
+name 172.16.1.72 Sch_NewNOC
+name 172.16.1.20 Sch_PSQL02
+name 38.65.194.11 NS1_ConfPlus_ext
+name 38.65.194.40 NS1_TrueConf_ext
+name 172.16.1.63 Sch_QDB01c
+name 172.16.1.64 Sch_QDB02c
+name 172.16.1.233 Sch_PDB01c
+name 172.16.1.234 Sch_PDB02c
+name 172.16.1.248 Sch_DBA01
+name 172.21.9.202 Lon_PDB02
+name 38.65.194.48 PolycomMGC1_ext
+name 172.16.1.210 PolycomMGC1
+name 38.65.194.70 PolycomVS1_ext
+name 172.16.6.11 PolycomVS1
+name 172.16.6.15 PolycomVS2 description can be removed?
+name 38.65.194.73 PolycomVS3_ext
+name 172.16.6.12 PolycomVS3
+name 38.65.194.74 PolycomVS4_ext
+name 172.16.6.13 PolycomVS4
+name 38.65.194.75 PolycomVS5_ext
+name 172.16.6.14 PolycomVS5
+name 38.65.194.77 PolycomVS6_ext
+name 172.16.6.16 PolycomVS6
+name 172.16.6.17 PolycomVS7
+name 38.65.194.76 Sch_CDN01_ext
+name 172.16.1.61 Sch_CDN01
+name 38.65.194.79 LifeSizeVS1_ext
+name 38.65.194.33 Sch_Vircom_ext
+name 38.65.194.38 Sch_PMTA01_ext
+name 38.65.194.37 Sch_PMTA02_ext
+name 172.16.1.214 Sch_QDB01
+name 172.16.1.212 Sch_PDB01
+name 172.16.1.5 Sch_PAS02
+name 172.16.1.66 Sch_PAS03
+name 172.16.1.56 Sch_PWS01
+name 172.16.1.1 Sch_PAS01
+name 38.65.194.12 MeetMe_ext
+name 38.65.194.13 ConfPlus_ext
+name 38.65.194.16 YourConfCenter_ext
+name 38.65.194.42 TrueConf_ext
+name 38.65.194.17 YourConfCentre_ext
+name 38.65.194.21 LonGlobal_ext
+name 172.16.1.106 Sch_PAS06
+name 38.65.194.39 Sch_PAS06_ext
+name 172.16.1.110 Sch_QAS03
+name 38.65.194.41 Sch_QAS03_ext
+name 172.16.1.57 Sch_PGW02
+name 172.16.1.163 Sch_PDB01vip
+name 172.16.1.164 Sch_PDB02vip
+name 172.17.25.201 DUB_PDB02
+name 172.16.1.145 Sch_QDB01vip
+name 172.16.1.146 Sch_QDB02vip
+name 10.10.80.31 Chi_PWZ01
+name 10.10.80.32 Chi_PWZ02
+name 38.65.194.30 Chi_ISA01usa_ext
+name 38.65.194.31 Chi_ISA01eur_ext
+name 38.65.194.47 Chi_PAPZ02_ext
+name 64.41.193.0 LiveMeet7
+name 204.176.46.0 LiveMeet8
+name 172.19.11.11 Sch_ISA02
+name 172.19.11.12 Sch_ISA03
+name 38.65.194.9 Sch_NewNOC_ext
+name 38.65.194.80 PolycomVS8_ext
+name 172.16.6.18 PolycomVS8
+name 172.16.1.83 Sch_PFS02
+name 172.29.10.20 LifeSizeVS1
+name 172.16.1.24 Sch_DRS01
+name 38.65.194.36 Sch_DRS01_ext
+name 38.65.194.49 CHI_PAEZ01_ext
+name 10.10.180.53 BetaConfPlus_DMZ
+name 38.65.194.60 BetaConfPlus_ext
+name 10.10.180.54 BetaGlobal_DMZ
+name 38.65.194.61 BetaGlobal_ext
+name 10.10.180.55 BetaConfCenter_DMZ
+name 38.65.194.62 BetaConfCenter_ext
+name 38.65.194.63 BetaTrueConf_ext
+name 10.10.180.58 BetaConfCentre_DMZ
+name 38.65.194.64 BetaConfCentre_ext
+name 172.21.11.101 Chi741
+name 38.65.194.20 Chi741_ext
+name 172.21.4.28 WD_SDB02
+name 38.65.194.25 WD_SDB02_ext
+name 38.65.194.23 Sch_PDB01c_ext
+name 38.65.194.24 Sch_PDB02c_ext
+name 172.16.1.155 Sch_BDB01
+name 38.65.194.26 Sch_BDB01_ext
+name 38.65.194.72 Chi_IPVCR_ext
+name 10.100.80.242 Chi_IPVCR
+name 38.65.194.46 ChiMGC1_ext
+name 10.100.80.241 ChiMGC1
+name 172.16.1.136 USSCHPDB1
+name 38.65.194.27 USSCHPDB1_ext
+name 10.100.88.12 USSCHMS01
+name 38.65.194.32 USSCHMS01_ext
+name 10.100.88.20 Sch_ENG07
+name 38.65.194.29 Sch_ENG07_ext
+name 10.100.88.78 USSCHMS02
+name 10.100.195.0 RSA_ChiVPNPool
+name 62.209.51.6 ProofPoint description ProofPoint
+name 91.207.212.9 ProofPoint2 description ProofPoint2
+name 10.100.35.31 USPPAXPress description PreProd Arakdin Express
+name 38.65.194.65 USPPAXPress_ext description PreProd Arkadin Express External
+name 10.100.88.15 uschiradius1
+name 10.100.55.11 Sch_PMTA01
+name 10.100.55.12 Sch_PMTA02
+name 10.100.55.6 uschipas02 description New Pas02
+name 10.100.55.5 uschipas01 description Chicago application server
+name 10.100.55.7 uschipas03 description Chicago SQl server
+name 10.100.54.0 dmz-vlan54 description new dmz vlan
+name 10.10.180.56 BetaTrueConf_DMZ
+name 10.100.54.33 ConfPlus_DMZ_new description New Chi Web servers Address
+name 38.65.194.83 ConfPlus_ext_new description New Chi Web servers Address
+name 10.100.54.37 MeetMe_DMZ_new description New Chi Web servers Address
+name 38.65.194.87 MeetMe_ext_new description New Chi Web servers Address
+name 10.100.54.36 TrueConf_DMZ_new description New Chi Web servers Address
+name 38.65.194.86 TrueConf_ext_new description New Chi Web servers Address
+name 10.100.54.35 YourConfCenter_DMZ_new description New Chi Web servers Address
+name 38.65.194.85 YourConfCenter_ext_new description New Chi Web servers Address
+name 45.24.188.161 transnexus description Transnexus support
+name 10.100.88.113 uschicdr01 description Nexoss CDR Analyser Internal IP
+name 38.65.194.100 uschicdr01-ext description Nexoos CDR Analyser
+name 38.65.194.120 ATC_ext description ATC Conferencing
+name 10.100.54.120 ATC_internal description ATC Conferencing
+name 108.16.31.84 ATC1 description ATC Migration
+name 207.97.229.92 ATC2 description ATC Migration
+name 69.20.93.144 ATC3 description ATC Migration
+name 69.20.93.147 ATC4 description ATC Migration
+name 69.20.93.148 ATC5 description ATC Migration
+name 10.100.54.43 vbpstrack6_dmz description VBP ST Rack 6
+name 38.65.194.82 vbpstrack6_ext description VBP ST Rack 6
+name 162.229.106.117 JohnHome_Test
+name 24.13.75.6 vm-test description Vito Test
+name 38.65.194.34 NAMAIL_External
+name 50.200.58.97 Bhav_Test
+name 8.19.201.250 INXPO_Public description INXPO SMTP relay Brad E contact
+name 23.101.170.138 ARTS_Public description Azure cloud version of arts
+name 187.32.132.193 ARTS_Public2 description Azure cloud arts 2
+name 38.65.194.71 Meetme_FTP02_Ext
+name 10.100.88.152 Meetme_FTP02_Int
+name 38.65.194.78 USSCHEX2016_Ext description Exchange 2016 Schamburg Connector
+name 10.100.88.151 USSCHEX2016_Int description Exchange 2016 Internal
+name 10.100.81.203 USCHINEXDB01
+name 99.165.178.161 transnexus-neustar2
+name 156.154.17.37 sipix12-lnp.neustar.biz-transnexus-neustar
+dns-guard
+!
+interface GigabitEthernet0/0
+ description X:Q:chicore0[12]:Gi3/47;Gi2/11
+ no nameif
+ no security-level
+ no ip address
+!
+interface GigabitEthernet0/0.10
+ vlan 10
+ nameif inside
+ security-level 100
+ ip address 172.21.6.2 255.255.255.0 standby 172.21.6.3 
+!
+interface GigabitEthernet0/0.231
+ vlan 231
+ nameif tdmdmz
+ security-level 50
+ ip address 10.100.231.254 255.255.255.0 standby 10.100.231.253 
+!
+interface GigabitEthernet0/1
+ speed 1000
+ duplex full
+ shutdown
+ no nameif
+ no security-level
+ no ip address
+!
+interface GigabitEthernet0/2
+ shutdown
+ no nameif
+ no security-level
+ no ip address
+!
+interface GigabitEthernet0/3
+ description X:Q:chiixag0[12]:Gi3/3;Gi2/3
+ no nameif
+ no security-level
+ no ip address
+!
+interface GigabitEthernet0/3.178
+ vlan 178
+ nameif outside
+ security-level 0
+ ip address 38.103.112.106 255.255.255.248 
+!
+interface GigabitEthernet0/3.906
+ vlan 906
+ nameif AS
+ security-level 0
+ ip address 185.37.222.126 255.255.255.192 
+!
+interface GigabitEthernet0/3.908
+ vlan 908
+ nameif INTERCO
+ security-level 0
+ ip address 172.20.20.1 255.255.255.252 
+!
+interface Management0/0
+ description LAN/STATE Failover Interface
+!
+boot system disk0:/asa823-k8.bin
+boot system disk0:/asa821-18-k8.bin
+ftp mode passive
+clock timezone CST -6
+clock summer-time CDT recurring
+dns domain-lookup inside
+dns domain-lookup outside
+dns server-group DefaultDNS
+ domain-name conferenceplus.com
+same-security-traffic permit inter-interface
+same-security-traffic permit intra-interface
+object-group network VideoClient
+ description List of IPs of Video Customers
+ network-object 174.46.163.48 255.255.255.240
+ network-object 174.46.163.64 255.255.255.248
+ network-object 99.39.1.176 255.255.255.248
+ network-object 64.8.75.44 255.255.255.254
+ network-object 64.86.84.160 255.255.255.248
+ network-object 209.7.23.0 255.255.255.0
+ network-object 24.15.59.112 255.255.255.255
+ network-object 98.227.173.65 255.255.255.255
+ network-object 68.22.113.166 255.255.255.255
+ network-object 207.58.192.191 255.255.255.255
+ network-object 207.58.192.204 255.255.255.255
+ network-object 207.58.192.205 255.255.255.255
+ network-object 207.58.192.208 255.255.255.255
+ network-object 207.58.192.209 255.255.255.255
+ network-object 216.168.41.145 255.255.255.255
+ network-object 207.155.134.186 255.255.255.255
+ network-object 216.57.7.166 255.255.255.255
+ network-object 216.168.41.146 255.255.255.255
+ network-object 216.57.7.165 255.255.255.255
+ network-object 80.86.105.4 255.255.255.255
+ network-object 207.155.134.187 255.255.255.255
+ network-object 74.95.5.21 255.255.255.255
+ network-object 65.194.96.102 255.255.255.255
+ network-object 65.194.96.106 255.255.255.255
+ network-object 190.86.172.125 255.255.255.255
+ network-object 38.100.64.201 255.255.255.255
+ network-object 209.12.224.2 255.255.255.255
+ network-object 66.127.131.207 255.255.255.255
+ network-object 8.14.70.60 255.255.255.255
+ network-object 38.96.192.134 255.255.255.255
+ network-object 66.161.123.223 255.255.255.255
+ network-object 97.65.237.245 255.255.255.255
+ network-object 65.245.66.178 255.255.255.255
+ network-object 38.96.10.165 255.255.255.255
+ network-object 38.106.164.235 255.255.255.255
+ network-object 202.39.75.203 255.255.255.255
+ network-object 129.71.204.129 255.255.255.255
+ network-object 63.68.134.100 255.255.255.255
+ network-object 128.252.251.1 255.255.255.255
+ network-object 96.238.221.34 255.255.255.255
+ network-object 66.238.93.226 255.255.255.255
+ network-object 64.157.29.159 255.255.255.255
+ network-object 209.203.90.14 255.255.255.255
+ network-object 99.18.251.93 255.255.255.255
+ network-object 212.23.248.100 255.255.255.255
+ network-object 12.239.6.50 255.255.255.255
+ network-object 12.173.63.200 255.255.255.255
+ network-object 204.16.66.60 255.255.255.255
+ network-object 213.79.34.166 255.255.255.255
+ network-object 87.238.217.133 255.255.255.255
+ network-object 82.114.82.106 255.255.255.255
+ network-object 210.5.233.19 255.255.255.255
+ network-object 152.118.149.10 255.255.255.255
+ network-object 193.128.74.81 255.255.255.255
+ network-object 65.123.203.251 255.255.255.255
+ network-object 217.52.80.243 255.255.255.255
+ network-object 210.5.233.197 255.255.255.255
+ network-object 200.3.114.206 255.255.255.255
+ network-object 53.65.177.133 255.255.255.255
+ network-object 190.60.220.78 255.255.255.255
+ network-object 12.236.64.130 255.255.255.255
+ network-object 74.11.214.39 255.255.255.255
+ network-object 74.11.214.34 255.255.255.255
+ network-object 63.163.160.20 255.255.255.255
+ network-object 67.98.144.70 255.255.255.255
+ network-object 205.166.76.18 255.255.255.255
+ network-object 206.18.168.200 255.255.255.255
+ network-object 206.18.168.201 255.255.255.255
+ network-object 62.245.198.152 255.255.255.255
+ network-object 64.86.84.164 255.255.255.255
+ network-object 203.166.49.70 255.255.255.255
+ network-object 203.166.49.71 255.255.255.255
+ network-object 86.47.57.73 255.255.255.255
+ network-object 129.71.204.136 255.255.255.255
+ network-object 4.79.245.180 255.255.255.255
+ network-object 139.102.127.51 255.255.255.255
+ network-object 129.71.207.160 255.255.255.255
+ network-object 38.98.181.31 255.255.255.255
+ network-object 130.127.107.206 255.255.255.255
+ network-object 59.154.61.100 255.255.255.255
+ network-object 114.141.161.130 255.255.255.255
+ network-object 207.58.192.200 255.255.255.255
+ network-object 63.163.160.32 255.255.255.255
+ network-object 207.188.255.9 255.255.255.255
+ network-object 208.250.56.250 255.255.255.255
+ network-object 200.23.252.141 255.255.255.255
+ network-object 66.17.221.190 255.255.255.255
+ network-object 128.104.191.71 255.255.255.255
+ network-object 67.134.247.130 255.255.255.255
+ network-object 12.69.53.152 255.255.255.255
+ network-object 99.64.143.211 255.255.255.255
+ network-object 209.12.17.136 255.255.255.255
+ network-object 99.64.143.212 255.255.255.255
+ network-object 99.64.143.213 255.255.255.255
+ network-object 99.64.143.214 255.255.255.255
+ network-object 65.245.66.179 255.255.255.255
+ network-object 76.20.252.23 255.255.255.255
+ network-object 70.168.39.190 255.255.255.255
+ network-object 123.124.237.17 255.255.255.255
+ network-object 218.185.86.214 255.255.255.255
+ network-object 12.146.113.99 255.255.255.255
+ network-object 170.92.254.12 255.255.255.255
+ network-object 129.176.209.55 255.255.255.255
+ network-object 212.135.137.2 255.255.255.255
+ network-object 194.78.219.125 255.255.255.255
+ network-object 194.169.209.21 255.255.255.255
+ network-object 190.144.53.162 255.255.255.255
+ network-object 208.37.160.15 255.255.255.255
+ network-object 208.37.160.16 255.255.255.255
+ network-object 64.52.20.105 255.255.255.255
+ network-object 67.224.87.194 255.255.255.255
+ network-object 193.38.171.50 255.255.255.255
+ network-object 144.92.231.77 255.255.255.255
+ network-object 206.173.110.36 255.255.255.255
+ network-object 207.158.42.180 255.255.255.255
+ network-object 70.167.184.41 255.255.255.255
+ network-object 72.166.158.160 255.255.255.255
+ network-object 131.150.0.138 255.255.255.255
+ network-object 74.10.56.153 255.255.255.255
+ network-object 65.5.90.144 255.255.255.255
+ network-object 10.202.144.5 255.255.255.255
+ network-object 207.114.185.37 255.255.255.255
+ network-object 125.20.7.188 255.255.255.255
+ network-object 159.251.12.45 255.255.255.255
+ network-object 68.190.254.132 255.255.255.255
+ network-object 68.190.254.133 255.255.255.255
+ network-object 168.215.96.200 255.255.255.255
+ network-object 141.161.89.29 255.255.255.255
+ network-object 69.155.81.228 255.255.255.255
+ network-object 69.155.81.223 255.255.255.255
+ network-object 69.155.81.224 255.255.255.255
+ network-object 38.98.33.14 255.255.255.255
+ network-object 67.206.83.168 255.255.255.255
+ network-object 98.175.197.34 255.255.255.255
+ network-object 190.144.53.166 255.255.255.255
+ network-object 64.129.169.49 255.255.255.255
+ network-object 64.190.41.209 255.255.255.255
+ network-object 12.36.74.2 255.255.255.255
+ network-object 78.140.116.83 255.255.255.255
+ network-object 209.234.145.165 255.255.255.255
+ network-object 209.203.91.41 255.255.255.255
+ network-object 68.177.89.163 255.255.255.255
+ network-object 146.197.246.28 255.255.255.255
+ network-object 64.139.50.147 255.255.255.255
+ network-object 207.122.209.240 255.255.255.255
+ network-object 38.100.106.177 255.255.255.255
+ network-object 65.218.77.13 255.255.255.255
+ network-object 199.83.44.105 255.255.255.255
+ network-object 81.166.216.44 255.255.255.255
+ network-object 12.104.10.115 255.255.255.255
+ network-object 12.104.10.15 255.255.255.255
+ network-object 116.246.40.202 255.255.255.255
+ network-object 80.194.194.98 255.255.255.255
+object-group network DataBaseServers
+ description List of DB Servers for Tusc Support
+ network-object host 38.65.194.23
+ network-object host 38.65.194.24
+ network-object host 38.65.194.25
+ network-object host 38.65.194.26
+ network-object host 38.65.194.27
+object-group network TuscNetworks
+ description List of IPs or Tusc Networks
+ network-object 68.177.221.0 255.255.255.0
+ network-object 66.252.66.160 255.255.255.240
+ network-object 66.252.67.128 255.255.255.224
+ network-object 66.252.75.160 255.255.255.240
+ network-object 198.59.57.16 255.255.255.240
+ network-object 209.156.64.224 255.255.255.240
+ network-object 66.77.99.192 255.255.255.192
+object-group network HackerIP
+ network-object 120.28.0.0 255.255.0.0
+ network-object 125.60.0.0 255.255.0.0
+ network-object host 74.108.89.102
+object-group service DM_INLINE_TCP_1 tcp
+ port-object eq www
+ port-object eq https
+object-group network SMTP_Access
+ description SMTP_Access
+ network-object host 62.209.51.6
+ network-object host 91.207.212.9
+ network-object host 24.13.75.6
+ network-object host 8.19.201.250
+ network-object host 23.101.170.138
+ network-object host 187.32.132.193
+object-group network PreProdAXPressAPI
+ description Access for Arkadin Express PreProd
+ network-object host 72.89.243.119
+ network-object host 62.193.40.144
+ network-object host 62.39.95.39
+ network-object 67.192.20.8 255.255.255.248
+ network-object host 78.24.135.77
+ network-object host 86.64.67.71
+ network-object host 216.192.34.98
+ network-object host 216.162.34.98
+object-group service DM_INLINE_TCP_2 tcp
+ port-object eq www
+ port-object eq https
+object-group service DM_INLINE_TCP_3 tcp
+ port-object eq www
+ port-object eq https
+object-group network ATC_Web_Access
+ network-object host 207.97.229.92
+ network-object host 72.92.16.74
+object-group protocol TCPUDP
+ protocol-object udp
+ protocol-object tcp
+object-group service SMTP_UDP tcp-udp
+ port-object eq 25
+object-group service OTRS_Ports
+ service-object tcp-udp eq 465 
+ service-object tcp-udp eq 993 
+ service-object tcp-udp eq 995 
+ service-object tcp-udp eq 587 
+object-group service DM_INLINE_SERVICE_1
+ group-object OTRS_Ports
+ service-object tcp eq imap4 
+ service-object tcp eq pop3 
+ service-object tcp eq smtp 
+object-group service DM_INLINE_TCP_4 tcp
+ port-object eq www
+ port-object eq https
+object-group service DM_INLINE_SERVICE_2
+ group-object OTRS_Ports
+ service-object tcp eq imap4 
+ service-object tcp eq pop3 
+ service-object tcp eq smtp 
+object-group network USCHIBRI1
+ network-object 10.100.81.100 255.255.255.255
+ network-object 10.100.81.101 255.255.255.255
+ network-object 10.100.81.103 255.255.255.255
+object-group network RFC1918
+ network-object 10.0.0.0 255.0.0.0
+ network-object 172.16.0.0 255.240.0.0
+ network-object 192.168.0.0 255.255.0.0
+object-group network SCH-DTP
+ network-object host 10.200.230.41
+ network-object host 172.21.6.11
+access-list ACL_BLOCK_SCH-DTP extended permit ip object-group SCH-DTP object-group RFC1918 
+access-list ACL_BLOCK_SCH-DTP extended deny ip object-group SCH-DTP any 
+access-list ACL_BLOCK_SCH-DTP extended permit ip any any 
+access-list nonat extended permit ip 172.21.6.0 255.255.255.0 172.16.0.0 255.240.0.0 
+access-list nonat extended permit ip 172.21.6.0 255.255.255.0 10.0.0.0 255.0.0.0 
+access-list nonat extended permit ip any 192.168.3.0 255.255.255.0 
+access-list nonat extended permit ip any 192.168.4.0 255.255.255.0 
+access-list nonat extended permit ip any 172.21.130.0 255.255.255.0 
+access-list nonat extended permit ip any 172.21.144.0 255.255.254.0 
+access-list nonat extended permit ip any 172.31.193.0 255.255.255.0 
+access-list nonat extended permit ip any 172.31.194.0 255.255.255.224 
+access-list nonat extended permit ip 172.16.0.0 255.240.0.0 10.0.0.0 255.0.0.0 
+access-list nonat extended permit ip 10.0.0.0 255.0.0.0 10.0.0.0 255.0.0.0 
+access-list nonat extended permit ip 172.16.0.0 255.240.0.0 172.16.0.0 255.240.0.0 
+access-list nonat extended permit ip 10.0.0.0 255.0.0.0 172.16.0.0 255.240.0.0 
+access-list nonat extended permit ip host 172.16.1.233 host 206.168.216.235 
+access-list nonat extended permit ip host 172.16.1.64 host 206.168.216.235 
+access-list nonat extended permit ip host 172.16.1.234 host 206.168.216.235 
+access-list nonat extended permit ip host 172.16.1.248 host 206.168.216.235 
+access-list nonat extended permit ip host 172.21.4.28 host 206.168.216.235 
+access-list nonat extended permit ip host 172.21.9.202 host 206.168.216.235 
+access-list nonat extended permit ip host 172.19.19.10 host 206.168.216.235 
+access-list nonat extended permit ip host 172.16.1.63 host 206.168.216.235 
+access-list nonat extended permit ip host 172.16.1.246 host 206.168.216.235 
+access-list nonat extended permit ip 192.168.4.0 255.255.255.0 any 
+access-list nonat extended permit ip any 172.31.15.0 255.255.255.0 
+access-list nonat extended permit ip any 172.31.1.0 255.255.255.0 
+access-list nonat extended permit ip any 172.31.10.0 255.255.255.0 
+access-list nonat extended permit ip any 172.31.28.0 255.255.255.0 
+access-list nonat extended permit ip any 172.21.128.0 255.255.255.0 
+access-list nonat extended permit ip any 172.31.100.0 255.255.255.0 
+access-list CogIn extended permit ip any any 
+access-list CogIn extended permit icmp any any 
+access-list CPI extended permit ip any host 38.65.194.100 inactive 
+access-list CPI extended permit tcp any host 38.65.194.87 eq https 
+access-list CPI extended permit tcp any host 38.65.194.87 eq www 
+access-list CPI extended permit tcp any host 38.65.194.86 eq https 
+access-list CPI extended permit tcp any host 38.65.194.86 eq www 
+access-list CPI extended permit tcp any host 38.65.194.85 eq https 
+access-list CPI extended permit tcp any host 38.65.194.85 eq www 
+access-list CPI extended permit tcp any host 38.65.194.83 eq https 
+access-list CPI extended permit tcp any host 38.65.194.83 eq www 
+access-list CPI extended deny ip object-group HackerIP any 
+access-list CPI extended permit icmp any any time-exceeded 
+access-list CPI extended permit icmp any any echo-reply 
+access-list CPI extended permit udp any host 38.65.194.11 eq nameserver 
+access-list CPI extended permit udp any host 38.65.194.11 eq domain inactive 
+access-list CPI extended permit tcp any host 38.65.194.11 eq whois inactive 
+access-list CPI extended permit tcp any host 38.65.194.11 eq ssh inactive 
+access-list CPI extended permit tcp any host 38.65.194.11 eq smtp inactive 
+access-list CPI extended permit tcp any host 38.65.194.11 eq ftp-data inactive 
+access-list CPI extended permit tcp any host 38.65.194.11 eq ftp inactive 
+access-list CPI extended permit udp any host 38.65.194.40 eq nameserver 
+access-list CPI extended permit udp any host 38.65.194.40 eq domain 
+access-list CPI extended permit tcp any host 38.65.194.40 eq whois 
+access-list CPI extended permit tcp any host 38.65.194.11 eq domain 
+access-list CPI extended permit ip object-group VideoClient host 38.65.194.48 
+access-list CPI extended permit udp any host 38.65.194.48 eq 5003 
+access-list CPI extended permit udp any host 38.65.194.48 eq 5001 
+access-list CPI extended permit tcp any host 38.65.194.48 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.48 eq 5003 
+access-list CPI extended permit tcp any host 38.65.194.48 eq 5001 
+access-list CPI extended permit tcp any host 38.65.194.70 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.71 eq https 
+access-list CPI extended permit tcp any host 38.65.194.73 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.74 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.75 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.77 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.78 object-group DM_INLINE_TCP_4 
+access-list CPI extended permit tcp any host 38.65.194.79 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.72 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.76 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.33 eq smtp 
+access-list CPI extended permit tcp any host 38.65.194.12 eq www 
+access-list CPI extended permit tcp any host 38.65.194.12 eq https 
+access-list CPI extended permit tcp any host 38.65.194.13 eq www 
+access-list CPI extended permit tcp any host 38.65.194.13 eq https 
+access-list CPI extended permit tcp any host 38.65.194.16 eq www 
+access-list CPI extended permit tcp any host 38.65.194.16 eq https 
+access-list CPI extended permit tcp any host 38.65.194.42 eq www 
+access-list CPI extended permit tcp any host 38.65.194.42 eq https 
+access-list CPI extended permit tcp any host 38.65.194.17 eq www 
+access-list CPI extended permit tcp any host 38.65.194.17 eq https 
+access-list CPI extended permit tcp any host 38.65.194.21 eq www 
+access-list CPI extended permit tcp any host 38.65.194.21 eq ssh 
+access-list CPI extended permit tcp any host 38.65.194.21 eq https 
+access-list CPI extended permit tcp any host 38.65.194.30 eq www 
+access-list CPI extended permit tcp any host 38.65.194.30 eq https 
+access-list CPI extended permit tcp any host 38.65.194.31 eq www 
+access-list CPI extended permit tcp any host 38.65.194.31 eq https 
+access-list CPI extended permit tcp host 174.129.252.162 host 38.65.194.39 eq 8090 
+access-list CPI extended permit tcp host 184.73.210.114 host 38.65.194.41 eq 8090 
+access-list CPI extended permit tcp any host 38.65.194.47 eq 5061 
+access-list CPI extended permit tcp host 174.129.252.250 host 38.65.194.13 eq 8100 
+access-list CPI extended permit udp host 38.103.112.105 host 38.65.194.9 eq syslog 
+access-list CPI extended permit tcp any host 38.65.194.80 eq h323 
+access-list CPI extended permit tcp host 50.18.112.79 host 38.65.194.39 eq 8090 
+access-list CPI extended permit tcp any host 38.65.194.22 eq www 
+access-list CPI extended permit tcp any host 38.65.194.22 eq https 
+access-list CPI extended permit tcp host 46.137.178.104 host 38.65.194.36 eq 8090 
+access-list CPI extended permit tcp host 107.22.161.177 host 38.65.194.36 eq 8090 
+access-list CPI extended permit tcp host 83.145.110.68 host 38.65.194.49 eq 5061 
+access-list CPI extended permit tcp object-group PreProdAXPressAPI host 38.65.194.66 eq ssh 
+access-list CPI extended permit tcp object-group PreProdAXPressAPI host 38.65.194.65 object-group DM_INLINE_TCP_2 
+access-list CPI extended permit tcp any host 38.65.194.60 eq www 
+access-list CPI extended permit tcp any host 38.65.194.60 eq https 
+access-list CPI extended permit tcp any host 38.65.194.61 eq www 
+access-list CPI extended permit tcp any host 38.65.194.61 eq https 
+access-list CPI extended permit tcp any host 38.65.194.62 eq www 
+access-list CPI extended permit tcp any host 38.65.194.62 eq https 
+access-list CPI extended permit tcp any host 38.65.194.63 eq www 
+access-list CPI extended permit tcp any host 38.65.194.63 eq https 
+access-list CPI extended permit tcp any host 38.65.194.64 eq www 
+access-list CPI extended permit tcp any host 38.65.194.64 eq https 
+access-list CPI extended permit tcp host 184.73.210.42 host 38.65.194.60 eq 8100 
+access-list CPI extended permit tcp 135.124.124.8 255.255.255.248 host 38.65.194.20 eq ssh 
+access-list CPI extended permit tcp 135.124.124.16 255.255.255.252 host 38.65.194.20 eq ssh 
+access-list CPI extended permit tcp host 83.145.110.71 host 38.65.194.49 eq 5061 
+access-list CPI extended permit tcp host 81.93.188.225 host 38.65.194.49 eq 5061 
+access-list CPI extended permit tcp host 81.93.188.229 host 38.65.194.49 eq 5061 
+access-list CPI extended permit icmp host 81.93.188.225 any 
+access-list CPI extended permit icmp host 81.93.188.229 any 
+access-list CPI extended permit tcp object-group TuscNetworks object-group DataBaseServers eq ssh 
+access-list CPI extended permit tcp object-group TuscNetworks object-group DataBaseServers range 5900 5905 
+access-list CPI extended permit ip object-group VideoClient host 38.65.194.46 
+access-list CPI extended permit udp any host 38.65.194.46 eq 5003 
+access-list CPI extended permit udp any host 38.65.194.46 eq 5001 
+access-list CPI extended permit tcp any host 38.65.194.46 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.46 eq 5003 
+access-list CPI extended permit tcp any host 38.65.194.46 eq 5001 
+access-list CPI extended permit tcp any host 38.65.194.32 eq www 
+access-list CPI extended permit tcp any host 38.65.194.32 eq https 
+access-list CPI extended permit tcp any host 38.65.194.34 object-group DM_INLINE_TCP_1 
+access-list CPI remark SMTP Access
+access-list CPI extended permit object-group DM_INLINE_SERVICE_1 object-group SMTP_Access host 38.65.194.34 
+access-list CPI extended permit tcp any host 38.65.194.29 eq 1935 
+access-list CPI extended permit udp host 74.7.88.202 host 38.65.194.69 eq tftp 
+access-list CPI extended permit ip host 74.7.88.202 host 38.65.194.69 
+access-list CPI extended permit tcp 208.49.141.128 255.255.255.224 host 38.65.194.32 eq smtp 
+access-list CPI extended permit tcp any host 38.65.194.18 object-group DM_INLINE_TCP_3 
+access-list CPI remark Transnexus support
+access-list CPI extended permit ip host 45.24.188.161 host 38.65.194.100 
+access-list CPI extended deny ip host 63.241.135.78 host 38.65.194.120 
+access-list CPI extended deny ip 188.143.232.0 255.255.255.0 host 38.65.194.120 
+access-list CPI extended deny ip host 178.169.199.143 host 38.65.194.120 
+access-list CPI extended permit tcp any host 38.65.194.120 eq https 
+access-list CPI extended permit tcp any host 38.65.194.120 eq www 
+access-list CPI remark ATC Migration
+access-list CPI extended permit tcp object-group ATC_Web_Access host 38.65.194.120 eq 1433 
+access-list CPI extended permit tcp any host 38.65.194.120 eq 990 
+access-list CPI extended permit tcp any host 38.65.194.120 range 50000 51000 
+access-list CPI extended permit tcp any host 38.65.194.120 eq ssh 
+access-list CPI remark VBP ST Rack 6
+access-list CPI extended permit tcp any host 38.65.194.82 eq h323 
+access-list CPI remark VBP ST Rack 6
+access-list CPI extended permit object-group TCPUDP any host 38.65.194.82 eq 5061 
+access-list CPI extended permit icmp any host 38.65.194.82 
+access-list CPI extended permit icmp object-group SMTP_Access host 38.65.194.34 
+access-list CPI extended permit object-group DM_INLINE_SERVICE_2 object-group SMTP_Access host 38.65.194.78 
+access-list CPI extended permit tcp host 156.154.17.37 host 38.65.194.14 eq ssh 
+access-list CPI extended permit tcp host 156.154.17.37 host 38.65.194.14 eq https 
+access-list CPI extended permit tcp host 99.165.178.161 host 38.65.194.14 eq ssh 
+access-list CPI extended permit tcp host 99.165.178.161 host 38.65.194.14 eq https 
+access-list CPI extended permit tcp any host 38.65.194.71 eq ssh 
+access-list CPI extended permit tcp any host 38.65.194.71 eq 990 
+access-list CPI extended permit tcp host 52.149.189.38 host 38.65.194.14 eq ssh 
+access-list CPI extended permit tcp host 52.149.189.38 host 38.65.194.14 eq https 
+access-list outside_cryptomap_orrick extended permit ip 10.100.89.0 255.255.255.128 172.31.100.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 10.100.89.0 255.255.255.128 172.31.1.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 10.100.89.0 255.255.255.128 172.31.10.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 10.100.89.0 255.255.255.128 172.31.15.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 10.100.89.0 255.255.255.128 172.31.28.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 10.100.86.0 255.255.255.0 172.31.100.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 10.100.88.0 255.255.255.0 172.31.100.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 10.100.197.0 255.255.255.0 172.31.100.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 172.22.2.240 255.255.255.252 172.31.100.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 10.127.0.0 255.255.255.0 172.31.100.0 255.255.255.0 
+access-list nonatCogSch extended permit ip 172.16.0.0 255.240.0.0 10.0.0.0 255.0.0.0 
+access-list nonatCogSch extended permit ip 10.0.0.0 255.0.0.0 10.0.0.0 255.0.0.0 
+access-list nonatCogSch extended permit ip 172.16.0.0 255.240.0.0 172.16.0.0 255.240.0.0 
+access-list nonatCogSch extended permit ip 10.0.0.0 255.0.0.0 172.16.0.0 255.240.0.0 
+access-list nonatCogSch extended permit ip 172.16.0.0 255.240.0.0 10.100.195.0 255.255.255.0 
+access-list nonatCogSch extended permit ip 10.0.0.0 255.0.0.0 10.100.195.0 255.255.255.0 
+access-list nonatCogSch extended permit ip host 172.16.1.233 host 206.168.216.235 
+access-list nonatCogSch extended permit ip host 172.16.1.64 host 206.168.216.235 
+access-list nonatCogSch extended permit ip host 172.16.1.234 host 206.168.216.235 
+access-list nonatCogSch extended permit ip host 172.16.1.248 host 206.168.216.235 
+access-list nonatCogSch extended permit ip host 172.21.4.28 host 206.168.216.235 
+access-list nonatCogSch extended permit ip host 172.21.9.202 host 206.168.216.235 
+access-list nonatCogSch extended permit ip host 172.19.19.10 host 206.168.216.235 
+access-list nonatCogSch extended permit ip host 172.16.1.63 host 206.168.216.235 
+access-list nonatCogSch extended permit ip host 172.16.1.246 host 206.168.216.235 
+access-list capdat extended permit ip any host 206.168.216.235 
+access-list capdat extended permit ip host 206.168.216.235 any 
+access-list capdb extended permit ip any host 172.16.1.233 
+access-list capdb extended permit ip host 172.16.1.233 any 
+access-list nonatCogChiAur extended permit ip 172.21.4.0 255.255.255.0 any 
+access-list PROXY extended permit tcp object-group USCHIBRI1 185.37.222.64 255.255.255.192 
+access-list PROXY extended permit udp object-group USCHIBRI1 185.37.222.64 255.255.255.192 
+access-list PROXY extended deny ip object-group USCHIBRI1 any 
+access-list PROXY extended deny ip any host 59.8.70.158 
+access-list PROXY extended deny ip any host 114.205.211.94 
+access-list PROXY extended permit tcp any any eq smtp log notifications 
+access-list PROXY extended permit tcp host 172.19.11.11 any eq www 
+access-list PROXY extended permit tcp host 172.19.11.12 any eq www 
+access-list PROXY extended permit tcp host 172.19.11.11 any eq https 
+access-list PROXY extended permit tcp host 172.19.11.12 any eq https 
+access-list PROXY extended permit ip any host 38.65.194.13 
+access-list PROXY extended permit ip any 93.187.231.64 255.255.255.192 
+access-list PROXY extended permit ip any host 213.139.102.192 
+access-list PROXY extended permit ip any 209.51.241.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.25.23 any 
+access-list PROXY extended permit ip host 172.19.26.25 any 
+access-list PROXY extended permit ip host 172.19.6.71 any 
+access-list PROXY extended permit ip any 172.16.0.0 255.240.0.0 
+access-list PROXY extended permit ip any host 213.139.102.194 
+access-list PROXY extended permit ip any 172.21.0.0 255.255.0.0 
+access-list PROXY extended permit tcp host 172.19.20.53 host 207.223.241.90 eq www 
+access-list PROXY extended permit tcp host 172.19.20.53 host 87.98.169.130 eq www 
+access-list PROXY extended permit ip host 172.19.20.53 64.41.193.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.53 204.176.46.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.53 66.114.168.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.53 66.114.169.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.53 74.220.121.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.53 62.109.200.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.53 64.68.96.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.53 64.68.97.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.31 64.41.193.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.31 204.176.46.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.31 66.114.168.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.31 66.114.169.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.31 74.220.121.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.31 64.68.97.0 255.255.255.0 
+access-list PROXY extended permit tcp host 172.19.20.45 72.21.0.0 255.255.0.0 eq www 
+access-list PROXY extended permit tcp host 172.19.20.45 72.21.0.0 255.255.0.0 eq https 
+access-list PROXY extended permit tcp host 172.19.20.32 193.32.35.0 255.255.255.0 eq www 
+access-list PROXY extended permit tcp host 172.19.20.32 193.32.35.0 255.255.255.0 eq https 
+access-list PROXY extended permit tcp host 172.19.19.10 any eq www 
+access-list PROXY extended permit tcp host 172.19.19.10 any eq https 
+access-list PROXY extended deny tcp 172.19.19.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.19.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.20.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.20.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.21.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.21.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.22.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.22.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.23.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.23.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.24.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.24.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.25.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.25.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.26.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.26.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.27.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.27.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.28.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.28.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp any any eq 6667 
+access-list PROXY extended permit tcp any any range 6000 7000 log alerts 
+access-list PROXY extended permit tcp any any eq 3267 log alerts 
+access-list PROXY extended permit tcp any any eq 5555 log alerts 
+access-list PROXY extended permit tcp any any eq 4367 log alerts 
+access-list PROXY extended permit ip any any 
+access-list PROXY extended permit icmp any any 
+access-list PROXY extended permit ip any 10.100.54.0 255.255.255.0 
+access-list PROXY remark CDR Analayser
+access-list PROXY extended permit ip any host 10.100.88.113 
+access-list PROXY remark usschms02
+access-list PROXY extended permit ip any host 10.100.88.120 
+access-list AS_access_in remark ATC Request to Russia Range
+access-list AS_access_in extended deny ip 188.143.232.0 255.255.255.0 any 
+access-list AS_access_in remark ATC Request to Block this IP
+access-list AS_access_in extended deny ip host 178.169.199.143 host 38.65.194.120 
+access-list AS_access_in extended permit ip any any 
+access-list AS_access_in remark ATC Request to open SSH
+access-list AS_access_in extended permit tcp any host 38.65.194.120 eq ssh 
+access-list INTERCO_access_in extended permit ip any any 
+access-list global_mpc remark Remove VBP from H323 Inspection
+access-list global_mpc extended permit ip any host 38.65.194.82 
+pager lines 24
+logging enable
+logging timestamp
+logging buffer-size 128000
+logging buffered notifications
+logging trap errors
+logging asdm warnings
+logging device-id hostname
+logging host inside 10.100.137.24
+logging host inside 10.100.137.89
+no logging message 106016
+mtu inside 1500
+mtu tdmdmz 1500
+mtu outside 1500
+mtu AS 1500
+mtu INTERCO 1500
+failover
+failover lan unit primary
+failover lan interface LANFAIL Management0/0
+failover link LANFAIL Management0/0
+failover interface ip LANFAIL 10.10.75.1 255.255.255.252 standby 10.10.75.2
+monitor-interface inside
+icmp unreachable rate-limit 1 burst-size 1
+asdm image disk0:/asdm-633.bin
+no asdm history enable
+arp timeout 14400
+global (outside) 1 38.65.194.10 netmask 255.255.255.0
+nat (inside) 0 access-list nonat
+nat (inside) 1 0.0.0.0 0.0.0.0
+static (inside,outside) 38.65.194.66 172.21.6.199 netmask 255.255.255.255 
+static (tdmdmz,outside) 38.65.194.18 10.100.231.2 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.38 10.100.55.11 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.37 10.100.55.12 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.48 172.16.1.210 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.70 172.16.6.11 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.71 10.100.88.152 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.73 172.16.6.12 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.74 172.16.6.13 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.75 172.16.6.14 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.77 172.16.6.16 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.78 10.100.88.151 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.76 172.16.1.61 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.39 172.16.1.106 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.41 172.16.1.110 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.9 172.16.1.72 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.80 172.16.6.18 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.79 172.29.10.20 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.69 172.19.19.10 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.36 172.16.1.24 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.60 10.10.180.53 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.61 10.10.180.54 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.62 10.10.180.55 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.63 10.10.180.56 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.64 10.10.180.58 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.20 172.21.11.101 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.25 172.21.4.28 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.23 172.16.1.233 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.24 172.16.1.234 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.26 172.16.1.155 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.72 10.100.80.242 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.46 10.100.80.241 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.27 172.16.1.136 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.65 10.100.35.31 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.32 10.100.88.12 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.29 10.100.88.20 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.83 10.100.54.33 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.85 10.100.54.35 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.86 10.100.54.36 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.87 10.100.54.37 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.100 10.100.88.113 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.34 10.100.88.120 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.120 10.100.54.120 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.11 10.100.88.207 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.82 10.100.54.43 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.14 10.100.81.203 netmask 255.255.255.255 
+access-group ACL_BLOCK_SCH-DTP in interface inside
+access-group CPI in interface outside
+access-group AS_access_in in interface AS
+access-group INTERCO_access_in in interface INTERCO
+route outside 0.0.0.0 0.0.0.0 38.103.112.107 254
+route inside 10.0.0.0 255.0.0.0 172.21.6.1 1
+route inside 172.16.0.0 255.240.0.0 172.21.6.1 1
+route outside 172.31.1.0 255.255.255.0 38.103.112.105 10
+route outside 172.31.10.0 255.255.255.0 38.103.112.105 10
+route outside 172.31.15.0 255.255.255.0 38.103.112.105 10
+route outside 172.31.28.0 255.255.255.0 38.103.112.105 10
+route outside 172.31.100.0 255.255.255.0 38.103.112.105 10
+route inside 192.168.0.0 255.255.0.0 172.21.6.1 1
+timeout xlate 3:00:00
+timeout conn 1:00:00 half-closed 0:10:00 udp 0:02:00 icmp 0:00:02
+timeout sunrpc 0:10:00 h323 0:05:00 h225 1:00:00 mgcp 0:05:00 mgcp-pat 0:05:00
+timeout sip 0:30:00 sip_media 0:02:00 sip-invite 0:03:00 sip-disconnect 0:02:00
+timeout sip-provisional-media 0:02:00 uauth 0:05:00 absolute
+timeout tcp-proxy-reassembly 0:01:00
+dynamic-access-policy-record DfltAccessPolicy
+aaa-server RSApartners protocol radius
+aaa-server RSApartners (inside) host 172.16.1.53
+ timeout 5
+! key  <removed> 
+aaa-server ARKANETRADIUS protocol radius
+aaa-server ARKANETRADIUS (inside) host 10.115.38.110
+! key  <removed> 
+ authentication-port 1812
+ accounting-port 1813
+aaa-server ARKANETRADIUS (inside) host 10.100.92.1
+! key  <removed> 
+ authentication-port 1812
+ accounting-port 1813
+aaa authentication enable console ARKANETRADIUS LOCAL
+aaa authentication ssh console ARKANETRADIUS LOCAL
+snmp-server host inside 10.100.137.55 community ***** version 2c
+snmp-server host inside 10.100.88.13 community ***** version 2c
+snmp-server host inside 10.100.88.80 community ***** version 2c
+snmp-server host inside 172.16.1.72 community ***** version 2c
+snmp-server location Chicago IL
+no snmp-server contact
+snmp-server community *****
+snmp-server enable traps snmp authentication linkup linkdown coldstart
+snmp-server enable traps syslog
+service resetoutside
+crypto ipsec transform-set ESP-AES-256-MD5 esp-aes-256 esp-md5-hmac 
+crypto ipsec transform-set ESP-DES-SHA esp-des esp-sha-hmac 
+crypto ipsec transform-set ESP-DES-MD5 esp-des esp-md5-hmac 
+crypto ipsec transform-set ESP-AES-192-MD5 esp-aes-192 esp-md5-hmac 
+crypto ipsec transform-set ESP-AES-256-SHA esp-aes-256 esp-sha-hmac 
+crypto ipsec transform-set ESP-AES-128-SHA esp-aes esp-sha-hmac 
+crypto ipsec transform-set ESP-AES-192-SHA esp-aes-192 esp-sha-hmac 
+crypto ipsec transform-set ESP-AES-128-MD5 esp-aes esp-md5-hmac 
+crypto ipsec transform-set ESP-3DES-SHA esp-3des esp-sha-hmac 
+crypto ipsec transform-set ESP-AES-128-SHA-TRANS esp-aes esp-sha-hmac 
+crypto ipsec transform-set ESP-AES-128-SHA-TRANS mode transport
+crypto ipsec transform-set ESP-AES-128-MD5-TRANS esp-aes esp-md5-hmac 
+crypto ipsec transform-set ESP-AES-128-MD5-TRANS mode transport
+crypto ipsec transform-set ESP-AES-192-SHA-TRANS esp-aes-192 esp-sha-hmac 
+crypto ipsec transform-set ESP-AES-192-SHA-TRANS mode transport
+crypto ipsec transform-set ESP-AES-192-MD5-TRANS esp-aes-192 esp-md5-hmac 
+crypto ipsec transform-set ESP-AES-192-MD5-TRANS mode transport
+crypto ipsec transform-set ESP-AES-256-SHA-TRANS esp-aes-256 esp-sha-hmac 
+crypto ipsec transform-set ESP-AES-256-SHA-TRANS mode transport
+crypto ipsec transform-set ESP-AES-256-MD5-TRANS esp-aes-256 esp-md5-hmac 
+crypto ipsec transform-set ESP-AES-256-MD5-TRANS mode transport
+crypto ipsec transform-set ESP-3DES-SHA-TRANS esp-3des esp-sha-hmac 
+crypto ipsec transform-set ESP-3DES-SHA-TRANS mode transport
+crypto ipsec transform-set ESP-3DES-MD5-TRANS esp-3des esp-md5-hmac 
+crypto ipsec transform-set ESP-3DES-MD5-TRANS mode transport
+crypto ipsec transform-set ESP-DES-SHA-TRANS esp-des esp-sha-hmac 
+crypto ipsec transform-set ESP-DES-SHA-TRANS mode transport
+crypto ipsec transform-set ESP-DES-MD5-TRANS esp-des esp-md5-hmac 
+crypto ipsec transform-set ESP-DES-MD5-TRANS mode transport
+crypto ipsec transform-set ESP-3DES-MD5 esp-3des esp-md5-hmac 
+crypto ipsec security-association lifetime seconds 28800
+crypto ipsec security-association lifetime kilobytes 4608000
+crypto dynamic-map outside_dyn_map 20 set transform-set ESP-3DES-SHA
+crypto map outside_map 150 match address outside_cryptomap_orrick
+crypto map outside_map 150 set peer 128.177.149.176 
+crypto map outside_map 150 set transform-set ESP-3DES-SHA
+crypto map outside_map 65535 ipsec-isakmp dynamic outside_dyn_map
+crypto map outside_map interface outside
+crypto isakmp identity address 
+crypto isakmp enable outside
+crypto isakmp policy 1
+ authentication pre-share
+ encryption 3des
+ hash md5
+ group 2
+ lifetime 86400
+crypto isakmp policy 10
+ authentication pre-share
+ encryption 3des
+ hash sha
+ group 2
+ lifetime 86400
+crypto isakmp policy 65535
+ authentication pre-share
+ encryption 3des
+ hash sha
+ group 2
+ lifetime 86400
+crypto isakmp disconnect-notify
+telnet timeout 20
+ssh 10.0.1.0 255.255.255.0 inside
+ssh 10.245.2.0 255.255.255.0 inside
+ssh 10.100.19.20 255.255.255.255 inside
+ssh 10.100.19.21 255.255.255.255 inside
+ssh 10.115.137.89 255.255.255.255 inside
+ssh 10.250.137.89 255.255.255.255 inside
+ssh 10.100.137.89 255.255.255.255 inside
+ssh 172.29.0.0 255.255.0.0 inside
+ssh 172.30.0.0 255.255.0.0 inside
+ssh timeout 60
+ssh version 2
+console timeout 20
+management-access inside
+threat-detection basic-threat
+threat-detection statistics access-list
+no threat-detection statistics tcp-intercept
+ntp server 10.100.51.1 source inside prefer
+ntp server 10.122.97.1 source inside
+webvpn
+ enable outside
+ anyconnect-essentials
+ svc image disk0:/anyconnect-win-2.5.2019-k9.pkg 1
+ svc image disk0:/anyconnect-macosx-i386-2.5.3055-k9.pkg 2
+ svc image disk0:/anyconnect-linux-2.5.3055-k9.pkg 3
+ svc enable
+ tunnel-group-list enable
+group-policy GroupPolicy3 internal
+group-policy GroupPolicy3 attributes
+ vpn-tunnel-protocol IPSec 
+group-policy GroupPolicy2 internal
+group-policy GroupPolicy2 attributes
+ vpn-tunnel-protocol IPSec 
+group-policy GroupPolicy1 internal
+group-policy GroupPolicy1 attributes
+ vpn-tunnel-protocol IPSec 
+group-policy ChiRemoteVPN internal
+group-policy ChiRemoteVPN attributes
+ dns-server value 10.100.88.10 10.100.97.1
+ vpn-tunnel-protocol IPSec l2tp-ipsec svc webvpn
+ split-tunnel-policy tunnelspecified
+ split-tunnel-network-list value 
+ default-domain value conferenceplus.com
+!username netops password <removed>
+tunnel-group DefaultRAGroup ipsec-attributes
+! pre-shared-key  <removed> 
+ isakmp keepalive threshold 10 retry 2
+ isakmp ikev1-user-authentication none
+tunnel-group ChiRemoteVPN type remote-access
+tunnel-group ChiRemoteVPN webvpn-attributes
+ group-alias AnyConnect enable
+tunnel-group ChiRemoteVPN ipsec-attributes
+! pre-shared-key  <removed> 
+tunnel-group 128.177.149.176 type ipsec-l2l
+tunnel-group 128.177.149.176 ipsec-attributes
+! pre-shared-key  <removed> 
+!
+class-map VBP
+ description Standby VBP
+ match access-list global_mpc
+ match default-inspection-traffic
+class-map IPS-class
+ description Match all traffic for IPS
+ match any
+class-map inspection_default
+ match default-inspection-traffic
+!
+policy-map type inspect dns migrated_dns_map_1
+ parameters
+  message-length maximum 1280
+policy-map global_policy
+ description IPS Policy for all Interfaces
+ class inspection_default
+  inspect dns migrated_dns_map_1 
+  inspect ftp 
+  inspect netbios 
+  inspect rsh 
+  inspect rtsp 
+  inspect sqlnet 
+  inspect sunrpc 
+  inspect tftp 
+  inspect xdmcp 
+  inspect icmp 
+  inspect h323 h225 
+  inspect h323 ras 
+ class VBP
+  inspect icmp 
+!
+service-policy global_policy global
+prompt hostname context 
+call-home
+ profile CiscoTAC-1
+  no active
+  destination address http https://tools.cisco.com/its/service/oddce/services/DDCEService
+  destination address email callhome@cisco.com
+  destination transport-method http
+  subscribe-to-alert-group diagnostic
+  subscribe-to-alert-group environment
+  subscribe-to-alert-group inventory periodic monthly
+  subscribe-to-alert-group configuration periodic monthly
+  subscribe-to-alert-group telemetry periodic daily
+!
+config-register 0x1
+:
+ASA Version 8.2(3) 
+!
+hostname chifw01-1
+domain-name conferenceplus.com
+!enable password <removed>
+!passwd <removed>
+no names
+name 172.16.0.0 Sch_Network
+name 172.16.1.72 Sch_NewNOC
+name 172.16.1.20 Sch_PSQL02
+name 38.65.194.11 NS1_ConfPlus_ext
+name 38.65.194.40 NS1_TrueConf_ext
+name 172.16.1.63 Sch_QDB01c
+name 172.16.1.64 Sch_QDB02c
+name 172.16.1.233 Sch_PDB01c
+name 172.16.1.234 Sch_PDB02c
+name 172.16.1.248 Sch_DBA01
+name 172.21.9.202 Lon_PDB02
+name 38.65.194.48 PolycomMGC1_ext
+name 172.16.1.210 PolycomMGC1
+name 38.65.194.70 PolycomVS1_ext
+name 172.16.6.11 PolycomVS1
+name 172.16.6.15 PolycomVS2 description can be removed?
+name 38.65.194.73 PolycomVS3_ext
+name 172.16.6.12 PolycomVS3
+name 38.65.194.74 PolycomVS4_ext
+name 172.16.6.13 PolycomVS4
+name 38.65.194.75 PolycomVS5_ext
+name 172.16.6.14 PolycomVS5
+name 38.65.194.77 PolycomVS6_ext
+name 172.16.6.16 PolycomVS6
+name 172.16.6.17 PolycomVS7
+name 38.65.194.76 Sch_CDN01_ext
+name 172.16.1.61 Sch_CDN01
+name 38.65.194.79 LifeSizeVS1_ext
+name 38.65.194.33 Sch_Vircom_ext
+name 38.65.194.38 Sch_PMTA01_ext
+name 38.65.194.37 Sch_PMTA02_ext
+name 172.16.1.214 Sch_QDB01
+name 172.16.1.212 Sch_PDB01
+name 172.16.1.5 Sch_PAS02
+name 172.16.1.66 Sch_PAS03
+name 172.16.1.56 Sch_PWS01
+name 172.16.1.1 Sch_PAS01
+name 38.65.194.12 MeetMe_ext
+name 38.65.194.13 ConfPlus_ext
+name 38.65.194.16 YourConfCenter_ext
+name 38.65.194.42 TrueConf_ext
+name 38.65.194.17 YourConfCentre_ext
+name 38.65.194.21 LonGlobal_ext
+name 172.16.1.106 Sch_PAS06
+name 38.65.194.39 Sch_PAS06_ext
+name 172.16.1.110 Sch_QAS03
+name 38.65.194.41 Sch_QAS03_ext
+name 172.16.1.57 Sch_PGW02
+name 172.16.1.163 Sch_PDB01vip
+name 172.16.1.164 Sch_PDB02vip
+name 172.17.25.201 DUB_PDB02
+name 172.16.1.145 Sch_QDB01vip
+name 172.16.1.146 Sch_QDB02vip
+name 10.10.80.31 Chi_PWZ01
+name 10.10.80.32 Chi_PWZ02
+name 38.65.194.30 Chi_ISA01usa_ext
+name 38.65.194.31 Chi_ISA01eur_ext
+name 38.65.194.47 Chi_PAPZ02_ext
+name 64.41.193.0 LiveMeet7
+name 204.176.46.0 LiveMeet8
+name 172.19.11.11 Sch_ISA02
+name 172.19.11.12 Sch_ISA03
+name 38.65.194.9 Sch_NewNOC_ext
+name 38.65.194.80 PolycomVS8_ext
+name 172.16.6.18 PolycomVS8
+name 172.16.1.83 Sch_PFS02
+name 172.29.10.20 LifeSizeVS1
+name 172.16.1.24 Sch_DRS01
+name 38.65.194.36 Sch_DRS01_ext
+name 38.65.194.49 CHI_PAEZ01_ext
+name 10.10.180.53 BetaConfPlus_DMZ
+name 38.65.194.60 BetaConfPlus_ext
+name 10.10.180.54 BetaGlobal_DMZ
+name 38.65.194.61 BetaGlobal_ext
+name 10.10.180.55 BetaConfCenter_DMZ
+name 38.65.194.62 BetaConfCenter_ext
+name 38.65.194.63 BetaTrueConf_ext
+name 10.10.180.58 BetaConfCentre_DMZ
+name 38.65.194.64 BetaConfCentre_ext
+name 172.21.11.101 Chi741
+name 38.65.194.20 Chi741_ext
+name 172.21.4.28 WD_SDB02
+name 38.65.194.25 WD_SDB02_ext
+name 38.65.194.23 Sch_PDB01c_ext
+name 38.65.194.24 Sch_PDB02c_ext
+name 172.16.1.155 Sch_BDB01
+name 38.65.194.26 Sch_BDB01_ext
+name 38.65.194.72 Chi_IPVCR_ext
+name 10.100.80.242 Chi_IPVCR
+name 38.65.194.46 ChiMGC1_ext
+name 10.100.80.241 ChiMGC1
+name 172.16.1.136 USSCHPDB1
+name 38.65.194.27 USSCHPDB1_ext
+name 10.100.88.12 USSCHMS01
+name 38.65.194.32 USSCHMS01_ext
+name 10.100.88.20 Sch_ENG07
+name 38.65.194.29 Sch_ENG07_ext
+name 10.100.88.78 USSCHMS02
+name 10.100.195.0 RSA_ChiVPNPool
+name 62.209.51.6 ProofPoint description ProofPoint
+name 91.207.212.9 ProofPoint2 description ProofPoint2
+name 10.100.35.31 USPPAXPress description PreProd Arakdin Express
+name 38.65.194.65 USPPAXPress_ext description PreProd Arkadin Express External
+name 10.100.88.15 uschiradius1
+name 10.100.55.11 Sch_PMTA01
+name 10.100.55.12 Sch_PMTA02
+name 10.100.55.6 uschipas02 description New Pas02
+name 10.100.55.5 uschipas01 description Chicago application server
+name 10.100.55.7 uschipas03 description Chicago SQl server
+name 10.100.54.0 dmz-vlan54 description new dmz vlan
+name 10.10.180.56 BetaTrueConf_DMZ
+name 10.100.54.33 ConfPlus_DMZ_new description New Chi Web servers Address
+name 38.65.194.83 ConfPlus_ext_new description New Chi Web servers Address
+name 10.100.54.37 MeetMe_DMZ_new description New Chi Web servers Address
+name 38.65.194.87 MeetMe_ext_new description New Chi Web servers Address
+name 10.100.54.36 TrueConf_DMZ_new description New Chi Web servers Address
+name 38.65.194.86 TrueConf_ext_new description New Chi Web servers Address
+name 10.100.54.35 YourConfCenter_DMZ_new description New Chi Web servers Address
+name 38.65.194.85 YourConfCenter_ext_new description New Chi Web servers Address
+name 45.24.188.161 transnexus description Transnexus support
+name 10.100.88.113 uschicdr01 description Nexoss CDR Analyser Internal IP
+name 38.65.194.100 uschicdr01-ext description Nexoos CDR Analyser
+name 38.65.194.120 ATC_ext description ATC Conferencing
+name 10.100.54.120 ATC_internal description ATC Conferencing
+name 108.16.31.84 ATC1 description ATC Migration
+name 207.97.229.92 ATC2 description ATC Migration
+name 69.20.93.144 ATC3 description ATC Migration
+name 69.20.93.147 ATC4 description ATC Migration
+name 69.20.93.148 ATC5 description ATC Migration
+name 10.100.54.43 vbpstrack6_dmz description VBP ST Rack 6
+name 38.65.194.82 vbpstrack6_ext description VBP ST Rack 6
+name 162.229.106.117 JohnHome_Test
+name 24.13.75.6 vm-test description Vito Test
+name 38.65.194.34 NAMAIL_External
+name 50.200.58.97 Bhav_Test
+name 8.19.201.250 INXPO_Public description INXPO SMTP relay Brad E contact
+name 23.101.170.138 ARTS_Public description Azure cloud version of arts
+name 187.32.132.193 ARTS_Public2 description Azure cloud arts 2
+name 38.65.194.71 Meetme_FTP02_Ext
+name 10.100.88.152 Meetme_FTP02_Int
+name 38.65.194.78 USSCHEX2016_Ext description Exchange 2016 Schamburg Connector
+name 10.100.88.151 USSCHEX2016_Int description Exchange 2016 Internal
+name 10.100.81.203 USCHINEXDB01
+name 99.165.178.161 transnexus-neustar2
+name 156.154.17.37 sipix12-lnp.neustar.biz-transnexus-neustar
+dns-guard
+!
+interface GigabitEthernet0/0
+ description X:Q:chicore0[12]:Gi3/47;Gi2/11
+ no nameif
+ no security-level
+ no ip address
+!
+interface GigabitEthernet0/0.10
+ vlan 10
+ nameif inside
+ security-level 100
+ ip address 172.21.6.2 255.255.255.0 standby 172.21.6.3 
+!
+interface GigabitEthernet0/0.231
+ vlan 231
+ nameif tdmdmz
+ security-level 50
+ ip address 10.100.231.254 255.255.255.0 standby 10.100.231.253 
+!
+interface GigabitEthernet0/1
+ speed 1000
+ duplex full
+ shutdown
+ no nameif
+ no security-level
+ no ip address
+!
+interface GigabitEthernet0/2
+ shutdown
+ no nameif
+ no security-level
+ no ip address
+!
+interface GigabitEthernet0/3
+ description X:Q:chiixag0[12]:Gi3/3;Gi2/3
+ no nameif
+ no security-level
+ no ip address
+!
+interface GigabitEthernet0/3.178
+ vlan 178
+ nameif outside
+ security-level 0
+ ip address 38.103.112.106 255.255.255.248 
+!
+interface GigabitEthernet0/3.906
+ vlan 906
+ nameif AS
+ security-level 0
+ ip address 185.37.222.126 255.255.255.192 
+!
+interface GigabitEthernet0/3.908
+ vlan 908
+ nameif INTERCO
+ security-level 0
+ ip address 172.20.20.1 255.255.255.252 
+!
+interface Management0/0
+ description LAN/STATE Failover Interface
+!
+boot system disk0:/asa823-k8.bin
+boot system disk0:/asa821-18-k8.bin
+ftp mode passive
+clock timezone CST -6
+clock summer-time CDT recurring
+dns domain-lookup inside
+dns domain-lookup outside
+dns server-group DefaultDNS
+ domain-name conferenceplus.com
+same-security-traffic permit inter-interface
+same-security-traffic permit intra-interface
+object-group network VideoClient
+ description List of IPs of Video Customers
+ network-object 174.46.163.48 255.255.255.240
+ network-object 174.46.163.64 255.255.255.248
+ network-object 99.39.1.176 255.255.255.248
+ network-object 64.8.75.44 255.255.255.254
+ network-object 64.86.84.160 255.255.255.248
+ network-object 209.7.23.0 255.255.255.0
+ network-object 24.15.59.112 255.255.255.255
+ network-object 98.227.173.65 255.255.255.255
+ network-object 68.22.113.166 255.255.255.255
+ network-object 207.58.192.191 255.255.255.255
+ network-object 207.58.192.204 255.255.255.255
+ network-object 207.58.192.205 255.255.255.255
+ network-object 207.58.192.208 255.255.255.255
+ network-object 207.58.192.209 255.255.255.255
+ network-object 216.168.41.145 255.255.255.255
+ network-object 207.155.134.186 255.255.255.255
+ network-object 216.57.7.166 255.255.255.255
+ network-object 216.168.41.146 255.255.255.255
+ network-object 216.57.7.165 255.255.255.255
+ network-object 80.86.105.4 255.255.255.255
+ network-object 207.155.134.187 255.255.255.255
+ network-object 74.95.5.21 255.255.255.255
+ network-object 65.194.96.102 255.255.255.255
+ network-object 65.194.96.106 255.255.255.255
+ network-object 190.86.172.125 255.255.255.255
+ network-object 38.100.64.201 255.255.255.255
+ network-object 209.12.224.2 255.255.255.255
+ network-object 66.127.131.207 255.255.255.255
+ network-object 8.14.70.60 255.255.255.255
+ network-object 38.96.192.134 255.255.255.255
+ network-object 66.161.123.223 255.255.255.255
+ network-object 97.65.237.245 255.255.255.255
+ network-object 65.245.66.178 255.255.255.255
+ network-object 38.96.10.165 255.255.255.255
+ network-object 38.106.164.235 255.255.255.255
+ network-object 202.39.75.203 255.255.255.255
+ network-object 129.71.204.129 255.255.255.255
+ network-object 63.68.134.100 255.255.255.255
+ network-object 128.252.251.1 255.255.255.255
+ network-object 96.238.221.34 255.255.255.255
+ network-object 66.238.93.226 255.255.255.255
+ network-object 64.157.29.159 255.255.255.255
+ network-object 209.203.90.14 255.255.255.255
+ network-object 99.18.251.93 255.255.255.255
+ network-object 212.23.248.100 255.255.255.255
+ network-object 12.239.6.50 255.255.255.255
+ network-object 12.173.63.200 255.255.255.255
+ network-object 204.16.66.60 255.255.255.255
+ network-object 213.79.34.166 255.255.255.255
+ network-object 87.238.217.133 255.255.255.255
+ network-object 82.114.82.106 255.255.255.255
+ network-object 210.5.233.19 255.255.255.255
+ network-object 152.118.149.10 255.255.255.255
+ network-object 193.128.74.81 255.255.255.255
+ network-object 65.123.203.251 255.255.255.255
+ network-object 217.52.80.243 255.255.255.255
+ network-object 210.5.233.197 255.255.255.255
+ network-object 200.3.114.206 255.255.255.255
+ network-object 53.65.177.133 255.255.255.255
+ network-object 190.60.220.78 255.255.255.255
+ network-object 12.236.64.130 255.255.255.255
+ network-object 74.11.214.39 255.255.255.255
+ network-object 74.11.214.34 255.255.255.255
+ network-object 63.163.160.20 255.255.255.255
+ network-object 67.98.144.70 255.255.255.255
+ network-object 205.166.76.18 255.255.255.255
+ network-object 206.18.168.200 255.255.255.255
+ network-object 206.18.168.201 255.255.255.255
+ network-object 62.245.198.152 255.255.255.255
+ network-object 64.86.84.164 255.255.255.255
+ network-object 203.166.49.70 255.255.255.255
+ network-object 203.166.49.71 255.255.255.255
+ network-object 86.47.57.73 255.255.255.255
+ network-object 129.71.204.136 255.255.255.255
+ network-object 4.79.245.180 255.255.255.255
+ network-object 139.102.127.51 255.255.255.255
+ network-object 129.71.207.160 255.255.255.255
+ network-object 38.98.181.31 255.255.255.255
+ network-object 130.127.107.206 255.255.255.255
+ network-object 59.154.61.100 255.255.255.255
+ network-object 114.141.161.130 255.255.255.255
+ network-object 207.58.192.200 255.255.255.255
+ network-object 63.163.160.32 255.255.255.255
+ network-object 207.188.255.9 255.255.255.255
+ network-object 208.250.56.250 255.255.255.255
+ network-object 200.23.252.141 255.255.255.255
+ network-object 66.17.221.190 255.255.255.255
+ network-object 128.104.191.71 255.255.255.255
+ network-object 67.134.247.130 255.255.255.255
+ network-object 12.69.53.152 255.255.255.255
+ network-object 99.64.143.211 255.255.255.255
+ network-object 209.12.17.136 255.255.255.255
+ network-object 99.64.143.212 255.255.255.255
+ network-object 99.64.143.213 255.255.255.255
+ network-object 99.64.143.214 255.255.255.255
+ network-object 65.245.66.179 255.255.255.255
+ network-object 76.20.252.23 255.255.255.255
+ network-object 70.168.39.190 255.255.255.255
+ network-object 123.124.237.17 255.255.255.255
+ network-object 218.185.86.214 255.255.255.255
+ network-object 12.146.113.99 255.255.255.255
+ network-object 170.92.254.12 255.255.255.255
+ network-object 129.176.209.55 255.255.255.255
+ network-object 212.135.137.2 255.255.255.255
+ network-object 194.78.219.125 255.255.255.255
+ network-object 194.169.209.21 255.255.255.255
+ network-object 190.144.53.162 255.255.255.255
+ network-object 208.37.160.15 255.255.255.255
+ network-object 208.37.160.16 255.255.255.255
+ network-object 64.52.20.105 255.255.255.255
+ network-object 67.224.87.194 255.255.255.255
+ network-object 193.38.171.50 255.255.255.255
+ network-object 144.92.231.77 255.255.255.255
+ network-object 206.173.110.36 255.255.255.255
+ network-object 207.158.42.180 255.255.255.255
+ network-object 70.167.184.41 255.255.255.255
+ network-object 72.166.158.160 255.255.255.255
+ network-object 131.150.0.138 255.255.255.255
+ network-object 74.10.56.153 255.255.255.255
+ network-object 65.5.90.144 255.255.255.255
+ network-object 10.202.144.5 255.255.255.255
+ network-object 207.114.185.37 255.255.255.255
+ network-object 125.20.7.188 255.255.255.255
+ network-object 159.251.12.45 255.255.255.255
+ network-object 68.190.254.132 255.255.255.255
+ network-object 68.190.254.133 255.255.255.255
+ network-object 168.215.96.200 255.255.255.255
+ network-object 141.161.89.29 255.255.255.255
+ network-object 69.155.81.228 255.255.255.255
+ network-object 69.155.81.223 255.255.255.255
+ network-object 69.155.81.224 255.255.255.255
+ network-object 38.98.33.14 255.255.255.255
+ network-object 67.206.83.168 255.255.255.255
+ network-object 98.175.197.34 255.255.255.255
+ network-object 190.144.53.166 255.255.255.255
+ network-object 64.129.169.49 255.255.255.255
+ network-object 64.190.41.209 255.255.255.255
+ network-object 12.36.74.2 255.255.255.255
+ network-object 78.140.116.83 255.255.255.255
+ network-object 209.234.145.165 255.255.255.255
+ network-object 209.203.91.41 255.255.255.255
+ network-object 68.177.89.163 255.255.255.255
+ network-object 146.197.246.28 255.255.255.255
+ network-object 64.139.50.147 255.255.255.255
+ network-object 207.122.209.240 255.255.255.255
+ network-object 38.100.106.177 255.255.255.255
+ network-object 65.218.77.13 255.255.255.255
+ network-object 199.83.44.105 255.255.255.255
+ network-object 81.166.216.44 255.255.255.255
+ network-object 12.104.10.115 255.255.255.255
+ network-object 12.104.10.15 255.255.255.255
+ network-object 116.246.40.202 255.255.255.255
+ network-object 80.194.194.98 255.255.255.255
+object-group network DataBaseServers
+ description List of DB Servers for Tusc Support
+ network-object host 38.65.194.23
+ network-object host 38.65.194.24
+ network-object host 38.65.194.25
+ network-object host 38.65.194.26
+ network-object host 38.65.194.27
+object-group network TuscNetworks
+ description List of IPs or Tusc Networks
+ network-object 68.177.221.0 255.255.255.0
+ network-object 66.252.66.160 255.255.255.240
+ network-object 66.252.67.128 255.255.255.224
+ network-object 66.252.75.160 255.255.255.240
+ network-object 198.59.57.16 255.255.255.240
+ network-object 209.156.64.224 255.255.255.240
+ network-object 66.77.99.192 255.255.255.192
+object-group network HackerIP
+ network-object 120.28.0.0 255.255.0.0
+ network-object 125.60.0.0 255.255.0.0
+ network-object host 74.108.89.102
+object-group service DM_INLINE_TCP_1 tcp
+ port-object eq www
+ port-object eq https
+object-group network SMTP_Access
+ description SMTP_Access
+ network-object host 62.209.51.6
+ network-object host 91.207.212.9
+ network-object host 24.13.75.6
+ network-object host 8.19.201.250
+ network-object host 23.101.170.138
+ network-object host 187.32.132.193
+object-group network PreProdAXPressAPI
+ description Access for Arkadin Express PreProd
+ network-object host 72.89.243.119
+ network-object host 62.193.40.144
+ network-object host 62.39.95.39
+ network-object 67.192.20.8 255.255.255.248
+ network-object host 78.24.135.77
+ network-object host 86.64.67.71
+ network-object host 216.192.34.98
+ network-object host 216.162.34.98
+object-group service DM_INLINE_TCP_2 tcp
+ port-object eq www
+ port-object eq https
+object-group service DM_INLINE_TCP_3 tcp
+ port-object eq www
+ port-object eq https
+object-group network ATC_Web_Access
+ network-object host 207.97.229.92
+ network-object host 72.92.16.74
+object-group protocol TCPUDP
+ protocol-object udp
+ protocol-object tcp
+object-group service SMTP_UDP tcp-udp
+ port-object eq 25
+object-group service OTRS_Ports
+ service-object tcp-udp eq 465 
+ service-object tcp-udp eq 993 
+ service-object tcp-udp eq 995 
+ service-object tcp-udp eq 587 
+object-group service DM_INLINE_SERVICE_1
+ group-object OTRS_Ports
+ service-object tcp eq imap4 
+ service-object tcp eq pop3 
+ service-object tcp eq smtp 
+object-group service DM_INLINE_TCP_4 tcp
+ port-object eq www
+ port-object eq https
+object-group service DM_INLINE_SERVICE_2
+ group-object OTRS_Ports
+ service-object tcp eq imap4 
+ service-object tcp eq pop3 
+ service-object tcp eq smtp 
+object-group network USCHIBRI1
+ network-object 10.100.81.100 255.255.255.255
+ network-object 10.100.81.101 255.255.255.255
+ network-object 10.100.81.103 255.255.255.255
+object-group network RFC1918
+ network-object 10.0.0.0 255.0.0.0
+ network-object 172.16.0.0 255.240.0.0
+ network-object 192.168.0.0 255.255.0.0
+object-group network SCH-DTP
+ network-object host 10.200.230.41
+ network-object host 172.21.6.11
+access-list ACL_BLOCK_SCH-DTP extended permit ip object-group SCH-DTP object-group RFC1918 
+access-list ACL_BLOCK_SCH-DTP extended deny ip object-group SCH-DTP any 
+access-list ACL_BLOCK_SCH-DTP extended permit ip any any 
+access-list nonat extended permit ip 172.21.6.0 255.255.255.0 172.16.0.0 255.240.0.0 
+access-list nonat extended permit ip 172.21.6.0 255.255.255.0 10.0.0.0 255.0.0.0 
+access-list nonat extended permit ip any 192.168.3.0 255.255.255.0 
+access-list nonat extended permit ip any 192.168.4.0 255.255.255.0 
+access-list nonat extended permit ip any 172.21.130.0 255.255.255.0 
+access-list nonat extended permit ip any 172.21.144.0 255.255.254.0 
+access-list nonat extended permit ip any 172.31.193.0 255.255.255.0 
+access-list nonat extended permit ip any 172.31.194.0 255.255.255.224 
+access-list nonat extended permit ip 172.16.0.0 255.240.0.0 10.0.0.0 255.0.0.0 
+access-list nonat extended permit ip 10.0.0.0 255.0.0.0 10.0.0.0 255.0.0.0 
+access-list nonat extended permit ip 172.16.0.0 255.240.0.0 172.16.0.0 255.240.0.0 
+access-list nonat extended permit ip 10.0.0.0 255.0.0.0 172.16.0.0 255.240.0.0 
+access-list nonat extended permit ip host 172.16.1.233 host 206.168.216.235 
+access-list nonat extended permit ip host 172.16.1.64 host 206.168.216.235 
+access-list nonat extended permit ip host 172.16.1.234 host 206.168.216.235 
+access-list nonat extended permit ip host 172.16.1.248 host 206.168.216.235 
+access-list nonat extended permit ip host 172.21.4.28 host 206.168.216.235 
+access-list nonat extended permit ip host 172.21.9.202 host 206.168.216.235 
+access-list nonat extended permit ip host 172.19.19.10 host 206.168.216.235 
+access-list nonat extended permit ip host 172.16.1.63 host 206.168.216.235 
+access-list nonat extended permit ip host 172.16.1.246 host 206.168.216.235 
+access-list nonat extended permit ip 192.168.4.0 255.255.255.0 any 
+access-list nonat extended permit ip any 172.31.15.0 255.255.255.0 
+access-list nonat extended permit ip any 172.31.1.0 255.255.255.0 
+access-list nonat extended permit ip any 172.31.10.0 255.255.255.0 
+access-list nonat extended permit ip any 172.31.28.0 255.255.255.0 
+access-list nonat extended permit ip any 172.21.128.0 255.255.255.0 
+access-list nonat extended permit ip any 172.31.100.0 255.255.255.0 
+access-list CogIn extended permit ip any any 
+access-list CogIn extended permit icmp any any 
+access-list CPI extended permit ip any host 38.65.194.100 inactive 
+access-list CPI extended permit tcp any host 38.65.194.87 eq https 
+access-list CPI extended permit tcp any host 38.65.194.87 eq www 
+access-list CPI extended permit tcp any host 38.65.194.86 eq https 
+access-list CPI extended permit tcp any host 38.65.194.86 eq www 
+access-list CPI extended permit tcp any host 38.65.194.85 eq https 
+access-list CPI extended permit tcp any host 38.65.194.85 eq www 
+access-list CPI extended permit tcp any host 38.65.194.83 eq https 
+access-list CPI extended permit tcp any host 38.65.194.83 eq www 
+access-list CPI extended deny ip object-group HackerIP any 
+access-list CPI extended permit icmp any any time-exceeded 
+access-list CPI extended permit icmp any any echo-reply 
+access-list CPI extended permit udp any host 38.65.194.11 eq nameserver 
+access-list CPI extended permit udp any host 38.65.194.11 eq domain inactive 
+access-list CPI extended permit tcp any host 38.65.194.11 eq whois inactive 
+access-list CPI extended permit tcp any host 38.65.194.11 eq ssh inactive 
+access-list CPI extended permit tcp any host 38.65.194.11 eq smtp inactive 
+access-list CPI extended permit tcp any host 38.65.194.11 eq ftp-data inactive 
+access-list CPI extended permit tcp any host 38.65.194.11 eq ftp inactive 
+access-list CPI extended permit udp any host 38.65.194.40 eq nameserver 
+access-list CPI extended permit udp any host 38.65.194.40 eq domain 
+access-list CPI extended permit tcp any host 38.65.194.40 eq whois 
+access-list CPI extended permit tcp any host 38.65.194.11 eq domain 
+access-list CPI extended permit ip object-group VideoClient host 38.65.194.48 
+access-list CPI extended permit udp any host 38.65.194.48 eq 5003 
+access-list CPI extended permit udp any host 38.65.194.48 eq 5001 
+access-list CPI extended permit tcp any host 38.65.194.48 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.48 eq 5003 
+access-list CPI extended permit tcp any host 38.65.194.48 eq 5001 
+access-list CPI extended permit tcp any host 38.65.194.70 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.71 eq https 
+access-list CPI extended permit tcp any host 38.65.194.73 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.74 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.75 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.77 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.78 object-group DM_INLINE_TCP_4 
+access-list CPI extended permit tcp any host 38.65.194.79 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.72 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.76 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.33 eq smtp 
+access-list CPI extended permit tcp any host 38.65.194.12 eq www 
+access-list CPI extended permit tcp any host 38.65.194.12 eq https 
+access-list CPI extended permit tcp any host 38.65.194.13 eq www 
+access-list CPI extended permit tcp any host 38.65.194.13 eq https 
+access-list CPI extended permit tcp any host 38.65.194.16 eq www 
+access-list CPI extended permit tcp any host 38.65.194.16 eq https 
+access-list CPI extended permit tcp any host 38.65.194.42 eq www 
+access-list CPI extended permit tcp any host 38.65.194.42 eq https 
+access-list CPI extended permit tcp any host 38.65.194.17 eq www 
+access-list CPI extended permit tcp any host 38.65.194.17 eq https 
+access-list CPI extended permit tcp any host 38.65.194.21 eq www 
+access-list CPI extended permit tcp any host 38.65.194.21 eq ssh 
+access-list CPI extended permit tcp any host 38.65.194.21 eq https 
+access-list CPI extended permit tcp any host 38.65.194.30 eq www 
+access-list CPI extended permit tcp any host 38.65.194.30 eq https 
+access-list CPI extended permit tcp any host 38.65.194.31 eq www 
+access-list CPI extended permit tcp any host 38.65.194.31 eq https 
+access-list CPI extended permit tcp host 174.129.252.162 host 38.65.194.39 eq 8090 
+access-list CPI extended permit tcp host 184.73.210.114 host 38.65.194.41 eq 8090 
+access-list CPI extended permit tcp any host 38.65.194.47 eq 5061 
+access-list CPI extended permit tcp host 174.129.252.250 host 38.65.194.13 eq 8100 
+access-list CPI extended permit udp host 38.103.112.105 host 38.65.194.9 eq syslog 
+access-list CPI extended permit tcp any host 38.65.194.80 eq h323 
+access-list CPI extended permit tcp host 50.18.112.79 host 38.65.194.39 eq 8090 
+access-list CPI extended permit tcp any host 38.65.194.22 eq www 
+access-list CPI extended permit tcp any host 38.65.194.22 eq https 
+access-list CPI extended permit tcp host 46.137.178.104 host 38.65.194.36 eq 8090 
+access-list CPI extended permit tcp host 107.22.161.177 host 38.65.194.36 eq 8090 
+access-list CPI extended permit tcp host 83.145.110.68 host 38.65.194.49 eq 5061 
+access-list CPI extended permit tcp object-group PreProdAXPressAPI host 38.65.194.66 eq ssh 
+access-list CPI extended permit tcp object-group PreProdAXPressAPI host 38.65.194.65 object-group DM_INLINE_TCP_2 
+access-list CPI extended permit tcp any host 38.65.194.60 eq www 
+access-list CPI extended permit tcp any host 38.65.194.60 eq https 
+access-list CPI extended permit tcp any host 38.65.194.61 eq www 
+access-list CPI extended permit tcp any host 38.65.194.61 eq https 
+access-list CPI extended permit tcp any host 38.65.194.62 eq www 
+access-list CPI extended permit tcp any host 38.65.194.62 eq https 
+access-list CPI extended permit tcp any host 38.65.194.63 eq www 
+access-list CPI extended permit tcp any host 38.65.194.63 eq https 
+access-list CPI extended permit tcp any host 38.65.194.64 eq www 
+access-list CPI extended permit tcp any host 38.65.194.64 eq https 
+access-list CPI extended permit tcp host 184.73.210.42 host 38.65.194.60 eq 8100 
+access-list CPI extended permit tcp 135.124.124.8 255.255.255.248 host 38.65.194.20 eq ssh 
+access-list CPI extended permit tcp 135.124.124.16 255.255.255.252 host 38.65.194.20 eq ssh 
+access-list CPI extended permit tcp host 83.145.110.71 host 38.65.194.49 eq 5061 
+access-list CPI extended permit tcp host 81.93.188.225 host 38.65.194.49 eq 5061 
+access-list CPI extended permit tcp host 81.93.188.229 host 38.65.194.49 eq 5061 
+access-list CPI extended permit icmp host 81.93.188.225 any 
+access-list CPI extended permit icmp host 81.93.188.229 any 
+access-list CPI extended permit tcp object-group TuscNetworks object-group DataBaseServers eq ssh 
+access-list CPI extended permit tcp object-group TuscNetworks object-group DataBaseServers range 5900 5905 
+access-list CPI extended permit ip object-group VideoClient host 38.65.194.46 
+access-list CPI extended permit udp any host 38.65.194.46 eq 5003 
+access-list CPI extended permit udp any host 38.65.194.46 eq 5001 
+access-list CPI extended permit tcp any host 38.65.194.46 eq h323 
+access-list CPI extended permit tcp any host 38.65.194.46 eq 5003 
+access-list CPI extended permit tcp any host 38.65.194.46 eq 5001 
+access-list CPI extended permit tcp any host 38.65.194.32 eq www 
+access-list CPI extended permit tcp any host 38.65.194.32 eq https 
+access-list CPI extended permit tcp any host 38.65.194.34 object-group DM_INLINE_TCP_1 
+access-list CPI remark SMTP Access
+access-list CPI extended permit object-group DM_INLINE_SERVICE_1 object-group SMTP_Access host 38.65.194.34 
+access-list CPI extended permit tcp any host 38.65.194.29 eq 1935 
+access-list CPI extended permit udp host 74.7.88.202 host 38.65.194.69 eq tftp 
+access-list CPI extended permit ip host 74.7.88.202 host 38.65.194.69 
+access-list CPI extended permit tcp 208.49.141.128 255.255.255.224 host 38.65.194.32 eq smtp 
+access-list CPI extended permit tcp any host 38.65.194.18 object-group DM_INLINE_TCP_3 
+access-list CPI remark Transnexus support
+access-list CPI extended permit ip host 45.24.188.161 host 38.65.194.100 
+access-list CPI extended deny ip host 63.241.135.78 host 38.65.194.120 
+access-list CPI extended deny ip 188.143.232.0 255.255.255.0 host 38.65.194.120 
+access-list CPI extended deny ip host 178.169.199.143 host 38.65.194.120 
+access-list CPI extended permit tcp any host 38.65.194.120 eq https 
+access-list CPI extended permit tcp any host 38.65.194.120 eq www 
+access-list CPI remark ATC Migration
+access-list CPI extended permit tcp object-group ATC_Web_Access host 38.65.194.120 eq 1433 
+access-list CPI extended permit tcp any host 38.65.194.120 eq 990 
+access-list CPI extended permit tcp any host 38.65.194.120 range 50000 51000 
+access-list CPI extended permit tcp any host 38.65.194.120 eq ssh 
+access-list CPI remark VBP ST Rack 6
+access-list CPI extended permit tcp any host 38.65.194.82 eq h323 
+access-list CPI remark VBP ST Rack 6
+access-list CPI extended permit object-group TCPUDP any host 38.65.194.82 eq 5061 
+access-list CPI extended permit icmp any host 38.65.194.82 
+access-list CPI extended permit icmp object-group SMTP_Access host 38.65.194.34 
+access-list CPI extended permit object-group DM_INLINE_SERVICE_2 object-group SMTP_Access host 38.65.194.78 
+access-list CPI extended permit tcp host 156.154.17.37 host 38.65.194.14 eq ssh 
+access-list CPI extended permit tcp host 156.154.17.37 host 38.65.194.14 eq https 
+access-list CPI extended permit tcp host 99.165.178.161 host 38.65.194.14 eq ssh 
+access-list CPI extended permit tcp host 99.165.178.161 host 38.65.194.14 eq https 
+access-list CPI extended permit tcp any host 38.65.194.71 eq ssh 
+access-list CPI extended permit tcp any host 38.65.194.71 eq 990 
+access-list CPI extended permit tcp host 52.149.189.38 host 38.65.194.14 eq ssh 
+access-list CPI extended permit tcp host 52.149.189.38 host 38.65.194.14 eq https 
+access-list outside_cryptomap_orrick extended permit ip 10.100.89.0 255.255.255.128 172.31.100.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 10.100.89.0 255.255.255.128 172.31.1.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 10.100.89.0 255.255.255.128 172.31.10.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 10.100.89.0 255.255.255.128 172.31.15.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 10.100.89.0 255.255.255.128 172.31.28.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 10.100.86.0 255.255.255.0 172.31.100.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 10.100.88.0 255.255.255.0 172.31.100.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 10.100.197.0 255.255.255.0 172.31.100.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 172.22.2.240 255.255.255.252 172.31.100.0 255.255.255.0 
+access-list outside_cryptomap_orrick extended permit ip 10.127.0.0 255.255.255.0 172.31.100.0 255.255.255.0 
+access-list nonatCogSch extended permit ip 172.16.0.0 255.240.0.0 10.0.0.0 255.0.0.0 
+access-list nonatCogSch extended permit ip 10.0.0.0 255.0.0.0 10.0.0.0 255.0.0.0 
+access-list nonatCogSch extended permit ip 172.16.0.0 255.240.0.0 172.16.0.0 255.240.0.0 
+access-list nonatCogSch extended permit ip 10.0.0.0 255.0.0.0 172.16.0.0 255.240.0.0 
+access-list nonatCogSch extended permit ip 172.16.0.0 255.240.0.0 10.100.195.0 255.255.255.0 
+access-list nonatCogSch extended permit ip 10.0.0.0 255.0.0.0 10.100.195.0 255.255.255.0 
+access-list nonatCogSch extended permit ip host 172.16.1.233 host 206.168.216.235 
+access-list nonatCogSch extended permit ip host 172.16.1.64 host 206.168.216.235 
+access-list nonatCogSch extended permit ip host 172.16.1.234 host 206.168.216.235 
+access-list nonatCogSch extended permit ip host 172.16.1.248 host 206.168.216.235 
+access-list nonatCogSch extended permit ip host 172.21.4.28 host 206.168.216.235 
+access-list nonatCogSch extended permit ip host 172.21.9.202 host 206.168.216.235 
+access-list nonatCogSch extended permit ip host 172.19.19.10 host 206.168.216.235 
+access-list nonatCogSch extended permit ip host 172.16.1.63 host 206.168.216.235 
+access-list nonatCogSch extended permit ip host 172.16.1.246 host 206.168.216.235 
+access-list capdat extended permit ip any host 206.168.216.235 
+access-list capdat extended permit ip host 206.168.216.235 any 
+access-list capdb extended permit ip any host 172.16.1.233 
+access-list capdb extended permit ip host 172.16.1.233 any 
+access-list nonatCogChiAur extended permit ip 172.21.4.0 255.255.255.0 any 
+access-list PROXY extended permit tcp object-group USCHIBRI1 185.37.222.64 255.255.255.192 
+access-list PROXY extended permit udp object-group USCHIBRI1 185.37.222.64 255.255.255.192 
+access-list PROXY extended deny ip object-group USCHIBRI1 any 
+access-list PROXY extended deny ip any host 59.8.70.158 
+access-list PROXY extended deny ip any host 114.205.211.94 
+access-list PROXY extended permit tcp any any eq smtp log notifications 
+access-list PROXY extended permit tcp host 172.19.11.11 any eq www 
+access-list PROXY extended permit tcp host 172.19.11.12 any eq www 
+access-list PROXY extended permit tcp host 172.19.11.11 any eq https 
+access-list PROXY extended permit tcp host 172.19.11.12 any eq https 
+access-list PROXY extended permit ip any host 38.65.194.13 
+access-list PROXY extended permit ip any 93.187.231.64 255.255.255.192 
+access-list PROXY extended permit ip any host 213.139.102.192 
+access-list PROXY extended permit ip any 209.51.241.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.25.23 any 
+access-list PROXY extended permit ip host 172.19.26.25 any 
+access-list PROXY extended permit ip host 172.19.6.71 any 
+access-list PROXY extended permit ip any 172.16.0.0 255.240.0.0 
+access-list PROXY extended permit ip any host 213.139.102.194 
+access-list PROXY extended permit ip any 172.21.0.0 255.255.0.0 
+access-list PROXY extended permit tcp host 172.19.20.53 host 207.223.241.90 eq www 
+access-list PROXY extended permit tcp host 172.19.20.53 host 87.98.169.130 eq www 
+access-list PROXY extended permit ip host 172.19.20.53 64.41.193.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.53 204.176.46.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.53 66.114.168.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.53 66.114.169.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.53 74.220.121.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.53 62.109.200.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.53 64.68.96.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.53 64.68.97.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.31 64.41.193.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.31 204.176.46.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.31 66.114.168.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.31 66.114.169.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.31 74.220.121.0 255.255.255.0 
+access-list PROXY extended permit ip host 172.19.20.31 64.68.97.0 255.255.255.0 
+access-list PROXY extended permit tcp host 172.19.20.45 72.21.0.0 255.255.0.0 eq www 
+access-list PROXY extended permit tcp host 172.19.20.45 72.21.0.0 255.255.0.0 eq https 
+access-list PROXY extended permit tcp host 172.19.20.32 193.32.35.0 255.255.255.0 eq www 
+access-list PROXY extended permit tcp host 172.19.20.32 193.32.35.0 255.255.255.0 eq https 
+access-list PROXY extended permit tcp host 172.19.19.10 any eq www 
+access-list PROXY extended permit tcp host 172.19.19.10 any eq https 
+access-list PROXY extended deny tcp 172.19.19.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.19.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.20.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.20.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.21.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.21.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.22.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.22.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.23.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.23.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.24.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.24.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.25.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.25.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.26.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.26.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.27.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.27.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp 172.19.28.0 255.255.255.0 any eq www 
+access-list PROXY extended deny tcp 172.19.28.0 255.255.255.0 any eq https 
+access-list PROXY extended deny tcp any any eq 6667 
+access-list PROXY extended permit tcp any any range 6000 7000 log alerts 
+access-list PROXY extended permit tcp any any eq 3267 log alerts 
+access-list PROXY extended permit tcp any any eq 5555 log alerts 
+access-list PROXY extended permit tcp any any eq 4367 log alerts 
+access-list PROXY extended permit ip any any 
+access-list PROXY extended permit icmp any any 
+access-list PROXY extended permit ip any 10.100.54.0 255.255.255.0 
+access-list PROXY remark CDR Analayser
+access-list PROXY extended permit ip any host 10.100.88.113 
+access-list PROXY remark usschms02
+access-list PROXY extended permit ip any host 10.100.88.120 
+access-list AS_access_in remark ATC Request to Russia Range
+access-list AS_access_in extended deny ip 188.143.232.0 255.255.255.0 any 
+access-list AS_access_in remark ATC Request to Block this IP
+access-list AS_access_in extended deny ip host 178.169.199.143 host 38.65.194.120 
+access-list AS_access_in extended permit ip any any 
+access-list AS_access_in remark ATC Request to open SSH
+access-list AS_access_in extended permit tcp any host 38.65.194.120 eq ssh 
+access-list INTERCO_access_in extended permit ip any any 
+access-list global_mpc remark Remove VBP from H323 Inspection
+access-list global_mpc extended permit ip any host 38.65.194.82 
+pager lines 24
+logging enable
+logging timestamp
+logging buffer-size 128000
+logging buffered notifications
+logging trap errors
+logging asdm warnings
+logging device-id hostname
+logging host inside 10.100.137.24
+logging host inside 10.100.137.89
+no logging message 106016
+mtu inside 1500
+mtu tdmdmz 1500
+mtu outside 1500
+mtu AS 1500
+mtu INTERCO 1500
+failover
+failover lan unit primary
+failover lan interface LANFAIL Management0/0
+failover link LANFAIL Management0/0
+failover interface ip LANFAIL 10.10.75.1 255.255.255.252 standby 10.10.75.2
+monitor-interface inside
+icmp unreachable rate-limit 1 burst-size 1
+asdm image disk0:/asdm-633.bin
+no asdm history enable
+arp timeout 14400
+global (outside) 1 38.65.194.10 netmask 255.255.255.0
+nat (inside) 0 access-list nonat
+nat (inside) 1 0.0.0.0 0.0.0.0
+static (inside,outside) 38.65.194.66 172.21.6.199 netmask 255.255.255.255 
+static (tdmdmz,outside) 38.65.194.18 10.100.231.2 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.38 10.100.55.11 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.37 10.100.55.12 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.48 172.16.1.210 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.70 172.16.6.11 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.71 10.100.88.152 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.73 172.16.6.12 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.74 172.16.6.13 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.75 172.16.6.14 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.77 172.16.6.16 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.78 10.100.88.151 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.76 172.16.1.61 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.39 172.16.1.106 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.41 172.16.1.110 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.9 172.16.1.72 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.80 172.16.6.18 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.79 172.29.10.20 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.69 172.19.19.10 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.36 172.16.1.24 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.60 10.10.180.53 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.61 10.10.180.54 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.62 10.10.180.55 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.63 10.10.180.56 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.64 10.10.180.58 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.20 172.21.11.101 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.25 172.21.4.28 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.23 172.16.1.233 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.24 172.16.1.234 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.26 172.16.1.155 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.72 10.100.80.242 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.46 10.100.80.241 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.27 172.16.1.136 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.65 10.100.35.31 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.32 10.100.88.12 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.29 10.100.88.20 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.83 10.100.54.33 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.85 10.100.54.35 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.86 10.100.54.36 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.87 10.100.54.37 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.100 10.100.88.113 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.34 10.100.88.120 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.120 10.100.54.120 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.11 10.100.88.207 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.82 10.100.54.43 netmask 255.255.255.255 
+static (inside,outside) 38.65.194.14 10.100.81.203 netmask 255.255.255.255 
+access-group ACL_BLOCK_SCH-DTP in interface inside
+access-group CPI in interface outside
+access-group AS_access_in in interface AS
+access-group INTERCO_access_in in interface INTERCO
+route outside 0.0.0.0 0.0.0.0 38.103.112.107 254
+route inside 10.0.0.0 255.0.0.0 172.21.6.1 1
+route inside 172.16.0.0 255.240.0.0 172.21.6.1 1
+route outside 172.31.1.0 255.255.255.0 38.103.112.105 10
+route outside 172.31.10.0 255.255.255.0 38.103.112.105 10
+route outside 172.31.15.0 255.255.255.0 38.103.112.105 10
+route outside 172.31.28.0 255.255.255.0 38.103.112.105 10
+route outside 172.31.100.0 255.255.255.0 38.103.112.105 10
+route inside 192.168.0.0 255.255.0.0 172.21.6.1 1
+timeout xlate 3:00:00
+timeout conn 1:00:00 half-closed 0:10:00 udp 0:02:00 icmp 0:00:02
+timeout sunrpc 0:10:00 h323 0:05:00 h225 1:00:00 mgcp 0:05:00 mgcp-pat 0:05:00
+timeout sip 0:30:00 sip_media 0:02:00 sip-invite 0:03:00 sip-disconnect 0:02:00
+timeout sip-provisional-media 0:02:00 uauth 0:05:00 absolute
+timeout tcp-proxy-reassembly 0:01:00
+dynamic-access-policy-record DfltAccessPolicy
+aaa-server RSApartners protocol radius
+aaa-server RSApartners (inside) host 172.16.1.53
+ timeout 5
+! key  <removed> 
+aaa-server ARKANETRADIUS protocol radius
+aaa-server ARKANETRADIUS (inside) host 10.115.38.110
+! key  <removed> 
+ authentication-port 1812
+ accounting-port 1813
+aaa-server ARKANETRADIUS (inside) host 10.100.92.1
+! key  <removed> 
+ authentication-port 1812
+ accounting-port 1813
+aaa authentication enable console ARKANETRADIUS LOCAL
+aaa authentication ssh console ARKANETRADIUS LOCAL
+snmp-server host inside 10.100.137.55 community ***** version 2c
+snmp-server host inside 10.100.88.13 community ***** version 2c
+snmp-server host inside 10.100.88.80 community ***** version 2c
+snmp-server host inside 172.16.1.72 community ***** version 2c
+snmp-server location Chicago IL
+no snmp-server contact
+snmp-server community *****
+snmp-server enable traps snmp authentication linkup linkdown coldstart
+snmp-server enable traps syslog
+service resetoutside
+crypto ipsec transform-set ESP-AES-256-MD5 esp-aes-256 esp-md5-hmac 
+crypto ipsec transform-set ESP-DES-SHA esp-des esp-sha-hmac 
+crypto ipsec transform-set ESP-DES-MD5 esp-des esp-md5-hmac 
+crypto ipsec transform-set ESP-AES-192-MD5 esp-aes-192 esp-md5-hmac 
+crypto ipsec transform-set ESP-AES-256-SHA esp-aes-256 esp-sha-hmac 
+crypto ipsec transform-set ESP-AES-128-SHA esp-aes esp-sha-hmac 
+crypto ipsec transform-set ESP-AES-192-SHA esp-aes-192 esp-sha-hmac 
+crypto ipsec transform-set ESP-AES-128-MD5 esp-aes esp-md5-hmac 
+crypto ipsec transform-set ESP-3DES-SHA esp-3des esp-sha-hmac 
+crypto ipsec transform-set ESP-AES-128-SHA-TRANS esp-aes esp-sha-hmac 
+crypto ipsec transform-set ESP-AES-128-SHA-TRANS mode transport
+crypto ipsec transform-set ESP-AES-128-MD5-TRANS esp-aes esp-md5-hmac 
+crypto ipsec transform-set ESP-AES-128-MD5-TRANS mode transport
+crypto ipsec transform-set ESP-AES-192-SHA-TRANS esp-aes-192 esp-sha-hmac 
+crypto ipsec transform-set ESP-AES-192-SHA-TRANS mode transport
+crypto ipsec transform-set ESP-AES-192-MD5-TRANS esp-aes-192 esp-md5-hmac 
+crypto ipsec transform-set ESP-AES-192-MD5-TRANS mode transport
+crypto ipsec transform-set ESP-AES-256-SHA-TRANS esp-aes-256 esp-sha-hmac 
+crypto ipsec transform-set ESP-AES-256-SHA-TRANS mode transport
+crypto ipsec transform-set ESP-AES-256-MD5-TRANS esp-aes-256 esp-md5-hmac 
+crypto ipsec transform-set ESP-AES-256-MD5-TRANS mode transport
+crypto ipsec transform-set ESP-3DES-SHA-TRANS esp-3des esp-sha-hmac 
+crypto ipsec transform-set ESP-3DES-SHA-TRANS mode transport
+crypto ipsec transform-set ESP-3DES-MD5-TRANS esp-3des esp-md5-hmac 
+crypto ipsec transform-set ESP-3DES-MD5-TRANS mode transport
+crypto ipsec transform-set ESP-DES-SHA-TRANS esp-des esp-sha-hmac 
+crypto ipsec transform-set ESP-DES-SHA-TRANS mode transport
+crypto ipsec transform-set ESP-DES-MD5-TRANS esp-des esp-md5-hmac 
+crypto ipsec transform-set ESP-DES-MD5-TRANS mode transport
+crypto ipsec transform-set ESP-3DES-MD5 esp-3des esp-md5-hmac 
+crypto ipsec security-association lifetime seconds 28800
+crypto ipsec security-association lifetime kilobytes 4608000
+crypto dynamic-map outside_dyn_map 20 set transform-set ESP-3DES-SHA
+crypto map outside_map 150 match address outside_cryptomap_orrick
+crypto map outside_map 150 set peer 128.177.149.176 
+crypto map outside_map 150 set transform-set ESP-3DES-SHA
+crypto map outside_map 65535 ipsec-isakmp dynamic outside_dyn_map
+crypto map outside_map interface outside
+crypto isakmp identity address 
+crypto isakmp enable outside
+crypto isakmp policy 1
+ authentication pre-share
+ encryption 3des
+ hash md5
+ group 2
+ lifetime 86400
+crypto isakmp policy 10
+ authentication pre-share
+ encryption 3des
+ hash sha
+ group 2
+ lifetime 86400
+crypto isakmp policy 65535
+ authentication pre-share
+ encryption 3des
+ hash sha
+ group 2
+ lifetime 86400
+crypto isakmp disconnect-notify
+telnet timeout 20
+ssh 10.0.1.0 255.255.255.0 inside
+ssh 10.245.2.0 255.255.255.0 inside
+ssh 10.100.19.20 255.255.255.255 inside
+ssh 10.100.19.21 255.255.255.255 inside
+ssh 10.115.137.89 255.255.255.255 inside
+ssh 10.250.137.89 255.255.255.255 inside
+ssh 10.100.137.89 255.255.255.255 inside
+ssh 172.29.0.0 255.255.0.0 inside
+ssh 172.30.0.0 255.255.0.0 inside
+ssh timeout 60
+ssh version 2
+console timeout 20
+management-access inside
+threat-detection basic-threat
+threat-detection statistics access-list
+no threat-detection statistics tcp-intercept
+ntp server 10.100.51.1 source inside prefer
+ntp server 10.122.97.1 source inside
+webvpn
+ enable outside
+ anyconnect-essentials
+ svc image disk0:/anyconnect-win-2.5.2019-k9.pkg 1
+ svc image disk0:/anyconnect-macosx-i386-2.5.3055-k9.pkg 2
+ svc image disk0:/anyconnect-linux-2.5.3055-k9.pkg 3
+ svc enable
+ tunnel-group-list enable
+group-policy GroupPolicy3 internal
+group-policy GroupPolicy3 attributes
+ vpn-tunnel-protocol IPSec 
+group-policy GroupPolicy2 internal
+group-policy GroupPolicy2 attributes
+ vpn-tunnel-protocol IPSec 
+group-policy GroupPolicy1 internal
+group-policy GroupPolicy1 attributes
+ vpn-tunnel-protocol IPSec 
+group-policy ChiRemoteVPN internal
+group-policy ChiRemoteVPN attributes
+ dns-server value 10.100.88.10 10.100.97.1
+ vpn-tunnel-protocol IPSec l2tp-ipsec svc webvpn
+ split-tunnel-policy tunnelspecified
+ split-tunnel-network-list value 
+ default-domain value conferenceplus.com
+!username netops password <removed>
+tunnel-group DefaultRAGroup ipsec-attributes
+! pre-shared-key  <removed> 
+ isakmp keepalive threshold 10 retry 2
+ isakmp ikev1-user-authentication none
+tunnel-group ChiRemoteVPN type remote-access
+tunnel-group ChiRemoteVPN webvpn-attributes
+ group-alias AnyConnect enable
+tunnel-group ChiRemoteVPN ipsec-attributes
+! pre-shared-key  <removed> 
+tunnel-group 128.177.149.176 type ipsec-l2l
+tunnel-group 128.177.149.176 ipsec-attributes
+! pre-shared-key  <removed> 
+!
+class-map VBP
+ description Standby VBP
+ match access-list global_mpc
+ match default-inspection-traffic
+class-map IPS-class
+ description Match all traffic for IPS
+ match any
+class-map inspection_default
+ match default-inspection-traffic
+!
+policy-map type inspect dns migrated_dns_map_1
+ parameters
+  message-length maximum 1280
+policy-map global_policy
+ description IPS Policy for all Interfaces
+ class inspection_default
+  inspect dns migrated_dns_map_1 
+  inspect ftp 
+  inspect netbios 
+  inspect rsh 
+  inspect rtsp 
+  inspect sqlnet 
+  inspect sunrpc 
+  inspect tftp 
+  inspect xdmcp 
+  inspect icmp 
+  inspect h323 h225 
+  inspect h323 ras 
+ class VBP
+  inspect icmp 
+!
+service-policy global_policy global
+prompt hostname context 
+call-home
+ profile CiscoTAC-1
+  no active
+  destination address http https://tools.cisco.com/its/service/oddce/services/DDCEService
+  destination address email callhome@cisco.com
+  destination transport-method http
+  subscribe-to-alert-group diagnostic
+  subscribe-to-alert-group environment
+  subscribe-to-alert-group inventory periodic monthly
+  subscribe-to-alert-group configuration periodic monthly
+  subscribe-to-alert-group telemetry periodic daily
+: end

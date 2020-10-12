@@ -1,0 +1,537 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C3560X-48
+!CPU: PowerPC405
+!
+!Memory: main 262144K
+!Serial Number: FDO1847H18B
+!Model revision number           : A0
+!Model number                    : WS-C3560X-48T-E
+!Motherboard assembly number     : 73-12556-12
+!Motherboard serial number       : FDO18471TLG
+!Motherboard revision number     : A0
+!
+!Processor ID: FDO1847H18B
+!
+!Image: Software: C3560E-UNIVERSALK9-M, 12.2(55)SE8, RELEASE SOFTWARE (fc2)
+!Image: Compiled: Wed 26-Jun-13 10:58 by prod_rel_team
+!Image: flash:/c3560e-universalk9-mz.122-55.SE8/c3560e-universalk9-mz.122-55.SE8.bin
+!
+!BOOTLDR: Version 12.2(58r)SE1, RELEASE SOFTWARE (fc1)
+!
+!% No entity named "raw"
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Gi0/8, Gi0/11, Gi0/12, Gi0/13, Gi0/14, Gi0/15, Gi0/16, Gi0/22, Gi0/23, Gi0/24
+!VLAN:                                                 Gi0/28, Gi0/29, Gi0/30, Gi0/31, Gi0/32, Gi0/33, Gi0/34, Gi0/35, Gi0/36, Gi0/37
+!VLAN:                                                 Gi0/38, Gi0/39, Gi0/40, Gi0/41, Gi0/42, Gi0/43
+!VLAN: 5    X:10.242.10.0/29:Interco         active    
+!VLAN: 21   V:10.242.21.0/24:Viper-SIG       active    Gi0/17, Gi0/18, Gi0/19, Gi0/20, Gi0/21
+!VLAN: 22   V:10.242.22.0/24:Viper-MEDIA     active    Gi0/25, Gi0/26, Gi0/27
+!VLAN: 23   M:10.242.23.0/24:Mgmt            active    Gi0/1, Gi0/2, Gi0/3, Gi0/4, Gi0/5, Gi0/6, Gi0/7, Gi0/9, Gi0/10
+!VLAN: 998  X:172.29.2.0/29:OSPF:CR          active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        1002   1003
+!VLAN: 5    enet  100005     1500  -      -      -        -    -        0      0   
+!VLAN: 21   enet  100021     1500  -      -      -        -    -        0      0   
+!VLAN: 22   enet  100022     1500  -      -      -        -    -        0      0   
+!VLAN: 23   enet  100023     1500  -      -      -        -    -        0      0   
+!VLAN: 998  enet  100998     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        1      1003
+!VLAN: 1003 tr    101003     1500  1005   -      -        -    -        1      1002
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0xF
+Using 11937 out of 524288 bytes
+!
+version 12.2
+parser config cache interface
+service nagle
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime msec localtime show-timezone
+service password-encryption
+service sequence-numbers
+no service dhcp
+!
+hostname chtcore01
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 128000 notifications
+enable secret 5 $1$nN6J$/D2JWt3cchzsJKG4kpG.C/
+!
+!username netops privilege 15 password <removed>
+username noc privilege 0 secret 5 $1$Kb6M$ntHFC3Khv0HVUfD9tlsSt/
+!
+aaa new-model
+!
+aaa authentication fail-message ^CWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login ARKANETRADIUS group radius local
+aaa authentication enable default enable
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+system mtu routing 1500
+no ip source-route
+ip routing
+!
+no ip domain-lookup
+ip domain-name arkadin.lan
+login on-failure log
+login on-success log
+vtp domain none
+vtp mode transparent
+!
+archive
+ log config
+  logging enable
+  logging size 500
+  notify syslog contenttype plaintext
+  hidekeys
+file prompt quiet
+!
+spanning-tree mode pvst
+spanning-tree portfast default
+spanning-tree portfast bpdufilter default
+spanning-tree extend system-id
+spanning-tree vlan 1-4,6-4094 priority 0
+spanning-tree vlan 5 priority 36864
+!
+vlan internal allocation policy ascending
+!
+vlan 1
+ tb-vlan1 1002
+ tb-vlan2 1003
+!
+vlan 5
+ name X:10.242.10.0/29:Interco
+!
+vlan 21
+ name V:10.242.21.0/24:Viper-SIG
+!
+vlan 22
+ name V:10.242.22.0/24:Viper-MEDIA
+!
+vlan 23
+ name M:10.242.23.0/24:Mgmt
+!
+vlan 998
+ name X:172.29.2.0/29:OSPF:CR
+!
+vlan 1002
+ tb-vlan1 1
+ tb-vlan2 1003
+!
+vlan 1003
+ tb-vlan1 1
+ tb-vlan2 1002
+ parent 1005
+!
+ip ssh authentication-retries 2
+ip ssh version 2
+ip scp server enable
+!
+interface Port-channel1
+ description Po1:chtcore02
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0
+ no ip address
+ no ip route-cache cef
+ no ip route-cache
+ no ip mroute-cache
+ shutdown
+!
+interface GigabitEthernet0/1
+ description M:TWCHTVIPERL01-M1:Mgmt
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/2
+ description M:TWCHTVIPERL01B-M1:Mgmt
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/3
+ description M:TWCHTVIPERL01:iDrac
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/4
+ description M:TWCHTSWMS01-M1:Mgmt
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/5
+ description M:TWCHTSWMS01B-M1:Mgmt
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/6
+ description M:TWCHTSWMS01:iDrac
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/7
+ description M:TWCHTNFS01:iDrac
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/8
+ shutdown
+!
+interface GigabitEthernet0/9
+ description M:TWCHTVM1-M1:Mgmt
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/10
+ description "TMP laptop"
+ switchport access vlan 23
+!
+interface GigabitEthernet0/11
+ shutdown
+!
+interface GigabitEthernet0/12
+ shutdown
+!
+interface GigabitEthernet0/13
+ shutdown
+!
+interface GigabitEthernet0/14
+ shutdown
+!
+interface GigabitEthernet0/15
+ shutdown
+!
+interface GigabitEthernet0/16
+ shutdown
+!
+interface GigabitEthernet0/17
+ description V:TWCHTVIPERL01-S1:SIP
+ switchport access vlan 21
+ switchport mode access
+!
+interface GigabitEthernet0/18
+ description V:TWCHTVIPERL01B-S1:SIP
+ switchport access vlan 21
+!
+interface GigabitEthernet0/19
+ description V:TWCHTSWMS01-S1:SIP
+ switchport access vlan 21
+ switchport mode access
+!
+interface GigabitEthernet0/20
+ description V:TWCHTSWMS01B-S1:SIP
+ switchport access vlan 21
+!
+interface GigabitEthernet0/21
+ description V:TWCHTVM2-S1:SIP
+ switchport access vlan 21
+ switchport mode access
+!
+interface GigabitEthernet0/22
+ shutdown
+!
+interface GigabitEthernet0/23
+ shutdown
+!
+interface GigabitEthernet0/24
+ shutdown
+!
+interface GigabitEthernet0/25
+ description V:TWCHTSWMS01-R1:RTP
+ switchport access vlan 22
+ switchport mode access
+!
+interface GigabitEthernet0/26
+ description V:TWCHTSWMS01B-R1:RTP
+ switchport access vlan 22
+!
+interface GigabitEthernet0/27
+ description V:TWCHTNFS01-R1:RTP
+ switchport access vlan 22
+ switchport mode access
+!
+interface GigabitEthernet0/28
+ shutdown
+!
+interface GigabitEthernet0/29
+ shutdown
+!
+interface GigabitEthernet0/30
+ shutdown
+!
+interface GigabitEthernet0/31
+ shutdown
+!
+interface GigabitEthernet0/32
+ shutdown
+!
+interface GigabitEthernet0/33
+ shutdown
+!
+interface GigabitEthernet0/34
+ shutdown
+!
+interface GigabitEthernet0/35
+ shutdown
+!
+interface GigabitEthernet0/36
+ shutdown
+!
+interface GigabitEthernet0/37
+ shutdown
+!
+interface GigabitEthernet0/38
+ shutdown
+!
+interface GigabitEthernet0/39
+ shutdown
+!
+interface GigabitEthernet0/40
+ shutdown
+!
+interface GigabitEthernet0/41
+ shutdown
+!
+interface GigabitEthernet0/42
+ shutdown
+!
+interface GigabitEthernet0/43
+ shutdown
+!
+interface GigabitEthernet0/44
+ description X:Q:chtaccs01-1:Gi1/0/23
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 5,23,998
+ switchport mode trunk
+!
+interface GigabitEthernet0/45
+ description X:Q:chtfw01-1:Gi0/8
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet0/46
+ description X:Q:chtfw01-2:Gi0/8
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet0/47
+ description Q:Po1:chtcore02:Gi0/47
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ spanning-tree portfast trunk
+ channel-group 1 mode desirable
+!
+interface GigabitEthernet0/48
+ description Q:Po1:chtcore02:Gi0/48
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ spanning-tree portfast trunk
+ channel-group 1 mode desirable
+!
+interface GigabitEthernet1/1
+ shutdown
+!
+interface GigabitEthernet1/2
+ shutdown
+!
+interface GigabitEthernet1/3
+ shutdown
+!
+interface GigabitEthernet1/4
+ shutdown
+!
+interface TenGigabitEthernet1/1
+ shutdown
+!
+interface TenGigabitEthernet1/2
+ shutdown
+!
+interface Vlan1
+ description "Disabled by administrator"
+ no ip address
+ shutdown
+!
+interface Vlan5
+ description Interco
+ ip address 10.242.10.3 255.255.255.248
+!
+interface Vlan21
+ description Viper-SIG
+ ip address 10.242.21.252 255.255.255.0
+ standby 21 ip 10.242.21.254
+ standby 21 preempt
+!
+interface Vlan22
+ description Viper-MEDIA
+ ip address 10.242.22.252 255.255.255.0
+ standby 22 ip 10.242.22.254
+ standby 22 preempt
+!
+interface Vlan23
+ description Mgmt
+ ip address 10.242.23.252 255.255.255.0
+ standby 23 ip 10.242.23.254
+ standby 23 preempt
+!
+interface Vlan998
+ description OSPF:CR
+ ip address 172.29.2.2 255.255.255.248
+!
+router ospf 1
+ router-id 172.29.2.2
+ log-adjacency-changes
+ redistribute connected subnets route-map CONNECTED2OSPF
+ network 172.29.2.0 0.0.0.7 area 10
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 10.242.10.1
+!
+no ip http server
+no ip http secure-server
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+!
+ip radius source-interface Vlan23 
+logging trap notifications
+logging origin-id hostname
+logging facility local5
+logging source-interface Vlan23
+logging 10.250.137.24
+logging 10.250.137.89
+access-list 1 permit 10.242.21.0 0.0.0.255
+access-list 1 permit 10.242.22.0 0.0.0.255
+access-list 1 permit 10.242.23.0 0.0.0.255
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+route-map CONNECTED2OSPF permit 1
+ match ip address 1
+ set tag 1000
+!
+!
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server location apac-cht
+snmp-server contact nio@arkadin.com
+snmp-server host 10.100.19.21 version 2c noc_services 
+snmp-server host 10.250.137.55 version 2c noc_services 
+snmp ifmib ifindex persist
+radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server timeout 3
+!radius-server key <removed>
+!
+banner login ^C========================================================================
+=                                                                      =                                                                             
+=               This is a private system of Arkadin                    =
+=         Authorization from Network Operations Team is                =
+=   required to use this system. Unauthorized access is prohibited!    =
+=                                                                      =
+=               This device is RADIUS authenticated                    = 
+=                                                                      =
+=          Network_Infrastructure_Operations@arkadin.com               = 
+=                                                                      =
+========================================================================
+^C
+alias exec u undebug all
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+privilege exec level 0 show environment
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+!
+ntp source Vlan23
+ntp server 10.249.38.1 prefer
+ntp server 10.250.137.1
+end
