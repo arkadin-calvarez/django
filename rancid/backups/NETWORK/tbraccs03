@@ -1,0 +1,564 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C2960S-48TS-S
+!CPU: PowerPC
+!
+!Memory: main 131072K
+!Serial Number: FOC1550Z1PY
+!Model revision number           : F0
+!Model number                    : WS-C2960S-48TS-S
+!Motherboard assembly number     : 73-12424-06
+!Motherboard serial number       : FOC154935F8
+!Motherboard revision number     : A0
+!Power supply part number        : 341-0327-04
+!Power supply serial number      : LIT15420GVJ
+!
+!Processor ID: FOC1550Z1PY
+!
+!Image: Software: C2960S-UNIVERSALK9-M, 12.2(55)SE3, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Thu 05-May-11 16:56 by prod_rel_team
+!Image: flash:/c2960s-universalk9-mz.122-55.SE3/c2960s-universalk9-mz.122-55.SE3.bin
+!
+!BOOTLDR: Version 12.2(55r)SE, RELEASE SOFTWARE (fc1)
+!
+!% No entity named "raw"
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Gi0/47, Gi0/49, Gi0/50
+!VLAN: 3    LAN                              active    Gi0/40, Gi0/41, Gi0/42, Gi0/43, Gi0/44, Gi0/45, Gi0/46
+!VLAN: 4    BRTBR-DMZ                        active    
+!VLAN: 21   SIP                              active    Gi0/21, Gi0/22, Gi0/23, Gi0/24, Gi0/25, Gi0/26, Gi0/27, Gi0/28, Gi0/29, Gi0/30
+!VLAN: 22   RTP                              active    Gi0/7, Gi0/31, Gi0/32, Gi0/33, Gi0/34, Gi0/35, Gi0/38
+!VLAN: 23   Mgmt                             active    Gi0/1, Gi0/2, Gi0/3, Gi0/4, Gi0/5, Gi0/6, Gi0/8, Gi0/9, Gi0/10, Gi0/11, Gi0/12
+!VLAN:                                                 Gi0/13, Gi0/14, Gi0/15, Gi0/16, Gi0/17, Gi0/19, Gi0/20
+!VLAN: 24   WebEx_Core                       active    
+!VLAN: 25   Core-Vidyo                       active    
+!VLAN: 30   V:10.120.30/24:BROFF             active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: 1100 Intellig                         active    
+!VLAN: 1103 SBC-Level3-Peer                  active    
+!VLAN: 1105 SBC-TIMSmartMeet                 active    
+!VLAN: 1114 Arka-CTI                         active    
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 3    enet  100003     1500  -      -      -        -    -        0      0   
+!VLAN: 4    enet  100004     1500  -      -      -        -    -        0      0   
+!VLAN: 21   enet  100021     1500  -      -      -        -    -        0      0   
+!VLAN: 22   enet  100022     1500  -      -      -        -    -        0      0   
+!VLAN: 23   enet  100023     1500  -      -      -        -    -        0      0   
+!VLAN: 24   enet  100024     1500  -      -      -        -    -        0      0   
+!VLAN: 25   enet  100025     1500  -      -      -        -    -        0      0   
+!VLAN: 30   enet  100030     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: 1100 enet  101100     1500  -      -      -        -    -        0      0   
+!VLAN: 1103 enet  101103     1500  -      -      -        -    -        0      0   
+!VLAN: 1105 enet  101105     1500  -      -      -        -    -        0      0   
+!VLAN: 1114 enet  101114     1500  -      -      -        -    -        0      0   
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0xF
+Using 13319 out of 524288 bytes
+!
+version 12.2
+parser config cache interface
+service nagle
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime msec localtime show-timezone
+service password-encryption
+no service dhcp
+!
+hostname tbraccs03
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 128000 notifications
+enable secret 5 $1$CKOf$.5gb3Q0FPEieN0uIEWlkY1
+!
+!username netops privilege 15 password <removed>
+username noc privilege 0 secret 5 $1$xvA.$EbOJqq8KJ4Tw/5UiCa/Kl/
+!
+aaa new-model
+!
+aaa authentication login default local
+aaa authentication login ARKANETRADIUS group radius local
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+no ip source-route
+!
+no ip domain-lookup
+ip domain-name arkadin.lan
+login quiet-mode access-class OAM
+login on-failure log
+login on-success log
+vtp mode transparent
+!
+archive
+ log config
+  logging enable
+  logging size 500
+  notify syslog contenttype plaintext
+  hidekeys
+!
+spanning-tree mode rapid-pvst
+spanning-tree loopguard default
+spanning-tree portfast default
+spanning-tree extend system-id
+spanning-tree vlan 1-4094 priority 49152
+!
+vlan internal allocation policy ascending
+!
+vlan 3
+ name LAN
+!
+vlan 4
+ name BRTBR-DMZ
+!
+vlan 21
+ name SIP
+!
+vlan 22
+ name RTP
+!
+vlan 23
+ name Mgmt
+!
+vlan 24
+ name WebEx_Core
+!
+vlan 25
+ name Core-Vidyo
+!
+vlan 30
+ name V:10.120.30/24:BROFF
+!
+vlan 1100
+ name Intellig
+!
+vlan 1103
+ name SBC-Level3-Peer
+!
+vlan 1105
+ name SBC-TIMSmartMeet
+!
+vlan 1114
+ name Arka-CTI
+!
+ip tcp synwait-time 5
+ip ssh version 2
+!
+interface FastEthernet0
+ no ip address
+!
+interface GigabitEthernet0/1
+ description BRTBRWITNESS01-MGMT1
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/2
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/3
+ description BRTBRVIPERDB01B-MGMT1
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/4
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/5
+ description BRTBRVIPERDB01-MGMT1
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/6
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/7
+ description BRTBRNFS01-Media1
+ switchport access vlan 22
+ switchport mode access
+!
+interface GigabitEthernet0/8
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/9
+ description BRTBRINFRA01-MGMT1
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/10
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/11
+ description BRTBRVIPERAS01B-MGMT1
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/12
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/13
+ description BRTBRVIPERAS01-MGMT1
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/14
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/15
+ description BRTBRSCC01-MGMT1
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/16
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/17
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/18
+ switchport access vlan 120
+ switchport mode access
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet0/19
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/20
+ description Nic-Laptop
+ switchport access vlan 23
+ switchport mode access
+!
+interface GigabitEthernet0/21
+ description BRTBRVIPERAS01-SIP1
+ switchport access vlan 21
+ switchport mode access
+!
+interface GigabitEthernet0/22
+ switchport access vlan 21
+ switchport mode access
+!
+interface GigabitEthernet0/23
+ description BRTBRVIPERAS01B-SIP1
+ switchport access vlan 21
+ switchport mode access
+!
+interface GigabitEthernet0/24
+ switchport access vlan 21
+ switchport mode access
+!
+interface GigabitEthernet0/25
+ description BRTBRSCC01-SIP1
+ switchport access vlan 21
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/26
+ switchport access vlan 21
+ switchport mode access
+!
+interface GigabitEthernet0/27
+ switchport access vlan 21
+ switchport mode access
+!
+interface GigabitEthernet0/28
+ switchport access vlan 21
+ switchport mode access
+!
+interface GigabitEthernet0/29
+ switchport access vlan 21
+ switchport mode access
+!
+interface GigabitEthernet0/30
+ switchport access vlan 21
+ switchport mode access
+!
+interface GigabitEthernet0/31
+ description BRTBRMPC01-Media1
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/32
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/33
+ description BRTBRMPC02-Media1
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/34
+ switchport access vlan 22
+ switchport mode access
+!
+interface GigabitEthernet0/35
+ description BRTBRMPC03-Media1
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet0/36
+ description BRTBRSBC1_M00-Internal
+ switchport trunk allowed vlan 21,22,24,30
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet0/37
+ description Q:tbrcore01:Gi0/2
+ switchport trunk allowed vlan 3,4,21-25,30,120,759,1100,1103,1105,1114
+ switchport mode trunk
+!
+interface GigabitEthernet0/38
+ switchport access vlan 22
+ switchport mode access
+!
+interface GigabitEthernet0/39
+ description BRTBRWS02-ETH2
+ switchport access vlan 3
+ switchport mode access
+!
+interface GigabitEthernet0/40
+ description BRTBRWITNESS01-DRAC
+ switchport access vlan 3
+ switchport mode access
+!
+interface GigabitEthernet0/41
+ description BRTBRVIPERDB01B-DRAC
+ switchport access vlan 3
+ switchport mode access
+!
+interface GigabitEthernet0/42
+ description BRTBRVIPERDB01-DRAC
+ switchport access vlan 3
+ switchport mode access
+!
+interface GigabitEthernet0/43
+ description BRTBRNFS01-DRAC
+ switchport access vlan 3
+ switchport mode access
+!
+interface GigabitEthernet0/44
+ description BRTBRINFRA01-DRAC
+ switchport access vlan 3
+ switchport mode access
+!
+interface GigabitEthernet0/45
+ description BRTBRVIPERAS01B-DRAC
+ switchport access vlan 3
+ switchport mode access
+!
+interface GigabitEthernet0/46
+ description BRTBRVIPERAS01-DRAC
+ switchport access vlan 3
+ switchport mode access
+!
+interface GigabitEthernet0/47
+!
+interface GigabitEthernet0/48
+ description Q:tbraccs04:Gi0/48
+ switchport trunk allowed vlan 3,4,21-24,759
+ switchport mode trunk
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet0/49
+!
+interface GigabitEthernet0/50
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan3
+ description Mgmt Interface
+ ip address 10.120.3.241 255.255.255.0
+!
+interface Vlan120
+ no ip address
+!
+no ip http server
+no ip http secure-server
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+kron occurrence BACKUP at 22:02 recurring
+ policy-list save-config
+!
+kron policy-list save-config
+ cli show run | redirect tftp://10.120.23.5/BRTBRSW3/BRTBRSW3_ShRunn.cfg
+!
+logging trap notifications
+logging source-interface Vlan3
+logging 10.100.137.24
+logging 10.100.137.89
+access-list 1 remark Management Access
+access-list 1 permit 10.0.0.0 0.255.255.255
+access-list 1 deny   any log
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+snmp-server community arkadin-br RO
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server community public RO
+snmp-server community sC0mmBrN3t RO
+snmp-server location Brazil - Tambore
+snmp-server contact sa-oncallalerts@arkadin.com
+snmp-server enable traps snmp authentication linkdown linkup coldstart warmstart
+snmp-server enable traps transceiver all
+snmp-server enable traps tty
+snmp-server enable traps auth-framework sec-violation
+snmp-server enable traps cluster
+snmp-server enable traps config-copy
+snmp-server enable traps config
+snmp-server enable traps config-ctid
+snmp-server enable traps dot1x auth-fail-vlan guest-vlan no-auth-fail-vlan no-guest-vlan
+snmp-server enable traps energywise
+snmp-server enable traps entity
+snmp-server enable traps power-ethernet group 1
+snmp-server enable traps power-ethernet police
+snmp-server enable traps cpu threshold
+snmp-server enable traps rep
+snmp-server enable traps bridge newroot topologychange
+snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistency
+snmp-server enable traps syslog
+snmp-server enable traps vtp
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps flash insertion removal
+snmp-server enable traps port-security
+snmp-server enable traps envmon fan shutdown supply temperature status
+snmp-server enable traps errdisable
+snmp-server enable traps mac-notification change move threshold
+snmp-server enable traps vlan-membership
+snmp-server host 10.120.3.1 informs version 2c noc_services 
+snmp-server host 10.120.3.1 version 2c noc_services 
+snmp-server host 10.120.3.1 version 2c public 
+snmp ifmib ifindex persist
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+!radius-server key <removed>
+banner login ^CC========================================================================
+=                                                                      =
+=               This is a private system of Arkadin                    =
+=         Authorization from Network Operations Team is                =
+=   required to use this system. Unauthorized access is prohibited!    =
+=                                                                      =
+=               This device is RADIUS authenticated                    =
+=                                                                      =
+=                 network_operations@arkadin.com                       =
+=                                                                      =
+========================================================================
+^C
+alias exec u undebug all
+privilege exec level 0 show ip interfaces brief
+privilege exec level 0 show ip ospf neighbor
+privilege exec level 0 show ip ospf ip
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+!
+line con 0
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 30 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+!
+monitor session 1 source interface Gi0/36
+monitor session 1 destination interface Gi0/39
+ntp source Vlan3
+ntp server 10.100.51.1 prefer
+ntp server 10.122.97.1
+end

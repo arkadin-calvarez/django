@@ -1,0 +1,375 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C3850-24XS
+!CPU: MIPS
+!
+!Memory: main 4194304K
+!Memory: physical 4194304K
+!Memory: nvram 2048K
+!Serial Number: FOC2111U0HF
+!Model Revision Number              : J0
+!Model Number                       : WS-C3850-24XS
+!Motherboard Assembly Number        : 73-16649-06
+!Motherboard Serial Number          : FOC211019K9
+!Motherboard Revision Number        : A0
+!
+!Processor ID: FOC2111U0HF
+!
+!Image: Software: CAT3K_CAA-UNIVERSALK9-M, 03.07.04E RELEASE SOFTWARE (fc1)
+!Image: Compiled: Thu 19-May-16 11:48 by prod_rel_team
+!Image: flash:packages.conf
+!
+!BOOTLDR: Version 3.58, RELEASE SOFTWARE (P)
+!
+!% No entity named "raw"
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Te1/0/3, Te1/0/4, Te1/0/5, Te1/0/6, Te1/0/7, Te1/0/8, Te1/0/9, Te1/0/10, Te1/0/11
+!VLAN:                                                 Te1/0/12, Te1/0/13, Te1/0/14, Te1/0/15, Te1/0/16, Te1/0/17, Te1/0/18, Te1/0/19
+!VLAN:                                                 Te1/0/20, Te1/0/21, Te1/0/22, Te1/0/23, Te1/0/24, Te1/1/3, Te1/1/4
+!VLAN: 10   iSCSI:notrouted                  active    Te1/0/1, Te1/0/2, Te1/1/1, Te1/1/2
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 10   enet  100010     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0x102
+Using 4250 out of 2097152 bytes, uncompressed size = 8931 bytes
+!
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+service compress-config
+no service dhcp
+!
+hostname shiiscsi02
+!
+boot-start-marker
+boot-end-marker
+!
+vrf definition Mgmt-vrf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+logging buffered 128000 notifications
+enable secret 5 $1$QuLk$GMDIRO/bk2/s/PQ1wAoAe0
+!
+!username netops privilege 15 password <removed>
+username noc privilege 0 secret 5 $1$p2pi$/Pd1j9baxqvRebj8TLdkp.
+aaa new-model
+!
+aaa group server radius AAA_RADIUS
+ server-private 10.115.38.110 auth-port 1812 acct-port 1813 key 7 097C6F5B262B27213425220914141B180A03212C3727287866796778
+ server-private 10.100.92.1 auth-port 1812 acct-port 1813 key 7 003432543B753B3530086A6D3629363C2D2A3E2F0B0F0D060C14163F
+ ip vrf forwarding Mgmt-vrf
+!
+aaa authentication fail-message ^CCWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login NS-Radius group AAA_RADIUS local
+aaa authentication enable default enable
+aaa authorization exec default group AAA_RADIUS if-authenticated 
+!
+aaa session-id common
+switch 1 provision ws-c3850-24xs
+!
+coap http enable
+!
+no ip domain-lookup
+ip domain-name net.arkadin.lan
+!
+login on-failure log
+login on-success log
+qos queue-softmax-multiplier 1200
+!
+system mtu 9198
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+errdisable recovery cause link-flap
+diagnostic bootup level minimal
+!
+spanning-tree mode pvst
+spanning-tree portfast default
+spanning-tree portfast bpdufilter default
+spanning-tree extend system-id
+spanning-tree vlan 1-4094 priority 61440
+hw-switch switch 1 logging onboard message level 3
+!
+redundancy
+ mode sso
+!
+lldp run
+!
+class-map match-any CM_CONTROL
+ match cos  6 
+class-map match-any non-client-nrt-class
+!
+policy-map port_child_policy
+ class non-client-nrt-class
+  bandwidth remaining ratio 10
+policy-map PM_ISCSI_QUEUE
+ class CM_CONTROL
+  bandwidth percent 5 
+ class class-default
+  bandwidth percent 95 
+!
+interface GigabitEthernet0/0
+ vrf forwarding Mgmt-vrf
+ ip address 10.249.200.181 255.255.255.0
+ negotiation auto
+!
+interface TenGigabitEthernet1/0/1
+ description JPSHIEXSOPS01:NIC4
+ switchport access vlan 10
+ switchport mode access
+ load-interval 30
+ service-policy output PM_ISCSI_QUEUE
+!
+interface TenGigabitEthernet1/0/2
+ description JPSHIEXSOPS02:NIC4
+ switchport access vlan 10
+ switchport mode access
+ service-policy output PM_ISCSI_QUEUE
+!
+interface TenGigabitEthernet1/0/3
+ shutdown
+!
+interface TenGigabitEthernet1/0/4
+ shutdown
+!
+interface TenGigabitEthernet1/0/5
+ shutdown
+!
+interface TenGigabitEthernet1/0/6
+ shutdown
+!
+interface TenGigabitEthernet1/0/7
+ shutdown
+!
+interface TenGigabitEthernet1/0/8
+ shutdown
+!
+interface TenGigabitEthernet1/0/9
+ shutdown
+!
+interface TenGigabitEthernet1/0/10
+ shutdown
+!
+interface TenGigabitEthernet1/0/11
+ shutdown
+!
+interface TenGigabitEthernet1/0/12
+ shutdown
+!
+interface TenGigabitEthernet1/0/13
+ shutdown
+!
+interface TenGigabitEthernet1/0/14
+ shutdown
+!
+interface TenGigabitEthernet1/0/15
+ shutdown
+!
+interface TenGigabitEthernet1/0/16
+ shutdown
+!
+interface TenGigabitEthernet1/0/17
+ shutdown
+!
+interface TenGigabitEthernet1/0/18
+ shutdown
+!
+interface TenGigabitEthernet1/0/19
+ shutdown
+!
+interface TenGigabitEthernet1/0/20
+ shutdown
+!
+interface TenGigabitEthernet1/0/21
+ shutdown
+!
+interface TenGigabitEthernet1/0/22
+ shutdown
+!
+interface TenGigabitEthernet1/0/23
+ shutdown
+!
+interface TenGigabitEthernet1/0/24
+ shutdown
+!
+interface TenGigabitEthernet1/1/1
+ description JPSHISAN01:Crtl1:iSCSCI2
+ switchport access vlan 10
+ switchport mode access
+!
+interface TenGigabitEthernet1/1/2
+ description JPSHISAN01:Crtl2:iSCSCI2
+ switchport access vlan 10
+ switchport mode access
+!
+interface TenGigabitEthernet1/1/3
+ shutdown
+!
+interface TenGigabitEthernet1/1/4
+ shutdown
+!
+interface TenGigabitEthernet1/1/5
+ shutdown
+!
+interface TenGigabitEthernet1/1/6
+ shutdown
+!
+interface TenGigabitEthernet1/1/7
+ shutdown
+!
+interface TenGigabitEthernet1/1/8
+ shutdown
+!
+interface FortyGigabitEthernet1/1/1
+ shutdown
+!
+interface FortyGigabitEthernet1/1/2
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+ip route vrf Mgmt-vrf 0.0.0.0 0.0.0.0 10.249.200.251
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+!
+ip radius source-interface GigabitEthernet0/0 vrf Mgmt-vrf
+logging trap notifications
+logging host 10.250.137.89
+logging host 10.250.137.24
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+!
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server trap link ietf
+snmp-server location Japan TF05, T5F6807
+snmp-server contact Arkadin Network Services (network_operations@arkadin.com)
+snmp-server enable traps snmp linkdown linkup coldstart warmstart
+snmp-server enable traps cpu threshold
+snmp-server host 10.247.7.188 version 2c noc_services 
+snmp-server host 10.247.7.188 vrf Mgmt-vrf version 2c noc_services 
+snmp ifmib ifindex persist
+radius-server timeout 3
+!radius-server key <removed>
+!
+privilege exec level 0 traceroute ip
+privilege exec level 0 traceroute
+privilege exec level 0 ping ip
+privilege exec level 0 ping
+privilege exec level 0 terminal width
+privilege exec level 0 terminal length
+privilege exec level 0 terminal
+privilege exec level 0 show processes cpu
+privilege exec level 0 show mac address-table
+privilege exec level 0 show mac
+privilege exec level 0 show processes memory
+privilege exec level 0 show processes
+privilege exec level 0 show inventory
+privilege exec level 0 show vlan
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip route
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip interface brief
+privilege exec level 0 show ip interface
+privilege exec level 0 show ip
+privilege exec level 0 show arp
+privilege exec level 0 show standby brief
+privilege exec level 0 show standby
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show cdp
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show lldp
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show running-config view full
+privilege exec level 0 show running-config view
+privilege exec level 0 show running-config
+privilege exec level 0 show configuration
+privilege exec level 0 show logging
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show interfaces
+privilege exec level 0 show
+banner login ^C========================================================================
+=                                                                      =
+=               This is a private system of Arkadin                    =
+=         Authorization from Network Operations Team is                =
+=   required to use this system. Unauthorized access is prohibited!    =
+=                                                                      =
+=               This device is RADIUS authenticated                    =
+=                                                                      =
+=                 network_operations@arkadin.com                       =
+=                                                                      =
+========================================================================
+^C
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ login authentication ARKANETRADIUS
+ stopbits 1
+line aux 0
+ stopbits 1
+line vty 0 4
+ exec-timeout 120 0
+ logging synchronous
+ login authentication NS-Radius
+ transport input ssh
+line vty 5 15
+ exec-timeout 120 0
+ logging synchronous
+ login authentication NS-Radius
+ transport input ssh
+!
+ntp source GigabitEthernet0/0
+ntp server vrf Mgmt-vrf 10.249.38.1 prefer
+ntp server vrf Mgmt-vrf 10.250.137.1
+!
+ap group default-group
+end

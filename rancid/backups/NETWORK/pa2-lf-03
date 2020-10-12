@@ -1,0 +1,176 @@
+!RANCID-CONTENT-TYPE: cumulus
+!
+net del all
+net add dns nameserver ipv4 10.124.23.53
+net add dns nameserver ipv4 10.115.131.1
+net add dns nameserver ipv4 10.124.19.1
+net add syslog host ipv4 10.115.137.89 port udp 514
+net add syslog host ipv4 10.124.23.24 port udp 514
+net add time ntp server 10.115.131.1 iburst
+net add time ntp server 10.125.19.1 iburst
+net add time ntp server 10.124.19.1 iburst
+net add time ntp source 10.115.136.250
+net add snmp-server listening-address localhost
+net add snmp-server listening-address 10.115.136.250
+net add snmp-server readonly-community PASSWORD REMOVED access 10.105.137.56/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.105.137.57/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.100.137.55/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.250.137.55/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.115.137.57/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.100.19.21/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.250.90.90/32
+net add snmp-server readonly-community PASSWORD REMOVED access 192.206.95.169/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.105.137.80/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.105.137.56/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.105.137.57/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.100.137.55/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.250.137.55/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.115.137.57/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.100.19.21/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.250.90.90/32
+net add snmp-server readonly-community PASSWORD REMOVED access 192.206.95.169/32
+net add snmp-server readonly-community PASSWORD REMOVED access 10.105.137.80/32
+net add snmp-server system-contact nio@arkadin.com
+net add snmp-server system-location emea-pa2
+net add snmp-server system-name pa2-lf-03
+net add snmp-server trap-destination REMOVED-PARAMS
+net add snmp-server trap-destination REMOVED-PARAMS
+net add routing defaults datacenter
+net add routing log syslog informational
+net add routing service integrated-vtysh-config
+net add routing route 0.0.0.0/0 10.115.136.254 vrf mgmt
+net add interface swp1-49,52-56 port-security mac-limit 10
+net add interface swp1-49,52-56 port-security violation restrict
+net add time zone Etc/UTC
+net add interface swp1-49,52-56 breakout 1x
+net add ptp global slave-only no
+net add ptp global priority1 255
+net add ptp global priority2 255
+net add ptp global domain-number 0
+net add ptp global logging-level 5
+net add ptp global path-trace-enabled no
+net add ptp global use-syslog yes
+net add ptp global verbose no
+net add ptp global summary-interval 0
+net add ptp global time-stamping
+net add bond ae47 bond slaves swp47
+net add bond ae48 bond slaves swp48
+net add bond ae53 bond slaves swp53
+net add bond ae54 bond slaves swp54
+net add bond peerlink bond slaves swp56
+net add bond ae47 clag id 3
+net add bond ae47-48,53-54 bridge vids 1137-1139,1180
+net add bond ae48 clag id 4
+net add bond ae53 clag id 1
+net add bond ae54 clag id 2
+net add bridge bridge ports peerlink,swp11,swp12,swp13,swp14,ae47,ae48,ae53,ae54
+net add bridge bridge vids 130
+net add bridge bridge vlan-aware
+net add bridge vlan1136 ports peerlink.1136,swp8,swp9,swp15.1136,swp16.1136,swp55.1136
+net add bridge vlan1137 ports peerlink.1137,swp17.1137,swp18.1137,swp19.1137,swp55.1137
+net add bridge vlan1138 ports peerlink.1138,swp17.1138,swp18.1138,swp19.1138,swp55.1138
+net add bridge vlan1139 ports peerlink.1139,swp17.1139,swp18.1139,swp19.1139,swp55.1139
+net add bridge vlan128 ports peerlink.128,swp17.128,swp18.128,swp19.128,swp55.128
+net add bridge vlan129 ports peerlink.129,swp17.129,swp18.129,swp19.129,swp55.129
+net add bridge vlan131 ports peerlink.131,swp11.131,swp12.131,swp13.131,swp14.131,swp17.131,swp18.131,swp19.131,swp55.131
+net add bridge vlan132 ports peerlink.132,swp11.132,swp12.132,swp13.132,swp14.132,swp55.132
+net add bridge vlan133 ports peerlink.133,swp11.133,swp12.133,swp13.133,swp14.133,swp55.133
+net add bridge vlan134 ports peerlink.134,swp11.134,swp12.134,swp13.134,swp14.134,swp55.134
+net add bridge vlan141 ports peerlink.141,swp11.141,swp12.141,swp13.141,swp14.141,swp55.141
+net add bridge vlan176 ports peerlink.176,swp11.176,swp12.176,swp13.176,swp14.176,swp17.176,swp18.176,swp19.176,swp55.176
+net add bridge vlan179 ports peerlink.179,swp1,swp2,swp3,swp4,swp5,swp55.179
+net add bridge vlan255 ports peerlink.255,swp17.255,swp18.255,swp19.255,swp55.255
+net add bridge vlan256 ports peerlink.256,swp17.256,swp18.256,swp19.256,swp55.256
+net add bridge vlan4036 ports peerlink.4036,swp17.4036,swp18.4036,swp19.4036,swp55.4036
+net add bridge vlan4037 ports peerlink.4037,swp17.4037,swp18.4037,swp19.4037,swp55.4037
+net add bridge vlan4044 ports peerlink.4044,swp11.4044,swp12.4044,swp13.4044,swp14.4044,swp55.4044
+net add bridge vlan497 ports peerlink.497,swp17.497,swp18.497,swp19.497,swp55.497
+net add bridge vlan498 ports peerlink.498,swp11.498,swp12.498,swp13.498,swp14.498,swp17.498,swp18.498,swp19.498,swp55.498
+net add bridge vlan499 ports peerlink.499,swp11.499,swp12.499,swp13.499,swp14.499,swp17.499,swp18.499,swp19.499,swp55.499
+net add bridge vlan50 ports peerlink.50,swp11.50,swp12.50,swp13.50,swp14.50,swp55.50
+net add bridge vlan51 ports peerlink.51,swp11.51,swp12.51,swp13.51,swp14.51,swp55.51
+net add bridge vlan52 ports peerlink.52,swp11.52,swp12.52,swp13.52,swp14.52,swp55.52
+net add interface eth0 ip address 10.115.136.250/24
+net add interface eth0 vrf mgmt
+net add interface peerlink.4094 ip address 169.254.1.1/30
+net add interface swp1 alias S:M:frpa2fx01:cmc:vlan179-1g
+net add interface swp1-5,8-9,11-16 link speed 1000
+net add interface swp11 alias S:Q:FRPA2ESXVIS01:vmnic0:realtime-1g
+net add interface swp12 alias S:Q:FRPA2ESXVIS02:vmnic0:realtime-1g
+net add interface swp13 alias S:Q:FRPA2ESXVIS03:vmnic0:realtime-1g
+net add interface swp14 alias S:Q:FRPA2ESXVIS04:vmnic0:realtime-1g
+net add interface swp15 alias S:Q:pa2ome01:eth0:OCOM-1g
+net add interface swp16 alias S:Q:pa2oprobe01:eth0:OCOM-1g
+net add interface swp17 alias S:Q:frpa2fx01s1:vmnic3:mgmt-10g
+net add interface swp18 alias S:Q:frpa2fx03s1:vmnic3:mgmt-10g
+net add interface swp19 alias S:Q:frpa2fx04s1:vmnic3:mgmt-10g
+net add interface swp2 alias S:M:frpa2fx03:cmc:vlan179-1g
+net add interface swp20 alias S:Q:frpa2fx01s2:vmnic3:compute-10g
+net add interface swp21 alias S:Q:frpa2fx01s3:vmnic3:compute-10g
+net add interface swp22 alias S:Q:frpa2fx01s4:vmnic3:compute-10g
+net add interface swp23 alias S:Q:frpa2fx02s1:vmnic3:compute-10g
+net add interface swp24 alias S:Q:frpa2fx02s2:vmnic3:compute-10g
+net add interface swp25 alias S:Q:frpa2fx02s3:vmnic3:compute-10g
+net add interface swp26 alias S:Q:frpa2fx03s2:vmnic3:compute-10g
+net add interface swp27 alias S:Q:frpa2fx04s2:vmnic3:compute-10g
+net add interface swp28 alias S:Q:frpa2fx04s3:vmnic3:compute-10g
+net add interface swp29 alias S:Q:frpa2fx05s1:vmnic3:compute-10g
+net add interface swp3 alias S:M:frpa2fx05:cmc:vlan179-1g
+net add interface swp30 alias S:Q:frpa2fx05s4:vmnic3:compute-10g
+net add interface swp33 alias S:Q:pa2ome01:eth3:OCOM-10g
+net add interface swp34 alias S:Q:FRPA211P:DATA1:HyperV-25g
+net add interface swp35 alias S:Q:FRPA212P:DATA1:HyperV-25g
+net add interface swp36 alias S:Q:FRPA213P:DATA1:HyperV-25g
+net add interface swp4 alias S:M:FRPA2ESXVIS01:iDRAC:vlan179-1g
+net add interface swp47 alias S:Q:pa2nascl02ct01:clag-id-3:25g
+net add interface swp48 alias S:Q:pa2nascl02ct02:clag-id-4:25g
+net add interface swp49 alias X:pa2-sp-01:et-0/0/2-40g
+net add interface swp5 alias S:M:FRPA2ESXVIS03:iDRAC:vlan179-1g
+net add interface swp52 alias X:pa2-sp-02:et-0/0/2-40g
+net add interface swp53 alias S:Q:pa2nascl01ct01:e0g-clag-id-1:100g
+net add interface swp54 alias S:Q:pa2nascl01ct02:e0g-clag-id-2:100g
+net add interface swp55 alias X:Q:pa2-lf-01:et-0/0/25-40g-bridging
+net add interface swp55 link speed 40000
+net add interface swp56 alias X:Q:pa2-lf-04:swp56-100g-b2b
+net add interface swp8 alias S:M:pa201nascl01ct01:e0M:vlan1136-1g
+net add interface swp9 alias S:M:pa201nascl02ct01:e0M:vlan1136-1g
+net add vlan 130 alias VL_PA2_130_UNKNOWN
+net add vlan 130 vlan-raw-device bridge
+net add vrf mgmt ip address 127.0.0.1/8
+net add vrf mgmt ipv6 address ::1/128
+net add vrf mgmt vrf-table auto
+net add hostname pa2-lf-03
+net add dot1x radius accounting-port 1813
+net add dot1x eap-reauth-period 0
+net add dot1x default-dacl-preauth-filename default_preauth_dacl.rules
+net add dot1x radius authentication-port 1812
+net add dot1x mab-activation-delay 30
+net commit
+# There are some configuration commands that are not yet supported by nclu.
+# The following will append those commands to the appropriate files.
+# ========================================================================
+net add bridge vlan50-52,128-129,131-134,141,176,179,255-256,497-499,1136-1139,4036-4037,4044 stp treeprio 61440
+net add bridge vlan50 alias VL_PA2_50_VSBC-PUBLIC
+net add bridge vlan51 alias VL_PA2_51_VSBC_HA_WANCOM1
+net add bridge vlan52 alias VL_PA2_52_VSBC_HA_WANCOM2
+net add bridge vlan128 alias VL_PA2_128_SAN-NTT
+net add bridge vlan129 alias VL_PA2_129_PROD_IS_IT
+net add bridge vlan131 alias VL_PA2_131_EXCHANGE
+net add bridge vlan132 alias VL_PA2_132_VIPER-SIP
+net add bridge vlan133 alias VL_PA2_133_VIPER-RTP
+net add bridge vlan134 alias VL_PA2_134_VIPER-MGMT
+net add bridge vlan141 alias VL_PA2_141_MGMT-LYNC
+net add bridge vlan176 alias VL_PA2_176_VMOTION-LEGACY
+net add bridge vlan179 alias VL_PA2_179_MGMT-IDRAC_CMC
+net add bridge vlan255 alias VL_PA2_255_NSX_EDGE-PRIVATE_LF01
+net add bridge vlan256 alias VL_PA2_256_NSX_EDGE-PRIVATE_LF02
+net add bridge vlan497 alias VL_PA2_497_IS_VTEP
+net add bridge vlan498 alias VL_PA2_498_IS-SCSI1
+net add bridge vlan499 alias VL_PA2_499_IS-SCSI2
+net add bridge vlan1136 alias VL_PA2_1136_MGMT-NAS-IDRAC_CMC
+net add bridge vlan1137 alias VL_PA2_1137_IS-10G
+net add bridge vlan1138 alias VL_PA2_1138_NETAPP1
+net add bridge vlan1139 alias VL_PA2_1139_NETAPP2
+net add bridge vlan4036 alias VL_PA2_4036_NSX_EDGE-PUBLIC_PA2INET01
+net add bridge vlan4037 alias VL_PA2_4037_NSX_EDGE-PUBLIC_LD4INET01
+net add bridge vlan4044 alias VL_PA2_4044_SHARED_DMZ 

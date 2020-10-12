@@ -1,0 +1,1339 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C6504-E
+!CPU: R7000, SR71000 CPU at 600Mhz, impl 0x504, Rev 1.2, 512KB L2 Cache
+!
+!Memory: main 458720K/65536K
+!Memory: nvram 1917K
+!Memory: bootflash 65536K
+!
+!Catalyst Chassis type: WS-C6504-E, Cisco 6500 4-slot backplane
+!Catalyst Chassis S/N: FOX1227GU8G
+!Catalyst Chassis assembly: 73-9789-02, rev A0, ver 2.0
+!Processor ID: FOX1227GU8G
+!
+!Image: Software: s72033_rp-IPSERVICESK9-M, 12.2(18)SXF3, RELEASE SOFTWARE (fc1)
+!Image: Compiled: Tue 14-Feb-06 16:54 by kehsiao
+!Image: bootdisk:s72033-ipservicesk9-mz.122-18.SXF3.bin
+!
+!ROM Bootstrap: Version 12.2(17r)S4, RELEASE SOFTWARE (fc1)
+!BOOTLDR: Version 12.2(18)SXF3, RELEASE SOFTWARE (fc1)
+!
+!BootFlash: BOOT variable = sup-bootdisk:s72033-ipservicesk9-mz.122-18.SXF3.bin,1;
+!BootFlash: CONFIG_FILE variable does not exist
+!BootFlash: BOOTLDR variable = 
+!BootFlash: Configuration register is 0x2102
+!BootFlash: Standby is not present.
+!
+!BootFlash: BOOT variable = sup-bootdisk:s72033-ipservicesk9-mz.122-18.SXF3.bin,1;
+!BootFlash: CONFIG_FILE variable does not exist
+!BootFlash: BOOTLDR variable = 
+!BootFlash: Configuration register is 0x2102
+!BootFlash: Standby is not present.
+!
+!Flash: bootflash: Translating "l"
+!
+!Slot 1: type Supervisor Engine 720 (Active), 2 ports
+!Slot 1: part WS-SUP720-3B, serial SAL09380T2K
+!Slot 1: hvers 4.4, firmware 8.4(2), sw 12.2(18)SXF3
+!
+!Slot 1/0: type  Policy Feature Card 3      
+!Slot 1/0: part WS-F6K-PFC3B, serial SAL09380RGF
+!Slot 1/0: hvers 2.1
+!
+!Slot 1/1: type  MSFC3 Daughterboard        
+!Slot 1/1: part WS-SUP720, serial SAL09380T96
+!Slot 1/1: hvers 2.3
+!
+!Slot 2: type CEF720 24 port 1000mb SFP, 24 ports
+!Slot 2: part WS-X6724-SFP, serial SAD093007CC
+!Slot 2: hvers 2.2, firmware 12.2(14r)S5, sw 12.2(18)SXF3
+!
+!Slot 2/0: type  Centralized Forwarding Card
+!Slot 2/0: part WS-F6700-CFC, serial SAL1110JRB6
+!Slot 2/0: hvers 3.1
+!
+!Slot 3: type CEF720 48 port 10/100/1000mb Ethernet, 48 ports
+!Slot 3: part WS-X6748-GE-TX, serial SAD11050AXV
+!Slot 3: hvers 2.4, firmware 12.2(14r)S5, sw 12.2(18)SXF3
+!
+!Slot 3/0: type  Centralized Forwarding Card
+!Slot 3/0: part WS-F6700-CFC, serial SAL10403NCB
+!Slot 3/0: hvers 3.0
+!
+!NAME: "WS-C6504-E",            DESCR: "Cisco Systems Cisco 6500 4-slot Chassis System"
+!PID: WS-C6504-E
+!VID: V01
+!SN: FOX1227GU8G
+!NAME: "Backplane",             DESCR: "Cisco Systems Cisco 6500 4-slot backplane"
+!NAME: "Container of VTT 0",    DESCR: "Container of VTT"
+!NAME: "Container of Clock 1",  DESCR: "Container of Clock"
+!NAME: "CLK-7600 1",            DESCR: "OSR-7600 Clock FRU 1"
+!PID: CLK-7600
+!SN: NWG122603Z9
+!NAME: "Clock 1 OK Sensor",     DESCR: "OSR-7600 Clock FRU 1 OK Sensor"
+!NAME: "Clock 1 In Using Sensor", DESCR: "OSR-7600 Clock FRU 1 In Using Sensor"
+!NAME: "Container of Clock 2",  DESCR: "Container of Clock"
+!NAME: "CLK-7600 2",            DESCR: "OSR-7600 Clock FRU 2"
+!PID: CLK-7600
+!SN: NWG122603Z9
+!NAME: "Clock 2 OK Sensor",     DESCR: "OSR-7600 Clock FRU 2 OK Sensor"
+!NAME: "Clock 2 In Using Sensor", DESCR: "OSR-7600 Clock FRU 2 In Using Sensor"
+!NAME: "Sensor for counting number of OK Clocks", DESCR: "Sensor for counting number of OK Clocks"
+!NAME: "Physical Slot 1",       DESCR: "Cisco Systems Cisco 6500 4-slot Physical Slot"
+!NAME: "1",                     DESCR: "WS-SUP720-3B 2 ports Supervisor Engine 720 Rev. 4.4"
+!PID: WS-SUP720-3B
+!SN: SAL09380T2K
+!NAME: "MSFC Container 1",      DESCR: "MSFC Container"
+!NAME: "msfc sub-module of 1",  DESCR: "WS-SUP720 MSFC3 Daughterboard Rev. 2.3"
+!PID: WS-SUP720
+!SN: SAL09380T96
+!NAME: "module 1 RP outlet temperature Sensor", DESCR: "module 1 RP outlet temperature Sensor"
+!NAME: "module 1 RP inlet temperature Sensor", DESCR: "module 1 RP inlet temperature Sensor"
+!NAME: "CPU of Routing Processor 1", DESCR: "CPU of Routing Processor"
+!NAME: "Switching Engine Container 1", DESCR: "Switching Engine Container"
+!NAME: "switching engine sub-module of 1", DESCR: "WS-F6K-PFC3B Policy Feature Card 3 Rev. 2.1"
+!PID: WS-F6K-PFC3B
+!SN: SAL09380RGF
+!NAME: "module 1 EARL outlet temperature Sensor", DESCR: "module 1 EARL outlet temperature Sensor"
+!NAME: "module 1 EARL inlet temperature Sensor", DESCR: "module 1 EARL inlet temperature Sensor"
+!NAME: "Gigabit Port Container 1/1", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 1/2", DESCR: "Gigabit Port Container"
+!NAME: "module 1 power-output-fail Sensor", DESCR: "Supervisor module 1 power-output-fail Sensor"
+!NAME: "module 1 insufficient cooling Sensor", DESCR: "Supervisor module 1 insufficient cooling Sensor"
+!NAME: "module 1 fan-upgrade required Sensor", DESCR: "Supervisor module 1 fan-upgrade required Sensor"
+!NAME: "module 1 outlet temperature Sensor", DESCR: "Supervisor module 1 outlet temperature Sensor"
+!NAME: "module 1 inlet temperature Sensor", DESCR: "Supervisor module 1 inlet temperature Sensor"
+!NAME: "module 1 device-1 temperature Sensor", DESCR: "Supervisor module 1 device-1 temperature Sensor"
+!NAME: "module 1 device-2 temperature Sensor", DESCR: "Supervisor module 1 device-2 temperature Sensor"
+!NAME: "module 1 asic 1 temperature Sensor", DESCR: "Supervisor module 1 asic 1 temperature Sensor"
+!NAME: "module 1 asic 2 temperature Sensor", DESCR: "Supervisor module 1 asic 2 temperature Sensor"
+!NAME: "module 1 asic 3 temperature Sensor", DESCR: "Supervisor module 1 asic 3 temperature Sensor"
+!NAME: "module 1 asic 4 temperature Sensor", DESCR: "Supervisor module 1 asic 4 temperature Sensor"
+!NAME: "module 1 asic 5 temperature Sensor", DESCR: "Supervisor module 1 asic 5 temperature Sensor"
+!NAME: "module 1 asic 6 temperature Sensor", DESCR: "Supervisor module 1 asic 6 temperature Sensor"
+!NAME: "CPU of Switching Processor 1", DESCR: "CPU of Switching Processor"
+!NAME: "Gi1/2 10/100/1000BaseT", DESCR: "10/100/1000BaseT"
+!NAME: "Physical Slot 2",       DESCR: "Cisco Systems Cisco 6500 4-slot Physical Slot"
+!NAME: "2",                     DESCR: "WS-X6724-SFP CEF720 24 port 1000mb SFP Rev. 2.2"
+!PID: WS-X6724-SFP
+!SN: SAD093007CC
+!NAME: "Switching Engine Container 2", DESCR: "Switching Engine Container"
+!NAME: "switching engine sub-module of 2", DESCR: "WS-F6700-CFC Centralized Forwarding Card Rev. 3.1"
+!PID: WS-F6700-CFC
+!VID: V04
+!SN: SAL1110JRB6
+!NAME: "CPU of Sub-Module 2 CFC Card", DESCR: "CPU of Centralized Forwarding Card"
+!NAME: "Gigabit Port Container 2/1", DESCR: "Gigabit Port Container"
+!NAME: "Gi2/1",                 DESCR: "1000BaseLH"
+!PID: GLC-LH-SM
+!SN: H866R3359
+!NAME: "Gigabit Port Container 2/2", DESCR: "Gigabit Port Container"
+!NAME: "Gi2/2",                 DESCR: "1000BaseLH"
+!PID: FTRJ-1319-7D-CSC
+!SN: FNS0806P023
+!NAME: "Gigabit Port Container 2/3", DESCR: "Gigabit Port Container"
+!NAME: "Gi2/3",                 DESCR: "1000BaseLH"
+!PID: SFP-LX-SM
+!SN: TC1403120286
+!NAME: "Gigabit Port Container 2/4", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/5", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/6", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/7", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/8", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/9", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/10", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/11", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/12", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/13", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/14", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/15", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/16", DESCR: "Gigabit Port Container"
+!NAME: "Gi2/16",                DESCR: "1000BaseLH"
+!PID: GLC-LH-SM
+!SN: H866R3360
+!NAME: "Gigabit Port Container 2/17", DESCR: "Gigabit Port Container"
+!NAME: "Gi2/17",                DESCR: "1000BaseLH"
+!PID: GLC-LH-SM-CDW
+!SN: PROLH01525
+!NAME: "Gigabit Port Container 2/18", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/19", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/20", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/21", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/22", DESCR: "Gigabit Port Container"
+!NAME: "Gi2/22",                DESCR: "1000BaseLH"
+!PID: SFP-LX-SM
+!SN: TC1403120289
+!NAME: "Gigabit Port Container 2/23", DESCR: "Gigabit Port Container"
+!NAME: "Gigabit Port Container 2/24", DESCR: "Gigabit Port Container"
+!NAME: "Gi2/24",                DESCR: "1000BaseLH"
+!PID: GLC-LH-SM-CDW
+!SN: PROLH00319
+!NAME: "module 2 power-output-fail Sensor", DESCR: "module 2 power-output-fail Sensor"
+!NAME: "module 2 insufficient cooling Sensor", DESCR: "module 2 insufficient cooling Sensor"
+!NAME: "module 2 outlet temperature Sensor", DESCR: "module 2 outlet temperature Sensor"
+!NAME: "module 2 inlet temperature Sensor", DESCR: "module 2 inlet temperature Sensor"
+!NAME: "module 2 device-1 temperature Sensor", DESCR: "module 2 device-1 temperature Sensor"
+!NAME: "module 2 device-2 temperature Sensor", DESCR: "module 2 device-2 temperature Sensor"
+!NAME: "Physical Slot 3",       DESCR: "Cisco Systems Cisco 6500 4-slot Physical Slot"
+!NAME: "3",                     DESCR: "WS-X6748-GE-TX CEF720 48 port 10/100/1000mb Ethernet Rev. 2.4"
+!PID: WS-X6748-GE-TX
+!VID: V02
+!SN: SAD11050AXV
+!NAME: "Switching Engine Container 3", DESCR: "Switching Engine Container"
+!NAME: "switching engine sub-module of 3", DESCR: "WS-F6700-CFC Centralized Forwarding Card Rev. 3.0"
+!PID: WS-F6700-CFC
+!VID: V02
+!SN: SAL10403NCB
+!NAME: "CPU of Sub-Module 3 CFC Card", DESCR: "CPU of Centralized Forwarding Card"
+!NAME: "module 3 power-output-fail Sensor", DESCR: "module 3 power-output-fail Sensor"
+!NAME: "module 3 insufficient cooling Sensor", DESCR: "module 3 insufficient cooling Sensor"
+!NAME: "module 3 outlet temperature Sensor", DESCR: "module 3 outlet temperature Sensor"
+!NAME: "module 3 inlet temperature Sensor", DESCR: "module 3 inlet temperature Sensor"
+!NAME: "Gi3/1",                 DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/2",                 DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/3",                 DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/4",                 DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/5",                 DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/6",                 DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/7",                 DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/8",                 DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/9",                 DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/10",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/11",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/12",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/13",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/14",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/15",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/16",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/17",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/18",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/19",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/20",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/21",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/22",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/23",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/24",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/25",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/26",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/27",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/28",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/29",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/30",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/31",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/32",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/33",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/34",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/35",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/36",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/37",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/38",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/39",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/40",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/41",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/42",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/43",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/44",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/45",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/46",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/47",                DESCR: "10/100/1000BaseT"
+!NAME: "Gi3/48",                DESCR: "10/100/1000BaseT"
+!NAME: "Physical Slot 4",       DESCR: "Cisco Systems Cisco 6500 4-slot Physical Slot"
+!NAME: "Container of Fan FRU 1", DESCR: "Container of Fan FRU"
+!NAME: "FAN-MOD-4HS 1",         DESCR: "High Speed Fan Module for CISCO7604 1"
+!PID: FAN-MOD-4HS
+!VID: V01
+!SN: DCH11291395
+!NAME: "Fan-tray 1 Status Sensor", DESCR: "High Speed Fan Module for CISCO7604 1 Status Sensor"
+!NAME: "Container of Container of Power Supply", DESCR: "Container of Container of Power Supply"
+!NAME: "Container of Power Supply 1", DESCR: "Container of Power Supply"
+!NAME: "PS 1 PWR-2700-AC/4",    DESCR: "2700W AC power supply for CISCO7604 1"
+!PID: PWR-2700-AC/4
+!VID: V02
+!SN: APQ11020011
+!NAME: "power-supply 1 fan-fail Sensor", DESCR: "power-supply 1 fan-fail Sensor"
+!NAME: "power-supply 1 power-output-fail Sensor", DESCR: "power-supply 1 power-output-fail Sensor"
+!NAME: "power-supply 1 incompatible with fan Sensor", DESCR: "power-supply 1 incompatible with fan Sensor"
+!NAME: "power-supply 1 power-input Sensor", DESCR: "power-supply 1 power-input Sensor"
+!NAME: "Container of Power Supply 2", DESCR: "Container of Power Supply"
+!NAME: "PS 2 PWR-2700-AC/4",    DESCR: "2700W AC power supply for CISCO7604 2"
+!PID: PWR-2700-AC/4
+!VID: V02
+!SN: APQ102300F1
+!NAME: "power-supply 2 fan-fail Sensor", DESCR: "power-supply 2 fan-fail Sensor"
+!NAME: "power-supply 2 power-output-fail Sensor", DESCR: "power-supply 2 power-output-fail Sensor"
+!NAME: "power-supply 2 incompatible with fan Sensor", DESCR: "power-supply 2 incompatible with fan Sensor"
+!NAME: "power-supply 2 power-input Sensor", DESCR: "power-supply 2 power-input Sensor"
+!
+!VTP: VTP Version                     : 2
+!VTP: Configuration Revision          : 23
+!VTP: Maximum VLANs supported locally : 1005
+!VTP: Number of existing VLANs        : 15
+!VTP: VTP Operating Mode              : Server
+!VTP: VTP Domain Name                 : Chi-Outside
+!VTP: VTP Pruning Mode                : Disabled
+!VTP: VTP V2 Mode                     : Disabled
+!VTP: VTP Traps Generation            : Disabled
+!VTP: MD5 digest                      : 0x3A 0x23 0xD7 0x95 0xA4 0xFD 0x6A 0x8D 
+!VTP: Local updater ID is 38.103.112.105 on interface Vl178 (lowest numbered VLAN interface found)
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    
+!VLAN: 2    UNUSED                           active    Gi2/3
+!VLAN: 5    X:chi-ce:legacy-integration      active    
+!VLAN: 31   X:172.31.1.0/24:FootLocker       active    
+!VLAN: 177  ASA-LANFail                      active    Gi3/1, Gi3/2
+!VLAN: 178  Cogent                           active    Gi3/23, Gi3/24, Gi3/37
+!VLAN: 620  X:100.64.246.104/30:EXT_CARR_SIP active    
+!VLAN: 903  GlobalCrossing                   active    
+!VLAN: 904  Excel                            active    
+!VLAN: 906  VLAN0906                         active    
+!VLAN: 908  VLAN0908                         active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: 2025 X:VPN_APPLICABLE_ATCE:100.64.33. active    
+!VLAN: 3000 A:185.37.222.64/26:SBC-PUBLIC    active    
+!VLAN: 3001 X:172.16.1.32/28:EXT_CARR_SIP_SB active    
+!VLAN: 3002 X:VPN_NTTA_WIRECARD_SBC:209.212. active    
+!VLAN: 3003 A:R:64.45.148.24/29:Blitz        active    
+!VLAN: 3010 A:R:10.0.66.128/28:SBC-BSOFT     active    
+!VLAN: 3012 A:R:192.206.95.240/29:SBC-CISCOP active    
+!VLAN: 3103 A:R:10.166.235.0/28:SBC_THERMO   active    
+!VLAN: 3302 VL_ATL_3302_NTTGN_SELF-SBC       active    
+!VLAN: 3501 A:U:192.206.95.208/28:SBC-EXT    active    
+!VLAN: 3502 X:U:74.120.93.183/31:INTELIQUENT active    Gi2/16
+!VLAN: 3503 X:U:70.104.240.208/30:VERIZON_SI active    Gi2/17
+!VLAN: 3504 X:U:207.223.73.65/31:PEERLESS_SI active    Gi2/1
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 2    enet  100002     1500  -      -      -        -    -        0      0   
+!VLAN: 5    enet  100005     1500  -      -      -        -    -        0      0   
+!VLAN: 31   enet  100031     1500  -      -      -        -    -        0      0   
+!VLAN: 177  enet  100177     1500  -      -      -        -    -        0      0   
+!VLAN: 178  enet  100178     1500  -      -      -        -    -        0      0   
+!VLAN: 620  enet  100620     1500  -      -      -        -    -        0      0   
+!VLAN: 903  enet  100903     1500  -      -      -        -    -        0      0   
+!VLAN: 904  enet  100904     1500  -      -      -        -    -        0      0   
+!VLAN: 906  enet  100906     1500  -      -      -        -    -        0      0   
+!VLAN: 908  enet  100908     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: 2025 enet  102025     1500  -      -      -        -    -        0      0   
+!VLAN: 3000 enet  103000     1500  -      -      -        -    -        0      0   
+!VLAN: 3001 enet  103001     1500  -      -      -        -    -        0      0   
+!VLAN: 3002 enet  103002     1500  -      -      -        -    -        0      0   
+!VLAN: 3003 enet  103003     1500  -      -      -        -    -        0      0   
+!VLAN: 3010 enet  103010     1500  -      -      -        -    -        0      0   
+!VLAN: 3012 enet  103012     1500  -      -      -        -    -        0      0   
+!VLAN: 3103 enet  103103     1500  -      -      -        -    -        0      0   
+!VLAN: 3302 enet  103302     1500  -      -      -        -    -        0      0   
+!VLAN: 3501 enet  103501     1500  -      -      -        -    -        0      0   
+!VLAN: 3502 enet  103502     1500  -      -      -        -    -        0      0   
+!VLAN: 3503 enet  103503     1500  -      -      -        -    -        0      0   
+!VLAN: 3504 enet  103504     1500  -      -      -        -    -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0x2102
+Using 24165 out of 1964024 bytes
+!
+upgrade fpd auto
+version 12.2
+service timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime msec localtime show-timezone
+service password-encryption
+service counters max age 5
+service unsupported-transceiver
+!
+hostname chiixag01
+!
+boot system flash sup-bootdisk:s72033-ipservicesk9-mz.122-18.SXF3.bin
+logging buffered 128000 notifications
+logging console notifications
+enable secret 5 $1$Z2GF$PZlN1KLlTVd8fdaWqxALh1
+!
+username netops privilege 15 secret 5 $1$fw0A$AA0iDD.HktwbCGFCZ3OyJ1
+username noc privilege 0 secret 5 $1$BQUx$QehrmdRWju/5uprx2IuPn/
+username rancid privilege 0 secret 5 $1$cY.a$WJg7iY9BQ7yTJch8d69hl1
+username voiceops privilege 0 secret 5 $1$ct3a$48gL4Yzlyexrz9iQ020t./
+aaa new-model
+aaa authentication login default local
+!
+aaa session-id common
+clock timezone CST -6
+clock summer-time CDT recurring
+ip subnet-zero
+!
+ip vrf EXT_APPLICABLE_SIP
+ rd 53550:12025
+ route-target export 53550:12025
+ route-target import 53550:12026
+!
+ip vrf EXT_CARR_SIP_BELLCA
+ rd 53550:13001
+ route-target export 53550:13001
+!
+ip ssh version 2
+no ip domain-lookup
+ip domain-name arkadin.com
+mls ip multicast flow-stat-timer 9
+no mls flow ip
+no mls flow ipv6
+mls qos
+no mls acl tcam share-global
+mls cef error action freeze
+!
+redundancy
+ mode sso
+ main-cpu
+  auto-sync running-config
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+diagnostic bootup level complete
+diagnostic cns publish cisco.cns.device.diag_results
+diagnostic cns subscribe cisco.cns.device.diag_commands
+fabric buffer-reserve queue
+port-channel per-module load-balance
+!
+vlan internal allocation policy ascending
+vlan access-log ratelimit 2000
+!
+vlan 2025
+ name X:VPN_APPLICABLE_ATCE:100.64.33.
+!
+vlan 3000
+ name A:185.37.222.64/26:SBC-PUBLIC
+!
+vlan 3001
+ name X:172.16.1.32/28:EXT_CARR_SIP_SB
+!
+vlan 3002
+ name X:VPN_NTTA_WIRECARD_SBC:209.212.
+!
+vlan 3003
+ name A:R:64.45.148.24/29:Blitz
+!
+vlan 3010
+ name A:R:10.0.66.128/28:SBC-BSOFT
+!
+vlan 3012
+ name A:R:192.206.95.240/29:SBC-CISCOP
+!
+vlan 3103
+ name A:R:10.166.235.0/28:SBC_THERMO
+!
+vlan 3302
+ name VL_ATL_3302_NTTGN_SELF-SBC
+!
+vlan 3501
+ name A:U:192.206.95.208/28:SBC-EXT
+!
+vlan 3502
+ name X:U:74.120.93.183/31:INTELIQUENT
+!
+vlan 3503
+ name X:U:70.104.240.208/30:VERIZON_SI
+!
+vlan 3504
+ name X:U:207.223.73.65/31:PEERLESS_SI
+!
+interface Loopback0
+ ip address 38.103.74.215 255.255.255.255
+ load-interval 30
+!
+interface Loopback1
+ no ip address
+ no ip redirects
+ load-interval 30
+!
+interface Port-channel1
+ description Q:chiixag02:Po1:
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1-3500,3502-4094
+ switchport mode trunk
+ no ip address
+ load-interval 30
+ mls qos trust dscp
+!
+interface GigabitEthernet1/1
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet1/2
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/1
+ description E_IXP:NR:TBD:PRLS_IX
+ switchport
+ switchport access vlan 3504
+ no ip address
+ logging event link-status
+ load-interval 30
+ speed nonegotiate
+!
+interface GigabitEthernet2/2
+ description E_CARR:NR:TBD:BT_APPLICABLE
+ bandwidth 200
+ ip vrf forwarding EXT_APPLICABLE_SIP
+ ip address 100.64.33.2 255.255.255.252
+ logging event link-status
+ load-interval 30
+!
+interface GigabitEthernet2/3
+ description Q:chiixag02:Gi2/3
+ switchport
+ switchport access vlan 2
+ switchport mode access
+ no ip address
+ logging event link-status
+ load-interval 30
+!
+interface GigabitEthernet2/4
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/5
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/6
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/7
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/8
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/9
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/10
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/11
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/12
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/13
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/14
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/15
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/16
+ description E_CUST:NR:CKT-01-KFFS-100484-NTI:ATT_INTQ_SIP
+ switchport
+ switchport access vlan 3502
+ no ip address
+ logging event link-status
+ load-interval 30
+!
+interface GigabitEthernet2/17
+ description E_CARR:AA:XEPIJPIJ0009:VERIZ_CARR
+ switchport
+ switchport access vlan 3503
+ no ip address
+ logging event link-status
+ load-interval 30
+ speed nonegotiate
+!
+interface GigabitEthernet2/18
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/19
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/20
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/21
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/22
+ description E_CARR:NR:005LUXQ808407-001BLCA-A00:BELL_CA_CARR
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 620
+ switchport mode trunk
+ bandwidth 500000
+ no ip address
+ logging event link-status
+ load-interval 30
+ speed nonegotiate
+ mls qos trust dscp
+!
+interface GigabitEthernet2/23
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/24
+ description E_ISP:AA:1-300177851:COGENT_ISP_PID:1-300208723_BGPID:1-300179162_XID:1-68984771
+ ip address 38.104.103.94 255.255.255.252
+ ip access-group PF_GLOBAL-EDGE_V4 in
+ logging event link-status
+ load-interval 30
+ speed nonegotiate
+ mls qos trust dscp
+!
+interface GigabitEthernet3/1
+ description M:chifw01-1:Ma0/0:
+ switchport
+ switchport access vlan 177
+ no ip address
+ logging event link-status
+ load-interval 30
+ mls qos trust dscp
+!
+interface GigabitEthernet3/2
+ description Chi-ASA2 LanFail
+ switchport
+ switchport access vlan 177
+ no ip address
+ logging event link-status
+ load-interval 30
+ mls qos trust dscp
+!
+interface GigabitEthernet3/3
+ description X:Q:chifw01-1:Gi0/3:outside,AS,INTERCO
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 178,906,908
+ switchport mode trunk
+ no ip address
+ logging event link-status
+ load-interval 30
+ mls qos trust dscp
+!
+interface GigabitEthernet3/4
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/5
+ description Q:chiixag02:Gi3/47:Po1:
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1-3500,3502-4094
+ switchport mode trunk
+ no ip address
+ logging event link-status
+ load-interval 30
+ mls qos trust dscp
+ channel-group 1 mode active
+!
+interface GigabitEthernet3/6
+ description Q:chiixag02:Gi3/48:Po1:
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1-3500,3502-4094
+ switchport mode trunk
+ no ip address
+ logging event link-status
+ load-interval 30
+ mls qos trust dscp
+ channel-group 1 mode active
+!
+interface GigabitEthernet3/7
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/8
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/9
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/10
+ description Q:chi-ce-01:ge-0/0/45:legacy-integration
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ no ip address
+ logging event link-status
+ load-interval 30
+!
+interface GigabitEthernet3/11
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/12
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/13
+ description OPEEK Monitor
+ switchport
+ no ip address
+ logging event link-status
+ load-interval 30
+ mls qos trust dscp
+!
+interface GigabitEthernet3/14
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/15
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/16
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/17
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/18
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/19
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/20
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/21
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/22
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/23
+ description VBP18-Eth1
+ switchport
+ switchport access vlan 178
+ switchport mode access
+ no ip address
+ logging event link-status
+ load-interval 30
+ mls qos trust dscp
+!
+interface GigabitEthernet3/24
+ description VBP19-Eth0
+ switchport
+ switchport access vlan 178
+ switchport mode access
+ no ip address
+ logging event link-status
+ load-interval 30
+ mls qos trust dscp
+!
+interface GigabitEthernet3/25
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/26
+ description USCHISBC1B-INT
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 31,178,901-915,2025,3000-3003,3302
+ switchport mode trunk
+ no ip address
+ logging event link-status
+ load-interval 30
+ mls qos trust dscp
+!
+interface GigabitEthernet3/27
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/28
+ description USCHISBC1B-PEER
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 31,178,901-915,2025,3000-3003,3010,3012,3103
+ switchport trunk allowed vlan add 3302,3501
+ switchport mode trunk
+ no ip address
+ logging event link-status
+ load-interval 30
+ mls qos trust dscp
+!
+interface GigabitEthernet3/29
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/30
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/31
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/32
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/33
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/34
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/35
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/36
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/37
+ description Footlocker Internet
+ switchport
+ switchport access vlan 178
+ no ip address
+ logging event link-status
+ load-interval 30
+ speed 100
+ duplex full
+ mls qos trust dscp
+!
+interface GigabitEthernet3/38
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/39
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/40
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/41
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/42
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/43
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/44
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/45
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/46
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/47
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface GigabitEthernet3/48
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+ mls qos trust dscp
+!
+interface Vlan1
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface Vlan5
+ description X:chi-ce:legacy-integration     
+ ip address 172.22.2.19 255.255.255.248
+ load-interval 30
+!
+interface Vlan178
+ description Cogent Inside
+ ip address 38.65.194.2 255.255.255.0 secondary
+ ip address 38.103.112.105 255.255.255.248
+ no ip redirects
+ load-interval 30
+ standby ip 38.65.194.1
+ standby priority 105
+ standby preempt
+!
+interface Vlan620
+ ip vrf forwarding EXT_CARR_SIP_BELLCA
+ ip address 100.64.246.106 255.255.255.252
+ load-interval 30
+!
+interface Vlan903
+ description GlobalCrossing
+ ip address 172.16.1.14 255.255.255.240
+ load-interval 30
+!
+interface Vlan908
+ ip address 172.20.20.2 255.255.255.252
+ load-interval 30
+!
+interface Vlan2025
+ ip vrf forwarding EXT_APPLICABLE_SIP
+ ip address 100.64.40.14 255.255.255.240
+ load-interval 30
+!
+interface Vlan3001
+ ip vrf forwarding EXT_CARR_SIP_BELLCA
+ ip address 172.16.1.46 255.255.255.240
+ load-interval 30
+!
+router bgp 53550
+ bgp log-neighbor-changes
+ neighbor 38.65.194.3 remote-as 53550
+ neighbor 38.103.74.214 remote-as 174
+ neighbor 38.103.74.214 ebgp-multihop 5
+! neighbor 38.103.74.214 password <removed>
+ neighbor 38.103.74.214 update-source Loopback0
+ neighbor 38.104.103.93 remote-as 174
+! neighbor 38.104.103.93 password <removed>
+ neighbor 172.22.2.17 remote-as 53550
+ neighbor 172.22.2.17 description chi-ce-01         
+ neighbor 172.22.2.18 remote-as 53550
+ neighbor 172.22.2.18 description chi-ce-02         
+ !
+ address-family ipv4
+ neighbor 38.65.194.3 activate
+ neighbor 38.65.194.3 next-hop-self
+ neighbor 38.65.194.3 soft-reconfiguration inbound
+ neighbor 38.103.74.214 activate
+ neighbor 38.103.74.214 soft-reconfiguration inbound
+ neighbor 38.103.74.214 route-map RM_IMP_COGENT_V4 in
+ neighbor 38.103.74.214 route-map RM_EXP_COGENT_V4 out
+ neighbor 38.104.103.93 activate
+ neighbor 38.104.103.93 soft-reconfiguration inbound
+ neighbor 38.104.103.93 route-map RM_IMP_COGENT_V4 in
+ neighbor 38.104.103.93 route-map RM_EXP_COGENT_V4 out
+ neighbor 172.22.2.17 activate
+ neighbor 172.22.2.17 next-hop-self
+ neighbor 172.22.2.18 activate
+ neighbor 172.22.2.18 next-hop-self
+ no auto-summary
+ no synchronization
+ network 8.30.240.0 mask 255.255.255.0
+ network 38.65.194.0 mask 255.255.255.0
+ network 38.103.74.215 mask 255.255.255.255
+ network 38.103.112.104 mask 255.255.255.248
+ network 172.16.1.0 mask 255.255.255.240
+ network 172.16.1.16 mask 255.255.255.240
+ network 185.37.222.0 mask 255.255.255.192
+ network 185.37.222.0 mask 255.255.255.240
+ network 185.37.222.64 mask 255.255.255.192
+ network 185.37.222.64 mask 255.255.255.240
+ exit-address-family
+ !
+ address-family ipv4 vrf EXT_CARR_SIP_BELLCA
+ no auto-summary
+ no synchronization
+ exit-address-family
+ !
+ address-family ipv4 vrf EXT_APPLICABLE_SIP
+ neighbor 100.64.33.1 remote-as 65151
+ neighbor 100.64.33.1 activate
+ neighbor 100.64.33.1 soft-reconfiguration inbound
+ neighbor 100.64.33.1 route-map RM_EXT_APPLICABLE_SIP_OUT out
+ no auto-summary
+ no synchronization
+ network 100.64.40.0 mask 255.255.255.240
+ network 100.64.40.128 mask 255.255.255.240
+ exit-address-family
+!
+ip classless
+ip route 4.55.0.0 255.255.0.0 38.65.194.3 100
+ip route 38.65.194.0 255.255.255.0 Vlan178 220
+ip route 185.37.222.64 255.255.255.192 172.20.20.1
+ip route 185.37.222.64 255.255.255.240 172.20.20.1
+ip route vrf EXT_CARR_SIP_BELLCA 100.64.244.144 255.255.255.248 100.64.246.105
+ip route vrf EXT_APPLICABLE_SIP 100.64.40.128 255.255.255.240 Null0
+!
+ip bgp-community new-format
+ip as-path access-list 500 permit ^701$
+no ip http server
+!
+ip access-list standard ACL_SNMP
+ permit 185.37.222.62
+ permit 38.65.194.10
+!
+ip access-list extended OAM
+ permit tcp host 38.104.2.203 host 0.0.0.0 eq 22
+ permit tcp host 184.105.38.123 host 0.0.0.0 eq 22
+ permit tcp host 62.23.57.186 host 0.0.0.0 eq 22
+ permit tcp host 81.93.181.219 host 0.0.0.0 eq 22
+ permit tcp host 185.37.222.62 host 0.0.0.0 eq 22
+ permit tcp host 210.19.10.50 host 0.0.0.0 eq 22
+ip access-list extended PF_GLOBAL-EDGE_V4
+ deny   icmp any any fragments
+ permit icmp any any echo
+ permit icmp any any echo-reply
+ permit icmp any any time-exceeded
+ permit icmp any any unreachable
+ permit icmp any any packet-too-big
+ deny   icmp any any
+ deny   ip 0.0.0.0 0.255.255.255 any
+ deny   ip 10.0.0.0 0.255.255.255 any
+ deny   ip 100.0.0.0 0.64.255.255 any
+ deny   ip 127.0.0.0 0.255.255.255 any
+ deny   ip 169.254.0.0 0.0.255.255 any
+ deny   ip 172.16.0.0 0.15.255.255 any
+ deny   ip 192.0.0.0 0.0.0.255 any
+ deny   ip 192.0.2.0 0.0.0.255 any
+ deny   ip 192.168.0.0 0.0.255.255 any
+ deny   ip 198.18.0.0 0.1.255.255 any
+ deny   ip 198.51.100.0 0.0.0.255 any
+ deny   ip 203.0.113.0 0.0.0.255 any
+ deny   ip 224.0.0.0 31.255.255.255 any
+ deny   ip 38.65.194.0 0.0.0.255 any
+ permit tcp any any established
+ deny   tcp any any eq telnet
+ deny   tcp any any eq pop3
+ deny   tcp any any eq sunrpc
+ deny   udp any any eq sunrpc
+ deny   tcp any any eq 123
+ permit udp any any eq ntp
+ deny   tcp any any eq 135
+ deny   udp any any eq 135
+ deny   tcp any any eq 137
+ deny   udp any any eq netbios-ns
+ deny   tcp any any eq 138
+ deny   udp any any eq netbios-dgm
+ deny   tcp any any eq 139
+ deny   udp any any eq netbios-ss
+ deny   tcp any any eq 143
+ deny   tcp any any eq 161
+ deny   udp any any eq snmp
+ deny   tcp any any eq 162
+ deny   udp any any eq snmptrap
+ deny   tcp any any eq 445
+ deny   udp any any eq 445
+ permit tcp host 108.16.31.84 host 38.65.194.120 eq 1433
+ permit tcp host 207.97.229.92 host 38.65.194.120 eq 1433
+ permit tcp host 69.20.93.144 host 38.65.194.120 eq 1433
+ permit tcp host 69.20.93.147 host 38.65.194.120 eq 1433
+ permit tcp host 69.20.93.148 host 38.65.194.120 eq 1433
+ deny   tcp any any eq 1433
+ deny   udp any any eq 1433
+ deny   tcp any any eq 3389
+ permit tcp any any eq domain log
+ permit udp any any eq domain log
+ permit udp host 208.67.220.220 eq domain any log
+ permit udp host 208.67.222.222 eq domain any log
+ permit udp any eq domain any log
+ permit udp any any eq isakmp log
+ permit esp any any log
+ permit gre any any log
+ permit ip any any
+!
+ip prefix-list CenturyLink-Out permit 63.145.134.104/29
+!
+ip prefix-list Cogent-IN permit 0.0.0.0/0
+ip prefix-list Cogent-IN permit 38.103.74.214/32
+!
+ip prefix-list Cogent-OUT permit 38.65.194.0/24
+ip prefix-list Cogent-OUT permit 38.103.74.215/32
+!
+ip prefix-list CogentBGP permit 0.0.0.0/0
+!
+ip prefix-list EXT_APPLICABLE_SIP_OUT permit 100.64.40.0/28
+ip prefix-list EXT_APPLICABLE_SIP_OUT permit 100.64.40.128/28
+!
+ip prefix-list INTQ-ONVOY-IN permit 206.147.68.32/28
+ip prefix-list INTQ-ONVOY-IN permit 206.147.237.0/24
+ip prefix-list INTQ-ONVOY-IN permit 216.221.154.112/28
+ip prefix-list INTQ-ONVOY-IN permit 216.221.155.64/28
+!
+ip prefix-list INTQ-ONVOY-OUT permit 38.65.194.0/24
+ip prefix-list INTQ-ONVOY-OUT permit 185.37.222.64/28
+!
+ip prefix-list Peerless-OUT permit 38.65.194.0/24
+ip prefix-list Peerless-OUT permit 185.37.222.64/26
+!
+ip prefix-list VZ-ARKA-IN permit 70.104.240.208/30
+ip prefix-list VZ-ARKA-IN permit 152.188.118.160/27
+ip prefix-list VZ-ARKA-IN permit 152.188.118.192/27
+!
+ip prefix-list VZ-ARKA-OUT permit 38.65.194.0/24
+ip prefix-list VZ-ARKA-OUT permit 185.37.222.64/26
+logging 10.100.137.24
+logging 10.100.137.89
+access-list 10 permit 38.65.194.10
+access-list 10 permit 185.37.222.62
+access-list 69 deny   any
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 185.37.222.62
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+access-list 111 permit ip any host 152.188.112.178
+!
+route-map BGP-to-EIGRP permit 10
+ match ip address prefix-list CogentBGP
+!
+route-map Peerless-OUT permit 10
+ match ip address prefix-list Peerless-OUT
+!
+route-map RM_EXP_COGENT_V4 permit 10
+ match ip address prefix-list Cogent-OUT
+ set as-path prepend 53550 53550 53550 53550
+!
+route-map RM_EXT_APPLICABLE_SIP_OUT permit 10
+ match ip address prefix-list EXT_APPLICABLE_SIP_OUT
+!
+route-map RM_IMP_COGENT_V4 permit 10
+ match ip address prefix-list Cogent-IN
+!
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server ifindex persist
+snmp-server location Chicago  
+snmp-server contact nio@arkadin.com
+snmp-server chassis-id USCHIRTe01A
+snmp-server enable traps snmp authentication linkdown linkup coldstart warmstart
+snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistency
+snmp-server enable traps envmon fan shutdown supply temperature
+snmp-server enable traps port-security
+snmp-server host 10.102.10.130 version 2c network_services 
+snmp-server host 10.115.38.131 version 2c noc_services 
+snmp-server host 10.115.137.57 version 2c noc_services 
+!
+radius-server source-ports 1645-1646
+!
+control-plane
+!
+dial-peer cor custom
+!
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ logging synchronous
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 30 0
+ logging synchronous
+ transport input ssh
+ transport output ssh
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 30 0
+ logging synchronous
+ transport input ssh
+ transport output ssh
+!
+monitor session 1 source interface Gi3/1 - 4
+monitor session 1 destination interface Gi3/13
+no cns aaa enable
+end

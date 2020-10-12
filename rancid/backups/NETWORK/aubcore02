@@ -1,0 +1,749 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C3750E-24TD
+!CPU: PowerPC405
+!
+!Memory: main 245760K/16376K
+!Model number:  WS-C3750E-24TD-E
+!Serial number: FDO1445V27V
+!
+!Processor ID: FDO1445V27V
+!
+!Image: Software: C3750E-UNIVERSALK9-M, 12.2(50)SE2, RELEASE SOFTWARE (fc2)
+!Image: Compiled: Fri 15-May-09 21:49 by nachen
+!Image: flash:c3750e-universalk9-mz.122-50.SE2/c3750e-universalk9-mz.122-50.SE2.bin
+!
+!BOOTLDR: Version 12.2(44r)SE3, RELEASE SOFTWARE (fc3)
+!
+!% No entity named "raw"
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Gi1/0/4, Gi1/0/7, Gi1/0/8, Gi1/0/9, Gi1/0/10, Gi1/0/11, Gi1/0/12, Gi1/0/16, Gi1/0/18
+!VLAN:                                                 Gi1/0/19, Gi1/0/20, Gi1/0/22, Gi1/0/26, Gi1/0/27, Gi1/0/28
+!VLAN: 2    X:10.102.20.0/24:PP-FW2-SW_inter active    
+!VLAN: 3    V:10.102.21.0/24:PP_VIPER_SIP    active    
+!VLAN: 4    V:10.102.22.0/24:PP_VIPER_RTP    active    
+!VLAN: 5    M:10.102.23.0/24:MGMT_PP         active    Gi1/0/14
+!VLAN: 6    Z:10.102.15.0/24:DMZ_6           active    
+!VLAN: 10   NATIVE                           active    
+!VLAN: 12   S:10.102.12.0/24:PP_LAN1         active    
+!VLAN: 19   M:10.102.19.0/24:PP_MGMT_DMZ     active    
+!VLAN: 24   V:AUB_ANW_DMZ-NTT_CLOUD_SIMUL    active    
+!VLAN: 65   U:192.168.65.0/26:IT_LB_DMZ      active    
+!VLAN: 100  VLAN0100                         active    
+!VLAN: 124  V:AUB_ANW_LAN-NTT_CLOUD_SIMUL    active    
+!VLAN: 142  V:10.102.142.0/24:LYNC_EPS_PP    active    
+!VLAN: 200  E:185.37.220.64/26:AUB_AS_INET   active    
+!VLAN: 201  V:10.102.201.0/24:LAN_lyncPP     active    
+!VLAN: 202  M:10.102.202.0/24:MGMT_LyncPP    active    
+!VLAN: 203  V:10.102.203.0/24:EPS_LyncPP     active    
+!VLAN: 248  VLAN0248                         active    
+!VLAN: 860  U:192.168.1.0/24:iSCSI_LyncPP    active    
+!VLAN: 998  X:172.29.2.32/29:EXT_INFRA       active    
+!VLAN: 999  X:172.29.2.24/29:INT_INFRA       active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: 1108 V:10.92.32.0/28:SIP_AdobePP      active    
+!VLAN: 1110 V:172.16.120.32/28:RTMP_SOFTPHON active    
+!VLAN: 1111 V:172.16.120.16/28:SIP_SOFTPHONE active    
+!VLAN: 1215 V:172.18.128.0/24:MT_int_LyncPP  active    
+!VLAN: 1217 V:172.19.0.32/27:MT_ext_LyncPP   active    
+!VLAN: 1219 V:185.37.220.128/25:Cust1_OnNet  active    
+!VLAN: 1220 V:172.18.0.0/24:Cust1_int_LyncPP active    
+!VLAN: 1221 V:172.17.0.64/27:Cust1_SBC_LyncP active    
+!VLAN: 1225 V:Cust2_int_LyncPP               active    
+!VLAN: 1226 V:172.17.0.160/27:SFBMT_SBC_Lync active    
+!VLAN: 1227 V:172.19.0.160/27:SFBMT_ext_Lync active    
+!VLAN: 1228 V:172.17.224.192/27:ACODES_SBC1  active    
+!VLAN: 1229 V:172.17.224.224/27:ACODES_SBC2  active    
+!VLAN: 1232 V:172.19.0.128/27:SFB_ext_LyncPP active    
+!VLAN: 1240 X:172.19.224.0/27:SFB_QOS_TST    active    
+!VLAN: 1241 X:172.19.224.32/27:SFB_QOS_CLIEN active    
+!VLAN: 4001 E:completel:83.145.110.64/28:    active    Gi1/0/21
+!VLAN: 4038 X:172.31.251.0/29:LB_INTERCO_DMZ active    
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 2    enet  100002     1500  -      -      -        -    -        0      0   
+!VLAN: 3    enet  100003     1500  -      -      -        -    -        0      0   
+!VLAN: 4    enet  100004     1500  -      -      -        -    -        0      0   
+!VLAN: 5    enet  100005     1500  -      -      -        -    -        0      0   
+!VLAN: 6    enet  100006     1500  -      -      -        -    -        0      0   
+!VLAN: 10   enet  100010     1500  -      -      -        -    -        0      0   
+!VLAN: 12   enet  100012     1500  -      -      -        -    -        0      0   
+!VLAN: 19   enet  100019     1500  -      -      -        -    -        0      0   
+!VLAN: 24   enet  100024     1500  -      -      -        -    -        0      0   
+!VLAN: 65   enet  100065     1500  -      -      -        -    -        0      0   
+!VLAN: 100  enet  100100     1500  -      -      -        -    -        0      0   
+!VLAN: 124  enet  100124     1500  -      -      -        -    -        0      0   
+!VLAN: 142  enet  100142     1500  -      -      -        -    -        0      0   
+!VLAN: 200  enet  100200     1500  -      -      -        -    -        0      0   
+!VLAN: 201  enet  100201     1500  -      -      -        -    -        0      0   
+!VLAN: 202  enet  100202     1500  -      -      -        -    -        0      0   
+!VLAN: 203  enet  100203     1500  -      -      -        -    -        0      0   
+!VLAN: 248  enet  100248     1500  -      -      -        -    -        0      0   
+!VLAN: 860  enet  100860     1500  -      -      -        -    -        0      0   
+!VLAN: 998  enet  100998     1500  -      -      -        -    -        0      0   
+!VLAN: 999  enet  100999     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: 1108 enet  101108     1500  -      -      -        -    -        0      0   
+!VLAN: 1110 enet  101110     1500  -      -      -        -    -        0      0   
+!VLAN: 1111 enet  101111     1500  -      -      -        -    -        0      0   
+!VLAN: 1215 enet  101215     1500  -      -      -        -    -        0      0   
+!VLAN: 1217 enet  101217     1500  -      -      -        -    -        0      0   
+!VLAN: 1219 enet  101219     1500  -      -      -        -    -        0      0   
+!VLAN: 1220 enet  101220     1500  -      -      -        -    -        0      0   
+!VLAN: 1221 enet  101221     1500  -      -      -        -    -        0      0   
+!VLAN: 1225 enet  101225     1500  -      -      -        -    -        0      0   
+!VLAN: 1226 enet  101226     1500  -      -      -        -    -        0      0   
+!VLAN: 1227 enet  101227     1500  -      -      -        -    -        0      0   
+!VLAN: 1228 enet  101228     1500  -      -      -        -    -        0      0   
+!VLAN: 1229 enet  101229     1500  -      -      -        -    -        0      0   
+!VLAN: 1232 enet  101232     1500  -      -      -        -    -        0      0   
+!VLAN: 1240 enet  101240     1500  -      -      -        -    -        0      0   
+!VLAN: 1241 enet  101241     1500  -      -      -        -    -        0      0   
+!VLAN: 4001 enet  104001     1500  -      -      -        -    -        0      0   
+!VLAN: 4038 enet  104038     1500  -      -      -        -    -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0xF
+Using 16856 out of 524288 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime show-timezone
+service timestamps log datetime localtime
+service password-encryption
+service sequence-numbers
+service unsupported-transceiver
+!
+hostname aubcore02
+!
+boot-start-marker
+boot-end-marker
+!
+logging buffered 128000 notifications
+enable secret 5 $1$FmYS$9AfO0uOd.hnLcAVB1x.2E.
+!
+!username netops privilege 15 password <removed>
+username noc privilege 0 secret 5 $1$V2Vw$INuf2erLnNWqm5ZLSEzT./
+aaa new-model
+!
+aaa authentication fail-message ^CWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login NS-Radius group radius local
+aaa authentication enable default enable
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+clock timezone CET 1
+switch 1 provision ws-c3750e-24td
+system mtu routing 1500
+vtp mode transparent
+ip subnet-zero
+ip routing
+no ip icmp rate-limit unreachable
+no ip domain-lookup
+ip domain-name arkadin.lan
+!
+ip vrf VRF_ARKAD_EXT
+ rd 192.168.12.112:64513
+!
+login on-failure log
+login on-success log
+!
+no errdisable detect cause gbic-invalid
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+errdisable recovery cause loopback
+!
+file prompt quiet
+!
+spanning-tree mode rapid-pvst
+spanning-tree etherchannel guard misconfig
+spanning-tree extend system-id
+spanning-tree vlan 1-4094 priority 24576
+!
+vlan internal allocation policy ascending
+!
+vlan 2
+ name X:10.102.20.0/24:PP-FW2-SW_inter
+!
+vlan 3
+ name V:10.102.21.0/24:PP_VIPER_SIP
+!
+vlan 4
+ name V:10.102.22.0/24:PP_VIPER_RTP
+!
+vlan 5
+ name M:10.102.23.0/24:MGMT_PP
+!
+vlan 6
+ name Z:10.102.15.0/24:DMZ_6
+!
+vlan 10
+ name NATIVE
+!
+vlan 12
+ name S:10.102.12.0/24:PP_LAN1
+!
+vlan 19
+ name M:10.102.19.0/24:PP_MGMT_DMZ
+!
+vlan 24
+ name V:AUB_ANW_DMZ-NTT_CLOUD_SIMUL
+!
+vlan 65
+ name U:192.168.65.0/26:IT_LB_DMZ
+!
+vlan 100 
+!
+vlan 124
+ name V:AUB_ANW_LAN-NTT_CLOUD_SIMUL
+!
+vlan 142
+ name V:10.102.142.0/24:LYNC_EPS_PP
+!
+vlan 200
+ name E:185.37.220.64/26:AUB_AS_INET
+!
+vlan 201
+ name V:10.102.201.0/24:LAN_lyncPP
+!
+vlan 202
+ name M:10.102.202.0/24:MGMT_LyncPP
+!
+vlan 203
+ name V:10.102.203.0/24:EPS_LyncPP
+!
+vlan 248 
+!
+vlan 860
+ name U:192.168.1.0/24:iSCSI_LyncPP
+!
+vlan 998
+ name X:172.29.2.32/29:EXT_INFRA
+!
+vlan 999
+ name X:172.29.2.24/29:INT_INFRA
+!
+vlan 1108
+ name V:10.92.32.0/28:SIP_AdobePP
+!
+vlan 1110
+ name V:172.16.120.32/28:RTMP_SOFTPHON
+!
+vlan 1111
+ name V:172.16.120.16/28:SIP_SOFTPHONE
+!
+vlan 1215
+ name V:172.18.128.0/24:MT_int_LyncPP
+!
+vlan 1217
+ name V:172.19.0.32/27:MT_ext_LyncPP
+!
+vlan 1219
+ name V:185.37.220.128/25:Cust1_OnNet
+!
+vlan 1220
+ name V:172.18.0.0/24:Cust1_int_LyncPP
+!
+vlan 1221
+ name V:172.17.0.64/27:Cust1_SBC_LyncP
+!
+vlan 1225
+ name V:Cust2_int_LyncPP
+!
+vlan 1226
+ name V:172.17.0.160/27:SFBMT_SBC_Lync
+!
+vlan 1227
+ name V:172.19.0.160/27:SFBMT_ext_Lync
+!
+vlan 1228
+ name V:172.17.224.192/27:ACODES_SBC1
+!
+vlan 1229
+ name V:172.17.224.224/27:ACODES_SBC2
+!
+vlan 1232
+ name V:172.19.0.128/27:SFB_ext_LyncPP
+!
+vlan 1240
+ name X:172.19.224.0/27:SFB_QOS_TST
+!
+vlan 1241
+ name X:172.19.224.32/27:SFB_QOS_CLIEN
+!
+vlan 4001
+ name E:completel:83.145.110.64/28:
+!
+vlan 4038
+ name X:172.31.251.0/29:LB_INTERCO_DMZ
+lldp run
+!
+ip ssh authentication-retries 2
+ip ssh version 2
+ip scp server enable
+!
+interface Loopback0
+ ip address 192.168.12.112 255.255.255.255
+ load-interval 30
+!
+interface Port-channel1
+ description Q:aubcore01:Po1
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 10
+ switchport mode trunk
+ load-interval 30
+!
+interface FastEthernet0
+ no ip address
+ no ip route-cache cef
+ no ip route-cache
+ no ip mroute-cache
+ load-interval 30
+!
+interface GigabitEthernet1/0/1
+ description Q:aubaccs01:Gi1/0/23:
+ switchport trunk encapsulation dot1q
+ load-interval 30
+!
+interface GigabitEthernet1/0/2
+ description Q:aubaccs02:Gi1/0/22
+ switchport trunk encapsulation dot1q
+ load-interval 30
+!
+interface GigabitEthernet1/0/3
+ description Q:aubaccs03:Gi0/47
+ switchport trunk encapsulation dot1q
+ load-interval 30
+!
+interface GigabitEthernet1/0/4
+ load-interval 30
+!
+interface GigabitEthernet1/0/5
+ description Q:aubaccs05:Gi0/19
+ switchport access vlan 5
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 5,201,202
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/6
+ switchport trunk encapsulation dot1q
+ load-interval 30
+!
+interface GigabitEthernet1/0/7
+ switchport trunk encapsulation dot1q
+ load-interval 30
+!
+interface GigabitEthernet1/0/8
+ switchport trunk encapsulation dot1q
+ load-interval 30
+!
+interface GigabitEthernet1/0/9
+ switchport trunk encapsulation dot1q
+ load-interval 30
+!
+interface GigabitEthernet1/0/10
+ switchport trunk encapsulation dot1q
+ load-interval 30
+!
+interface GigabitEthernet1/0/11
+ switchport trunk encapsulation dot1q
+ load-interval 30
+!
+interface GigabitEthernet1/0/12
+ switchport trunk encapsulation dot1q
+ load-interval 30
+!
+interface GigabitEthernet1/0/13
+ description Q:aub-fw-01:ge-0/0/0:reth0-node1
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 200,4001,4038
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/14
+ description M:aub-fw-01:fxp0:node1
+ switchport access vlan 5
+ load-interval 30
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/15
+ description Q:aub-fw-01:ge-0/0/0:reth1-node1
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 5,142,248,998,999,1217,1219,1227,1232,1240
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/16
+ load-interval 30
+!
+interface GigabitEthernet1/0/17
+ description Q:aub-fw-01:ge-0/0/0:reth3-node1
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 6,19
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/18
+ load-interval 30
+!
+interface GigabitEthernet1/0/19
+ load-interval 30
+!
+interface GigabitEthernet1/0/20
+ load-interval 30
+!
+interface GigabitEthernet1/0/21
+ description E:93IDC-C3750-02-HB:Gi1/0/4:completel
+ switchport access vlan 4001
+ switchport mode access
+ load-interval 30
+ no cdp enable
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/22
+ load-interval 30
+!
+interface GigabitEthernet1/0/23
+ description Q:aubcore01:Gi1/0/23:Po1
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 10
+ switchport mode trunk
+ load-interval 30
+ channel-group 1 mode desirable
+!
+interface GigabitEthernet1/0/24
+ description Q:aubcore01:Gi1/0/24:Po1
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 10
+ switchport mode trunk
+ load-interval 30
+ channel-group 1 mode desirable
+!
+interface GigabitEthernet1/0/25
+ description Q:aubucaccs02:Et1/1:
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 6,142,201-203,860,1215-1217,1219-1222,1225-1229
+ switchport trunk allowed vlan add 1231,1232,1236,1237,1240,1241,1278
+ switchport mode trunk
+ load-interval 30
+!
+interface GigabitEthernet1/0/26
+ load-interval 30
+!
+interface GigabitEthernet1/0/27
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ load-interval 30
+ speed nonegotiate
+!
+interface GigabitEthernet1/0/28
+ load-interval 30
+!
+interface TenGigabitEthernet1/0/1
+ load-interval 30
+!
+interface TenGigabitEthernet1/0/2
+ load-interval 30
+!
+interface Vlan1
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface Vlan3
+ description SIP Viper Pre-Prod
+ ip address 10.102.21.2 255.255.255.0
+ load-interval 30
+ standby 3 ip 10.102.21.4
+!
+interface Vlan4
+ description RTP Viper Pre-Prod
+ ip address 10.102.22.4 255.255.255.0
+ load-interval 30
+ standby 4 ip 10.102.22.2
+!
+interface Vlan5
+ description M:10.102.23.0/24:MGMT_PP
+ ip address 10.102.23.251 255.255.255.0
+ load-interval 30
+ standby 0 ip 10.102.23.2
+ standby 5 ip 10.102.23.254
+!
+interface Vlan12
+ ip address 10.102.12.253 255.255.255.0
+ load-interval 30
+ standby 12 ip 10.102.12.254
+!
+interface Vlan19
+ description M:10.102.19.0/24:PP_MGMT_DMZ
+ ip address 10.102.19.253 255.255.255.0
+ load-interval 30
+ standby 19 ip 10.102.19.254
+!
+interface Vlan124
+ ip address 10.102.24.125 255.255.255.192
+ load-interval 30
+ standby 124 ip 10.102.24.126
+!
+interface Vlan201
+ description V:10.102.201.0/24:LAN_lyncPP
+ ip address 10.102.201.253 255.255.255.0
+ load-interval 30
+ standby 201 ip 10.102.201.254
+!
+interface Vlan202
+ description M:10.102.202.0/24:MGMT_LyncPP
+ ip address 10.102.202.253 255.255.255.0
+ load-interval 30
+ standby 202 ip 10.102.202.254
+!
+interface Vlan998
+ ip vrf forwarding VRF_ARKAD_EXT
+ ip address 172.29.2.37 255.255.255.248
+ load-interval 30
+!
+interface Vlan999
+ ip address 172.29.2.29 255.255.255.248
+ load-interval 30
+!
+interface Vlan1111
+ ip address 172.16.120.29 255.255.255.240
+ load-interval 30
+ standby version 2
+ standby 1111 ip 172.16.120.30
+!
+router bgp 64513
+ no synchronization
+ bgp router-id 192.168.12.112
+ bgp log-neighbor-changes
+ redistribute connected
+ neighbor 172.29.2.25 remote-as 64513
+ neighbor 172.29.2.25 transport path-mtu-discovery
+ neighbor 172.29.2.25 description aub-fw-01
+! neighbor 172.29.2.25 password <removed>
+ neighbor 172.29.2.25 version 4
+ neighbor 172.29.2.25 timers 3 10
+ neighbor 172.29.2.25 next-hop-self
+ neighbor 172.29.2.25 soft-reconfiguration inbound
+ neighbor 172.29.2.28 remote-as 64513
+ neighbor 172.29.2.28 transport path-mtu-discovery
+ neighbor 172.29.2.28 description aubcore02
+! neighbor 172.29.2.28 password <removed>
+ neighbor 172.29.2.28 version 4
+ neighbor 172.29.2.28 timers 1 4
+ neighbor 172.29.2.28 next-hop-self
+ neighbor 172.29.2.28 soft-reconfiguration inbound
+ no auto-summary
+ !
+ address-family ipv4 vrf VRF_ARKAD_EXT
+  neighbor 172.29.2.33 remote-as 64513
+  neighbor 172.29.2.33 description aub-fw-01
+  neighbor 172.29.2.33 transport path-mtu-discovery
+! neighbor 172.29.2.33 password <removed>
+  neighbor 172.29.2.33 version 4
+  neighbor 172.29.2.33 timers 3 10
+  neighbor 172.29.2.33 activate
+  neighbor 172.29.2.33 next-hop-self
+  neighbor 172.29.2.33 soft-reconfiguration inbound
+  neighbor 172.29.2.36 remote-as 64513
+  neighbor 172.29.2.36 description aubcore01
+  neighbor 172.29.2.36 transport path-mtu-discovery
+! neighbor 172.29.2.36 password <removed>
+  neighbor 172.29.2.36 version 4
+  neighbor 172.29.2.36 timers 1 4
+  neighbor 172.29.2.36 activate
+  neighbor 172.29.2.36 next-hop-self
+  neighbor 172.29.2.36 soft-reconfiguration inbound
+  no synchronization
+ exit-address-family
+!
+ip classless
+ip route 10.0.0.0 255.0.0.0 192.168.47.89 250
+no ip http server
+no ip http secure-server
+!
+ip access-list extended EDGE
+ deny   icmp any any fragments
+ permit tcp host 81.93.181.219 any eq 22
+ permit tcp host 62.23.57.186 any eq 22
+ permit tcp host 38.104.2.203 any eq 22
+ permit tcp any any established
+ permit icmp any any echo-reply
+ permit icmp any any echo
+ permit icmp any any ttl-exceeded
+ permit icmp any any packet-too-big
+ deny   ip any any
+ip access-list extended OAM
+ permit tcp host 81.93.181.219 host 0.0.0.0 eq 22
+ permit tcp host 62.23.57.186 host 0.0.0.0 eq 22
+ permit tcp host 38.104.2.203 host 0.0.0.0 eq 22
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ip access-list extended vidyofix
+ deny   ip host 185.37.220.83 10.0.0.0 0.255.255.255 log
+ deny   ip host 185.37.220.84 10.0.0.0 0.255.255.255 log
+ permit ip any any
+!
+ip prefix-list PFX-BGP-IN-NEO permit 10.0.0.0/8 le 32
+ip prefix-list PFX-BGP-IN-NEO permit 172.16.0.0/12 le 32
+ip prefix-list PFX-BGP-IN-NEO permit 192.168.0.0/16 le 32
+!
+ip prefix-list PFX-BGP-OUT-NEO permit 10.0.0.0/8 le 32
+ip prefix-list PFX-BGP-OUT-NEO permit 172.16.0.0/12 le 32
+ip prefix-list PFX-BGP-OUT-NEO permit 185.37.220.80/32
+ip prefix-list PFX-BGP-OUT-NEO permit 185.37.220.106/32
+ip prefix-list PFX-BGP-OUT-NEO permit 185.37.220.107/32
+ip prefix-list PFX-BGP-OUT-NEO permit 185.37.220.108/32
+ip prefix-list PFX-BGP-OUT-NEO permit 185.37.220.109/32
+ip prefix-list PFX-BGP-OUT-NEO permit 185.37.220.110/32
+ip prefix-list PFX-BGP-OUT-NEO permit 185.37.220.111/32
+ip prefix-list PFX-BGP-OUT-NEO permit 185.37.220.112/32
+ip prefix-list PFX-BGP-OUT-NEO permit 192.168.0.0/16 le 32
+ip radius source-interface Vlan5 
+logging trap notifications
+logging origin-id hostname
+logging facility local5
+logging source-interface Vlan5
+logging 10.115.137.89
+logging 10.124.23.24
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+arp 192.168.254.71 0024.3876.4e80 ARPA
+arp 192.168.254.72 0024.3876.4640 ARPA
+route-map BGP-NEO-IN permit 10
+ match ip address prefix-list PFX-BGP-IN-NEO
+!
+route-map BGP-NEO-OUT permit 10
+ match ip address prefix-list PFX-BGP-OUT-NEO
+!
+!
+route-map CONNECTED permit 10
+!
+route-map STATIC2OSPF permit 10
+ match tag 40
+ set metric-type type-2
+!
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server location emea-aub
+snmp-server contact nio@arkadin.com
+snmp-server host 10.100.19.21 version 2c noc_services 
+snmp-server host 10.115.137.55 version 2c noc_services 
+snmp ifmib ifindex persist
+radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server timeout 3
+!radius-server key <removed>
+!
+control-plane
+!
+banner login ^C====================================================================
+=         UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED         =
+=    You must have explicit, authorized permission to access or    =
+=   configure this device. Unauthorized attempts and actions to    =
+=   access or use this system may result in civil and/or criminal  =
+= All activities performed on this device are logged and monitored =
+====================================================================
+^C
+alias exec u undebug all
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+privilege exec level 0 show environment
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ logging synchronous
+ login authentication NS-Radius
+ history size 256
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication NS-Radius
+ history size 256
+ transport input ssh
+ transport output ssh
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication NS-Radius
+ history size 256
+ transport input ssh
+ transport output ssh
+!
+ntp source Vlan5
+ntp server 10.115.131.1 prefer
+ntp server 10.124.19.1
+ntp server 10.125.19.1
+mac address-table aging-time 14400
+end

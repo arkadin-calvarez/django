@@ -1,0 +1,881 @@
+!RANCID-CONTENT-TYPE: cisco-nx
+!
+!Chassis type: Nexus5548 - a NXOS router
+!Hardware: cisco Nexus5548 Chassis ("O2 32X10GE/Modular Universal Platform Supervisor")
+!Hardware: Intel(R) Xeon(R) CPU with 8070 MB of memory.
+!Hardware: Processor Board ID FOC15277B42
+!
+!
+!Memory: bootflash: 1960 MB
+!
+!Software: BIOS: version 3.6.0
+!Software: loader: version N/A
+!Software: kickstart: version 5.2(1)N1(1)
+!Software: system: version 5.2(1)N1(1)
+!Software: power-seq: Module 1: version v1.0
+!Software: Module 3: version v2.0
+!Software: uC: version v1.2.0.1
+!Software: SFP uC: Module 1: v1.0.0.0
+!Software: BIOS compile time: 05/09/2012
+!Software: kickstart image file is: bootflash:///n5000-uk9-kickstart.5.2.1.N1.1.bin
+!Software: kickstart compile time: 7/12/2012 19:00:00 [07/13/2012 02:08:13]
+!Software: system image file is: bootflash:///n5000-uk9.5.2.1.N1.1.bin
+!Software: system compile time: 7/12/2012 19:00:00 [07/13/2012 03:23:16]
+!
+!
+!
+!
+!
+!LIC: Feature                      Ins  Lic   Status Expiry Date Comments
+!LIC:                                  Count
+!LIC: FCOE_NPV_PKG                  No    -   Unused             -
+!LIC: FM_SERVER_PKG                 No    -   Unused             -
+!LIC: ENTERPRISE_PKG                No    -   Unused             -
+!LIC: FC_FEATURES_PKG               No    -   Unused             -
+!LIC: VMFEX_FEATURE_PKG             No    -   Unused             -
+!LIC: ENHANCED_LAYER2_PKG           No    -   Unused             -
+!LIC: LAN_BASE_SERVICES_PKG         No    -   Unused             -
+!LIC: LAN_ENTERPRISE_SERVICES_PKG   No    -   Unused             -
+!
+!LIC: License hostid: VDH=SSI15190HQ8
+!
+!Env: Fan:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis-1       N5548P-FAN           --         ok
+!Env: Chassis-2       N5548P-FAN           --         ok
+!Env: PS-1            N55-PAC-750W         --         ok
+!Env: PS-2            N55-PAC-750W         --         ok
+!
+!Env: Power Supply:
+!Env: Voltage: 12 Volts
+!Env: -----------------------------------------------------------
+!Env: PS  Model                Input Power       Power     Status
+!Env:                          Type  (Watts)     (Amp)
+!Env: -----------------------------------------------------------
+!Env: 1   N55-PAC-750W         AC     780.00     65.00     ok
+!Env: 2   N55-PAC-750W         AC     780.00     65.00     ok
+!Env: Mod Model                   Power     Power       Power     Power       Status
+!Env:                             Requested Requested   Allocated Allocated
+!Env:                             (Watts)   (Amp)       (Watts)   (Amp)
+!Env: --- ----------------------  -------   ----------  --------- ----------  ----------
+!Env: 1    N5K-C5548UP-SUP        492.00    41.00       492.00    41.00       powered-up
+!Env: 3    N55-DL2                24.00     2.00        24.00     2.00        powered-up
+!Env: Power Usage Summary:
+!Env: --------------------
+!Env: Power Supply redundancy mode:                 Redundant
+!Env: Power Supply redundancy operational mode:     Redundant
+!Env: Total Power Capacity                             1560.00 W
+!Env: Power reserved for Supervisor(s)                  492.00 W
+!Env: Power currently used by Modules                    24.00 W
+!Env:                                                 -------------
+!Env: Total Power Available                            1044.00 W
+!Env:                                                 -------------
+!
+!Variable: Current Boot Variables:
+!Variable: kickstart = bootflash:/n5000-uk9-kickstart.5.2.1.N1.1.bin
+!Variable: system = bootflash:/n5000-uk9.5.2.1.N1.1.bin
+!Variable: Boot Variables on next reload:
+!Variable: kickstart = bootflash:/n5000-uk9-kickstart.5.2.1.N1.1.bin
+!Variable: system = bootflash:/n5000-uk9.5.2.1.N1.1.bin
+!
+!Flash: bootflash:           0    Oct 09 10:55:17 2013  20131009_105517_poap_3473_init.log
+!Flash: bootflash:           0    Mar 10 14:32:14 2014  20140310_143214_poap_3469_init.log
+!Flash: bootflash:        4096    Aug 17 19:05:41 2012  lost+found/
+!Flash: bootflash:        1898    May 08 20:08:41 2019  mts.log
+!Flash: bootflash:    25140224    Aug 10 16:27:27 2011  n5000-uk9-kickstart.5.0.3.N2.1.bin
+!Flash: bootflash:    34342400    Jan 19 19:03:59 2012  n5000-uk9-kickstart.5.1.3.N1.1.bin
+!Flash: bootflash:    31646720    Aug 17 18:59:12 2012  n5000-uk9-kickstart.5.2.1.N1.1.bin
+!Flash: bootflash:   147256572    Aug 10 16:28:36 2011  n5000-uk9.5.0.3.N2.1.bin
+!Flash: bootflash:   147395647    Jan 19 19:04:36 2012  n5000-uk9.5.1.3.N1.1.bin
+!Flash: bootflash:   173087826    Aug 17 18:59:38 2012  n5000-uk9.5.2.1.N1.1.bin
+!Flash: bootflash:        6675    Jul 17 03:13:57 2015  startup-config.noF10stack
+!Flash: bootflash:        4096    Jan 01 16:31:29 2009  vdc_2/
+!Flash: bootflash:        4096    Jan 01 16:31:29 2009  vdc_3/
+!Flash: bootflash:        4096    Jan 01 16:31:29 2009  vdc_4/
+!Flash: bootflash: Usage for bootflash://sup-local
+!Flash: bootflash: 1 GB total (58% free)
+!
+!Flash: debug: Usage for debug://sup-local
+!Flash: debug: 20 MB total (100% free)
+!
+!Flash: volatile: Usage for volatile://sup-local
+!Flash: volatile: 150 MB total (100% free)
+!
+!Mod: Mod Ports Module-Type                       Model                  Status
+!Mod: --- ----- --------------------------------- ---------------------- ------------
+!Mod: 1   32    O2 32X10GE/Modular Universal Plat N5K-C5548UP-SUP        active
+!Mod: 3   0     O2 Non L3 Daughter Card           N55-DL2                ok
+!Mod: 
+!Mod: Mod  Sw              Hw      World-Wide-Name(s) (WWN)
+!Mod: ---  --------------  ------  --------------------------------------------------
+!Mod: 1    5.2(1)N1(1)     1.0     --
+!Mod: 3    5.2(1)N1(1)     1.0     --
+!Mod: 
+!Mod: Mod  MAC-Address(es)                         Serial-Num
+!Mod: ---  --------------------------------------  ----------
+!Mod: 1    547f.ee13.ccc8 to 547f.ee13.cce7         FOC15277B42
+!Mod: 3    0000.0000.0000 to 0000.0000.000f         JAF1523CQQH
+!
+!NAME: "Chassis",               DESCR: "Nexus5548 Chassis"
+!PID: N5K-C5548UP
+!VID: V01
+!SN: SSI15190HQ8
+!NAME: "Module 1",              DESCR: "O2 32X10GE/Modular Universal Platform Supervisor"
+!PID: N5K-C5548UP
+!VID: V01
+!SN: FOC15277B42
+!NAME: "Fan 1",                 DESCR: "Chassis fan module"
+!PID: N5548P-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "Fan 2",                 DESCR: "Chassis fan module"
+!PID: N5548P-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "Power supply 1",        DESCR: "AC power supply"
+!PID: N55-PAC-750W
+!VID: V01
+!SN: ART1522X0JB
+!NAME: "Power supply 2",        DESCR: "AC power supply"
+!PID: N55-PAC-750W
+!VID: V01
+!SN: ART1522X0J5
+!NAME: "Module 3",              DESCR: "O2 Non L3 Daughter Card"
+!PID: N55-DL2
+!VID: V01
+!SN: JAF1523CQQH
+!
+!Ethernet1/1
+!    transceiver is present
+!    type is SFP-1000BASE-SX
+!    name is CISCO-FINISAR   
+!    part number is FTLF8519P2BCL-CS
+!    revision is B   
+!    serial number is FNS13070L2K     
+!    nominal bitrate is 1300 MBit/sec
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/2
+!    transceiver is not present
+!Ethernet1/3
+!    transceiver is present
+!    type is SFP-H10GB-CU5M rev A
+!    name is CISCO-MOLEX INC 
+!    part number is 74752-9096      
+!    revision is A0  
+!    serial number is MOC17331818     
+!    nominal bitrate is 12000 MBit/sec
+!    Link length supported for copper is 5 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/4
+!    transceiver is present
+!    type is SFP-H10GB-CU5M rev A
+!    name is CISCO-MOLEX INC 
+!    part number is 74752-9096      
+!    revision is A0  
+!    serial number is MOC17331813     
+!    nominal bitrate is 12000 MBit/sec
+!    Link length supported for copper is 5 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/5
+!    transceiver is not present
+!Ethernet1/6
+!    transceiver is not present
+!Ethernet1/7
+!    transceiver is not present
+!Ethernet1/8
+!    transceiver is not present
+!Ethernet1/9
+!    transceiver is not present
+!Ethernet1/10
+!    transceiver is not present
+!Ethernet1/11
+!    transceiver is not present
+!Ethernet1/12
+!    transceiver is not present
+!Ethernet1/13
+!    transceiver is present
+!    type is SFP-H10GB-CU5M rev A
+!    name is CISCO-MOLEX INC 
+!    part number is 74752-9096      
+!    revision is A0  
+!    serial number is MOC17361292     
+!    nominal bitrate is 12000 MBit/sec
+!    Link length supported for copper is 5 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/14
+!    transceiver is present
+!    type is SFP-H10GB-CU5M rev A
+!    name is CISCO-MOLEX INC 
+!    part number is 74752-9096      
+!    revision is A0  
+!    serial number is MOC17450592     
+!    nominal bitrate is 12000 MBit/sec
+!    Link length supported for copper is 5 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/15
+!    transceiver is present
+!    type is SFP-H10GB-CU5M rev A
+!    name is CISCO-MOLEX INC 
+!    part number is 74752-9096      
+!    revision is A0  
+!    serial number is MOC17331820     
+!    nominal bitrate is 12000 MBit/sec
+!    Link length supported for copper is 5 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/16
+!    transceiver is present
+!    type is SFP-H10GB-CU5M rev A
+!    name is CISCO-MOLEX INC 
+!    part number is 74752-9096      
+!    revision is A0  
+!    serial number is MOC17361355     
+!    nominal bitrate is 12000 MBit/sec
+!    Link length supported for copper is 5 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/17
+!    transceiver is present
+!    type is SFP-H10GB-CU5M rev A
+!    name is CISCO-MOLEX INC 
+!    part number is 74752-9096      
+!    revision is A0  
+!    serial number is MOC17450557     
+!    nominal bitrate is 12000 MBit/sec
+!    Link length supported for copper is 5 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/18
+!    transceiver is present
+!    type is SFP-H10GB-CU5M rev A
+!    name is CISCO-MOLEX INC 
+!    part number is 74752-9096      
+!    revision is A0  
+!    serial number is MOC17361287     
+!    nominal bitrate is 12000 MBit/sec
+!    Link length supported for copper is 5 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/19
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is CISCO-OEM       
+!    part number is GLC-T-C         
+!    revision is A   
+!    serial number is GTSV9244        
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/20
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is CISCO-OEM       
+!    part number is GLC-T-C         
+!    revision is A   
+!    serial number is GTSV9241        
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/21
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is CISCO-OEM       
+!    part number is GLC-T-C         
+!    revision is A   
+!    serial number is GTSV9242        
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/22
+!    transceiver is present
+!    type is SFP-1000BASE-T
+!    name is CISCO-OEM       
+!    part number is GLC-T-C         
+!    revision is A   
+!    serial number is GTSV9243        
+!    nominal bitrate is 1300 MBit/sec
+!    Link length supported for copper is 100 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/23
+!    transceiver is present
+!    type is SFP-H10GB-CU5M rev A
+!    name is CISCO-MOLEX INC 
+!    part number is 74752-9096      
+!    revision is A0  
+!    serial number is MOC17361297     
+!    nominal bitrate is 12000 MBit/sec
+!    Link length supported for copper is 5 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/24
+!    transceiver is present
+!    type is SFP-H10GB-CU5M rev A
+!    name is CISCO-MOLEX INC 
+!    part number is 74752-9096      
+!    revision is A0  
+!    serial number is MOC17361289     
+!    nominal bitrate is 12000 MBit/sec
+!    Link length supported for copper is 5 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/25
+!    transceiver is present
+!    type is SFP-H10GB-CU5M rev A
+!    name is CISCO-MOLEX INC 
+!    part number is 74752-9096      
+!    revision is A0  
+!    serial number is MOC17361276     
+!    nominal bitrate is 12000 MBit/sec
+!    Link length supported for copper is 5 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/26
+!    transceiver is present
+!    type is SFP-H10GB-CU5M rev A
+!    name is CISCO-MOLEX INC 
+!    part number is 74752-9096      
+!    revision is A0  
+!    serial number is MOC17361291     
+!    nominal bitrate is 12000 MBit/sec
+!    Link length supported for copper is 5 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/27
+!    transceiver is not present
+!Ethernet1/28
+!    transceiver is not present
+!Ethernet1/29
+!    transceiver is present
+!    type is SFP-H10GB-CU3M
+!    name is OEM             
+!    part number is SFP-H10GB-CU3M  
+!    revision is 07  
+!    serial number is MG10C304867     
+!    nominal bitrate is 10300 MBit/sec
+!    Link length supported for copper is 3 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/30
+!    transceiver is present
+!    type is SFP-H10GB-CU3M
+!    name is OEM             
+!    part number is SFP-H10GB-CU3M  
+!    revision is 07  
+!    serial number is MG10C304827     
+!    nominal bitrate is 10300 MBit/sec
+!    Link length supported for copper is 3 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/31
+!    transceiver is present
+!    type is SFP-H10GB-CU3M
+!    name is OEM             
+!    part number is SFP-H10GB-CU3M  
+!    revision is 07  
+!    serial number is MG10C304750     
+!    nominal bitrate is 10300 MBit/sec
+!    Link length supported for copper is 3 m
+!    cisco id is --
+!    cisco extended id number is 4
+!Ethernet1/32
+!    transceiver is present
+!    type is SFP-H10GB-CU3M
+!    name is OEM             
+!    part number is SFP-H10GB-CU3M  
+!    revision is 07  
+!    serial number is MG10C304747     
+!    nominal bitrate is 10300 MBit/sec
+!    Link length supported for copper is 3 m
+!    cisco id is --
+!    cisco extended id number is 4
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Po11, Eth1/2, Eth1/5, Eth1/6
+!VLAN:                                                 Eth1/7, Eth1/8, Eth1/9, Eth1/10
+!VLAN:                                                 Eth1/11, Eth1/12, Eth1/27
+!VLAN:                                                 Eth1/28, Eth1/29, Eth1/30
+!VLAN:                                                 Eth1/31, Eth1/32
+!VLAN: 6    V:10.102.15.0/24:DMZ             active    Po1, Po11, Eth1/13, Eth1/14
+!VLAN:                                                 Eth1/15, Eth1/16, Eth1/29
+!VLAN:                                                 Eth1/30, Eth1/31, Eth1/32
+!VLAN: 142  VLAN0142                         active    Po1, Po11, Eth1/1, Eth1/3
+!VLAN:                                                 Eth1/4, Eth1/13, Eth1/14
+!VLAN:                                                 Eth1/15, Eth1/16, Eth1/29
+!VLAN:                                                 Eth1/30, Eth1/31, Eth1/32
+!VLAN: 201  V:10.102.201.0/24:LAN_lyncPP     active    Po1, Po11, Eth1/1, Eth1/3
+!VLAN:                                                 Eth1/4, Eth1/13, Eth1/14
+!VLAN:                                                 Eth1/15, Eth1/16, Eth1/29
+!VLAN:                                                 Eth1/30, Eth1/31, Eth1/32
+!VLAN: 202  M:10.102.202.0/24:MGMT_LyncPP    active    Po11, Eth1/1, Eth1/29, Eth1/30
+!VLAN:                                                 Eth1/31, Eth1/32
+!VLAN: 203  V:10.102.203.0/24:EPS_LyncPP     active    Po11, Eth1/1, Eth1/3, Eth1/4
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 860  U:192.168.1.0/24:iSCSI_LyncPP    active    Po10, Po11, Eth1/1, Eth1/17
+!VLAN:                                                 Eth1/18, Eth1/19, Eth1/20
+!VLAN:                                                 Eth1/21, Eth1/22, Eth1/29
+!VLAN:                                                 Eth1/30, Eth1/31, Eth1/32
+!VLAN: 1215 V:172.18.128.0/24:MT_int_LyncPP  active    Po1, Po11, Eth1/1, Eth1/13
+!VLAN:                                                 Eth1/14, Eth1/15, Eth1/16
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 1216 V:172.17.0.32/27:MT_SBC_LyncPP   active    Po1, Po11, Eth1/1, Eth1/13
+!VLAN:                                                 Eth1/14, Eth1/15, Eth1/16
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 1217 V:172.19.0.32/27:MT_ext_LyncPP   active    Po1, Po11, Eth1/1, Eth1/13
+!VLAN:                                                 Eth1/14, Eth1/15, Eth1/16
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 1220 V:172.18.0.0/24:Cust1_int_LyncPP active    Po1, Po11, Eth1/1, Eth1/13
+!VLAN:                                                 Eth1/14, Eth1/15, Eth1/16
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 1221 V:172.17.0.64/27:Cust1_SBC_LyncP active    Po1, Po11, Eth1/1, Eth1/13
+!VLAN:                                                 Eth1/14, Eth1/15, Eth1/16
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 1222 V:172.19.0.0/27:Cust1_ext_LyncPP active    Po1, Po11, Eth1/1, Eth1/13
+!VLAN:                                                 Eth1/14, Eth1/15, Eth1/16
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 1225 V:Cust2_int_LyncPP               active    Po1, Po11, Eth1/1, Eth1/13
+!VLAN:                                                 Eth1/14, Eth1/15, Eth1/16
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 1226 V:172.17.0.160/27:SFBMT_SBC_LKPP active    Po1, Po11, Eth1/1, Eth1/13
+!VLAN:                                                 Eth1/14, Eth1/15, Eth1/16
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 1227 V:172.19.0.160/27:SFBMT_ext_Lync active    Po1, Po11, Eth1/1, Eth1/13
+!VLAN:                                                 Eth1/14, Eth1/15, Eth1/16
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 1228 V:172.17.224.192/27:ACODES_SBC1  active    Po1, Po11, Eth1/1, Eth1/13
+!VLAN:                                                 Eth1/14, Eth1/15, Eth1/16
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 1229 V:172.17.224.224/27:ACODES_SBC2  active    Po1, Po11, Eth1/1, Eth1/13
+!VLAN:                                                 Eth1/14, Eth1/15, Eth1/16
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 1231 V:172.17.0.128/27:SFB_SBC_LyncPP active    Po1, Po11, Eth1/1, Eth1/13
+!VLAN:                                                 Eth1/14, Eth1/15, Eth1/16
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 1232 V:172.19.0.128/27:SFB_ext_LyncPP active    Po1, Po11, Eth1/1, Eth1/13
+!VLAN:                                                 Eth1/14, Eth1/15, Eth1/16
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 1240 X:172.19.224.0/27:SFB_QOS_TST    active    Po1, Po11, Eth1/1, Eth1/13
+!VLAN:                                                 Eth1/14, Eth1/15, Eth1/16
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 1241 X:172.19.224.32/27:SFB_QOS_CLI   active    Po1, Po11, Eth1/1, Eth1/13
+!VLAN:                                                 Eth1/14, Eth1/15, Eth1/16
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: 1278 X:172.19.248.0/27:SFB_IS_SVCS    active    Po1, Po11, Eth1/1, Eth1/13
+!VLAN:                                                 Eth1/14, Eth1/15, Eth1/16
+!VLAN:                                                 Eth1/29, Eth1/30, Eth1/31
+!VLAN:                                                 Eth1/32
+!VLAN: VLAN Type  Vlan-mode
+!VLAN: ---- ----- ----------
+!VLAN: 1    enet  CE     
+!VLAN: 6    enet  CE     
+!VLAN: 142  enet  CE     
+!VLAN: 201  enet  CE     
+!VLAN: 202  enet  CE     
+!VLAN: 203  enet  CE     
+!VLAN: 860  enet  CE     
+!VLAN: 1215 enet  CE     
+!VLAN: 1216 enet  CE     
+!VLAN: 1217 enet  CE     
+!VLAN: 1220 enet  CE     
+!VLAN: 1221 enet  CE     
+!VLAN: 1222 enet  CE     
+!VLAN: 1225 enet  CE     
+!VLAN: 1226 enet  CE     
+!VLAN: 1227 enet  CE     
+!VLAN: 1228 enet  CE     
+!VLAN: 1229 enet  CE     
+!VLAN: 1231 enet  CE     
+!VLAN: 1232 enet  CE     
+!VLAN: 1240 enet  CE     
+!VLAN: 1241 enet  CE     
+!VLAN: 1278 enet  CE     
+!VLAN: Remote SPAN VLANs
+!VLAN: -------------------------------------------------------------------------------
+!VLAN: Primary  Secondary  Type             Ports
+!VLAN: -------  ---------  ---------------  -------------------------------------------
+!
+!CORES: Module  Instance  Process-name     PID       Date(Year-Month-Day Time)
+!CORES: ------  --------  ---------------  --------  -------------------------
+!
+!PROC_LOGS: Process          PID     Normal-exit  Stack  Core   Log-create-time
+!PROC_LOGS: ---------------  ------  -----------  -----  -----  ---------------
+!PROC_LOGS: installer        16664             N      N      N  Thu Jan 19 19:05:12 2012
+!
+
+
+version 5.2(1)N1(1)
+logging level feature-mgr 0
+hostname aubucaccs02
+
+no feature telnet
+cfs eth distribute
+feature lacp
+feature vpc
+feature lldp
+
+username admin password 5 $1$sMqsd1Mz$Hp/nftWOp25r8fV63U8Lk1  role network-admin
+username netops password 5 $1$Nv1yjAAj$6bHyqmVkDySXYbBjiRBvC.  role network-admin
+
+banner motd #Nexus 5000 Switch
+#
+
+ip domain-lookup
+!radius-server key 7 <removed>
+radius-server timeout 3
+radius-server retransmit 3
+radius-server host 10.102.10.130 authentication 
+radius-server host 10.101.13.45 authentication 
+radius-server host 10.115.38.110 authentication 
+radius-server host 10.100.92.1 authentication 
+aaa group server radius ARKANETRADIUS 
+    server 10.115.38.110 
+    server 10.100.92.1 
+    deadtime 30
+    use-vrf management
+crypto key param rsa label FRAUBUCACCS02 modulus 512 
+logging event link-status default
+ip access-list OAM
+ permit tcp 10.0.1.0/24 10.102.202.83/32 eq 22
+ permit tcp 10.100.19.20/32 10.102.202.83/32 eq 22
+ permit tcp 10.100.19.21/32 10.102.202.83/32 eq 22
+ permit tcp 10.100.137.89/32 10.102.202.83/32 eq 22
+ permit tcp 10.115.137.89/32 10.102.202.83/32 eq 22
+ permit tcp 10.245.2.0/24 10.102.202.83/32 eq 22
+ permit tcp 10.250.137.89/32 10.102.202.83/32 eq 22
+ permit tcp 172.29.0.0/16 10.102.202.83/32 eq 22
+ permit tcp 172.30.0.0/16 10.102.202.83/32 eq 22
+ip access-list SNMP_CLIENTS
+ permit ip 10.100.19.21/32 any
+ permit ip 10.100.137.55/32 any
+ permit ip 10.105.137.56/32 any
+ permit ip 10.105.137.57/32 any
+ permit ip 10.105.137.80/32 any
+ permit ip 10.115.137.57/32 any
+ permit ip 10.250.90.90/32 any
+ permit ip 10.250.137.55/32 any
+ permit ip 192.206.95.169/32 any
+class-map type qos class-fcoe
+class-map type queuing class-fcoe
+  match qos-group 1
+class-map type queuing class-all-flood
+  match qos-group 2
+class-map type queuing class-ip-multicast
+  match qos-group 2
+class-map type network-qos class-fcoe
+  match qos-group 1
+class-map type network-qos class-all-flood
+  match qos-group 2
+class-map type network-qos class-ip-multicast
+  match qos-group 2
+snmp-server contact nio@arkadin.com
+snmp-server location  emea-aub
+snmp-server user admin network-admin auth md5 0xf96645c89bdb35f99e12b4f15867ee65 priv 0xf96645c89bdb35f99e12b4f15867ee65 localizedkey
+snmp-server user netops network-admin auth md5 0xf96645c89bdb35f99e12b4f15867ee65 priv 0xf96645c89bdb35f99e12b4f15867ee65 localizedkey
+snmp-server host 10.100.19.21 traps version 2c noc_services 
+snmp-server host 10.100.19.21 use-vrf management
+snmp-server host 10.115.137.55 traps version 2c noc_services 
+snmp-server host 10.115.137.55 use-vrf management
+snmp-server community network_services group network-operator
+snmp-server community noc_services group network-operator
+snmp-server community noc_services use-acl SNMP_CLIENTS
+ntp server 10.115.131.1 use-vrf management
+ntp server 10.125.19.1 use-vrf management
+ntp source-interface  mgmt0
+aaa authentication login default group ARKANETRADIUS 
+
+vrf context management
+  ip route 0.0.0.0/0 10.102.202.254
+vlan 1
+vlan 6
+  name V:10.102.15.0/24:DMZ
+vlan 142
+vlan 201
+  name V:10.102.201.0/24:LAN_lyncPP
+vlan 202
+  name M:10.102.202.0/24:MGMT_LyncPP
+vlan 203
+  name V:10.102.203.0/24:EPS_LyncPP
+vlan 860
+  name U:192.168.1.0/24:iSCSI_LyncPP
+vlan 1215
+  name V:172.18.128.0/24:MT_int_LyncPP
+vlan 1216
+  name V:172.17.0.32/27:MT_SBC_LyncPP
+vlan 1217
+  name V:172.19.0.32/27:MT_ext_LyncPP
+vlan 1220
+  name V:172.18.0.0/24:Cust1_int_LyncPP
+vlan 1221
+  name V:172.17.0.64/27:Cust1_SBC_LyncP
+vlan 1222
+  name V:172.19.0.0/27:Cust1_ext_LyncPP
+vlan 1225
+  name V:Cust2_int_LyncPP
+vlan 1226
+  name V:172.17.0.160/27:SFBMT_SBC_LKPP
+vlan 1227
+  name V:172.19.0.160/27:SFBMT_ext_Lync
+vlan 1228
+  name V:172.17.224.192/27:ACODES_SBC1
+vlan 1229
+  name V:172.17.224.224/27:ACODES_SBC2
+vlan 1231
+  name V:172.17.0.128/27:SFB_SBC_LyncPP
+vlan 1232
+  name V:172.19.0.128/27:SFB_ext_LyncPP
+vlan 1240
+  name X:172.19.224.0/27:SFB_QOS_TST
+vlan 1241
+  name X:172.19.224.32/27:SFB_QOS_CLI
+vlan 1278
+  name X:172.19.248.0/27:SFB_IS_SVCS
+vpc domain 1
+  role priority 16384
+  system-priority 8192
+  peer-keepalive destination 10.102.202.81
+  delay restore 150
+  peer-gateway
+  auto-recovery
+port-profile default max-ports 512
+
+
+interface port-channel1
+  description LAG:F10-STKmbr0 Te49-52
+  switchport mode trunk
+  switchport trunk allowed vlan 6,142,201,1215-1222,1225-1229,1231-1232,1236-1237,1240-1241,1278,2015-2016
+  spanning-tree port type edge trunk
+  speed 10000
+  flowcontrol receive on
+  flowcontrol send on
+  vpc 1
+
+interface port-channel10
+  description LAG_iSCSI_Force10_VLAN_860
+  switchport access vlan 860
+  speed 10000
+  flowcontrol receive on
+  flowcontrol send on
+  vpc 2
+
+interface port-channel11
+  description LAG_b2b_UCACCS01
+  switchport mode trunk
+  spanning-tree port type network
+  speed 10000
+  flowcontrol receive on
+  flowcontrol send on
+  vpc peer-link
+
+interface Ethernet1/1
+  description X:aubcore02:Gi1/0/25
+  switchport mode trunk
+  switchport trunk allowed vlan 142,201-203,860,1215-1217,1219-1222,1225-1229,1231-1232,1236-1237,1240-1241,1278
+  speed 1000
+  duplex full
+
+interface Ethernet1/2
+
+interface Ethernet1/3
+  description S:R720 FRAUB2M:Mgmt
+  switchport mode trunk
+  switchport trunk allowed vlan 142,201,203
+
+interface Ethernet1/4
+  description S:R720 FRAUB2M:Mgmt
+  switchport mode trunk
+  switchport trunk allowed vlan 142,201,203
+
+interface Ethernet1/5
+
+interface Ethernet1/6
+
+interface Ethernet1/7
+
+interface Ethernet1/8
+
+interface Ethernet1/9
+
+interface Ethernet1/10
+
+interface Ethernet1/11
+
+interface Ethernet1/12
+
+interface Ethernet1/13
+  description LAG:Mgmt:Eth1/13-16:Force10-B1:TenGigabitEthernet0/52
+  lacp rate fast
+  switchport mode trunk
+  switchport trunk allowed vlan 6,142,201,1215-1222,1225-1229,1231-1232,1236-1237,1240-1241,1278,2015-2016
+  flowcontrol receive on
+  flowcontrol send on
+  channel-group 1 mode active
+
+interface Ethernet1/14
+  description LAG:Mgmt:Eth1/13-16:Force10-B1:TenGigabitEthernet0/50
+  lacp rate fast
+  switchport mode trunk
+  switchport trunk allowed vlan 6,142,201,1215-1222,1225-1229,1231-1232,1236-1237,1240-1241,1278,2015-2016
+  flowcontrol receive on
+  flowcontrol send on
+  channel-group 1 mode active
+
+interface Ethernet1/15
+  description LAG:Mgmt:Eth1/13-16:Force10-B1:TenGigabitEthernet0/51
+  lacp rate fast
+  switchport mode trunk
+  switchport trunk allowed vlan 6,142,201,1215-1222,1225-1229,1231-1232,1236-1237,1240-1241,1278,2015-2016
+  flowcontrol receive on
+  flowcontrol send on
+  channel-group 1 mode active
+
+interface Ethernet1/16
+  description LAG:Mgmt:Eth1/13-16:Force10-B1:TenGigabitEthernet0/49
+  lacp rate fast
+  switchport mode trunk
+  switchport trunk allowed vlan 6,142,201,1215-1222,1225-1229,1231-1232,1236-1237,1240-1241,1278,2015-2016
+  flowcontrol receive on
+  flowcontrol send on
+  channel-group 1 mode active
+
+interface Ethernet1/17
+  description S:R720:iSCI
+  switchport access vlan 860
+
+interface Ethernet1/18
+  description S:R720:iSCI
+  switchport access vlan 860
+
+interface Ethernet1/19
+  description S:SAN1:iSCSI:equalogic2-eth0
+  switchport access vlan 860
+  speed 1000
+  duplex full
+  flowcontrol receive on
+  flowcontrol send on
+
+interface Ethernet1/20
+  description S:SAN1:iSCSI:equalogic2-eth1
+  switchport access vlan 860
+  speed 1000
+  duplex full
+  flowcontrol receive on
+  flowcontrol send on
+
+interface Ethernet1/21
+  description S:SAN2:iSCSI:equalogic2-eth0
+  switchport access vlan 860
+  speed 1000
+  duplex full
+  flowcontrol receive on
+  flowcontrol send on
+
+interface Ethernet1/22
+  description S:SAN2:iSCSI:equalogic2-eth1
+  shutdown
+  switchport access vlan 860
+  speed 1000
+  duplex full
+  flowcontrol receive on
+  flowcontrol send on
+
+interface Ethernet1/23
+  description LAG:iSCSI:Eth1/23-26:Force10-A2:TenGigabitEthernet0/52
+  switchport access vlan 860
+  flowcontrol receive on
+  flowcontrol send on
+  channel-group 10 mode passive
+
+interface Ethernet1/24
+  description LAG:iSCSI:Eth1/23-26:Force10-A2:TenGigabitEthernet0/50
+  switchport access vlan 860
+  flowcontrol receive on
+  flowcontrol send on
+  channel-group 10 mode passive
+
+interface Ethernet1/25
+  description LAG:iSCSI:Eth1/23-26:Force10-A2:TenGigabitEthernet0/51
+  switchport access vlan 860
+  flowcontrol receive on
+  flowcontrol send on
+  channel-group 10 mode passive
+
+interface Ethernet1/26
+  description LAG:iSCSI:Eth1/23-26:Force10-A2:TenGigabitEthernet0/49
+  switchport access vlan 860
+  flowcontrol receive on
+  flowcontrol send on
+  channel-group 10 mode passive
+
+interface Ethernet1/27
+
+interface Ethernet1/28
+
+interface Ethernet1/29
+  description LAG:iSCSI_b2b:Eth1/29-32:aubucaccs01:Eth1/29
+  switchport mode trunk
+  flowcontrol receive on
+  flowcontrol send on
+  channel-group 11 mode passive
+
+interface Ethernet1/30
+  description LAG:iSCSI_b2b:Eth1/29-32:aubucaccs01:Eth1/30
+  switchport mode trunk
+  flowcontrol receive on
+  flowcontrol send on
+  channel-group 11 mode passive
+
+interface Ethernet1/31
+  description LAG:iSCSI_b2b:Eth1/29-32:aubucaccs01:Eth1/31
+  switchport mode trunk
+  flowcontrol receive on
+  flowcontrol send on
+  channel-group 11 mode passive
+
+interface Ethernet1/32
+  description LAG:iSCSI_b2b:Eth1/29-32:aubucaccs01:Eth1/32
+  switchport mode trunk
+  flowcontrol receive on
+  flowcontrol send on
+  channel-group 11 mode passive
+
+interface mgmt0
+  ip address 10.102.202.83/24
+line console
+line vty
+  access-class OAM in
+boot kickstart bootflash:/n5000-uk9-kickstart.5.2.1.N1.1.bin
+boot system bootflash:/n5000-uk9.5.2.1.N1.1.bin 
+ip radius source-interface mgmt0
+ip route 0.0.0.0/0 10.102.202.254
+logging server 10.124.23.24 5 use-vrf management facility syslog
+logging server 10.115.137.89 5 use-vrf management facility syslog
+logging monitor 3
+
+

@@ -1,0 +1,165 @@
+!RANCID-CONTENT-TYPE: cumulus
+!
+net del all
+net add dns nameserver ipv4 10.115.131.1
+net add time zone Etc/UTC
+net add time ntp server 0.cumulusnetworks.pool.ntp.org iburst
+net add time ntp server 1.cumulusnetworks.pool.ntp.org iburst
+net add time ntp server 2.cumulusnetworks.pool.ntp.org iburst
+net add time ntp server 3.cumulusnetworks.pool.ntp.org iburst
+net add time ntp source eth0
+net add snmp-server listening-address localhost
+net add bgp autonomous-system 4294901768
+net add routing defaults datacenter
+net add routing service integrated-vtysh-config
+net add routing log syslog informational
+net add routing route 10.108.128.0/19 reject
+net add routing route 10.108.192.0/19 reject
+net add routing prefix-list ipv4 PFX_AVI-NETS_V4 seq 5 permit 10.108.192.0/19 ge 32
+net add routing prefix-list ipv4 PFX_DEFAULT-ROUTE_V4 seq 5 permit 0.0.0.0/0
+net add routing prefix-list ipv4 PFX_LOCAL_V4 seq 5 permit 172.29.5.209/32
+net add routing prefix-list ipv4 PFX_LOCAL_V4 seq 10 permit 10.108.8.0/24
+net add routing prefix-list ipv4 PFX_LOCAL_V4 seq 20 permit 10.108.192.0/19
+net add routing prefix-list ipv4 PFX_LOCAL_V4 seq 25 permit 10.108.128.0/19
+net add routing prefix-list ipv4 PFX_NSX-NETS-PUBLIC_V4 seq 5 permit 77.111.208.72/29
+net add routing prefix-list ipv4 PFX_NSX-NETS_V4 seq 5 permit 10.108.128.0/19 le 32
+net add routing prefix-list ipv4 PFX_NSX-NETS_V4 seq 10 permit 10.108.128.0/19 ge 32
+net add routing prefix-list ipv4 PFX_NSX-STRETCHED-MANAGE_V4 seq 5 permit 10.159.0.0/27
+net add routing route-map PS_IMP_AVI_V4 permit 20 match ip address prefix-list PFX_AVI-NETS_V4
+net add routing route-map PS_EXP_NSX_V4 permit 10 match ip address prefix-list PFX_DEFAULT-ROUTE_V4
+net add routing route-map PS_IMP_NSX-EXT_V4 permit 10 match ip address prefix-list PFX_NSX-NETS-PUBLIC_V4
+net add routing route-map PS_IMP_NSX_V4 permit 10 match ip address prefix-list PFX_NSX-NETS_V4
+net add routing route-map PS_EXP_SPINE_V4 permit 10 match ip address prefix-list PFX_LOCAL_V4
+net add routing route-map PS_EXP_SPINE_V4 permit 20 match ip address prefix-list PFX_NSX-STRETCHED-MANAGE_V4
+net add routing route-map PS_EXP_SPINE_V4 permit 30 match ip address prefix-list PFX_NSX-NETS_V4
+net add routing route-map PS_IMP_SPINE_V4 permit 10
+net add routing route-map PS_EXP_SPINE_V4 permit 40 match ip address prefix-list PFX_NSX-NETS-PUBLIC_V4
+net add username cumulus nopassword
+net add bgp bestpath as-path multipath-relax
+net add bgp neighbor NSX_TIER-0 peer-group
+net add bgp neighbor NSX_TIER-0 remote-as 4200141100
+net add bgp neighbor NSX_TIER-0 timers 2 8
+net add bgp neighbor NSX_TIER-0-EXT peer-group
+net add bgp neighbor NSX_TIER-0-EXT remote-as 4200141101
+net add bgp neighbor NSX_TIER-0-EXT timers 2 8
+net add bgp neighbor SPINE_V4 peer-group
+net add bgp neighbor SPINE_V4 remote-as 4294901960
+net add bgp neighbor 172.29.5.105 peer-group NSX_TIER-0
+net add bgp neighbor 172.29.5.107 peer-group NSX_TIER-0
+net add bgp neighbor 172.29.5.113 peer-group NSX_TIER-0-EXT
+net add bgp neighbor 172.29.5.115 peer-group NSX_TIER-0-EXT
+net add bgp neighbor 172.29.5.52 peer-group SPINE_V4
+net add bgp neighbor 172.29.5.54 peer-group SPINE_V4
+net add bgp neighbor 172.29.5.208 remote-as 4294901767
+net add bgp neighbor 172.29.5.208 ebgp-multihop 255
+net add bgp neighbor 172.29.5.208 update-source 172.29.5.209
+net add bgp ipv4 unicast redistribute connected
+net add bgp ipv4 unicast redistribute static
+net add bgp ipv4 unicast neighbor NSX_TIER-0 route-map PS_IMP_NSX_V4 in
+net add bgp ipv4 unicast neighbor NSX_TIER-0 route-map PS_EXP_NSX_V4 out
+net add bgp ipv4 unicast neighbor NSX_TIER-0-EXT route-map PS_IMP_NSX-EXT_V4 in
+net add bgp ipv4 unicast neighbor NSX_TIER-0-EXT route-map PS_EXP_NSX_V4 out
+net add bgp ipv4 unicast neighbor SPINE_V4 route-map PS_IMP_SPINE_V4 in
+net add bgp ipv4 unicast neighbor SPINE_V4 route-map PS_EXP_SPINE_V4 out
+net add bgp l2vpn evpn  neighbor 172.29.5.208 activate
+net add bgp l2vpn evpn  advertise-all-vni
+net add bgp l2vpn evpn  advertise-svi-ip
+net add interface swp1-48,50-54 breakout 1x
+net add interface swp49 breakout loopback
+net add ptp global slave-only no
+net add ptp global priority1 255
+net add ptp global priority2 255
+net add ptp global domain-number 0
+net add ptp global logging-level 5
+net add ptp global path-trace-enabled no
+net add ptp global use-syslog yes
+net add ptp global verbose no
+net add ptp global summary-interval 0
+net add ptp global time-stamping
+net add vxlan vni26 vxlan id 10026
+net add bridge bridge ports swp1,swp2,swp3,swp4,swp5,swp6,swp7,swp8,swp54,vni26
+net add bridge bridge vids 10-26,28,80-81
+net add bridge bridge vlan-aware
+net add interface eth0,swp17-22,33-36,50
+net add interface swp1-8 alias lab-esxi
+net add interface swp1-8 bridge vids 10-26,28,80-81
+net add interface swp1-8 link autoneg on
+net add interface swp47 ip address 172.29.5.53/31
+net add interface swp47-48 link autoneg off
+net add interface swp47-48 link speed 1000
+net add interface swp48 ip address 172.29.5.55/31
+net add interface swp54 alias mtp-lf-05-storage-link
+net add interface swp54 bridge vids 80-81
+net add interface swp54 link speed 40000
+net add loopback lo ip address 172.29.5.209/32
+net add vlan 11 alias VL_MTP2_11_ESXI-MANAGE
+net add vlan 11 ip address 10.108.192.254/24
+net add vlan 11 vlan-id 11
+net add vlan 11 vlan-raw-device bridge
+net add vlan 12 alias VL_MTP2_12_VMOTION
+net add vlan 12 ip address 10.108.193.254/24
+net add vlan 12 vlan-id 12
+net add vlan 12 vlan-raw-device bridge
+net add vlan 13 alias VL_MTP2_13_NFS1
+net add vlan 13 vlan-id 13
+net add vlan 13 vlan-raw-device bridge
+net add vlan 14 alias VL_MTP2_14_NFS2
+net add vlan 14 vlan-id 14
+net add vlan 14 vlan-raw-device bridge
+net add vlan 15 alias VL_MTP2_15_LOCAL-MANAGE
+net add vlan 15 ip address 10.108.196.254/24
+net add vlan 15 vlan-id 15
+net add vlan 15 vlan-raw-device bridge
+net add vlan 16 alias VL_MTP2_16_ESXI-VTEP
+net add vlan 16 ip address 10.108.197.124/25
+net add vlan 16 vlan-id 16
+net add vlan 16 vlan-raw-device bridge
+net add vlan 17 alias VL_MTP2_17_ESG1-LF1-INT
+net add vlan 17 ip address 172.29.5.104/31
+net add vlan 17 vlan-id 17
+net add vlan 17 vlan-raw-device bridge
+net add vlan 18 alias VL_MTP2_18_ESG2-LF1-INT
+net add vlan 18 ip address 172.29.5.106/31
+net add vlan 18 vlan-id 18
+net add vlan 18 vlan-raw-device bridge
+net add vlan 21 alias VL_MTP2_21_EDGE-VTEP
+net add vlan 21 ip address 10.108.197.254/25
+net add vlan 21 vlan-id 21
+net add vlan 21 vlan-raw-device bridge
+net add vlan 22 alias VL_MTP2_22_ESG1-LF1-EXT
+net add vlan 22 ip address 222.29.5.112/31
+net add vlan 22 vlan-id 22
+net add vlan 22 vlan-raw-device bridge
+net add vlan 23 alias VL_MTP2_23_ESG2-LF1-EXT
+net add vlan 23 ip address 172.29.5.114/31
+net add vlan 23 vlan-id 23
+net add vlan 23 vlan-raw-device bridge
+net add vlan 26 alias VL_MTP_26_TEST_VXLAN
+net add vlan 26 ip address 10.159.0.29/27
+net add vlan 26 ip address-virtual 44:38:39:ff:11:51 10.159.0.30/27
+net add vlan 26 vlan-id 26
+net add vlan 26 vlan-raw-device bridge
+net add vlan 28 alias VL_MTP_28_AVI-MANAGEMENT
+net add vlan 28 ip address 10.108.198.78/28
+net add vlan 28 vlan-id 28
+net add vlan 28 vlan-raw-device bridge
+net add vlan 80 alias VL_MTP_80_ISCSI
+net add vlan 80 vlan-id 80
+net add vlan 80 vlan-raw-device bridge
+net add vlan 81 alias VL_MTP_81_ISCSI
+net add vlan 81 vlan-id 81
+net add vlan 81 vlan-raw-device bridge
+net add vxlan vni26 bridge access 26
+net add vxlan vni26 bridge arp-nd-suppress on
+net add vxlan vni26 bridge learning off
+net add vxlan vni26 mtu 9000
+net add vxlan vni26 stp bpduguard
+net add vxlan vni26 stp portbpdufilter
+net add vxlan vni26 vxlan local-tunnelip 172.29.5.209
+net add hostname mtp-lf-08
+net add dot1x radius accounting-port 1813
+net add dot1x max-number-stations 4
+net add dot1x radius authentication-port 1812
+net add dot1x eap-reauth-period 0
+net add dot1x mab-activation-delay 0
+net commit 

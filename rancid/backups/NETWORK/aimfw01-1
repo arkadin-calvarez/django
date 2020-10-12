@@ -1,0 +1,360 @@
+#RANCID-CONTENT-TYPE: netscreen
+#
+#Product: SSG-140
+#SN: 0185122011000762
+#HW: 1010(0)-(00)
+#Netscreen Type: Firewall+VPN
+#Software Version: 6.3.0r3.0
+#Feature: AV-K
+#File Name: screenos_image, Checksum: ae2c7a1b
+#Memory: 512MB
+#
+unset key protection enable
+set clock ntp
+set clock timezone 0
+set clock dst recurring start-weekday 2 0 3 02:00 end-weekday 1 0 11 02:00
+set vrouter trust-vr sharable
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+unset auto-route-export
+set protocol ospf
+set enable
+set area 0.0.0.7 
+exit
+exit
+set service "MS-SQL" timeout never 
+set service "SNMPTRAP" protocol udp src-port 0-65535 dst-port 162-162 
+set service "RDP" protocol tcp src-port 0-65535 dst-port 3389-3389 
+set service "MS-CIFS" protocol tcp src-port 0-65535 dst-port 445-445 
+unset alg sip enable
+set alg appleichat enable
+unset alg appleichat re-assembly enable
+set alg sctp enable
+set auth-server "Local" id 0
+set auth-server "Local" server-name "Local"
+set auth-server "NPS PA2" id 1
+set auth-server "NPS PA2" server-name "10.115.38.110"
+set auth-server "NPS PA2" backup1 "10.100.92.1"
+set auth-server "NPS PA2" account-type admin 
+set auth-server "NPS PA2" radius port 1812
+#set auth-server "NPS PA2" radius secret <removed>
+set auth default auth server "NPS PA2"
+set auth radius accounting port 1646
+#set admin name <removed>
+#set admin password <removed>
+#set admin user "netops" password <removed> privilege "all"
+set admin manager-ip 10.0.1.0 255.255.255.0
+set admin manager-ip 10.100.19.20
+set admin manager-ip 10.100.19.21
+set admin manager-ip 10.245.2.0 255.255.255.0
+set admin manager-ip 38.104.2.203
+set admin manager-ip 62.23.57.186
+set admin manager-ip 81.93.181.219
+set admin manager-ip 185.37.220.222
+set admin auth web timeout 10
+set admin auth server "NPS PA2"
+set admin auth remote root
+set admin privilege read-write
+set admin format dos
+set zone "Trust" vrouter "trust-vr"
+set zone "Untrust" vrouter "trust-vr"
+set zone "DMZ" vrouter "trust-vr"
+set zone "VLAN" vrouter "trust-vr"
+set zone "Untrust-Tun" vrouter "trust-vr"
+set zone "Trust" tcp-rst 
+set zone "Untrust" block 
+unset zone "Untrust" tcp-rst 
+set zone "MGT" block 
+unset zone "V1-Trust" tcp-rst 
+unset zone "V1-Untrust" tcp-rst 
+set zone "DMZ" tcp-rst 
+unset zone "V1-DMZ" tcp-rst 
+unset zone "VLAN" tcp-rst 
+set zone "Untrust" screen tear-drop
+set zone "Untrust" screen syn-flood
+set zone "Untrust" screen ping-death
+set zone "Untrust" screen ip-filter-src
+set zone "Untrust" screen land
+set zone "V1-Untrust" screen tear-drop
+set zone "V1-Untrust" screen syn-flood
+set zone "V1-Untrust" screen ping-death
+set zone "V1-Untrust" screen ip-filter-src
+set zone "V1-Untrust" screen land
+set interface ethernet0/0 phy full 100mb
+set interface ethernet0/1 phy full 100mb
+set interface id 80 "redundant1" zone "Null"
+set interface "ethernet0/2" zone "Untrust"
+set interface "ethernet0/8" zone "HA"
+set interface "ethernet0/9" zone "Untrust"
+set interface "tunnel.2" zone "Trust"
+set interface ethernet0/1 group redundant1
+set interface ethernet0/0 group redundant1
+set interface "redundant1.5" tag 5 zone "Trust"
+unset interface vlan1 ip
+set interface ethernet0/9 ip 203.223.140.250/29
+set interface ethernet0/9 route
+set interface redundant1.5 ip 10.245.10.1/29
+set interface redundant1.5 route
+set interface tunnel.2 ip 10.245.10.9/30
+set interface ethernet0/0 mtu 1400
+set interface tunnel.2 mtu 1438
+unset interface vlan1 bypass-others-ipsec
+unset interface vlan1 bypass-non-ip
+set interface redundant1 primary ethernet0/0
+set interface redundant1.5 manage-ip 10.245.10.3
+set interface ethernet0/9 ip manageable
+unset interface redundant1.5 ip manageable
+set interface ethernet0/9 manage ping
+set interface ethernet0/9 manage ssh
+set interface ethernet0/9 manage ssl
+set interface ethernet0/9 manage web
+unset interface redundant1.5 manage telnet
+set auth-server "NPS PA2" src-interface "redundant1.5"
+set interface "ethernet0/9" mip 203.223.140.251 host 10.245.7.160 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/9" mip 203.223.140.252 host 10.245.9.200 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/9" mip 203.223.140.253 host 10.245.9.10 netmask 255.255.255.255 vr "trust-vr"
+unset flow no-tcp-seq-check
+set flow tcp-syn-check
+unset flow tcp-syn-bit-check
+set flow mac-cache mgt
+set flow reverse-route clear-text prefer
+set flow reverse-route tunnel always
+set console page 0
+set hostname aimfw01-1
+set webauth server "NPS PA2"
+set pki authority default scep mode "auto"
+set pki x509 default cert-path partial
+set nsrp cluster id 1
+set nsrp rto-mirror sync
+set nsrp rto-mirror route
+set nsrp rto-mirror session ageout-ack
+set nsrp rto-mirror session non-vsi
+set nsrp vsd-group id 0 priority 150
+set nsrp vsd-group id 0 preempt
+set nsrp monitor interface ethernet0/0
+set nsrp monitor interface ethernet0/1
+set nsrp monitor interface ethernet0/9
+set address "Trust" "10.245.9.10/32" 10.245.9.10 255.255.255.255
+set address "Trust" "10.245.9.11/32" 10.245.9.11 255.255.255.255
+set address "Trust" "10.245.9.200/32" 10.245.9.200 255.255.255.255
+set address "Trust" "172.21.130.0/24" 172.21.130.0 255.255.255.0
+set address "Trust" "Arknet" 10.0.0.0 255.0.0.0
+set address "Trust" "MYAIMBRI1-AMG" 10.245.7.60 255.255.255.255
+set address "Trust" "MYAIMBRI1-AMG2" 10.245.7.61 255.255.255.255
+set address "Trust" "MYAIMBRI1-CRS1" 10.245.9.10 255.255.255.255
+set address "Trust" "MYAIMBRI1-CRS2" 10.245.9.11 255.255.255.255
+set address "Untrust" "ADDR_BL-192.0.2.0-30" 192.0.2.0 255.255.255.252
+set address "Untrust" "ADDR_BL-198.51.100.1-32" 198.51.100.1 255.255.255.255
+set address "Untrust" "ADDR_BL-203.0.113.50-32" 203.0.113.50 255.255.255.255
+set address "Untrust" "Avaya public IP 1" 135.124.124.17 255.255.255.255
+set address "Untrust" "Avaya public IP 2" 135.124.124.18 255.255.255.255
+set address "Untrust" "Avaya Public IP 3" 135.124.124.0 255.255.255.0
+set address "Untrust" "BLACKLIST-1" 34.97.3.80 255.255.255.255
+set address "Untrust" "BLACKLIST-10" 23.34.61.201 255.255.255.255
+set address "Untrust" "BLACKLIST-11" 67.27.61.254 255.255.255.255
+set address "Untrust" "BLACKLIST-12" 72.246.190.49 255.255.255.255
+set address "Untrust" "BLACKLIST-13" 23.15.14.51 255.255.255.255
+set address "Untrust" "BLACKLIST-14" 52.163.254.104 255.255.255.255
+set address "Untrust" "BLACKLIST-15" 40.115.159.100 255.255.255.255
+set address "Untrust" "BLACKLIST-16" 13.76.227.209 255.255.255.255
+set address "Untrust" "BLACKLIST-17" 211.75.207.183 255.255.255.255
+set address "Untrust" "BLACKLIST-18" 13.71.149.55 255.255.255.255
+set address "Untrust" "BLACKLIST-19" 146.112.61.104 255.255.255.255
+set address "Untrust" "BLACKLIST-2" 35.187.223.139 255.255.255.255
+set address "Untrust" "BLACKLIST-20" 104.215.193.90 255.255.255.255
+set address "Untrust" "BLACKLIST-21" 13.67.78.63 255.255.255.255
+set address "Untrust" "BLACKLIST-22" 104.116.39.38 255.255.255.255
+set address "Untrust" "BLACKLIST-23" 13.76.45.133 255.255.255.255
+set address "Untrust" "BLACKLIST-3" 23.34.61.179 255.255.255.255
+set address "Untrust" "BLACKLIST-4" 67.27.59.254 255.255.255.255
+set address "Untrust" "BLACKLIST-5" 23.34.61.193 255.255.255.255
+set address "Untrust" "BLACKLIST-6" 8.255.31.254 255.255.255.255
+set address "Untrust" "BLACKLIST-7" 67.27.49.254 255.255.255.255
+set address "Untrust" "BLACKLIST-8" 23.34.61.208 255.255.255.255
+set address "Untrust" "BLACKLIST-9" 67.24.41.254 255.255.255.255
+set address "Untrust" "Dialogic Public IP 1" 203.126.153.226 255.255.255.255
+set address "Untrust" "Dialogic Public IP 2" 58.185.204.242 255.255.255.255
+set address "Untrust" "PFX_AIM-ORIGIN" 203.223.140.240 255.255.255.248
+set address "Untrust" "PFX_MARTIANS-1" 0.0.0.0 255.0.0.0
+set address "Untrust" "PFX_MARTIANS-10" 198.18.0.0 255.254.0.0
+set address "Untrust" "PFX_MARTIANS-11" 198.51.100.0 255.255.255.0
+set address "Untrust" "PFX_MARTIANS-13" 224.0.0.0 224.0.0.0
+set address "Untrust" "PFX_MARTIANS-2" 10.0.0.0 255.0.0.0
+set address "Untrust" "PFX_MARTIANS-3" 100.64.0.0 255.192.0.0
+set address "Untrust" "PFX_MARTIANS-4" 127.0.0.0 255.0.0.0
+set address "Untrust" "PFX_MARTIANS-5" 169.254.0.0 255.255.0.0
+set address "Untrust" "PFX_MARTIANS-6" 172.16.0.0 255.240.0.0
+set address "Untrust" "PFX_MARTIANS-7" 192.0.0.0 255.255.255.0
+set address "Untrust" "PFX_MARTIANS-8" 192.0.2.0 255.255.255.0
+set address "Untrust" "PFX_MARTIANS-9" 192.168.0.0 255.255.0.0
+set address "Untrust" "singapore Public ip address" 115.42.214.178 255.255.255.255
+set group address "Trust" "MYAIMBRI1"
+set group address "Trust" "MYAIMBRI1" add "MYAIMBRI1-AMG"
+set group address "Trust" "MYAIMBRI1" add "MYAIMBRI1-AMG2"
+set group address "Trust" "MYAIMBRI1" add "MYAIMBRI1-CRS1"
+set group address "Trust" "MYAIMBRI1" add "MYAIMBRI1-CRS2"
+set group address "Untrust" "PFX_BLACKLIST_V4"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "ADDR_BL-192.0.2.0-30"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "ADDR_BL-198.51.100.1-32"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "ADDR_BL-203.0.113.50-32"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-1"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-10"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-11"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-12"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-13"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-14"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-15"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-16"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-17"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-18"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-19"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-2"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-20"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-21"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-22"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-23"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-3"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-4"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-5"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-6"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-7"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-8"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "BLACKLIST-9"
+set group address "Untrust" "PFX_MARTIANS_V4"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_AIM-ORIGIN"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-1"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-10"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-11"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-13"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-2"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-3"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-4"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-5"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-6"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-7"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-8"
+set group address "Untrust" "PFX_MARTIANS_V4" add "PFX_MARTIANS-9"
+set group service "BLOCKED_PORTS"
+set group service "BLOCKED_PORTS" add "HTTP-EXT"
+set group service "BLOCKED_PORTS" add "IMAP"
+set group service "BLOCKED_PORTS" add "MS-CIFS"
+set group service "BLOCKED_PORTS" add "MS-RPC-EPM"
+set group service "BLOCKED_PORTS" add "MS-SQL"
+set group service "BLOCKED_PORTS" add "NBDS"
+set group service "BLOCKED_PORTS" add "NBNAME"
+set group service "BLOCKED_PORTS" add "NTP"
+set group service "BLOCKED_PORTS" add "POP3"
+set group service "BLOCKED_PORTS" add "RDP"
+set group service "BLOCKED_PORTS" add "SMB"
+set group service "BLOCKED_PORTS" add "SNMP"
+set group service "BLOCKED_PORTS" add "SNMPTRAP"
+set group service "BLOCKED_PORTS" add "SUN-RPC-PORTMAPPER"
+set group service "BLOCKED_PORTS" add "TELNET"
+set crypto-policy
+exit
+#set ike gateway "MYKULFW1" address 210.19.10.50 Main outgoing-interface "ethernet0/9" preshare <removed> sec-level standard
+set ike respond-bad-spi 1
+set ike ikev2 ike-sa-soft-lifetime 60
+unset ike ikeid-enumeration
+unset ike dos-protection
+unset ipsec access-session enable
+set ipsec access-session maximum 5000
+set ipsec access-session upper-threshold 0
+set ipsec access-session lower-threshold 0
+set ipsec access-session dead-p2-sa-timeout 0
+unset ipsec access-session log-error
+unset ipsec access-session info-exch-connected
+unset ipsec access-session use-error-log
+set vpn "MYKULTUN" gateway "MYKULFW1" replay tunnel idletime 0 sec-level standard
+set vpn "MYKULTUN" monitor optimized rekey
+set vpn "MYKULTUN" id 0x1 bind interface tunnel.2
+set url protocol websense
+exit
+set policy id 12 from "Trust" to "Trust"  "Any" "Any" "ANY" permit log 
+set policy id 12
+exit
+set policy id 13 from "Trust" to "Untrust"  "MYAIMBRI1" "Any" "ANY" deny 
+set policy id 13
+exit
+set policy id 1 from "Trust" to "Untrust"  "Any" "Any" "ANY" nat src permit log 
+set policy id 1
+exit
+set policy id 14 name "PFX_MARTIANS_BLOCK" from "Untrust" to "Trust"  "PFX_MARTIANS_V4" "Any" "ANY" deny log 
+set policy id 14
+exit
+set policy id 15 name "BLACKLIST" from "Untrust" to "Trust"  "PFX_BLACKLIST_V4" "Any" "ANY" deny log 
+set policy id 15
+exit
+set policy id 8 name "Avaya Access" from "Untrust" to "Trust"  "Avaya public IP 1" "MIP(203.223.140.251)" "ANY" permit log 
+set policy id 8
+set src-address "Avaya public IP 2"
+set src-address "Avaya Public IP 3"
+set src-address "Dialogic Public IP 1"
+set src-address "Dialogic Public IP 2"
+set src-address "singapore Public ip address"
+set dst-address "MIP(203.223.140.252)"
+set dst-address "MIP(203.223.140.253)"
+exit
+set policy id 16 name "PF_GLOBAL-EDGE" from "Untrust" to "Trust"  "Any" "Any" "BLOCKED_PORTS" deny 
+set policy id 16
+exit
+set syslog config "10.250.137.24"
+set syslog config "10.250.137.24" facilities local0 local5
+set syslog config "10.250.137.89"
+set syslog config "10.250.137.89" facilities local0 local5
+set syslog src-interface redundant1.5
+set syslog enable
+set nsmgmt bulkcli reboot-timeout 60
+set ssh version v2
+set ssh enable
+set config lock timeout 5
+unset license-key auto-update
+unset telnet client enable
+set ntp server "10.102.2.1"
+set ntp server src-interface "redundant1.5"
+set snmp community "noc_services" Read-Only Trap-off version any  
+set snmp community "network_services" Read-Only Trap-on traffic version any  
+set snmp host "network_services" 10.102.10.130/32 src-interface redundant1.5  trap v2
+set snmp host "noc_services" 10.105.137.56/32 src-interface redundant1.5  trap v2
+set snmp host "noc_services" 10.105.137.57/32 src-interface redundant1.5  trap v2
+set snmp host "noc_services" 10.100.137.55/32 src-interface redundant1.5  trap v2
+set snmp host "noc_services" 10.250.137.55/32 src-interface redundant1.5  trap v2
+set snmp host "noc_services" 10.115.137.57/32 src-interface redundant1.5  trap v2
+set snmp host "noc_services" 10.100.19.21/32 src-interface redundant1.5  trap v2
+set snmp host "noc_services" 10.250.90.90/32 src-interface redundant1.5  trap v2
+set snmp host "noc_services" 192.206.95.169/32 src-interface redundant1.5  trap v2
+set snmp host "noc_services" 10.105.137.80/32 src-interface redundant1.5  trap v2
+set snmp port listen 161
+set snmp port trap 162
+set snmpv3 local-engine id "0185122011000762"
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+set access-list 1
+set access-list 1 permit ip 10.245.8.0/24 1
+set access-list 2
+set access-list 2 permit ip 10.245.9.200/32 1
+set route-map name "CONNECTED2OSPF" permit 1
+set match ip 1
+set metric 1
+set tag 0.0.3.232
+exit
+set route-map name "STATIC2OSPF" permit 2
+exit
+unset add-default-route
+set route 10.0.0.0/8 interface redundant1.5 gateway 10.245.10.2
+set route 0.0.0.0/0 gateway 203.223.140.249
+set protocol ospf
+set redistribute route-map "CONNECTED2OSPF" protocol connected
+exit
+exit
+set interface redundant1.5 protocol ospf area 0.0.0.7
+set interface redundant1.5 protocol ospf enable
+set interface tunnel.2 protocol ospf area 0.0.0.7
+set interface tunnel.2 protocol ospf enable
+set interface tunnel.2 protocol ospf cost 100
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+exit

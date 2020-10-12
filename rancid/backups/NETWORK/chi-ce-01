@@ -1,0 +1,1963 @@
+#RANCID-CONTENT-TYPE: juniper
+#
+# chi-ce-01> show chassis clocks 
+# chi-ce-01> show chassis firmware local
+# chi-ce-01> show chassis firmware 
+# Part                     Type       Version
+# FPC 0                    loader           FreeBSD/i386 bootstrap loader 1.2    
+#                          BIOS       V0018.1                                    
+#                          TMC FPGA   6.d8                                       
+#                          PIC0 CPLD0 7.b                                        
+#                          PIC0 CPLD1 7.b                                        
+#                          PIC0 CPLD2 7.b                                        
+#                          PIC0 CPLD3 7.b                                        
+#                          PIC0 CPLD4 7.b                                        
+#                          PIC0 CPLD5 7.b                                        
+#                          PIC0 CPLD6 6.a                                        
+#                          MRE        17.9                                       
+#                          Power CPLD 3.a                                        
+# 
+# chi-ce-01> show chassis fpc detail 
+# Slot 0 information:
+#   State                               Online    
+#   Total CPU DRAM                 1920 MB
+#   Total SRAM                        0 MB
+#   Total SDRAM                       0 MB
+# 
+# chi-ce-01> show chassis hardware detail 
+# Hardware inventory:
+# Item             Version  Part number  Serial number     Description
+# Chassis                                VF3715301054      QFX5100-48S-6Q
+# Pseudo CB 0     
+# Routing Engine 0          BUILTIN      BUILTIN           QFX Routing Engine
+#   ad0    1498 MB  QEMU HARDDISK        QM00001           Hard Disk
+#   ad1    4095 MB  QEMU HARDDISK        QM00002           Hard Disk
+#   ad2     511 MB  QEMU HARDDISK        QM00003           Hard Disk
+#   ad3    1023 MB  QEMU HARDDISK        QM00004           Hard Disk
+#   usb1 (addr 1)  product 0x0000 0      vendor 0x0000     uhub1
+#   usb1 (addr 2)  product 0x0020 32     vendor 0x8087     uhub2
+# FPC 0            REV 12   650-056264   VF3715301054      QFX5100-48S-6Q
+#   CPU                     BUILTIN      BUILTIN           FPC CPU
+#   PIC 0                   BUILTIN      BUILTIN           48x10G-6x40G
+#     Xcvr 10      9        NON-JNPR     CSGLXI82118       SFP-LX10
+#     Xcvr 11      REV 01   740-011613   ADD42C443604      SFP-SX
+#     Xcvr 12      REV 01   740-011613   ADD42C443606      SFP-SX
+#     Xcvr 13      REV 01   740-011613   ADD42C443600      SFP-SX
+#     Xcvr 22               NON-JNPR     AN1205Q7G5        SFP-T
+#     Xcvr 23               NON-JNPR     00000MTC0830032R  SFP-T
+#     Xcvr 24               NON-JNPR     CSGLXI82041       SFP-LX10
+#     Xcvr 25      REV 01   740-011614   GTYW6874          SFP-LX10
+#     Xcvr 26               NON-JNPR     PROLH01488        SFP-LX10
+#     Xcvr 27      REV 01   740-031981   AD1736500K9       SFP+-10G-LR
+#     Xcvr 28      REV 01   740-011614   GTYW6878          SFP-LX10
+#     Xcvr 44               NON-JNPR     MTC174209UK       SFP-T
+#     Xcvr 45      REV 01   740-013111   ADD42C453579      SFP-T
+#     Xcvr 46      REV 01   740-021308   ADD42C433570      SFP+-10G-SR
+#     Xcvr 47      REV 01   740-021308   ADD42C433566      SFP+-10G-SR
+#     Xcvr 52      REV 01   740-038624   JNQ31I30040       QSFP+-40G-CU3M
+#     Xcvr 53      REV 01   740-038624   JNQ31I30029       QSFP+-40G-CU3M
+# Power Supply 0   REV 04   740-041741   1GA25172074       JPSU-650W-AC-AFO
+# Power Supply 1   REV 04   740-041741   1GA25172053       JPSU-650W-AC-AFO
+# Fan Tray 0                                               QFX5100 Fan Tray 0, Front to Back Airflow - AFO
+# Fan Tray 1                                               QFX5100 Fan Tray 1, Front to Back Airflow - AFO
+# Fan Tray 2                                               QFX5100 Fan Tray 2, Front to Back Airflow - AFO
+# Fan Tray 3                                               QFX5100 Fan Tray 3, Front to Back Airflow - AFO
+# Fan Tray 4                                               QFX5100 Fan Tray 4, Front to Back Airflow - AFO
+# 
+# chi-ce-01> show chassis hardware models 
+# chi-ce-01> show chassis scb 
+# chi-ce-01> show chassis sfm detail 
+# chi-ce-01> show chassis ssb 
+# chi-ce-01> show chassis feb detail 
+# chi-ce-01> show chassis feb 
+# chi-ce-01> show chassis cfeb 
+# chi-ce-01> show system boot-messages 
+# fpc0:
+# --------------------------------------------------------------------------
+# Copyright (c) 1996-2018, Juniper Networks, Inc.
+# All rights reserved.
+# Copyright (c) 1992-2007 The FreeBSD Project.
+# Copyright (c) 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994
+# 	The Regents of the University of California. All rights reserved.
+# FreeBSD is a registered trademark of The FreeBSD Foundation.
+# can't re-use a leaf (fe_storm_timeout)!
+# can't re-use a leaf (alt_break_to_debugger)!
+# can't re-use a leaf (break_to_debugger)!
+# can't re-use a leaf (nssu_upgraded)!
+# ACPI APIC Table: <BOCHS  BXPCAPIC>
+# Timecounter "i8254" frequency 1193182 Hz quality 0
+# CPU: Intel Xeon E312xx (Sandy Bridge) (1500.01-MHz 686-class CPU)
+#   Origin = "GenuineIntel"  Id = 0x206a1  Stepping = 1
+#   Features=0x783f3fd<FPU,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,MTRR,PGE,MCA,CMOV,PAT,PSE36,MMX,FXSR,SSE,SSE2>
+#   Features2=0x96b82203<SSE3,<b1>,SSSE3,CX16,SSE4.1,SSE4.2,x2APIC,POPCNT,<b25>,XSAVE,<b28>,<b31>>
+#   AMD Features=0x20100800<SYSCALL,NX,LM>
+#   AMD Features2=0x1<LAHF>
+# Security policy loaded: Junos MAC/veriexec (mac_veriexec)
+# MAC/veriexec fingerprint module loaded: SHA1
+# MAC/veriexec fingerprint module loaded: SHA256
+# ioapic0 <Version 1.1> irqs 0-23 on motherboard
+# netisr_init: forcing maxthreads from 4 to 1
+# ETHERNET SOCKET BRIDGE initialising
+# fpga driver loaded, 0 (null)
+# FXPCI warning: hw.pci.enable_static_config is not set.
+# Creating PCI Scan thread
+# Initializing DCF  platform properties ..
+# random: <Software, Yarrow> initialized
+# Calling dcf_ng_hw_init for platform hw vecs initialization
+# acpi0: <BOCHS BXPCRSDT> on motherboard
+# acpi0: Power Button (fixed)
+# Timecounter "ACPI-safe" frequency 3579545 Hz quality 1000
+# acpi_timer0: <24-bit timer at 3.579545MHz> port 0xb008-0xb00b on acpi0
+# pcib0: <ACPI Host-PCI bridge> port 0xcf8-0xcff on acpi0
+# pci0: <ACPI PCI bus> on pcib0
+# Correcting Natoma config for non-SMP
+# isab0: <PCI-ISA bridge> at device 1.0 on pci0
+# isa0: <ISA bus> on isab0
+# atapci0: <Intel PIIX3 WDMA2 controller> port 0x1f0-0x1f7,0x3f6,0x170-0x177,0x376,0xc120-0xc12f at device 1.1 on pci0
+# ata0: <ATA channel 0> on atapci0
+# ata1: <ATA channel 1> on atapci0
+# uhci0: <Intel 82371SB (PIIX3) USB controller> port 0xc100-0xc11f irq 11 at device 1.2 on pci0
+# usb0: <Intel 82371SB (PIIX3) USB controller> on uhci0
+# usb0: USB revision 1.0
+# uhub0: Intel UHCI root hub, class 9/0, rev 1.00/1.00, addr 1
+# uhub0: 2 ports with 2 removable, self powered
+# smb0: <Intel 82371AB SMB controller> irq 9 at device 1.3 on pci0
+# fxcb_fpga0: <FXCB FPGA> mem 0xfea00000-0xfea3ffff,0xfea40000-0xfea7ffff irq 10 at device 2.0 on pci0
+# fxcb_fpga0: fxcb_fpga: registers at 0xf57d9000
+# pci0: <network, ethernet> at device 3.0 (no driver attached)
+# pci0: <network, ethernet> at device 4.0 (no driver attached)
+# pci0: <network, ethernet> at device 5.0 (no driver attached)
+# ehci0: <EHCI (generic) USB 2.0 controller> mem 0xfebc0000-0xfebc03ff irq 10 at device 6.0 on pci0
+# usb1: EHCI version 1.0
+# usb1: <EHCI (generic) USB 2.0 controller> on ehci0
+# usb1: USB revision 2.0
+# uhub1: Intel EHCI root hub, class 9/0, rev 2.00/1.00, addr 1
+# uhub1: 2 ports with 2 removable, self powered
+# uhub2: vendor 0x8087 product 0x0020, class 9/0, rev 2.00/0.00, addr 2
+# uhub2: single transaction translator
+# uhub2: 6 ports with 6 removable, self powered
+# fxcb_fpga1: <FXCB FPGA> mem 0xfea80000-0xfeabffff,0xfeac0000-0xfeafffff irq 11 at device 7.0 on pci0
+# fxcb_fpga1: fxcb_fpga_bd: registers at 0xf5852000
+# pci0: <network, ethernet> at device 8.0 (no driver attached)
+# pci0: <network, ethernet> at device 16.0 (no driver attached)
+# pci0: <old> at device 22.0 (no driver attached)
+# cpu0: <ACPI CPU> on acpi0
+# atkbdc0: <Keyboard controller (i8042)> port 0x60,0x64 irq 1 on acpi0
+# atkbd0: <AT Keyboard> irq 1 on atkbdc0
+# kbd0 at atkbd0
+# sio0: <16550A-compatible COM port> port 0x3f8-0x3ff irq 4 flags 0x90 on acpi0
+# sio0: type 16550A, console
+# orm0: <ISA Option ROM> at iomem 0xef000-0xeffff on isa0
+# sc0: <System console> at flags 0x100 on isa0
+# sc0: MDA <16 virtual consoles, flags=0x100>
+# vga0: <Generic ISA VGA> at port 0x3b0-0x3bb iomem 0xb0000-0xb7fff on isa0
+# sio1: configured irq 5 not in bitmap of probed irqs 0
+# sio1: port may not be enabled
+# sio2: configured irq 3 not in bitmap of probed irqs 0
+# sio2: port may not be enabled
+# sio3: configured irq 7 not in bitmap of probed irqs 0
+# sio3: port may not be enabled
+# Initializing product: 157 ..
+# 
+# Setting Serial ID!!!
+# Loading the NETPFE fc module
+# Registering tcp_platform_dependent = tcp_handle_special_ports
+# ad0: 1498MB <QEMU HARDDISK 1.5.3> at ata0-master WDMA2
+# ad1: 4096MB <QEMU HARDDISK 1.5.3> at ata0-slave WDMA2
+# ad2: 512MB <QEMU HARDDISK 1.5.3> at ata1-master WDMA2
+# ad3: 1024MB <QEMU HARDDISK 1.5.3> at ata1-slave WDMA2
+# random: unblocking device.
+# Trying to mount root from ufs:/dev/ad0s1a
+# Kernel thread "wkupdaemon" (pid 50) exited prematurely.
+# Kernel thread "kdm_kdb" (pid 58) exited prematurely.
+# fxbcm0: <FX TOR BCM> mem 0xfeb00000-0xfeb3ffff irq 11 at device 8.0 on pci0
+# fxbcm0: fxbcm: registers at 0xf7b5e000
+# fx_scpld0 on fxcb_fpga1
+# 
+# pci-hgcomdev module loadedhgcommdev0: <HGCOMMDEV For Host VM communication> mem 0xfebc1000-0xfebc1fff at device 22.0 on pci0
+# hgcommdev0: hgcommdev: registers at 0xf7b9e000
+# 
+# chi-ce-01> show version detail 
+# fpc0:
+# --------------------------------------------------------------------------
+# Hostname: chi-ce-01
+# Model: qfx5100-48s-6q
+# Junos: 17.3R3.10
+# JUNOS Base OS boot [17.3R3.10]
+# JUNOS Base OS Software Suite [17.3R3.10]
+# JUNOS Crypto Software Suite [17.3R3.10]
+# JUNOS Crypto Software Suite [17.3R3.10]
+# JUNOS Online Documentation [17.3R3.10]
+# JUNOS Kernel Software Suite [17.3R3.10]
+# JUNOS Packet Forwarding Engine Support (qfx-ex-x86-32) [17.3R3.10]
+# JUNOS Routing Software Suite [17.3R3.10]
+# JUNOS jsd [i386-17.3R3.10-jet-1]
+# JUNOS SDN Software Suite [17.3R3.10]
+# JUNOS Enterprise Software Suite [17.3R3.10]
+# JUNOS Web Management Platform Package [17.3R3.10]
+# JUNOS py-base-i386 [17.3R3.10]
+# JUNOS py-extensions-i386 [17.3R3.10]
+# JUNOS Host Software [17.3R3.10]
+# KERNEL 17.3R3.10 #0 built by builder on 2018-09-06 23:18:58 UTC
+# MGD release 17.3R3.10 built by builder on 2018-09-07 01:47:26 UTC
+# CLI release 17.3R3.10 built by builder on 2018-09-07 00:54:29 UTC
+# KMD release 17.3R3.10 built by builder on 2018-09-07 01:08:00 UTC
+# RPD release 17.3R3.10 built by builder on 2018-09-07 02:24:08 UTC
+# CHASSISD release 17.3R3.10 built by builder on 2018-09-07 01:47:53 UTC
+# PKID release 17.3R3.10 built by builder on 2018-09-07 01:08:01 UTC
+# SENDD release 17.3R3.10 built by builder on 2018-09-07 00:52:31 UTC
+# LFMD release 17.3R3.10 built by builder on 2018-09-07 01:08:16 UTC
+# DOT1XD release 17.3R3.10 built by builder on 2018-09-07 01:37:21 UTC
+# SFLOWD release 17.3R3.10 built by builder on 2018-09-07 00:55:22 UTC
+# VCCPD release 17.3R3.10 built by builder on 2018-09-07 01:08:06 UTC
+# SDK-MGMTD release 17.3R3.10 built by builder on 2018-09-07 01:47:06 UTC
+# SDK-VMMD release 17.3R3.10 built by builder on 2018-09-07 01:08:55 UTC
+# DFWD release 17.3R3.10 built by builder on 2018-09-07 01:10:27 UTC
+# DCD release 17.3R3.10 built by builder on 2018-09-07 01:47:48 UTC
+# SNMPD release 17.3R3.10 built by builder on 2018-09-07 01:45:07 UTC
+# MIB2D release 17.3R3.10 built by builder on 2018-09-07 01:48:15 UTC
+# VRRPD release 17.3R3.10 built by builder on 2018-09-07 01:48:36 UTC
+# ALARMD release 17.3R3.10 built by builder on 2018-09-07 01:10:00 UTC
+# PFED release 17.3R3.10 built by builder on 2018-09-07 01:48:21 UTC
+# SAMPLED release 17.3R3.10 built by builder on 2018-09-07 01:10:57 UTC
+# RMOPD release 17.3R3.10 built by builder on 2018-09-07 01:09:30 UTC
+# COSD release 17.3R3.10 built by builder on 2018-09-07 01:11:41 UTC
+# FUD release 17.3R3.10 built by builder on 2018-09-07 00:56:34 UTC
+# KSYNCD release 17.3R3.10 built by builder on 2018-09-07 00:57:07 UTC
+# HTTPD-GK release 17.3R3.10 built by builder on 2018-09-07 01:37:33 UTC
+# RDD release 17.3R3.10 built by builder on 2018-09-07 00:57:23 UTC
+# LACPD release 17.3R3.10 built by builder on 2018-09-07 01:48:00 UTC
+# LFMD release 17.3R3.10 built by builder on 2018-09-07 01:08:16 UTC
+# TNETD release 17.3R3.10 built by builder on 2018-09-07 00:27:14 UTC
+# CFMD release 17.3R3.10 built by builder on 2018-09-07 01:10:06 UTC
+# JDHCPD release 17.3R3.10 built by builder on 2018-09-07 01:47:47 UTC
+# AUTHD release 17.3R3.10 built by builder on 2018-09-07 01:47:51 UTC
+# BDBREPD release 17.3R3.10 built by builder on 2018-09-07 00:56:05 UTC
+# RES-CLEANUPD release 17.3R3.10 built by builder on 2018-09-07 00:57:33 UTC
+# ICCPD release 17.3R3.10 built by builder on 2018-09-07 00:56:42 UTC
+# MCLAG-CFGCHKD release 17.3R3.10 built by builder on 2018-09-07 00:55:39 UTC
+# SHM-RTSDBD release 17.3R3.10 built by builder on 2018-09-07 00:57:45 UTC
+# SMID release 17.3R3.10 built by builder on 2018-09-07 01:48:30 UTC
+# JDDOSD release 17.3R3.10 built by builder on 2018-09-07 00:58:41 UTC
+# CLKSYNCD release 17.3R3.10 built by builder on 2018-09-07 01:08:12 UTC
+# SFLOWD release 17.3R3.10 built by builder on 2018-09-07 00:55:22 UTC
+# UFDD release 17.3R3.10 built by builder on 2018-09-07 00:55:33 UTC
+# OVSDBD release 17.3R3.10 built by builder on 2018-09-07 00:55:48 UTC
+# OPENFLOWD release 17.3R3.10 built by builder on 2018-09-07 01:09:18 UTC
+# VGD release 17.3R3.10 built by builder on 2018-09-07 00:55:46 UTC
+# PPMD release 17.3R3.10 built by builder on 2018-09-07 01:08:40 UTC
+# LRMUXD release 17.3R3.10 built by builder on 2018-09-07 01:46:21 UTC
+# STATICD release 17.3R3.10 built by builder on 2018-09-07 01:47:05 UTC
+# PGMD release 17.3R3.10 built by builder on 2018-09-07 00:54:11 UTC
+# BFDD release 17.3R3.10 built by builder on 2018-09-07 01:08:08 UTC
+# SDXD release 17.3R3.10 built by builder on 2018-09-07 00:52:31 UTC
+# AUDITD release 17.3R3.10 built by builder on 2018-09-07 00:53:02 UTC
+# L2ALD release 17.3R3.10 built by builder on 2018-09-07 01:47:35 UTC
+# EVENTD release 17.3R3.10 built by builder on 2018-09-07 01:08:13 UTC
+# L2CPD release 17.3R3.10 built by builder on 2018-09-07 01:46:15 UTC
+# ANALYTICSD release 17.3R3.10 built by builder on 2018-09-07 00:58:15 UTC
+# MCSNOOPD release 17.3R3.10 built by builder on 2018-09-07 01:46:25 UTC
+# MPLSOAMD release 17.3R3.10 built by builder on 2018-09-07 00:53:43 UTC
+# COMMITD release 17.3R3.10 built by builder on 2018-09-07 01:47:15 UTC
+# JNUD release 17.3R3.10 built by builder on 2018-09-07 01:46:07 UTC
+# WEB-API release 17.3R3.10 built by builder on 2018-09-07 00:27:05 UTC
+# JSD release 17.3R3.10 built by builder on 2018-09-07 01:49:28 UTC
+# UI-PUBD release 17.3R3.10 built by builder on 2018-09-07 00:58:53 UTC
+# MGD-API release 17.3R3.10 built by builder on 2018-09-07 01:47:15 UTC
+# MGD-API release 17.3R3.10 built by builder on 2018-09-07 01:47:15 UTC
+# PCCD release 17.3R3.10 built by builder on 2018-09-07 01:08:28 UTC
+# OVERLAYD release 17.3R3.10 built by builder on 2018-09-07 00:53:59 UTC
+# NTAD release 17.3R3.10 built by builder on 2018-09-07 00:53:46 UTC
+# SDPD release 17.3R3.10 built by builder on 2018-09-07 00:54:14 UTC
+# SPMD release 17.3R3.10 built by builder on 2018-09-07 01:08:55 UTC
+# CAED release 17.3R3.10 built by builder on 2018-09-07 00:58:43 UTC
+# base-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:03:50 UTC
+# jroute-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:02:35 UTC
+# jkernel-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:09 UTC
+# appsecure-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:05 UTC
+# aprobe-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:05 UTC
+# authd_cmd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:05 UTC
+# autoconfd_cmd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:06 UTC
+# caed-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:31 UTC
+# cfm-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:06 UTC
+# chassis_cmd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:06 UTC
+# clksyncd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:02:34 UTC
+# cos_cmd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:06 UTC
+# cpcdd_cmd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:06 UTC
+# dcbx-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:03:57 UTC
+# dcd_cmd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:07 UTC
+# dfcd_cmd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:07 UTC
+# dot1xd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:03:57 UTC
+# dyn-sess-prof-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:02:35 UTC
+# elmi-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:08 UTC
+# forwarding_options_cmd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:08 UTC
+# gres-test-point-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:02:35 UTC
+# httpd_cmd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:08 UTC
+# iccp_cmd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:08 UTC
+# ilmid-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:08 UTC
+# jappid-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:09 UTC
+# jcrypto-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:02:28 UTC
+# jcrypto_junos-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:03 UTC
+# jddosd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:31 UTC
+# jdiameterd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:09 UTC
+# jdocs-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:03 UTC
+# jidpd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:09 UTC
+# jkernel_dcp-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:10 UTC
+# jroute_junos-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:02:35 UTC
+# l2ald-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:03:52 UTC
+# lldp-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:03:52 UTC
+# macsec-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:02:26 UTC
+# mclag_cfgchk_cmd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:03:58 UTC
+# mcsnoop-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:02:36 UTC
+# pccd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:02:36 UTC
+# rdd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:10 UTC
+# repd_cmd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:11 UTC
+# scpd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:02:36 UTC
+# sdpd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:02:37 UTC
+# services_dcp-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:31 UTC
+# services_esp-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:11 UTC
+# sflow-service-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:03:58 UTC
+# spmd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:02:37 UTC
+# stpng-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:03:59 UTC
+# subinfo-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:12 UTC
+# ufdd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:03:59 UTC
+# vgd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:02 UTC
+# virtualchassis-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:03:59 UTC
+# vlans-ng-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:03:59 UTC
+# autod-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:03:56 UTC
+# jswitch_dcp_ng-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:03:58 UTC
+# openflowd-actions-dd release 17.3R3.10 built by builder on 2018-09-07 00:04:02 UTC
+#
+# chi-ce-01> show version invoke-on other-routing-engine 
+#
+# chi-ce-01> show configuration 
+version 17.3R3.10;
+groups {
+    CG_SLT_OAM-CP-FILTER {
+        interfaces {
+            lo0 {
+                unit <*> {
+                    family inet {
+                        filter {
+                            input MGMT_RESTRICT_V4;
+                        }
+                    }
+                }
+            }
+        }
+        policy-options {
+            prefix-list MGMT_NETS_V4 {
+                10.0.1.0/24;
+                10.100.19.20/32;
+                10.100.19.21/32;
+                10.100.137.89/32;
+                10.115.137.89/32;
+                10.250.137.89/32;
+                10.245.2.0/24;
+                172.29.0.0/16;
+                172.30.0.0/16;
+                38.104.2.203/32;
+                185.37.220.222/32;
+                62.23.57.186/32;
+                81.93.181.219/32;
+                149.97.132.238/32;
+            }
+        }
+        firewall {
+            family inet {
+                filter MGMT_RESTRICT_V4 {
+                    term ACCEPT_SSH_V4 {
+                        from {
+                            source-prefix-list {
+                                MGMT_NETS_V4;
+                            }
+                            protocol tcp;
+                            destination-port ssh;
+                        }
+                        then {
+                            count ACCEPT_SSH_V4;
+                            accept;
+                        }
+                    }
+                    term DISCARD_SSH_V4 {
+                        from {
+                            protocol tcp;
+                            destination-port ssh;
+                        }
+                        then {
+                            count DISCARD_SSH_V4;
+                            discard;
+                        }
+                    }
+                    term ACCEPT_ALL_V4 {
+                        then accept;
+                    }
+                }
+            }
+        }
+    }
+}
+apply-groups CG_SLT_OAM-CP-FILTER;
+system {
+    host-name chi-ce-01;
+    root-authentication {
+        encrypted-password /* SECRET-DATA */;
+    }
+    login {
+        message "====================================================================\n=         UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED         =\n=    You must have explicit, authorized permission to access or    =\n=   configure this device. Unauthorized attempts and actions to    =\n=   access or use this system may result in civil and/or criminal  =\n= All activities performed on this device are logged and monitored =\n====================================================================\n";
+        class backups {
+            permissions [ view view-configuration ];
+        }
+        user c.alvarez {
+            uid 2004;
+            class super-user;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user cgrant {
+            uid 2005;
+            class super-user;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user dturner {
+            uid 2003;
+            class super-user;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user go-svc-ockl {
+            uid 2010;
+            class read-only;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user go-svc-saltstack {
+            uid 2001;
+            class super-user;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user ppaiva {
+            uid 2008;
+            class super-user;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user rancid {
+            uid 2002;
+            class backups;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user sklamm {
+            uid 2006;
+            class super-user;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user tmutasa {
+            uid 2011;
+            class super-user;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+        user vmaselli {
+            uid 2009;
+            class read-only;
+            authentication {
+                encrypted-password /* SECRET-DATA */;
+            }
+        }
+    }
+    services {
+        ssh;
+        netconf {
+            ssh;
+        }
+    }
+    syslog {
+        archive size 100k files 8;
+        user * {
+            any emergency;
+        }
+        host 10.100.137.89 {
+            any notice;
+            port 514;
+            source-address 10.100.80.64;
+        }
+        host 10.100.137.24 {
+            any notice;
+            port 514;
+            source-address 10.100.80.64;
+        }
+        file messages {
+            any notice;
+            authorization info;
+        }
+        file traffic-log {
+            user any;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+    }
+    extensions {
+        providers {
+            juniper {
+                license-type juniper deployment-scope commercial;
+            }
+            chef {
+                license-type juniper deployment-scope commercial;
+            }
+        }
+    }
+    processes {
+        app-engine-virtual-machine-management-service {
+            traceoptions {
+                level notice;
+                flag all;
+            }
+        }
+    }
+    ntp {
+        server 10.115.131.1;
+        server 10.125.19.1;
+        server 10.124.19.1;
+        source-address 10.100.80.64;
+    }
+}
+chassis {
+    aggregated-devices {
+        ethernet {
+            device-count 10;
+        }
+    }
+}
+interfaces {
+    ge-0/0/10 {
+        description E_CUST:AA:PF-AP-CHI1-34073:BRTLNK_SIP;
+        unit 0 {
+            family inet {
+                address 192.168.50.26/30;
+            }
+        }
+    }
+    ge-0/0/11 {
+        description E_CUST:PR:VLEC014623440ATI:ATT_THERMO_SIP_PP_TBD;
+        unit 0 {
+            family inet {
+                address 10.166.235.26/30;
+            }
+        }
+    }
+    ge-0/0/22 {
+        description X:IT_FORTIGATE:LAN;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members VL_CHI_120_ITFORTIGATE_LAN;
+                }
+            }
+        }
+    }
+    ge-0/0/23 {
+        description X:IT_FORTIGATE:USCHIDCFG01:WAN1;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members 3002;
+                }
+            }
+        }
+    }
+    ge-0/0/24 {
+        description E_CUST:AA:TBD:CTL_IHC_SIP;
+        speed 1g;
+        link-mode full-duplex;
+        ether-options {
+            no-auto-negotiation;
+        }
+        unit 0 {
+            bandwidth 100m;
+            family inet {
+                address 100.65.0.18/30;
+            }
+        }
+    }
+    ge-0/0/25 {
+        description E_CUST:AA:ETYX/112608//ZYO:WEBEX-CCA;
+        speed 1g;
+        gigether-options {
+            no-auto-negotiation;
+        }
+        unit 0 {
+            family inet {
+                address 192.206.95.181/30;
+            }
+        }
+    }
+    ge-0/0/26 {
+        description E_IBR:NR:TBD:DIGITALREALTY_IT-INET;
+        speed 1g;
+        gigether-options {
+            no-auto-negotiation;
+        }
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members 3002;
+                }
+            }
+        }
+    }
+    xe-0/0/26 {
+        unit 0 {
+            family ethernet-switching;
+        }
+    }
+    xe-0/0/27 {
+        description E_TRUNK:NR:AT-VILCHI1-89:NTT_GN_SIP_PP04.300.13RU6_P07-0_EQXID21527292;
+        vlan-tagging;
+        unit 2602 {
+            description E_CUST:NR:CG-VILCHI1-15:NTTGN_SIP-NTTGN_SELF;
+            bandwidth 50m;
+            vlan-id 2602;
+            family inet {
+                address 172.16.20.6/30;
+            }
+        }
+    }
+    ge-0/0/28 {
+        description E_CUST:AA:HE_4501946:CISCO_UCM_CLOUD_SVI;
+    }
+    ge-0/0/44 {
+        description S:chi-bastion-01:eth0:ext;
+        unit 0 {
+            family inet6 {
+                address 2a00:fa60:1250::/127;
+            }
+        }
+    }
+    ge-0/0/45 {
+        description Q:chiixag01:gi3/10:legacy-integration;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ 5 3000 3010 3012 3103 3302 3501-3504 ];
+                }
+            }
+        }
+    }
+    xe-0/0/46 {
+        description Q:chi-bl-01:xe-0/1/0:edge;
+        ether-options {
+            802.3ad ae1;
+        }
+    }
+    xe-0/0/47 {
+        description Q:chi-bl-02:xe-0/1/0:edge;
+        ether-options {
+            802.3ad ae2;
+        }
+    }
+    et-0/0/52 {
+        description Q:chi-ce-02:et-0/0/52:back-to-back;
+        gigether-options {
+            802.3ad ae0;
+        }
+    }
+    et-0/0/53 {
+        description Q:chi-ce-02:et-0/0/53:back-to-back;
+        gigether-options {
+            802.3ad ae0;
+        }
+    }
+    ae0 {
+        description Q:chi-ce-02:ae0:back-to-back;
+        mtu 1600;
+        aggregated-ether-options {
+            lacp {
+                active;
+                periodic fast;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ 10 192 3000 3002 3010 3012 3103 3302 3501 ];
+                }
+            }
+        }
+    }
+    ae1 {
+        description Q:chi-bl-01:ae1:edge;
+        vlan-tagging;
+        mtu 1600;
+        aggregated-ether-options {
+            lacp {
+                active;
+                periodic fast;
+            }
+        }
+        unit 10 {
+            vlan-id 10;
+            family inet {
+                address 172.22.0.3/31;
+            }
+            family inet6 {
+                address 2a00:fa60:25:3c11::2/64;
+            }
+            family mpls;
+        }
+    }
+    ae2 {
+        description Q:chi-bl-02:ae1:edge;
+        vlan-tagging;
+        mtu 1600;
+        aggregated-ether-options {
+            lacp {
+                active;
+                periodic fast;
+            }
+        }
+        unit 10 {
+            vlan-id 10;
+            family inet {
+                address 172.22.0.7/31;
+            }
+            family inet6 {
+                address 2a00:fa60:25:3c21::2/64;
+            }
+            family mpls;
+        }
+    }
+    em0 {
+        unit 0 {
+            family inet {
+                address 10.100.80.64/24;
+            }
+        }
+    }
+    irb {
+        unit 0;
+        unit 5 {
+            family inet {
+                address 172.22.2.17/29;
+            }
+        }
+        unit 10 {
+            family inet {
+                address 172.22.0.10/31;
+            }
+            family inet6 {
+                address 2a00:fa60:25:cc00::1/64;
+            }
+            family mpls;
+        }
+        unit 120 {
+            description VL_CHI_120_ITFORTIGATE_LAN;
+            family inet {
+                address 172.22.2.29/29 {
+                    vrrp-group 0 {
+                        virtual-address 172.22.2.28;
+                        priority 150;
+                        preempt;
+                        accept-data;
+                        advertisements-threshold 3;
+                    }
+                }
+            }
+        }
+        unit 3000 {
+            family inet {
+                address 185.37.222.121/26 {
+                    vrrp-group 0 {
+                        virtual-address 185.37.222.123;
+                        priority 200;
+                        fast-interval 300;
+                        accept-data;
+                        advertisements-threshold 3;
+                    }
+                }
+            }
+        }
+        unit 3010 {
+            family inet {
+                address 10.0.66.140/28 {
+                    vrrp-group 0 {
+                        virtual-address 10.0.66.142;
+                        fast-interval 300;
+                        accept-data;
+                        advertisements-threshold 3;
+                    }
+                }
+            }
+        }
+        unit 3012 {
+            family inet {
+                address 192.206.95.251/28 {
+                    vrrp-group 0 {
+                        virtual-address 192.206.95.253;
+                        fast-interval 300;
+                        accept-data;
+                        advertisements-threshold 3;
+                    }
+                }
+            }
+        }
+        unit 3103 {
+            description A:R:SBC_THERMO;
+            family inet {
+                address 10.166.235.12/28 {
+                    vrrp-group 0 {
+                        virtual-address 10.166.235.14;
+                        fast-interval 300;
+                        accept-data;
+                        advertisements-threshold 3;
+                    }
+                }
+            }
+        }
+        unit 3302 {
+            description A_NTTGN_SELF-SBC;
+            family inet {
+                address 192.168.100.60/27 {
+                    vrrp-group 0 {
+                        virtual-address 192.168.100.62;
+                        priority 150;
+                        fast-interval 300;
+                        accept-data;
+                        advertisements-threshold 3;
+                    }
+                }
+            }
+        }
+        unit 3501 {
+            family inet {
+                address 192.206.95.220/28 {
+                    vrrp-group 0 {
+                        virtual-address 192.206.95.222;
+                        fast-interval 300;
+                        accept-data;
+                        advertisements-threshold 3;
+                    }
+                }
+            }
+        }
+        unit 3502 {
+            description E_CUST:NR:CKT-01-KFFS-100484-NTI:ATT_INTQ_SIP;
+            family inet {
+                address 74.120.93.183/31;
+            }
+        }
+        unit 3503 {
+            description E_CARR:AA:XEPIJPIJ0009:VERIZ_CARR;
+            family inet {
+                address 70.104.240.210/30;
+            }
+        }
+        unit 3504 {
+            description E_IXP:NR:TBD:PRLS_IX;
+            family inet {
+                address 207.223.73.65/31;
+            }
+        }
+    }
+    lo0 {
+        unit 0 {
+            family inet {
+                filter {
+                    input-list [ MGMT_RESTRICT_V4 MGMT_DISCARD_V4 ACCEPT_ALL_V4 ];
+                }
+                address 192.168.200.3/32;
+            }
+            family inet6 {
+                filter {
+                    input-list [ ACCEPT_NETWORK_SERVICES_V6 ACCEPT_MGMT_SERVICES_V6 DISCARD_ALL_V6 ];
+                }
+                address 2a00:fa60:0:25c1::1/128;
+            }
+        }
+    }
+}
+snmp {
+    location noram-chi;
+    contact "nio@arkadin.com";
+    client-list SNMP_CLIENTS {
+        10.105.137.56/32;
+        10.105.137.57/32;
+        10.100.137.55/32;
+        10.250.137.55/32;
+        10.115.137.57/32;
+        10.100.19.21/32;
+        10.250.90.90/32;
+        192.206.95.169/32;
+        10.105.137.80/32;
+    }
+    community network_services {
+        authorization read-only;
+        client-list-name SNMP_CLIENTS;
+    }
+    community noc_services {
+        authorization read-only;
+        client-list-name SNMP_CLIENTS;
+    }
+    trap-group noc_services {
+        categories {
+            chassis;
+            link;
+            routing;
+        }
+        targets {
+            10.100.137.55;
+            10.100.19.21;
+        }
+    }
+    routing-instance-access {
+        access-list {
+            mgmt_junos;
+        }
+    }
+}
+forwarding-options {
+    storm-control-profiles default {
+        all;
+    }
+}
+routing-options {
+    static {
+        route 0.0.0.0/0 next-hop 10.100.80.254;
+    }
+    router-id 192.168.200.3;
+    autonomous-system 53550 asdot-notation;
+    forwarding-table {
+        export PS_ECMP;
+    }
+}
+protocols {
+    mpls {
+        ipv6-tunneling;
+    }
+    bgp {
+        log-updown;
+        group BL_V4-V6 {
+            type internal;
+            local-address 192.168.200.3;
+            hold-time 9;
+            log-updown;
+            family inet-vpn {
+                unicast;
+            }
+            family inet6-vpn {
+                unicast;
+            }
+            family route-target;
+#            authentication-key <removed> SECRET-DATA */;
+            peer-as 53550;
+            multipath;
+            neighbor 172.16.0.19 {
+                description chi-bl-01;
+            }
+            neighbor 172.16.0.20 {
+                description chi-bl-02;
+            }
+        }
+    }
+    ospf {
+        reference-bandwidth 100g;
+        area 0.0.0.0 {
+            interface lo0.0 {
+                passive;
+            }
+            interface ae1.10 {
+                interface-type p2p;
+                ldp-synchronization;
+                hello-interval 1;
+                dead-interval 3;
+                authentication {
+#                    md5 1 key <removed> SECRET-DATA */;
+                }
+            }
+            interface ae2.10 {
+                interface-type p2p;
+                ldp-synchronization;
+                hello-interval 1;
+                dead-interval 3;
+                authentication {
+#                    md5 1 key <removed> SECRET-DATA */;
+                }
+            }
+            interface irb.10 {
+                interface-type p2p;
+                metric 1;
+                ldp-synchronization;
+                hello-interval 1;
+                dead-interval 3;
+                authentication {
+#                    md5 1 key <removed> SECRET-DATA */;
+                }
+            }
+        }
+    }
+    ldp {
+        interface ae1.10;
+        interface ae2.10;
+        interface irb.10;
+    }
+    lldp {
+        port-id-subtype interface-name;
+        port-description-type interface-description;
+        interface all;
+        interface xe-0/0/27 {
+            disable;
+        }
+    }
+    lldp-med {
+        interface all;
+    }
+    igmp-snooping {
+        vlan default;
+    }
+    vstp {
+        interface ge-0/0/45;
+        interface ae0;
+        vlan all {
+            bridge-priority 40k;
+        }
+    }
+}
+policy-options {
+    prefix-list PFX_CHI-COGENT_V4 {
+        38.65.194.0/24;
+    }
+    prefix-list MGMT_NETS_V4 {
+        10.0.1.0/24;
+        10.100.19.20/32;
+        10.100.19.21/32;
+        10.100.137.89/32;
+        10.115.137.89/32;
+        10.245.2.0/24;
+        10.250.137.89/32;
+        172.29.0.0/16;
+        172.30.0.0/16;
+    }
+    prefix-list PFX_BRTLNK_SIP_V4 {
+        162.212.246.0/24;
+    }
+    prefix-list PFX_IHC-ATL_V4 {
+        10.5.250.128/28;
+    }
+    prefix-list PFX_IHC-SJC_V4 {
+        10.5.250.0/28;
+    }
+    prefix-list LOCAL_IPV6 {
+        apply-path "interfaces <*> unit <*> family inet6 address <*:*:*>";
+    }
+    prefix-list MCAST_ALL_ROUTERS_V6 {
+        ff02::2/128;
+    }
+    prefix-list LOCAL_FXP0_V6 {
+        apply-path "interfaces fxp0 unit <*> family inet6 address <*:*:*>";
+    }
+    prefix-list LOOPBACKS_V6 {
+        apply-path "interfaces lo0 unit 0 family inet6 address <*:*:*>";
+    }
+    prefix-list BGP_NEIGHBORS_V6 {
+        apply-path "protocols bgp group <*> neighbor <*:*:*>";
+    }
+    prefix-list VRRP_V6 {
+        ff02::12/128;
+    }
+    prefix-list MGMT_NETS_V6;
+    prefix-list BGP_NEIGHBORS_VRF_V6 {
+        apply-path "routing-instances <*> protocols bgp group <*> neighbor <*:*:*>";
+    }
+    prefix-list PFX_FORTIGATE_SIP_V4 {
+        10.100.7.0/24;
+        10.100.16.0/24;
+        10.100.97.0/24;
+        10.100.99.0/24;
+        10.100.105.0/24;
+        10.101.2.0/24;
+        10.101.5.0/24;
+        10.103.3.0/24;
+        10.105.2.0/24;
+        10.105.9.0/24;
+        10.105.12.0/24;
+        10.115.182.0/23;
+        10.121.2.0/24;
+        10.248.2.0/24;
+    }
+    policy-statement PS_ECMP {
+        then {
+            load-balance per-packet;
+        }
+    }
+    policy-statement PS_EXP_BORDER_V6 {
+        term DIRECT {
+            from {
+                protocol direct;
+                route-filter 2a00:fa60:1250::/44 orlonger;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_BRTLNK_V4 {
+        term 1 {
+            from {
+                protocol bgp;
+                route-filter 192.206.95.220/28 exact;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_CCA_V4 {
+        term SAN-JOSE-SBC {
+            from {
+                route-filter 192.206.95.184/29 exact;
+            }
+            then {
+                as-path-prepend "53550 53550";
+                accept;
+            }
+        }
+        term CHICAGO-SBC {
+            from {
+                route-filter 192.206.95.64/29 exact;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_CHIIXAG_V4 {
+        term DEFAULT-ROUTE {
+            from {
+                route-filter 0.0.0.0/0 exact;
+            }
+            then {
+                local-preference 120;
+                next-hop self;
+                accept;
+            }
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_FORTIGATE_V4 {
+        term EXPORT {
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_IHC_V4 {
+        term BACKUP {
+            from {
+                prefix-list PFX_IHC-SJC_V4;
+            }
+            then {
+                as-path-prepend "53550 53550";
+                accept;
+            }
+        }
+        term PRIMARY {
+            from {
+                prefix-list PFX_IHC-ATL_V4;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_NTTGN_V4 {
+        term ACCEPT {
+            then accept;
+        }
+    }
+    policy-statement PS_EXP_PUBLIC_AUDIO_V4 {
+        term EXPORT {
+            from {
+                route-filter 185.37.222.64/26 exact;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_THERMO_V4 {
+        term ATL_SBC {
+            from {
+                route-filter 10.166.232.0/24 orlonger;
+            }
+            then {
+                metric 50;
+                as-path-prepend "53550 53550";
+                accept;
+            }
+        }
+        term CHI_SBC {
+            from {
+                route-filter 10.166.235.0/27 orlonger;
+            }
+            then {
+                metric 50;
+                accept;
+            }
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_IMP_BORDER_V6 {
+        then accept;
+    }
+    policy-statement PS_IMP_BRTLNK_V4 {
+        term 1 {
+            from {
+                prefix-list PFX_BRTLNK_SIP_V4;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_IMP_CCA_V4 {
+        term ACCEPT {
+            then {
+                community add COMM_CCA-CHICAGO;
+                accept;
+            }
+        }
+    }
+    policy-statement PS_IMP_CHIIXAG_V4 {
+        term FILTER {
+            from {
+                prefix-list-filter PFX_CHI-COGENT_V4 orlonger;
+            }
+            then {
+                community add COMM_BB-LEAK;
+                accept;
+            }
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_IMP_FORTIGATE_V4 {
+        term IMPORT {
+            from {
+                prefix-list PFX_FORTIGATE_SIP_V4;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_IMP_INTQ_V4 {
+        term IMPORT {
+            from {
+                route-filter 216.221.154.112/28 orlonger;
+                route-filter 216.221.155.64/28 orlonger;
+                route-filter 206.147.237.0/24 orlonger;
+                route-filter 206.147.68.32/28 orlonger;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_IMP_NTTGN_V4 {
+        term ACCEPT {
+            then {
+                local-preference 200;
+                accept;
+            }
+        }
+    }
+    policy-statement PS_IMP_PRLS_V4 {
+        term IMPORT {
+            from {
+                route-filter 68.68.0.0/16 orlonger;
+                route-filter 207.223.0.0/16 orlonger;
+                route-filter 208.51.154.0/24 orlonger;
+                route-filter 208.79.0.0/16 orlonger;
+                route-filter 208.93.0.0/16 orlonger;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_IMP_THERMO_V4 {
+        term IMPORT {
+            from {
+                route-filter 10.165.136.0/23 orlonger;
+                route-filter 10.166.136.0/23 orlonger;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_IMP_VERIZ_V4 {
+        term IMPORT {
+            from {
+                route-filter 152.188.118.160/27 orlonger;
+                route-filter 152.188.118.192/27 orlonger;
+                route-filter 152.188.112.0/24 orlonger;
+                route-filter 152.188.149.0/24 orlonger;
+                route-filter 152.188.150.0/24 orlonger;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    community COMM_BB-LEAK members 53550:11111;
+    community COMM_CCA-CHICAGO members 65117:13445;
+}
+firewall {
+    family inet {
+        filter ACCEPT_SSH_V4 {
+            term ACCEPT_SSH_V4 {
+                from {
+                    source-prefix-list {
+                        MGMT_NETS_V4;
+                    }
+                    protocol tcp;
+                    destination-port ssh;
+                }
+                then {
+                    count ACCEPT_SSH_V4;
+                    accept;
+                }
+            }
+        }
+        filter MGMT_DISCARD_V4 {
+            term DISCARD_SSH_V4 {
+                from {
+                    protocol tcp;
+                    destination-port ssh;
+                }
+                then {
+                    count DISCARD_SSH_V4;
+                    discard;
+                }
+            }
+        }
+        filter MGMT_RESTRICT_V4 {
+            term ACCEPT_SSH_V4 {
+                from {
+                    source-prefix-list {
+                        MGMT_NETS_V4;
+                    }
+                    protocol tcp;
+                    destination-port ssh;
+                }
+                then {
+                    count ACCEPT_SSH_V4;
+                    accept;
+                }
+            }
+        }
+        filter ACCEPT_ALL_V4 {
+            term ACCEPT_ALL_V4 {
+                then accept;
+            }
+        }
+    }
+    family inet6 {
+        filter ACCEPT_BGP_V6 {
+            term ACCEPT_BGP_V6 {
+                from {
+                    source-prefix-list {
+                        BGP_NEIGHBORS_V6;
+                        BGP_NEIGHBORS_VRF_V6;
+                    }
+                    destination-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    ##
+                    ## Warning: value payload-protocol ignored: unsupported platform (qfx5100-48s-6q)
+                    ##
+                    payload-protocol tcp;
+                    ##
+                    ## Warning: value port ignored: unsupported platform (qfx5100-48s-6q)
+                    ##
+                    port bgp;
+                }
+                then {
+                    count ACCEPT_BGP_V6;
+                    accept;
+                }
+            }
+        }
+        filter ACCEPT_BFD_V6 {
+            term ACCEPT_BFD_V6 {
+                from {
+                    destination-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    ##
+                    ## Warning: value payload-protocol ignored: unsupported platform (qfx5100-48s-6q)
+                    ##
+                    payload-protocol udp;
+                    ##
+                    ## Warning: value port ignored: unsupported platform (qfx5100-48s-6q)
+                    ##
+                    port [ 3784 4784 ];
+                }
+                then {
+                    count ACCEPT_BFD_V6;
+                    accept;
+                }
+            }
+        }
+        filter ACCEPT_VRRP_V6 {
+            term ACCEPT_VRRP_V6 {
+                from {
+                    source-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    destination-prefix-list {
+                        VRRP_V6;
+                    }
+                    ##
+                    ## Warning: value payload-protocol ignored: unsupported platform (qfx5100-48s-6q)
+                    ##
+                    payload-protocol [ vrrp ah ];
+                }
+                then {
+                    count ACCEPT_VRRP_V6;
+                    accept;
+                }
+            }
+        }
+        filter ACCEPT_ICMP_V6 {
+            term NO_ICMP_FRAGMENTS_V6 {
+                from {
+                    next-header fragment;
+                    ##
+                    ## Warning: value payload-protocol ignored: unsupported platform (qfx5100-48s-6q)
+                    ##
+                    payload-protocol icmp6;
+                }
+                then {
+                    count NO_ICMP6_FRAGMENTS_V6;
+                    log;
+                    discard;
+                }
+            }
+            term ACCEPT_ICMP_V6 {
+                from {
+                    ##
+                    ## Warning: value payload-protocol ignored: unsupported platform (qfx5100-48s-6q)
+                    ##
+                    payload-protocol icmp6;
+                }
+                then {
+                    policer 5MB_CP_POLICER;
+                    count ACCEPT_ICMP_V6;
+                    accept;
+                }
+            }
+        }
+        filter ACCEPT_TRACERT_V6 {
+            term ACCEPT_TRACERT_UDP_V6 {
+                from {
+                    destination-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    ##
+                    ## Warning: value payload-protocol ignored: unsupported platform (qfx5100-48s-6q)
+                    ##
+                    payload-protocol udp;
+                    destination-port 33435-33450;
+                    hop-limit 1;
+                }
+                then {
+                    policer 5MB_CP_POLICER;
+                    count ACCEPT_TRACERT_UDP_V6;
+                    accept;
+                }
+            }
+            term ACCEPT_TRACERT_ICMP_V6 {
+                from {
+                    destination-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    ##
+                    ## Warning: value payload-protocol ignored: unsupported platform (qfx5100-48s-6q)
+                    ##
+                    payload-protocol icmp6;
+                    icmp-type [ echo-request node-information-request time-exceeded ];
+                    hop-limit 1;
+                }
+                then {
+                    policer 5MB_CP_POLICER;
+                    count ACCEPT_TRACERT_ICMP_V6;
+                    accept;
+                }
+            }
+        }
+        filter DISCARD_ALL_V6 {
+            term DISCARD_ALL {
+                then discard;
+            }
+        }
+        filter ACCEPT_MGMT_SERVICES_V6 {
+            term ACCEPT_SSH_V6 {
+                filter ACCEPT_SSH_V6;
+            }
+            term ACCEPT_TRACERT_V6 {
+                filter ACCEPT_TRACERT_V6;
+            }
+            term ACCEPT_ICMP_V6 {
+                filter ACCEPT_ICMP_V6;
+            }
+        }
+        filter ACCEPT_NETWORK_SERVICES_V6 {
+            term ACCEPT_BGP_V6 {
+                filter ACCEPT_BGP_V6;
+            }
+            term ACCEPT_BFD_V6 {
+                filter ACCEPT_BFD_V6;
+            }
+            term ACCEPT_VRRP_V6 {
+                filter ACCEPT_VRRP_V6;
+            }
+            term ACCEPT_LDP_V6 {
+                filter ACCEPT_LDP_V6;
+            }
+        }
+        filter ACCEPT_SSH_V6 {
+            term ACCEPT_SSH_V6 {
+                from {
+                    source-prefix-list {
+                        MGMT_NETS_V6;
+                    }
+                    destination-port ssh;
+                }
+                then {
+                    count ACCEPT_SSH_V6;
+                    accept;
+                }
+            }
+        }
+        filter ACCEPT_LDP_V6 {
+            term ACCEPT_LDP_DISCOVER_V6 {
+                from {
+                    source-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    destination-prefix-list {
+                        MCAST_ALL_ROUTERS_V6;
+                    }
+                    ##
+                    ## Warning: value payload-protocol ignored: unsupported platform (qfx5100-48s-6q)
+                    ##
+                    payload-protocol udp;
+                    destination-port ldp;
+                }
+                then accept;
+            }
+            term ACCEPT_LDP_UCAST_V6 {
+                from {
+                    destination-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    ##
+                    ## Warning: value payload-protocol ignored: unsupported platform (qfx5100-48s-6q)
+                    ##
+                    payload-protocol tcp;
+                    ##
+                    ## Warning: value port ignored: unsupported platform (qfx5100-48s-6q)
+                    ##
+                    port ldp;
+                }
+                then count ACCEPT_LDP_UCAST;
+            }
+            term ACCEPT_TLDP_DISCOVER_V6 {
+                from {
+                    destination-prefix-list {
+                        LOCAL_IPV6;
+                    }
+                    ##
+                    ## Warning: value payload-protocol ignored: unsupported platform (qfx5100-48s-6q)
+                    ##
+                    payload-protocol udp;
+                    destination-port ldp;
+                }
+                then {
+                    count ACCEPT_TLDP_DISCOVER;
+                    accept;
+                }
+            }
+        }
+    }
+    policer 5MB_CP_POLICER {
+        if-exceeding {
+            bandwidth-limit 5m;
+            burst-size-limit 1m;
+        }
+        then discard;
+    }
+}
+routing-instances {
+    VRF_ARKAD_EXT {
+        description "Arkadin Public Routing";
+        instance-type vrf;
+        interface ge-0/0/44.0;
+        interface irb.5;
+        interface irb.3000;
+        interface irb.3501;
+        interface irb.3502;
+        interface irb.3503;
+        interface irb.3504;
+        route-distinguisher 192.168.200.3:2;
+        vrf-target target:53550:2;
+        vrf-table-label;
+        protocols {
+            bgp {
+                group IXAG_V4 {
+                    import PS_IMP_CHIIXAG_V4;
+                    export PS_EXP_CHIIXAG_V4;
+                    peer-as 53550;
+                    neighbor 172.22.2.19 {
+                        description chiixag01;
+                    }
+                    neighbor 172.22.2.20 {
+                        description chiixag01;
+                    }
+                }
+                group SIP_INTQ_V4 {
+                    hold-time 6;
+                    log-updown;
+                    neighbor 74.120.93.182 {
+                        description Inteliquent_over_ATT;
+                        import PS_IMP_INTQ_V4;
+#                        authentication-key <removed> SECRET-DATA */;
+                        export PS_EXP_PUBLIC_AUDIO_V4;
+                        peer-as 40160;
+                    }
+                }
+                group SIP_VERIZ_V4 {
+                    hold-time 6;
+                    log-updown;
+                    neighbor 70.104.240.209 {
+                        description Verizon_circuit;
+                        import PS_IMP_VERIZ_V4;
+#                        authentication-key <removed> SECRET-DATA */;
+                        export PS_EXP_PUBLIC_AUDIO_V4;
+                        peer-as 701;
+                    }
+                }
+                group SIP_PRLS_V4 {
+                    hold-time 6;
+                    log-updown;
+                    neighbor 207.223.73.64 {
+                        description Peerless_over_CTL;
+                        import PS_IMP_PRLS_V4;
+                        export PS_EXP_PUBLIC_AUDIO_V4;
+                        peer-as 21808;
+                    }
+                }
+            }
+        }
+    }
+    VRF_ARKAD_INT {
+        description "Arkadin Internal Routing";
+        instance-type vrf;
+        interface irb.120;
+        route-distinguisher 192.168.200.3:1;
+        vrf-target target:53550:1;
+        vrf-table-label;
+        protocols {
+            bgp {
+                group FORTIGATE_V4 {
+                    hold-time 6;
+                    log-updown;
+                    neighbor 172.22.2.26 {
+                        description FORTIGATE_IT_FIREWALL;
+                        import PS_IMP_FORTIGATE_V4;
+                        export PS_EXP_FORTIGATE_V4;
+                        peer-as 4200223000;
+                    }
+                }
+            }
+        }
+    }
+    VRF_BRDSFT_SIP {
+        instance-type vrf;
+        interface irb.3010;
+        route-distinguisher 192.168.200.3:3010;
+        vrf-target target:53550:3010;
+        vrf-table-label;
+    }
+    VRF_BRTLNK_SIP {
+        description BRTLNK_SIP;
+        instance-type vrf;
+        interface ge-0/0/10.0;
+        route-distinguisher 192.168.200.3:114;
+        vrf-target {
+            target:53550:114;
+            import target:53550:2;
+            export target:53550:2;
+        }
+        vrf-table-label;
+        protocols {
+            bgp {
+                group SIP_BRTLNK_V4 {
+                    type external;
+                    import PS_IMP_BRTLNK_V4;
+                    export PS_EXP_BRTLNK_V4;
+                    neighbor 192.168.50.25 {
+                        peer-as 394851;
+                        bfd-liveness-detection {
+                            minimum-interval 300;
+                            minimum-receive-interval 300;
+                            multiplier 3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    VRF_CCA_SIP {
+        description "paired with EXT_VPN_CISCO_CCA_SIP in Atlanta for SBC access";
+        instance-type vrf;
+        interface ge-0/0/25.0;
+        route-distinguisher 192.168.200.3:2024;
+        vrf-target target:53550:2024;
+        vrf-table-label;
+        protocols {
+            bgp {
+                group SIP_CCA_V4 {
+                    type external;
+                    import PS_IMP_CCA_V4;
+                    family inet {
+                        unicast {
+                            prefix-limit {
+                                maximum 20;
+                            }
+                        }
+                    }
+                    export PS_EXP_CCA_V4;
+                    neighbor 192.206.95.182 {
+                        peer-as 13445;
+                        bfd-liveness-detection {
+                            minimum-interval 300;
+                            minimum-receive-interval 300;
+                            multiplier 3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    VRF_CPMP_SIP {
+        instance-type vrf;
+        interface irb.3012;
+        route-distinguisher 192.168.200.3:3012;
+        vrf-target target:53550:3012;
+        vrf-table-label;
+    }
+    VRF_IHC_SIP {
+        description "paired with EXT_VPN_IHC_SIP in Atlanta for SBC access";
+        instance-type vrf;
+        interface ge-0/0/24.0;
+        route-distinguisher 192.168.200.3:107;
+        vrf-target target:53550:107;
+        vrf-table-label;
+        protocols {
+            bgp {
+                group EXTERNAL {
+                    type external;
+                    family inet {
+                        unicast {
+                            prefix-limit {
+                                maximum 20;
+                            }
+                        }
+                    }
+                    neighbor 100.65.0.17 {
+                        export PS_EXP_IHC_V4;
+                        peer-as 3549;
+                        bfd-liveness-detection {
+                            minimum-interval 300;
+                            minimum-receive-interval 300;
+                            multiplier 3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    VRF_NTTGN_SELF {
+        instance-type vrf;
+        interface xe-0/0/27.2602;
+        interface irb.3302;
+        route-distinguisher 192.168.200.3:3302;
+        vrf-target target:53550:3302;
+        vrf-table-label;
+        protocols {
+            bgp {
+                group SIP_NTTGN_SELF_V4 {
+                    type external;
+                    import PS_IMP_NTTGN_V4;
+                    export PS_EXP_NTTGN_V4;
+                    neighbor 172.16.20.5 {
+                        peer-as 18491;
+                        bfd-liveness-detection {
+                            minimum-interval 999;
+                            minimum-receive-interval 999;
+                            multiplier 30;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    inactive: VRF_THERMO_SIP {
+        description WIP_CGRANT_TBD;
+        instance-type vrf;
+        interface ge-0/0/11.0;
+        interface irb.3103;
+        route-distinguisher 192.168.200.3:112;
+        vrf-target target:53550:112;
+        vrf-table-label;
+        protocols {
+            bgp {
+                group SIP_THERMO_V4 {
+                    hold-time 6;
+                    log-updown;
+                    bfd-liveness-detection {
+                        minimum-interval 999;
+                        minimum-receive-interval 999;
+                        multiplier 3;
+                    }
+                    neighbor 10.166.235.25 {
+                        description "Thermo SIP";
+                        import PS_IMP_THERMO_V4;
+                        export PS_EXP_THERMO_V4;
+                        peer-as 65291;
+                    }
+                }
+            }
+        }
+    }
+    mgmt_junos {
+        routing-options {
+            static {
+                route 0.0.0.0/0 next-hop 10.100.80.254;
+            }
+        }
+    }
+}
+vlans {
+    VL_ATL_2602_NTTGN_SELF-EXT {
+        description X:172.16.20.4/30:NTTGN_SELF-EXT;
+        vlan-id 2602;
+    }
+    VL_ATL_3302_NTTGN_SELF-SBC {
+        description V:192.168.100.32/27:NTTGN_SELF-SBC;
+        vlan-id 3302;
+        l3-interface irb.3302;
+    }
+    VL_CHI_10_MPLS {
+        description "inter-ce mpls";
+        vlan-id 10;
+        l3-interface irb.10;
+    }
+    VL_CHI_120_ITFORTIGATE_LAN {
+        description X:172.22.2.24/29:IT_FORTIGATE_LAN;
+        vlan-id 120;
+        l3-interface irb.120;
+    }
+    VL_CHI_3000_SBC-PUBLIC {
+        description A:185.37.222.64/26:SBC-PUBLIC;
+        vlan-id 3000;
+        l3-interface irb.3000;
+    }
+    VL_CHI_3002_IT-FW-PUBLIC {
+        description X:72.28.105.32/28:IT-FW-PUBLIC;
+        vlan-id 3002;
+    }
+    VL_CHI_3010_SBC-BSOFT {
+        description A:R:10.0.66.128/28:SBC-BSOFT;
+        vlan-id 3010;
+        l3-interface irb.3010;
+    }
+    VL_CHI_3012_SBC-CPMP {
+        description A:R:192.206.95.240/28:SBC-CISCOPMP;
+        vlan-id 3012;
+        l3-interface irb.3012;
+    }
+    VL_CHI_3103_SBC_THERMO {
+        description A:10.166.235.0/28:SBC_THERMO;
+        vlan-id 3103;
+        l3-interface irb.3103;
+    }
+    VL_CHI_3501_SBC-EXT {
+        description "192.206.95.208/28 SBC External Realm";
+        vlan-id 3501;
+        l3-interface irb.3501;
+    }
+    VL_CHI_3502_IX-INTQ {
+        description E:74.120.93.183/31:IX-INTQ;
+        vlan-id 3502;
+        l3-interface irb.3502;
+    }
+    VL_CHI_3503_IX-VERIZ {
+        description E:70.104.240.208/30:IX-VERIZ;
+        vlan-id 3503;
+        l3-interface irb.3503;
+    }
+    VL_CHI_3504_IX-PRLS {
+        description E:207.223.73.65/31:IX-PRLS;
+        vlan-id 3504;
+        l3-interface irb.3504;
+    }
+    VL_CHI_5_IXAG-BGP {
+        description "ixag routing";
+        vlan-id 5;
+        l3-interface irb.5;
+    }
+    default {
+        vlan-id 1;
+        l3-interface irb.0;
+    }
+}

@@ -1,0 +1,1549 @@
+#RANCID-CONTENT-TYPE: juniper
+#
+# pa2-sys-02> show chassis clocks 
+# pa2-sys-02> show chassis firmware local
+# pa2-sys-02> show chassis firmware 
+# Part                     Type       Version
+# FPC 0                    uboot      U-Boot 2011.06 (Jan 10 2014 - 02:08:51) 1.0.0
+#                          loader     FreeBSD/PowerPC U-Boot bootstrap loader 2.4
+# 
+# pa2-sys-02> show chassis fpc detail 
+# Slot 0 information:
+#   State                               Online    
+#   Total CPU DRAM                 2048 MB
+# 
+# pa2-sys-02> show chassis hardware detail 
+# Hardware inventory:
+# Item             Version  Part number  Serial number     Description
+# Chassis                                PE3717150046      EX4300-48T
+# Routing Engine 0 REV 29   650-044932   PE3717150046      EX4300-48T
+# FPC 0            REV 29   650-044932   PE3717150046      EX4300-48T
+#   CPU                     BUILTIN      BUILTIN           FPC CPU
+#   PIC 0          REV 29   BUILTIN      BUILTIN           48x 10/100/1000 Base-T
+#   PIC 1          REV 29   BUILTIN      BUILTIN           4x 40GE QSFP+
+#     Xcvr 0       REV 01   740-038623   MOC17016230262    QSFP+-40G-CU1M
+#     Xcvr 1       REV 01   740-038623   MOC17146230551    QSFP+-40G-CU1M
+#     Xcvr 2       REV 01   740-044512   MOC16465120590    QSFP+-40G-CU50CM
+#   PIC 2          REV 02   611-063980   MY3717041429      4x 1G/10G SFP/SFP+
+#     Xcvr 0       REV 01   740-021308   AD165230KVL       SFP+-10G-SR
+#     Xcvr 1       REV 01   740-021308   AD165130XSS       SFP+-10G-SR
+#     Xcvr 3                NON-JNPR     CH05FN0TH         SFP+-10G-SR
+# Power Supply 0   REV 01   740-046876   1EDD7032286       JPSU-350-AC-AFI-A
+# Power Supply 1   REV 01   740-046876   1EDD6516915       JPSU-350-AC-AFI-A
+# Fan Tray 0                                               Fan Module, Airflow In  (AFI)
+# Fan Tray 1                                               Fan Module, Airflow In  (AFI)
+# 
+# pa2-sys-02> show chassis hardware models 
+# Hardware inventory:
+# Item             Version  Part number  Serial number     FRU model number
+# Routing Engine 0 REV 29   650-044932   PE3717150046      EX4300-48T-AFI
+# FPC 0            REV 29   650-044932   PE3717150046      EX4300-48T-AFI
+#   PIC 0          REV 29   BUILTIN      BUILTIN           EX4300-48T-AFI
+#   PIC 1          REV 29   BUILTIN      BUILTIN           EX4300-48T-AFI
+#   PIC 2          REV 02   611-063980   MY3717041429      EX-UM-4X4SFP
+# Power Supply 0   REV 01   740-046876   1EDD7032286       JPSU-350-AC-AFI
+# Power Supply 1   REV 01   740-046876   1EDD6516915       JPSU-350-AC-AFI
+# 
+# pa2-sys-02> show chassis scb 
+# pa2-sys-02> show chassis sfm detail 
+# pa2-sys-02> show chassis ssb 
+# pa2-sys-02> show chassis feb detail 
+# pa2-sys-02> show chassis feb 
+# pa2-sys-02> show chassis cfeb 
+# pa2-sys-02> show system boot-messages 
+# fpc0:
+# --------------------------------------------------------------------------
+# Copyright (c) 1996-2017, Juniper Networks, Inc.
+# All rights reserved.
+# Copyright (c) 1992-2007 The FreeBSD Project.
+# Copyright (c) 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994
+# 	The Regents of the University of California. All rights reserved.
+# FreeBSD is a registered trademark of The FreeBSD Foundation.
+# Timecounter "decrementer" frequency 18750000 Hz quality 0
+# cpu0: Freescale e500mc core revision 3.2
+# cpu0: HID0 c0000080<EMCP,EN_L2MMU_MHD,EN_MAS7_UPDATE>
+# Security policy loaded: Junos MAC/veriexec (mac_veriexec)
+# Security policy loaded: JUNOS MAC/pcap (mac_pcap)
+# Security policy loaded: JUNOS MAC/runasnonroot (mac_runasnonroot)
+# MAC/veriexec fingerprint module loaded: SHA256
+# MAC/veriexec fingerprint module loaded: SHA1
+# ETHERNET SOCKET BRIDGE initialising
+# Initializing EXSERIES properties ...
+# nexus0: <Powerpc Nexus device>
+# ocpbus0: <on-chip peripheral bus> on nexus0
+# openpic0: <OpenPIC in on-chip peripheral bus> iomem 0xfe040000-0xfe06ffff on ocpbus0
+# lbc0: <Freescale Local Bus Controller> iomem 0xfe124000-0xfe12410f,0xff000000-0xffffffff irq 41 on ocpbus0
+# cfi0: <AMD/Fujitsu - 8MB> iomem 0xff800000-0xffffffff on lbc0
+# syspld0 iomem 0xff000000-0xff00ffff on lbc0
+# i2c0: <MPC85XX OnChip i2c Controller> iomem 0xfe118000-0xfe118014 irq 54 on ocpbus0
+# ds1672 rtc0: <DS1672 RTC> on i2c0
+# i2c1: <MPC85XX OnChip i2c Controller> iomem 0xfe118100-0xfe118114 irq 54 on ocpbus0
+# poe0: <POE> on i2c1
+# device_attach: poe0 attach returned 19
+# uart0: <16550 or compatible> iomem 0xfe11c500-0xfe11c50f irq 52 on ocpbus0
+# uart0: console (9600,n,8,1)
+# uart1: <16550 or compatible> iomem 0xfe11c600-0xfe11c60f irq 52 on ocpbus0
+# pcib0: <Freescale MPCP20BJE PCI Express host controller> iomem 0xfe201000-0xfe201fff,0xc0000000-0xc7ffffff on ocpbus0
+# pci0: <PCI bus> on pcib0
+# pcib1: <PCI-PCI bridge> at device 0.0 on pci0
+# pci1: <PCI bus> on pcib1
+# besw0: <Broadcom BCM56648J GigE Switch> mem 0xc0000000-0xc003ffff irq 57 at device 0.0 on pci1
+# BCM device 0xb648 has been attachedbman0 iomem 0xfe31a000-0xfe31afff,0xfd800000-0xfd803fff,0xfd804000-0xfd804fff irq 32,121,123,125,127,129,131,133,135,137,139 on ocpbus0
+# bman0: Hardware version: 1.0.
+# qman0 iomem 0xfe318000-0xfe318fff,0xfd808000-0xfd80bfff,0xfd80c000-0xfd80cfff irq 32,120,122,124,126,128,130,132,134,136,138 on ocpbus0
+# qman0: Hardware version: 1.2.
+# fman0 iomem 0xfe400000-0xfe4fffff irq 112,32 on ocpbus0
+# fman0: Hardware version: 3.0.
+# dtsec0 on fman0
+# dtsec0: Configured for independent mode.
+# dtsec0: hardware MAC address 7c:e2:ca:44:fd:e0
+# miibus0: <MII bus> on dtsec0
+# brgphy0: <BCM54616S 10/100/1000baseTX PHY> on miibus0
+# brgphy0:  10baseT, 10baseT-FDX, 100baseTX, 100baseTX-FDX, 1000baseT, 1000baseT-FDX, auto
+# ehci0: <Frescale Integrated USB 2.0 controller> iomem 0xfe210000-0xfe210fff irq 60 on ocpbus0
+# usb0: EHCI version 1.0
+# usb0 on ehci0
+# usb0: USB revision 2.0
+# uhub0: Freescale EHCI root hub, class 9/0, rev 2.00/1.00, addr 1
+# uhub0: 1 port with 1 removable, self powered
+# umass0: ADATA IUM01-002GFHS, rev 2.00/1.00, addr 2
+# ehci1: <Frescale Integrated USB 2.0 controller> iomem 0xfe211000-0xfe211fff irq 61 on ocpbus0
+# usb1: EHCI version 1.0
+# usb1 on ehci1
+# usb1: USB revision 2.0
+# uhub1: Freescale EHCI root hub, class 9/0, rev 2.00/1.00, addr 1
+# uhub1: 1 port with 1 removable, self powered
+# Initializing product: 145 ..
+# Loading the NETPFE fc module
+#  Loading Redundant LT driver
+# ###PCB Group initialized for udppcbgroup
+# ###PCB Group initialized for tcppcbgroup
+# Kernel thread "wkupdaemon" (pid 44) exited prematurely.
+# da0 at umass-sim0 bus 0 target 0 lun 0
+# da0: <ADATA IUM01-002GFHS 0100> Removable Direct Access SCSI-0 device
+# da0: 40.000MB/s transfers
+# da0: 1968MB (4030464 512 byte sectors: 255H 63S/T 250C)
+# Trying to mount root from ufs:/dev/da0s2a
+# 
+# pa2-sys-02> show version detail 
+# fpc0:
+# --------------------------------------------------------------------------
+# Hostname: pa2-sys-02
+# Model: ex4300-48t
+# Junos: 14.1X53-D46.7
+# JUNOS EX  Software Suite [14.1X53-D46.7]
+# JUNOS FIPS mode utilities [14.1X53-D46.7]
+# JUNOS Online Documentation [14.1X53-D46.7]
+# JUNOS EX 4300 Software Suite [14.1X53-D46.7]
+# JUNOS Web Management Platform Package [14.1X53-D46.7]
+# JUNOS py-base-powerpc [14.1X53-D46.7]
+# KERNEL 14.1X53-D46.7 #0 built by builder on 2017-11-24 01:23:14 UTC
+# MGD release 14.1X53-D46.7 built by builder on 2017-11-24 02:14:19 UTC
+# CLI release 14.1X53-D46.7 built by builder on 2017-11-24 01:37:52 UTC
+# RPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:18:49 UTC
+# CHASSISD release 14.1X53-D46.7 built by builder on 2017-11-24 01:58:02 UTC
+# KMD release 14.1X53-D46.7 built by builder on 2017-11-24 02:04:35 UTC
+# PKID release 14.1X53-D46.7 built by builder on 2017-11-24 02:01:06 UTC
+# SENDD release 14.1X53-D46.7 built by builder on 2017-11-24 01:53:15 UTC
+# DFWD release 14.1X53-D46.7 built by builder on 2017-11-24 02:05:53 UTC
+# DCD release 14.1X53-D46.7 built by builder on 2017-11-24 02:15:46 UTC
+# SNMPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:12:26 UTC
+# MIB2D release 14.1X53-D46.7 built by builder on 2017-11-24 02:09:35 UTC
+# VRRPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:05:30 UTC
+# ALARMD release 14.1X53-D46.7 built by builder on 2017-11-24 02:03:08 UTC
+# PFED release 14.1X53-D46.7 built by builder on 2017-11-24 02:07:34 UTC
+# SAMPLED release 14.1X53-D46.7 built by builder on 2017-11-24 02:12:46 UTC
+# RMOPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:02:28 UTC
+# COSD release 14.1X53-D46.7 built by builder on 2017-11-24 01:56:05 UTC
+# FUD release 14.1X53-D46.7 built by builder on 2017-11-24 02:09:22 UTC
+# KSYNCD release 14.1X53-D46.7 built by builder on 2017-11-24 01:54:41 UTC
+# HTTPD-GK release 14.1X53-D46.7 built by builder on 2017-11-24 02:05:05 UTC
+# RDD release 14.1X53-D46.7 built by builder on 2017-11-24 01:54:15 UTC
+# LACPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:04:40 UTC
+# LFMD release 14.1X53-D46.7 built by builder on 2017-11-24 01:53:54 UTC
+# OAMD release 14.1X53-D46.7 built by builder on 2017-11-24 01:55:51 UTC
+# CFMD release 14.1X53-D46.7 built by builder on 2017-11-24 02:10:39 UTC
+# JDHCPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:08:16 UTC
+# AUTHD release 14.1X53-D46.7 built by builder on 2017-11-24 01:58:19 UTC
+# PMOND release 14.1X53-D46.7 built by builder on 2017-11-24 01:54:02 UTC
+# BDBREPD release 14.1X53-D46.7 built by builder on 2017-11-24 01:53:25 UTC
+# RES-CLEANUPD release 14.1X53-D46.7 built by builder on 2017-11-24 01:54:05 UTC
+# ICCPD release 14.1X53-D46.7 built by builder on 2017-11-24 01:55:24 UTC
+# SHM-RTSDBD release 14.1X53-D46.7 built by builder on 2017-11-24 02:09:36 UTC
+# DATAPATH-TRACED release 14.1X53-D46.7 built by builder on 2017-11-24 01:53:40 UTC
+# SMID release 14.1X53-D46.7 built by builder on 2017-11-24 01:54:06 UTC
+# SFLOWD release 14.1X53-D46.7 built by builder on 2017-11-24 01:54:23 UTC
+# UFDD release 14.1X53-D46.7 built by builder on 2017-11-24 01:54:24 UTC
+# PPMD release 14.1X53-D46.7 built by builder on 2017-11-24 02:09:20 UTC
+# LRMUXD release 14.1X53-D46.7 built by builder on 2017-11-24 02:13:52 UTC
+# PGMD release 14.1X53-D46.7 built by builder on 2017-11-24 01:53:58 UTC
+# BFDD release 14.1X53-D46.7 built by builder on 2017-11-24 02:04:02 UTC
+# SDXD release 14.1X53-D46.7 built by builder on 2017-11-24 01:53:14 UTC
+# AUDITD release 14.1X53-D46.7 built by builder on 2017-11-24 01:53:24 UTC
+# L2ALD release 14.1X53-D46.7 built by builder on 2017-11-24 02:11:19 UTC
+# EVENTD release 14.1X53-D46.7 built by builder on 2017-11-24 02:04:24 UTC
+# L2CPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:11:57 UTC
+# MCSNOOPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:14:19 UTC
+# LFMD release 14.1X53-D46.7 built by builder on 2017-11-24 01:53:54 UTC
+# DOT1XD release 14.1X53-D46.7 built by builder on 2017-11-24 02:04:16 UTC
+# ANALYTICSD release 14.1X53-D46.7 built by builder on 2017-11-24 01:54:40 UTC
+# CFMD release 14.1X53-D46.7 built by builder on 2017-11-24 02:10:39 UTC
+# PKID release 14.1X53-D46.7 built by builder on 2017-11-24 02:01:06 UTC
+# CHASSISM release 14.1X53-D46.7 built by builder on 2017-11-24 01:55:59 UTC
+# VCCPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:06:46 UTC
+# pfex release 14.1X53-D46.7 built by builder on 2017-11-24 01:21:57 UTC
+# jroute-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 01:01:24 UTC
+# jkernel-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 01:03:27 UTC
+# ancpd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:46 UTC
+# aprobe-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:46 UTC
+# apsd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:46 UTC
+# authd_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:48 UTC
+# autoconfd_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:48 UTC
+# bdbrepd_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:48 UTC
+# cfm-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:51 UTC
+# chassis_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:59 UTC
+# clksyncd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:54 UTC
+# collector-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:54 UTC
+# cos_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:54 UTC
+# cpcdd_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:56 UTC
+# dcd_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:59 UTC
+# demuxd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:02 UTC
+# dfcd_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:02 UTC
+# dyn-sess-prof-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:04 UTC
+# elmi-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:05 UTC
+# forwarding_options_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:06 UTC
+# gres-test-point-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:08 UTC
+# httpd_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:08 UTC
+# iccp_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:08 UTC
+# ilmid-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:10 UTC
+# jcrypto-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:13 UTC
+# jcrypto_junos-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:19 UTC
+# jdiameterd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:19 UTC
+# jkernel_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:14 UTC
+# jpppd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:41 UTC
+# jroute_junos-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:44 UTC
+# l2ald-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:51 UTC
+# lldp-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:55 UTC
+# mcsnoop-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:04 UTC
+# mo-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:58 UTC
+# pppd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:07 UTC
+# pppoed-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:08 UTC
+# rdd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:10 UTC
+# services-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 01:00:22 UTC
+# sflow-service-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:15 UTC
+# stpng-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:26 UTC
+# subinfo-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:19 UTC
+# ufdd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:26 UTC
+# virtualchassis-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:41 UTC
+# vlans-ng-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:41 UTC
+# jdocs-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:42:57 UTC
+# jkernel_esp-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:02 UTC
+# jswitch_ex_43_82ng-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:03 UTC
+#
+# pa2-sys-02> show version invoke-on other-routing-engine 
+# error: command is not valid on the ex4300-48t
+# fpc0:
+# --------------------------------------------------------------------------
+# Hostname: pa2-sys-02
+# Model: ex4300-48t
+# Junos: 14.1X53-D46.7
+# JUNOS EX  Software Suite [14.1X53-D46.7]
+# JUNOS FIPS mode utilities [14.1X53-D46.7]
+# JUNOS Online Documentation [14.1X53-D46.7]
+# JUNOS EX 4300 Software Suite [14.1X53-D46.7]
+# JUNOS Web Management Platform Package [14.1X53-D46.7]
+# JUNOS py-base-powerpc [14.1X53-D46.7]
+#
+# pa2-sys-02> show configuration 
+version 14.1X53-D46.7;
+groups {
+    set-MTU {
+        interfaces {
+            <*> {
+                mtu 9192;
+            }
+        }
+    }
+    CG_SLT_OAM-CP-FILTER {
+        interfaces {
+            lo0 {
+                unit <*> {
+                    family inet {
+                        filter {
+                            input MGMT_RESTRICT_V4;
+                        }
+                    }
+                }
+            }
+        }
+        policy-options {
+            prefix-list MGMT_NETS_V4 {
+                10.0.1.0/24;
+                10.100.19.20/32;
+                10.100.19.21/32;
+                10.100.137.89/32;
+                10.115.137.89/32;
+                10.250.137.89/32;
+                10.245.2.0/24;
+                172.29.0.0/16;
+                172.30.0.0/16;
+            }
+        }
+        firewall {
+            family inet {
+                filter MGMT_RESTRICT_V4 {
+                    term ACCEPT_SSH_V4 {
+                        from {
+                            source-prefix-list {
+                                MGMT_NETS_V4;
+                            }
+                            protocol tcp;
+                            destination-port ssh;
+                        }
+                        then {
+                            count ACCEPT_SSH_V4;
+                            accept;
+                        }
+                    }
+                    term DISCARD_SSH_V4 {
+                        from {
+                            protocol tcp;
+                            destination-port ssh;
+                        }
+                        then {
+                            count DISCARD_SSH_V4;
+                            discard;
+                        }
+                    }
+                    term ACCEPT_ALL_V4 {
+                        then accept;
+                    }
+                }
+            }
+        }
+    }
+}
+apply-groups CG_SLT_OAM-CP-FILTER;
+system {
+    host-name pa2-sys-02;
+    auto-snapshot;
+    authentication-order radius;
+    root-authentication {
+        encrypted-password "$1$EBWVySmX$eV9Mx6VKOGEiZFw.K9RkJ/";
+    }
+    radius-server {
+        10.115.38.110 {
+            port 1812;
+            accounting-port 1813;
+#            secret <removed>;
+            timeout 5;
+            source-address 10.115.136.253;
+        }
+        10.100.92.1 {
+            port 1812;
+            accounting-port 1813;
+#            secret <removed>;
+            timeout 5;
+            source-address 10.115.136.253;
+        }
+    }
+    login {
+        class roadmin {
+            idle-timeout 30;
+            permissions [ access admin firewall flow-tap interface network routing secret security snmp storage system trace view view-configuration ];
+        }
+        user netops {
+            uid 2000;
+            class super-user;
+            authentication {
+                encrypted-password "$1$3QK3fp7W$VJVDHs1uv9z2m82AtToOB0";
+            }
+        }
+        user ro {
+            uid 2001;
+            class roadmin;
+        }
+        user rw {
+            uid 2002;
+            class super-user;
+        }
+    }
+    services {
+        ssh {
+            protocol-version v2;
+        }
+        netconf {
+            ssh;
+        }
+    }
+    syslog {
+        archive size 100k files 8;
+        user * {
+            any emergency;
+        }
+        host 10.115.137.89 {
+            any notice;
+            port 514;
+            source-address 10.115.136.253;
+        }
+        host 10.124.23.24 {
+            any notice;
+            port 514;
+            source-address 10.115.136.253;
+        }
+        file messages {
+            any notice;
+            authorization info;
+        }
+        file traffic-log {
+            user any;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+    }
+    ntp {
+        server 10.115.131.1;
+        server 10.125.19.1;
+        server 10.124.19.1;
+        source-address 10.115.136.253;
+    }
+}
+chassis {
+    aggregated-devices {
+        ethernet {
+            device-count 1;
+        }
+    }
+}
+interfaces {
+    apply-groups set-MTU;
+    interface-range SAN_MGMT {
+        member ge-0/0/0;
+        member ge-0/0/1;
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members IS_1G;
+                }
+            }
+        }
+    }
+    interface-range ESX_1G {
+        member "ge-0/0/[2-17]";
+        member "ge-0/0/[21-25]";
+        member "ge-0/0/[27-38]";
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    interface-range IDRAC {
+        member ge-0/0/47;
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members IS_IDRAC_NOEXT;
+                }
+            }
+        }
+    }
+    interface-range ESX_VISION {
+        member-range ge-0/0/18 to ge-0/0/21;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ IS_SCSI1 IS_SCSI2 IS_1G Z_10.115.26.0_24_PRIVATE_DMZ M_10.115.34.0_24_MGMT S_PA2ISCSI01_BLUESKY S_PA2ISCSI02_BLUESKY VLAN4044 VMOTION_LEGACY VL_PA2_50_VSBC-PUBLIC VL_PA2_51_VSBC_HA_WANCOM1 VL_PA2_52_VSBC_HA_WANCOM2 V_10.115.32.0_24_SIP_VIPER V_10.115.33.0_24_RTP_VIPER ];
+                }
+            }
+        }
+    }
+    interface-range IDRAC_DOT1Q {
+        member-range ge-0/0/41 to ge-0/0/43;
+        description iDRAC_dot1Q;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members IS_IDRAC_NOEXT;
+                }
+            }
+        }
+    }
+    ge-0/0/18 {
+        description frpa2esxvis01:vmnic1;
+        speed 1g;
+    }
+    ge-0/0/19 {
+        description frpa2esxvis02:vmnic1;
+        speed 1g;
+    }
+    ge-0/0/20 {
+        description frpa2esxvis03:vmnic1;
+    }
+    ge-0/0/21 {
+        description frpa2esxvis04:vmnic1;
+    }
+    ge-0/0/26 {
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members VLAN128;
+                }
+            }
+        }
+    }
+    ge-0/0/39 {
+        unit 0 {
+            description M:pa2-lf-04;
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members IS_1G;
+                }
+            }
+        }
+    }
+    ge-0/0/40 {
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+            }
+        }
+    }
+    ge-0/0/41 {
+        description frpa2esxmgt01:iDRAC;
+    }
+    ge-0/0/42 {
+        description frpa2esxmgt02:iDRAC;
+    }
+    ge-0/0/43 {
+        description frpa2esxmgt03:iDRAC;
+    }
+    ge-0/0/45 {
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members IS_1G;
+                }
+            }
+        }
+    }
+    ge-0/0/47 {
+        description iDRAC;
+    }
+    et-0/1/0 {
+        description pa2-lf-01:et-0/0/29;
+        ether-options {
+            no-auto-negotiation;
+        }
+        unit 0 {
+            family inet {
+                address 172.29.3.14/31;
+            }
+        }
+    }
+    et-0/1/1 {
+        description pa2-lf-02:et-0/0/29;
+        ether-options {
+            no-auto-negotiation;
+        }
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ 50-52 110-111 118 124-126 128-129 131-134 138-139 141-142 145-146 168 176 179 253 498-499 1007 1130-1131 1133 1136 1255-1257 1278 1283-1284 4036-4037 4044 ];
+                }
+            }
+        }
+    }
+    et-0/1/2 {
+        apply-groups-except set-MTU;
+        description pa2-sp-01:et-0/1/2;
+        ether-options {
+            no-auto-negotiation;
+            802.3ad ae0;
+        }
+    }
+    et-0/1/3 {
+        apply-groups-except set-MTU;
+        description pa2-sp-01:et-0/1/3;
+        disable;
+        ether-options {
+            no-auto-negotiation;
+        }
+    }
+    xe-0/2/0 {
+        description Q:pa2core02:Te2/3;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ 110-111 118 124-126 128-129 131-134 138-139 141 145-146 168 254 1001 1130-1131 1133 4036-4037 4044 ];
+                }
+            }
+        }
+    }
+    xe-0/2/1 {
+        description "pa2core01 Te2/3";
+        unit 0 {
+            family inet {
+                address 172.29.3.3/31;
+            }
+        }
+    }
+    xe-0/2/2 {
+        unit 0 {
+            description Q:pa2ucaccs04:eth1/15:;
+        }
+    }
+    xe-0/2/3 {
+        description pa2accs05-1:Te3/1/1;
+        native-vlan-id 12;
+        ether-options {
+            flow-control;
+        }
+        unit 0 {
+            description Q:pa2ucaccs02:eth1/15:;
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ 1255-1257 1278 1283-1284 ];
+                }
+            }
+        }
+    }
+    ae0 {
+        aggregated-ether-options {
+            lacp {
+                active;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ 50-52 110-111 118 124-126 128-129 131-134 138-139 141 145-146 168 176 179 498-499 1130-1131 1133 1136 1255-1257 1278 1283-1284 4036-4037 4044 ];
+                }
+            }
+        }
+    }
+    irb {
+        unit 50 {
+            description VL_PA2_50_VSBC-PUBLIC;
+            family inet {
+                address 185.37.220.210/29 {
+                    vrrp-group 50 {
+                        virtual-address 185.37.220.211;
+                        no-preempt;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 179 {
+            family inet {
+                address 10.115.179.253/24 {
+                    vrrp-group 179 {
+                        virtual-address 10.115.179.254;
+                        no-preempt;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 253 {
+            family inet {
+                address 172.29.3.10/31;
+            }
+        }
+        unit 254 {
+            family inet {
+                address 172.29.3.7/31;
+            }
+        }
+        unit 1001 {
+            description TEMP-17-07-20-ABABSON;
+            family inet {
+                address 172.22.10.7/31;
+            }
+        }
+        unit 1007 {
+            description TEMP-17-07-20-ABABSON;
+            family inet {
+                address 172.22.10.10/31;
+            }
+        }
+        unit 1136 {
+            family inet {
+                address 10.115.136.253/24 {
+                    vrrp-group 136 {
+                        virtual-address 10.115.136.254;
+                        no-preempt;
+                        accept-data;
+                    }
+                }
+            }
+        }
+    }
+    lo0 {
+        unit 0 {
+            family inet;
+        }
+    }
+}
+snmp {
+    description EX4300-2;
+    location FRPA2_Room4_RackC1-3;
+    contact "nio@arkadin.com";
+    client-list SNMP_CLIENTS {
+        10.105.137.56/32;
+        10.105.137.57/32;
+        10.100.137.55/32;
+        10.250.137.55/32;
+        10.115.137.57/32;
+        10.100.19.21/32;
+        10.250.90.90/32;
+        192.206.95.169/32;
+        10.105.137.80/32;
+    }
+    community public {
+        authorization read-only;
+    }
+    community network_services {
+        authorization read-only;
+        client-list-name SNMP_CLIENTS;
+    }
+    community noc_services {
+        authorization read-only;
+        client-list-name SNMP_CLIENTS;
+    }
+    trap-options {
+        source-address 10.115.136.253;
+    }
+    trap-group Opmanager {
+        version v2;
+        categories {
+            chassis;
+            link;
+            routing;
+        }
+        targets {
+            10.115.38.134;
+        }
+    }
+}
+forwarding-options {
+    storm-control-profiles default {
+        all;
+    }
+}
+routing-options {
+    autonomous-system 65502;
+    forwarding-table {
+        export ECMP_BGP;
+    }
+}
+protocols {
+    bgp {
+        precision-timers;
+        traceoptions {
+            file bgp;
+            flag state;
+            flag timer;
+            flag bfd;
+        }
+        log-updown;
+        group CORE_V4 {
+            hold-time 12;
+            export PS_EXP_CORE_V4;
+            peer-as 65114;
+            multipath;
+            neighbor 172.29.3.6;
+            neighbor 172.29.3.2;
+        }
+        group LEAF_V4 {
+            export PS_EXP_LEAF_V4;
+            peer-as 65501;
+            neighbor 172.29.3.11;
+            neighbor 172.29.3.15;
+        }
+    }
+    lldp {
+        port-id-subtype interface-name;
+        port-description-type interface-description;
+        interface all;
+    }
+    lldp-med {
+        interface all;
+    }
+    igmp-snooping {
+        vlan default;
+    }
+    vstp {
+        vlan 12 {
+            bridge-priority 52k;
+        }
+        vlan 50 {
+            bridge-priority 44k;
+            traceoptions {
+                file vstp_50 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface ae0;
+        }
+        vlan 51 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_51 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface ae0;
+        }
+        vlan 52 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_52 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface ae0;
+        }
+        vlan 110 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_110 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 111 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_111 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 118 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_118 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 124 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_124 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 125 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_125 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 126 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_126 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 128 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_128 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 129 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_129 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 131 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_131 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 132 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_132 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 133 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_133 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 134 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_134 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 138 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_138 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 139 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_139 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 141 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_141 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface ae0;
+        }
+        vlan 145 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_145 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 146 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_146 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 168 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_168 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 176 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_176 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/3;
+            interface ae0;
+        }
+        vlan 179 {
+            bridge-priority 44k;
+            traceoptions {
+                file vstp_179 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface ae0;
+        }
+        vlan 253 {
+            traceoptions {
+                file vstp_253 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+        }
+        vlan 498 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_498 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 499 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_499 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 1130 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_1130 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 1131 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_1131 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 1133 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_1133 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 1136 {
+            bridge-priority 44k;
+            traceoptions {
+                file vstp_1136 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface ae0;
+        }
+        vlan 1255 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_1255 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/3 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 1256 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_1256 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/3 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 1257 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_1257 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/3 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 1278 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_1278 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/3 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 1283 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_1283 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/3 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 1284 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_1284 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/3 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 4036 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_4036 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 4037 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_4037 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+        vlan 4044 {
+            bridge-priority 52k;
+            traceoptions {
+                file vstp_4044 size 1m files 2 world-readable;
+                flag topology-change-state-machine;
+                flag events;
+            }
+            interface et-0/1/1;
+            interface xe-0/2/0 {
+                cost 2500;
+            }
+            interface ae0;
+        }
+    }
+}
+policy-options {
+    prefix-list PFX_PA2_ORIGIN_V4 {
+        10.115.136.0/24;
+        10.115.179.0/24;
+        185.37.220.208/29;
+    }
+    prefix-list PFX_DEFAULT_V4 {
+        0.0.0.0/0;
+    }
+    prefix-list PFX_DIRECT-TO-BL_V4 {
+        77.111.209.144/28;
+        185.37.220.216/29;
+    }
+    policy-statement ECMP_BGP {
+        term BGP {
+            from protocol bgp;
+            then {
+                load-balance per-packet;
+            }
+        }
+        term DEFAULT {
+            then accept;
+        }
+    }
+    policy-statement PS_EXP_BORDER_V4 {
+        term DIRECT-TO-BL {
+            from {
+                prefix-list PFX_DIRECT-TO-BL_V4;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_CORE_V4 {
+        term DIRECT {
+            from {
+                protocol direct;
+                prefix-list-filter PFX_PA2_ORIGIN_V4 orlonger;
+            }
+            then accept;
+        }
+        term P2P {
+            from {
+                protocol direct;
+                route-filter 172.29.3.0/24 orlonger;
+            }
+            then accept;
+        }
+        term BGP {
+            from protocol bgp;
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_LEAF-EXT_V4 {
+        term GEN_DEFAULT {
+            from {
+                route-filter 0.0.0.0/0 exact;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_EXP_LEAF_V4 {
+        term DEFAULT {
+            from {
+                prefix-list PFX_DEFAULT_V4;
+            }
+            then accept;
+        }
+        term REJECT {
+            then reject;
+        }
+    }
+    policy-statement PS_IMP_BORDER_V4 {
+        term ACCEPT {
+            then accept;
+        }
+    }
+}
+routing-instances {
+    VRF_ARKAD_EXT {
+        instance-type virtual-router;
+        interface irb.1001;
+        interface irb.1007;
+        interface irb.1216; ## 'irb.1216' is not defined
+        protocols {
+            bgp {
+                group BORDER_V4 {
+                    neighbor 172.22.10.6 {
+                        description pa2-bl-02;
+                        import PS_IMP_BORDER_V4;
+                        family inet {
+                            unicast;
+                        }
+                        export PS_EXP_BORDER_V4;
+                        peer-as 53550;
+                    }
+                }
+                group LEAF-EXT_V4 {
+                    type external;
+                    export PS_EXP_LEAF-EXT_V4;
+                    peer-as 65501;
+                    neighbor 172.22.10.11;
+                }
+            }
+        }
+    }
+}
+vlans {
+    IS_1G {
+        description VL_PA2_1136_MGMT-NAS-IDRAC_CMC;
+        vlan-id 1136;
+        l3-interface irb.1136;
+    }
+    IS_IDRAC_NOEXT {
+        description M:10.115.179.0/24:iDRAC;
+        vlan-id 179;
+        l3-interface irb.179;
+    }
+    IS_SCSI1 {
+        description VL_PA2_498_IS-SCSI1;
+        vlan-id 498;
+    }
+    IS_SCSI2 {
+        description VL_PA2_499_IS-SCSI2;
+        vlan-id 499;
+    }
+    M_10.115.24.0_24_MGMT_DMZ_NETSCR {
+        vlan-id 124;
+    }
+    M_10.115.25.0_24_MGMT_DMZ_SRX {
+        vlan-id 125;
+    }
+    M_10.115.34.0_24_MGMT {
+        description M:10.115.34.0/24:MGMT-VIPER;
+        vlan-id 134;
+    }
+    NSX_LD4INET01 {
+        description VL_PA2_4037_NSX_EDGE-PUBLIC_LD4INET01;
+        vlan-id 4037;
+    }
+    NSX_PA2INET01 {
+        description VL_PA2_4036_NSX_EDGE-PUBLIC_PA2INET01;
+        vlan-id 4036;
+    }
+    PA2-LF-02_BGP {
+        vlan-id 253;
+        l3-interface irb.253;
+    }
+    S_PA2ISCSI01_BLUESKY {
+        vlan-id 1130;
+    }
+    S_PA2ISCSI02_BLUESKY {
+        vlan-id 1131;
+    }
+    VLAN110 {
+        vlan-id 110;
+    }
+    VLAN111 {
+        vlan-id 111;
+    }
+    VLAN1133 {
+        vlan-id 1133;
+    }
+    VLAN128 {
+        description VL_PA2_128_SAN-NTT;
+        vlan-id 128;
+    }
+    VLAN129 {
+        description VL_PA2_129_PROD_IS_IT;
+        vlan-id 129;
+    }
+    VLAN131 {
+        description VL_PA2_131_EXCHANGE;
+        vlan-id 131;
+    }
+    VLAN145 {
+        vlan-id 145;
+    }
+    VLAN146 {
+        vlan-id 146;
+    }
+    VLAN4044 {
+        description VL_PA2_4044_SHARED_DMZ;
+        vlan-id 4044;
+    }
+    VL_PA2_1001_BL-SYS-02-P2P {
+        vlan-id 1001;
+        l3-interface irb.1001;
+    }
+    VL_PA2_1007_LF-SYS-02-P2P {
+        vlan-id 1007;
+        l3-interface irb.1007;
+    }
+    VL_PA2_1255_UC {
+        vlan-id 1255;
+    }
+    VL_PA2_1256_UC {
+        vlan-id 1256;
+    }
+    VL_PA2_1257_UC {
+        vlan-id 1257;
+    }
+    VL_PA2_1278_UC_IS_SVCS_VPN {
+        vlan-id 1278;
+    }
+    VL_PA2_1283_CLOUD_VOICE_EDGE_LAN {
+        description V:172.16.16.0/24:CLOUD_VOICE_EDGE_LAN;
+        vlan-id 1283;
+    }
+    VL_PA2_1284_CLOUD_VOICE_EDGE_WAN {
+        description V:172.16.17.0/24:CLOUD_VOICE_EDGE_WAN;
+        vlan-id 1284;
+    }
+    VL_PA2_12_NATIVE_XE-0-2-3 {
+        vlan-id 12;
+    }
+    VL_PA2_141_MGMT-LYNC {
+        description M:10.115.41.0/24:MGMT-LYNC;
+        vlan-id 141;
+    }
+    VL_PA2_254_BGP-pa2core02 {
+        vlan-id 254;
+        l3-interface irb.254;
+    }
+    VL_PA2_50_VSBC-PUBLIC {
+        description S:185.37.220.208/29:VSBC;
+        vlan-id 50;
+        l3-interface irb.50;
+    }
+    VL_PA2_51_VSBC_HA_WANCOM1 {
+        description S:172.16.130.0/30:VSBC;
+        vlan-id 51;
+    }
+    VL_PA2_52_VSBC_HA_WANCOM2 {
+        description S:172.16.130.4/30:VSBC;
+        vlan-id 52;
+    }
+    VMOTION_LEGACY {
+        description VMOTION;
+        vlan-id 176;
+    }
+    V_10.115.32.0_24_SIP_VIPER {
+        description V:10.115.32.0/24:SIP-VIPER;
+        vlan-id 132;
+    }
+    V_10.115.33.0_24_RTP_VIPER {
+        description V:10.115.33.0/24:RTP-VIPER;
+        vlan-id 133;
+    }
+    V_10.115.38.0_24_PROD_LAN_SERVIC {
+        vlan-id 138;
+    }
+    V_10.115.68.0_24 {
+        vlan-id 168;
+    }
+    V_10.118.0.0_16_NOVASIGHT {
+        vlan-id 118;
+    }
+    Z_10.115.26.0_24_PRIVATE_DMZ {
+        vlan-id 126;
+    }
+    Z_10.115.39.0_24_FAX_DMZ {
+        vlan-id 139;
+    }
+}

@@ -1,0 +1,1618 @@
+#RANCID-CONTENT-TYPE: juniper
+#
+# ld4-vpn-01> show chassis clocks 
+# ld4-vpn-01> show chassis firmware local
+# ld4-vpn-01> show chassis firmware 
+# node0:
+# --------------------------------------------------------------------------
+# Part                     Type       Version
+# FPC 0                    O/S        Version 12.1X44-D20.3 by builder on 2013-07
+# FWDD                     O/S        Version 12.1X44-D20.3 by builder on 2013-07
+# 
+# node1:
+# --------------------------------------------------------------------------
+# Part                     Type       Version
+# FPC 0                    O/S        Version 12.1X44-D20.3 by builder on 2013-07
+# FWDD                     O/S        Version 12.1X44-D20.3 by builder on 2013-07
+# 
+# {primary:node0}
+# ld4-vpn-01> show chassis fpc detail 
+# node0:
+# --------------------------------------------------------------------------
+# Slot 0 information:
+#   State                               Online    
+#   Total CPU DRAM                      ---- CPU less FPC ----
+# 
+# node1:
+# --------------------------------------------------------------------------
+# Slot 0 information:
+#   State                               Online    
+#   Total CPU DRAM                      ---- CPU less FPC ----
+# 
+# {primary:node0}
+# ld4-vpn-01> show chassis hardware detail 
+# node0:
+# --------------------------------------------------------------------------
+# Hardware inventory:
+# Item             Version  Part number  Serial number     Description
+# Chassis                                AL1214AK0155      SRX550
+# Midplane         REV 21   750-035027   ACLD7027         
+# Routing Engine   REV 12   711-035026   ACLC8739          RE-SRXSME-SRX550
+#   ad0    2000 MB  CF 2GB               2013D 0000087295  Compact Flash
+# FPC 0                                                    FPC
+#   PIC 0                                                  6x GE, 4x GE SFP Base PIC
+# Power Supply 0   Rev 04   740-024283   XL42021           PS 645W AC
+# Power Supply 1   Rev 04   740-024283   YC44697           PS 645W AC
+# 
+# node1:
+# --------------------------------------------------------------------------
+# Hardware inventory:
+# Item             Version  Part number  Serial number     Description
+# Chassis                                AL1214AK0144      SRX550
+# Midplane         REV 21   750-035027   ACLD7003         
+# Routing Engine   REV 12   711-035026   ACLD5458          RE-SRXSME-SRX550
+#   ad0    2000 MB  CF 2GB               2014A 0000017474  Compact Flash
+# FPC 0                                                    FPC
+#   PIC 0                                                  6x GE, 4x GE SFP Base PIC
+# Power Supply 0   Rev 04   740-024283   YC44133           PS 645W AC
+# Power Supply 1   Rev 04   740-024283   XL42024           PS 645W AC
+# 
+# {primary:node0}
+# ld4-vpn-01> show chassis hardware models 
+# ld4-vpn-01> show chassis scb 
+# ld4-vpn-01> show chassis sfm detail
+# ld4-vpn-01> show chassis ssb 
+# ld4-vpn-01> show chassis feb detail
+# ld4-vpn-01> show chassis feb 
+# ld4-vpn-01> show chassis cfeb 
+# ld4-vpn-01> show system boot-messages 
+# node0:
+# --------------------------------------------------------------------------
+# kld_map_v: 0x8ff80000, kld_map_p: 0x0
+# Copyright (c) 1996-2013, Juniper Networks, Inc.
+# All rights reserved.
+# Copyright (c) 1992-2006 The FreeBSD Project.
+# Copyright (c) 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994
+# 	The Regents of the University of California. All rights reserved.
+# FreeBSD/SMP: Multiprocessor System Detected: 6 CPUs
+# Security policy loaded: JUNOS MAC/pcap (mac_pcap)
+# Security policy loaded: JUNOS MAC/runasnonroot (mac_runasnonroot)
+# netisr_init: !debug_mpsafenet, forcing maxthreads from 6 to 1
+# cpu0 on motherboard
+# : CAVIUM's OCTEON 63XX CPU Rev. 0.10 with no FPU implemented
+#         L1 Cache: I size 37kb(128 line), D size 32kb(128 line), direct mapped.
+#         L2 Cache: Size 2048kb, 16 way
+# obio0 on motherboard
+# uart0: <Octeon-16550 channel 0> on obio0
+# uart0: console (9600,n,8,1)
+# twsi0 on obio0
+# cpld0 on obio0
+# pcib0: <Cavium on-chip PCIe HOST bridge> on obio0
+# Disabling Octeon big bar support
+# pcib0: Initialized controller
+# pci0: <PCI bus> on pcib0
+# pci0: <processor> at device 0.0 (no driver attached)
+# pcib1: <Cavium on-chip PCIe HOST bridge> on obio0
+# pci1: <PCI bus> on pcib1
+# pcib2: <PCI-PCI bridge> mem 0xf0000000-0xf001ffff irq 0 at device 0.0 on pci1
+# pci2: <PCI bus> on pcib2
+# pcib3: <PCI-PCI bridge> irq 0 at device 1.0 on pci2
+# pci3: <PCI bus> on pcib3
+# pcib4: <PCI-PCI bridge> irq 0 at device 2.0 on pci2
+# pci4: <PCI bus> on pcib4
+# pcib5: <PCI-PCI bridge> irq 0 at device 4.0 on pci2
+# pci5: <PCI bus> on pcib5
+# pci5: <network, ethernet> at device 0.0 (no driver attached)
+# pcib6: <PCI-PCI bridge> irq 0 at device 5.0 on pci2
+# pci6: <PCI bus> on pcib6
+# pcib7: <PCI-PCI bridge> irq 0 at device 6.0 on pci2
+# pci7: <PCI bus> on pcib7
+# pcib8: <PCI-PCI bridge> irq 0 at device 7.0 on pci2
+# pci8: <PCI bus> on pcib8
+# pcib9: <PCI-PCI bridge> irq 0 at device 8.0 on pci2
+# pci9: <PCI bus> on pcib9
+# atapci0: <SiI 3132 SATA300 controller> mem 0xf0700000-0xf070007f,0xf0740000-0xf0743fff irq 0 at device 0.0 on pci9
+# ata0: <ATA channel 0> on atapci0
+# ata0: signature=00000101
+# ata1: <ATA channel 1> on atapci0
+# pcib10: <PCI-PCI bridge> irq 0 at device 9.0 on pci2
+# pci10: <PCI bus> on pcib10
+# pcib11: <PCI-PCI bridge> irq 0 at device 10.0 on pci2
+# pci11: <PCI bus> on pcib11
+# pcib12: <PCI-PCI bridge> irq 0 at device 12.0 on pci2
+# pci12: <PCI bus> on pcib12
+# pcib13: <PCI-PCI bridge> irq 0 at device 14.0 on pci2
+# pci13: <PCI bus> on pcib13
+# ehci0: <Octeon EHCI USB 2.0 controller> on obio0
+# usb0: EHCI version 1.0
+# usb0 on ehci0
+# usb0: USB revision 2.0
+# uhub0: vendor 0x0000 EHCI root hub, class 9/0, rev 2.00/1.00, addr 1
+# uhub0: 2 ports with 2 removable, self powered
+# gblmem0 on obio0
+# octpkt0: <Octeon RGMII> on obio0
+# cfi0: <AMD/Fujitsu - 8MB> on obio0
+# Timecounter "mips" frequency 1300000000 Hz quality 0
+# ###PCB Group initialized for udppcbgroup
+# ###PCB Group initialized for tcppcbgroup
+# ad0: Device does not support APM
+# ad0: 2000MB <CF 2GB 20100924> at ata0-master WDMA2
+# Trying to mount root from ufs:/dev/ad0s1a
+# WARNING: / was not properly dismounted
+# 
+# node1:
+# --------------------------------------------------------------------------
+# kld_map_v: 0x8ff80000, kld_map_p: 0x0
+# Copyright (c) 1996-2013, Juniper Networks, Inc.
+# All rights reserved.
+# Copyright (c) 1992-2006 The FreeBSD Project.
+# Copyright (c) 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994
+# 	The Regents of the University of California. All rights reserved.
+# FreeBSD/SMP: Multiprocessor System Detected: 6 CPUs
+# Security policy loaded: JUNOS MAC/pcap (mac_pcap)
+# Security policy loaded: JUNOS MAC/runasnonroot (mac_runasnonroot)
+# netisr_init: !debug_mpsafenet, forcing maxthreads from 6 to 1
+# cpu0 on motherboard
+# : CAVIUM's OCTEON 63XX CPU Rev. 0.10 with no FPU implemented
+#         L1 Cache: I size 37kb(128 line), D size 32kb(128 line), direct mapped.
+#         L2 Cache: Size 2048kb, 16 way
+# obio0 on motherboard
+# uart0: <Octeon-16550 channel 0> on obio0
+# uart0: console (9600,n,8,1)
+# twsi0 on obio0
+# cpld0 on obio0
+# pcib0: <Cavium on-chip PCIe HOST bridge> on obio0
+# Disabling Octeon big bar support
+# pcib0: Initialized controller
+# pci0: <PCI bus> on pcib0
+# pci0: <processor> at device 0.0 (no driver attached)
+# pcib1: <Cavium on-chip PCIe HOST bridge> on obio0
+# pci1: <PCI bus> on pcib1
+# pcib2: <PCI-PCI bridge> mem 0xf0000000-0xf001ffff irq 0 at device 0.0 on pci1
+# pci2: <PCI bus> on pcib2
+# pcib3: <PCI-PCI bridge> irq 0 at device 1.0 on pci2
+# pci3: <PCI bus> on pcib3
+# pcib4: <PCI-PCI bridge> irq 0 at device 2.0 on pci2
+# pci4: <PCI bus> on pcib4
+# pcib5: <PCI-PCI bridge> irq 0 at device 4.0 on pci2
+# pci5: <PCI bus> on pcib5
+# pci5: <network, ethernet> at device 0.0 (no driver attached)
+# pcib6: <PCI-PCI bridge> irq 0 at device 5.0 on pci2
+# pci6: <PCI bus> on pcib6
+# pcib7: <PCI-PCI bridge> irq 0 at device 6.0 on pci2
+# pci7: <PCI bus> on pcib7
+# pcib8: <PCI-PCI bridge> irq 0 at device 7.0 on pci2
+# pci8: <PCI bus> on pcib8
+# pcib9: <PCI-PCI bridge> irq 0 at device 8.0 on pci2
+# pci9: <PCI bus> on pcib9
+# atapci0: <SiI 3132 SATA300 controller> mem 0xf0700000-0xf070007f,0xf0740000-0xf0743fff irq 0 at device 0.0 on pci9
+# ata0: <ATA channel 0> on atapci0
+# ata0: signature=00000101
+# ata1: <ATA channel 1> on atapci0
+# pcib10: <PCI-PCI bridge> irq 0 at device 9.0 on pci2
+# pci10: <PCI bus> on pcib10
+# pcib11: <PCI-PCI bridge> irq 0 at device 10.0 on pci2
+# pci11: <PCI bus> on pcib11
+# pcib12: <PCI-PCI bridge> irq 0 at device 12.0 on pci2
+# pci12: <PCI bus> on pcib12
+# pcib13: <PCI-PCI bridge> irq 0 at device 14.0 on pci2
+# pci13: <PCI bus> on pcib13
+# ehci0: <Octeon EHCI USB 2.0 controller> on obio0
+# usb0: EHCI version 1.0
+# usb0 on ehci0
+# usb0: USB revision 2.0
+# uhub0: vendor 0x0000 EHCI root hub, class 9/0, rev 2.00/1.00, addr 1
+# uhub0: 2 ports with 2 removable, self powered
+# gblmem0 on obio0
+# octpkt0: <Octeon RGMII> on obio0
+# cfi0: <AMD/Fujitsu - 8MB> on obio0
+# Timecounter "mips" frequency 1300000000 Hz quality 0
+# ###PCB Group initialized for udppcbgroup
+# ###PCB Group initialized for tcppcbgroup
+# ad0: Device does not support APM
+# ad0: 2000MB <CF 2GB 20100924> at ata0-master WDMA2
+# Trying to mount root from ufs:/dev/ad0s1a
+# 
+# {primary:node0}
+# ld4-vpn-01> show version detail 
+# node0:
+# --------------------------------------------------------------------------
+# Hostname: ld4-vpn-01
+# Model: srx550
+# JUNOS Software Release [12.1X44-D20.3]
+# KERNEL 12.1X44-D20.3 #0 built by builder on 2013-07-19 03:52:31 UTC
+# MGD release 12.1X44.3 built by builder on 2013-07-19 06:13:46 UTC
+# CLI release 12.1X44.3 built by builder on 2013-07-19 04:32:51 UTC
+# RPD release 12.1X44.3 built by builder on 2013-07-19 05:44:41 UTC
+# CHASSISD release 12.1X44.3 built by builder on 2013-07-19 05:45:53 UTC
+# IKED release 12.1X44.3 built by builder on 2013-07-19 05:24:59 UTC
+# GKSD release 12.1X44.3 built by builder on 2013-07-19 05:28:34 UTC
+# GKMD release 12.1X44.3 built by builder on 2013-07-19 05:29:17 UTC
+# PKID release 12.1X44.3 built by builder on 2013-07-19 05:15:39 UTC
+# SENDD release 12.1X44.3 built by builder on 2013-07-19 05:13:33 UTC
+# DFWD release 12.1X44.3 built by builder on 2013-07-19 05:18:41 UTC
+# DCD release 12.1X44.3 built by builder on 2013-07-19 05:14:47 UTC
+# SNMPD release 12.1X44.3 built by builder on 2013-07-19 05:20:19 UTC
+# MIB2D release 12.1X44.3 built by builder on 2013-07-19 05:30:09 UTC
+# VRRPD release 12.1X44.3 built by builder on 2013-07-19 05:20:45 UTC
+# ALARMD release 12.1X44.3 built by builder on 2013-07-19 05:16:12 UTC
+# PFED release 12.1X44.3 built by builder on 2013-07-19 05:19:53 UTC
+# CRAFTD release 12.1X44.3 built by builder on 2013-07-19 05:16:20 UTC
+# SAMPLED release 12.1X44.3 built by builder on 2013-07-19 05:14:33 UTC
+# RMOPD release 12.1X44.3 built by builder on 2013-07-19 05:15:40 UTC
+# COSD release 12.1X44.3 built by builder on 2013-07-19 05:17:50 UTC
+# IRSD release 12.1X44.3 built by builder on 2013-07-19 05:14:05 UTC
+# FUD release 12.1X44.3 built by builder on 2013-07-19 05:30:04 UTC
+# KSYNCD release 12.1X44.3 built by builder on 2013-07-19 05:14:34 UTC
+# HTTPD-GK release 12.1X44.3 built by builder on 2013-07-19 05:14:51 UTC
+# DHCPD release 12.1X44.3 built by builder on 2013-07-19 05:15:13 UTC
+# PPPOED release 12.1X44.3 built by builder on 2013-07-19 05:14:25 UTC
+# PPPD release 12.1X44.3 built by builder on 2013-07-19 05:28:53 UTC
+# DFCD release 12.1X44.3 built by builder on 2013-07-19 05:17:38 UTC
+# LACPD release 12.1X44.3 built by builder on 2013-07-19 05:18:42 UTC
+# flowd_octeon_hm release 12.1I1 built by builder on 2013-07-19 03:21:17 UTC
+# USBD release 12.1X44.3 built by builder on 2013-07-19 04:31:53 UTC
+# JDHCPD release 12.1X44.3 built by builder on 2013-07-19 05:17:12 UTC
+# PSSD release 12.1X44.3 built by builder on 2013-07-19 05:14:30 UTC
+# SSD release 12.1X44.3 built by builder on 2013-07-19 05:14:42 UTC
+# AUTHD release 12.1X44.3 built by builder on 2013-07-19 05:15:27 UTC
+# PMOND release 12.1X44.3 built by builder on 2013-07-19 05:14:23 UTC
+# BDBREPD release 12.1X44.3 built by builder on 2013-07-19 05:13:42 UTC
+# RES-CLEANUPD release 12.1X44.3 built by builder on 2013-07-19 05:14:33 UTC
+# APPIDD release 12.1X44.3 built by builder on 2013-07-19 05:13:37 UTC
+# IDPD release 12.1X44.3 built by builder on 2013-07-19 05:20:29 UTC
+# SHM-RTSDBD release 12.1X44.3 built by builder on 2013-07-19 05:30:16 UTC
+# SMID release 12.1X44.3 built by builder on 2013-07-19 05:14:40 UTC
+# SMIHELPERD release 12.1X44.3 built by builder on 2013-07-19 05:20:04 UTC
+# RELAYD release 12.1X44.3 built by builder on 2013-07-19 05:14:31 UTC
+# R2CPD release 12.1X44.3 built by builder on 2013-07-19 05:14:41 UTC
+# DOOD release 12.1X44.3 built by builder on 2013-07-19 05:14:51 UTC
+# AUTOD release 12.1X44.3 built by builder on 2013-07-19 05:13:42 UTC
+# NSD release 12.1X44.3 built by builder on 2013-07-19 05:21:29 UTC
+# NSTRACED release 12.1X44.3 built by builder on 2013-07-19 05:15:01 UTC
+# FWAUTHD release 12.1X44.3 built by builder on 2013-07-19 05:20:54 UTC
+# JSRPD release 12.1X44.3 built by builder on 2013-07-19 05:23:51 UTC
+# PROFILERD release 12.1X44.3 built by builder on 2013-07-19 05:15:01 UTC
+# RTLOGD release 12.1X44.3 built by builder on 2013-07-19 05:21:34 UTC
+# UTMD release 12.1X44.3 built by builder on 2013-07-19 05:21:59 UTC
+# SYSHMD release 12.1X44.3 built by builder on 2013-07-19 05:29:31 UTC
+# SMTPD release 12.1X44.3 built by builder on 2013-07-19 05:15:04 UTC
+# WWAND release 12.1X44.3 built by builder on 2013-07-19 05:22:14 UTC
+# UACD release 12.1X44.3 built by builder on 2013-07-19 05:14:50 UTC
+# WLAND release 12.1X44.3 built by builder on 2013-07-19 05:15:12 UTC
+# PPMD release 12.1X44.3 built by builder on 2013-07-19 05:14:51 UTC
+# PGMD release 12.1X44.3 built by builder on 2013-07-19 05:14:19 UTC
+# BFDD release 12.1X44.3 built by builder on 2013-07-19 06:14:06 UTC
+# AUDITD release 12.1X44.3 built by builder on 2013-07-19 05:13:39 UTC
+# L2ALD release 12.1X44.3 built by builder on 2013-07-19 05:20:05 UTC
+# EVENTD release 12.1X44.3 built by builder on 2013-07-19 05:17:12 UTC
+# MCSNOOPD release 12.1X44.3 built by builder on 2013-07-19 05:13:22 UTC
+# MPLSOAMD release 12.1X44.3 built by builder on 2013-07-19 05:14:16 UTC
+# SDXD release 12.1X44.3 built by builder on 2013-07-19 05:13:31 UTC
+# ESWD release 12.1X44.3 built by builder on 2013-07-19 05:15:27 UTC
+# DOT1XD release 12.1X44.3 built by builder on 2013-07-19 05:15:23 UTC
+# LLDPD release 12.1X44.3 built by builder on 2013-07-19 05:22:30 UTC
+# LFMD release 12.1X44.3 built by builder on 2013-07-19 05:14:11 UTC
+# CFMD release 12.1X44.3 built by builder on 2013-07-19 05:16:06 UTC
+# jroute-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:04:24 UTC
+# jkernel-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:04:49 UTC
+# appsecure-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:05 UTC
+# aprobe-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:05 UTC
+# collector-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:10 UTC
+# elmi-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:11 UTC
+# gres-test-point-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:14 UTC
+# jappid-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:19 UTC
+# jcrypto-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:18 UTC
+# jidpd-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:30 UTC
+# l2ald-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:43 UTC
+# mo-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:52 UTC
+# pppd-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:53 UTC
+# pppoed-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:54 UTC
+# r2cpd-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:54 UTC
+# rdd-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:57 UTC
+# services-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:04:16 UTC
+# autod-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:11:53 UTC
+# jcrypto_usp-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:11:57 UTC
+# jdocs-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:11:52 UTC
+# jkernel_jseries-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:12:00 UTC
+# jkernel_srxsme-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:12:04 UTC
+# jkernel_usp-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:12:24 UTC
+# jswitch-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:12:14 UTC
+# mcsnoop_esp-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:12:10 UTC
+# syshmd_health_mon-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:12:13 UTC
+# syshmd_trackip-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:12:14 UTC
+# node1:
+# --------------------------------------------------------------------------
+# Hostname: ld4-vpn-01
+# Model: srx550
+# JUNOS Software Release [12.1X44-D20.3]
+# KERNEL 12.1X44-D20.3 #0 built by builder on 2013-07-19 03:52:31 UTC
+# MGD release 12.1X44.3 built by builder on 2013-07-19 06:13:46 UTC
+# CLI release 12.1X44.3 built by builder on 2013-07-19 04:32:51 UTC
+# RPD release 12.1X44.3 built by builder on 2013-07-19 05:44:41 UTC
+# CHASSISD release 12.1X44.3 built by builder on 2013-07-19 05:45:53 UTC
+# IKED release 12.1X44.3 built by builder on 2013-07-19 05:24:59 UTC
+# GKSD release 12.1X44.3 built by builder on 2013-07-19 05:28:34 UTC
+# GKMD release 12.1X44.3 built by builder on 2013-07-19 05:29:17 UTC
+# PKID release 12.1X44.3 built by builder on 2013-07-19 05:15:39 UTC
+# SENDD release 12.1X44.3 built by builder on 2013-07-19 05:13:33 UTC
+# DFWD release 12.1X44.3 built by builder on 2013-07-19 05:18:41 UTC
+# DCD release 12.1X44.3 built by builder on 2013-07-19 05:14:47 UTC
+# SNMPD release 12.1X44.3 built by builder on 2013-07-19 05:20:19 UTC
+# MIB2D release 12.1X44.3 built by builder on 2013-07-19 05:30:09 UTC
+# VRRPD release 12.1X44.3 built by builder on 2013-07-19 05:20:45 UTC
+# ALARMD release 12.1X44.3 built by builder on 2013-07-19 05:16:12 UTC
+# PFED release 12.1X44.3 built by builder on 2013-07-19 05:19:53 UTC
+# CRAFTD release 12.1X44.3 built by builder on 2013-07-19 05:16:20 UTC
+# SAMPLED release 12.1X44.3 built by builder on 2013-07-19 05:14:33 UTC
+# RMOPD release 12.1X44.3 built by builder on 2013-07-19 05:15:40 UTC
+# COSD release 12.1X44.3 built by builder on 2013-07-19 05:17:50 UTC
+# IRSD release 12.1X44.3 built by builder on 2013-07-19 05:14:05 UTC
+# FUD release 12.1X44.3 built by builder on 2013-07-19 05:30:04 UTC
+# KSYNCD release 12.1X44.3 built by builder on 2013-07-19 05:14:34 UTC
+# HTTPD-GK release 12.1X44.3 built by builder on 2013-07-19 05:14:51 UTC
+# DHCPD release 12.1X44.3 built by builder on 2013-07-19 05:15:13 UTC
+# PPPOED release 12.1X44.3 built by builder on 2013-07-19 05:14:25 UTC
+# PPPD release 12.1X44.3 built by builder on 2013-07-19 05:28:53 UTC
+# DFCD release 12.1X44.3 built by builder on 2013-07-19 05:17:38 UTC
+# LACPD release 12.1X44.3 built by builder on 2013-07-19 05:18:42 UTC
+# flowd_octeon_hm release 12.1I1 built by builder on 2013-07-19 03:21:17 UTC
+# USBD release 12.1X44.3 built by builder on 2013-07-19 04:31:53 UTC
+# JDHCPD release 12.1X44.3 built by builder on 2013-07-19 05:17:12 UTC
+# PSSD release 12.1X44.3 built by builder on 2013-07-19 05:14:30 UTC
+# SSD release 12.1X44.3 built by builder on 2013-07-19 05:14:42 UTC
+# AUTHD release 12.1X44.3 built by builder on 2013-07-19 05:15:27 UTC
+# PMOND release 12.1X44.3 built by builder on 2013-07-19 05:14:23 UTC
+# BDBREPD release 12.1X44.3 built by builder on 2013-07-19 05:13:42 UTC
+# RES-CLEANUPD release 12.1X44.3 built by builder on 2013-07-19 05:14:33 UTC
+# APPIDD release 12.1X44.3 built by builder on 2013-07-19 05:13:37 UTC
+# IDPD release 12.1X44.3 built by builder on 2013-07-19 05:20:29 UTC
+# SHM-RTSDBD release 12.1X44.3 built by builder on 2013-07-19 05:30:16 UTC
+# SMID release 12.1X44.3 built by builder on 2013-07-19 05:14:40 UTC
+# SMIHELPERD release 12.1X44.3 built by builder on 2013-07-19 05:20:04 UTC
+# RELAYD release 12.1X44.3 built by builder on 2013-07-19 05:14:31 UTC
+# R2CPD release 12.1X44.3 built by builder on 2013-07-19 05:14:41 UTC
+# DOOD release 12.1X44.3 built by builder on 2013-07-19 05:14:51 UTC
+# AUTOD release 12.1X44.3 built by builder on 2013-07-19 05:13:42 UTC
+# NSD release 12.1X44.3 built by builder on 2013-07-19 05:21:29 UTC
+# NSTRACED release 12.1X44.3 built by builder on 2013-07-19 05:15:01 UTC
+# FWAUTHD release 12.1X44.3 built by builder on 2013-07-19 05:20:54 UTC
+# JSRPD release 12.1X44.3 built by builder on 2013-07-19 05:23:51 UTC
+# PROFILERD release 12.1X44.3 built by builder on 2013-07-19 05:15:01 UTC
+# RTLOGD release 12.1X44.3 built by builder on 2013-07-19 05:21:34 UTC
+# UTMD release 12.1X44.3 built by builder on 2013-07-19 05:21:59 UTC
+# SYSHMD release 12.1X44.3 built by builder on 2013-07-19 05:29:31 UTC
+# SMTPD release 12.1X44.3 built by builder on 2013-07-19 05:15:04 UTC
+# WWAND release 12.1X44.3 built by builder on 2013-07-19 05:22:14 UTC
+# UACD release 12.1X44.3 built by builder on 2013-07-19 05:14:50 UTC
+# WLAND release 12.1X44.3 built by builder on 2013-07-19 05:15:12 UTC
+# PPMD release 12.1X44.3 built by builder on 2013-07-19 05:14:51 UTC
+# PGMD release 12.1X44.3 built by builder on 2013-07-19 05:14:19 UTC
+# BFDD release 12.1X44.3 built by builder on 2013-07-19 06:14:06 UTC
+# AUDITD release 12.1X44.3 built by builder on 2013-07-19 05:13:39 UTC
+# L2ALD release 12.1X44.3 built by builder on 2013-07-19 05:20:05 UTC
+# EVENTD release 12.1X44.3 built by builder on 2013-07-19 05:17:12 UTC
+# MCSNOOPD release 12.1X44.3 built by builder on 2013-07-19 05:13:22 UTC
+# MPLSOAMD release 12.1X44.3 built by builder on 2013-07-19 05:14:16 UTC
+# SDXD release 12.1X44.3 built by builder on 2013-07-19 05:13:31 UTC
+# ESWD release 12.1X44.3 built by builder on 2013-07-19 05:15:27 UTC
+# DOT1XD release 12.1X44.3 built by builder on 2013-07-19 05:15:23 UTC
+# LLDPD release 12.1X44.3 built by builder on 2013-07-19 05:22:30 UTC
+# LFMD release 12.1X44.3 built by builder on 2013-07-19 05:14:11 UTC
+# CFMD release 12.1X44.3 built by builder on 2013-07-19 05:16:06 UTC
+# jroute-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:04:24 UTC
+# jkernel-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:04:49 UTC
+# appsecure-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:05 UTC
+# aprobe-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:05 UTC
+# collector-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:10 UTC
+# elmi-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:11 UTC
+# gres-test-point-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:14 UTC
+# jappid-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:19 UTC
+# jcrypto-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:18 UTC
+# jidpd-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:30 UTC
+# l2ald-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:43 UTC
+# mo-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:52 UTC
+# pppd-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:53 UTC
+# pppoed-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:54 UTC
+# r2cpd-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:54 UTC
+# rdd-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:03:57 UTC
+# services-actions-dd release 12.1X44.3 built by builder on 2013-07-19 04:04:16 UTC
+# autod-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:11:53 UTC
+# jcrypto_usp-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:11:57 UTC
+# jdocs-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:11:52 UTC
+# jkernel_jseries-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:12:00 UTC
+# jkernel_srxsme-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:12:04 UTC
+# jkernel_usp-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:12:24 UTC
+# jswitch-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:12:14 UTC
+# mcsnoop_esp-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:12:10 UTC
+# syshmd_health_mon-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:12:13 UTC
+# syshmd_trackip-actions-dd release 12.1X44.3 built by builder on 2013-07-19 03:12:14 UTC
+# {primary:node0}
+#
+# ld4-vpn-01> show version invoke-on other-routing-engine 
+# node0:
+# --------------------------------------------------------------------------
+# Hostname: ld4-vpn-01
+# Model: srx550
+# JUNOS Software Release [12.1X44-D20.3]
+# node1:
+# --------------------------------------------------------------------------
+# Hostname: ld4-vpn-01
+# Model: srx550
+# JUNOS Software Release [12.1X44-D20.3]
+# {primary:node0}
+#
+# ld4-vpn-01> show configuration 
+version 12.1X44.3;
+groups {
+    node0 {
+        system {
+            host-name ld4vpn01-1;
+            backup-router 10.101.14.254 destination 10.0.0.0/8;
+        }
+        interfaces {
+            fxp0 {
+                unit 0 {
+                    family inet {
+                        address 10.101.14.25/24;
+                    }
+                }
+            }
+        }
+    }
+    node1 {
+        system {
+            host-name ld4vpn01-2;
+            backup-router 10.101.14.254 destination 10.0.0.0/8;
+        }
+        interfaces {
+            fxp0 {
+                unit 0 {
+                    family inet {
+                        address 10.101.14.26/24;
+                    }
+                }
+            }
+        }
+    }
+    default-deny-template {
+        security {
+            policies {
+                from-zone <*> to-zone <*> {
+                    policy default-deny {
+                        match {
+                            source-address any;
+                            destination-address any;
+                            application any;
+                        }
+                        then {
+                            deny;
+                            log {
+                                session-init;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    default-icmp {
+        security {
+            policies {
+                from-zone <*> to-zone <*> {
+                    policy ICMP {
+                        match {
+                            source-address any;
+                            destination-address any;
+                            application junos-icmp-all;
+                        }
+                        then {
+                            permit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    CG_SLT_OAM-CP-FILTER {
+        interfaces {
+            lo0 {
+                unit <*> {
+                    family inet {
+                        filter {
+                            input-list [ CP_NET_PROTO_V4 CP_MGMT_V4 CP_DISCARD_ALL_V4 ];
+                        }
+                    }
+                }
+            }
+        }
+        policy-options {
+            prefix-list PFX_RADIUS-SERVERS_V4 {
+                apply-path "system radius-server <*.*.*.*>";
+            }
+            prefix-list PFX_IPSEC-VPN_PEER_V4 {
+                apply-path "security ike gateway <*> address <*.*.*.*>";
+            }
+            prefix-list BGP_PEERS_V4 {
+                apply-path "protocols bgp group <*> neighbor <*.*.*.*>";
+            }
+            prefix-list BGP_VRF_PEERS_V4 {
+                apply-path "routing-instances <*> protocols bgp group <*> neighbor <*.*.*.*>";
+            }
+            prefix-list BGP_NEIGHBORS_V4 {
+                apply-path "protocols bgp group <*> neighbor <*.*.*.*>";
+            }
+            prefix-list BGP_NEIGHBORS_VRF_V4 {
+                apply-path "routing-instances <*> protocols bgp group <*> neighbor <*.*.*.*>";
+            }
+            prefix-list LOCAL_IPV4 {
+                apply-path "interfaces <*> unit <*> family inet address <*.*.*.*>";
+            }
+            prefix-list MCAST_ALL_ROUTERS_V4 {
+                224.0.0.2/32;
+            }
+            prefix-list LOCAL_FXP0_V4 {
+                apply-path "interfaces fxp0 unit <*> family inet address <*.*.*.*>";
+            }
+            prefix-list LOOPBACKS_V4 {
+                apply-path "interfaces lo0 unit 0 family inet address <*.*.*.*>";
+            }
+            prefix-list VRRP_V4 {
+                224.0.0.18/32;
+            }
+            prefix-list DNS_SERVERS_V4 {
+                apply-path "system name-server <*.*.*.*>";
+            }
+            prefix-list NTP_SERVERS_V4 {
+                apply-path "system ntp server <*.*.*.*>";
+            }
+            prefix-list SNMP_CLIENT_LISTS_V4 {
+                apply-path "snmp client-list <*> <*.*.*.*>";
+            }
+            prefix-list SNMP_TRAP_GROUP_V4 {
+                apply-path "snmp trap-group <*> targets <*.*.*.*>";
+            }
+            prefix-list RADIUS_SERVERS_V4 {
+                apply-path "system radius-server <*.*.*.*>";
+            }
+            prefix-list MGMT_NETS_V4 {
+                10.0.1.0/24;
+                10.100.19.20/32;
+                10.100.19.21/32;
+                10.100.137.89/32;
+                10.115.137.89/32;
+                10.250.137.89/32;
+                10.245.2.0/24;
+                172.29.0.0/16;
+                172.30.0.0/16;
+            }
+            prefix-list PFX_OSPF-MCAST_V4 {
+                224.0.0.5/32;
+                224.0.0.6/32;
+            }
+        }
+        firewall {
+            family inet {
+                filter CP_NET_PROTO_V4 {
+                    term OSPF_V4 {
+                        filter CP_OSPF_V4;
+                    }
+                    term BGP_V4 {
+                        filter CP_BGP_V4;
+                    }
+                    term IPSEC-VPN_V4 {
+                        filter CP_IPSEC-VPN_V4;
+                    }
+                    term TRACERT_V4 {
+                        filter CP_TRACERT_V4;
+                    }
+                    term NTP_V4 {
+                        filter CP_NTP_V4;
+                    }
+                    term ICMP_V4 {
+                        filter CP_ICMP_V4;
+                    }
+                }
+                filter CP_OSPF_V4 {
+                    term OSPF_MCAST {
+                        from {
+                            destination-prefix-list {
+                                PFX_OSPF-MCAST_V4;
+                            }
+                            protocol ospf;
+                        }
+                        then {
+                            count ACCEPT_OSPF_V4;
+                            accept;
+                        }
+                    }
+                    term OSPF_UCAST {
+                        from {
+                            destination-prefix-list {
+                                LOCAL_IPV4;
+                            }
+                            protocol ospf;
+                        }
+                        then {
+                            count ACCEPT_OSPF_V4;
+                            accept;
+                        }
+                    }
+                }
+                filter CP_BGP_V4 {
+                    term ACCEPT {
+                        from {
+                            source-prefix-list {
+                                BGP_PEERS_V4;
+                                BGP_VRF_PEERS_V4;
+                            }
+                            destination-prefix-list {
+                                LOCAL_IPV4;
+                            }
+                            protocol tcp;
+                            port bgp;
+                        }
+                        then accept;
+                    }
+                    term DISCARD {
+                        from {
+                            protocol tcp;
+                            port bgp;
+                        }
+                        then {
+                            count DISCARD_BGP_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                }
+                filter CP_IPSEC-VPN_V4 {
+                    term IKE {
+                        from {
+                            source-prefix-list {
+                                PFX_IPSEC-VPN_PEER_V4;
+                            }
+                            protocol udp;
+                            port 500;
+                        }
+                        then {
+                            count ACCEPT_IKE_V4;
+                            accept;
+                        }
+                    }
+                    term ESP {
+                        from {
+                            source-prefix-list {
+                                PFX_IPSEC-VPN_PEER_V4;
+                            }
+                            protocol esp;
+                        }
+                        then {
+                            count ACCEPT_ESP_V4;
+                            accept;
+                        }
+                    }
+                }
+                filter CP_TRACERT_V4 {
+                    term ACCEPT_UDP {
+                        from {
+                            destination-prefix-list {
+                                LOCAL_IPV4;
+                            }
+                            protocol udp;
+                            destination-port 33435-33450;
+                        }
+                        then accept;
+                    }
+                    term ACCEPT_ICMP {
+                        from {
+                            destination-prefix-list {
+                                LOCAL_IPV4;
+                            }
+                            protocol icmp;
+                            icmp-type [ echo-request timestamp time-exceeded ];
+                        }
+                        then accept;
+                    }
+                }
+                filter CP_NTP_V4 {
+                    term ACCEPT {
+                        from {
+                            source-prefix-list {
+                                NTP_SERVERS_V4;
+                                LOCAL_IPV4;
+                            }
+                            protocol udp;
+                            port ntp;
+                        }
+                        then accept;
+                    }
+                    term DISCARD {
+                        from {
+                            protocol udp;
+                            port ntp;
+                        }
+                        then {
+                            count DISCARD_NTP_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                }
+                filter CP_ICMP_V4 {
+                    term NO_ICMP_FRAGMENTS_V4 {
+                        from {
+                            is-fragment;
+                            protocol icmp;
+                        }
+                        then {
+                            discard;
+                        }
+                    }
+                    term ACCEPT {
+                        from {
+                            protocol icmp;
+                        }
+                        then accept;
+                    }
+                }
+                filter CP_MGMT_V4 {
+                    term SSH_V4 {
+                        filter CP_SSH_V4;
+                    }
+                    term NETCONF_V4 {
+                        filter CP_NETCONF_V4;
+                    }
+                    term SNMP_V4 {
+                        filter CP_SNMP_V4;
+                    }
+                    term RADIUS_V4 {
+                        filter CP_RADIUS_V4;
+                    }
+                }
+                filter CP_SSH_V4 {
+                    term ACCEPT {
+                        from {
+                            source-prefix-list {
+                                MGMT_NETS_V4;
+                            }
+                            protocol tcp;
+                            destination-port ssh;
+                        }
+                        then accept;
+                    }
+                    term DISCARD {
+                        from {
+                            protocol tcp;
+                            destination-port ssh;
+                        }
+                        then {
+                            count DISCARD_SSH_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                }
+                filter CP_NETCONF_V4 {
+                    term ACCEPT {
+                        from {
+                            source-prefix-list {
+                                NETCONF_SERVERS_V4;
+                            }
+                            protocol tcp;
+                            destination-port 830;
+                        }
+                        then accept;
+                    }
+                    term DISCARD {
+                        from {
+                            protocol tcp;
+                            destination-port 830;
+                        }
+                        then {
+                            count DISCARD_NETCONF_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                }
+                filter CP_SNMP_V4 {
+                    term ACCEPT {
+                        from {
+                            source-prefix-list {
+                                SNMP_CLIENT_LISTS_V4;
+                            }
+                            protocol udp;
+                            destination-port snmp;
+                        }
+                        then accept;
+                    }
+                    term DISCARD {
+                        from {
+                            protocol udp;
+                            destination-port snmp;
+                        }
+                        then {
+                            count DISCARD_SNMP_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                }
+                filter CP_RADIUS_V4 {
+                    term ACCEPT {
+                        from {
+                            source-prefix-list {
+                                PFX_RADIUS-SERVERS_V4;
+                            }
+                            protocol udp;
+                            source-port [ radius radacct ];
+                        }
+                        then {
+                            log;
+                            accept;
+                        }
+                    }
+                    term DISCARD {
+                        from {
+                            protocol udp;
+                            source-port [ radius radacct ];
+                        }
+                        then {
+                            count DISCARD_RADIUS_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                }
+                filter CP_DISCARD_ALL_V4 {
+                    term DISCARD_IP_OPTIONS_V4 {
+                        from {
+                            ip-options any;
+                        }
+                        then {
+                            count DISCARD_IP_OPTIONS_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                    term DISCARD_TCP_V4 {
+                        from {
+                            protocol tcp;
+                        }
+                        then {
+                            count DISCARD_TCP_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                    term DISCARD_UDP_V4 {
+                        from {
+                            protocol udp;
+                        }
+                        then {
+                            count DISCARD_UDP_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                    term DISCARD_ICMP_V4 {
+                        from {
+                            protocol icmp;
+                        }
+                        then {
+                            count DISCARD_ICMP_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                    term DISCARD_UNKNOWN_V4 {
+                        then {
+                            count DISCARD_UNKNOWN_V4;
+                            log;
+                            discard;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+apply-groups [ "${node}" default-icmp default-deny-template CG_SLT_OAM-CP-FILTER ];
+system {
+    host-name ld4-vpn-01;
+    domain-name net.arkadin.lan;
+    time-zone Europe/London;
+    authentication-order radius;
+    location {
+        country-code UK;
+        building LD4;
+    }
+    root-authentication {
+        encrypted-password "$1$Ns5c2Wnf$rojc3TkqZVPpuNP04qh3b/";
+    }
+    radius-server {
+        10.115.38.110 {
+            /* pa2nps01 */
+            port 1812;
+            accounting-port 1813;
+#            secret <removed>;
+            timeout 3;
+        }
+        /* Chicago */
+        10.100.92.1 {
+            port 1812;
+            accounting-port 1813;
+#            secret <removed>;
+            timeout 3;
+        }
+    }
+    radius-options {
+        attributes {
+            nas-ip-address 10.115.38.100;
+        }
+    }
+    login {
+        class roadmin {
+            idle-timeout 30;
+            permissions [ access admin firewall flow-tap interface network routing secret security snmp storage system trace view view-configuration ];
+        }
+        user rancid {
+            uid 2007;
+            class roadmin;
+        }
+        user ro {
+            uid 2014;
+            class roadmin;
+        }
+        user rw {
+            uid 2015;
+            class super-user;
+        }
+    }
+    services {
+        ssh;
+        netconf {
+            ssh;
+        }
+    }
+    syslog {
+        archive size 100k files 8;
+        user * {
+            any emergency;
+        }
+        host 10.115.137.89 {
+            any notice;
+            port 514;
+            source-address 172.21.9.6;
+        }
+        host 10.124.23.24 {
+            any notice;
+            port 514;
+            source-address 172.21.9.6;
+        }
+        file messages {
+            any notice;
+            authorization info;
+        }
+        file traffic-log {
+            user any;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+    }
+    max-configurations-on-flash 5;
+    max-configuration-rollbacks 10;
+    archival {
+        configuration {
+            transfer-on-commit;
+            archive-sites {
+                "ftp://junos:junos@10.102.10.130/backup";
+            }
+        }
+    }
+    ntp {
+        server 10.115.131.1;
+        server 10.125.19.1;
+        server 10.124.19.1;
+        source-address 172.21.9.6;
+    }
+}
+chassis {
+    cluster {
+        reth-count 2;
+        redundancy-group 0 {
+            node 0 priority 100;
+            node 1 priority 1;
+            interface-monitor {
+                ge-0/0/3 weight 255;
+                ge-0/0/4 weight 255;
+            }
+        }
+        redundancy-group 1 {
+            node 0 priority 100;
+            node 1 priority 1;
+            preempt;
+            interface-monitor {
+                ge-9/0/3 weight 255;
+                ge-0/0/3 weight 255;
+            }
+        }
+    }
+}
+interfaces {
+    ge-0/0/3 {
+        gigether-options {
+            redundant-parent reth0;
+        }
+    }
+    ge-0/0/4 {
+        gigether-options {
+            redundant-parent reth1;
+        }
+    }
+    ge-9/0/3 {
+        gigether-options {
+            redundant-parent reth0;
+        }
+    }
+    ge-9/0/4 {
+        gigether-options {
+            redundant-parent reth1;
+        }
+    }
+    fab0 {
+        fabric-options {
+            member-interfaces {
+                ge-0/0/2;
+            }
+        }
+    }
+    fab1 {
+        fabric-options {
+            member-interfaces {
+                ge-9/0/2;
+            }
+        }
+    }
+    lo0 {
+        unit 0 {
+            family inet {
+                filter {
+                    input-list [ CP_NET_PROTO_V4 CP_MGMT_V4 CP_DISCARD_ALL_V4 ];
+                }
+            }
+        }
+    }
+    reth0 {
+        vlan-tagging;
+        redundant-ether-options {
+            redundancy-group 1;
+        }
+        unit 10 {
+            description LAN-Ericsson;
+            vlan-id 10;
+            family inet {
+                address 172.21.9.6/24;
+            }
+        }
+    }
+    reth1 {
+        vlan-tagging;
+        redundant-ether-options {
+            redundancy-group 1;
+        }
+        unit 3011 {
+            description APPLIC_BRS_SBC;
+            vlan-id 3011;
+            family inet {
+                mtu 1500;
+                address 100.64.39.145/28;
+            }
+        }
+        unit 4005 {
+            description "Verizon on-net SIP Trunk SRX550 to SBC";
+            vlan-id 4005;
+            family inet {
+                address 77.111.209.5/29;
+            }
+        }
+        unit 4046 {
+            description LD4_INET;
+            vlan-id 4046;
+            family inet {
+                address 83.244.248.57/28;
+            }
+        }
+        unit 4048 {
+            description "Interco euld4inet01";
+            vlan-id 4048;
+            family inet {
+                address 172.31.253.6/30;
+            }
+        }
+    }
+    st0 {
+        unit 1 {
+            description vpn:dubfw1;
+            family inet {
+                mtu 1500;
+            }
+        }
+        unit 101 {
+            description vpn:applicable:bristol;
+            family inet {
+                mtu 1500;
+            }
+        }
+        unit 109 {
+            description vpn:verizon_ams:SIP;
+            family inet {
+                mtu 1300;
+            }
+        }
+        unit 110 {
+            description vpn:verizon_dortmund:SIP;
+            family inet {
+                mtu 1300;
+            }
+        }
+        unit 111 {
+            description vpn:verizon_london:SIP;
+            family inet {
+                mtu 1300;
+            }
+        }
+    }
+}
+snmp {
+    location emea-ld4;
+    contact "nio@arkadin.com";
+    client-list SNMP_CLIENTS {
+        10.105.137.56/32;
+        10.105.137.57/32;
+        10.100.137.55/32;
+        10.250.137.55/32;
+        10.115.137.57/32;
+        10.100.19.21/32;
+        10.250.90.90/32;
+        192.206.95.169/32;
+        10.105.137.80/32;
+    }
+    community network_services {
+        authorization read-only;
+        client-list-name SNMP_CLIENTS;
+    }
+    community noc_services {
+        authorization read-only;
+        client-list-name SNMP_CLIENTS;
+    }
+    trap-group noc_services {
+        categories {
+            chassis;
+            link;
+            routing;
+        }
+        targets {
+            10.115.137.55;
+            10.100.19.21;
+        }
+    }
+}
+routing-options {
+    static {
+        route 0.0.0.0/0 next-hop 83.244.248.51;
+        route 10.0.0.0/8 next-hop 10.101.14.3;
+    }
+}
+protocols {
+    bgp {
+        log-updown;
+    }
+}
+policy-options {
+    prefix-list PFX_OSPF-MCAST_V4 {
+        224.0.0.5/32;
+        224.0.0.6/32;
+    }
+    prefix-list MGMT_NETS_V4 {
+        10.0.1.0/24;
+        10.100.19.20/32;
+        10.100.19.21/32;
+        10.100.137.89/32;
+        10.115.137.89/32;
+        10.245.2.0/24;
+        10.250.137.89/32;
+        172.29.0.0/16;
+        172.30.0.0/16;
+    }
+    prefix-list NETCONF_SERVERS_V4 {
+        10.100.19.21/32;
+        10.100.137.89/32;
+        10.115.137.89/32;
+        10.250.137.89/32;
+    }
+    prefix-list LOCAL_MGMT_V4 {
+        apply-path "interfaces fxp0 unit <*> family inet address <*.*.*.*>";
+    }
+    prefix-list LOCAL_IPV4 {
+        apply-path "interfaces <*> unit <*> family inet address <*.*.*.*>";
+    }
+    prefix-list BGP_PEERS_V4 {
+        apply-path "protocols bgp group <*> neighbor <*.*.*.*>";
+    }
+    prefix-list BGP_VRF_PEERS_V4 {
+        apply-path "routing-instances <*> protocols bgp group <*> neighbor <*.*.*.*>";
+    }
+    prefix-list NTP_SERVERS_V4 {
+        apply-path "system ntp server <*.*.*.*>";
+    }
+    prefix-list SNMP_CLIENT_LISTS_V4 {
+        apply-path "snmp client-list <*> <*.*.*.*>";
+    }
+    prefix-list PFX_RADIUS-SERVERS_V4 {
+        apply-path "system radius-server <*.*.*.*>";
+    }
+    prefix-list PFX_IPSEC-VPN_PEER_V4 {
+        apply-path "security ike gateway <*> address <*.*.*.*>";
+    }
+}
+security {
+    ike {
+        proposal p1-isakmp-aes256-dh2-sha1-86400 {
+            authentication-method pre-shared-keys;
+            dh-group group2;
+            authentication-algorithm sha1;
+            encryption-algorithm aes-256-cbc;
+            lifetime-seconds 86400;
+        }
+        proposal p1-isakmp-aes128-dh2-sha1-28800 {
+            authentication-method pre-shared-keys;
+            dh-group group2;
+            authentication-algorithm sha1;
+            encryption-algorithm aes-128-cbc;
+            lifetime-seconds 28800;
+        }
+        proposal p1-isakmp-3des-dh2-sha1-86400 {
+            authentication-method pre-shared-keys;
+            dh-group group2;
+            authentication-algorithm sha1;
+            encryption-algorithm 3des-cbc;
+            lifetime-seconds 86400;
+        }
+        proposal p1-isakmp-3des-dh2-md5-86400 {
+            authentication-method pre-shared-keys;
+            dh-group group2;
+            authentication-algorithm md5;
+            encryption-algorithm 3des-cbc;
+            lifetime-seconds 86400;
+        }
+        proposal p1-ike-aes256-dh2-sha256-86400 {
+            authentication-method pre-shared-keys;
+            dh-group group2;
+            authentication-algorithm sha-256;
+            encryption-algorithm aes-256-cbc;
+            lifetime-seconds 86400;
+        }
+        policy ike-isakmp-p1-verizon {
+            mode main;
+            proposals p1-isakmp-3des-dh2-md5-86400;
+#            pre-shared-key ascii-text <removed>;
+        }
+        policy ike-p1-applic-brs {
+            mode main;
+            proposals p1-ike-aes256-dh2-sha256-86400;
+#            pre-shared-key ascii-text <removed>;
+        }
+        gateway verizon_ams {
+            ike-policy ike-isakmp-p1-verizon;
+            address 212.136.179.238;
+            external-interface reth1.4046;
+            general-ikeid;
+            version v1-only;
+        }
+        gateway verizon_dortmund {
+            ike-policy ike-isakmp-p1-verizon;
+            address 194.115.117.238;
+            external-interface reth1.4046;
+            general-ikeid;
+            version v1-only;
+        }
+        gateway verizon_london {
+            ike-policy ike-isakmp-p1-verizon;
+            address 194.202.159.238;
+            external-interface reth1.4046;
+            general-ikeid;
+            version v1-only;
+        }
+        gateway applic-brs {
+            ike-policy ike-p1-applic-brs;
+            address 81.145.196.83;
+            external-interface reth1.4046;
+            general-ikeid;
+            version v2-only;
+        }
+    }
+    ipsec {
+        proposal p2-ipsec-esp-aes256-sha1-3600 {
+            protocol esp;
+            authentication-algorithm hmac-sha1-96;
+            encryption-algorithm aes-256-cbc;
+            lifetime-seconds 3600;
+        }
+        proposal p2-ipsec-esp-aes128-sha1-3600 {
+            protocol esp;
+            authentication-algorithm hmac-sha1-96;
+            encryption-algorithm aes-128-cbc;
+            lifetime-seconds 3600;
+        }
+        proposal p2-ipsec-esp-3des-sha1-3600 {
+            protocol esp;
+            authentication-algorithm hmac-sha1-96;
+            encryption-algorithm 3des-cbc;
+            lifetime-seconds 3600;
+        }
+        proposal p2-ipsec-esp-3des-md5-86400 {
+            protocol esp;
+            authentication-algorithm hmac-md5-96;
+            encryption-algorithm 3des-cbc;
+            lifetime-seconds 86400;
+        }
+        proposal p2-ipsec-esp-aes256-sha1-28800 {
+            protocol esp;
+            authentication-algorithm hmac-sha1-96;
+            encryption-algorithm aes-256-cbc;
+            lifetime-seconds 28800;
+        }
+        policy ipsec-p2-sto-ericsson;
+        policy ipsec-p2-pfs_gr2-3des-md5-86400 {
+            perfect-forward-secrecy {
+                keys group2;
+            }
+            proposals p2-ipsec-esp-3des-md5-86400;
+        }
+        policy ipsec-p2-applic-brs {
+            perfect-forward-secrecy {
+                keys group2;
+            }
+            proposals p2-ipsec-esp-aes256-sha1-28800;
+        }
+        vpn vpn-verizon-ams {
+            bind-interface st0.109;
+            ike {
+                gateway verizon_ams;
+                proxy-identity {
+                    local 77.111.209.0/29;
+                    remote 212.136.178.192/27;
+                }
+                ipsec-policy ipsec-p2-pfs_gr2-3des-md5-86400;
+            }
+            establish-tunnels immediately;
+        }
+        vpn vpn-verizon-dortmund {
+            bind-interface st0.110;
+            ike {
+                gateway verizon_dortmund;
+                proxy-identity {
+                    local 77.111.209.0/29;
+                    remote 194.115.116.192/27;
+                }
+                ipsec-policy ipsec-p2-pfs_gr2-3des-md5-86400;
+            }
+            establish-tunnels immediately;
+        }
+        vpn vpn-verizon-london {
+            bind-interface st0.111;
+            ike {
+                gateway verizon_london;
+                proxy-identity {
+                    local 77.111.209.0/29;
+                    remote 194.202.158.192/27;
+                }
+                ipsec-policy ipsec-p2-pfs_gr2-3des-md5-86400;
+            }
+            establish-tunnels immediately;
+        }
+        vpn vpn-applic-brs {
+            bind-interface st0.101;
+            ike {
+                gateway applic-brs;
+                proxy-identity {
+                    local 100.64.39.144/28;
+                    remote 100.66.249.224/28;
+                }
+                ipsec-policy ipsec-p2-applic-brs;
+            }
+            establish-tunnels immediately;
+        }
+    }
+    address-book {
+        arkanet {
+            address arkanet_classA 10.0.0.0/8;
+            address arkanet_classB 172.16.0.0/12;
+            address arkanet_classC 192.168.0.0/16;
+            attach {
+                zone ARKADIN;
+            }
+        }
+    }
+    alg {
+        sip disable;
+    }
+    flow {
+        tcp-mss {
+            ipsec-vpn;
+        }
+    }
+    nat {
+        source {
+            rule-set VERIZON_VR-to-Inet {
+                from routing-instance verizon;
+                to zone INET;
+                rule SRC_NAT_VERIZON_ONNET {
+                    match {
+                        source-address 77.111.209.0/29;
+                    }
+                    then {
+                        source-nat {
+                            interface;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    policies {
+        from-zone ARKADIN to-zone ARKADIN {
+            policy intra-arkadin {
+                match {
+                    source-address any;
+                    destination-address any;
+                    application any;
+                }
+                then {
+                    permit;
+                }
+            }
+        }
+        from-zone VERIZON_VPN to-zone VERIZON_SBC {
+            policy ALLOW {
+                match {
+                    source-address any;
+                    destination-address any;
+                    application any;
+                }
+                then {
+                    permit;
+                }
+            }
+        }
+        from-zone VERIZON_SBC to-zone VERIZON_VPN {
+            policy ALLOW {
+                match {
+                    source-address any;
+                    destination-address any;
+                    application any;
+                }
+                then {
+                    permit;
+                }
+            }
+        }
+        from-zone APPLIC_BRS to-zone APPLIC_BRS {
+            policy ACL_INTRA_APPLIC_BRS {
+                match {
+                    source-address any;
+                    destination-address any;
+                    application any;
+                }
+                then {
+                    permit;
+                }
+            }
+        }
+    }
+    zones {
+        security-zone INET {
+            host-inbound-traffic {
+                system-services {
+                    ping;
+                    traceroute;
+                    ike;
+                }
+            }
+            interfaces {
+                reth1.4046;
+                reth1.4048;
+            }
+        }
+        security-zone ARKADIN {
+            host-inbound-traffic {
+                system-services {
+                    ping;
+                    traceroute;
+                    ssh;
+                    snmp;
+                }
+            }
+            interfaces {
+                reth0.10;
+            }
+        }
+        security-zone ARKA-OFFICES {
+            interfaces {
+                st0.1;
+            }
+        }
+        security-zone VERIZON_SBC {
+            host-inbound-traffic {
+                system-services {
+                    ping;
+                }
+            }
+            interfaces {
+                reth1.4005;
+            }
+        }
+        security-zone VERIZON_VPN {
+            interfaces {
+                st0.109;
+                st0.110;
+                st0.111;
+            }
+        }
+        security-zone APPLIC_BRS {
+            host-inbound-traffic {
+                system-services {
+                    ping;
+                }
+            }
+            interfaces {
+                st0.101;
+                reth1.3011;
+            }
+        }
+    }
+}
+routing-instances {
+    VRF_APPLIC_BRS {
+        instance-type virtual-router;
+        interface reth1.3011;
+        interface st0.101;
+        routing-options {
+            static {
+                route 100.66.249.224/28 next-hop st0.101;
+            }
+        }
+    }
+    arkadin {
+        instance-type virtual-router;
+        interface reth0.10;
+        interface reth0.4044; ## 'reth0.4044' is not defined
+        interface st0.1;
+        routing-options {
+            static {
+                route 10.0.0.0/8 next-hop 172.21.9.254;
+                route 172.16.0.0/12 next-hop 172.21.9.254;
+                /* Temporary Dubai office */
+                route 10.111.0.0/16 next-hop st0.1;
+            }
+        }
+    }
+    verizon {
+        instance-type virtual-router;
+        interface reth1.4005;
+        interface st0.109;
+        interface st0.110;
+        interface st0.111;
+        routing-options {
+            static {
+                route 212.136.178.192/27 next-hop st0.109;
+                route 194.115.116.192/27 next-hop st0.110;
+                route 194.202.158.192/27 next-hop st0.111;
+            }
+        }
+    }
+}
+{primary:node0}

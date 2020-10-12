@@ -1,0 +1,573 @@
+#RANCID-CONTENT-TYPE: netscreen
+#
+#Product: NetScreen-25
+#SN: 0096052005000054
+#HW: 4010(0)-(00)
+#Netscreen Type: Firewall+VPN
+#Software Version: 5.4.0r3a.0
+#File Name: ns50ns25.5.4.0r3a.0, Checksum: ec63ad35
+#
+get conf
+set clock ntp
+set clock timezone 1
+set vrouter trust-vr sharable
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+unset auto-route-export
+set protocol ospf
+set enable
+set area 0.0.0.33 
+exit
+exit
+set service "Service 8080" protocol tcp src-port 0-65535 dst-port 8080-8080 
+set service "Service 8080" + udp src-port 0-65535 dst-port 8080-8080 
+set service "MSN (ALL)" protocol tcp src-port 0-65535 dst-port 1863-1863 
+set service "MSN (ALL)" + udp src-port 0-65535 dst-port 1503-1503 
+set service "MSN (ALL)" + udp src-port 0-65535 dst-port 5004-65535 
+set service "Yahoo Messenger" protocol tcp src-port 0-65535 dst-port 5000-5050 
+set service "Yahoo Messenger" + udp src-port 0-65535 dst-port 5000-5050 
+set service "5060-5061" protocol tcp src-port 0-65535 dst-port 5060-5061 
+set service "5060-5061" + udp src-port 0-65535 dst-port 5060-5061 
+set service "TLS- WEBEX-Livemeeting" protocol tcp src-port 0-65535 dst-port 5060-5061 
+set service "TLS- WEBEX-Livemeeting" + udp src-port 0-65535 dst-port 5060-5061 
+set service "TLS- WEBEX-Livemeeting" + tcp src-port 0-65535 dst-port 444-444 
+set service "TLS- WEBEX-Livemeeting" + udp src-port 0-65535 dst-port 444-444 
+set service "IMAP secured (TLS)" protocol tcp src-port 0-65535 dst-port 993-993 
+set service "IMAP secured (TLS)" + udp src-port 0-65535 dst-port 993-993 
+set service "SMTP Secure" protocol tcp src-port 0-65535 dst-port 587-587 
+set service "Google Market" protocol tcp src-port 0-65535 dst-port 5228-5228 
+set service "Google Market" + udp src-port 0-65535 dst-port 5228-5228 
+set service "siptcp" protocol tcp src-port 0-65535 dst-port 5060-5070 
+set service "siptcp" + udp src-port 0-65535 dst-port 5060-5070 
+set service "OpenVPN" protocol udp src-port 0-65535 dst-port 1194-1194 
+set service "RTPbypjo" protocol udp src-port 16384-32767 dst-port 16384-32767 
+set service "STUN bypjo" protocol tcp src-port 0-65535 dst-port 3478-3478 
+set service "STUN bypjo" + udp src-port 0-65535 dst-port 3478-3478 
+set service "STUN bypjo" + tcp src-port 0-65535 dst-port 3479-3479 
+set service "8080 bypjo" protocol tcp src-port 0-65535 dst-port 8080-8080 
+set service "SameTimebyPJO" protocol tcp src-port 0-65535 dst-port 9084-9084 
+set service "port3478" protocol udp src-port 0-65535 dst-port 3478-3478 
+set service "UDP 443" protocol udp src-port 0-65535 dst-port 443-443 
+set service "Adobe" protocol tcp src-port 0-65535 dst-port 9443-9443 
+set service "Adobe" + udp src-port 0-65535 dst-port 9443-9443 
+set service "Adobe" + tcp src-port 0-65535 dst-port 1935-1935 
+set service "Adobe" + udp src-port 0-65535 dst-port 1935-1935 
+set service "Adobe" + tcp src-port 0-65535 dst-port 1433-1433 
+set service "Adobe" + udp src-port 0-65535 dst-port 1433-1433 
+set service "SRTP" protocol tcp src-port 0-65535 dst-port 50000-59999 
+set service "PSOM/TLS" protocol tcp src-port 0-65535 dst-port 443-443 
+set service "SIP/TLS" protocol tcp src-port 0-65535 dst-port 443-443 
+set service "WebSocket" protocol tcp src-port 0-65535 dst-port 10080-10080 
+set service "WebSocket" + tcp src-port 0-65535 dst-port 10060-10060 
+set service "WebSocket" + tcp src-port 0-65535 dst-port 10062-10062 
+set service "RTMP" protocol tcp src-port 0-65535 dst-port 1935-1935 
+set service "Vidyo" protocol tcp src-port 0-65535 dst-port 17991-17991 
+set service "Vidyo" + tcp src-port 0-65535 dst-port 17992-17992 
+set service "Vidyo SSH" protocol tcp src-port 0-65535 dst-port 2222-2222 
+set service "5080-5081" protocol tcp src-port 0-65535 dst-port 5080-5081 
+set service "5080-5081" + udp src-port 0-65535 dst-port 5080-5081 
+set service "VideoManager" protocol tcp src-port 0-65535 dst-port 7443-7443 
+set service "VideoManager" + tcp src-port 0-65535 dst-port 8443-8443 
+set service "port5062" protocol tcp src-port 0-65535 dst-port 5062-5062 
+set service "port5062" + udp src-port 0-65535 dst-port 5062-5062 
+set service "port5269" protocol tcp src-port 0-65535 dst-port 5269-5269 
+set service "port5269" + udp src-port 0-65535 dst-port 5269-5269 
+set service "POP" protocol tcp src-port 0-65535 dst-port 995-995 
+set service "TotalConnect" protocol udp src-port 0-65535 dst-port 50000-59999 
+set service "8443-444" protocol tcp src-port 0-65535 dst-port 8443-8443 
+set service "8443-444" + tcp src-port 0-65535 dst-port 444-444 
+set service "8443-444" + udp src-port 0-65535 dst-port 8443-8443 
+set service "8443-444" + udp src-port 0-65535 dst-port 444-444 
+set service "Cfeltz" protocol tcp src-port 0-65535 dst-port 81-85 
+set service "Cfeltz" + tcp src-port 0-65535 dst-port 8080-8080 
+set service "TCP_444" protocol tcp src-port 0-65535 dst-port 444-444 
+set service "TCP_5061" protocol tcp src-port 0-65535 dst-port 5061-5061 
+set service "H.323 (Q.931/H.245)" protocol tcp src-port 0-65535 dst-port 33000-39999 
+set service "RTP PEXIP" protocol udp src-port 0-65535 dst-port 40000-49999 
+unset alg sip enable
+set auth-server "Local" id 0
+set auth-server "Local" server-name "Local"
+set auth-server "Radius server" id 2
+set auth-server "Radius server" server-name "10.115.38.110"
+set auth-server "Radius server" backup1 "10.100.92.1"
+set auth-server "Radius server" account-type admin 
+set auth-server "Radius server" radius port 1812
+#set auth-server "Radius server" radius secret <removed>
+set auth default auth server "Local"
+set auth radius accounting port 1646
+#set admin name <removed>
+#set admin password <removed>
+#set admin user "noc" password <removed> privilege "all"
+#set admin user "IT" password <removed> privilege "all"
+set admin manager-ip 10.0.0.0 255.0.0.0
+set admin manager-ip 38.104.2.203 255.255.255.255
+set admin manager-ip 62.23.57.186 255.255.255.255
+set admin manager-ip 81.93.181.219 255.255.255.255
+set admin manager-ip 185.37.220.222 255.255.255.255
+set admin http redirect
+set admin mail server-name "10.102.10.3"
+set admin mail mail-addr1 "eu_tech_assistance@arkadin.com"
+set admin auth timeout 10
+set admin auth server "Radius server"
+set admin privilege read-write
+set admin format dos
+set zone "Trust" vrouter "trust-vr"
+set zone "Untrust" vrouter "trust-vr"
+set zone "DMZ" vrouter "trust-vr"
+set zone "VLAN" vrouter "trust-vr"
+set zone id 101 "WIFI_Guest"
+set zone "Untrust-Tun" vrouter "trust-vr"
+set zone "Trust" tcp-rst 
+set zone "Untrust" block 
+unset zone "Untrust" tcp-rst 
+set zone "MGT" block 
+set zone "DMZ" tcp-rst 
+set zone "VLAN" block 
+unset zone "VLAN" tcp-rst 
+set zone "WIFI_Guest" tcp-rst 
+set zone "Untrust" screen tear-drop
+set zone "Untrust" screen syn-flood
+set zone "Untrust" screen ping-death
+set zone "Untrust" screen ip-filter-src
+set zone "Untrust" screen land
+set zone "V1-Untrust" screen tear-drop
+set zone "V1-Untrust" screen syn-flood
+set zone "V1-Untrust" screen ping-death
+set zone "V1-Untrust" screen ip-filter-src
+set zone "V1-Untrust" screen land
+set interface ethernet3 phy full 100mb
+set interface "ethernet1" zone "Trust"
+set interface "ethernet2" zone "Null"
+set interface "ethernet3" zone "HA"
+set interface "ethernet4.1" tag 21 zone "Untrust"
+unset interface vlan1 ip
+set interface ethernet1 ip 10.102.43.254/24
+set interface ethernet1 route
+set interface ethernet4.1 ip 217.111.195.161/28
+set interface ethernet4.1 route
+unset interface vlan1 bypass-others-ipsec
+unset interface vlan1 bypass-non-ip
+set interface ethernet1 manage-ip 10.102.43.253
+set interface ethernet1 ip manageable
+set interface ethernet4.1 ip manageable
+unset interface ethernet1 manage telnet
+set interface ethernet4.1 manage ping
+set interface ethernet4.1 manage ssh
+set interface ethernet4.1 manage ssl
+set auth-server "Radius server" src-interface "ethernet1"
+set interface "ethernet1" mip 10.102.43.100 host 192.168.0.18 netmask 255.255.255.255 vr "untrust-vr"
+set interface "ethernet1" mip 10.102.43.101 host 192.168.0.20 netmask 255.255.255.255 vr "untrust-vr"
+set interface "ethernet1" mip 10.102.43.102 host 192.168.0.40 netmask 255.255.255.255 vr "untrust-vr"
+set interface "ethernet1" mip 10.102.43.103 host 192.168.0.25 netmask 255.255.255.255 vr "untrust-vr"
+set interface "ethernet1" mip 10.102.43.104 host 192.168.0.29 netmask 255.255.255.255 vr "untrust-vr"
+set interface "ethernet1" mip 10.102.43.105 host 192.168.0.241 netmask 255.255.255.255 vr "untrust-vr"
+set interface "ethernet1" mip 10.102.43.106 host 192.168.253.10 netmask 255.255.255.255 vr "untrust-vr"
+set interface "ethernet1" mip 10.102.43.107 host 192.168.0.50 netmask 255.255.255.255 vr "untrust-vr"
+set interface "ethernet4.1" mip 217.111.195.164 host 10.102.35.5 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 217.111.195.165 host 10.102.35.8 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 217.111.195.172 host 10.102.35.11 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 217.111.195.174 host 10.102.35.14 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 217.111.195.173 host 10.102.55.136 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 84.14.161.212 host 10.102.6.144 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 84.14.161.216 host 10.102.35.90 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 84.14.161.220 host 10.102.35.9 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 217.111.195.171 host 10.102.35.10 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 84.14.182.82 host 10.102.35.245 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 84.14.182.83 host 10.102.35.248 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 84.14.182.87 host 10.102.35.32 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 84.14.182.88 host 10.102.35.146 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 84.14.182.90 host 10.102.42.136 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 84.14.182.92 host 192.168.0.29 netmask 255.255.255.255 vr "untrust-vr"
+set interface "ethernet4.1" mip 84.14.161.210 host 10.102.35.42 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 62.23.149.140 host 10.102.6.74 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 62.23.149.161 host 10.102.35.31 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 62.23.149.162 host 10.102.35.13 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 62.23.149.163 host 10.102.35.62 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 62.23.149.166 host 10.102.5.105 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 62.23.149.169 host 10.102.5.230 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 62.23.149.188 host 10.102.6.167 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 84.14.182.84 host 10.102.35.33 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 84.14.218.105 host 10.102.35.105 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 62.23.149.170 host 10.102.35.152 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 62.23.149.139 host 10.102.35.43 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 62.23.149.177 host 10.102.58.28 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet4.1" mip 62.23.149.178 host 10.102.59.10 netmask 255.255.255.255 vr "trust-vr"
+set flow tcp-mss
+set flow all-tcp-mss 1420
+unset flow no-tcp-seq-check
+set flow tcp-syn-check
+set console timeout 0
+set console page 0
+set domain arkadin.lan
+set hostname mtpfw01-1
+set webauth server "Radius server"
+set pki authority default scep mode "auto"
+set pki x509 default cert-path partial
+set dns host dns1 8.8.8.8 src-interface ethernet4.1
+set dns host dns2 195.7.111.1 src-interface ethernet4.1
+set dns host dns3 0.0.0.0 src-interface ethernet4.1
+set dns host schedule 06:28
+set address "Trust" "10.102.32.0/24" 10.102.32.0 255.255.255.0
+set address "Trust" "10.102.32.180/32" 10.102.32.180 255.255.255.255
+set address "Trust" "10.102.35.0/24" 10.102.35.0 255.255.255.0
+set address "Trust" "10.102.35.1/32" 10.102.35.1 255.255.255.255
+set address "Trust" "10.102.35.10/32" 10.102.35.10 255.255.255.255
+set address "Trust" "10.102.35.11/32" 10.102.35.11 255.255.255.255
+set address "Trust" "10.102.35.12/32" 10.102.35.12 255.255.255.255
+set address "Trust" "10.102.35.13/32" 10.102.35.13 255.255.255.255
+set address "Trust" "10.102.35.14/32" 10.102.35.14 255.255.255.255
+set address "Trust" "10.102.35.15/32" 10.102.35.15 255.255.255.255
+set address "Trust" "10.102.35.16/32" 10.102.35.16 255.255.255.255
+set address "Trust" "10.102.35.18/32" 10.102.35.18 255.255.255.255
+set address "Trust" "10.102.35.2/32" 10.102.35.2 255.255.255.255
+set address "Trust" "10.102.35.3/32" 10.102.35.3 255.255.255.255
+set address "Trust" "10.102.35.32/32" 10.102.35.32 255.255.255.255
+set address "Trust" "10.102.35.4/32" 10.102.35.4 255.255.255.255
+set address "Trust" "10.102.35.42/32" 10.102.35.42 255.255.255.255
+set address "Trust" "10.102.35.5/32" 10.102.35.5 255.255.255.255
+set address "Trust" "10.102.35.6/32" 10.102.35.6 255.255.255.255
+set address "Trust" "10.102.35.7/32" 10.102.35.7 255.255.255.255
+set address "Trust" "10.102.35.8/32" 10.102.35.8 255.255.255.255
+set address "Trust" "10.102.35.9/32" 10.102.35.9 255.255.255.255
+set address "Trust" "10.102.42.15/32" 10.102.42.15 255.255.255.255
+set address "Trust" "10.102.42.6/32" 10.102.42.6 255.255.255.255
+set address "Trust" "10.102.42.75/32" 10.102.42.75 255.255.255.255
+set address "Trust" "10.102.42.87/32" 10.102.42.87 255.255.255.255
+set address "Trust" "10.102.43.242/32" 10.102.43.242 255.255.255.255
+set address "Trust" "10.102.43.245/32" 10.102.43.245 255.255.255.255
+set address "Trust" "10.102.5.152/32" 10.102.5.152 255.255.255.255
+set address "Trust" "10.102.5.155/32" 10.102.5.155 255.255.255.255
+set address "Trust" "10.102.55.251/32" 10.102.55.251 255.255.255.255
+set address "Trust" "10.102.58.15/32" 10.102.58.15 255.255.255.255
+set address "Trust" "10.102.58.16/32" 10.102.58.16 255.255.255.255
+set address "Trust" "10.102.6.104/32" 10.102.6.104 255.255.255.255
+set address "Trust" "10.102.6.144/32" 10.102.6.144 255.255.255.255
+set address "Trust" "10.102.6.198/32" 10.102.6.198 255.255.255.255
+set address "Trust" "10.102.6.64/32" 10.102.6.64 255.255.255.255
+set address "Trust" "192.168.25.10/32" 192.168.25.10 255.255.255.255
+set address "Trust" "192.168.32.30/32" 192.168.32.30 255.255.255.255
+set address "Trust" "192.168.32.31/32" 192.168.32.31 255.255.255.255
+set address "Trust" "192.168.32.40/32" 192.168.32.40 255.255.255.255
+set address "Trust" "192.168.32.41/32" 192.168.32.41 255.255.255.255
+set address "Trust" "192.168.32.42/32" 192.168.32.42 255.255.255.255
+set address "Trust" "192.168.32.5" 192.168.32.5 255.255.255.255
+set address "Trust" "192.168.47.4/32" 192.168.47.4 255.255.255.255
+set address "Trust" "192.168.5.0/24" 192.168.5.0 255.255.255.0
+set address "Trust" "ARKANET" 10.0.0.0 255.0.0.0
+set address "Trust" "Exchange_LAB1-10.102.53.0/24" 10.102.53.0 255.255.255.0
+set address "Trust" "Exchange_LAB2-10.102.55.0/24" 10.102.55.0 255.255.255.0
+set address "Trust" "FRMTP45" 10.102.45.0 255.255.255.0 "MTP VoIP Network"
+set address "Trust" "FRMTP46" 10.102.46.0 255.255.255.0 "FRMTP Audio VoIP network"
+set address "Trust" "FRMTPLAN Office" 10.102.42.0 255.255.255.0
+set address "Trust" "FRMTPLAN Servers" 10.102.6.0 255.255.255.0
+set address "Trust" "FRMTPLAN2" 10.102.40.0 255.255.255.0
+set address "Trust" "FRMTPLCSMachine" 10.102.40.10 255.255.255.255
+set address "Trust" "FRMTPWebex" 10.102.40.11 255.255.255.255
+set address "Trust" "Integration 10.102.35.0/24" 10.102.35.0 255.255.255.0
+set address "Trust" "MSN IP1" 207.46.28.94 255.255.255.255
+set address "Trust" "MSN IP2" 207.46.28.93 255.255.255.255
+set address "Trust" "MSN IP3" 207.46.28.79 255.255.255.255
+set address "Trust" "MSN IP4" 207.46.110.56 255.255.255.255
+set address "Trust" "MSN IP5" 207.46.110.75 255.255.255.255
+set address "Trust" "MSN IP6" 207.46.107.55 255.255.255.255
+set address "Trust" "MSN IP7" 207.46.108.21 255.255.255.255
+set address "Trust" "NTT_Wise_E2E" 10.102.19.0 255.255.255.0
+set address "Trust" "TEST DMZ" 84.55.173.148 255.255.255.255
+set address "Trust" "VOIP Access" 10.102.102.0 255.255.255.0
+set address "Trust" "WAN-LAB" 10.102.57.0 255.255.255.0
+set address "Untrust" "192.147.106.154/32" 192.147.106.154 255.255.255.255
+set address "Untrust" "62.23.149.149/32" 62.23.149.149 255.255.255.255
+set address "Untrust" "84.14.161.211/32" 84.14.161.211 255.255.255.255
+set address "Untrust" "84.14.218.105/32" 84.14.218.105 255.255.255.255
+set address "Untrust" "ADDR_BL-192.0.2.0-30" 192.0.2.0 255.255.255.252
+set address "Untrust" "ADDR_BL-198.51.100.1-32" 198.51.100.1 255.255.255.255
+set address "Untrust" "ADDR_BL-203.0.113.50-32" 203.0.113.50 255.255.255.255
+set address "Untrust" "ARKANET" 10.0.0.0 255.0.0.0
+set address "Untrust" "BlackList IP#0001" 80.67.10.234 255.255.255.255
+set address "Untrust" "BlackList IP#0002" 173.192.184.158 255.255.255.255
+set address "Untrust" "COLT-DNS1" 195.68.0.1 255.255.255.255
+set address "Untrust" "COLT-DNS2" 195.68.0.2 255.255.255.255
+set address "Untrust" "exch2013.sp2013dev.net" exch2013.sp2013dev.net 
+set address "Untrust" "FRAUBLAN" 10.102.10.0 255.255.255.0
+set address "Untrust" "FRPARLAN" 10.102.2.0 255.255.255.0
+set address "Untrust" "FRSTD" 10.102.3.0 255.255.255.0
+set address "Untrust" "INNOILAN" 10.244.2.0 255.255.255.0 "India Office LAN"
+set address "Untrust" "lihst" 185.37.220.44 255.255.255.255
+set address "Untrust" "lihvded" 185.37.220.46 255.255.255.255
+set address "Untrust" "mails.9services.com" mails.9services.com 
+set address "Untrust" "MIP (Voice)" 80.70.38.153 255.255.255.255
+set address "Untrust" "MSN IP1" 207.46.28.94 255.255.255.255
+set address "Untrust" "MSN IP2" 207.46.28.93 255.255.255.255
+set address "Untrust" "MSN IP3" 207.46.28.79 255.255.255.255
+set address "Untrust" "MSN IP4" 207.46.110.56 255.255.255.255
+set address "Untrust" "MSN IP5" 207.46.110.75 255.255.255.255
+set address "Untrust" "MSN IP6" 207.46.107.55 255.255.255.255
+set address "Untrust" "MSN IP7" 207.46.108.21 255.255.255.255
+set address "Untrust" "Nexenta public IP (5.9.3.254)" 5.9.3.254 255.255.255.255
+set address "Untrust" "Pexip_DMZ_Node" 62.23.149.170 255.255.255.255
+set address "Untrust" "SMTP Orange" smtp.orange.fr 
+set address "Untrust" "staudio02.lotus.com" staudio02.lotus.com 
+set address "Untrust" "Vidyo_213.139.102.152_29" 213.139.102.152 255.255.255.248
+set address "Untrust" "Vidyo_213.139.102.192_28" 213.139.102.192 255.255.255.240
+set address "Untrust" "Vidyo_213.139.102.208_29" 213.139.102.208 255.255.255.248
+set address "Untrust" "Vidyo_213.139.97.112_28" 213.139.97.112 255.255.255.240
+set address "DMZ" "MTP-DMZ" 10.102.40.0 255.255.255.0
+set address "WIFI_Guest" "192.168.1.0/24" 192.168.1.0 255.255.255.0
+set address "WIFI_Guest" "192.168.1.250/32" 192.168.1.250 255.255.255.255
+set group address "Trust" "Integration MTP"
+set group address "Trust" "Integration MTP" add "10.102.32.0/24"
+set group address "Trust" "Integration MTP" add "10.102.35.0/24"
+set group address "Trust" "Integration MTP" add "FRMTP45"
+set group address "Trust" "Integration MTP" add "FRMTPLAN Office"
+set group address "Trust" "Integration MTP" add "FRMTPLAN Servers"
+set group address "Trust" "MSN IPs"
+set group address "Trust" "MSN IPs" add "MSN IP1"
+set group address "Trust" "MSN IPs" add "MSN IP2"
+set group address "Trust" "MSN IPs" add "MSN IP3"
+set group address "Trust" "MSN IPs" add "MSN IP4"
+set group address "Trust" "MSN IPs" add "MSN IP5"
+set group address "Trust" "MSN IPs" add "MSN IP6"
+set group address "Trust" "MSN IPs" add "MSN IP7"
+set group address "Untrust" "BlackList Group"
+set group address "Untrust" "BlackList Group" add "BlackList IP#0001"
+set group address "Untrust" "BlackList Group" add "BlackList IP#0002"
+set group address "Untrust" "MSN IPs"
+set group address "Untrust" "MSN IPs" add "MSN IP1"
+set group address "Untrust" "MSN IPs" add "MSN IP2"
+set group address "Untrust" "MSN IPs" add "MSN IP3"
+set group address "Untrust" "MSN IPs" add "MSN IP4"
+set group address "Untrust" "MSN IPs" add "MSN IP5"
+set group address "Untrust" "MSN IPs" add "MSN IP6"
+set group address "Untrust" "MSN IPs" add "MSN IP7"
+set group address "Untrust" "PFX_BLACKLIST_V4"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "ADDR_BL-192.0.2.0-30"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "ADDR_BL-198.51.100.1-32"
+set group address "Untrust" "PFX_BLACKLIST_V4" add "ADDR_BL-203.0.113.50-32"
+set group service "EDGE"
+set group service "EDGE" add "HTTPS"
+set group service "EDGE" add "PING"
+set group service "EDGE" add "PSOM/TLS"
+set group service "EDGE" add "Service 8080"
+set group service "EDGE" add "SIP/TLS"
+set group service "EDGE" add "SRTP"
+set group service "EDGE" add "STUN bypjo"
+set group service "Instant Messenging (MSN+Yahoo)"
+set group service "Instant Messenging (MSN+Yahoo)" add "MSN (ALL)"
+set group service "Instant Messenging (MSN+Yahoo)" add "Yahoo Messenger"
+set group service "PEXIP"
+set group service "PEXIP" add "5060-5061"
+set group service "PEXIP" add "H.323"
+set group service "PEXIP" add "H.323 (Q.931/H.245)"
+set group service "PEXIP" add "HTTP"
+set group service "PEXIP" add "HTTPS"
+set group service "PEXIP" add "IKE"
+set group service "PEXIP" add "PING"
+set group service "PEXIP" add "RTP PEXIP"
+set group service "PEXIP" add "SIP/TLS"
+set group service "PEXIP" add "SNMP"
+set group service "PEXIP" add "SSH"
+set ike respond-bad-spi 1
+unset ike ikeid-enumeration
+unset ike dos-protection
+unset ipsec access-session enable
+set ipsec access-session maximum 5000
+set ipsec access-session upper-threshold 0
+set ipsec access-session lower-threshold 0
+set ipsec access-session dead-p2-sa-timeout 0
+unset ipsec access-session log-error
+unset ipsec access-session info-exch-connected
+unset ipsec access-session use-error-log
+set nsrp cluster id 1
+set nsrp vsd-group id 0 priority 1
+set nsrp vsd-group id 0 preempt
+set nsrp vsd-group id 0 preempt hold-down 180
+set nsrp interface ethernet1
+set nsrp monitor interface ethernet1
+set nsrp monitor interface ethernet4
+set url protocol websense
+exit
+set policy id 134 from "Trust" to "Untrust"  "Any" "Any" "SMTP" deny log 
+set policy id 134
+exit
+set policy id 156 from "WIFI_Guest" to "Trust"  "Any" "WAN-LAB" "ANY" permit 
+set policy id 156
+exit
+set policy id 142 from "Trust" to "WIFI_Guest"  "ARKANET" "192.168.1.0/24" "ANY" permit log 
+set policy id 142
+exit
+set policy id 135 from "Trust" to "Untrust"  "FRMTPLAN Office" "lihst" "SMTP" nat src permit log 
+set policy id 135
+set dst-address "lihvded"
+set dst-address "mails.9services.com"
+set dst-address "SMTP Orange"
+exit
+set policy id 91 from "Untrust" to "Trust"  "BlackList Group" "Any" "ANY" deny log 
+set policy id 91
+exit
+set policy id 70 from "WIFI_Guest" to "Untrust"  "Any" "ARKANET" "ANY" deny 
+set policy id 70
+exit
+set policy id 32 from "Trust" to "Untrust"  "Any" "Any" "ANY" nat src permit log 
+set policy id 32
+exit
+set policy id 7 from "Trust" to "Untrust"  "Any" "Any" "ANY" deny log 
+set policy id 7
+exit
+set policy id 67 from "WIFI_Guest" to "Trust"  "Any" "Any" "ANY" deny log 
+set policy id 67
+exit
+set policy id 66 from "WIFI_Guest" to "Untrust"  "Any" "Any" "ANY" nat src permit log 
+set policy id 66
+exit
+set policy id 166 from "Untrust" to "Trust"  "Any" "MIP(62.23.149.170)" "PEXIP" permit log 
+set policy id 166
+exit
+set policy id 167 from "Untrust" to "Trust"  "Any" "MIP(62.23.149.166)" "HTTPS" permit log 
+set policy id 167
+set dst-address "MIP(62.23.149.169)"
+set service "PING"
+set service "PEXIP"
+exit
+set policy id 171 from "Untrust" to "Trust"  "Any" "MIP(62.23.149.140)" "HTTP" permit log 
+set policy id 171
+set dst-address "MIP(84.14.182.90)"
+set service "HTTPS"
+set service "PING"
+set service "RTMP"
+exit
+set policy id 172 from "Untrust" to "Trust"  "Any" "MIP(84.14.182.88)" "TCP_444" permit log 
+set policy id 172
+set service "TCP_5061"
+set service "EDGE"
+exit
+set policy id 184 from "Untrust" to "Trust"  "Any" "MIP(84.14.161.210)" "HTTP" nat src permit log 
+set policy id 184
+set service "HTTPS"
+set service "ICMP-ANY"
+set service "Vidyo"
+exit
+set policy id 183 name "TEMP_WORKAROUND_xcousin_040117" from "Untrust" to "Trust"  "Any" "MIP(84.14.182.87)" "HTTP" nat src permit log 
+set policy id 183
+set dst-address "MIP(84.14.218.105)"
+set service "HTTP-EXT"
+set service "HTTPS"
+set service "ICMP-ANY"
+set service "PING"
+exit
+set policy id 173 from "Untrust" to "Trust"  "Any" "MIP(217.111.195.165)" "DNS" permit log 
+set policy id 173
+set dst-address "MIP(84.14.161.220)"
+set dst-address "MIP(84.14.182.82)"
+set dst-address "MIP(84.14.182.83)"
+set service "ICMP-ANY"
+exit
+set policy id 174 from "Untrust" to "Trust"  "Any" "MIP(217.111.195.164)" "HTTP" permit log 
+set policy id 174
+set dst-address "MIP(217.111.195.165)"
+set dst-address "MIP(217.111.195.171)"
+set dst-address "MIP(217.111.195.172)"
+set dst-address "MIP(217.111.195.173)"
+set dst-address "MIP(217.111.195.174)"
+set dst-address "MIP(62.23.149.161)"
+set dst-address "MIP(62.23.149.162)"
+set dst-address "MIP(62.23.149.163)"
+set dst-address "MIP(62.23.149.188)"
+set dst-address "MIP(84.14.161.212)"
+set dst-address "MIP(84.14.161.216)"
+set dst-address "MIP(84.14.161.220)"
+set dst-address "MIP(84.14.182.82)"
+set dst-address "MIP(84.14.182.83)"
+set dst-address "MIP(84.14.182.87)"
+set dst-address "MIP(84.14.218.105)"
+set service "HTTP-EXT"
+set service "HTTPS"
+set service "ICMP-ANY"
+set service "PING"
+exit
+set policy id 175 from "Untrust" to "Trust"  "Any" "MIP(217.111.195.165)" "TLS- WEBEX-Livemeeting" permit log 
+set policy id 175
+exit
+set policy id 176 from "Untrust" to "Trust"  "Any" "MIP(62.23.149.139)" "8443-444" permit log 
+set policy id 176
+set dst-address "MIP(84.14.161.220)"
+set service "HTTP"
+set service "HTTPS"
+set service "ICMP-ANY"
+set service "PING"
+set service "Vidyo"
+exit
+set policy id 177 from "Untrust" to "Trust"  "Any" "MIP(84.14.182.84)" "HTTPS" permit log 
+set policy id 177
+exit
+set policy id 62 from "Untrust" to "Trust"  "Any" "Any" "ANY" deny log 
+set policy id 62
+exit
+set policy id 169 from "Untrust" to "Trust"  "Any" "MIP(62.23.149.178)" "5060-5061" permit log 
+set policy id 169
+set service "HTTPS"
+set service "PING"
+set service "port3478"
+set service "port5062"
+set service "port5269"
+exit
+set pppoe name "Orange"
+set pppoe name "Orange" username "fti/taayxbf" password "ZyxMEsylNExgVZseCeC9yiZHllnvzKOgFg=="
+set syslog config "10.124.23.24"
+set syslog config "10.124.23.24" facilities local0 local5
+set syslog config "10.115.137.89"
+set syslog config "10.115.137.89" facilities local0 local5
+set syslog src-interface ethernet1
+set syslog enable
+set webtrends VPN
+set nsmgmt report alarm traffic enable
+set nsmgmt report alarm attack enable
+set nsmgmt report alarm other enable
+set nsmgmt report alarm di enable
+set nsmgmt report log config enable
+set nsmgmt report log info enable
+set nsmgmt report log self enable
+set nsmgmt report log traffic enable
+set nsmgmt init id BC4AF032F9D0AF3CFB97D2E7AED873BAC78B1FC700
+set nsmgmt server primary 10.102.2.51 port 7800
+set nsmgmt bulkcli reboot-timeout 60
+set nsmgmt hb-interval 20
+set nsmgmt hb-threshold 5
+set nsmgmt enable
+set ssh version v2
+set ssh enable
+set config lock timeout 5
+set ntp server "10.115.131.1"
+set ntp server backup1 "10.125.19.1"
+set snmp community "noc_services" Read-Only Trap-on  traffic version any
+set snmp community "cacti" Read-Write Trap-on  traffic version any
+set snmp community "network_services" Read-Only Trap-on  traffic version any
+set snmp host "network_services" 10.102.10.130 255.255.255.255 trap v2
+set snmp host "network_services" 10.102.6.8 255.255.255.255 trap v2
+set snmp host "network_services" 192.168.32.96 255.255.255.255 trap v2
+set snmp host "cacti" 10.102.3.16 255.255.255.255 trap v2
+set snmp host "noc_services" 10.115.38.131 255.255.255.255 trap v2
+set snmp host "noc_services" 10.102.5.133 255.255.255.255 trap v2
+set snmp host "noc_services" 10.115.137.57 255.255.255.255 trap v2
+set snmp host "noc_services" 10.115.137.55 255.255.255.255 trap v2
+set snmp location "Montpellier"
+set snmp name "FRMTPFW1"
+set snmp port listen 161
+set snmp port trap 162
+set vrouter "untrust-vr"
+set route 192.168.7.0/24 interface ethernet1 gateway 10.102.43.250
+set route 0.0.0.0/0 interface ethernet4.1 gateway 217.111.195.162
+exit
+set vrouter "trust-vr"
+set router-id 217.111.195.161
+unset add-default-route
+set route 192.168.47.4/32 interface ethernet1 gateway 10.102.43.251
+set route 172.16.0.0/12 interface ethernet1 gateway 10.102.43.250
+set route 192.168.0.0/16 interface ethernet1 gateway 10.102.43.250
+set route 10.0.0.0/8 interface ethernet1 gateway 10.102.43.250
+set route 0.0.0.0/0 interface ethernet4.1 gateway 217.111.195.162
+exit
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+exit

@@ -1,0 +1,610 @@
+#RANCID-CONTENT-TYPE: netscreen
+#
+#Product: SSG-140
+#SN: 0185092011000512
+#HW: 1010(0)-(00)
+#Netscreen Type: Firewall+VPN
+#Software Version: 6.2.0r5.0
+#Feature: AV-K
+#File Name: ssg140.6.2.0r5.0, Checksum: bc7b6d47
+#Memory: 512MB
+#
+unset key protection enable
+set clock dst-off
+set clock ntp
+set clock timezone -3
+set clock dst recurring start-weekday 2 0 3 02:00 end-weekday 1 0 11 02:00
+set vrouter trust-vr sharable
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+unset auto-route-export
+exit
+set vrouter name "cti-vr" id 1025 
+set vrouter "cti-vr"
+unset auto-route-export
+exit
+set vrouter name "publicdmz-vr" id 1026 
+unset vrouter "publicdmz-vr" nsrp-config-sync
+set vrouter "publicdmz-vr"
+unset auto-route-export
+set preference nhrp 100
+set preference ospf-e2 254
+exit
+set service "SSH-Vidyo(TCP2222)" protocol tcp src-port 0-65535 dst-port 2222-2222 
+set service "RMCP-Vidyo(TCP17991)" protocol tcp src-port 0-65535 dst-port 17991-17991 
+set service "SCIP-Vidyo(TCP17990)" protocol tcp src-port 0-65535 dst-port 17990-17990 
+set service "MediaPorts-Vidyo(UDP)" protocol udp src-port 0-65535 dst-port 50000-65535 
+set service "SQL-Vidyo(TCP389)" protocol tcp src-port 0-65535 dst-port 389-389 
+set service "SQLSec-Vidyo(TCP636)" protocol tcp src-port 0-65535 dst-port 636-636 
+set service "MySQL-Vidyo(TCP3306)" protocol tcp src-port 0-65535 dst-port 3306-3306 
+set service "ECMP-Vidyo(TCP17992)" protocol tcp src-port 0-65535 dst-port 17992-17992 
+set service "TCP8060" protocol tcp src-port 0-65535 dst-port 8060-8060 
+set service "TCP3389" protocol tcp src-port 0-65535 dst-port 3389-3389 
+set service "TCP1720" protocol tcp src-port 0-65535 dst-port 1720-1720 
+set service "TCP5060" protocol tcp src-port 0-65535 dst-port 5060-5060 
+set service "UDP5060" protocol udp src-port 0-65535 dst-port 5060-5060 
+set service "H245(TCP)" protocol tcp src-port 0-65535 dst-port 1024-65535 
+set service "RTP(UDP)" protocol udp src-port 0-65535 dst-port 1024-65535 
+set service "TCP1755" protocol tcp src-port 0-65535 dst-port 1755-1755 
+set service "RTP(UDP)-Codian" protocol udp src-port 0-65535 dst-port 49152-65535 
+set service "OOKLA(TCP8080)" protocol tcp src-port 0-65535 dst-port 8080-8080 
+set service "OOKLA(UDP8081)" protocol udp src-port 0-65535 dst-port 8081-8081 
+set service "ZABBIX_AGENT" protocol tcp src-port 0-65535 dst-port 10050-10051 
+set alg appleichat enable
+unset alg appleichat re-assembly enable
+set alg sctp enable
+set auth-server "Local" id 0
+set auth-server "Local" server-name "Local"
+set auth-server "Radius" id 1
+set auth-server "Radius" server-name "10.100.92.1"
+set auth-server "Radius" backup1 "10.115.38.110"
+set auth-server "Radius" account-type admin 
+set auth-server "Radius" timeout 2
+set auth-server "Radius" radius port 1812
+#set auth-server "Radius" radius secret <removed>
+set auth default auth server "Radius"
+set auth banner telnet success "This is a private system of Arkadin<br>Authorization from Network Operations Team is<br>required to use this system. Unauthorized access is prohibited!"
+set auth banner http login "This device is RADIUS authenticated"
+set auth banner http success "This is a private system of Arkadin<br>Authorization from Network Operations Team is<br>required to use this system. Unauthorized access is prohibited!"
+set auth radius accounting port 1646
+#set admin name <removed>
+#set admin password <removed>
+#set admin user "netops" password <removed> privilege "all"
+set admin manager-ip 10.0.1.0 255.255.255.0
+set admin manager-ip 10.100.19.20
+set admin manager-ip 10.100.19.21
+set admin manager-ip 10.100.137.89
+set admin manager-ip 10.115.137.89
+set admin manager-ip 10.250.137.89
+set admin manager-ip 10.245.2.0 255.255.255.0
+set admin manager-ip 38.104.2.203
+set admin manager-ip 62.23.57.186
+set admin manager-ip 81.93.181.219
+set admin manager-ip 184.105.38.123
+set admin auth web timeout 10
+set admin auth server "Radius"
+set admin auth remote primary
+set admin privilege get-external
+set admin format dos
+set zone "Trust" vrouter "trust-vr"
+set zone "Untrust" vrouter "trust-vr"
+set zone "DMZ" vrouter "trust-vr"
+set zone "VLAN" vrouter "trust-vr"
+set zone id 100 "CTI"
+set zone "CTI" vrouter "cti-vr"
+set zone id 101 "Public_DMZ"
+set zone "Public_DMZ" vrouter "publicdmz-vr"
+set zone "Untrust-Tun" vrouter "trust-vr"
+set zone "Trust" tcp-rst 
+set zone "Untrust" block 
+unset zone "Untrust" tcp-rst 
+set zone "MGT" block 
+unset zone "V1-Trust" tcp-rst 
+unset zone "V1-Untrust" tcp-rst 
+set zone "DMZ" tcp-rst 
+unset zone "V1-DMZ" tcp-rst 
+unset zone "VLAN" tcp-rst 
+set zone "CTI" tcp-rst 
+set zone "Public_DMZ" tcp-rst 
+set zone "Untrust" screen tear-drop
+set zone "Untrust" screen syn-flood
+set zone "Untrust" screen ping-death
+set zone "Untrust" screen ip-filter-src
+set zone "Untrust" screen land
+set zone "V1-Untrust" screen tear-drop
+set zone "V1-Untrust" screen syn-flood
+set zone "V1-Untrust" screen ping-death
+set zone "V1-Untrust" screen ip-filter-src
+set zone "V1-Untrust" screen land
+set interface "ethernet0/0" zone "Untrust"
+set interface "ethernet0/1" zone "CTI"
+set interface "ethernet0/2" zone "Public_DMZ"
+set interface "ethernet0/3" zone "Trust"
+set interface "ethernet0/4" zone "DMZ"
+set interface "ethernet0/7" zone "HA"
+set interface "tunnel.3" zone "Trust"
+set interface ethernet0/0 ip 186.193.226.98/29
+set interface ethernet0/0 route
+unset interface vlan1 ip
+set interface ethernet0/1 ip 172.16.120.14/28
+set interface ethernet0/1 nat
+set interface ethernet0/2 ip 186.193.235.49/28
+set interface ethernet0/2 route
+set interface ethernet0/3 ip 10.120.0.1/28
+set interface ethernet0/3 nat
+set interface ethernet0/4 ip 10.120.4.254/24
+set interface ethernet0/4 route
+set interface tunnel.3 ip unnumbered interface ethernet0/0
+unset interface vlan1 bypass-others-ipsec
+unset interface vlan1 bypass-non-ip
+set interface ethernet0/3 manage-ip 10.120.0.11
+set interface ethernet0/0 ip manageable
+set interface ethernet0/1 ip manageable
+unset interface ethernet0/2 ip manageable
+set interface ethernet0/3 ip manageable
+set interface ethernet0/4 ip manageable
+set interface ethernet0/0 manage ping
+set interface ethernet0/1 manage ping
+set interface ethernet0/2 manage ping
+set interface ethernet0/2 manage ssh
+set interface ethernet0/2 manage snmp
+set interface ethernet0/2 manage ssl
+set interface ethernet0/2 manage web
+set interface ethernet0/4 manage snmp
+set interface ethernet0/4 manage web
+set auth-server "Radius" src-interface "ethernet0/3"
+set interface ethernet0/0 vip 186.193.226.99 80 "HTTP" 10.120.23.201
+set interface ethernet0/0 vip 186.193.226.99 + 443 "HTTPS" 10.120.23.201
+set interface ethernet0/0 vip 186.193.226.99 + 8060 "TCP8060" 10.120.23.202
+set interface ethernet0/0 vip 186.193.226.99 + 3389 "TCP3389" 10.120.23.202
+set interface ethernet0/0 vip 186.193.226.99 + 161 "SNMP" 10.120.23.202
+set interface ethernet0/0 vip 186.193.226.99 + 8080 "OOKLA(TCP8080)" 10.120.23.201
+set interface ethernet0/0 vip 186.193.226.99 + 8081 "OOKLA(UDP8081)" 10.120.23.201
+set interface "ethernet0/1" mip 172.16.120.10 host 10.102.15.78 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/1" mip 172.16.120.11 host 10.100.73.137 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/1" mip 172.16.120.12 host 10.115.34.137 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/1" mip 172.16.120.13 host 10.250.23.137 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/1" mip 172.16.120.9 host 10.100.21.151 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/1" mip 172.16.120.8 host 10.115.131.1 netmask 255.255.255.255 vr "trust-vr"
+set interface "ethernet0/3" mip 10.120.0.2 host 172.16.120.23 netmask 255.255.255.255 vr "cti-vr"
+set interface "ethernet0/3" mip 10.120.0.4 host 172.16.120.24 netmask 255.255.255.255 vr "cti-vr"
+set interface "ethernet0/3" mip 10.120.0.8 host 172.16.120.18 netmask 255.255.255.255 vr "cti-vr"
+set interface "ethernet0/3" mip 10.120.0.9 host 172.16.120.19 netmask 255.255.255.255 vr "cti-vr"
+set interface "ethernet0/3" mip 10.120.0.10 host 186.193.235.54 netmask 255.255.255.255 vr "publicdmz-vr"
+unset flow no-tcp-seq-check
+set flow tcp-syn-check
+unset flow tcp-syn-bit-check
+set flow reverse-route clear-text prefer
+set flow reverse-route tunnel always
+set console timeout 60
+set console page 0
+set hostname tbrfw01-1
+set webauth server "Radius"
+set pki authority default scep mode "auto"
+set pki x509 default cert-path partial
+set nsrp cluster id 1
+set nsrp rto-mirror sync
+set nsrp rto-mirror route
+set nsrp rto-mirror session ageout-ack
+set nsrp vsd-group id 0 priority 50
+set nsrp vsd-group id 0 preempt
+set nsrp vsd-group id 0 monitor interface ethernet0/3
+set nsrp vsd-group id 0 monitor interface ethernet0/0
+set nsrp vsd-group id 0 monitor interface ethernet0/1
+set nsrp vsd-group id 0 monitor interface ethernet0/4
+set nsrp ha-link probe
+set address "Trust" "10.100.21.151/32" 10.100.21.151 255.255.255.255
+set address "Trust" "10.120.23.5/32" 10.120.23.5 255.255.255.255
+set address "Trust" "Arkadin-Networks" 10.0.0.0 255.0.0.0
+set address "Trust" "ATL_ZABBIX_1" 10.100.137.55 255.255.255.255
+set address "Trust" "ATL_ZABBIX_2" 10.100.137.56 255.255.255.255
+set address "Trust" "ATL_ZABBIX_3" 10.100.137.57 255.255.255.255
+set address "Trust" "BR Remote VPN clients" 10.120.6.0 255.255.255.0
+set address "Trust" "BRSAOLAN" 10.120.2.0 255.255.255.0
+set address "Trust" "BRSAOVoIP" 10.120.102.0 255.255.255.0
+set address "Trust" "brtbrcob01" 10.120.23.31 255.255.255.255
+set address "Trust" "BRTBRLAN" 10.120.3.0 255.255.255.0
+set address "Trust" "BRTBRMGT" 10.120.23.0 255.255.255.0
+set address "Trust" "BRTBRPRB01" 10.120.23.202 255.255.255.255 "OPManager"
+set address "Trust" "BRTBRRTP" 10.120.22.0 255.255.255.0
+set address "Trust" "BRTBRSCCM01" 10.120.23.11 255.255.255.255 "SCCM"
+set address "Trust" "BRTBRSIP" 10.120.21.0 255.255.255.0
+set address "Trust" "BRTBRWEB01" 10.120.23.201 255.255.255.255
+set address "Trust" "BRTBRWS02" 10.120.23.5 255.255.255.255
+set address "Trust" "FRPPWEBEXGW" 10.102.15.78 255.255.255.255
+set address "Trust" "Internal_DNS1(BR)" 10.120.2.1 255.255.255.255 "Internal_DNS1(BR)"
+set address "Untrust" "0.0.0.0/0" 0.0.0.0 0.0.0.0
+set address "Untrust" "10.120.2.2/32" 10.120.2.2 255.255.255.255
+set address "Untrust" "186.193.226.98/32" 186.193.226.98 255.255.255.255
+set address "Untrust" "ArkadinBR_Office_PublicIP" 177.67.48.242 255.255.255.255
+set address "Untrust" "Montpellier_PublicIP_Access" 217.111.195.161 255.255.255.255 "Montpellier_PublicIP_Access"
+set address "Untrust" "Public_DNS1" 8.8.8.8 255.255.255.255 "Public_DNS1"
+set address "Untrust" "Public_DNS2" 4.2.2.2 255.255.255.255 "Public_DNS2"
+set address "Untrust" "USNYC-WAN" 64.215.166.0 255.255.255.0
+set address "Untrust" "VIDYO_PORTAL01-France" 213.139.102.194 255.255.255.255 "Vidyo Portal 01 "
+set address "Untrust" "VIDYO_PORTAL02-Japan" 203.167.52.171 255.255.255.255 "Vidyo Portal 02"
+set address "Untrust" "VIDYO_PORTALPP-France" 213.139.102.192 255.255.255.255 "Vidyo Portal France"
+set address "Untrust" "VIDYO_VR_VG-Australia" 202.68.76.0 255.255.255.248 "Vidyo Routers-Gateways"
+set address "Untrust" "VIDYO_VR_VG-Brasil" 186.193.235.48 255.255.255.240 "Vidyo Routers-Gateway"
+set address "Untrust" "VIDYO_VR_VG-China" 221.5.154.80 255.255.255.240 "Vidyo Routers-Gateways"
+set address "Untrust" "VIDYO_VR_VG-France" 213.139.97.112 255.255.255.240 "Vidyo Routers-Gateways"
+set address "Untrust" "VIDYO_VR_VG-India" 110.234.180.144 255.255.255.248 "Vidyo Routers-Gateways"
+set address "Untrust" "VIDYO_VR_VG-Japan" 203.167.52.160 255.255.255.240 "Vidyo Routers-Gateways"
+set address "Untrust" "VIDYO_VR_VG-Singapore" 202.176.200.84 255.255.255.240 "Vidyo Routers-Gateway"
+set address "Untrust" "VIDYO_VR_VG-USA" 208.49.141.128 255.255.255.224 "Didyo Routers-Gateways"
+set address "DMZ" "10.120.23.202/32" 10.120.23.202 255.255.255.255
+set address "DMZ" "BRTBRDMZ" 10.120.4.0 255.255.255.0
+set address "DMZ" "BRTBRWEB01" 10.120.4.201 255.255.255.255
+set address "CTI" "172.16.120.17/32" 172.16.120.17 255.255.255.255
+set address "CTI" "172.16.120.23/32" 172.16.120.23 255.255.255.255
+set address "CTI" "172.16.120.24/32" 172.16.120.24 255.255.255.255
+set address "CTI" "WE_Adobe_01" 172.16.120.23 255.255.255.255
+set address "CTI" "WE_Adobe_02" 172.16.120.24 255.255.255.255
+set address "Public_DMZ" "186.193.235.54/32" 186.193.235.54 255.255.255.255
+set address "Public_DMZ" "186.193.235.55/32" 186.193.235.55 255.255.255.255
+set address "Public_DMZ" "BRTBRVGW01" 186.193.235.51 255.255.255.255 "Vidyo Gateway 01"
+set address "Public_DMZ" "BRTBRVGW02" 186.193.235.52 255.255.255.255 "Vidyo Gateway 02"
+set address "Public_DMZ" "BRTBRVRT01" 186.193.235.50 255.255.255.255 "Vidyo Router 01"
+set address "Public_DMZ" "VGW01-WLP-BR-01" 186.193.235.60 255.255.255.255 "Vidyo Gateway WL 01"
+set address "Public_DMZ" "Vidyo Platform Subnet BR" 186.193.235.48 255.255.255.240 "186.193.235.48/28"
+set address "Public_DMZ" "VR01-WLP-BR-01" 186.193.235.58 255.255.255.255 "Vidyo Router WL 01"
+set group address "Trust" "AccessToInternet"
+set group address "Trust" "AccessToInternet" add "BRTBRLAN"
+set group address "Trust" "AccessToInternet" add "BRTBRPRB01"
+set group address "Trust" "AccessToInternet" add "BRTBRWEB01"
+set group address "Trust" "ATL_ZABBIX"
+set group address "Trust" "ATL_ZABBIX" add "ATL_ZABBIX_1"
+set group address "Trust" "ATL_ZABBIX" add "ATL_ZABBIX_2"
+set group address "Trust" "ATL_ZABBIX" add "ATL_ZABBIX_3"
+set group address "Trust" "BR-Networks"
+set group address "Trust" "BR-Networks" add "BR Remote VPN clients"
+set group address "Trust" "BR-Networks" add "BRSAOLAN"
+set group address "Trust" "BR-Networks" add "BRSAOVoIP"
+set group address "Trust" "BR-Networks" add "BRTBRLAN"
+set group address "Trust" "BR-Networks" add "BRTBRMGT"
+set group address "Trust" "BR-Networks" add "BRTBRRTP"
+set group address "Trust" "BR-Networks" add "BRTBRSIP"
+set group address "Untrust" "CodianMCU_Access"
+set group address "Untrust" "CodianMCU_Access" add "ArkadinBR_Office_PublicIP"
+set group address "Untrust" "CodianMCU_Access" add "Montpellier_PublicIP_Access"
+set group address "Untrust" "DNS-Servers" comment "DNS-Servers"
+set group address "Untrust" "DNS-Servers" add "Public_DNS1"
+set group address "Untrust" "DNS-Servers" add "Public_DNS2"
+set group address "Untrust" "VIDYO - To Define" comment "VIDYO - To Define"
+set group address "Untrust" "VIDYO - VPortals Group" comment "VIDYO - VPortals Group"
+set group address "Untrust" "VIDYO - VPortals Group" add "VIDYO_PORTAL01-France"
+set group address "Untrust" "VIDYO - VPortals Group" add "VIDYO_PORTAL02-Japan"
+set group address "Untrust" "VIDYO - VPortals Group" add "VIDYO_PORTALPP-France"
+set group address "Untrust" "VIDYO - VRout VGate Group" comment "VIDYO - VRout VGate Group"
+set group address "Untrust" "VIDYO - VRout VGate Group" add "VIDYO_VR_VG-Australia"
+set group address "Untrust" "VIDYO - VRout VGate Group" add "VIDYO_VR_VG-Brasil"
+set group address "Untrust" "VIDYO - VRout VGate Group" add "VIDYO_VR_VG-China"
+set group address "Untrust" "VIDYO - VRout VGate Group" add "VIDYO_VR_VG-France"
+set group address "Untrust" "VIDYO - VRout VGate Group" add "VIDYO_VR_VG-India"
+set group address "Untrust" "VIDYO - VRout VGate Group" add "VIDYO_VR_VG-Japan"
+set group address "Untrust" "VIDYO - VRout VGate Group" add "VIDYO_VR_VG-Singapore"
+set group address "Untrust" "VIDYO - VRout VGate Group" add "VIDYO_VR_VG-USA"
+set group address "Public_DMZ" "VIDYO - All Appliances (BR)" comment "RT01, GW01, GW02"
+set group address "Public_DMZ" "VIDYO - All Appliances (BR)" add "BRTBRVGW01"
+set group address "Public_DMZ" "VIDYO - All Appliances (BR)" add "BRTBRVGW02"
+set group address "Public_DMZ" "VIDYO - All Appliances (BR)" add "BRTBRVRT01"
+set group service "VIDYO - Conec RT vs PO Ports" comment "VIDYO - Conec RT vs PO Ports"
+set group service "VIDYO - Conec RT vs PO Ports" add "HTTP"
+set group service "VIDYO - Conec RT vs PO Ports" add "HTTPS"
+set group service "VIDYO - Conec RT vs PO Ports" add "RMCP-Vidyo(TCP17991)"
+set group service "VIDYO - Management Ports" comment "VIDYO - Management Ports"
+set group service "VIDYO - Management Ports" add "HTTP"
+set group service "VIDYO - Management Ports" add "HTTPS"
+set group service "VIDYO - Management Ports" add "SSH-Vidyo(TCP2222)"
+set crypto-policy
+exit
+set ike p2-proposal "cisco" group2 esp 3des md5 second 3600
+#set ike gateway "BRSAOGW1" address 127.0.0.1 Main outgoing-interface "ethernet0/0" preshare <removed> proposal "pre-g2-3des-sha" "pre-g2-aes128-sha"
+set ike gateway "BRSAOGW1" dpd-liveness always-send
+set ike respond-bad-spi 1
+set ike gateway "BRSAOGW1" heartbeat reconnect 60
+set ike ikev2 ike-sa-soft-lifetime 60
+unset ike ikeid-enumeration
+unset ike dos-protection
+unset ipsec access-session enable
+set ipsec access-session maximum 5000
+set ipsec access-session upper-threshold 0
+set ipsec access-session lower-threshold 0
+set ipsec access-session dead-p2-sa-timeout 0
+unset ipsec access-session log-error
+unset ipsec access-session info-exch-connected
+unset ipsec access-session use-error-log
+set vpn "BRSAOTUN1" gateway "BRSAOGW1" no-replay tunnel idletime 0 proposal "cisco"  "g2-esp-3des-md5"  "g2-esp-3des-sha" 
+set vpn "BRSAOTUN1" id 0x1 bind interface tunnel.3
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+exit
+set vrouter "cti-vr"
+exit
+set vrouter "publicdmz-vr"
+exit
+set url protocol websense
+exit
+set vpn "BRSAOTUN1" proxy-id local-ip 127.0.0.1/32 remote-ip 127.0.0.1/32 "ANY" 
+set policy id 56 from "CTI" to "Trust"  "172.16.120.23/32" "10.100.21.151/32" "ANY" nat src permit log 
+set policy id 56
+exit
+set policy id 15 name "Internet Access" from "DMZ" to "Untrust"  "BRTBRWEB01" "Any" "ANY" permit log 
+set policy id 15
+set log session-init
+exit
+set policy id 13 from "DMZ" to "Untrust"  "BRTBRWEB01" "Any" "HTTP" permit log count 
+set policy id 13
+set service "HTTPS"
+exit
+set policy id 11 from "DMZ" to "Trust"  "BRTBRWEB01" "Arkadin-Networks" "DNS" permit log count 
+set policy id 11
+set service "FTP"
+set service "NTP"
+set service "PING"
+set service "SSH"
+set service "TRACEROUTE"
+exit
+set policy id 9 from "Trust" to "DMZ"  "Arkadin-Networks" "BRTBRDMZ" "ANY" permit log count 
+set policy id 9
+exit
+set policy id 7 from "Untrust" to "DMZ"  "Any" "VIP(186.193.226.99)" "HTTP" permit log count 
+set policy id 7
+set service "HTTPS"
+set service "OOKLA(TCP8080)"
+set service "OOKLA(UDP8081)"
+set service "TCP8060"
+exit
+set policy id 54 name "VPNSite2SITE_BRSAO" from "Trust" to "Untrust"  "10.120.23.5/32" "10.120.2.2/32" "ANY" permit log 
+set policy id 54
+exit
+set policy id 52 from "Trust" to "Untrust"  "VIP(186.193.226.99)" "Any" "OOKLA(TCP8080)" permit log 
+set policy id 52
+set service "OOKLA(UDP8081)"
+exit
+set policy id 57 from "Trust" to "Untrust"  "10.120.23.5/32" "Any" "ANY" nat src permit 
+set policy id 57
+set src-address "brtbrcob01"
+set src-address "BRTBRSCCM01"
+exit
+set policy id 2 from "Trust" to "Untrust"  "AccessToInternet" "Any" "ANY" nat src permit log count 
+set policy id 2
+exit
+set policy id 1 from "Trust" to "Untrust"  "Any" "Any" "ANY" reject log count 
+set policy id 1
+exit
+set policy id 42 from "Trust" to "Untrust"  "BRTBRPRB01" "VIP(186.193.226.99)" "ANY" permit log 
+set policy id 42 disable
+set policy id 42
+exit
+set policy id 55 name "VPNSite2SITE_BRSAO" from "Untrust" to "Trust"  "10.120.2.2/32" "10.120.23.5/32" "ANY" permit log 
+set policy id 55
+exit
+set policy id 3 from "Untrust" to "Trust"  "Any" "Any" "ANY" deny log count 
+set policy id 3
+exit
+set policy id 5 from "Trust" to "Trust"  "Arkadin-Networks" "BR-Networks" "ANY" permit log count 
+set policy id 5
+exit
+set policy id 4 from "Trust" to "Trust"  "BR-Networks" "Arkadin-Networks" "ANY" permit log count 
+set policy id 4
+exit
+set policy id 6 from "Trust" to "Trust"  "Any" "Any" "ANY" deny log count 
+set policy id 6
+exit
+set policy id 44 name "PublicAccess_to_CodianMCU" from "Untrust" to "Public_DMZ"  "CodianMCU_Access" "186.193.235.54/32" "ANY" permit log 
+set policy id 44 disable
+set policy id 44
+exit
+set policy id 45 name "PublicAccess_to_CodianMCU_Deny" from "Untrust" to "Public_DMZ"  "Any" "186.193.235.54/32" "ANY" deny log 
+set policy id 45 disable
+set policy id 45
+exit
+set policy id 37 name "RemoteDesktop_ProbeBR" from "Untrust" to "DMZ"  "Montpellier_PublicIP_Access" "VIP(186.193.226.99)" "TCP3389" permit log 
+set policy id 37
+exit
+set policy id 8 from "Untrust" to "DMZ"  "Any" "Any" "ANY" deny log count 
+set policy id 8
+exit
+set policy id 10 from "Trust" to "DMZ"  "Any" "Any" "ANY" deny log count 
+set policy id 10
+exit
+set policy id 12 from "DMZ" to "Trust"  "Any" "Any" "ANY" deny log count 
+set policy id 12
+exit
+set policy id 14 from "DMZ" to "Untrust"  "Any" "Any" "ANY" deny log count 
+set policy id 14
+exit
+set policy id 16 from "CTI" to "Trust"  "WE_Adobe_01" "MIP(172.16.120.10)" "HTTP" nat src permit log 
+set policy id 16
+set dst-address "MIP(172.16.120.11)"
+set dst-address "MIP(172.16.120.12)"
+set dst-address "MIP(172.16.120.13)"
+set dst-address "MIP(172.16.120.9)"
+set service "HTTPS"
+exit
+set policy id 17 from "CTI" to "Trust"  "WE_Adobe_02" "MIP(172.16.120.10)" "HTTP" nat src permit log 
+set policy id 17
+set dst-address "MIP(172.16.120.11)"
+set dst-address "MIP(172.16.120.12)"
+set dst-address "MIP(172.16.120.13)"
+set dst-address "MIP(172.16.120.9)"
+set service "HTTPS"
+exit
+set policy id 18 from "Trust" to "CTI"  "Any" "MIP(10.120.0.2)" "ANY" nat src permit log 
+set policy id 18
+exit
+set policy id 19 from "Trust" to "CTI"  "Any" "MIP(10.120.0.4)" "ANY" nat src permit log 
+set policy id 19
+exit
+set policy id 20 name "Test1" from "Public_DMZ" to "CTI"  "Vidyo Platform Subnet BR" "Any" "ANY" permit log 
+set policy id 20
+exit
+set policy id 21 name "Test2" from "CTI" to "Public_DMZ"  "Any" "Vidyo Platform Subnet BR" "ANY" permit log 
+set policy id 21
+exit
+set policy id 22 name "LAN-DMZPublic" from "Trust" to "Public_DMZ"  "Any" "Vidyo Platform Subnet BR" "ANY" permit log count 
+set policy id 22
+set log session-init
+exit
+set policy id 23 name "DMZPublic-LAN" from "Public_DMZ" to "Trust"  "Vidyo Platform Subnet BR" "Any" "ANY" permit log 
+set policy id 23
+set log session-init
+exit
+set policy id 39 name "SBC_Internet_Out" from "Public_DMZ" to "Untrust"  "186.193.235.55/32" "Any" "ANY" permit log 
+set policy id 39
+exit
+set policy id 46 from "Public_DMZ" to "Untrust"  "VIDYO - All Appliances (BR)" "VIDYO_PORTAL01-France" "ANY" permit log 
+set policy id 46
+set dst-address "VIDYO_PORTAL02-Japan"
+set dst-address "VIDYO_PORTALPP-France"
+exit
+set policy id 24 name "DMZPublic to Internet (Vidyo)" from "Public_DMZ" to "Untrust"  "Vidyo Platform Subnet BR" "Any" "ANY" permit log 
+set policy id 24
+exit
+set policy id 38 name "SBC_Internet" from "Untrust" to "Public_DMZ"  "Any" "186.193.235.55/32" "ANY" permit log 
+set policy id 38
+exit
+set policy id 26 name "Vidyo - Management Rule" from "Untrust" to "Public_DMZ"  "Any" "BRTBRVGW01" "ECMP-Vidyo(TCP17992)" permit log 
+set policy id 26
+set dst-address "BRTBRVGW02"
+set dst-address "BRTBRVRT01"
+set dst-address "VGW01-WLP-BR-01"
+set dst-address "VR01-WLP-BR-01"
+set service "HTTP"
+set service "HTTPS"
+set service "PING"
+set service "RMCP-Vidyo(TCP17991)"
+set service "SCIP-Vidyo(TCP17990)"
+exit
+set policy id 29 from "Untrust" to "Public_DMZ"  "Any" "BRTBRVGW01" "MediaPorts-Vidyo(UDP)" permit log 
+set policy id 29
+set dst-address "BRTBRVGW02"
+set dst-address "BRTBRVRT01"
+set dst-address "VGW01-WLP-BR-01"
+set dst-address "VR01-WLP-BR-01"
+set service "RTP(UDP)"
+exit
+set policy id 35 name "RiverBed01-MonitoringIP" from "Trust" to "CTI"  "Any" "MIP(10.120.0.8)" "ANY" nat src permit log 
+set policy id 35
+exit
+set policy id 36 name "RiverBed02-MonitoringIP" from "Trust" to "CTI"  "Any" "MIP(10.120.0.9)" "ANY" nat src permit log 
+set policy id 36
+exit
+set policy id 34 name "DENY Rule" from "Public_DMZ" to "Untrust"  "Any" "Any" "ANY" deny log 
+set policy id 34
+exit
+set policy id 48 from "Untrust" to "Public_DMZ"  "Any" "BRTBRVGW01" "H245(TCP)" permit 
+set policy id 48
+set dst-address "BRTBRVGW02"
+set dst-address "BRTBRVRT01"
+set dst-address "VGW01-WLP-BR-01"
+set dst-address "VR01-WLP-BR-01"
+set service "RTP(UDP)"
+set service "TCP1720"
+set service "TCP5060"
+set service "UDP5060"
+exit
+set policy id 49 from "Untrust" to "Public_DMZ"  "Any" "BRTBRVGW01" "NTP" permit 
+set policy id 49
+set dst-address "BRTBRVGW02"
+set dst-address "BRTBRVRT01"
+set dst-address "VGW01-WLP-BR-01"
+set dst-address "VR01-WLP-BR-01"
+set service "SNMP"
+set service "SSH"
+exit
+set policy id 50 from "Untrust" to "Public_DMZ"  "ArkadinBR_Office_PublicIP" "186.193.235.54/32" "HTTP" permit 
+set policy id 50
+set src-address "Montpellier_PublicIP_Access"
+set service "HTTPS"
+set service "PING"
+exit
+set policy id 51 from "Untrust" to "Public_DMZ"  "Any" "186.193.235.54/32" "DNS" permit 
+set policy id 51
+set service "H245(TCP)"
+set service "NTP"
+set service "RTP(UDP)-Codian"
+set service "TCP1720"
+set service "TCP1755"
+set service "TCP5060"
+set service "UDP5060"
+exit
+set policy id 33 name "Cleaning Rule (Deny)" from "Untrust" to "Public_DMZ"  "Any" "Any" "ANY" deny log 
+set policy id 33
+exit
+set policy id 53 from "Trust" to "Public_DMZ"  "Any" "MIP(10.120.0.10)" "ANY" permit 
+set policy id 53
+exit
+set policy id 59 from "CTI" to "Trust"  "172.16.120.23/32" "ATL_ZABBIX" "ZABBIX_AGENT" permit 
+set policy id 59
+exit
+set policy id 60 from "CTI" to "Trust"  "172.16.120.24/32" "ATL_ZABBIX" "ZABBIX_AGENT" permit 
+set policy id 60
+exit
+set policy id 58 from "CTI" to "Trust"  "WE_Adobe_01" "MIP(172.16.120.8)" "NTP" nat src permit log 
+set policy id 58
+set src-address "WE_Adobe_02"
+exit
+set syslog config "10.100.137.24"
+set syslog config "10.100.137.24" facilities local0 local5
+set syslog config "10.100.137.89"
+set syslog config "10.100.137.89" facilities local0 local5
+set syslog enable
+set nsmgmt bulkcli reboot-timeout 60
+set ssh version v2
+set ssh enable
+set config lock timeout 5
+unset license-key auto-update
+unset telnet client enable
+set ssl encrypt 3des sha-1
+set ntp server "10.120.2.1"
+set ntp server src-interface "ethernet0/3"
+set ntp interval 1
+set snmp community "arkadin-br" Read-Only Trap-on traffic version any  
+set snmp community "sC0mmBrN3t" Read-Only Trap-on traffic version v1  
+set snmp community "noc_services" Read-Only Trap-on traffic version v1  
+set snmp community "network_services" Read-Write Trap-on traffic version any  
+set snmp host "arkadin-br" 10.100.21.151 255.255.255.255 src-interface ethernet0/3 trap v1
+set snmp host "sC0mmBrN3t" 10.0.0.0 255.0.0.0 src-interface ethernet0/3 
+set snmp host "noc_services" 10.120.23.202 255.255.255.255 src-interface ethernet0/3 trap v1
+set snmp host "noc_services" 10.100.137.55 255.255.255.255 src-interface ethernet0/3 trap v1
+set snmp host "noc_services" 10.100.137.56 255.255.255.255 src-interface ethernet0/3 trap v1
+set snmp host "noc_services" 10.100.137.57 255.255.255.255 src-interface ethernet0/3 trap v1
+set snmp host "network_services" 10.102.10.130 255.255.255.255 trap v2
+set snmp location "Sao Paulo"
+set snmp contact "br.operations@arkadin.com"
+set snmp name "BRTBRFW1"
+set snmp port listen 161
+set snmp port trap 162
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+set source-routing enable
+unset add-default-route
+set route 10.120.3.0/24 interface ethernet0/3 gateway 10.120.0.3
+set route 10.120.21.0/24 interface ethernet0/3 gateway 10.120.0.3
+set route 10.120.22.0/24 interface ethernet0/3 gateway 10.120.0.3
+set route 10.120.23.0/24 interface ethernet0/3 gateway 10.120.0.3
+set route 0.0.0.0/0 interface ethernet0/0 gateway 186.193.226.97
+set route 10.0.0.0/8 interface ethernet0/3 gateway 10.120.0.3
+set route 10.120.0.253/32 interface tunnel.3 description "For ASA Monitoring"
+set route 10.120.2.0/24 interface ethernet0/3
+set route 186.193.235.48/28 vrouter "publicdmz-vr" preference 20 metric 1
+exit
+set vrouter "cti-vr"
+set route 0.0.0.0/0 interface ethernet0/1 gateway 172.16.120.1
+exit
+set vrouter "publicdmz-vr"
+set route 0.0.0.0/0 vrouter "trust-vr" preference 20 metric 1
+exit
+set vrouter "untrust-vr"
+exit
+set vrouter "trust-vr"
+exit
+set vrouter "cti-vr"
+exit
+set vrouter "publicdmz-vr"
+exit

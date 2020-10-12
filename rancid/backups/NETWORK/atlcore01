@@ -1,0 +1,1953 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C6504-E
+!CPU: R7000, SR71000 CPU at 600Mhz, impl 0x504, Rev 1.2, 512KB L2 Cache
+!
+!Memory: main 983008K/65536K
+!Memory: nvram 1917K
+!Memory: bootflash 65536K
+!
+!Processor ID: FOX1226GDHR
+!
+!Image: Software: s72033_rp-ADVENTERPRISEK9_WAN-M, 12.2(33)SXI12, RELEASE SOFTWARE (fc2)
+!Image: Compiled: Fri 30-Aug-13 16:07 by prod_rel_team
+!Image: sup-bootdisk:s72033-adventerprisek9_wan-mz.122-33.SXI12.bin
+!
+!ROM Bootstrap: Version 12.2(17r)SX5, RELEASE SOFTWARE (fc1)
+!
+!% No entity named "raw"
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    Gi2/1, Gi2/2, Gi2/3, Gi4/2, Gi4/3, Gi4/4, Gi4/10, Gi4/17, Gi4/18, Gi4/39, Gi4/42
+!VLAN:                                                 Gi4/43, Gi4/44
+!VLAN: 2    X:10.100.0.216/29:FW-core_interc active    
+!VLAN: 3    NATIVE:core-accsSW               active    
+!VLAN: 4    NATIVE:inter-core:Po48           active    
+!VLAN: 5    VL_ATL_5_AT1-LF-01-PTP           active    
+!VLAN: 8    VLAN0008                         active    
+!VLAN: 14   M:10.100.14.0/24:MGMT_iDrac      active    
+!VLAN: 19   M:10.100.19.0/24:MGMT            active    Gi4/5, Gi4/6, Gi4/9, Gi4/23, Gi4/24, Gi4/27, Gi4/38
+!VLAN: 20   VLAN0020                         active    
+!VLAN: 21   Z:10.100.21.0/24:DMZ             active    
+!VLAN: 22   V:10.100.22.0/24:ANW_LAN         active    Gi4/1, Gi4/37, Gi4/41
+!VLAN: 23   M:10.100.23.0/24:VIPER_MGMT      active    
+!VLAN: 24   V:10.100.24.0/24:VIPER_SIP       active    
+!VLAN: 25   VLAN0025                         active    
+!VLAN: 30   V:10.100.30.0/24:HUD_LAN         active    
+!VLAN: 31   Z:10.100.31.0/24:HUD-DMZ         active    
+!VLAN: 32   V:10.100.32.0/24:HUD2_LAN        active    Gi4/16
+!VLAN: 44   M:10.100.44.0/24:VIPER_MGMT      active    
+!VLAN: 45   M:10.100.45.0/24:VIPER_SIP       active    
+!VLAN: 46   M:10.100.46.0/24:VIPER_RTP       active    
+!VLAN: 99   X:192.168.100.4/30:ospf_core     active    
+!VLAN: 100  V:192.168.100.0/24:SAN_ESX       active    
+!VLAN: 122  V:10.100.122.0/24:NYC2_LAN       active    Gi4/11
+!VLAN: 123  V:10.100.123.0/24:HUD1_LAN       active    
+!VLAN: 124  V:10.100.124.0/24:VIPER_RTP      active    Gi4/8, Gi4/21, Gi4/22
+!VLAN: 125  V:10.100.125.0/24::              active    
+!VLAN: 126  10.100.126.0/24:PP               active    
+!VLAN: 141  VLAN0141                         active    
+!VLAN: 200  X:192.168.200.24/29:NTT.L3_MPLS  active    
+!VLAN: 224  M:10.100.224.0/24:LYNC_DRAC      active    
+!VLAN: 241  M:10.100.241.0/24:LYNC_MGMT      active    
+!VLAN: 250  VLAN0250                         active    
+!VLAN: 252  X:172.31.252.8/29:CORE_SRX550    active    
+!VLAN: 253  X:172.31.252.16/29:CORE_SRX1400  active    
+!VLAN: 500  VL_ATL_500_AT1-MPLS-01           active    
+!VLAN: 535  X:10.100.0.68/30:MAN-GTT_CHI     active    
+!VLAN: 997  TEST                             active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: 1110 Z:172.16.120.32/28:AMS-LB        active    
+!VLAN: 1111 Z:172.16.120.16/28:AMS-SBC       active    
+!VLAN: 1137 M:10.100.137.0/24:SYSTEMS_MNG    active    
+!VLAN: 1204 X:172.19.64.64/27:LYNC_VISUALWAR active    
+!VLAN: 1209 X:172.19.65.64/27:LYNC_L2        active    
+!VLAN: 1230 V:172.18.160.0/24:LYNC_MT_PRD    active    
+!VLAN: 1235 V:172.18.32.0/24:Lync_Cust_Pool  active    
+!VLAN: 1236 VLAN1236                         active    
+!VLAN: 1237 VLAN1237                         active    
+!VLAN: 1241 X:172.17.64.192/27:Lync_SBC      active    
+!VLAN: 1242 VLAN1242                         active    
+!VLAN: 1249 VLAN1249                         active    
+!VLAN: 1251 VLAN1251                         active    
+!VLAN: 1252 VLAN1252                         active    
+!VLAN: 1255 VLAN1255                         active    
+!VLAN: 1256 X:172.17.65.0/27:SFB_MT_SBC      active    
+!VLAN: 1257 V:172.19.65.32/27:SFBMT_EDGE     active    
+!VLAN: 1278 X:U:172.19.66.0/24:ONE_IS_SERVIC active    
+!VLAN: 1279 S:172.19.65.128/27:LYNC_MGMT_DMZ active    
+!VLAN: 2024 X:VPN_CISCO_CCA:192.206.95.80/30 active    
+!VLAN: 2029 E:100.65.0.16/30:InterMountain:L active    
+!VLAN: 2083 X:U:172.30.251.4/30:COGENT_MAN_C active    
+!VLAN: 2084 VLAN2084                         active    
+!VLAN: 2116 Cogent-Dallas                    active    
+!VLAN: 2999 X:172.16.240.32/29:VRF_ARKATEST  active    
+!VLAN: 4001 E:192.206.95.96/27:ATL_LB2       active    
+!VLAN: 4002 VLAN4002                         active    
+!VLAN: 4019 TMP-MAWA                         active    
+!VLAN: 4020 TMP                              active    
+!VLAN: 4044 E:185.37.222.32/27:INET_DMZ      active    
+!VLAN: 4089 E:192.206.95.0/26:SHARED_DMZ     active    
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 2    enet  100002     1500  -      -      -        -    -        0      0   
+!VLAN: 3    enet  100003     1500  -      -      -        -    -        0      0   
+!VLAN: 4    enet  100004     1500  -      -      -        -    -        0      0   
+!VLAN: 5    enet  100005     1500  -      -      -        -    -        0      0   
+!VLAN: 8    enet  100008     1500  -      -      -        -    -        0      0   
+!VLAN: 14   enet  100014     1500  -      -      -        -    -        0      0   
+!VLAN: 19   enet  100019     1500  -      -      -        -    -        0      0   
+!VLAN: 20   enet  100020     1500  -      -      -        -    -        0      0   
+!VLAN: 21   enet  100021     1500  -      -      -        -    -        0      0   
+!VLAN: 22   enet  100022     1500  -      -      -        -    -        0      0   
+!VLAN: 23   enet  100023     1500  -      -      -        -    -        0      0   
+!VLAN: 24   enet  100024     1500  -      -      -        -    -        0      0   
+!VLAN: 25   enet  100025     1500  -      -      -        -    -        0      0   
+!VLAN: 30   enet  100030     1500  -      -      -        -    -        0      0   
+!VLAN: 31   enet  100031     1500  -      -      -        -    -        0      0   
+!VLAN: 32   enet  100032     1500  -      -      -        -    -        0      0   
+!VLAN: 44   enet  100044     1500  -      -      -        -    -        0      0   
+!VLAN: 45   enet  100045     1500  -      -      -        -    -        0      0   
+!VLAN: 46   enet  100046     1500  -      -      -        -    -        0      0   
+!VLAN: 99   enet  100099     1500  -      -      -        -    -        0      0   
+!VLAN: 100  enet  100100     1500  -      -      -        -    -        0      0   
+!VLAN: 122  enet  100122     1500  -      -      -        -    -        0      0   
+!VLAN: 123  enet  100123     1500  -      -      -        -    -        0      0   
+!VLAN: 124  enet  100124     1500  -      -      -        -    -        0      0   
+!VLAN: 125  enet  100125     1500  -      -      -        -    -        0      0   
+!VLAN: 126  enet  100126     1500  -      -      -        -    -        0      0   
+!VLAN: 141  enet  100141     1500  -      -      -        -    -        0      0   
+!VLAN: 200  enet  100200     1500  -      -      -        -    -        0      0   
+!VLAN: 224  enet  100224     1500  -      -      -        -    -        0      0   
+!VLAN: 241  enet  100241     1500  -      -      -        -    -        0      0   
+!VLAN: 250  enet  100250     1500  -      -      -        -    -        0      0   
+!VLAN: 252  enet  100252     1500  -      -      -        -    -        0      0   
+!VLAN: 253  enet  100253     1500  -      -      -        -    -        0      0   
+!VLAN: 500  enet  100500     1500  -      -      -        -    -        0      0   
+!VLAN: 535  enet  100535     1500  -      -      -        -    -        0      0   
+!VLAN: 997  enet  100997     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: 1110 enet  101110     1500  -      -      -        -    -        0      0   
+!VLAN: 1111 enet  101111     1500  -      -      -        -    -        0      0   
+!VLAN: 1137 enet  101137     1500  -      -      -        -    -        0      0   
+!VLAN: 1204 enet  101204     1500  -      -      -        -    -        0      0   
+!VLAN: 1209 enet  101209     1500  -      -      -        -    -        0      0   
+!VLAN: 1230 enet  101230     1500  -      -      -        -    -        0      0   
+!VLAN: 1235 enet  101235     1500  -      -      -        -    -        0      0   
+!VLAN: 1236 enet  101236     1500  -      -      -        -    -        0      0   
+!VLAN: 1237 enet  101237     1500  -      -      -        -    -        0      0   
+!VLAN: 1241 enet  101241     1500  -      -      -        -    -        0      0   
+!VLAN: 1242 enet  101242     1500  -      -      -        -    -        0      0   
+!VLAN: 1249 enet  101249     1500  -      -      -        -    -        0      0   
+!VLAN: 1251 enet  101251     1500  -      -      -        -    -        0      0   
+!VLAN: 1252 enet  101252     1500  -      -      -        -    -        0      0   
+!VLAN: 1255 enet  101255     1500  -      -      -        -    -        0      0   
+!VLAN: 1256 enet  101256     1500  -      -      -        -    -        0      0   
+!VLAN: 1257 enet  101257     1500  -      -      -        -    -        0      0   
+!VLAN: 1278 enet  101278     1500  -      -      -        -    -        0      0   
+!VLAN: 1279 enet  101279     1500  -      -      -        -    -        0      0   
+!VLAN: 2024 enet  102024     1500  -      -      -        -    -        0      0   
+!VLAN: 2029 enet  102029     1500  -      -      -        -    -        0      0   
+!VLAN: 2083 enet  102083     1500  -      -      -        -    -        0      0   
+!VLAN: 2084 enet  102084     1500  -      -      -        -    -        0      0   
+!VLAN: 2116 enet  102116     1500  -      -      -        -    -        0      0   
+!VLAN: 2999 enet  102999     1500  -      -      -        -    -        0      0   
+!VLAN: 4001 enet  104001     1500  -      -      -        -    -        0      0   
+!VLAN: 4002 enet  104002     1500  -      -      -        -    -        0      0   
+!VLAN: 4019 enet  104019     1500  -      -      -        -    -        0      0   
+!VLAN: 4020 enet  104020     1500  -      -      -        -    -        0      0   
+!VLAN: 4044 enet  104044     1500  -      -      -        -    -        0      0   
+!VLAN: 4089 enet  104089     1500  -      -      -        -    -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0x2102
+Using 48047 out of 1964024 bytes
+!
+upgrade fpd auto
+version 12.2
+service timestamps debug datetime localtime show-timezone year
+service timestamps log datetime localtime show-timezone year
+service password-encryption
+service counters max age 5
+!
+hostname atlcore01
+!
+boot-start-marker
+boot system flash sup-bootdisk:s72033-adventerprisek9_wan-mz.122-33.SXI12.bin
+boot system flash sup-bootdisk:s72033-ipservicesk9_wan-mz.122-18.SXF11.bin
+boot-end-marker
+!
+logging buffered 128000 notifications
+enable secret 5 $1$2yy6$HUkTwKcJ1UCpvPof1exvF0
+!
+!username netops privilege 15 password <removed>
+username noc privilege 0 secret 5 $1$/dRA$E0TFpURv6ki30kA.uaZoq/
+aaa new-model
+!
+aaa authentication fail-message ^CCWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login ARKANETRADIUS group radius local
+aaa authentication enable default enable
+aaa authorization exec default group radius if-authenticated 
+!
+aaa session-id common
+logging event link-status default
+!
+ip ssh authentication-retries 2
+ip ssh version 2
+ip scp server enable
+no ip domain-lookup
+ip domain-name arkadin.lan
+ip sla responder
+login on-failure log
+login on-success log
+udld aggressive
+
+vtp domain ATL-DC
+vtp mode off
+no mls acl tcam share-global
+mls netflow interface
+mls qos map cos-dscp 0 10 18 24 34 46 48 56
+no mls qos rewrite ip dscp
+mls qos
+mls cef error action freeze
+!
+file prompt quiet
+object-group ip address USATLBRI 
+ host-info 10.100.122.11
+ host-info 10.100.122.60
+ host-info 10.100.122.201
+ host-info 10.100.122.12
+ host-info 10.100.122.200
+ host-info 10.100.123.11
+ host-info 10.100.123.60
+ host-info 10.100.123.201
+ host-info 10.100.123.12
+ host-info 10.100.123.200
+ host-info 10.100.32.11
+ host-info 10.100.32.60
+ host-info 10.100.32.201
+ host-info 10.100.32.12
+ host-info 10.100.32.200
+!
+object-group ip address USATLCRS 
+ host-info 10.100.122.11
+ host-info 10.100.123.11
+ host-info 10.100.32.11
+ host-info 10.100.32.12
+ host-info 10.100.122.12
+ host-info 10.100.123.12
+!
+spanning-tree mode rapid-pvst
+spanning-tree loopguard default
+spanning-tree portfast edge bpduguard default
+spanning-tree extend system-id
+spanning-tree backbonefast
+spanning-tree vlan 1-999 priority 0
+spanning-tree vlan 1000-1136,1138-4094 priority 49152
+spanning-tree vlan 1137 priority 4096
+diagnostic bootup level minimal
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+errdisable recovery cause link-flap
+port-channel load-balance src-dst-port
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+!
+redundancy
+ main-cpu
+  auto-sync running-config
+ mode sso
+!
+ip access-list extended ACL_BLOCK_WIN2003
+ permit tcp any addrgroup USATLBRI eq ftp log
+ permit tcp any addrgroup USATLBRI eq 443 log
+ permit tcp any addrgroup USATLBRI eq 1433 log
+ permit tcp any addrgroup USATLBRI eq 3389 log
+ permit tcp host 10.115.34.161 addrgroup USATLCRS eq 135
+ permit tcp host 10.115.34.161 addrgroup USATLCRS eq 137
+ permit tcp host 10.115.34.161 addrgroup USATLCRS eq 138
+ permit tcp host 10.115.34.161 addrgroup USATLCRS eq 139
+ deny   tcp any addrgroup USATLBRI eq www
+ deny   tcp any addrgroup USATLBRI eq 445
+ deny   tcp any addrgroup USATLBRI eq 135
+ deny   tcp any addrgroup USATLBRI eq 137
+ deny   tcp any addrgroup USATLBRI eq 138
+ deny   tcp any addrgroup USATLBRI eq 139
+ permit ip any any
+ip access-list extended ACL_FSVM_R440_SERVER_V4
+ remark ALLOWING ESTABLISHED TRAFFIC FOR FSVM
+ permit tcp 10.100.19.70 0.0.0.1 any established
+ permit tcp 10.100.19.72 0.0.0.7 any established
+ remark ALLOWING ICMP TRAFFIC  FOR FSVM
+ permit icmp 10.100.19.70 0.0.0.1 any
+ permit icmp 10.100.19.72 0.0.0.7 any
+ remark DENYING ALL OTHER TRAFFIC FROM FSVM
+ deny   ip 10.100.19.70 0.0.0.1 any
+ deny   ip 10.100.19.72 0.0.0.7 any
+ remark ALLOWING ALL OTHER TRAFFIC
+ permit ip any any
+ip access-list extended ACL_VLAN_1137
+ permit udp 10.100.137.0 0.0.0.255 host 224.0.0.2 eq 1985
+ permit ip 10.115.137.0 0.0.0.255 10.100.137.0 0.0.0.255
+ permit ip 10.250.137.0 0.0.0.255 10.100.137.0 0.0.0.255
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+!
+vlan internal allocation policy ascending
+vlan access-log ratelimit 2000
+!
+vlan 2
+ name X:10.100.0.216/29:FW-core_interc
+!
+vlan 3
+ name NATIVE:core-accsSW
+!
+vlan 4
+ name NATIVE:inter-core:Po48
+!
+vlan 5
+ name VL_ATL_5_AT1-LF-01-PTP
+!
+vlan 8 
+!
+vlan 14
+ name M:10.100.14.0/24:MGMT_iDrac
+!
+vlan 19
+ name M:10.100.19.0/24:MGMT
+!
+vlan 20 
+!
+vlan 21
+ name Z:10.100.21.0/24:DMZ
+!
+vlan 22
+ name V:10.100.22.0/24:ANW_LAN
+!
+vlan 23
+ name M:10.100.23.0/24:VIPER_MGMT
+!
+vlan 24
+ name V:10.100.24.0/24:VIPER_SIP
+!
+vlan 25 
+!
+vlan 30
+ name V:10.100.30.0/24:HUD_LAN
+!
+vlan 31
+ name Z:10.100.31.0/24:HUD-DMZ
+!
+vlan 32
+ name V:10.100.32.0/24:HUD2_LAN
+!
+vlan 44
+ name M:10.100.44.0/24:VIPER_MGMT
+!
+vlan 45
+ name M:10.100.45.0/24:VIPER_SIP
+!
+vlan 46
+ name M:10.100.46.0/24:VIPER_RTP
+!
+vlan 99
+ name X:192.168.100.4/30:ospf_core
+!
+vlan 100
+ name V:192.168.100.0/24:SAN_ESX
+!
+vlan 122
+ name V:10.100.122.0/24:NYC2_LAN
+!
+vlan 123
+ name V:10.100.123.0/24:HUD1_LAN
+!
+vlan 124
+ name V:10.100.124.0/24:VIPER_RTP
+!
+vlan 125
+ name V:10.100.125.0/24::
+!
+vlan 126
+ name 10.100.126.0/24:PP
+!
+vlan 141 
+!
+vlan 200
+ name X:192.168.200.24/29:NTT.L3_MPLS
+!
+vlan 224
+ name M:10.100.224.0/24:LYNC_DRAC
+!
+vlan 241
+ name M:10.100.241.0/24:LYNC_MGMT
+!
+vlan 250 
+!
+vlan 252
+ name X:172.31.252.8/29:CORE_SRX550
+!
+vlan 253
+ name X:172.31.252.16/29:CORE_SRX1400
+!
+vlan 500
+ name VL_ATL_500_AT1-MPLS-01
+!
+vlan 535
+ name X:10.100.0.68/30:MAN-GTT_CHI
+!
+vlan 997
+ name TEST
+!
+vlan 1110
+ name Z:172.16.120.32/28:AMS-LB
+!
+vlan 1111
+ name Z:172.16.120.16/28:AMS-SBC
+!
+vlan 1137
+ name M:10.100.137.0/24:SYSTEMS_MNG
+!
+vlan 1204
+ name X:172.19.64.64/27:LYNC_VISUALWAR
+!
+vlan 1209
+ name X:172.19.65.64/27:LYNC_L2
+!
+vlan 1230
+ name V:172.18.160.0/24:LYNC_MT_PRD
+!
+vlan 1235
+ name V:172.18.32.0/24:Lync_Cust_Pool
+!
+vlan 1236-1237 
+!
+vlan 1241
+ name X:172.17.64.192/27:Lync_SBC
+!
+vlan 1242,1249,1251-1252,1255 
+!
+vlan 1256
+ name X:172.17.65.0/27:SFB_MT_SBC
+!
+vlan 1257
+ name V:172.19.65.32/27:SFBMT_EDGE
+!
+vlan 1278
+ name X:U:172.19.66.0/24:ONE_IS_SERVIC
+!
+vlan 1279
+ name S:172.19.65.128/27:LYNC_MGMT_DMZ
+!
+vlan 2024
+ name X:VPN_CISCO_CCA:192.206.95.80/30
+!
+vlan 2029
+ name E:100.65.0.16/30:InterMountain:L
+!
+vlan 2083
+ name X:U:172.30.251.4/30:COGENT_MAN_C
+!
+vlan 2084 
+!
+vlan 2116
+ name Cogent-Dallas
+!
+vlan 2999
+ name X:172.16.240.32/29:VRF_ARKATEST
+!
+vlan 4001
+ name E:192.206.95.96/27:ATL_LB2
+!
+vlan 4002 
+!
+vlan 4019
+ name TMP-MAWA
+!
+vlan 4020
+ name TMP
+!
+vlan 4044
+ name E:185.37.222.32/27:INET_DMZ
+!
+vlan 4089
+ name E:192.206.95.0/26:SHARED_DMZ
+lldp run
+!
+interface Loopback0
+ description Lo:172.30.100.5:CORE_iBGP
+ ip address 172.30.100.3 255.255.255.255
+!
+interface Loopback5
+ description fabric test prefix                      
+ ip address 10.100.255.2 255.255.255.255
+!
+interface Loopback11
+ ip address 10.100.254.11 255.255.255.255
+!
+interface Port-channel4
+ description SHUT:Po4:atlaccs08:Po1
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 19,22-24,30,32,122-124
+ switchport mode trunk
+ speed 1000
+ speed nonegotiate
+ duplex full
+!
+interface Port-channel5
+ description Q:Po5:atlaccs07:Po2
+ switchport
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 1-3,5-4094
+ load-interval 30
+!
+interface Port-channel10
+ description Q:atlixag01:po10
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1,5-4094
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ spanning-tree link-type point-to-point
+!
+interface Port-channel48
+ description Q:Po48:atlcore02:Po48
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 4
+ switchport trunk allowed vlan 1,2,4,6-499,501-1009,1011-4094
+ switchport mode trunk
+ load-interval 30
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet1/1
+ no ip address
+ shutdown
+!
+interface GigabitEthernet1/2
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/1
+ description E:GTT-00345840
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 535
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ shutdown
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/2
+ description MAN:NR:1-204604497:COGENT_MAN_CHI_1G
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 2024,2029,2083
+ switchport mode trunk
+ mtu 9216
+ logging event link-status
+ load-interval 30
+ speed nonegotiate
+!
+interface GigabitEthernet2/3
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1498,1499
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/4
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/5
+ no ip address
+ logging event link-status
+ load-interval 30
+!
+interface GigabitEthernet2/6
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/7
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/8
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/9
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/10
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/11
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/12
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/13
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/14
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/15
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/16
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/17
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/18
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/19
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/20
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/21
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/22
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/23
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/24
+ no ip address
+ logging event link-status
+ load-interval 30
+ shutdown
+!
+interface TenGigabitEthernet3/1
+ description X:atlsbc02a:M00
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 24,122,124,1204,1236,1241,1251,1256
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+!
+interface TenGigabitEthernet3/2
+ no ip address
+ shutdown
+!
+interface TenGigabitEthernet3/3
+ description Q:at1-lf-01:swp48:fabric-integration      
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 5,19,21-24,31,32,44-46,124,125,500,1110,1137
+ switchport trunk allowed vlan add 4001,4044,4089
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+!
+interface TenGigabitEthernet3/4
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/1
+ description M:atlsbc01a:MGMT
+ switchport
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/2
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 19,1204,1237,1242
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/3
+ description X:USNYCSBC3A:M00
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 24,122,124,1204,1236,1241,1251,1256
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ wrr-queue bandwidth 20 100 200 
+ priority-queue queue-limit 5 
+ wrr-queue queue-limit 65 15 15 
+ wrr-queue random-detect min-threshold 1 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 2 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 3 40 40 50 50 60 60 70 70 
+ wrr-queue random-detect max-threshold 1 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 2 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 3 70 70 80 80 90 90 100 100 
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/4
+ description X:USNYCSBC3A:M01
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 24,122,124,1204,1236,1241,1251,1256
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ wrr-queue bandwidth 20 100 200 
+ priority-queue queue-limit 5 
+ wrr-queue queue-limit 65 15 15 
+ wrr-queue random-detect min-threshold 1 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 2 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 3 40 40 50 50 60 60 70 70 
+ wrr-queue random-detect max-threshold 1 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 2 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 3 70 70 80 80 90 90 100 100 
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/5
+ description PDU-RIGHT
+ switchport
+ switchport access vlan 19
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/6
+ description M:PDU-LEFT::
+ switchport
+ switchport access vlan 19
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/7
+ description Q:atlucaccs06:Gi0/22
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 22,24,125,141,224,241,1204,1209,1235-1237,1241
+ switchport trunk allowed vlan add 1242,1249-1252,1255-1257,1279,4044
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+!
+interface GigabitEthernet4/8
+ switchport
+ switchport access vlan 124
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/9
+ description PULSE_PSA300_INT
+ switchport
+ switchport access vlan 19
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ speed 1000
+ duplex full
+ wrr-queue bandwidth 20 100 200 
+ priority-queue queue-limit 5 
+ wrr-queue queue-limit 65 15 15 
+ wrr-queue random-detect min-threshold 1 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 2 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 3 40 40 50 50 60 60 70 70 
+ wrr-queue random-detect max-threshold 1 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 2 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 3 70 70 80 80 90 90 100 100 
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/10
+ description SHUT:USHUDIMG2
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 24,122,124,1204
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ shutdown
+ wrr-queue bandwidth 20 100 200 
+ priority-queue queue-limit 5 
+ wrr-queue queue-limit 65 15 15 
+ wrr-queue random-detect min-threshold 1 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 2 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 3 40 40 50 50 60 60 70 70 
+ wrr-queue random-detect max-threshold 1 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 2 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 3 70 70 80 80 90 90 100 100 
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ mls qos trust device cisco-phone
+ mls qos trust cos
+ auto qos voip cisco-phone 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/11
+ description S:USNYCIMG8:Data0
+ switchport
+ switchport access vlan 122
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/12
+ description USNYCOPS1
+ switchport
+ switchport access vlan 122
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ speed 1000
+ duplex full
+ wrr-queue bandwidth 20 100 200 
+ priority-queue queue-limit 5 
+ wrr-queue queue-limit 65 15 15 
+ wrr-queue random-detect min-threshold 1 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 2 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 3 40 40 50 50 60 60 70 70 
+ wrr-queue random-detect max-threshold 1 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 2 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 3 70 70 80 80 90 90 100 100 
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ mls qos trust cos
+ auto qos voip trust 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/13
+ description X:atlfwsrx01-1:ge-0/0/0
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 19,253,1111,1204,1209,1232,1234,1237,1239,1242
+ switchport trunk allowed vlan add 1252,1257,1279
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ wrr-queue bandwidth 20 100 200 
+ priority-queue queue-limit 5 
+ wrr-queue queue-limit 65 15 15 
+ wrr-queue random-detect min-threshold 1 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 2 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 3 40 40 50 50 60 60 70 70 
+ wrr-queue random-detect max-threshold 1 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 2 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 3 70 70 80 80 90 90 100 100 
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ mls qos trust dscp
+ auto qos voip trust 
+ spanning-tree portfast edge trunk
+!
+interface GigabitEthernet4/14
+ description Q:atlaccs11:Gi1/0/5
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 19,21
+ switchport mode trunk
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+!
+interface GigabitEthernet4/15
+ description "Span port to atlgigamon port 11"
+ switchport
+ switchport access vlan 31
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ wrr-queue bandwidth 20 100 200 
+ priority-queue queue-limit 5 
+ wrr-queue queue-limit 65 15 15 
+ wrr-queue random-detect min-threshold 1 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 2 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 3 40 40 50 50 60 60 70 70 
+ wrr-queue random-detect max-threshold 1 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 2 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 3 70 70 80 80 90 90 100 100 
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ mls qos trust dscp
+ auto qos voip trust 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/16
+ description X:atlfwsrx01-1:ge-0/0/2
+ switchport
+ switchport access vlan 32
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ wrr-queue bandwidth 20 100 200 
+ priority-queue queue-limit 5 
+ wrr-queue queue-limit 65 15 15 
+ wrr-queue random-detect min-threshold 1 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 2 70 100 100 100 100 100 100 100 
+ wrr-queue random-detect min-threshold 3 40 40 50 50 60 60 70 70 
+ wrr-queue random-detect max-threshold 1 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 2 100 100 100 100 100 100 100 100 
+ wrr-queue random-detect max-threshold 3 70 70 80 80 90 90 100 100 
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ mls qos trust cos
+ auto qos voip trust 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/17
+ description ATLACCS09-port48-cableid-20357304
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/18
+ description ATLACCS09-port47-cableid-20357308
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/19
+ description Q:atlaccs12:Gi1/0/5
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 19
+ switchport mode trunk
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+!
+interface GigabitEthernet4/20
+ no ip address
+ shutdown
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+!
+interface GigabitEthernet4/21
+ switchport
+ switchport access vlan 124
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/22
+ switchport
+ switchport access vlan 124
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/23
+ description M:atlcons02_rack207
+ switchport
+ switchport access vlan 19
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/24
+ description M:altcons01
+ switchport
+ switchport access vlan 19
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ wrr-queue cos-map 2 1 1 2 
+ wrr-queue cos-map 3 5 3 4 
+ wrr-queue cos-map 3 7 6 7 
+ rcv-queue cos-map 1 2 1 
+ rcv-queue cos-map 1 3 2 
+ rcv-queue cos-map 1 4 3 
+ rcv-queue cos-map 1 5 4 
+ rcv-queue cos-map 1 6 5 
+ rcv-queue cos-map 1 7 6 
+ rcv-queue cos-map 1 8 7 
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/25
+ description Q:atlaccs06:Gi1/45
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/26
+ description atlixrt01:gi0/0/3
+ no ip address
+ shutdown
+!
+interface GigabitEthernet4/27
+ description M:atlvpn01-1:ge-0/0/0:SRX550
+ switchport
+ switchport access vlan 19
+ switchport mode access
+ logging event link-status
+ load-interval 30
+!
+interface GigabitEthernet4/28
+ description Q:atlucaccs05:Gi0/22
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 19,22,125,141,224,241,1204,1209,1235-1237,1241
+ switchport trunk allowed vlan add 1242,1249,1251,1252,1255-1257,1278,1279,4044
+ switchport trunk allowed vlan add 4089
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+!
+interface GigabitEthernet4/29
+ description Q:atlaccs01:Gi0/47
+ switchport
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 1-3,5-4094
+ load-interval 30
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet4/30
+ description Q:atlaccs02:Gi0/45
+ switchport
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 1-3,5-4094
+ load-interval 30
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet4/31
+ description Q:atlaccs03:Gi0/47
+ switchport
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 1-3,5-4094
+ logging event link-status
+ load-interval 30
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet4/32
+ no ip address
+!
+interface GigabitEthernet4/33
+ description Q:atlaccs05:Gi0/47
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+!
+interface GigabitEthernet4/34
+ description Q:atlaccs04:Gi0/41:TMP
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 1-3,5-4094
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+!
+interface GigabitEthernet4/35
+ description Q:Po5:atlaccs07:Po2:Gi0/47
+ switchport
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 1-3,5-4094
+ logging event link-status
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-group 5 mode active
+!
+interface GigabitEthernet4/36
+ description Q:Po5:atlaccs07:Po2:Gi0/47
+ switchport
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 1-3,5-4094
+ logging event link-status
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-group 5 mode active
+!
+interface GigabitEthernet4/37
+ description M:USNYCSBC3A:MGMT
+ switchport
+ switchport access vlan 22
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ spanning-tree portfast edge
+!
+interface GigabitEthernet4/38
+ description atlinet01:fxp0
+ switchport
+ switchport access vlan 19
+ switchport mode access
+ logging event link-status
+ load-interval 30
+!
+interface GigabitEthernet4/39
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 19,22-24,30,32,122-124
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ shutdown
+ speed 1000
+ duplex full
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet4/40
+ description Q:atlixag01:G/40
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1,5-4094
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-group 10 mode desirable
+!
+interface GigabitEthernet4/41
+ description M:atlixrt02:Gi0
+ switchport
+ switchport access vlan 22
+ switchport mode access
+ load-interval 30
+!
+interface GigabitEthernet4/42
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 19,22-24,30,32,122-124
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ shutdown
+ speed 1000
+ duplex full
+ spanning-tree link-type point-to-point
+!
+interface GigabitEthernet4/43
+ description SHUT:Po4:atlaccs08:Po1:Gi1/45
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 19,22-24,30,32,122-124
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ shutdown
+ speed 1000
+ duplex full
+ spanning-tree link-type point-to-point
+ channel-group 4 mode on
+!
+interface GigabitEthernet4/44
+ description SHUT:Po4:atlaccs08:Po1:Gi1/46
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 19,22-24,30,32,122-124
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ shutdown
+ speed 1000
+ duplex full
+ spanning-tree link-type point-to-point
+ channel-group 4 mode on
+!
+interface GigabitEthernet4/45
+ description X:atlfwsrx01-1:ge-0/0/4
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 24,122,124,1204,1236,1241
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ speed 100
+ duplex full
+!
+interface GigabitEthernet4/46
+ description Q:atlixag01:Gi4/46
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1,5-4094
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-group 10 mode desirable
+!
+interface GigabitEthernet4/47
+ description Q:Po48:atlcore02:Gi3/47
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 4
+ switchport trunk allowed vlan 1,2,4,6-499,501-1009,1011-4094
+ switchport mode trunk
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-protocol pagp
+ channel-group 48 mode desirable
+!
+interface GigabitEthernet4/48
+ description Q:Po48:atlcore02:Gi3/48
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 4
+ switchport trunk allowed vlan 1,2,4,6-499,501-1009,1011-4094
+ switchport mode trunk
+ load-interval 30
+ spanning-tree link-type point-to-point
+ channel-protocol pagp
+ channel-group 48 mode desirable
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan2
+ ip address 10.100.0.217 255.255.255.248
+ standby 2 ip 10.100.0.222
+ standby 2 priority 200
+ standby 2 preempt
+!
+interface Vlan5
+ description X:at1-lf-01:swp48.5:fabric-integration
+ ip address 172.22.6.1 255.255.255.254
+!
+interface Vlan14
+ ip address 10.100.14.252 255.255.255.0
+ standby version 2
+ standby 14 ip 10.100.14.254
+ standby 14 priority 200
+ standby 14 preempt
+!
+interface Vlan19
+ ip address 10.100.19.252 255.255.255.0
+ ip access-group ACL_FSVM_R440_SERVER_V4 in
+ standby 19 ip 10.100.19.254
+ standby 19 priority 200
+ standby 19 preempt
+!
+interface Vlan22
+ ip address 10.100.22.250 255.255.255.0
+ standby 22 ip 10.100.22.254
+ standby 22 priority 200
+ standby 22 preempt
+!
+interface Vlan23
+ ip address 10.100.23.250 255.255.255.0
+ standby 23 ip 10.100.23.254
+ standby 23 priority 200
+ standby 23 preempt
+!
+interface Vlan24
+ ip address 10.100.24.253 255.255.255.0
+ standby 24 ip 10.100.24.254
+ standby 24 priority 200
+ standby 24 preempt
+!
+interface Vlan30
+ ip address 10.100.30.252 255.255.255.0
+ standby 30 ip 10.100.30.254
+ standby 30 priority 200
+ standby 30 preempt
+!
+interface Vlan32
+ ip address 10.100.32.250 255.255.255.0
+ ip access-group ACL_BLOCK_WIN2003 out
+ standby 32 ip 10.100.32.254
+ standby 32 priority 200
+ standby 32 preempt
+!
+interface Vlan44
+ ip address 10.100.44.252 255.255.255.0
+ standby 44 ip 10.100.44.254
+ standby 44 priority 200
+ standby 44 preempt
+!
+interface Vlan45
+ ip address 10.100.45.252 255.255.255.0
+ standby 45 ip 10.100.45.254
+ standby 45 priority 200
+ standby 45 preempt
+!
+interface Vlan46
+ ip address 10.100.46.252 255.255.255.0
+ standby 46 ip 10.100.46.254
+ standby 46 priority 200
+ standby 46 preempt
+!
+interface Vlan99
+ description X:192.168.100.4/30:ospf_core
+ ip address 192.168.100.5 255.255.255.252
+ ip ospf authentication message-digest
+! ip ospf message-digest-key 1 md5 <removed>
+!
+interface Vlan122
+ ip address 10.100.122.253 255.255.255.0
+ ip access-group ACL_BLOCK_WIN2003 out
+ standby 122 ip 10.100.122.254
+ standby 122 priority 200
+ standby 122 preempt
+!
+interface Vlan123
+ ip address 10.100.123.250 255.255.255.0
+ ip access-group ACL_BLOCK_WIN2003 out
+ standby version 2
+ standby 123 ip 10.100.123.254
+ standby 123 priority 200
+ standby 123 preempt
+!
+interface Vlan124
+ ip address 10.100.124.250 255.255.255.0
+ standby version 2
+ standby 124 ip 10.100.124.254
+ standby 124 priority 200
+ standby 124 preempt
+!
+interface Vlan125
+ ip address 10.100.125.253 255.255.255.0
+ standby version 2
+ standby 125 ip 10.100.125.254
+ standby 125 priority 200
+ standby 125 preempt
+!
+interface Vlan126
+ ip address 10.100.126.252 255.255.255.0
+ standby version 2
+ standby 126 ip 10.100.126.254
+ standby 126 timers 1 2
+ standby 126 priority 110
+ standby 126 preempt
+!
+interface Vlan224
+ ip address 10.100.224.253 255.255.255.0
+ standby version 2
+ standby 224 ip 10.100.224.254
+ standby 224 priority 200
+ standby 224 preempt
+!
+interface Vlan241
+ ip address 10.100.241.250 255.255.255.0
+ standby version 2
+ standby 241 ip 10.100.241.254
+ standby 241 priority 200
+ standby 241 preempt
+!
+interface Vlan252
+ description X:172.31.252.8/29:CORE_SRX550_interco
+ ip address 172.31.252.10 255.255.255.248
+ standby version 2
+ standby 252 ip 172.31.252.9
+ standby 252 preempt
+!
+interface Vlan253
+ description X:172.31.252.16/29:CORE_SRX1400_interco
+ ip address 172.31.252.18 255.255.255.248
+ standby version 2
+ standby 253 ip 172.31.252.17
+ standby 253 preempt
+!
+interface Vlan1137
+ description ATL SYSTEMS MANAGEMENT
+ ip address 10.100.137.252 255.255.255.0
+ standby 1 ip 10.100.137.254
+ standby 1 timers 1 4
+ standby 1 priority 200
+ standby 1 preempt
+!
+interface Vlan1235
+ ip address 172.18.32.251 255.255.255.0
+ shutdown
+ standby version 2
+ standby 1235 ip 172.18.32.254
+ standby 1235 priority 200
+ standby 1235 preempt
+!
+interface Vlan2083
+ description Cog-CHI-DC
+ ip address 10.100.0.74 255.255.255.252
+ ip ospf cost 10
+ shutdown
+!
+interface Vlan2147
+ ip address 10.100.0.33 255.255.255.252
+ ip ospf cost 10
+ load-interval 30
+!
+interface Vlan2998
+ ip address 172.16.241.35 255.255.255.248
+!
+interface Vlan2999
+ description X:atlixrt01:Gi0/0/1.2999:VRF_ARKADIN
+ ip address 172.16.240.35 255.255.255.248
+!
+interface Vlan4020
+ ip address 192.168.0.200 255.255.255.0
+ shutdown
+!
+router ospf 1
+ router-id 172.30.100.3
+ log-adjacency-changes
+ auto-cost reference-bandwidth 100000
+ network 172.30.100.3 0.0.0.0 area 0
+ network 192.168.100.4 0.0.0.3 area 0
+!
+router bgp 65116
+ bgp router-id 172.30.100.3
+ bgp log-neighbor-changes
+ neighbor MAN-US-PG-eBGP-CHI peer-group
+ neighbor MAN-US-PG-eBGP-CHI remote-as 65117
+ neighbor MAN-US-PG-eBGP-CHI ebgp-multihop 10
+ neighbor MAN-US-PG-eBGP-CHI update-source Loopback0
+ neighbor MAN-US-PG-eBGP-CHI version 4
+ neighbor MAN-US-PG-eBGP-CHI timers 1 3
+ neighbor 172.16.240.33 remote-as 53550
+ neighbor 172.16.240.33 transport path-mtu-discovery
+ neighbor 172.16.240.33 version 4
+ neighbor 172.16.240.33 timers 2 7
+ neighbor 172.22.6.0 remote-as 4200923137
+ neighbor 172.22.6.0 description at1-lf-01
+ neighbor 172.22.6.0 timers 2 6
+ neighbor 172.30.100.4 remote-as 65116
+ neighbor 172.30.100.4 transport path-mtu-discovery
+ neighbor 172.30.100.4 update-source Loopback0
+ neighbor 172.30.100.4 version 4
+ neighbor 172.30.100.4 timers 2 7
+ !
+ address-family ipv4
+  redistribute static
+  neighbor MAN-US-PG-eBGP-CHI soft-reconfiguration inbound
+  neighbor 172.16.240.33 activate
+  neighbor 172.16.240.33 soft-reconfiguration inbound
+  neighbor 172.16.240.33 route-map ASR_VRF_ARKADIN_OUT out
+  neighbor 172.22.6.0 activate
+  neighbor 172.22.6.0 default-originate
+  neighbor 172.30.100.4 activate
+  neighbor 172.30.100.4 next-hop-self
+  neighbor 172.30.100.4 soft-reconfiguration inbound
+  no auto-summary
+  no synchronization
+  network 10.10.80.0 mask 255.255.255.0
+  network 10.10.180.0 mask 255.255.255.0
+  network 10.100.0.216 mask 255.255.255.248
+  network 10.100.14.0 mask 255.255.255.0
+  network 10.100.19.0 mask 255.255.255.0
+  network 10.100.21.0 mask 255.255.255.0
+  network 10.100.22.0 mask 255.255.255.0
+  network 10.100.23.0 mask 255.255.255.0
+  network 10.100.24.0 mask 255.255.255.0
+  network 10.100.30.0 mask 255.255.255.0
+  network 10.100.31.0 mask 255.255.255.0
+  network 10.100.32.0 mask 255.255.255.0
+  network 10.100.42.0 mask 255.255.255.0
+  network 10.100.43.0 mask 255.255.255.0
+  network 10.100.44.0 mask 255.255.255.0
+  network 10.100.45.0 mask 255.255.255.0
+  network 10.100.46.0 mask 255.255.255.0
+  network 10.100.122.0 mask 255.255.255.0
+  network 10.100.123.0 mask 255.255.255.0
+  network 10.100.124.0 mask 255.255.255.0
+  network 10.100.125.0 mask 255.255.255.0
+  network 10.100.126.0 mask 255.255.255.0
+  network 10.100.137.0 mask 255.255.255.0
+  network 10.100.224.0 mask 255.255.255.0
+  network 10.100.241.0 mask 255.255.255.0
+  network 10.100.254.0 mask 255.255.255.0
+  network 10.100.255.2 mask 255.255.255.255
+  network 10.121.2.0 mask 255.255.255.0
+  network 10.122.0.0 mask 255.255.0.0
+  network 10.222.4.79 mask 255.255.255.255
+  network 172.22.4.0 mask 255.255.252.0
+  network 172.31.252.8 mask 255.255.255.248
+  network 192.168.1.0
+  network 192.168.47.0
+  aggregate-address 10.200.0.0 255.255.0.0 summary-only
+  aggregate-address 10.100.112.0 255.255.240.0 summary-only
+ exit-address-family
+!
+ip classless
+ip forward-protocol nd
+ip route 0.0.0.0 0.0.0.0 172.31.252.22
+ip route 10.100.0.208 255.255.255.252 10.100.0.34
+ip route 10.100.8.0 255.255.255.0 10.100.0.34
+ip route 10.100.21.0 255.255.255.0 172.31.252.22
+ip route 10.100.31.0 255.255.255.0 172.31.252.22
+ip route 10.100.42.0 255.255.255.0 10.100.19.248
+ip route 10.100.108.0 255.255.255.0 10.100.0.34
+ip route 10.100.254.5 255.255.255.255 10.100.0.34
+ip route 10.122.0.0 255.255.0.0 Null0
+ip route 10.200.0.0 255.255.0.0 Null0
+ip route 10.222.4.79 255.255.255.255 10.100.0.221 name SAPIENT_VPN
+ip route 172.16.83.0 255.255.255.0 172.31.252.14
+ip route 172.22.4.0 255.255.252.0 Null0
+ip route 192.168.1.0 255.255.255.0 Null0
+!
+ip community-list standard COMM_AT1-MIGRATIONS_V4 permit 4200923236
+!
+no ip http server
+no ip http secure-server
+!
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 10.0.1.0/30
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 10.0.1.36/30
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 10.10.80.0/24
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 10.10.180.0/24
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 10.100.0.0/16
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 10.100.0.0/16 le 32
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 10.100.0.0/19
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 10.100.112.0/20
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 10.100.224.0/19
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 10.100.224.0/24
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 10.121.2.0/24
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 10.122.0.0/16
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 10.200.0.0/16
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 10.222.4.79/32
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 172.16.0.0/12
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 172.16.83.0/24
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 172.22.4.0/22
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 172.31.252.8/29
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 192.168.1.0/24
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN permit 192.168.240.0/22 le 32
+ip prefix-list PFX-BGP-OUT-ASR-ARKADIN deny 0.0.0.0/0 le 32
+!
+ip prefix-list PFX_AT1_V4 permit 10.0.1.36/30
+ip prefix-list PFX_AT1_V4 permit 10.122.0.0/16 le 32
+ip prefix-list PFX_AT1_V4 permit 172.22.4.0/22 ge 30 le 31
+ip prefix-list PFX_AT1_V4 permit 192.168.1.0/24 ge 32
+ip prefix-list PFX_AT1_V4 permit 192.206.95.192/29
+ip radius source-interface Vlan19 
+logging trap notifications
+logging origin-id hostname
+logging facility local5
+logging source-interface Vlan19
+logging 10.100.137.24
+logging 10.100.137.89
+!
+route-map ASR_VRF_ARKADIN_OUT permit 10
+ match ip address prefix-list PFX-BGP-OUT-ASR-ARKADIN
+!
+route-map RM_IMP_AT1_V4 permit 5
+ match community COMM_AT1-MIGRATIONS_V4
+!
+route-map RM_IMP_AT1_V4 permit 10
+ match ip address prefix-list PFX_AT1_V4
+!
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server ifindex persist
+snmp-server location noram-atl
+snmp-server contact nio@arkadin.com
+snmp-server host 10.100.19.21 version 2c noc_services 
+snmp-server host 10.100.137.55 version 2c noc_services 
+snmp ifmib ifindex persist
+!
+radius-server host 10.115.38.110 auth-port 1812 acct-port 1813
+radius-server host 10.100.92.1 auth-port 1812 acct-port 1813
+radius-server timeout 3
+!radius-server key <removed>
+!
+control-plane
+!
+dial-peer cor custom
+!
+banner login ^C====================================================================
+=         UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED         =
+=    You must have explicit, authorized permission to access or    =
+=   configure this device. Unauthorized attempts and actions to    =
+=   access or use this system may result in civil and/or criminal  =
+= All activities performed on this device are logged and monitored =
+====================================================================
+^C
+alias exec siib sh ip int brief
+alias exec u undebug all
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+privilege exec level 0 show environment
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+!
+monitor session 1 source interface Gi4/3 - 4
+monitor session 1 destination interface Gi4/12
+monitor session 2 destination interface Gi4/15
+ntp source Vlan19
+ntp server 10.100.51.1 prefer
+ntp server 10.122.97.1
+mac-address-table aging-time 14400
+!
+end

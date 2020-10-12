@@ -18,6 +18,8 @@ urlpatterns = [
     path('statool/', views.statool, name='statool-home'),
     path('scripts/', views.scripts, name='scripts'),
     path('salt/', views.salt, name='salt'),
+    path('saltv2/', views.saltv2, name='saltv2'),
+    path('findpattern/', views.findpattern, name='findpattern'),
 
 # Go to RESULTS webpages
 # "Panaceia" website results
@@ -29,9 +31,14 @@ urlpatterns = [
     path('saltout/', views.saltout, name='saltout'),
     path('saltapipage/', views.saltapi, name='saltapi'),
 
+# "Findpattern" website
+#    path('findpattern/', views.findpattern, name='findpattern'),
+
 # "SALT Scripts" website results
-    path('showfromapi/', views.showfromapi, name='showfromapi'),
-    path('showfromapi2/', views.showfromapi2, name='showfromapi2'),
+    path('showstandalone/', views.showstandalone, name='showstandalone'),
+    path('showbgpstatus/', views.showbgpstatus, name='showbgpstatus'),
+    path('showstandpepper/', views.showstandpepper, name='showstandpepper'),
+#    path('showstandpepper1/', views.showstandpepper1, name='showstandpepper1'),
     path('showfromdrop/', views.showfromdrop, name='showfromdrop'),
 #    path('salt/devices/*', views.showfromdrop, name='showfromdrop'),
     path('showfrombox/', views.showfrombox, name='showfrombox'),

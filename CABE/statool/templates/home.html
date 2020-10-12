@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-  <title>Home Statool</title>
+  <title>NIO Team</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -16,33 +16,52 @@
 </head>
 
 <body>
-  <!-- your sidebar here -->
   <div class="wrapper ">
-    <div class="sidebar" data-color="green" data-background-color="green">
+    <!-- your sidebar STARTs here -->
+    <div class="sidebar" data-color="azure" data-background-color="azure">
       <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
       Tip 2: you can also add an image using data-image tag
       -->
       <div class="logo">
         <a href="http://www.arkadin.com" class="simple-text logo-mini">
-          NIO Team
-        </a>
-        <a href="http://www.arkadin.com" class="simple-text logo-normal">
-          Tools Main
+          NIO Team tools
         </a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active  ">
-            <a class="nav-link" href="{% url 'statool-home' %}" data-color="orange">
-              <i class="material-icons">dashboard</i>
-              <p>Local Status Tool</p>
+            <a class="nav-link" href="{% url 'salt' %}">
+              <i class="material-icons">bubble_chart</i>
+              <p>SALT API Queries V1</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="{% url 'statool-home' %}">
               <i class="material-icons">dashboard</i>
               <p>Item 1</p>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav">
+          <li class="nav-item active  ">
+            <a class="nav-link" href="{% url 'saltv2' %}">
+              <i class="material-icons">bubble_chart</i>
+              <p>SALT API Queries V2</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'statool-home' %}">
+              <i class="material-icons">dashboard</i>
+              <p>Item 1</p>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav">
+          <li class="nav-item active  ">
+            <a class="nav-link" href="{% url 'statool-home' %}" data-color="orange">
+              <i class="material-icons">dashboard</i>
+              <p>Local Status Tool</p>
             </a>
           </li>
         </ul>
@@ -53,37 +72,24 @@
               <p>Scripts</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="{% url 'statool-home' %}">
-              <i class="material-icons">dashboard</i>
-              <p>Item 1</p>
-            </a>
-          </li>
         </ul>
         <ul class="nav">
           <li class="nav-item active  ">
-            <a class="nav-link" href="{% url 'salt' %}">
-              <i class="material-icons">bubble_chart</i>
-              <p>SALT API Queries</p>
+            <a class="nav-link" href="{% url 'findpattern' %}">
+              <i class="material-icons">content_paste</i>
+              <p>Find Pattern</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="{% url 'statool-home' %}">
-              <i class="material-icons">dashboard</i>
-              <p>Item 1</p>
-            </a>
-          </li>
-        </ul>
         </ul>
       </div>
     </div>
-    <!-- your sidebar here -->
+    <!-- your sidebar ENDs here -->
     <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Dashboard</a>
+            <a class="navbar-brand" href="javascript:;">Index and Contents</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -113,7 +119,7 @@
             <ul>
               <li>
                 <a href="https://www.creative-tim.com">
-                  Creative Tim
+                  NIO Team
                 </a>
               </li>
             </ul>
@@ -122,8 +128,8 @@
             &copy;
             <script>
               document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+            </script>
+            <a href="https://www.creative-tim.com" target="_blank">NTT Cloud Communications</a>
           </div>
           <!-- your footer here -->
         </div>

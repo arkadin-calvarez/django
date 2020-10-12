@@ -18,6 +18,7 @@ import sys
 import io
 import json
 import re
+import string
 
 ############################ WEBPAGES START ############################
 
@@ -50,7 +51,7 @@ def statool(request: HttpRequest) -> HttpResponse:
 def scripts(request: HttpRequest) -> HttpResponse:
     return render(request, 'scripts.html')
 
-# Salt webpage
+# Salt - LocalClient webpage
 def salt(request: HttpRequest) -> HttpResponse:
     commands = Command.objects.all()
     devices = Device.objects.all()
@@ -60,6 +61,20 @@ def salt(request: HttpRequest) -> HttpResponse:
     }
     return render(request, 'salt.html', context)
 
+# Salt - Salt-pepper webpage
+def saltv2(request: HttpRequest) -> HttpResponse:
+    commands = Command.objects.all()
+    devices = Device.objects.all()
+    context = {
+        'commands' : commands,
+        'devices' : devices
+    }
+    return render(request, 'saltv2.html', context)
+
+# Find pattern webpage
+def findpattern(request: HttpRequest) -> HttpResponse:
+    return render(request, 'findpattern.html')
+    
 ############################ WEBPAGES END ############################
 
 
@@ -181,7 +196,7 @@ def showfromdrop(request):
 
 
 # Using SALT API (Local.Client()), to get dictionary of information. (DROPDOWN only)
-def showfromapi(request):
+def showstandalone(request):
     import salt.client
 
     output_table1 = [] # BGP Status
@@ -233,14 +248,14 @@ def showfromapi(request):
 
     # For logging in console
 #    return str1
-    return render(request, 'showfromapi.html', {'output': output, 
+    return render(request, 'showstandalone.html', {'output': output, 
                                                 'output_table1': output_table1, 
                                                 'output_table2': output_table2,
                                                 'output_table3': output_table3})
 
 
 # Using SALT API (Local.Client()), to get dictionary of information. (TEXTBOX and DROPDOWN)
-def showfromapi2(request):
+def showbgpstatus(request):
     import salt.client
 
     output_table1 = []
@@ -297,4 +312,129 @@ def showfromapi2(request):
                                                 'output_table2': output_table2,
                                                 'output_table3': output_table3})
 
-    ############################ SALT SECTION END ############################
+
+
+# Using SALT API (Salt-pepper from DJANGO server), to get dictionary of information. (DROPDOWN only)
+def showstandpepper(request):
+    minion = request.GET.get('device_id1')
+    command = request.GET.get('command_id1')
+    arguments = ['pepper', minion, 'net.cli', command]
+
+    output_table1 = []
+    output_table2 = []
+    output_table3 = []
+    output_table4 = []
+    
+    with open('saltstandpepper.txt', 'w') as saltpepper:
+        data = subprocess.run(arguments, stdout=saltpepper, stderr=saltpepper, timeout=25)
+
+     # Before saving the dictionary, Json.dumps must convert all to str (even a dictionary)
+    #str1 = json.dumps(data)
+
+    # Reading file and REPLACE new line character with blank space:
+    f = open('//home//outright//Django//CABE//saltstandpepper.txt', 'r')
+    content = f.read()
+    replaced_contents = content.replace('\\n', ' ')
+
+    # Save new file, now with blank spaces
+    f = open('//home//outright//Django//CABE//saltstandpepperfinal.txt',"w")
+    f.write(replaced_contents)
+    f.close()
+
+    # Open file and read it to work with REGEX
+    f = open('//home//outright//Django//CABE//saltstandpepperfinal.txt', 'r')
+    file = f.read()
+
+    # SHOW VERSION REGEX
+    regex1 = re.compile(r'Hostname:\s(.*\d)\s')
+    match_reg1 = regex1.finditer(file)
+
+    if match_reg1:
+        for match1 in match_reg1:
+            output_table1.append(match1.group(1))
+
+    regex2 = re.compile(r'Model:\s(.*)[^\s]')
+    match_reg2 = regex2.finditer(file)
+
+    if match_reg2:
+        for match2 in match_reg2:
+            output_table2.append(match2.group(1))
+
+    # Gathering context before rendering
+    context = {
+    'output_table1': output_table1,
+    'output_table2': output_table2,
+    }
+
+    #===========================================================================
+
+    #regex3 = re.compile(r'\s\sState: Idle|\s\sState: Active|\s\sState: Connect')
+    #match_reg3 = regex3.finditer(read_file)
+
+    #regex4 = re.compile(r'Peer:\s\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')
+    #match_reg4 = regex4.finditer(read_file)
+
+
+    #if match_reg3:
+    #    for match3 in match_reg3:
+    #        output_table3.append(match3.group(1))
+    
+    #if match_reg4:
+    #    for match4 in match_reg4:
+    #        output_table4.append(match4.group(1))
+
+    #context = {
+    #'output_table3': output_table3,
+    #'output_table4': output_table4,
+    #}
+
+    # For logging in console
+    # return str1
+    #if match_reg1:
+    return render(request, 'showstandpepper.html', context)
+
+    #if match_reg3:
+    #    return render(request, 'showstandpepper1.html', context)
+
+    
+############################ SALT SECTION END ############################
+
+
+########################### FIND PATTERN SECTION STARTS ############################
+
+# Scripts: Patternfinder
+
+import os.path
+import re
+from tabulate import tabulate
+
+def findpattern(request):
+
+    pattern = request.GET.get('pattern')
+#    print(" ")
+#    pattern = input("Please insert what look for: ")
+#    print(" ")
+#    print("Entered word is: " pattern)
+#    print(" ")
+
+    list = []
+    output1 = []
+    headers = ['Index', 'Network Device','Full Line']
+
+    for filename in os.listdir('//home//outright//Django//rancid//backups//NETWORK//'):
+        if re.match('.*', filename):
+            try:
+                filepath = '//home//outright//Django//rancid//backups//NETWORK//'+filename
+                fileh = open(filepath, "r")
+
+                for line in fileh.readlines():
+                    for word in line.split():
+                        if re.match(pattern, word):
+                            list = [filename, line]
+                            output1.append(list)
+            except:
+                pass
+
+    print(tabulate(output1, headers=headers, tablefmt='plain', showindex="always"))
+
+########################### FIND PATTERN SECTION ENDS ############################

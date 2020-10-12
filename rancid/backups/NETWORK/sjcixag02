@@ -1,0 +1,875 @@
+!RANCID-CONTENT-TYPE: cisco
+!
+!Chassis type: WS-C6504-E
+!CPU: R7000, SR71000 CPU at 600Mhz, impl 0x504, Rev 1.2, 512KB L2 Cache
+!
+!Memory: main 458720K/65536K
+!Memory: nvram 1917K
+!Memory: bootflash 65536K
+!
+!Processor ID: FOX10190422
+!
+!Image: Software: s72033_rp-IPSERVICESK9_WAN-M, 12.2(33)SXI13, RELEASE SOFTWARE (fc3)
+!Image: Compiled: Tue 11-Mar-14 04:53 by prod_rel_team
+!Image: sup-bootdisk:s72033-ipservicesk9_wan-mz.122-33.SXI13.bin
+!
+!ROM Bootstrap: Version 12.2(17r)SX5, RELEASE SOFTWARE (fc1)
+!
+!% No entity named "raw"
+!
+!VLAN: VLAN Name                             Status    Ports
+!VLAN: ---- -------------------------------- --------- -------------------------------
+!VLAN: 1    default                          active    
+!VLAN: 2    N:sjcixag:Po1                    active    
+!VLAN: 3    N:sjccore:Po2                    active    
+!VLAN: 70   M:10.100.70.0/24:                active    
+!VLAN: 513  X:U:172.30.251.8/30:ZAYO_MAN_CHI active    
+!VLAN: 999  B2B_IXRT                         active    
+!VLAN: 1002 fddi-default                     act/unsup 
+!VLAN: 1003 token-ring-default               act/unsup 
+!VLAN: 1004 fddinet-default                  act/unsup 
+!VLAN: 1005 trnet-default                    act/unsup 
+!VLAN: 1998 X:172.16.240.68/30:sjccore02-sjc active    
+!VLAN: 2031 E:Thermofisher:L                 active    Gi2/20
+!VLAN: 3004 VLAN3004                         active    
+!VLAN: 3005 VLAN3005                         active    
+!VLAN: 3006 CARRIER-SBC-sjcinet02            active    
+!VLAN: 3016 X:CISCO_CCA_SBC:192.206.95.184/2 active    
+!VLAN: 3017 X:VPN_IHC_CCA_SBC:10.5.250.0/28  active    
+!VLAN: 3036 CCA:Thermofisher:L               active    
+!VLAN: 3506 E:70.104.243.32/30:Verizon-CARR  active    Gi3/4
+!VLAN: 4001 Z:185.37.221.224/28:SBC_PublicAS active    
+!VLAN: 4047 E:128.242.105.48/30:NTT_INTERCO  active    Gi2/39, Gi3/1
+!VLAN: 4048 X:INET_BDR_INTERCO:172.31.253.32 active    
+!VLAN: 4052 X:172.16.249.44/30:sjcinet02-sjc active    
+!VLAN: 4053 VLAN4053                         active    Gi3/6
+!VLAN: 4061 Interco-MX                       active    
+!VLAN: VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+!VLAN: ---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+!VLAN: 1    enet  100001     1500  -      -      -        -    -        0      0   
+!VLAN: 2    enet  100002     1500  -      -      -        -    -        0      0   
+!VLAN: 3    enet  100003     1500  -      -      -        -    -        0      0   
+!VLAN: 70   enet  100070     1500  -      -      -        -    -        0      0   
+!VLAN: 513  enet  100513     1500  -      -      -        -    -        0      0   
+!VLAN: 999  enet  100999     1500  -      -      -        -    -        0      0   
+!VLAN: 1002 fddi  101002     1500  -      -      -        -    -        0      0   
+!VLAN: 1003 tr    101003     1500  -      -      -        -    -        0      0   
+!VLAN: 1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+!VLAN: 1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+!VLAN: 1998 enet  101998     1500  -      -      -        -    -        0      0   
+!VLAN: 2031 enet  102031     1500  -      -      -        -    -        0      0   
+!VLAN: 3004 enet  103004     1500  -      -      -        -    -        0      0   
+!VLAN: 3005 enet  103005     1500  -      -      -        -    -        0      0   
+!VLAN: 3006 enet  103006     1500  -      -      -        -    -        0      0   
+!VLAN: 3016 enet  103016     1500  -      -      -        -    -        0      0   
+!VLAN: 3017 enet  103017     1500  -      -      -        -    -        0      0   
+!VLAN: 3036 enet  103036     1500  -      -      -        -    -        0      0   
+!VLAN: 3506 enet  103506     1500  -      -      -        -    -        0      0   
+!VLAN: 4001 enet  104001     1500  -      -      -        -    -        0      0   
+!VLAN: 4047 enet  104047     1500  -      -      -        -    -        0      0   
+!VLAN: 4048 enet  104048     1500  -      -      -        -    -        0      0   
+!VLAN: 4052 enet  104052     1500  -      -      -        -    -        0      0   
+!VLAN: 4053 enet  104053     1500  -      -      -        -    -        0      0   
+!VLAN: 4061 enet  104061     1500  -      -      -        -    -        0      0   
+!VLAN: Remote SPAN VLANs
+!VLAN: ------------------------------------------------------------------------------
+!VLAN: Primary Secondary Type              Ports
+!VLAN: ------- --------- ----------------- ------------------------------------------
+!
+!
+config-register 0x2102
+Using 17368 out of 1964024 bytes
+!
+upgrade fpd auto
+version 12.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+service counters max age 5
+!
+hostname sjcixag02
+!
+boot-start-marker
+boot system flash sup-bootdisk:s72033-ipservicesk9_wan-mz.122-33.SXI13.bin
+boot-end-marker
+!
+logging buffered 128000 notifications
+enable secret 5 $1$2a3R$xaeX7vH2G0vugZ07bCibi0
+!
+!username netops privilege 15 password <removed>
+username noc privilege 0 secret 5 $1$rG6k$HihwxUgSN8tbdyKiWqB1R/
+aaa new-model
+!
+aaa group server radius AAA_RADIUS
+ server-private 10.115.38.110 auth-port 1812 acct-port 1813 key 7 073F001E71272936283B2D2F3B1A180F1712070932233F2D3E776D74
+ server-private 10.100.92.1 auth-port 1812 acct-port 1813 key 7 06362E737360392A3A3E3428333419001B09011E03372E383C2062751813
+!
+aaa authentication fail-message ^CCCWarning: Your login attempt was not successful!^C
+aaa authentication login default local
+aaa authentication login ARKANETRADIUS group AAA_RADIUS local
+aaa authentication enable default enable
+aaa authorization exec default group AAA_RADIUS if-authenticated 
+!
+aaa session-id common
+logging event link-status default
+!
+ip ssh version 2
+ip scp server enable
+no ip domain-lookup
+ip domain-name net.arkadin.lan
+login on-failure log
+login on-success log
+vtp mode off
+mls netflow interface
+mls cef error action reset
+!
+file prompt quiet
+!
+spanning-tree mode rapid-pvst
+spanning-tree loopguard default
+spanning-tree portfast edge bpduguard default
+spanning-tree extend system-id
+spanning-tree backbonefast
+spanning-tree vlan 1-4094 priority 49152
+diagnostic bootup level minimal
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+errdisable recovery cause link-flap
+errdisable recovery cause loopback
+access-list 1485 permit 10.250.137.55
+access-list 1485 permit 10.100.19.21
+access-list 1485 permit 10.105.137.80
+access-list 1485 permit 10.115.137.57
+access-list 1485 permit 10.100.137.55
+access-list 1485 permit 10.105.137.56
+access-list 1485 permit 10.105.137.57
+access-list 1485 permit 10.250.90.90
+access-list 1485 permit 192.206.95.169
+!
+redundancy
+ main-cpu
+  auto-sync running-config
+ mode sso
+!
+ip access-list extended OAM
+ permit tcp 10.0.1.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp 10.245.2.0 0.0.0.255 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.20 host 0.0.0.0 eq 22
+ permit tcp host 10.100.19.21 host 0.0.0.0 eq 22
+ permit tcp host 10.115.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.250.137.89 host 0.0.0.0 eq 22
+ permit tcp host 10.100.137.89 host 0.0.0.0 eq 22
+ permit tcp 172.29.0.0 0.0.255.255 host 0.0.0.0 eq 22
+ permit tcp 172.30.0.0 0.0.255.255 host 0.0.0.0 eq 22
+!
+transceiver type all
+ monitoring
+vlan internal allocation policy ascending
+vlan access-log ratelimit 2000
+!
+vlan 2
+ name N:sjcixag:Po1
+!
+vlan 3
+ name N:sjccore:Po2
+!
+vlan 70
+ name M:10.100.70.0/24:
+!
+vlan 513
+ name X:U:172.30.251.8/30:ZAYO_MAN_CHI
+!
+vlan 999
+ name B2B_IXRT
+!
+vlan 1998
+ name X:172.16.240.68/30:sjccore02-sjc
+!
+vlan 2031
+ name E:Thermofisher:L
+!
+vlan 3004-3005 
+!
+vlan 3006
+ name CARRIER-SBC-sjcinet02
+!
+vlan 3016
+ name X:CISCO_CCA_SBC:192.206.95.184/2
+!
+vlan 3017
+ name X:VPN_IHC_CCA_SBC:10.5.250.0/28
+!
+vlan 3036
+ name CCA:Thermofisher:L
+!
+vlan 3506
+ name E:70.104.243.32/30:Verizon-CARR
+!
+vlan 4001
+ name Z:185.37.221.224/28:SBC_PublicAS
+!
+vlan 4047
+ name E:128.242.105.48/30:NTT_INTERCO
+!
+vlan 4048
+ name X:INET_BDR_INTERCO:172.31.253.32
+!
+vlan 4052
+ name X:172.16.249.44/30:sjcinet02-sjc
+!
+vlan 4053 
+!
+vlan 4061
+ name Interco-MX
+lldp run
+!
+interface Port-channel1
+ description sjcixag01:Po1
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 2
+ switchport trunk allowed vlan 1-4052,4054-4094
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ speed 1000
+ duplex full
+ spanning-tree link-type point-to-point
+!
+interface Port-channel2
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 70,513,1998
+ mtu 9216
+ load-interval 30
+!
+interface GigabitEthernet1/1
+ no ip address
+ shutdown
+!
+interface GigabitEthernet1/2
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/1
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/2
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/3
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/4
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/5
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/6
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/7
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/8
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/9
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/10
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/11
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/12
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/13
+ description sjcfw01-2:ge-0/0/3
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 4047,4048
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast edge trunk
+!
+interface GigabitEthernet2/14
+ description sjcfw01-2:ge-0/0/4
+ no ip address
+ shutdown
+!
+interface GigabitEthernet2/15
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/16
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/17
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/18
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/19
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/20
+ description E_CUST:ATT_BCEC.548254..ATI_86/KRGN/590423/PT _RR:G11/CUST_HANDOFFORTS_11 /SC/SM/TAGGED
+ switchport
+ switchport access vlan 2031
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ no cdp enable
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet2/21
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/22
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/23
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/24
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/25
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/26
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/27
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/28
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/29
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/30
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/31
+ description sjcinet02:ge-1/1/0
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 3506,4047,4061
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast edge trunk
+!
+interface GigabitEthernet2/32
+ description sjcinet02:ge-1/1/1
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 3005,3006,4001,4048,4052
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ spanning-tree portfast edge trunk
+!
+interface GigabitEthernet2/33
+ description sjcinet02:ge-1/1/2
+ no ip address
+ load-interval 30
+ shutdown
+ spanning-tree portfast edge trunk
+!
+interface GigabitEthernet2/34
+ description sjcinet02:ge-1/1/3
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 4053
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast edge trunk
+!
+interface GigabitEthernet2/35
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/36
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/37
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/38
+ description sjcixrt02:Gi0/0/0
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 513
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ spanning-tree portfast edge trunk
+!
+interface GigabitEthernet2/39
+ description S:sjccons02:eth0:
+ switchport
+ switchport access vlan 4047
+ switchport mode access
+ load-interval 30
+ spanning-tree portfast edge
+!
+interface GigabitEthernet2/40
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/41
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet2/42
+ description Q:sjccore02:Gi3/45:Po2
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 70,513,1998
+ mtu 9216
+ load-interval 30
+ channel-group 2 mode desirable
+!
+interface GigabitEthernet2/43
+ description sjcixrt02:Gi0/0/1
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 999,3036,4052
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ spanning-tree portfast edge trunk
+!
+interface GigabitEthernet2/44
+ description sjcixrt02:Gi0/0/2
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 2031
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ spanning-tree portfast edge trunk
+!
+interface GigabitEthernet2/45
+ description sjcixrt02:Gi0/0/3
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 1998
+ switchport mode trunk
+ mtu 9216
+ load-interval 30
+ spanning-tree portfast edge trunk
+!
+interface GigabitEthernet2/46
+ description Q:sjccore02:Gi3/46:Po2
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 3
+ switchport trunk allowed vlan 70,513,1998
+ mtu 9216
+ load-interval 30
+ channel-group 2 mode desirable
+!
+interface GigabitEthernet2/47
+ description sjcixag01:Po1:Gi2/47
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 2
+ switchport trunk allowed vlan 1-4052,4054-4094
+ switchport mode trunk
+ mtu 9216
+ logging event link-status
+ load-interval 30
+ channel-group 1 mode on
+!
+interface GigabitEthernet2/48
+ description sjcixag01:Po1:Gi2/48
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 2
+ switchport trunk allowed vlan 1-4052,4054-4094
+ switchport mode trunk
+ mtu 9216
+ logging event link-status
+ load-interval 30
+ channel-group 1 mode on
+!
+interface GigabitEthernet3/1
+ description E_ISP:NR:COLOBGP20035:NTT_INET
+ switchport
+ switchport access vlan 4047
+ switchport mode access
+ load-interval 30
+ no cdp enable
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet3/2
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/3
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/4
+ description E_CARR:AA:ETYX/113169//ZYO:VERIZ_CARR
+ switchport
+ switchport access vlan 3506
+ switchport mode access
+ logging event link-status
+ load-interval 30
+ speed nonegotiate
+ no cdp enable
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet3/5
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/6
+ description E_IXP:NR:ETYX/115839//ZYO:EQIX
+ switchport
+ switchport access vlan 4053
+ switchport mode access
+ switchport nonegotiate
+ load-interval 30
+ no keepalive
+ speed nonegotiate
+ storm-control broadcast level 5.00
+ storm-control multicast level 5.00
+ storm-control unicast level 5.00
+ no cdp enable
+ no lldp transmit
+ no lldp receive
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+!
+interface GigabitEthernet3/7
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/8
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/9
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/10
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/11
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/12
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/13
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/14
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/15
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/16
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/17
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/18
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/19
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/20
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/21
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/22
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/23
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface GigabitEthernet3/24
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface TenGigabitEthernet4/1
+ description sjcsbc01s:m01:10g
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 3000-4001
+ switchport mode trunk
+ logging event link-status
+ load-interval 30
+ spanning-tree portfast edge trunk
+!
+interface TenGigabitEthernet4/2
+ no ip address
+ shutdown
+!
+interface TenGigabitEthernet4/3
+ no ip address
+ shutdown
+!
+interface TenGigabitEthernet4/4
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface TenGigabitEthernet4/5
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface TenGigabitEthernet4/6
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface TenGigabitEthernet4/7
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface TenGigabitEthernet4/8
+ no ip address
+ load-interval 30
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan70
+ description M:10.100.70.0/24:MGMT
+ ip address 10.100.70.247 255.255.255.0
+!
+ip default-gateway 10.100.70.254
+ip classless
+ip forward-protocol nd
+ip route 0.0.0.0 0.0.0.0 10.100.70.254
+!
+no ip http server
+no ip http secure-server
+!
+ip radius source-interface Vlan70 
+logging trap notifications
+logging origin-id hostname
+logging facility local5
+logging source-interface Vlan70
+logging 10.100.137.24
+logging 10.100.137.89
+!
+snmp-server community network_services RO 1485
+snmp-server community noc_services RO 1485
+snmp-server ifindex persist
+snmp-server location noram-sjc
+snmp-server contact nio@arkadin.com
+snmp-server host 10.100.19.21 version 2c noc_services 
+snmp-server host 10.100.137.55 version 2c noc_services 
+snmp ifmib ifindex persist
+!
+control-plane
+!
+dial-peer cor custom
+!
+banner login ^C====================================================================
+=         UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED         =
+=    You must have explicit, authorized permission to access or    =
+=   configure this device. Unauthorized attempts and actions to    =
+=   access or use this system may result in civil and/or criminal  =
+= All activities performed on this device are logged and monitored =
+====================================================================
+^C
+alias exec siib sh ip int brief
+alias exec u undebug all
+privilege exec level 0 show running-config view full
+privilege exec level 0 show ip protocols
+privilege exec level 0 show ip bgp ip
+privilege exec level 0 traceroute
+privilege exec level 0 traceroute ip
+privilege exec level 0 ping
+privilege exec level 0 ping ip
+privilege exec level 0 show users
+privilege exec level 0 show version
+privilege exec level 0 show inventory
+privilege exec level 0 show configuration
+privilege exec level 0 show processes history
+privilege exec level 0 show processes cpu
+privilege exec level 0 show interfaces
+privilege exec level 0 show interfaces description
+privilege exec level 0 show interfaces counters
+privilege exec level 0 show standby brief
+privilege exec level 0 show processes memory
+privilege exec level 0 show arp
+privilege exec level 0 show log
+privilege exec level 0 show cdp neighbors
+privilege exec level 0 show lldp neighbors
+privilege exec level 0 show mac address-table
+privilege exec level 0 show vlan
+privilege exec level 0 show ip int
+privilege exec level 0 show ip int brief
+privilege exec level 0 show ip route
+privilege exec level 0 show ip vrf
+privilege exec level 0 show ip bgp summary
+privilege exec level 0 show ip bgp vpnv4 vrf
+privilege exec level 0 show ip bgp vpnv4 all
+privilege exec level 0 show ip bgp vpnv4 all summary
+privilege exec level 0 show ip ospf
+privilege exec level 0 show ip ospf neighbors
+privilege exec level 0 terminal length 0
+privilege exec level 0 terminal width 132
+privilege exec level 0 show environment
+!
+line con 0
+ session-timeout 30 
+ exec-timeout 30 0
+ login authentication ARKANETRADIUS
+line vty 0 4
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+line vty 5 15
+ session-timeout 30 
+ access-class OAM in
+ exec-timeout 120 0
+ logging synchronous
+ login authentication ARKANETRADIUS
+ history size 256
+ transport input ssh
+!
+monitor session 1 type erspan-source
+ shutdown
+ description "ERSPAN direct to laptop"
+ source interface Gi3/6
+ destination
+  erspan-id 32
+  ip address 10.100.86.118
+  origin ip address 10.100.70.247
+!
+ntp source Vlan70
+ntp server 10.100.51.1 prefer
+ntp server 10.122.97.1
+mac-address-table aging-time 14400
+!
+end

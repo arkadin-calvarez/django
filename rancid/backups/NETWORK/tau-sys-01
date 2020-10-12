@@ -1,0 +1,687 @@
+#RANCID-CONTENT-TYPE: juniper
+#
+# tau-sys-01> show chassis clocks 
+# tau-sys-01> show chassis firmware local
+# tau-sys-01> show chassis firmware 
+# Part                     Type       Version
+# FPC 0                    uboot      U-Boot 2011.06 (Jan 10 2014 - 02:08:51) 1.0.0
+#                          loader     FreeBSD/PowerPC U-Boot bootstrap loader 2.4
+# 
+# tau-sys-01> show chassis fpc detail 
+# Slot 0 information:
+#   State                               Online    
+#   Total CPU DRAM                 2048 MB
+# 
+# tau-sys-01> show chassis hardware detail 
+# Hardware inventory:
+# Item             Version  Part number  Serial number     Description
+# Chassis                                PE3717130046      EX4300-48T
+# Routing Engine 0 REV 29   650-044932   PE3717130046      EX4300-48T
+# FPC 0            REV 29   650-044932   PE3717130046      EX4300-48T
+#   CPU                     BUILTIN      BUILTIN           FPC CPU
+#   PIC 0          REV 29   BUILTIN      BUILTIN           48x 10/100/1000 Base-T
+#   PIC 1          REV 29   BUILTIN      BUILTIN           4x 40GE QSFP+
+#     Xcvr 0       REV 01   740-038623   MOC17146230129    QSFP+-40G-CU1M
+#     Xcvr 1       REV 01   740-038623   MOC17146230115    QSFP+-40G-CU1M
+#     Xcvr 2       REV 01   740-044512   MOC16465120850    QSFP+-40G-CU50CM
+#     Xcvr 3       REV 01   740-044512   MOC16465120537    QSFP+-40G-CU50CM
+#   PIC 2          REV 02   611-063980   MY3717040378      4x 1G/10G SFP/SFP+
+#     Xcvr 0       REV 01   740-021308   AD165130XPY       SFP+-10G-SR
+#     Xcvr 1       REV 01   740-021308   AD165130XSM       SFP+-10G-SR
+# Power Supply 0   REV 01   740-046876   1EDD7032335       JPSU-350-AC-AFI-A
+# Power Supply 1   REV 01   740-046876   1EDD6516735       JPSU-350-AC-AFI-A
+# Fan Tray 0                                               Fan Module, Airflow In  (AFI)
+# Fan Tray 1                                               Fan Module, Airflow In  (AFI)
+# 
+# tau-sys-01> show chassis hardware models 
+# Hardware inventory:
+# Item             Version  Part number  Serial number     FRU model number
+# Routing Engine 0 REV 29   650-044932   PE3717130046      EX4300-48T-AFI
+# FPC 0            REV 29   650-044932   PE3717130046      EX4300-48T-AFI
+#   PIC 0          REV 29   BUILTIN      BUILTIN           EX4300-48T-AFI
+#   PIC 1          REV 29   BUILTIN      BUILTIN           EX4300-48T-AFI
+#   PIC 2          REV 02   611-063980   MY3717040378      EX-UM-4X4SFP
+# Power Supply 0   REV 01   740-046876   1EDD7032335       JPSU-350-AC-AFI
+# Power Supply 1   REV 01   740-046876   1EDD6516735       JPSU-350-AC-AFI
+# 
+# tau-sys-01> show chassis scb 
+# tau-sys-01> show chassis sfm detail 
+# tau-sys-01> show chassis ssb 
+# tau-sys-01> show chassis feb detail 
+# tau-sys-01> show chassis feb 
+# tau-sys-01> show chassis cfeb 
+# tau-sys-01> show system boot-messages 
+# fpc0:
+# --------------------------------------------------------------------------
+# Copyright (c) 1996-2017, Juniper Networks, Inc.
+# All rights reserved.
+# Copyright (c) 1992-2007 The FreeBSD Project.
+# Copyright (c) 1979, 1980, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994
+# 	The Regents of the University of California. All rights reserved.
+# FreeBSD is a registered trademark of The FreeBSD Foundation.
+# Timecounter "decrementer" frequency 18750000 Hz quality 0
+# cpu0: Freescale e500mc core revision 3.2
+# cpu0: HID0 c0000080<EMCP,EN_L2MMU_MHD,EN_MAS7_UPDATE>
+# Security policy loaded: Junos MAC/veriexec (mac_veriexec)
+# Security policy loaded: JUNOS MAC/pcap (mac_pcap)
+# Security policy loaded: JUNOS MAC/runasnonroot (mac_runasnonroot)
+# MAC/veriexec fingerprint module loaded: SHA256
+# MAC/veriexec fingerprint module loaded: SHA1
+# ETHERNET SOCKET BRIDGE initialising
+# Initializing EXSERIES properties ...
+# nexus0: <Powerpc Nexus device>
+# ocpbus0: <on-chip peripheral bus> on nexus0
+# openpic0: <OpenPIC in on-chip peripheral bus> iomem 0xfe040000-0xfe06ffff on ocpbus0
+# lbc0: <Freescale Local Bus Controller> iomem 0xfe124000-0xfe12410f,0xff000000-0xffffffff irq 41 on ocpbus0
+# cfi0: <AMD/Fujitsu - 8MB> iomem 0xff800000-0xffffffff on lbc0
+# syspld0 iomem 0xff000000-0xff00ffff on lbc0
+# i2c0: <MPC85XX OnChip i2c Controller> iomem 0xfe118000-0xfe118014 irq 54 on ocpbus0
+# ds1672 rtc0: <DS1672 RTC> on i2c0
+# i2c1: <MPC85XX OnChip i2c Controller> iomem 0xfe118100-0xfe118114 irq 54 on ocpbus0
+# poe0: <POE> on i2c1
+# device_attach: poe0 attach returned 19
+# uart0: <16550 or compatible> iomem 0xfe11c500-0xfe11c50f irq 52 on ocpbus0
+# uart0: console (9600,n,8,1)
+# uart1: <16550 or compatible> iomem 0xfe11c600-0xfe11c60f irq 52 on ocpbus0
+# pcib0: <Freescale MPCP20BJE PCI Express host controller> iomem 0xfe201000-0xfe201fff,0xc0000000-0xc7ffffff on ocpbus0
+# pci0: <PCI bus> on pcib0
+# pcib1: <PCI-PCI bridge> at device 0.0 on pci0
+# pci1: <PCI bus> on pcib1
+# besw0: <Broadcom BCM56648J GigE Switch> mem 0xc0000000-0xc003ffff irq 57 at device 0.0 on pci1
+# BCM device 0xb648 has been attachedbman0 iomem 0xfe31a000-0xfe31afff,0xfd800000-0xfd803fff,0xfd804000-0xfd804fff irq 32,121,123,125,127,129,131,133,135,137,139 on ocpbus0
+# bman0: Hardware version: 1.0.
+# qman0 iomem 0xfe318000-0xfe318fff,0xfd808000-0xfd80bfff,0xfd80c000-0xfd80cfff irq 32,120,122,124,126,128,130,132,134,136,138 on ocpbus0
+# qman0: Hardware version: 1.2.
+# fman0 iomem 0xfe400000-0xfe4fffff irq 112,32 on ocpbus0
+# fman0: Hardware version: 3.0.
+# dtsec0 on fman0
+# dtsec0: Configured for independent mode.
+# dtsec0: hardware MAC address 7c:e2:ca:44:f2:40
+# miibus0: <MII bus> on dtsec0
+# brgphy0: <BCM54616S 10/100/1000baseTX PHY> on miibus0
+# brgphy0:  10baseT, 10baseT-FDX, 100baseTX, 100baseTX-FDX, 1000baseT, 1000baseT-FDX, auto
+# ehci0: <Frescale Integrated USB 2.0 controller> iomem 0xfe210000-0xfe210fff irq 60 on ocpbus0
+# usb0: EHCI version 1.0
+# usb0 on ehci0
+# usb0: USB revision 2.0
+# uhub0: Freescale EHCI root hub, class 9/0, rev 2.00/1.00, addr 1
+# uhub0: 1 port with 1 removable, self powered
+# umass0: ADATA IUM01-002GFHS, rev 2.00/1.00, addr 2
+# ehci1: <Frescale Integrated USB 2.0 controller> iomem 0xfe211000-0xfe211fff irq 61 on ocpbus0
+# usb1: EHCI version 1.0
+# usb1 on ehci1
+# usb1: USB revision 2.0
+# uhub1: Freescale EHCI root hub, class 9/0, rev 2.00/1.00, addr 1
+# uhub1: 1 port with 1 removable, self powered
+# Initializing product: 145 ..
+# Loading the NETPFE fc module
+#  Loading Redundant LT driver
+# ###PCB Group initialized for udppcbgroup
+# ###PCB Group initialized for tcppcbgroup
+# Kernel thread "wkupdaemon" (pid 44) exited prematurely.
+# da0 at umass-sim0 bus 0 target 0 lun 0
+# da0: <ADATA IUM01-002GFHS 0100> Removable Direct Access SCSI-0 device
+# da0: 40.000MB/s transfers
+# da0: 1968MB (4030464 512 byte sectors: 255H 63S/T 250C)
+# Trying to mount root from ufs:/dev/da0s2a
+# 
+# tau-sys-01> show version detail 
+# fpc0:
+# --------------------------------------------------------------------------
+# Hostname: tau-sys-01
+# Model: ex4300-48t
+# Junos: 14.1X53-D46.7
+# JUNOS EX  Software Suite [14.1X53-D46.7]
+# JUNOS FIPS mode utilities [14.1X53-D46.7]
+# JUNOS Online Documentation [14.1X53-D46.7]
+# JUNOS EX 4300 Software Suite [14.1X53-D46.7]
+# JUNOS Web Management Platform Package [14.1X53-D46.7]
+# JUNOS py-base-powerpc [14.1X53-D46.7]
+# KERNEL 14.1X53-D46.7 #0 built by builder on 2017-11-24 01:23:14 UTC
+# MGD release 14.1X53-D46.7 built by builder on 2017-11-24 02:14:19 UTC
+# CLI release 14.1X53-D46.7 built by builder on 2017-11-24 01:37:52 UTC
+# RPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:18:49 UTC
+# CHASSISD release 14.1X53-D46.7 built by builder on 2017-11-24 01:58:02 UTC
+# KMD release 14.1X53-D46.7 built by builder on 2017-11-24 02:04:35 UTC
+# PKID release 14.1X53-D46.7 built by builder on 2017-11-24 02:01:06 UTC
+# SENDD release 14.1X53-D46.7 built by builder on 2017-11-24 01:53:15 UTC
+# DFWD release 14.1X53-D46.7 built by builder on 2017-11-24 02:05:53 UTC
+# DCD release 14.1X53-D46.7 built by builder on 2017-11-24 02:15:46 UTC
+# SNMPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:12:26 UTC
+# MIB2D release 14.1X53-D46.7 built by builder on 2017-11-24 02:09:35 UTC
+# VRRPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:05:30 UTC
+# ALARMD release 14.1X53-D46.7 built by builder on 2017-11-24 02:03:08 UTC
+# PFED release 14.1X53-D46.7 built by builder on 2017-11-24 02:07:34 UTC
+# SAMPLED release 14.1X53-D46.7 built by builder on 2017-11-24 02:12:46 UTC
+# RMOPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:02:28 UTC
+# COSD release 14.1X53-D46.7 built by builder on 2017-11-24 01:56:05 UTC
+# FUD release 14.1X53-D46.7 built by builder on 2017-11-24 02:09:22 UTC
+# KSYNCD release 14.1X53-D46.7 built by builder on 2017-11-24 01:54:41 UTC
+# HTTPD-GK release 14.1X53-D46.7 built by builder on 2017-11-24 02:05:05 UTC
+# RDD release 14.1X53-D46.7 built by builder on 2017-11-24 01:54:15 UTC
+# LACPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:04:40 UTC
+# LFMD release 14.1X53-D46.7 built by builder on 2017-11-24 01:53:54 UTC
+# OAMD release 14.1X53-D46.7 built by builder on 2017-11-24 01:55:51 UTC
+# CFMD release 14.1X53-D46.7 built by builder on 2017-11-24 02:10:39 UTC
+# JDHCPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:08:16 UTC
+# AUTHD release 14.1X53-D46.7 built by builder on 2017-11-24 01:58:19 UTC
+# PMOND release 14.1X53-D46.7 built by builder on 2017-11-24 01:54:02 UTC
+# BDBREPD release 14.1X53-D46.7 built by builder on 2017-11-24 01:53:25 UTC
+# RES-CLEANUPD release 14.1X53-D46.7 built by builder on 2017-11-24 01:54:05 UTC
+# ICCPD release 14.1X53-D46.7 built by builder on 2017-11-24 01:55:24 UTC
+# SHM-RTSDBD release 14.1X53-D46.7 built by builder on 2017-11-24 02:09:36 UTC
+# DATAPATH-TRACED release 14.1X53-D46.7 built by builder on 2017-11-24 01:53:40 UTC
+# SMID release 14.1X53-D46.7 built by builder on 2017-11-24 01:54:06 UTC
+# SFLOWD release 14.1X53-D46.7 built by builder on 2017-11-24 01:54:23 UTC
+# UFDD release 14.1X53-D46.7 built by builder on 2017-11-24 01:54:24 UTC
+# PPMD release 14.1X53-D46.7 built by builder on 2017-11-24 02:09:20 UTC
+# LRMUXD release 14.1X53-D46.7 built by builder on 2017-11-24 02:13:52 UTC
+# PGMD release 14.1X53-D46.7 built by builder on 2017-11-24 01:53:58 UTC
+# BFDD release 14.1X53-D46.7 built by builder on 2017-11-24 02:04:02 UTC
+# SDXD release 14.1X53-D46.7 built by builder on 2017-11-24 01:53:14 UTC
+# AUDITD release 14.1X53-D46.7 built by builder on 2017-11-24 01:53:24 UTC
+# L2ALD release 14.1X53-D46.7 built by builder on 2017-11-24 02:11:19 UTC
+# EVENTD release 14.1X53-D46.7 built by builder on 2017-11-24 02:04:24 UTC
+# L2CPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:11:57 UTC
+# MCSNOOPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:14:19 UTC
+# LFMD release 14.1X53-D46.7 built by builder on 2017-11-24 01:53:54 UTC
+# DOT1XD release 14.1X53-D46.7 built by builder on 2017-11-24 02:04:16 UTC
+# ANALYTICSD release 14.1X53-D46.7 built by builder on 2017-11-24 01:54:40 UTC
+# CFMD release 14.1X53-D46.7 built by builder on 2017-11-24 02:10:39 UTC
+# PKID release 14.1X53-D46.7 built by builder on 2017-11-24 02:01:06 UTC
+# CHASSISM release 14.1X53-D46.7 built by builder on 2017-11-24 01:55:59 UTC
+# VCCPD release 14.1X53-D46.7 built by builder on 2017-11-24 02:06:46 UTC
+# pfex release 14.1X53-D46.7 built by builder on 2017-11-24 01:21:57 UTC
+# jroute-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 01:01:24 UTC
+# jkernel-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 01:03:27 UTC
+# ancpd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:46 UTC
+# aprobe-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:46 UTC
+# apsd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:46 UTC
+# authd_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:48 UTC
+# autoconfd_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:48 UTC
+# bdbrepd_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:48 UTC
+# cfm-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:51 UTC
+# chassis_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:59 UTC
+# clksyncd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:54 UTC
+# collector-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:54 UTC
+# cos_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:54 UTC
+# cpcdd_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:56 UTC
+# dcd_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:57:59 UTC
+# demuxd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:02 UTC
+# dfcd_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:02 UTC
+# dyn-sess-prof-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:04 UTC
+# elmi-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:05 UTC
+# forwarding_options_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:06 UTC
+# gres-test-point-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:08 UTC
+# httpd_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:08 UTC
+# iccp_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:08 UTC
+# ilmid-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:10 UTC
+# jcrypto-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:13 UTC
+# jcrypto_junos-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:19 UTC
+# jdiameterd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:19 UTC
+# jkernel_cmd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:14 UTC
+# jpppd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:41 UTC
+# jroute_junos-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:44 UTC
+# l2ald-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:51 UTC
+# lldp-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:55 UTC
+# mcsnoop-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:04 UTC
+# mo-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:58 UTC
+# pppd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:07 UTC
+# pppoed-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:08 UTC
+# rdd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:10 UTC
+# services-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 01:00:22 UTC
+# sflow-service-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:15 UTC
+# stpng-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:26 UTC
+# subinfo-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:19 UTC
+# ufdd-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:26 UTC
+# virtualchassis-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:41 UTC
+# vlans-ng-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:59:41 UTC
+# jdocs-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:42:57 UTC
+# jkernel_esp-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:02 UTC
+# jswitch_ex_43_82ng-actions-dd release 14.1X53-D46.7 built by builder on 2017-11-24 00:58:03 UTC
+#
+# tau-sys-01> show version invoke-on other-routing-engine 
+# error: command is not valid on the ex4300-48t
+# fpc0:
+# --------------------------------------------------------------------------
+# Hostname: tau-sys-01
+# Model: ex4300-48t
+# Junos: 14.1X53-D46.7
+# JUNOS EX  Software Suite [14.1X53-D46.7]
+# JUNOS FIPS mode utilities [14.1X53-D46.7]
+# JUNOS Online Documentation [14.1X53-D46.7]
+# JUNOS EX 4300 Software Suite [14.1X53-D46.7]
+# JUNOS Web Management Platform Package [14.1X53-D46.7]
+# JUNOS py-base-powerpc [14.1X53-D46.7]
+#
+# tau-sys-01> show configuration 
+version 14.1X53-D46.7;
+groups {
+    GRP_MTU_9192 {
+        interfaces {
+            <*> {
+                mtu 9192;
+            }
+        }
+    }
+}
+system {
+    host-name tau-sys-01;
+    auto-snapshot;
+    authentication-order [ password radius ];
+    root-authentication {
+        encrypted-password "$1$24jxYAaP$f/ZhGtDnfgyff7e.6Gsc6/";
+    }
+    radius-server {
+        /* pa2nps01 */
+        10.115.38.110 {
+            port 1812;
+            accounting-port 1813;
+#            secret <removed>;
+            timeout 5;
+            source-address 10.105.136.252;
+        }
+        /* uschinps01 */
+        10.100.92.1 {
+            port 1812;
+            accounting-port 1813;
+#            secret <removed>;
+            timeout 5;
+            source-address 10.105.136.252;
+        }
+    }
+    login {
+        class roadmin {
+            idle-timeout 30;
+            permissions [ access admin firewall flow-tap interface network routing secret security snmp storage system trace view view-configuration ];
+        }
+        user netops {
+            uid 2000;
+            class super-user;
+            authentication {
+                encrypted-password "$1$fmtDnpaD$wIAHbxymjMQ96JDdhlOSt0";
+            }
+        }
+        user ro {
+            uid 2002;
+            class roadmin;
+        }
+        user rw {
+            uid 2003;
+            class super-user;
+        }
+    }
+    services {
+        ssh {
+            protocol-version v2;
+        }
+        netconf {
+            ssh;
+        }
+    }
+    syslog {
+        archive size 100k files 8;
+        user * {
+            any emergency;
+        }
+        host 10.115.137.89 {
+            any notice;
+            port 514;
+            source-address 10.105.136.252;
+        }
+        host 10.124.23.24 {
+            any notice;
+            port 514;
+            source-address 10.105.136.252;
+        }
+        file messages {
+            any notice;
+            authorization info;
+        }
+        file traffic-log {
+            user any;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+    }
+    ntp {
+        server 10.115.131.1;
+        server 10.125.19.1;
+        server 10.124.19.1;
+        source-address 10.105.136.252;
+    }
+}
+chassis {
+    aggregated-devices {
+        ethernet {
+            device-count 33;
+        }
+    }
+}
+interfaces {
+    apply-groups GRP_MTU_9192;
+    interface-range SAN_MGMT {
+        member ge-0/0/0;
+        description SC5020_SAN_MGMT;
+        unit 0 {
+            family ethernet-switching {
+                vlan {
+                    members IS_1G;
+                }
+            }
+        }
+    }
+    interface-range IDRAC {
+        member ge-0/0/46;
+        description FX201_IDRAC;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members IS_IDRAC;
+                }
+            }
+        }
+    }
+    interface-range ESX_1G {
+        member-range ge-0/0/2 to ge-0/0/5;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+            }
+        }
+    }
+    ge-0/0/2 {
+        description UNKNOWN;
+    }
+    ge-0/0/3 {
+        description UNKNOWN;
+    }
+    ge-0/0/4 {
+        description FX201_PT_05;
+    }
+    ge-0/0/5 {
+        description FX201_PT_07;
+    }
+    et-0/1/0 {
+        apply-groups-except GRP_MTU_9192;
+        description tau-lf-01-1:et-0/0/28;
+        ether-options {
+            no-auto-negotiation;
+            802.3ad ae1;
+        }
+    }
+    et-0/1/1 {
+        apply-groups-except GRP_MTU_9192;
+        description tau-lf-01-2:et-0/0/28;
+        ether-options {
+            no-auto-negotiation;
+            802.3ad ae2;
+        }
+    }
+    et-0/1/2 {
+        apply-groups-except GRP_MTU_9192;
+        description tau-sp-02:et-0/1/2;
+        ether-options {
+            no-auto-negotiation;
+            802.3ad ae0;
+        }
+    }
+    et-0/1/3 {
+        apply-groups-except GRP_MTU_9192;
+        description tau-sp-02:et-0/1/3;
+        ether-options {
+            no-auto-negotiation;
+            802.3ad ae0;
+        }
+    }
+    xe-0/2/0 {
+        apply-groups-except GRP_MTU_9192;
+        description taucore01:Te0/1;
+        ether-options {
+            no-auto-negotiation;
+            802.3ad ae31;
+        }
+    }
+    xe-0/2/1 {
+        apply-groups-except GRP_MTU_9192;
+        description taucore02:Te0/1;
+        ether-options {
+            no-auto-negotiation;
+            802.3ad ae32;
+        }
+    }
+    ae0 {
+        aggregated-ether-options {
+            lacp {
+                active;
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ IS_1G IS_IDRAC ];
+                }
+            }
+        }
+    }
+    ae1 {
+        aggregated-ether-options {
+            lacp {
+                active;
+            }
+        }
+        unit 0 {
+            family inet {
+                address 172.29.4.8/31;
+            }
+        }
+    }
+    ae2 {
+        aggregated-ether-options {
+            lacp {
+                active;
+            }
+        }
+        unit 0 {
+            family inet {
+                address 172.29.4.12/31;
+            }
+        }
+    }
+    ae31 {
+        aggregated-ether-options {
+            lacp {
+                active;
+            }
+        }
+        unit 0 {
+            family inet {
+                address 172.29.4.1/31;
+            }
+        }
+    }
+    ae32 {
+        aggregated-ether-options {
+            lacp {
+                active;
+            }
+        }
+        unit 0 {
+            family inet {
+                address 172.29.4.5/31;
+            }
+        }
+    }
+    irb {
+        unit 179 {
+            family inet {
+                address 10.105.179.252/24 {
+                    vrrp-group 179 {
+                        virtual-address 10.105.179.254;
+                        priority 150;
+                        preempt;
+                        accept-data;
+                    }
+                }
+            }
+        }
+        unit 1136 {
+            family inet {
+                address 10.105.136.252/24 {
+                    vrrp-group 136 {
+                        virtual-address 10.105.136.254;
+                        priority 150;
+                        preempt;
+                        accept-data;
+                    }
+                }
+            }
+        }
+    }
+}
+snmp {
+    location emea-tau;
+    contact "nio@arkadin.com";
+    client-list SNMP_CLIENTS {
+        10.105.137.56/32;
+        10.105.137.57/32;
+        10.100.137.55/32;
+        10.250.137.55/32;
+        10.115.137.57/32;
+        10.100.19.21/32;
+        10.250.90.90/32;
+        192.206.95.169/32;
+        10.105.137.80/32;
+    }
+    community network_services {
+        authorization read-only;
+        client-list-name SNMP_CLIENTS;
+    }
+    community noc_services {
+        authorization read-only;
+        client-list-name SNMP_CLIENTS;
+    }
+    trap-group noc_services {
+        categories {
+            chassis;
+            link;
+            routing;
+        }
+        targets {
+            10.105.137.55;
+            10.100.19.21;
+        }
+    }
+}
+forwarding-options {
+    storm-control-profiles default {
+        all;
+    }
+}
+routing-options {
+    autonomous-system 64302.200 asdot-notation;
+    forwarding-table {
+        export ECMP_BGP;
+    }
+}
+protocols {
+    bgp {
+        precision-timers;
+        log-updown;
+        group TAUCORE {
+            hold-time 12;
+            export EX_BGPCORE_V4;
+            peer-as 65106;
+            graceful-restart;
+            multipath;
+            neighbor 172.29.4.0;
+            neighbor 172.29.4.4;
+        }
+        group LEAFS_V4 {
+            export EX_LEAFS_V4;
+            peer-as 64302.1;
+            graceful-restart;
+            multipath;
+            neighbor 172.29.4.9;
+            neighbor 172.29.4.13;
+        }
+    }
+    lldp {
+        port-id-subtype interface-name;
+        interface all;
+    }
+    lldp-med {
+        interface all;
+    }
+    igmp-snooping {
+        vlan default;
+    }
+}
+policy-options {
+    policy-statement ECMP_BGP {
+        term BGP {
+            from protocol bgp;
+            then {
+                load-balance per-packet;
+            }
+        }
+        term DEFAULT {
+            then accept;
+        }
+    }
+    policy-statement EX_BGPCORE_V4 {
+        term LOCAL_ADVERTISE {
+            from {
+                route-filter 10.105.136.0/24 exact;
+                route-filter 10.105.179.0/24 exact;
+            }
+            then accept;
+        }
+        term TOR_READVERTISE {
+            from {
+                protocol bgp;
+                as-path AS_TOR;
+            }
+            then accept;
+        }
+        then reject;
+    }
+    policy-statement EX_LEAFS_V4 {
+        term LOCAL_ADVERTISE {
+            from {
+                route-filter 10.105.136.0/24 exact;
+                route-filter 10.105.179.0/24 exact;
+            }
+            then accept;
+        }
+        term CORE_READVERTISE {
+            from {
+                protocol bgp;
+                as-path AS_CORES;
+            }
+            then accept;
+        }
+        then reject;
+    }
+    as-path AS_TOR "^64302\.1 .*";
+    as-path AS_CORES "^65106 .*";
+}
+vlans {
+    IS_1G {
+        vlan-id 1136;
+        l3-interface irb.1136;
+    }
+    IS_IDRAC {
+        vlan-id 179;
+        l3-interface irb.179;
+    }
+    default {
+        vlan-id 1;
+    }
+}

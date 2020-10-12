@@ -1,0 +1,1138 @@
+!RANCID-CONTENT-TYPE: force10
+!
+!System Type: I/O-Aggregator
+!
+!Memory: Flash 256M
+!
+!Image: Dell Operating System Version:  2.0
+!Image: Dell Application Software Version:  9.8(0.0)
+!Image: Build Time: Fri May 15 00:25:50 2015
+!Image: Build Path: /sites/eqx/work/swbuild01_1/patch03/E9-8-0/SW/SRC
+!Image: system://A
+!
+!Boot Variables: PRIMARY IMAGE FILE =  system://A
+!Boot Variables: SECONDARY IMAGE FILE =  system://B
+!Boot Variables: DEFAULT IMAGE FILE =  system://B
+!Boot Variables: LOCAL CONFIG FILE =  variable does not exist
+!Boot Variables: PRIMARY HOST CONFIG FILE =  variable does not exist
+!Boot Variables: SECONDARY HOST CONFIG FILE =  variable does not exist
+!Boot Variables: PRIMARY NETWORK CONFIG FILE =  variable does not exist
+!Boot Variables: SECONDARY NETWORK CONFIG FILE =  variable does not exist
+!Boot Variables: CURRENT IMAGE FILE =  system://A
+!Boot Variables: CURRENT CONFIG FILE 1 =  variable does not exist
+!Boot Variables: CURRENT CONFIG FILE 2 =  variable does not exist
+!Boot Variables: CONFIG LOAD PREFERENCE =  local first
+!Boot Variables: BOOT INTERFACE GATEWAY IP ADDRESS =  variable does not exist
+!Boot Variables: Reload Mode =  normal-reload
+!
+!Flash: flash:   3  drwx       4096   Feb 20 2013 11:19:44 +00:00 TRACE_LOG_DIR
+!Flash: flash:   4  drwx       4096   Feb 20 2013 11:19:44 +00:00 CORE_DUMP_DIR
+!Flash: flash:   5  d---       4096   Feb 20 2013 11:19:46 +00:00 ADMIN_DIR
+!Flash: flash:   6  drwx       4096   May 19 2013 22:37:26 +00:00 RUNTIME_PATCH_DIR
+!Flash: flash:   7  -rwx       4094   Jul 14 2013 17:42:36 +00:00 inetd.conf
+!Flash: flash:   8  -rwx         32   Jul 14 2013 17:42:54 +00:00 ssCronCopy.txt
+!Flash: flash:   9  -rwx      12501   May 26 2020 10:25:30 +00:00 startup-config
+!Flash: flash:  10  -rwx      11851   Mar 18 2018 19:08:32 +00:00 startup-config.bak
+!Flash: flash:  11  drwx       4096   May 15 2015 07:53:08 +00:00 CONFD_LOG_DIR
+!Flash: flash: 2043M total (2043M free)
+!
+!Chassis: Stack MAC                  : f8:b1:56:1d:61:1d
+!Chassis: Reload-Type                : normal-reload [Next boot : normal-reload]
+!Chassis: --  Unit 0 --
+!Chassis: Unit Type                  : Standby Unit
+!Chassis: Required Type              : I/O-Aggregator - 34-port GE/TE (XL)
+!Chassis: Current Type               : I/O-Aggregator - 34-port GE/TE (XL)
+!Chassis: Master priority            : 2 
+!Chassis: Hardware Rev               : A02 
+!Chassis: Num Ports                  : 56 
+!Chassis: Dell Networking OS Version : 9.8(0.0) 
+!Chassis: Jumbo Capable              : yes 
+!Chassis: POE Capable                : no 
+!Chassis: FIPS Mode                  : disabled 
+!Chassis: Burned In MAC              : f8:b1:56:1d:61:1d 
+!Chassis: No Of MACs                 : 3
+!Chassis: --  Unit 1 --
+!Chassis: Unit Type                  : Management Unit
+!Chassis: Required Type              : I/O-Aggregator - 34-port GE/TE (XL)
+!Chassis: Current Type               : I/O-Aggregator - 34-port GE/TE (XL)
+!Chassis: Master priority            : 1 
+!Chassis: Hardware Rev               : A01 
+!Chassis: Num Ports                  : 56 
+!Chassis: Dell Networking OS Version : 9.8(0.0) 
+!Chassis: Jumbo Capable              : yes 
+!Chassis: POE Capable                : no 
+!Chassis: FIPS Mode                  : disabled 
+!Chassis: Burned In MAC              : f8:b1:56:0f:c5:bd 
+!Chassis: No Of MACs                 : 3
+!
+!Inventory: System Type            : I/O-Aggregator 
+!Inventory: System Mode            : 1.0       
+!Inventory: Software Version       : 9.8(0.0)
+!Inventory: Unit Type                      Serial Number  Part Number  Rev  Piece Part ID            Rev  Svc Tag  Exprs Svc Code
+!Inventory:   0  I/O-Aggregator            CN282983B70083 0WKCFRA02    A02  CN-0WKCFR-28298-3B7-0083 A02  DQK4ZZ1  299 041 165 09
+!Inventory: * 1  I/O-Aggregator            CN2829839E0184 0WKCFRA01    A01  CN-0WKCFR-28298-39E-0184 A01  JPK4ZZ1  429 043 443 49
+!Inventory:  * - Management Unit 
+!Inventory: Software Protocol Configured 
+!Inventory:   DCBX 
+!Inventory:   FIP Snooping 
+!Inventory:   iSCSI 
+!Inventory:   LLDP 
+!Inventory:   NTP 
+!Inventory:   RADIUS 
+!Inventory:   SNMP 
+!
+!VLAN: Codes: * - Default VLAN, G - GVRP VLANs, R - Remote Port Mirroring VLANs, P - Primary, C - Community, I - Isolated
+!VLAN:        O - Openflow
+!VLAN: Q: U - Untagged, T - Tagged
+!VLAN:    x - Dot1x untagged, X - Dot1x tagged
+!VLAN:    o - OpenFlow untagged, O - OpenFlow tagged
+!VLAN:    G - GVRP tagged, M - Vlan-stack, H - VSN tagged
+!VLAN:    i - Internal untagged, I - Internal tagged, v - VLT untagged, V - VLT tagged
+!VLAN:     NUM    Status    Description                     Q Ports
+!VLAN: *   1      Inactive                                  
+!VLAN:     139    Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     141    Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1204   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1205   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1216   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1217   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1230   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1231   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1232   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1233   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1234   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1235   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1236   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1237   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1238   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1245   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1246   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1247   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1255   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1256   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1257   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1270   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1278   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1279   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1280   Active                                    T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:     1281   Active                                    T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:     1282   Active                                    T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:     1283   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!VLAN:     1284   Active                                    T Po1(Te 0/1,Te 1/1)
+!VLAN:                                                      T Po2(Te 0/2,Te 1/2)
+!VLAN:                                                      T Po3(Te 0/3,Te 1/3)
+!VLAN:                                                      T Po4(Te 0/4,Te 1/4)
+!VLAN:                                                      T Po5(Te 0/5,Te 1/5)
+!VLAN:                                                      T Po6(Te 0/6,Te 1/6)
+!VLAN:                                                      T Po7(Te 0/7,Te 1/7)
+!VLAN:                                                      T Po8(Te 0/8,Te 1/8)
+!VLAN:                                                      T Po9(Te 0/9,Te 1/9)
+!VLAN:                                                      T Po10(Te 0/10,Te 1/10)
+!VLAN:                                                      T Po11(Te 0/11,Te 1/11)
+!VLAN:                                                      T Po128(Te 0/49-52,Te 1/49-52)
+!
+! Version 9.8(0.0)
+! Last configuration change at Tue May 26 10:25:29 2020 by dturner
+! Startup-config last updated at Tue May 26 10:25:31 2020 by dturner
+!
+boot system stack-unit 0 primary system: A:
+boot system stack-unit 0 secondary system: B:
+boot system stack-unit 0 default system: B:
+boot system gateway 192.168.2.2
+!
+redundancy auto-synchronize full
+!
+service timestamps log datetime
+no service timestamps debug
+!
+hostname pa2ucagg01
+!
+!username netops password <removed>
+!username root password <removed>
+!
+stack-unit 0 provision I/O-Aggregator
+!
+stack-unit 0 port 41 portmode quad
+!
+stack-unit 0 port 45 portmode quad
+!
+stack-unit 0 stack-group 0
+!
+stack-unit 0 stack-group 1
+!
+interface TenGigabitEthernet 0/1
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 1 mode active 
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/2
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 2 mode active 
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/3
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 3 mode active 
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/4
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 4 mode active 
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/5
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 5 mode active 
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/6
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 6 mode active 
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/7
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 7 mode active 
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/8
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 8 mode active 
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/9
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 9 mode active 
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/10
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 10 mode active 
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/11
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 11 mode active 
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/12
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/13
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/14
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/15
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/16
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/17
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/18
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/19
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/20
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/21
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/22
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/23
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/24
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/25
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/26
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/27
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/28
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/29
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/30
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/31
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/32
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/41
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/42
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/43
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/44
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/45
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/46
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/47
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/48
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/49
+!  
+ port-channel-protocol LACP 
+  port-channel 128 mode active 
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/50
+!  
+ port-channel-protocol LACP 
+  port-channel 128 mode active 
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/51
+!  
+ port-channel-protocol LACP 
+  port-channel 128 mode active 
+!
+ protocol lldp 
+ no shutdown
+!
+interface TenGigabitEthernet 0/52
+!  
+ port-channel-protocol LACP 
+  port-channel 128 mode active 
+!
+ protocol lldp 
+ no shutdown
+!
+stack-unit 1 provision I/O-Aggregator
+!
+stack-unit 1 port 41 portmode quad
+!
+stack-unit 1 port 45 portmode quad
+!
+stack-unit 1 stack-group 0
+!
+stack-unit 1 stack-group 1
+!
+interface TenGigabitEthernet 1/1
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 1 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/2
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 2 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/3
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 3 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/4
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 4 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/5
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 5 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/6
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 6 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/7
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 7 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/8
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 8 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/9
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 9 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/10
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 10 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/11
+ mtu 12000
+!  
+ port-channel-protocol LACP 
+  port-channel 11 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/12
+ shutdown
+!
+interface TenGigabitEthernet 1/13
+ shutdown
+!
+interface TenGigabitEthernet 1/14
+ shutdown
+!
+interface TenGigabitEthernet 1/15
+ shutdown
+!
+interface TenGigabitEthernet 1/16
+ shutdown
+!
+interface TenGigabitEthernet 1/17
+ shutdown
+!
+interface TenGigabitEthernet 1/18
+ shutdown
+!
+interface TenGigabitEthernet 1/19
+ shutdown
+!
+interface TenGigabitEthernet 1/20
+ shutdown
+!
+interface TenGigabitEthernet 1/21
+ shutdown
+!
+interface TenGigabitEthernet 1/22
+ shutdown
+!
+interface TenGigabitEthernet 1/23
+ shutdown
+!
+interface TenGigabitEthernet 1/24
+ shutdown
+!
+interface TenGigabitEthernet 1/25
+ shutdown
+!
+interface TenGigabitEthernet 1/26
+ shutdown
+!
+interface TenGigabitEthernet 1/27
+ shutdown
+!
+interface TenGigabitEthernet 1/28
+ shutdown
+!
+interface TenGigabitEthernet 1/29
+ shutdown
+!
+interface TenGigabitEthernet 1/30
+ shutdown
+!
+interface TenGigabitEthernet 1/31
+ shutdown
+!
+interface TenGigabitEthernet 1/32
+ shutdown
+!
+interface TenGigabitEthernet 1/41
+ shutdown
+!
+interface TenGigabitEthernet 1/42
+ shutdown
+!
+interface TenGigabitEthernet 1/43
+ shutdown
+!
+interface TenGigabitEthernet 1/44
+ shutdown
+!
+interface TenGigabitEthernet 1/45
+ shutdown
+!
+interface TenGigabitEthernet 1/46
+ shutdown
+!
+interface TenGigabitEthernet 1/47
+ shutdown
+!
+interface TenGigabitEthernet 1/48
+ shutdown
+!
+interface TenGigabitEthernet 1/49
+!  
+ port-channel-protocol LACP 
+  port-channel 128 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/50
+!  
+ port-channel-protocol LACP 
+  port-channel 128 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/51
+!  
+ port-channel-protocol LACP 
+  port-channel 128 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/52
+!  
+ port-channel-protocol LACP 
+  port-channel 128 mode active 
+ no shutdown
+!
+interface ManagementEthernet 0/0
+ ip address 10.115.24.51/24
+ no shutdown
+!
+interface Port-channel 1
+ description Blade1
+ switchport
+ vlan tagged 139,141,1204-1205,1216-1217,1230-1238,1245-1247,1255-1257,1270,1278-1279,1283-1284
+ no shutdown
+!
+interface Port-channel 2
+ description Blade2
+ switchport
+ vlan tagged 139,141,1204-1205,1216-1217,1230-1238,1245-1247,1255-1257,1270,1278-1279,1283-1284
+ no shutdown
+!
+interface Port-channel 3
+ description Blade3
+ switchport
+ vlan tagged 139,141,1204-1205,1216-1217,1230-1238,1245-1247,1255-1257,1270,1278-1279,1283-1284
+ no shutdown
+!
+interface Port-channel 4
+ description Blade4
+ switchport
+ vlan tagged 139,141,1204-1205,1216-1217,1230-1238,1245-1247,1255-1257,1270,1278-1279,1283-1284
+ no shutdown
+!
+interface Port-channel 5
+ description Blade5
+ switchport
+ vlan tagged 139,141,1204-1205,1216-1217,1230-1238,1245-1247,1255-1257,1270,1278-1279,1283-1284
+ no shutdown
+!
+interface Port-channel 6
+ description Blade6
+ switchport
+ vlan tagged 139,141,1204-1205,1216-1217,1230-1238,1245-1247,1255-1257,1270,1278-1279,1283-1284
+ no shutdown
+!
+interface Port-channel 7
+ description Blade7
+ switchport
+ vlan tagged 139,141,1204-1205,1216-1217,1230-1238,1245-1247,1255-1257,1270,1278-1279,1283-1284
+ no shutdown
+!
+interface Port-channel 8
+ description Blade8
+ switchport
+ vlan tagged 139,141,1204-1205,1216-1217,1230-1238,1245-1247,1255-1257,1270,1278-1279,1283-1284
+ no shutdown
+!
+interface Port-channel 9
+ description Blade9
+ switchport
+ vlan tagged 139,141,1204-1205,1216-1217,1230-1238,1245-1247,1255-1257,1270,1278-1284
+ no shutdown
+!
+interface Port-channel 10
+ description Blade10
+ switchport
+ vlan tagged 139,141,1204-1205,1216-1217,1230-1238,1245-1247,1255-1257,1270,1278-1284
+ no shutdown
+!
+interface Port-channel 11
+ description Blade11
+ switchport
+ vlan tagged 139,141,1204-1205,1216-1217,1230-1238,1245-1247,1255-1257,1270,1278-1284
+ no shutdown
+!
+interface Port-channel 128
+ description "to 2x Nexus UCACCSS01-2 Po10 VPC"
+ switchport
+ vlan tagged 139,141,1204-1205,1216-1217,1230-1238,1245-1247,1255-1257,1270,1278-1279,1283-1284
+ no shutdown
+!
+interface Vlan 1
+ no ip address
+ no shutdown
+!
+interface Vlan 139
+ no shutdown
+!
+interface Vlan 141
+ no shutdown
+!
+interface Vlan 1204
+ no shutdown
+!
+interface Vlan 1205
+ no shutdown
+!
+interface Vlan 1216
+ no shutdown
+!
+interface Vlan 1217
+ no shutdown
+!
+interface Vlan 1230
+ no shutdown
+!
+interface Vlan 1231
+ no shutdown
+!
+interface Vlan 1232
+ no shutdown
+!
+interface Vlan 1233
+ no shutdown
+!
+interface Vlan 1234
+ no shutdown
+!
+interface Vlan 1235
+ no shutdown
+!
+interface Vlan 1236
+ no shutdown
+!
+interface Vlan 1237
+ no shutdown
+!
+interface Vlan 1238
+ no shutdown
+!
+interface Vlan 1245
+ no shutdown
+!
+interface Vlan 1246
+ no shutdown
+!
+interface Vlan 1247
+ no shutdown
+!
+interface Vlan 1255
+ no shutdown
+!
+interface Vlan 1256
+ no shutdown
+!
+interface Vlan 1257
+ no shutdown
+!
+interface Vlan 1270
+ no shutdown
+!
+interface Vlan 1278
+ no shutdown
+!
+interface Vlan 1279
+ no shutdown
+!
+interface Vlan 1280
+ no shutdown
+!
+interface Vlan 1281
+ no shutdown
+!
+interface Vlan 1282
+ no shutdown
+!
+interface Vlan 1283
+ no shutdown
+!
+interface Vlan 1284
+ no shutdown
+!
+management route 0.0.0.0/0 10.115.24.254 
+!
+logging 10.115.137.89
+logging 10.124.23.24
+!
+service-class dynamic dot1p
+!
+snmp-server community network_services ro 
+snmp-server community noc_services ro 
+snmp-server community public ro 
+snmp-server enable traps snmp linkdown linkup 
+snmp-server enable traps stack
+!
+stack-unit 0 priority 2
+stack-unit 1 priority 1
+!
+ntp server 10.115.131.1
+ntp server 10.125.19.1
+!
+radius-server retransmit 1 
+radius-server timeout 2 
+radius-server host 10.115.38.110 key 7 088d5f3c820014b0cea2ba9febefd528b044ba8f41a206b803e2864e27e71fbb 
+radius-server host 10.100.92.1 key 7 088d5f3c820014b0cea2ba9febefd528b044ba8f41a206b803e2864e27e71fbb 
+!
+aaa authentication login default local radius
+aaa authorization exec default local radius
+ip ssh server version 2
+!
+dcb-map FLEXIO_DCB_MAP_PFC_OFF
+ no pfc mode on
+!
+feature fip-snooping
+!
+protocol lldp 
+!
+line console 0
+line vty 0
+line vty 1
+line vty 2
+line vty 3
+line vty 4
+line vty 5
+line vty 6
+line vty 7
+line vty 8
+line vty 9
+!
+uplink-state-group 1
+ no enable
+!
+reload-type
+ boot-type normal-reload
+!
+end
