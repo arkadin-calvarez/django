@@ -126,14 +126,6 @@ def get_device_stats(request: HttpRequest, device_id) -> HttpResponse:
 def saltout(request):
     data = subprocess.run("sudo salt 'vsrx1' net.cli 'show bgp summary'", stdout=PIPE, stderr=PIPE, shell=True)
     return render(request, 'saltout.html' , {'data':data.stdout})
-#    with open('saltout.txt', 'w') as saltout:
-#        data = subprocess.run("sudo salt 'vsrx1' net.cli 'show bgp summary'", stdout=saltout, stderr=PIPE, shell=True)
-#    with open("/home/outright/Django/CABE/saltout.txt") as out:
-#        list = yaml.load(out, Loader=yaml.FullLoader)
-#        return render(request, 'salt.html' , {'list':list})
-#
-#    data = (subprocess.Popen("sudo salt 'vsrx1' net.cli 'show bgp summary'", stdout=subprocess.PIPE, shell=True, universal_newlines=True).communicate()[0])
-#    return render(request, 'salt.html' , {'data':data})
 
 # Above, stdout is displays content in bites (that's the reason of the unsorted format). 
 # We need to transform this to string. One method is decode() (Ex: return render(request, 
@@ -366,35 +358,7 @@ def showstandpepper(request):
     'output_table2': output_table2,
     }
 
-    #===========================================================================
-
-    #regex3 = re.compile(r'\s\sState: Idle|\s\sState: Active|\s\sState: Connect')
-    #match_reg3 = regex3.finditer(read_file)
-
-    #regex4 = re.compile(r'Peer:\s\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')
-    #match_reg4 = regex4.finditer(read_file)
-
-
-    #if match_reg3:
-    #    for match3 in match_reg3:
-    #        output_table3.append(match3.group(1))
-    
-    #if match_reg4:
-    #    for match4 in match_reg4:
-    #        output_table4.append(match4.group(1))
-
-    #context = {
-    #'output_table3': output_table3,
-    #'output_table4': output_table4,
-    #}
-
-    # For logging in console
-    # return str1
-    #if match_reg1:
     return render(request, 'showstandpepper.html', context)
-
-    #if match_reg3:
-    #    return render(request, 'showstandpepper1.html', context)
 
     
 ############################ SALT SECTION END ############################
@@ -411,11 +375,6 @@ from tabulate import tabulate
 def showfindpattern(request):
 
     pattern = request.GET.get('pattern')
-#    print(" ")
-#    pattern = input("Please insert what look for: ")
-#    print(" ")
-#    print("Entered word is: " pattern)
-#    print(" ")
 
     list = []
     output1 = []
@@ -438,7 +397,6 @@ def showfindpattern(request):
     context = {
         'output1': output1,
     }
-#    table = tabulate(output1, headers=headers, tablefmt='html', showindex="always")
 #    print(tabulate(output1, headers=headers, tablefmt='plain', showindex="always"))
-    return render(request, 'showfindpattern.html', {'output1': output1})
+    return render(request, 'showfindpattern.html', context)
 ########################### FIND PATTERN SECTION ENDS ############################
