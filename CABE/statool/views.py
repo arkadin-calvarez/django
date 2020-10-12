@@ -408,7 +408,7 @@ import os.path
 import re
 from tabulate import tabulate
 
-def findpattern(request):
+def showfindpattern(request):
 
     pattern = request.GET.get('pattern')
 #    print(" ")
@@ -435,6 +435,9 @@ def findpattern(request):
             except:
                 pass
 
-    print(tabulate(output1, headers=headers, tablefmt='plain', showindex="always"))
-
+    context = {
+        'output1': output1,
+    }
+#    print(tabulate(output1, headers=headers, tablefmt='plain', showindex="always"))
+    return render(request, 'showfindpattern.html', context)
 ########################### FIND PATTERN SECTION ENDS ############################

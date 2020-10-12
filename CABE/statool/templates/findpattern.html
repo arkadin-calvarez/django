@@ -130,7 +130,7 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="container-fluid">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h3 class="card-title">Click and Discover using RANCID backups</h3>
+              <h3 class="card-title">Using RANCID backups, find patterns.</h3>
               <p class="card-category">Write the pattern and click to find the word!  
               </p>
             </div>
@@ -139,9 +139,8 @@ The above copyright notice and this permission notice shall be included in all c
               </div>
               <div class="row">
                 <div class="col-md-6">
-                    <h4 class="card-title">Find pattern/h4>
-                    <h6 class="card-title">xxxx</h6>
-                    <form name='search' action="{% url 'showbgpstatus' %}" method="get"> {% csrf_token %}
+                    <h4 class="card-title">Find pattern</h4>
+                    <form name='search' action="{% url 'showfindpattern' %}" method="get"> {% csrf_token %}
                         </br>
                         <br>
                         <br>
@@ -160,7 +159,7 @@ The above copyright notice and this permission notice shall be included in all c
                   {% if output_table1 %}
                   {{ output_table1 }}
                   {% endif %}
-                  <h6 class="card-title">(salt-pepper)</h6>
+                  <h6 class="card-title">RANCID results</h6>
                 </div>
               </div>
               <div class="row">
