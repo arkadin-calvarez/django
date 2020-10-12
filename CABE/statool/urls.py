@@ -13,7 +13,9 @@ urlpatterns = [
 # forward request based on what was configured in "views.py" file, adding the 
 # ".statool" or ".scripts" name
 
+# ==============================================================================
 # Go to MAIN webpages
+
     path('', views.home, name='network-tools-home'),
     path('statool/', views.statool, name='statool-home'),
     path('scripts/', views.scripts, name='scripts'),
@@ -21,7 +23,10 @@ urlpatterns = [
     path('saltv2/', views.saltv2, name='saltv2'),
     path('findpattern/', views.findpattern, name='findpattern'),
 
-# Go to RESULTS webpages
+
+# ==============================================================================
+# Go to python definitions/functions webpages
+
 # "Panaceia" website results
     path('services/<int:service_id>', views.get_device_stats, name="service"),
     path('statool/devices/<int:device_id>', views.get_device_stats, name="device"), # With ABSOLUTE URL (see models.py)
@@ -32,7 +37,7 @@ urlpatterns = [
     path('saltapipage/', views.saltapi, name='saltapi'),
 
 # "Findpattern" website
-#    path('findpattern/', views.findpattern, name='findpattern'),
+    path('showfindpattern/', views.showfindpattern, name='showfindpattern'),
 
 # "SALT Scripts" website results
     path('showstandalone/', views.showstandalone, name='showstandalone'),
@@ -41,10 +46,5 @@ urlpatterns = [
 #    path('showstandpepper1/', views.showstandpepper1, name='showstandpepper1'),
     path('showfromdrop/', views.showfromdrop, name='showfromdrop'),
 #    path('salt/devices/*', views.showfromdrop, name='showfromdrop'),
-    path('showfrombox/', views.showfrombox, name='showfrombox'),
-
-# Scripts website - Disabled
-#    path('output/', views.output, name='scriptdone'),
-#    path('another/', views.another, name='scriptfinal'),
-#    path('bgp1/', views.show_bgp_fromfile, name='show_bgp_fromfile'),
+    path('showfrombox/', views.showfrombox, name='showfrombox')
 ]

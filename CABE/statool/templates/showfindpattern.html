@@ -1,3 +1,18 @@
-{% if data %}
-{{ data }}
-{% endif %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+{% for dic in output1 %}
+    <table>
+    <tr>
+        <td style="width:150px">{{ dic.0 }}</td>
+        <td style="width:650px">{{ dic.1 }}</td>
+    </tr>
+    </table>
+{% endfor %}
+</html>

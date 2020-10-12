@@ -438,6 +438,7 @@ def showfindpattern(request):
     context = {
         'output1': output1,
     }
+#    table = tabulate(output1, headers=headers, tablefmt='html', showindex="always")
 #    print(tabulate(output1, headers=headers, tablefmt='plain', showindex="always"))
-    return render(request, 'showfindpattern.html', context)
+    return render(request, 'showfindpattern.html', {'output1': output1})
 ########################### FIND PATTERN SECTION ENDS ############################
