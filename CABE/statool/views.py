@@ -377,8 +377,12 @@ def showfindpattern(request):
     pattern = request.GET.get('pattern')
 
     list = []
+    output0 = []
     output1 = []
     headers = ['Index', 'Network Device','Full Line']
+
+    output0 = os.listdir('//home//outright//Django//rancid//backups//NETWORK//')
+    print(output0)
 
     for filename in os.listdir('//home//outright//Django//rancid//backups//NETWORK//'):
         if re.match('.*', filename):
@@ -392,11 +396,13 @@ def showfindpattern(request):
                             list = [filename, line]
                             output1.append(list)
             except:
+                print('No match found')
                 pass
 
     context = {
+        'output0': output0,
         'output1': output1,
     }
 #    print(tabulate(output1, headers=headers, tablefmt='plain', showindex="always"))
-    return render(request, 'showfindpattern.html', context)
+    return render(request, 'findpattern.html', context)
 ########################### FIND PATTERN SECTION ENDS ############################

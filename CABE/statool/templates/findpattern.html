@@ -50,27 +50,14 @@ The above copyright notice and this permission notice shall be included in all c
           <li class="nav-item active  ">
             <a class="nav-link" href="{% url 'salt' %}">
               <i class="material-icons">bubble_chart</i>
-              <p>SALT API Queries V1</p>
+              <p>SALT API Queries LOCAL</p>
             </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="{% url 'statool-home' %}">
-              <i class="material-icons">dashboard</i>
-              <p>Item 1</p>
-            </a>
-          </li>
         </ul>
         <ul class="nav">
           <li class="nav-item active  ">
             <a class="nav-link" href="{% url 'saltv2' %}">
               <i class="material-icons">bubble_chart</i>
-              <p>SALT API Queries V2</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="{% url 'statool-home' %}">
-              <i class="material-icons">dashboard</i>
-              <p>Item 1</p>
+              <p>SALT API Queries PEPPER</p>
             </a>
           </li>
         </ul>
@@ -78,7 +65,7 @@ The above copyright notice and this permission notice shall be included in all c
           <li class="nav-item active  ">
             <a class="nav-link" href="{% url 'statool-home' %}" data-color="orange">
               <i class="material-icons">dashboard</i>
-              <p>Local Status Tool</p>
+              <p>Panaceia Tool</p>
             </a>
           </li>
         </ul>
@@ -91,16 +78,29 @@ The above copyright notice and this permission notice shall be included in all c
           </li>
         </ul>
         <ul class="nav">
-            <li class="nav-item active  ">
-              <a class="nav-link" href="{% url 'findpattern' %}">
-                <i class="material-icons">content_paste</i>
-                <p>Find Patterns</p>
-              </a>
-            </li>
-          </ul>
+          <li class="nav-item active  ">
+            <a class="nav-link" href="{% url 'findpattern' %}">
+              <i class="material-icons">content_paste</i>
+              <p>Find Pattern</p>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav">
+          <li class="nav-item active  ">
+            <a class="nav-link" href="{% url 'saltv2' %}">
+              <i class="material-icons">bubble_chart</i>
+              <p>About</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'statool-home' %}">
+              <i class="material-icons">dashboard</i>
+              <p>Who we are</p>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
-    <!-- your sidebar ENDs here -->
 
     <!-- StartTopNavbar -->
     <div class="main-panel">
@@ -138,31 +138,68 @@ The above copyright notice and this permission notice shall be included in all c
               <div class="row">
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <h4 class="card-title">Find pattern</h4>
                     <form name='search' action="{% url 'showfindpattern' %}" method="get"> {% csrf_token %}
                         </br>
-                        <br>
-                        <br>
-                        <h6 class="card-title">End pattern to find</h6>
+                        <h6 class="card-title">Enter pattern to find</h6>
                             <input type="text" placeholder="ex: Scrutinizer" id="pattern" name='pattern' pattern="*" required oninvalid="this.setCustomValidity('Field cannot be empty')">
                         <div class="col-md-4">
-                        <button class="btn btn-primary btn-block" onclick="md.showNotification('top','left')">Click here</button>
+                        </br>
+                        <button class="btn btn-primary" onclick="md.showNotification('top','left')">Click here</button>
                         </div>
-                        <br>
-                        <br>
-                        <br>
+                    </form>
+                    </br>
+                    </br>
+                    <h4 class="card-title">Show files</h4>
+                    <form name='search' action="{% url 'showfindpattern' %}" method="get"> {% csrf_token %}
+                        </br>
+                        <h6 class="card-title">Click to display files</h6>
+                        <div class="col-md-4">
+                        </br>
+                        <button class="btn btn-primary" onclick="md.showNotification('top','left')">Files here</button>
+                        </div>
                     </form>
                 </div>
                 <div class="col-md-6">
-                  <h4 class="card-title">Output Section</h4>
-                  {% if output_table1 %}
-                  {{ output_table1 }}
-                  {% endif %}
+                  <style>
+                    table, th, td {
+                      border: 1px solid black;
+                      border-collapse: collapse;
+                      align-content: ;
+                      margin-left:auto; 
+                      margin-right:auto;
+                      width: 800px
+                    }
+                  </style>
+                  <h4 class="card-title">Output</h4>
+                  </br>
                   <h6 class="card-title">RANCID results</h6>
+                  {% if output0 %}
+                      {% for file in output0 %}
+                          <table class="c">
+                          <tr>
+                              <td style="width:150px">{{ file }}</td>
+                          </tr>
+                          </table>
+                      {% endfor %}
+                  {% endif %}
+                  </br>
+                  {% if output1 %}
+                      {% for dic in output1 %}
+                          <table class="c">
+                          <tr>
+                              <td style="width:150px">{{ dic.0 }}</td>
+                              <td style="width:650px">{{ dic.1 }}</td>
+                          </tr>
+                          </table>
+                      {% endfor %}
+                  {% else %}
+                      {{ 'No data yet' }}
+                  {% endif %}
                 </div>
               </div>
-              <div class="row">
+              <div class="row"> 
                   <div class="alert alert-info alert-with-icon" data-notify="container">
                     <i class="material-icons" data-notify="icon">add_alert</i>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

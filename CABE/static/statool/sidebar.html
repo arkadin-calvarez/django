@@ -1,69 +1,69 @@
 
-<div class="sidebar" data-color="azure" data-background-color="azure">
+<div id="sidebartest" name="sidebartest" class="sidebar" data-color="azure" data-background-color="azure">
 <!--
 Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 Tip 2: you can also add an image using data-image tag
 -->
 <div class="logo">
-    <a href="http://www.arkadin.com" class="simple-text logo-mini">
-    NIO Team tools
+    <a href="http://django:9090/" class="simple-text logo-mini">
+      NIO Team tools
     </a>
-</div>
-<div class="sidebar-wrapper">
+  </div>
+  <div class="sidebar-wrapper">
     <ul class="nav">
-    <li class="nav-item active  ">
+      <li class="nav-item active  ">
         <a class="nav-link" href="{% url 'salt' %}">
-        <i class="material-icons">bubble_chart</i>
-        <p>SALT API Queries V1</p>
+          <i class="material-icons">bubble_chart</i>
+          <p>SALT API Queries LOCAL</p>
         </a>
-    </li>
-    <li class="nav-item ">
-        <a class="nav-link" href="{% url 'statool-home' %}">
-        <i class="material-icons">dashboard</i>
-        <p>Item 1</p>
-        </a>
-    </li>
     </ul>
     <ul class="nav">
-    <li class="nav-item active  ">
+      <li class="nav-item active  ">
         <a class="nav-link" href="{% url 'saltv2' %}">
-        <i class="material-icons">bubble_chart</i>
-        <p>SALT API Queries V2</p>
+          <i class="material-icons">bubble_chart</i>
+          <p>SALT API Queries PEPPER</p>
         </a>
-    </li>
-    <li class="nav-item ">
-        <a class="nav-link" href="{% url 'statool-home' %}">
-        <i class="material-icons">dashboard</i>
-        <p>Item 1</p>
-        </a>
-    </li>
+      </li>
     </ul>
     <ul class="nav">
-    <li class="nav-item active  ">
+      <li class="nav-item active  ">
         <a class="nav-link" href="{% url 'statool-home' %}" data-color="orange">
-        <i class="material-icons">dashboard</i>
-        <p>Local Status Tool</p>
+          <i class="material-icons">dashboard</i>
+          <p>Panaceia Tool</p>
         </a>
-    </li>
+      </li>
     </ul>
     <ul class="nav">
-    <li class="nav-item active  ">
+      <li class="nav-item active  ">
         <a class="nav-link" href="{% url 'scripts' %}">
-        <i class="material-icons">content_paste</i>
-        <p>Scripts</p>
+          <i class="material-icons">content_paste</i>
+          <p>Scripts</p>
         </a>
-    </li>
+      </li>
     </ul>
     <ul class="nav">
-    <li class="nav-item active  ">
+      <li class="nav-item active  ">
         <a class="nav-link" href="{% url 'findpattern' %}">
-        <i class="material-icons">content_paste</i>
-        <p>Find Pattern</p>
+          <i class="material-icons">content_paste</i>
+          <p>Find Pattern</p>
         </a>
-    </li>
+      </li>
     </ul>
-</div>
-</div>
+    <ul class="nav">
+      <li class="nav-item active  ">
+        <a class="nav-link" href="{% url 'saltv2' %}">
+          <i class="material-icons">bubble_chart</i>
+          <p>About</p>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{% url 'statool-home' %}">
+          <i class="material-icons">dashboard</i>
+          <p>Who we are</p>
+        </a>
+      </li>
+    </ul>
+  </div>
 <!-- your sidebar ENDs here -->
 <div class="main-panel">
 <!-- Navbar -->
