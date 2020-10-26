@@ -1,17 +1,4 @@
-{
-    "return": [
-        {
-            "vsrx1": {
-                "jid": "20201015144700120742",
-                "ret": {
-                    "comment": "",
-                    "out": {
-                        "show version": "\nHostname: vsrx1\nModel: firefly-perimeter\nJUNOS Software Release [12.1X47-D20.7]\n"
-                    },
-                    "result": true
-                },
-                "retcode": 0
-            }
-        }
-    ]
-}
+ERROR 2020-10-26 13:03:26,024 libpepper: Error with request: <urlopen error [Errno 113] No route to host>
+Error with request: <urlopen error [Errno 113] No route to host>
+Uncaught Pepper error (increase verbosity for the full traceback).
+<urlopen error [Errno 113] No route to host>

@@ -382,7 +382,6 @@ def showfindpattern(request):
     headers = ['Index', 'Network Device','Full Line']
 
     output0 = os.listdir('//home//outright//Django//rancid//backups//NETWORK//')
-    print(output0)
 
     for filename in os.listdir('//home//outright//Django//rancid//backups//NETWORK//'):
         if re.match('.*', filename):
@@ -402,6 +401,23 @@ def showfindpattern(request):
     context = {
         'output0': output0,
         'output1': output1,
+    }
+#    print(tabulate(output1, headers=headers, tablefmt='plain', showindex="always"))
+    return render(request, 'findpattern.html', context)
+
+
+
+def showfindfiles(request):
+
+    output0 = []
+
+#    output0 = os.listdir('//home//outright//Django//rancid//backups//NETWORK//')
+
+    for filename in os.listdir('//home//outright//Django//rancid//backups//NETWORK//'):
+        output0 = [filename]
+
+    context = {
+        'output0': output0,
     }
 #    print(tabulate(output1, headers=headers, tablefmt='plain', showindex="always"))
     return render(request, 'findpattern.html', context)

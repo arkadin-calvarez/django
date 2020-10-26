@@ -38,6 +38,7 @@ urlpatterns = [
 
 # "Findpattern" website
     path('showfindpattern/', views.showfindpattern, name='showfindpattern'),
+    path('showfindfiles/', views.showfindfiles, name='showfindfiles'),
 
 # "SALT Scripts" website results
     path('showstandalone/', views.showstandalone, name='showstandalone'),

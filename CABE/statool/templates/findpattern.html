@@ -136,30 +136,19 @@ The above copyright notice and this permission notice shall be included in all c
             </div>
             <div class="card-body">
               <div class="row">
-              </div>
-              <div class="row">
                 <div class="col-md-3">
-                    <h4 class="card-title">Find pattern</h4>
+                  <h4 class="card-title">Find pattern</h4>
                     <form name='search' action="{% url 'showfindpattern' %}" method="get"> {% csrf_token %}
-                        </br>
+                      </br>
                         <h6 class="card-title">Enter pattern to find</h6>
-                            <input type="text" placeholder="ex: Scrutinizer" id="pattern" name='pattern' pattern="*" required oninvalid="this.setCustomValidity('Field cannot be empty')">
+                          <input type="text" placeholder="ex: Scrutinizer" id="pattern" name='pattern' pattern="*" required oninvalid="this.setCustomValidity('Field cannot be empty')">
                         <div class="col-md-4">
-                        </br>
-                        <button class="btn btn-primary" onclick="md.showNotification('top','left')">Click here</button>
+                          <button class="btn btn-primary" onclick="md.showNotification('top','left')">Click here</button>
                         </div>
                     </form>
                     </br>
                     </br>
-                    <h4 class="card-title">Show files</h4>
-                    <form name='search' action="{% url 'showfindpattern' %}" method="get"> {% csrf_token %}
-                        </br>
-                        <h6 class="card-title">Click to display files</h6>
-                        <div class="col-md-4">
-                        </br>
-                        <button class="btn btn-primary" onclick="md.showNotification('top','left')">Files here</button>
-                        </div>
-                    </form>
+                    </br>
                 </div>
                 <div class="col-md-6">
                   <style>
@@ -175,16 +164,6 @@ The above copyright notice and this permission notice shall be included in all c
                   <h4 class="card-title">Output</h4>
                   </br>
                   <h6 class="card-title">RANCID results</h6>
-                  {% if output0 %}
-                      {% for file in output0 %}
-                          <table class="c">
-                          <tr>
-                              <td style="width:150px">{{ file }}</td>
-                          </tr>
-                          </table>
-                      {% endfor %}
-                  {% endif %}
-                  </br>
                   {% if output1 %}
                       {% for dic in output1 %}
                           <table class="c">
@@ -198,6 +177,31 @@ The above copyright notice and this permission notice shall be included in all c
                       {{ 'No data yet' }}
                   {% endif %}
                 </div>
+              </div>
+              </br>
+              <div class="row">
+                  <div class="col-md-3">
+                    <h4 class="card-title">Show files</h4>
+                    <form name='find' action="{% url 'showfindfiles' %}" method="get"> {% csrf_token %}
+                      </br>
+                      <h6 class="card-title">Click to display files</h6>
+                          <div class="col-md-4">
+                            <button class="btn btn-primary" onclick="md.showNotification('top','left')">Display Files</button>
+                          </div>
+                    </form>
+                  </div>
+                  </br>
+                  <div class="col-md-4">
+                    {% if output0 %}
+                        {% for file in output0 %}
+                            <table style="width:25%">
+                            <tr>
+                                <td>{{ file }}</td>
+                            </tr>
+                            </table>
+                        {% endfor %}
+                    {% endif %}
+                  </div>
               </div>
               <div class="row"> 
                   <div class="alert alert-info alert-with-icon" data-notify="container">

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+{% for file in output0 %}
+    <table>
+    <tr>
+        <td style="width:150px">{{ file }}</td>
+    </tr>
+    </table>
+{% endfor %}
+</html>
