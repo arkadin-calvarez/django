@@ -6,53 +6,82 @@ import os
 import sys
 import requests
 
+# Import modules for CGI handling 
+import cgi, cgitb 
+
 
 def showfindpattern():
-
-    # Import modules for CGI handling 
-    import cgi, cgitb 
 
     # Create instance of FieldStorage 
     form = cgi.FieldStorage() 
 
-    # Get data from fields
+    # Get data from main page
     pattern = form.getvalue('pattern')
 
-#    pattern = '10.120.'
-
-
+    # Defining lists
     lista1 = []
     output1 = []
     
+    # From local copy of NETWORK devices configs, looks files (manual copy made from /var/rancid/NETWORK/configs to /var/www/finder folder) 
     for filename in os.listdir('/var/www/finder/configs/'):
         if re.match('.*', filename):
-            filepath = '/var/www/finder/configs/'+filename
-            fileh = open(filepath, "r")
+            try:
+                filepath = '/var/www/finder/configs/'+filename
+                fileh = open(filepath, "r")
 
-            for line in fileh.readlines():
-                for word in line.split():
-                    if re.match(pattern, word):
-                        lista1 = [line, filename]
-                        output1.append(lista1)
+                for line in fileh.readlines():
+                    regex = re.compile(pattern)
+                    match_reg = regex.finditer(line)
+                    if match_reg:
+                        for match in match_reg:
+                            lista1 = [line, filename]
+                            output1.append(lista1)
+            except:
+                print('Impossible to open specified path location')
+                pass
+
     return output1
 
-
-#outputx = ['hols', 'fdfd', 'neo']
+# Storing retuned function output into "outputx" list
 outputx = showfindpattern()
-#outputx = files()
 
 #--------------------------------------------------------------------------------------------------------
-# HTML
+# HTML Start
 
 header = '''
 <!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+  <style>
+    h1,h2,h3,h5,b,i,p,a,table {
+      margin: 50px;
+    }
+    tr {
+      text-align: center;
+      border-bottom: 1px solid #bbb;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      border-left-radius: 8px;
+      border-right-radius: 8px;
+    }
+    th {
+      color: white;
+      text-align: center;
+      border-bottom: 1px solid #bbb;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      border-left-radius: 8px;
+      border-right-radius: 8px;
+      background-color: lightskyblue;
+      width: 5cm;
+    }
+  </style>
+
 <title>RANCID Finder tool</title>
-<link rel="icon" type="image/png" href="../../resources/site/europeanunion.png" />
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="Content-Language" content="fr" />
+<meta http-equiv="Content-Language" content="en" />
+
 <style type="text/css">
 @import url(../../resources/style.css);
 @import url(../../resources/theme.default.css);
@@ -63,6 +92,7 @@ text-align: center;
 background-color: WhiteSmoke;
 margin-top: 5px;
 </style>
+
 <script type="text/javascript" src="../../resources/jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../../resources/jquery/jquery.tablesorter.js"></script>
 <script type="text/javascript" src="../../resources/jquery/jquery.tablesorter.widgets.js"></script>
@@ -86,25 +116,22 @@ function myFunction() {
 
 contentstart = '''
 <body>
-<div id="conteneur">
-<h1 id="header"></h1>
-<table>
-<tr>
-<td>
-<ul id="menu">
-<li><a href="https://atlnetutil01.arkadin.lan:8081/inventory/links.html">Links</a></li>
-</td>
-</tr>
-</table>
-<div id="contenu">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <div id="container">
+    </br>
+    <h1 style="color:blue">REGEX Find Pattern Tool</h1>
+    <h3>Results</h3>
+    <a href="https://rancid.arkadin.lan/finder/finder.html">Back to main menu</a>
 '''
 
 contentend = '''
-</div>
+  </div>
 '''
 
 foot = '''
-<p id="footer">Copyright 2020 NTT - NIO Team</p>
+</br>
+</br>
+<p style="color:blue" id="footer">Copyright 2020 NTT - Powered by NIO Team</p>
 </div>
 </body>
 </html>
@@ -120,24 +147,37 @@ print(contentstart)
 
 
 
-# MAIN TABLE PRINT
+# MAIN TABLE
 print('<table id=\'default\' class=\'tablesorter-default\'>')
 print('<thead>')
-print('<tr style="color: #fff; background: blue;"><th>line</th><th>Device</th></tr>')
+print('<tr><th>Device</th><th>REGEX Pattern</th></tr>')
 print('</thead>')
 print('<tbody>')
 
 
-# FOR EACH ASSET
-for value, val in outputx:
+# FOR statement to go through function returned items
+if outputx:
+    for value, val in outputx:
 
-# DISPLAY CLIENTS
-    print '''<tr>
-                <td>%s</td><td>%s</td>
-            </tr>
-    ''' % (	value, val )
-
+    # PRINT items in HTTP format
+        print '''<tr>
+                    <td>%s</td><td>%s</td>
+                </tr>
+        ''' % (	val, value )
+else:
+    # PRINT not found
+        print '''<tr>
+                    </br>
+                    </br>
+                    </br>
+                    <h2 style="color:red">Regex value not Found</h2>
+                </tr>'''
+        
 print('</tbody>')
 print('</table>')
 print contentend
 print foot
+
+
+#--------------------------------------------------------------------------------------------------------
+# HTML End
